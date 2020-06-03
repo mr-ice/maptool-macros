@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>2dba69ffedc32b9fc67a45c4496cba32</id>
+  </id>
+  <name>bode-mushroom</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>

@@ -1,0 +1,1170 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>Wgi1cSkvTRmfaJ1fmLlMsw==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>JOj0DH4lTDiT3w6Pb8NIVg==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>2dba69ffedc32b9fc67a45c4496cba32</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>3900</x>
+  <y>-4750</y>
+  <z>1</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>3900</lastX>
+  <lastY>-4750</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>78</x>
+        <y>-95</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>78</x>
+        <y>-95</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
+  <snapToScale>true</snapToScale>
+  <width>256</width>
+  <height>256</height>
+  <isoWidth>256</isoWidth>
+  <isoHeight>256</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:DnDBeyond</name>
+  <ownerType>0</ownerType>
+  <tokenShape>SQUARE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>Basic</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Darkvision</sightType>
+  <hasSight>true</hasSight>
+  <notes>https://www.dndbeyond.com/profile/Biliruben/characters/9471826</notes>
+  <gmNotes></gmNotes>
+  <state>
+    <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <propertyMapCI>
+    <store>
+      <entry>
+        <string>constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution</key>
+          <value class="string">18</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength</key>
+          <value class="string">18</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>libversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>libversion</key>
+          <value class="string">0.1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>HP</key>
+          <value class="string">125</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>description</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Description</key>
+          <value class="string">The best</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma</key>
+          <value class="string">8</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom</key>
+          <value class="string">10</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>attackjson</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackJSON</key>
+          <value class="string">[{&quot;name&quot;:&quot;Scimitar of Speed&quot;,&quot;atkBonus&quot;:10,&quot;dmgBonus&quot;:8,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Slashing, magic&quot;},{&quot;name&quot;:&quot;Scimitar of Speed - Raging&quot;,&quot;atkBonus&quot;:10,&quot;dmgBonus&quot;:11,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Slashing, magic&quot;},{&quot;name&quot;:&quot;Javelin&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:6,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Piercing&quot;},{&quot;name&quot;:&quot;Javelin - Raging&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:9,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Piercing&quot;},{&quot;name&quot;:&quot;Longbow&quot;,&quot;atkBonus&quot;:5,&quot;dmgBonus&quot;:1,&quot;dmgDie&quot;:8,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:0,&quot;dmgType&quot;:&quot;Piercing&quot;},{&quot;name&quot;:&quot;Unarmed Strike&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:6,&quot;dmgDie&quot;:&quot;1&quot;,&quot;dmgDice&quot;:&quot;1&quot;,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Bludgeoning&quot;},{&quot;name&quot;:&quot;Unarmed Strike - Raging&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:9,&quot;dmgDie&quot;:&quot;1&quot;,&quot;dmgDice&quot;:&quot;1&quot;,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Bludgeoning&quot;}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>defense</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Defense</key>
+          <value class="string">Lightening Resistance</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dmgdie</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dmgDie</key>
+          <value class="string">6</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>oncampaignload</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>onCampaignLoad</key>
+          <value class="string">true</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dmgnumdice</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dmgNumDice</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>elevation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Elevation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC</key>
+          <value class="string">18</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>israging</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>isRaging</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>initiative</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Initiative</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dmgroll</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dmgRoll</key>
+          <value class="string">1d6</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>attackbonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackBonus</key>
+          <value class="string">10</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ragebonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>rageBonus</key>
+          <value class="string">3</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence</key>
+          <value class="string">12</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity</key>
+          <value class="string">13</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>condition</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>critbonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>critBonus</key>
+          <value class="string">3</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dmgbonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dmgBonus</key>
+          <value class="string">8</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>movement</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Movement</key>
+          <value class="string">40 Move / 40 Swim</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+    </store>
+  </propertyMapCI>
+  <macroPropertiesMap>
+    <entry>
+      <int>1</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>256931a8-bd81-4fef-855d-4bdce2a492aa</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>1</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: log.debug (&quot;Entering dndb_getCharJSON:&quot; + json.indent (macro.args, 3))]
+[h: BASE_URL = &quot;https://character-service.dndbeyond.com/character/v3/character/&quot;]
+[h: charId = json.get( macro.args, 0 )]
+
+
+[h: charAt = lastIndexOf (charId, &quot;/&quot;)]
+[h: log.error (&quot;charAt: &quot; + charAt)]
+
+[h, if (charAt &gt; -1): charId = substring (charId, charAt + 1)]
+[h: log.error (&quot;here!&quot;)]
+
+[h: url = BASE_URL + charId]
+[h: log.debug (url)]
+[h: character = REST.get(url)]
+[h: macro.return = character]</command>
+        <label>dndb_getCharJSON</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Fetches the JSON package for the provided character number</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>3</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>08f529f7-5147-4d02-b394-8672ea0ea939</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>3</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>
+[h: setProperty (&quot;libversion&quot;, &quot;0.1&quot;)]
+
+&lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
+[h: macros = getMacros()]
+[h: log.debug (&quot;macros: &quot; + macros)]
+[h, foreach (macroName, macros), code: {
+	[h, if (lastIndexOf (macroName, &quot;dndb_&quot;) &gt; -1), code: {
+		[h: log.debug (&quot;Registering &quot; + macroName)]
+		[h: defineFunction (macroName, macroName + &quot;@this&quot;)]
+	}]
+}]
+
+&lt;pre&gt;[r: json.indent (getInfo (&quot;client&quot;), 3)]&lt;/pre&gt;</command>
+        <label>DNDBeyond Campaign Init</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>4</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>40969371-0df8-4fa6-904b-2e149455bca4</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>4</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the getCharJSON --&gt;
+[h: character = arg(0)]
+
+&lt;!-- Base stats --&gt;
+[h: baseStr = json.path.read (character, &quot;data.stats[0].value&quot;)]
+[h: baseDex = json.path.read (character, &quot;data.stats[1].value&quot;)]
+[h: baseCon = json.path.read (character, &quot;data.stats[2].value&quot;)]
+[h: baseInt = json.path.read (character, &quot;data.stats[3].value&quot;)]
+[h: baseWis = json.path.read (character, &quot;data.stats[4].value&quot;)]
+[h: baseCha = json.path.read (character, &quot;data.stats[5].value&quot;)]
+
+&lt;!-- Bonus stats --&gt;
+[h: bonusStr = replace (json.path.read (character, &quot;data.bonusStats[0].value&quot;), &quot;null&quot;, 0)]
+[h: bonusDex = replace (json.path.read (character, &quot;data.bonusStats[1].value&quot;), &quot;null&quot;, 0)]
+[h: bonusCon = replace (json.path.read (character, &quot;data.bonusStats[2].value&quot;), &quot;null&quot;, 0)]
+[h: bonusInt = replace (json.path.read (character, &quot;data.bonusStats[3].value&quot;), &quot;null&quot;, 0)]
+[h: bonusWis = replace (json.path.read (character, &quot;data.bonusStats[4].value&quot;), &quot;null&quot;, 0)]
+[h: bonusCha = replace (json.path.read (character, &quot;data.bonusStats[5].value&quot;), &quot;null&quot;, 0)]
+
+[h: baseStr = baseStr + bonusStr]
+[h: baseDex = baseDex + bonusDex]
+[h: baseCon = baseCon + bonusCon]
+[h: baseInt = baseInt + bonusInt]
+[h: baseWis = baseWis + bonusWis]
+[h: baseCha = baseCha + bonusCha]
+
+&lt;!-- Ability improvements --&gt;
+[h: strBonuses = json.path.read (character, &quot;.[?(@.subType == &apos;strength-score&apos;)][&apos;fixedValue&apos;]&quot;)]
+[h: dexBonuses = json.path.read (character, &quot;.[?(@.subType == &apos;dexterity-score&apos;)][&apos;fixedValue&apos;]&quot;)]
+[h: conBonuses = json.path.read (character, &quot;.[?(@.subType == &apos;constitution-score&apos;)][&apos;fixedValue&apos;]&quot;)]
+[h: intBonuses = json.path.read (character, &quot;.[?(@.subType == &apos;intelligence-score&apos;)][&apos;fixedValue&apos;]&quot;)]
+[h: wisBonuses = json.path.read (character, &quot;.[?(@.subType == &apos;wisdom-score&apos;)][&apos;fixedValue&apos;]&quot;)]
+[h: chaBonuses = json.path.read (character, &quot;.[?(@.subType == &apos;charisma-score&apos;)][&apos;fixedValue&apos;]&quot;)]
+
+[h, foreach (strBonus, strBonuses): baseStr = baseStr + strBonus]
+[h, foreach (dexBonus, dexBonuses): baseDex = baseDex + dexBonus]
+[h, foreach (conBonus, conBonuses): baseCon = baseCon + conBonus]
+[h, foreach (intBonus, intBonuses): baseInt = baseInt + intBonus]
+[h, foreach (wisBonus, wisBonuses): baseWis = baseWis + wisBonus]
+[h, foreach (chaBonus, chaBonuses): baseCha = baseCha + chaBonus]
+
+&lt;!-- Get Override stats and replace base w/ those. Apply only non-zero values --&gt;
+[h: overrideStr = json.path.read (character, &quot;data.overrideStats[0].value&quot;)]
+[h: overrideDex = json.path.read (character, &quot;data.overrideStats[1].value&quot;)]
+[h: overrideCon = json.path.read (character, &quot;data.overrideStats[2].value&quot;)]
+[h: overrideInt = json.path.read (character, &quot;data.overrideStats[3].value&quot;)]
+[h: overrideWis = json.path.read (character, &quot;data.overrideStats[4].value&quot;)]
+[h: overrideCha = json.path.read (character, &quot;data.overrideStats[5].value&quot;)]
+
+[h, if (isNumber (overrideStr)): baseStr = overrideStr]
+[h, if (isNumber (overrideDex)): baseDex = overrideDex]
+[h, if (isNumber (overrideCon)): baseCon = overrideCon]
+[h, if (isNumber (overrideInt)): baseInt = overrideInt]
+[h, if (isNumber (overrideWis)): baseWis = overrideWis]
+[h, if (isNumber (overrideCha)): baseCha = overrideCha]
+
+[h: attributes = json.set(&quot;&quot;, &quot;str&quot;, baseStr,
+							&quot;dex&quot;, baseDex,
+							&quot;con&quot;, baseCon,
+							&quot;int&quot;, baseInt,
+							&quot;wis&quot;, baseWis,
+							&quot;cha&quot;, baseCha)]
+
+[h: macro.return = attributes]</command>
+        <label>dndb_getAttributes</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>5</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>3ab6fb35-a842-4820-a709-e1df5bdfa518</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>5</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: c= &quot;&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;&quot;]
+[h: c= &quot;&lt;!-- responsibility of calling dndb_getCharJSON --&gt;&quot;]
+[h: character = arg(0)]
+
+[h: c= &quot;&lt;!-- Just an abstraction method. No real work currently done --&gt;&quot;]
+[h: classArry = json.path.read (character, &quot;data.classes&quot;)]
+
+[h: macro.return = classArry]</command>
+        <label>dndb_getClassesData</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>6</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>e4497a45-8fa9-4951-9d7d-8f2421e08b3d</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>6</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
+&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
+[h: toon = arg(0)]
+
+&lt;!-- AttackJSON constants --&gt;
+[h: ATTACK_JSON = &quot;attackJSON&quot;]
+[h: JSON_NAME = &quot;name&quot;]
+[h: ATK_BONUS = &quot;atkBonus&quot;]
+[h: DMG_BONUS = &quot;dmgBonus&quot;]
+[h: DMG_DIE = &quot;dmgDie&quot;]
+[h: DMG_DICE = &quot;dmgDice&quot;]
+
+&lt;!-- Crit bonus dice is gonna be dodgey... Use Bode to see if theres a common json path--&gt;
+[h: CRIT_BONUS_DICE = &quot;critBonusDice&quot;]
+[h: DMG_TYPE = &quot;dmgType&quot;]
+[h: DMG_BONUS_EXPR = &quot;dmgBonusExpr&quot;]
+
+[h: attributes = dndb_getAttributes (toon)]
+[h: proficiencyBonus = dndb_getProficiencyBonus (toon)]
+[h: weapons = dndb_getWeapons (toon)]
+[h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
+&lt;!-- default to getting equipped weapons. Maybe we&apos;ll add an option later for full list.
+&lt;!-- Fuck that, make getWeapons do it
+&lt;!-- Defer attack and damage calculations to other macros. They need the work --&gt;
+
+&lt;!-- get Rage feature --&gt;
+[h: rageBonus = 0]
+[h: ragefeatures = json.path.read (toon, &quot;data.classes..[?(@.definition.name == &apos;Rage&apos;)][&apos;levelScale&apos;]&quot;)]
+[h, if (json.length (rageFeatures) &gt; 0): rageBonus = json.get (json.get (rageFeatures, 0), &quot;fixedValue&quot;)]
+
+[h: attackJson = &quot;&quot;]
+[h, foreach (weapon, weapons), code: {
+	&lt;!-- does not include normal critical dice --&gt;
+	[h: critBonusDice = dndb_getCriticalBonusDice (toon, weapon)]
+	[h: weaponDmgBonus = dndb_getDamageModifierForWeapon (toon, weapon)]
+	[h: weaponAtkBonus = dndb_getAttackModifierForWeapon (toon, weapon)]
+	[h: critBonus = dndb_getCriticalBonusDice (toon, weapon)]
+	[h: name = json.get (weapon, &quot;name&quot;)]
+	[h: attackJsonObj = json.set (&quot;&quot;, JSON_NAME, name,
+			ATK_BONUS, weaponAtkBonus,
+			DMG_BONUS, weaponDmgBonus,
+			DMG_DIE, json.get (weapon, &quot;dmgDie&quot;),
+			DMG_DICE, json.get (weapon, &quot;dmgDice&quot;),
+			CRIT_BONUS_DICE, critBonus,
+			DMG_TYPE, json.get (weapon, &quot;dmgType&quot;))]
+	[h: attackJson = json.append (attackJson, attackJsonObj)]
+	&lt;!-- Ragable? Make a rage version --&gt;
+	[h, if (rageBonus &gt; 0 &amp;&amp; json.get (weapon, &quot;attackType&quot;) == &quot;Melee&quot;), code: {
+		[h: attackJsonObj = json.set (attackJsonObj, 
+			JSON_NAME, name + &quot; - Raging&quot;,
+			DMG_BONUS, weaponDmgBonus + rageBonus)]
+		[h: attackJson = json.append (attackJson, attackJsonObj)]
+	}]
+}]
+
+[h: macro.return = attackJson]</command>
+        <label>dndb_getAttackJSON</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone.
+
+This will pair with a separate class of macros centered around the property &apos;attackJSON&apos;. It will build this property from the class, inventory, and modifier information from the character JSON.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>7</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>a560ec71-80c7-46c9-9d27-1ec75bc920f5</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>7</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
+&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
+[h: character = arg(0)]
+
+[h: classArry = json.path.read (character, &quot;data.classes&quot;)]
+&lt;!--Subtract by one for div operation --&gt;
+[h: totalClassLevel = -1]
+[h, foreach (classDef, classArry), code: {
+	[h: totalClassLevel = totalClassLevel + json.get (classDef, &quot;level&quot;)]
+}]
+[h: profBase = round(math.floor(totalClassLevel / 4))]
+&lt;!-- add one, viola --&gt;
+[h: proficiency = profBase + 2]
+[r: proficiency]
+[h: macro.return = proficiency]</command>
+        <label>dndb_getProficiencyBonus</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone. Returns the proficiency bonus based on class level.</toolTip>
+        <displayHotKey>false</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>8</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>35d57234-9ba1-4048-857f-df3b4b3f65f7</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>8</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = json.get( macro.args, 0 )]
+
+[h, if (json.length (macro.args) &gt; 1): allWeapons = json.get( macro.args, 1 ); allWeapons = &quot;false&quot;]
+
+&lt;!-- Look for filterType:Weapon --&gt;
+[h: weaponArry = json.path.read (toon, &quot;data.inventory..[?(@.definition.filterType == &apos;Weapon&apos;)]&quot;)]
+[h: basicArry = &quot;[]&quot;]
+
+&lt;!-- Get proficencies --&gt;
+[h: proficiencies = json.path.read (toon, &quot;data.modifiers..[?(@.type == &apos;proficiency&apos;)]&quot;)]
+&lt;!-- Get proficencies, just the two --&gt;
+[h: allProficiencies = json.path.read (toon, &quot;data.modifiers..[?(@.type == &apos;proficiency&apos;)]&quot;)]
+[h: weaponProficiencies = json.path.read (allProficiencies,
+		&quot;.[?(@.subType in [&apos;simple-weapons&apos;, &apos;martial-weapons&apos;])]&quot;)]
+
+[h, foreach (weaponRaw, weaponArry), code: {
+	[h: equipped = json.path.read (weaponRaw, &quot;equipped&quot;)]
+	[h: attackType = json.path.read (weaponRaw, &quot;definition.attackType&quot;)]
+	[h: grantedModifiers = json.path.read (weaponRaw, &quot;definition.grantedModifiers&quot;)]
+	[h: dmgType = json.path.read (weaponRaw, &quot;definition.damageType&quot;)]
+	&lt;!-- cant imagine there&apos;s a weapon that grants multiple bonuses, but this is
+		an array, so treat it like one even though it&apos;s just one.--&gt;
+	[h: bonus = 0]
+	[h, foreach (modifier, grantedModifiers), code: {
+		[h: bonusType = json.get (modifier, &quot;type&quot;)]
+		[h: weaponBonus = json.get (modifier, &quot;value&quot;)]
+		[h, if (equals (bonusType, &quot;bonus&quot;) &gt; 0): bonus = bonus + weaponBonus; bonus = bonus]
+		[h: dmgType = dmgType + &quot;, &quot; + json.get (modifier, &quot;subType&quot;)]
+	}]
+
+	&lt;!-- correlate weapon categoryId w/ weaponProficiency entityId --&gt;
+	[h: proficiencyId = json.path.read (weaponRaw, &quot;definition.categoryId&quot;)]
+	[h: proficientArry = json.path.read (weaponProficiencies, 
+		&quot;.[?(@.entityId == &apos;&quot; + proficiencyId + &quot;&apos;)]&quot;)]
+	[h, if (attackType == &quot;1&quot;): attackTypeLabel = &quot;Melee&quot;; attackTypeLabel = &quot;Ranged&quot;]
+           
+	[h: basicWeapon = json.set (&quot;&quot;, &quot;name&quot;, json.path.read (weaponRaw, &quot;definition.name&quot;),
+		&quot;attackType&quot;, attackTypeLabel,
+		&quot;dmgDie&quot;, json.path.read (weaponRaw, &quot;definition.damage.diceValue&quot;),
+		&quot;dmgDice&quot;, json.path.read (weaponRaw, &quot;definition.damage.diceCount&quot;),
+		&quot;dmgType&quot;, dmgType,
+		&quot;bonus&quot;, bonus,
+		&quot;range&quot;, json.path.read (weaponRaw, &quot;definition.range&quot;),
+		&quot;longRange&quot;, json.path.read (weaponRaw, &quot;definition.longRange&quot;),
+		&quot;type&quot;, json.path.read (weaponRaw, &quot;definition.type&quot;),
+		&quot;properties&quot;, json.path.read (weaponRaw, &quot;definition.properties&quot;),
+		&quot;proficient&quot;, json.length (proficientArry),
+		&quot;isMonk&quot;, json.path.read (weaponRaw, &quot;definition.isMonkWeapon&quot;)
+	)]
+	&lt;!-- bleh, move this to the end so I can save a nested level of execution --&gt;
+	[h, if (allWeapons == &quot;true&quot; || equipped == &quot;true&quot;), code: {
+		[h: basicArry = json.append (basicArry, basicWeapon)]
+	}; { 0 }]
+}]
+[h: macro.return = basicArry]</command>
+        <label>dndb_getWeapons</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone. Returns a simplifed json object of the weapons. Optional boolean flag may be passed to direct if all or only equipped weapons are provided. Default behavior returns only equipped weapons.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>9</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>1492207d-1589-4c19-bf57-c826531ec8c2</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>9</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
+&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
+&lt;!-- Requires two parameters: toon json and weapon object --&gt;
+[h: toon = arg(0)]
+[h: weapon = arg (1)]
+
+[h: bonusType = &quot;damage&quot;]
+
+&lt;!-- Calculates attack bonus, including that which comes from the toon&apos;s attributes --&gt;
+[h: attributes = dndb_getAttributes (toon)]
+[h: strBonus = round (math.floor((json.get (attributes, &quot;str&quot;) - 10 ) / 2))]
+[h: dexBonus = round (math.floor((json.get (attributes, &quot;dex&quot;) - 10 ) / 2))]
+[h: finesseBonus = max (strBonus, dexBonus)]
+
+[h, if (json.get (weapon, &quot;attackType&quot;) == &quot;Melee&quot;): abilityBonus = strBonus; abilityBonus = dexBonus]
+[h: finesse = json.path.read (weapon, &quot;properties.[?(@.name == &apos;Finesse&apos;)]&quot;)]
+[h, if (json.length (finesse) &gt; 0): abilityBonus = finesseBonus]
+
+[h: totalBonus = abilityBonus]
+
+[h: classModifiers = json.path.read (toon, &quot;data.modifiers.class..[?(@.type == &apos;&quot; + bonusType + &quot;&apos;)]&quot;)]
+
+&lt;!-- WIP: we only know of some class abilities to parse --&gt;
+[r, foreach (classModifier, classModifiers), code : {
+	&lt;!-- Assume qualified and eliminate from there --&gt;
+
+	[h: qualified = 1]
+	[h: bonus = json.get (classModifier, &quot;value&quot;)]
+	[h: qualified = dndb_isWeaponModifierApplicable (classModifier, weapon)]
+
+	[h, if (qualified &gt; 0): totalBonus = totalBonus + bonus]
+}]
+
+&lt;!-- no qualification checks on Race, yet --&gt;
+[h: raceDamageModifiers = json.path.read (toon, &quot;data.modifiers.race..[?(@.type == &apos;&quot; + bonusType + &quot;&apos;)]&quot;)]
+[h, foreach (raceDamageModifier, raceDamageModifiers), code: {
+	[h: bonus = json.get (raceDamageModifier, &quot;value&quot;]
+	[h: totalDamageBonus = totalDamageBonus + bonus]
+}]
+
+&lt;!-- apply item bonuses only if equipped --&gt;
+[h: itemModifiers = json.path.read (toon, &quot;data.modifiers.item..[?(@.type == &apos;&quot; + bonusType + &quot;&apos;)]&quot;)]
+&lt;!-- for ech itemDamageMod, get the componentId. Find the item in inventory with the matching id and check equipped --&gt;
+[h, foreach (itemModifier, itemModifiers), code: {
+	&lt;!-- itemModifier may have attack specific sub-types --&gt;
+	[h: qualified = dndb_isWeaponModifierApplicable (itemModifier, weapon)]
+	[h: componentId = json.get (itemModifier, &quot;componentId&quot;)]
+	[h: items = json.path.read (toon, &quot;data.inventory..[?(@.definition.id == &apos;&quot; + componentId + &quot;&apos;)]&quot;)]
+	&lt;!-- should only be one --&gt;
+	[h: item = json.get (items, 0)]
+	[h: bonus = json.get (itemModifier, &quot;value&quot;)]
+	[h: equipped = json.get (item, &quot;equipped&quot;)]
+	[h, if (equipped != &quot;true&quot;): qualified = 0]
+
+	[h, if (qualified &gt; 0): totalBonus = totalBonus + bonus]
+}]
+
+&lt;!-- finally, bonuses on the weapon itself --&gt;
+[h: bonus = json.get (weapon, &quot;bonus&quot;)]
+[h: totalBonus = totalBonus + bonus]
+
+[h: macro.return = totalBonus]
+</command>
+        <label>dndb_getDamageModifierForWeapon</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>10</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>72e25977-145e-4de1-bf1d-04ba30e6b34d</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>10</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[r, macro (&quot;DNDBeyond Campaign Init@this&quot;): &quot;&quot;]</command>
+        <label>onCampaignLoad</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>11</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>b764ff0a-949b-48b7-a720-d33cba7b26db</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>11</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
+&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
+&lt;!-- Requires two parameters: toon json and weapon object --&gt;
+[h: toon = arg(0)]
+[h: weapon = arg (1)]
+
+[h: log.debug (&quot;dndb_getAttackModifierForWeapon&quot;)]
+
+&lt;!-- Calculates attack bonus, including that which comes from the toon&apos;s attributes --&gt;
+[h: attributes = dndb_getAttributes (toon)]
+[h: strBonus = round (math.floor((json.get (attributes, &quot;str&quot;) - 10 ) / 2))]
+[h: dexBonus = round (math.floor((json.get (attributes, &quot;dex&quot;) - 10 ) / 2))]
+[h: finesseBonus = max (strBonus, dexBonus)]
+[h: log.debug (&quot;strBonus: &quot; + strBonus + &quot; - dexBonus: &quot; + dexBonus + &quot; - finesseBonus&quot; + finesseBonus)]
+
+[h, if (json.get (weapon, &quot;attackType&quot;) == &quot;Melee&quot;): abilityBonus = strBonus; abilityBonus = dexBonus]
+[h: finesse = json.path.read (weapon, &quot;properties.[?(@.name == &apos;Finesse&apos;)]&quot;)]
+[h, if (json.length (finesse) &gt; 0): abilityBonus = finesseBonus]
+[h: totalAtkBonus = abilityBonus]
+[h: log.debug (&quot;abilityBonus: &quot; + abilityBonus)]
+
+&lt;!-- apply proficiency bonus --&gt;
+[h: proficiencyBonus = dndb_getProficiencyBonus (toon)]
+[h: proficient = json.get (weapon, &quot;proficient&quot;)]
+[h, if (proficient &gt; 0): totalAtkBonus = totalAtkBonus + proficiencyBonus]
+[h: log.debug (&quot;proficiencyBonus: &quot; + proficiencyBonus + &quot; - totalAtkBonus: &quot; + totalAtkBonus)]
+
+[h: classAtkModifiers = json.path.read (toon, &quot;data.modifiers.class..[?(@.type == &apos;bonus&apos;)]&quot;)]
+
+&lt;!-- WIP: we only know of some class abilities to parse --&gt;
+[h, foreach (classAtkModifier, classAtkModifiers), code : {
+	[h: qualified = dndb_isWeaponModifierApplicable (classAtkModifier, weapon)]
+	[h: log.debug (json.indent (classAtkModifier, 3))]
+	[h: log.debug (&quot;qualified: &quot; + qualified)]
+	[h, if (qualified &gt; 0): totalAtkBonus = totalAtkBonus + bonus]
+}]
+
+[h: log.debug (&quot;totalAtkBonus after class: &quot; + totalAtkBonus)]
+&lt;!-- no Race bonus to apply, yet. need a use case --&gt;
+
+
+&lt;!-- apply item bonuses only if equipped --&gt;
+[h: itemAtkModifiers = json.path.read (toon, &quot;data.modifiers.item..[?(@.type == &apos;bonus&apos;)]&quot;)]
+&lt;!-- for ech itemDamageMod, get the componentId. Find the item in inventory with the matching id and check equipped --&gt;
+[h, foreach (itemAtkModifier, itemAtkModifiers), code: {
+	[h: qualified = dndb_isWeaponModifierApplicable (itemAtkModifier, weapon)]
+	[h: log.debug (json.indent (itemAtkModifier, 3))]
+	[h: log.debug (&quot;qualified: &quot; + qualified)]
+	
+	[h: componentId = json.get (itemAtkModifier, &quot;componentId&quot;)]
+	[h: items = json.path.read (toon, &quot;data.inventory..[?(@.definition.id == &apos;&quot; + componentId + &quot;&apos;)]&quot;)]
+	&lt;!-- should only be one --&gt;
+	[h: item = json.get (items, 0)]
+	[h: bonus = json.get (itemAtkModifier, &quot;value&quot;)]
+	[h: equipped = json.get (item, &quot;equipped&quot;)]
+	[h, if (equipped != &quot;true&quot;): qualified = 0]
+	[h: log.debug (&quot;Qualified after equipped: &quot; + qualified]
+	[h, if (qualified &gt; 0): totalAtkBonus = totalAtkBonus + bonus]
+}]
+
+[h: log.debug (&quot;totalAtkBonus after item: &quot; + totalAtkBonus)]
+
+&lt;!-- finally, bonuses on the weapon itself. No check for equipped here. --&gt;
+[h: bonus = json.get (weapon, &quot;bonus&quot;)]
+[h: totalAtkBonus = totalAtkBonus + bonus]
+[h: log.debug (&quot;totalAtkBonus after weapon bonus: &quot; + totalAtkBonus)]
+
+[h: macro.return = totalAtkBonus]</command>
+        <label>dndb_getAttackModifierForWeapon</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>12</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>390215cf-c39b-4d95-aa6f-e0e7cb5722ab</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>12</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Primarily via the subType attribute of the modifier, determine if the weapon applies. --&gt;
+
+[h: modifier = arg(0)]
+[h: weapon = arg(1)]
+&lt;!-- todo - add a third optional argument to change from an optimistic behavior to a pessimistic --&gt;
+
+[h: qualified = 1]
+
+[h: subType = json.get (modifier, &quot;subType&quot;)]
+
+&lt;!-- if subType is blank, most of our work is pointless --&gt;
+[h, if (json.length (subType) == 0): subType = &quot;&quot;]
+
+[h: attackType = json.get (weapon, &quot;attackType&quot;)]
+
+&lt;!-- subType must have &quot;weapon-attack&quot; or weapon-ish attack --&gt;
+[h: weaponAttacks = lastIndexOf (subType, &quot;weapon-attack&quot;)]
+[h: weaponAttacks = weaponAttacks + lastIndexOf (subType, &quot;melee-attack&quot;)]
+[h: weaponAttacks = weaponAttacks + lastIndexOf (subType, &quot;range-attack&quot;)]
+[h, if (weaponAttacks &lt; 0): qualified = 0]
+
+&lt;!-- Ranged required? --&gt;
+[h: isRangedModifier = lastIndexOf (subType, &quot;range&quot;)]
+[h: isMeleeModifier = lastIndexOf (subType, &quot;melee&quot;)]
+[h, if (isRangedModifier &gt; -1 &amp;&amp; equals (attackType, &quot;Melee&quot;)): qualified = 0]
+[h, if (isMeleeModifier &gt; -1 &amp;&amp; equals (attackType, &quot;Ranged&quot;)): qualified = 0]
+
+&lt;!-- one hand vs two hand restriction --&gt;
+[h: twoHandedProperty = json.path.read (weapon, &quot;properties..[?(@.name == &apos;Two-Handed&apos;)]&quot;)]
+[h: oneHandedRestriction = lastIndexOf (subType, &quot;one-handed&quot;)]
+[h, if (oneHandedRestriction &gt; -1 &amp;&amp; json.length (twoHandedProperty) &gt; 0): qualified = 0]
+
+
+
+[h: macro.return = qualified]</command>
+        <label>dndb_isWeaponModifierApplicable</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip>Sub-parsing utility method that tests if a weapon applies to a given condition.
+
+[h: modifier = arg(0)]
+[h: weapon = arg(1)]</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>13</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>61116320-65bf-4ded-b986-cf857c0189eb</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>13</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg(0)]
+
+&lt;!-- Build it like our simplified weapon json --&gt;
+&lt;!-- Do I need the toon? Maybe there are class mods that apply a damage die. --&gt;
+[h: unarmedStrike = json.set (&quot;&quot;,
+	&quot;name&quot;, &quot;Unarmed Strike&quot;,
+	&quot;attackType&quot;, &quot;Melee&quot;,
+	&quot;dmgDie&quot;, &quot;1&quot;,
+	&quot;dmgDice&quot;, &quot;1&quot;,
+	&quot;dmgType&quot;, &quot;Bludgeoning&quot;,
+	&quot;bonus&quot;, &quot;0&quot;,
+	&quot;range&quot;, &quot;5&quot;,
+	&quot;longRange&quot;, &quot;5&quot;,
+	&quot;type&quot;, &quot;Unarmed&quot;,
+	&quot;properties&quot;, &quot;[]&quot;,
+	&quot;proficient&quot;, &quot;1&quot;,
+	&quot;isMonk&quot;, &quot;true&quot;)]
+
+[h: macro.return = unarmedStrike]</command>
+        <label>dndb_getUnarmedStrike</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>arg(0): toon -although currently unused</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>14</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>339a075a-eed8-43c2-998c-bf402ccbe972</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>14</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg(0)]
+[h: weapon = arg(1)]
+
+&lt;!-- only way we know how to do this is by looking for known features --&gt;
+[h: bonusCritDice = 0]
+
+&lt;!-- Savage Attacks --&gt;
+[h: savageAttackFeatureArry = json.path.read (toon, &quot;data.race..[?(@.definition.name == &apos;Savage Attacks&apos;)]&quot;)]
+[h, if (json.length (savageAttackFeatureArry) &gt; 0 &amp;&amp; json.get(weapon, &quot;attackType&quot;) == &quot;Melee&quot;): bonusCritDice = bonusCritDice + 1]
+
+&lt;!-- Brutal Critical --&gt;
+&lt;!-- Get the barbarian class --&gt;
+[h: barbarianClassLevelArry = json.path.read (toon, &quot;data.classes..[?(@.definition.name == &apos;Barbarian&apos;)][&apos;level&apos;]&quot;)]
+
+[h, if (json.length (barbarianClassLevelArry) &gt; 0): barbarianClassLevel = json.get (barbarianClassLevelArry, 0)]
+
+[h: brutalCrit = 0]
+[h: log.debug (&quot;barbarianClassLevel [raw]: &quot; + barbarianClassLevel)]
+[h, if (isNumber (barbarianClassLevel)): barbarianClassLevel = number (barbarianClassLevel); barbarianClassLevel = 0]
+[h: log.debug (&quot;barbarianClassLevel [number]: &quot; + barbarianClassLevel)]
+[h, if (barbarianClassLevel &gt;= 9): brutalCrit = 1]
+[h, if (barbarianClassLevel &gt;= 13): brutalCrit = 2]
+[h, if (barbarianClassLevel &gt;= 17): brutalCrit = 3]
+[h, if (json.get (weapon, &quot;attackType&quot;) == &quot;Melee&quot;): bonusCritDice = bonusCritDice + brutalCrit]
+
+
+[h: macro.return = bonusCritDice]</command>
+        <label>dndb_getCriticalBonusDice</label>
+        <group>JSON Util</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns only the extra dice granted on a critical hit for the given weapon. Does not include the normal critical dice.
+arg(0) - Toon
+arg(1) - Weapon</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>
