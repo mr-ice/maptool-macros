@@ -1,0 +1,55 @@
+#!/bin/bash
+# mtmacro is a single macro export
+# mtmacset is a macro set export
+# rptok is a token export
+#
+# Given an argument -- either a content.xml or a directory with a
+# content.xml file -- determine what kind of file to make and make it
+#
+# params:
+#   <dir>/content.xml or <dir>
+#
+# produces:
+#   <dirname>.<type>
+#
+
+arg=$1
+
+output() {
+    local template="$1"
+    shift
+    printf "$template" "$@"
+}
+
+die() {
+   output "$@"
+   exit 1
+}
+
+usage() {
+    echo "Usage: $0 <dir>
+    or
+    <dir>/content.xml"
+}
+
+if [[ -z $arg ]]; then
+    die $(usage)
+fi
+
+if [[ -d $arg && -e $arg/content.xml ]]; then
+    content_file="$arg/content.xml"
+    content_dir="$arg"
+elif [[ -f $arg && -e $arg && ${arg%%content.xml} != $arg ]]; then
+    content_file="$arg"
+    content_dir="$(dirname $arg)"
+else
+    die "did you give me crap? cause I need a content.xml and there ain't one at $arg"
+fi
+
+if [[ ! -e $content_file ]]; then
+    die $(usage)
+fi
+
+TYPE=$(head -1 "$content_file" | tee >(grep -q Token && echo 'rptok' ) >(grep -q Macro && echo 'mtmacro') >(grep -q list && echo 'mtmacset') >/dev/null)
+
+make $content_dir.$TYPE
