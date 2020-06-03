@@ -3,7 +3,7 @@
 # rptok is a token export
 
 ifdef OS
-	ZIP = jar -cvfM
+    ZIP = jar -cvfM
 else
     ZIP = zip -j -r
 endif
@@ -11,3 +11,6 @@ endif
 %.mtmacro %.mtmacset %.rptok: %
 	cd $< && \
 	$(ZIP) ../$@ .
+
+clean:
+	rm -f *.mtmacro *.mtmacset *.rptok
