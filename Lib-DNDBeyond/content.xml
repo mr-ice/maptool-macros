@@ -184,14 +184,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>attackjson</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>attackJSON</key>
-          <value class="string">[{&quot;name&quot;:&quot;Scimitar of Speed&quot;,&quot;atkBonus&quot;:10,&quot;dmgBonus&quot;:8,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Slashing, magic&quot;},{&quot;name&quot;:&quot;Scimitar of Speed - Raging&quot;,&quot;atkBonus&quot;:10,&quot;dmgBonus&quot;:11,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Slashing, magic&quot;},{&quot;name&quot;:&quot;Javelin&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:6,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Piercing&quot;},{&quot;name&quot;:&quot;Javelin - Raging&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:9,&quot;dmgDie&quot;:6,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Piercing&quot;},{&quot;name&quot;:&quot;Longbow&quot;,&quot;atkBonus&quot;:5,&quot;dmgBonus&quot;:1,&quot;dmgDie&quot;:8,&quot;dmgDice&quot;:1,&quot;critBonusDice&quot;:0,&quot;dmgType&quot;:&quot;Piercing&quot;},{&quot;name&quot;:&quot;Unarmed Strike&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:6,&quot;dmgDie&quot;:&quot;1&quot;,&quot;dmgDice&quot;:&quot;1&quot;,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Bludgeoning&quot;},{&quot;name&quot;:&quot;Unarmed Strike - Raging&quot;,&quot;atkBonus&quot;:8,&quot;dmgBonus&quot;:9,&quot;dmgDie&quot;:&quot;1&quot;,&quot;dmgDice&quot;:&quot;1&quot;,&quot;critBonusDice&quot;:2,&quot;dmgType&quot;:&quot;Bludgeoning&quot;}]</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>defense</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Defense</key>
