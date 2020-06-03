@@ -8,6 +8,9 @@ else
     ZIP = zip -j -r
 endif
 
+%/.mtmacro %/.mtmacset %/.rptok: %
+	echo "strange slashes in $@, aborting"
+
 %.mtmacro %.mtmacset %.rptok: %
 	cd $< && \
 	$(ZIP) ../$@ .
