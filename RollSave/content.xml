@@ -1,0 +1,168 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>d4e152c0-df42-4f3b-8834-b7206fa9d9c1</macroUUID>
+  <saveLocation>GlobalPanel</saveLocation>
+  <index>4</index>
+  <colorKey>teal</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Constants for a little initial help --&gt;
+[h,CODE:
+{
+    [BLESSED_DIE = 4]
+    [critstrbegin = &quot;&lt;font color=&apos;red&apos;&gt;&lt;b&gt;CRITICAL! &quot;]
+    [critstrend = &quot;&lt;/b&gt;&lt;/font&gt;&quot;]
+    [blessstrbegin = &quot;&lt;font color=&apos;green&apos;&gt; + Blessed &quot;]
+    [blessstrend = &quot;&lt;/font&gt;&quot;]
+    [missstrbegin = &quot;&lt;b&gt;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;NAT &quot;]
+    [missstrend = &quot;&lt;/i&gt;&lt;/font&gt;&quot;]
+}]
+
+&lt;!-- Prompt user --&gt;
+[h: abort(input(&quot;saveName|Str,Con,Dex,Int,Wis,Cha,Death|Save|list|value=string&quot;))]
+
+[h,if(saveName == &quot;Str&quot;),CODE:
+{
+    [propertyName=&quot;strength&quot;]
+    [attributeName=&quot;Strength&quot;]
+};
+{
+    [&quot;Not Str&quot;]
+}]
+[h,if(saveName == &quot;Dex&quot;),CODE:
+{
+    [propertyName=&quot;dexterity&quot;]
+    [attributeName=&quot;Dexterity&quot;]
+};
+{
+    [&quot;Not Dex&quot;]
+}]
+[h,if(saveName == &quot;Con&quot;),CODE:
+{
+    [propertyName=&quot;constitution&quot;]
+    [attributeName=&quot;Constitution&quot;]
+};
+{
+    [&quot;Not Con&quot;]
+}]
+[h,if(saveName == &quot;Int&quot;),CODE:
+{
+    [propertyName=&quot;intelligence&quot;]
+    [attributeName=&quot;Intelligence&quot;]
+};
+{
+    [&quot;Not Int&quot;]
+}]
+[h,if(saveName == &quot;Wis&quot;),CODE:
+{
+    [propertyName=&quot;wisdom&quot;]
+    [attributeName=&quot;Wisdom&quot;]
+};
+{
+    [&quot;Not Wis&quot;]
+}]
+[h,if(saveName == &quot;Cha&quot;),CODE:
+{
+    [propertyName=&quot;charisma&quot;]
+    [attributeName=&quot;Charisma&quot;]
+};
+{
+    [&quot;Not Cha&quot;]
+}]
+[h,if(saveName == &quot;Death&quot;),CODE:
+{
+	[propertyName=&quot;death&quot;]
+	[attributeName=&quot;&lt;font color=&apos;red&apos;&gt;&lt;b&gt;Death&lt;/b&gt;&lt;/font&gt;&quot;]
+};
+{
+	[&quot;Not Death&quot;]
+}]
+&lt;!-- fetch values from properties --&gt;
+[h,CODE:
+{
+    [saveBonusName = &quot;save&quot; + attributeName]
+    [if (isPropertyEmpty(propertyName)): attrBonus = 0; attrBonus = getProperty(propertyName)]
+    [if (isPropertyEmpty(saveBonusName)): saveBonus = attrBonus; saveBonus = getProperty(propertyName)]
+    [if (isPropertyEmpty(&quot;isBlessed&quot;)): isBlessed = 0; isBlessed = getProperty(&quot;isBlessed&quot;)]
+    [if (isPropertyEmpty(&quot;blessDie&quot;)): blessDie=BLESSED_DIE; blessDie = getProperty(&quot;blessDie&quot;)]
+
+}]
+
+&lt;!-- Prompt user --&gt;
+[h: abort(input(
+    &quot;attrBonus|&quot; + attrBonus + &quot;|+ for &quot; + attributeName + &quot; attribute|text&quot;,
+    &quot;saveBonus|&quot; + saveBonus + &quot;|+ for &quot; + attributeName + &quot; saves|text&quot;,
+    &quot;blessDie|&quot; + blessDie + &quot;|Bless Bonus Die|text&quot;,
+    &quot;isBlessed|&quot; + isBlessed + &quot;|Blessed|check&quot;,
+    &quot;advantageDisadvantage|None,Advantage,Disadvantage|Advantage/Disadvantage|list|value=string&quot;))]
+
+&lt;!-- Preserve the interesting choices so they default for the next prompt --&gt;
+[h,CODE:
+{
+    [setProperty(propertyName, attrBonus)]
+    [setProperty(saveBonusName, saveBonus)]
+    [setProperty(&quot;isBlessed&quot;, isBlessed)]
+    [setProperty(&quot;blessDie&quot;, blessDie)]
+}]
+
+&lt;!-- roll d20 twice, figure out if we&apos;re advantaged later --&gt;
+[h,CODE:
+{
+    [roll1 = 1d20]
+    [roll2 = 1d20]
+    [blessRoll = roll(1,blessDie)]
+}]
+[h,if(isBlessed),CODE:
+{
+	[saveBonusStr = saveBonus + blessstrbegin + blessRoll + blessstrend ]
+	[saveBonusActual = saveBonus + blessRoll ]
+};
+{
+	[saveBonusStr = abs(saveBonus)]
+	[saveBonusActual = saveBonus]
+}]
+[h,if(saveBonus &lt; 0): plus = &quot;-&quot; ; plus = &quot;+&quot;]
+
+&lt;b&gt;[r:attributeName] save:&lt;/b&gt; 1d20 [r:plus] [r:saveBonusStr] = [r:roll1] [r:plus] [r:saveBonusStr] = 
+[if(advantageDisadvantage != &quot;None&quot;),CODE:
+{
+	[r:roll1+saveBonus]&lt;br&gt;&lt;b&gt;[r:advantageDisadvantage]&lt;/b&gt; 1d20 [r:plus] [r:saveBonusStr] = [r:roll2] [r:plus] [r:abs(saveBonus)] = [r:roll2+saveBonus]&lt;br&gt;Total &lt;b&gt;
+	[h,if(advantageDisadvantage == &quot;Advantage&quot;),CODE:
+	{
+		[roll = max(roll1,roll2)]
+	};
+	{
+		[roll = min(roll1,roll2)]
+	}]
+	[if(roll == 20),CODE:
+	{
+		[r:critstrbegin]
+		[r:roll + saveBonusActual]
+		[r:critstrend]
+	};
+	{
+		[r:roll + saveBonusActual]
+	}]
+	&lt;/b&gt;
+};{
+	&lt;b&gt;[r:roll1+saveBonusActual]&lt;/b&gt;
+}]</command>
+  <label>Roll</label>
+  <group>Skill/Save</group>
+  <sortby>1</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth></minWidth>
+  <maxWidth></maxWidth>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Requires selected token</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

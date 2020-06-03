@@ -1,0 +1,121 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>a8f63000-923a-47e1-94a9-bcbe942fe3d8</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>1</index>
+  <colorKey>red</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Constants for a little initial help --&gt;
+[h: ATK_BONUS = 10]
+[h: DMG_BONUS = 8]
+[h: RAGE_BONUS = 3]
+[h: DMG_DIE = &quot;6&quot;]
+
+&lt;!-- fetch values from properties --&gt;
+[h: isRage = getProperty(&quot;isRaging&quot;)]
+[h,if (isPropertyEmpty(&quot;attackBonus&quot;)): attackBonus = ATK_BONUS; attackBonus = getProperty(&quot;attackBonus&quot;)]
+[h,if (isPropertyEmpty(&quot;dmgNumDice&quot;)): dmgNumDice = 1; dmgNumDice = getProperty(&quot;dmgNumDice&quot;)]
+[h,if (isPropertyEmpty(&quot;dmgDie&quot;)): dmgDie = DMG_DIE; dmgDie = getProperty(&quot;dmgDie&quot;)]
+[h,if (isPropertyEmpty(&quot;dmgBonus&quot;)): dmgBonus = DMG_BONUS; dmgBonus = getProperty(&quot;dmgBonus&quot;)]
+[h,if (isPropertyEmpty(&quot;rageBonus&quot;)): rageBonus = RAGE_BONUS; rageBonus = getProperty(&quot;rageBonus&quot;)]
+[h,if (isPropertyEmpty(&quot;critBonus&quot;)): critBonus = 1; critBonus = getProperty(&quot;critBonus&quot;)]
+[h,if (isPropertyEmpty(&quot;isBlessed&quot;)): isBlessed = 0; isBlessed = getProperty(&quot;isBlessed&quot;)]
+[h,if (isPropertyEmpty(&quot;blessBonus&quot;)): blessBonus=4; blessBonus = getProperty(&quot;blessBonus&quot;)]
+
+&lt;!-- Prompt user --&gt;
+[h: abort(input(&quot;attackBonus|&quot; + attackBonus + &quot;|Attack bonus|text&quot;,
+    &quot;dmgNumDice|&quot; + dmgNumDice + &quot;|Number of Damage Dice|text&quot;,
+    &quot;dmgDie|&quot; + dmgDie + &quot;|Damage Die|text&quot;,
+    &quot;dmgBonus|&quot; + dmgBonus + &quot;|Damage bonus|text&quot;,
+    &quot;critBonus|&quot; + critBonus + &quot;|Number of extra crit dice|text&quot;,
+    &quot;rageBonus|&quot; + rageBonus + &quot;|Rage bonus|text&quot;,
+	&quot;isRage|&quot; + isRage + &quot;|Raging|check&quot;,
+	&quot;blessBonus|&quot; + blessBonus + &quot;|Bless Bonus Die|text&quot;,
+	&quot;isBlessed|&quot; + isBlessed + &quot;|Blessed|check&quot;,
+	&quot;advantageDisadvantage|None,Advantage,Disadvantage|Advantage/Disadvantage|list|value=string&quot;,
+	&quot;damageType|Bludgeoning,Piercing,Slashing|Damage Type|list|value=string&quot;))]
+
+&lt;!-- Preserve the interesting choices so they default for the next prompt --&gt;
+[h: setProperty(&quot;isRaging&quot;, isRage)]
+[h: setProperty(&quot;attackBonus&quot;, attackBonus)]
+[h: setProperty(&quot;dmgBonus&quot;, dmgBonus)]
+[h: setProperty(&quot;rageBonus&quot;, rageBonus)]
+[h: setProperty(&quot;dmgNumDice&quot;, dmgNumDice)]
+[h: setProperty(&quot;dmgDie&quot;, dmgDie)]
+[h: setProperty(&quot;critBonus&quot;, critBonus)]
+[h: setProperty(&quot;isBlessed&quot;, isBlessed)]
+[h: setProperty(&quot;blessBonus&quot;, blessBonus)]
+[h: setProperty(&quot;damageType&quot;, damageType)]
+
+&lt;!-- Roll attack dice (always roll two, determine if advantage or disadvantage applies after --&gt;
+[h: attack = 1d20]
+[h: attack2 = 1d20]
+
+&lt;!-- Roll damage, apply rage --&gt;
+
+[h,if(isRage &gt; 0): dmgBonus = dmgBonus + rageBonus]
+
+&lt;!-- Roll Blessed, apply to total bonus --&gt;
+
+[h,if(isBlessed &gt; 0): blessAttackBonus = roll( 1, blessBonus )]
+
+&lt;!-- Calculate the correct dmg roll --&gt;
+[h: realAttack = attack]
+[h,if (advantageDisadvantage == &quot;Advantage&quot;): realAttack = max(attack, attack2)]
+[h,if (advantageDisadvantage == &quot;Disadvantage&quot;): realAttack = min(attack, attack2)]
+
+&lt;!-- Apply critical --&gt;
+[h,if (realAttack == 20): dmgNumDice = dmgNumDice + critBonus]
+&lt;!-- Roll damage --&gt;
+[h: dmg = roll(dmgNumDice,dmgDie) + dmgBonus]
+&lt;!-- Build the message --&gt;
+[h: atkString = &quot;&lt;b&gt;&quot;]
+[h: atk2String = &quot;&lt;b&gt;&quot;]
+[h,if(attack == 20): atkString = atkString + &quot;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; &quot;]
+[h,if(attack2 == 20): atk2String = atk2String + &quot;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; &quot;]
+[h: attack = attack + attackBonus]
+[h: attack2 = attack2 + attackBonus]
+[h,if(isBlessed &gt; 0),CODE:
+{
+	[h:attack = attack + blessAttackBonus]
+	[h:atkString = atkString + &quot;&lt;font color=&apos;green&apos;&gt;Blessed &lt;&lt;d&quot;+blessBonus+&quot;=&quot;+blessAttackBonus+&quot;&lt;/font&gt; &quot;]
+	[h:atk2String = atk2String + &quot;&lt;font color=&apos;green&apos;&gt;Blessed &lt;&lt;d&quot;+blessBonus+&quot;=&quot;+blessAttackBonus+&quot;&lt;/font&gt; &quot;]
+};
+{
+    This may be the fallthrough (false isBlessed)
+}]
+[h: realAttack = realAttack + attackBonus]
+[h,if(advantageDisadvantage != &quot;None&quot;): realAtkString = &quot;&lt;b&gt;&quot; + realAttack + &quot;&lt;/b&gt;&quot;]
+[h: atkString = atkString + attack + &quot;&lt;/b&gt;&quot;]
+[h: atk2String = atk2String + attack2 + &quot;&lt;/b&gt;&quot;]
+
+
+[h: nameStr = getName() + &quot;&lt;br&gt;&lt;br&gt;&quot;]
+[h: atkStr = &quot;Attack (1d20 + &quot; + attackBonus + &quot;): &quot; + atkString + &quot;&lt;br&gt;&quot;]
+[h,if(advantageDisadvantage != &quot;None&quot;): atkStr = atkStr + advantageDisadvantage + &quot;: &quot; + atk2String + &quot;&lt;br&gt;&quot; + &quot;Actual Attack: &quot; + realAtkString + &quot;&lt;br&gt;&quot;]
+[h: dmgStr = &quot;Damage (&quot; + dmgNumDice + &quot;d&quot; + dmgDie + &quot; + &quot; + dmgBonus]
+
+[h: dmgStr = dmgStr + &quot;): &quot; + dmg + &quot; &quot; + damageType ]
+
+[r: atkStr]
+[r: dmgStr]</command>
+  <label>Single</label>
+  <group>Attack</group>
+  <sortby>1</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth></minWidth>
+  <maxWidth></maxWidth>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Requires selected token</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

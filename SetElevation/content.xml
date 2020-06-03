@@ -1,0 +1,29 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>c61475ab-52e4-457f-9c09-b7c7e0a0c0d4</macroUUID>
+  <saveLocation>GlobalPanel</saveLocation>
+  <index>23</index>
+  <colorKey>purple</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: abort(input(&quot;elevation||Elevation (0 clears)|text&quot;))]
+[h,if(elevation == 0):resetProperty(&quot;elevation&quot;);setProperty(&quot;elevation&quot;, elevation)]</command>
+  <label>Set Elevation</label>
+  <group>Environment</group>
+  <sortby>1</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth></minWidth>
+  <maxWidth></maxWidth>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Requires selected token</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
