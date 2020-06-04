@@ -1,10 +1,11 @@
-<net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a8768a30-32ff-4a61-b49c-29d9545b07a7</macroUUID>
-  <saveLocation>GlobalPanel</saveLocation>
-  <index>62</index>
-  <colorKey>default</colorKey>
-  <hotKey>None</hotKey>
-  <command>[h: initList = &quot;booga=-1&quot;]
+<list>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <macroUUID>d558dfa3-dd16-4ad1-895b-0773b867e639</macroUUID>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>1</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: initList = &quot;booga=-1&quot;]
 [h, foreach(Selected, getSelected(&quot;json&quot;)), CODE:
 {
 	[switchToken(Selected)]
@@ -15,13 +16,11 @@
 		[init = json.get(arr, SelectedGMName)]
 	};
 	{
-		[result = 1d20]
-		[init = result + getProperty(&quot;Initiative&quot;, Selected)]
-		[tie = getProperty(&quot;Initiative&quot;, Selected) / 100]
-		[init = init + tie]
+		[init = getProperty(&quot;Initiative&quot;, Selected)]
+		[tie = init / 100]
+		[init = 1d20 + init + tie]
 		[initList = concat(initList, &quot;;&quot;, SelectedGMName, &quot;=&quot;, init)]
 	}]
-	[switchToken(Selected)]
 	[addToInitiative()]
 	[setInitiative(init)]
 }]
@@ -33,24 +32,80 @@
 	[init = floor(init)]
 	[setInitiative(init)]
 }]</command>
-  <label>Roll Initiative</label>
-  <group></group>
-  <sortby></sortby>
-  <autoExecute>true</autoExecute>
-  <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
-  <minWidth></minWidth>
-  <maxWidth></maxWidth>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>Roll Initiative for all Selected Tokens (same image will be grouped)</toolTip>
-  <displayHotKey>true</displayHotKey>
-  <commonMacro>false</commonMacro>
-  <compareGroup>true</compareGroup>
-  <compareSortPrefix>true</compareSortPrefix>
-  <compareCommand>true</compareCommand>
-  <compareIncludeLabel>true</compareIncludeLabel>
-  <compareAutoExecute>true</compareAutoExecute>
-  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-</net.rptools.maptool.model.MacroButtonProperties>
+    <label>Roll Initiative</label>
+    <group></group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip>Roll Initiative for all Selected Tokens </toolTip>
+    <displayHotKey>true</displayHotKey>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
+    <macroUUID>de6bca90-95b6-44dd-9102-b5140184e420</macroUUID>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>3</index>
+    <colorKey>default</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: initList = &quot;booga=-1&quot;]
+[h: removeAllFromInitiative()]
+[h, foreach(Selected, getSelected(&quot;json&quot;)), CODE:
+{
+	[switchToken(Selected)]
+	[SelectedGMName = getName()]
+	[arr = json.fromStrProp(initList)]
+	[if(json.contains(arr, SelectedGMName) != 0), CODE:
+	{
+		[init = json.get(arr, SelectedGMName)]
+	};
+	{
+		[init=if(isNumber(getProperty(&quot;Initiative&quot;, Selected)),getProperty(&quot;Initiative&quot;, Selected),0)]
+		[tie = init / 100]
+		[init = 1d20 + init + tie]
+		[initList = concat(initList, &quot;;&quot;, SelectedGMName, &quot;=&quot;, init)]
+	}]
+	[addToInitiative()]
+	[setInitiative(init)]
+}]
+[h: sortInitiative()]
+[h,foreach(Selected, getSelected(&quot;json&quot;)), CODE:
+{
+	[switchToken(Selected)]
+	[init = getInitiative()]
+	[init = floor(init)]
+	[setInitiative(init)]
+}]</command>
+    <label>Roll Initiative - separate</label>
+    <group></group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.00em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip>Roll Initiative for all Selected Tokens </toolTip>
+    <displayHotKey>true</displayHotKey>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+</list>
