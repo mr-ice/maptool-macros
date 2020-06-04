@@ -13,16 +13,22 @@
 #   <dirname>.<type>
 #
 
-arg=$1
+arg="$1"
 
 output() {
     local template="$1"
+    local nl='
+'
     shift
+    case "$template" in
+        (*$nl);;
+        (*) template="${template}${nl}"
+    esac
     printf "$template" "$@"
 }
 
 die() {
-   output "$@"
+   printf "$@"
    exit 1
 }
 
