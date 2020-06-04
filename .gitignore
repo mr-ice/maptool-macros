@@ -2,3 +2,4 @@
 *.mtmacset
 *.rptok
 tmp
+docker/automagic

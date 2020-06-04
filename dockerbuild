@@ -1,0 +1,2 @@
+cp automagic docker \
+&& docker build docker -t maker
