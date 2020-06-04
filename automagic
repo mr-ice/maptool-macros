@@ -38,7 +38,7 @@ fi
 
 if [[ -d $arg && -e $arg/content.xml ]]; then
     content_file="$arg/content.xml"
-    content_dir="$arg"
+    content_dir="$(dirname $arg/.)" # strips trailing /
 elif [[ -f $arg && -e $arg && ${arg%%content.xml} != $arg ]]; then
     content_file="$arg"
     content_dir="$(dirname $arg)"
