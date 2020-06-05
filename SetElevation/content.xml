@@ -1,11 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>e6ba438d-d184-47ec-8538-f2a013e660ea</macroUUID>
+  <macroUUID>2adb65c6-56b6-4308-b252-aed1cda05834</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
   <index>4</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: oldElevation = getProperty(&quot;elevation&quot;)]
-[h: abort(input(&quot;elevation|&quot;+elevation+&quot;|Elevation (0 clears)|text&quot;))]
+  <command>[h: abort(input(&quot;elevation|&quot;+elevation+&quot;|Elevation (0 clears)|text&quot;))]
 [h,if(elevation == 0):resetProperty(&quot;elevation&quot;);setProperty(&quot;elevation&quot;, elevation)]</command>
   <label>Set Elevation</label>
   <group>Environment</group>
