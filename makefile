@@ -11,9 +11,13 @@ endif
 %/.mtmacro %/.mtmacset %/.rptok: %
 	echo "strange slashes in $@, aborting"
 
-%.mtmacro %.mtmacset %.rptok: %
-	cd $< && \
-	$(ZIP) ../$@ .
+%.mtmacro %.mtmacset %.rptok: %/content.xml %/properties.xml
+	mkdir .temp-$$$$ && \
+	cp $^ .temp-$$$$ && \
+	cd .temp-$$$$ && \
+	$(ZIP) ../$@ . && \
+	cd .. && \
+	rm -rf .temp-$$$$
 
 clean:
 	rm -f *.mtmacro *.mtmacset *.rptok
