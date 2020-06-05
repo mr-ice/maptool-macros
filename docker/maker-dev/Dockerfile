@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --update --no-cache make zip bash
+RUN apk add --update --no-cache make zip bash git
 
 WORKDIR "/MT"
 
