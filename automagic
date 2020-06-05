@@ -56,6 +56,10 @@ if [[ ! -e $content_file ]]; then
     die $(usage)
 fi
 
-TYPE=$(head -1 "$content_file" | tee >(grep -q Token && echo 'rptok' ) >(grep -q Macro && echo 'mtmacro') >(grep -q list && echo 'mtmacset') >/dev/null)
+TYPE=$(head -1 "$content_file" | tee \
+	>(grep -q Token && echo 'rptok' ) \
+    >(grep -q Campaign && echo 'mtprops') \
+    >(grep -q Macro && echo 'mtmacro') \
+    >(grep -q list && echo 'mtmacset') >/dev/null)
 
 make $content_dir.$TYPE
