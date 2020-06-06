@@ -1,13 +1,14 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a735d4e2-2cd0-4a16-8680-5b18cf819f29</macroUUID>
-  <saveLocation>CampaignPanel</saveLocation>
-  <index>5</index>
+  <macroUUID>c0e54922-a509-4b79-8609-2c86af0a3145</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>3</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: changes = &quot;[0,-20,-10,-5,&apos;+5&apos;,&apos;+10&apos;,&apos;+20&apos;]&quot;]
-[h: junk = abort(input(&quot;elevation|&quot;+elevation+&quot;|Elevation (0 clears)|text&quot;,&quot;elevation_index|&quot;
+  <command>[h: changes = &quot;[-20,-10,-5,0,&apos;+5&apos;,&apos;+10&apos;,&apos;+20&apos;]&quot;]
+[h: junk = abort(input(&quot;elevation|&quot;+elevation+&quot;|Set Elevation (0 clears)|text&quot;,
+  &quot;elevation_index|&quot;
   + json.toList(changes)
-  + &quot;|Elevation Change|list&quot;
+  + &quot;|Elevation Change|radio|SELECT=3 ORIENT=H SPAN=TRUE&quot;
   ))]
 [h: elevation = add(elevation, number(json.get(changes,elevation_index)))]
 [h,if(elevation == 0):resetProperty(&quot;elevation&quot;);setProperty(&quot;elevation&quot;, elevation)]</command>
