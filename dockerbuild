@@ -1,0 +1,4 @@
+cp automagic docker/maker \
+&& docker build docker/maker-dev -t maker-dev \
+&& docker build docker/maker -t maker \
+&& rm docker/maker/automagic
