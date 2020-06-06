@@ -12,14 +12,14 @@ endif
 	echo "strange slashes in $@, aborting"
 
 %.mtprops %.mtmacro %.mtmacset %.rptok: %/content.xml %/properties.xml
-	mkdir .temp-$$$$ && \
-	cp  $^ .temp-$$$$ && \
-	test -d $*/assets && cp -r I$^ $*/assets .temp-$$$$ && \
-	test -e $*/thumbnail && cp $*/thumbnail .temp-$$$$ && \
-	test -e $*/thumbnail_large && cp $*/thumbnail_large .temp-$$$$ && \
+	mkdir .temp-$$$$; \
+	cp  $^ .temp-$$$$; \
+	test -d $*/assets && cp -r I$^ $*/assets .temp-$$$$; \
+	test -e $*/thumbnail && cp $*/thumbnail .temp-$$$$; \
+	test -e $*/thumbnail_large && cp $*/thumbnail_large .temp-$$$$; \
 	( cd .temp-$$$$ && \
-	$(ZIP) ../$@ . ) && \
+	$(ZIP) ../$@ . ); \
 	rm -rf .temp-$$$$
 
 clean:
-	rm -rf *.mtmacro *.mtmacset *.rptok .temp-*
+	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*

@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>6bcb5f01fa8e7829fd1bf810e6aaa80f</id>
+  </id>
+  <name>Hide</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>
