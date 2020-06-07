@@ -24,8 +24,10 @@ endif
 clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*
 
+realclean:
+	docker image list | grep maker | cut -f1 -d\ | xargs docker image rm
+
 build:
-	docker build docker/maker-dev -t maker-dev
-	docker build docker/maker -t maker
+	docker build docker -t maker
 
 .PHONY: build clean

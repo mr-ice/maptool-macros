@@ -1,2 +1,1 @@
-&& docker build docker/maker-dev -t maker-dev \
-&& docker build docker/maker -t maker 
+docker build docker/maker -t maker 
