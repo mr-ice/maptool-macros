@@ -24,12 +24,8 @@ endif
 clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*
 
-docker/maker/%: %
-	cp $< $@
+build:
+	docker build docker/maker-dev -t maker-dev
+	docker build docker/maker -t maker
 
-build: docker/maker/xc docker/maker/automagic
-	docker build docker/maker-dev -t maker-dev; \
-	docker build docker/maker -t maker; \
-	rm $^
-
-.PHONY: build
+.PHONY: build clean
