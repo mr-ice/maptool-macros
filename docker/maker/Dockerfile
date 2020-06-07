@@ -5,4 +5,4 @@ COPY xc /usr/local/bin
 
 WORKDIR "/MT"
 
-CMD ["automagic", "SetElevation"]
+ENTRYPOINT [ "automagic" ]
