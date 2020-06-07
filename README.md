@@ -5,6 +5,15 @@ These have all been unzipped to save the xml directly, but perhaps we will
 build an assembler to take the text -> xml -> zip so we can see directly the
 macro 
 
+## Tools
+
+* make build - implementation of dockerbuild with both commands we need
+* ./automagic <dir> - build a maptool object from a directory
+* ./dockermagic <dir> - run automagic via docker
+* ./xc <dir> - eXtract Commands into individual .command files in directory
+* ./dockerxc <dir> - run xc on a dir via docker
+
+## Macros
 * RollSave - Simple roll an attribute save
 * Set Elevation - Simple set/clear elevation on selected token
 * AttackMacros - Trey's Macro Set
