@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd $1
-docker run --rm -it --mount type=bind,source="$(pwd)",target=/MT maker xc content.xml
+docker run --rm -it --mount type=bind,source="$(pwd)",target=/MT --entrypoint xc maker content.xml 
