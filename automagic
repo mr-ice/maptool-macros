@@ -13,6 +13,7 @@
 #   <dirname>.<type>
 #
 
+me="$0"
 arg="$1"
 
 output() {
@@ -28,18 +29,20 @@ output() {
 }
 
 die() {
-   printf "$@"
+   output "$@"
    exit 1
 }
 
 usage() {
-    echo "Usage: $0 <dir>
-    or
-    <dir>/content.xml"
+    cat <<-EOF
+	Usage: automagic <dir>
+	or
+	<dir>/content.xml
+	EOF
 }
 
 if [[ -z $arg ]]; then
-    die $(usage)
+    die "$(usage)"
 fi
 
 if [[ -d $arg && -e $arg/content.xml ]]; then
@@ -53,7 +56,7 @@ else
 fi
 
 if [[ ! -e $content_file ]]; then
-    die $(usage)
+    die "$(usage)"
 fi
 
 TYPE=$(head -1 "$content_file" | tee \
