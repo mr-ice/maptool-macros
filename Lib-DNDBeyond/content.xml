@@ -20,184 +20,25 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>4050</lastX>
-  <lastY>-5100</lastY>
+  <lastX>4400</lastX>
+  <lastY>-5400</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>81</x>
-        <y>-102</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>82</x>
-        <y>-103</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>81</x>
-          <y>-102</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>6.001</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>83</x>
-        <y>-104</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>82</x>
-          <y>-103</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>6.001</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>5.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>84</x>
-        <y>-105</y>
-        <g>3.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>83</x>
-          <y>-104</y>
-          <g>2.0</g>
-          <distanceTraveled>2.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
-          <h>5.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
-        </parent>
-        <h>4.003</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>85</x>
-        <y>-105</y>
-        <g>4.0</g>
-        <distanceTraveled>4.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>84</x>
-          <y>-105</y>
-          <g>3.0</g>
-          <distanceTraveled>3.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
-          <h>4.003</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
-        </parent>
-        <h>3.003</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>86</x>
-        <y>-106</y>
-        <g>5.0</g>
-        <distanceTraveled>5.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>85</x>
-          <y>-105</y>
-          <g>4.0</g>
-          <distanceTraveled>4.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
-          <h>3.003</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
-        </parent>
-        <h>2.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>87</x>
-        <y>-107</y>
-        <g>6.0</g>
-        <distanceTraveled>6.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>86</x>
-          <y>-106</y>
-          <g>5.0</g>
-          <distanceTraveled>5.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/parent"/>
-          <h>2.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/validMoves"/>
-        </parent>
-        <h>1.001</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
         <x>88</x>
         <y>-108</y>
         <g>0.0</g>
-        <distanceTraveled>7.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>81</x>
-        <y>-102</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
         <x>88</x>
         <y>-108</y>
         <g>0.0</g>
-        <distanceTraveled>7.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -210,15 +51,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -1930,13 +1771,13 @@ returns:
 						&quot;subType&quot;, &quot;ability-checks&quot;,
 						&quot;type&quot;, &quot;expertise&quot;)]
 &lt;!-- what fucking DM allowed this? --&gt;
-[h: abilityExpertise = dndb_searchJsonObject (abilitySearchArgs)]
+[h: abilityExpertise = dndb_searchGrantedModifiers (abilitySearchArgs)]
 
 [h: abilitySearchArgs = json.set (abilitySearchArgs, &quot;type&quot;, &quot;proficiency&quot;)]
-[h: abilityProficiency = dndb_searchJsonObject (abilitySearchArgs)]
+[h: abilityProficiency = dndb_searchGrantedModifiers (abilitySearchArgs)]
 
 [h: abilitySearchArgs = json.set (abilitySearchArgs, &quot;type&quot;, &quot;half-proficiency&quot;)]
-[h: abilityHalfProficiency = dndb_searchJsonObject (abilitySearchArgs)]
+[h: abilityHalfProficiency = dndb_searchGrantedModifiers (abilitySearchArgs)]
 
 [h: abilityValue = 0]
 [h, if (json.length (abilityHalfProficiency) &gt; 0): abilityValue = 1]
@@ -1953,19 +1794,19 @@ returns:
 
 	&lt;!-- Start with proficiencies --&gt;
 	&lt;!-- Looks for the proficiencies granted by background, class, race, etc --&gt;
-	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, json.path.read(toon, &quot;data.modifiers&quot;),
+	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
 							&quot;entityTypeId&quot;, SKILL_ENTITY_TYPE_ID,
 							&quot;type&quot;, &quot;expertise&quot;,
 							&quot;entityId&quot;, entityId)]
-	[h: expertise = dndb_searchJsonObject (searchArgs)]
+	[h: expertise = dndb_searchGrantedModifiers (searchArgs)]
 	[h: log.debug (&quot;Expertise: &quot; + json.indent (expertise))]
 
 	[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;proficiency&quot;)]
-	[h: proficiencies = dndb_searchJsonObject (searchArgs)]
+	[h: proficiencies = dndb_searchGrantedModifiers (searchArgs)]
 	[h: log.debug (&quot;Proficiencies: &quot; + json.indent (proficiencies))]
 
 	[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;half-proficiency&quot;)]
-	[h: halfProfs = dndb_searchJsonObject (searchArgs)]
+	[h: halfProfs = dndb_searchGrantedModifiers (searchArgs)]
 	[h: log.debug (&quot;Half Profs: &quot; + json.indent (halfProfs))]
 
 	&lt;!-- go from least to best --&gt;
@@ -1988,7 +1829,7 @@ returns:
 	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
 					&quot;valueTypeId&quot;, SKILL_ENTITY_TYPE_ID, 
 					&quot;valueId&quot;, entityId)]
-	[h: characterValues = dndb_searchJsonObject (searchArgs)]
+	[h: characterValues = dndb_searchGrantedModifiers (searchArgs)]
 	[h: log.debug (&quot;characterValues: &quot; + characterValues)]
 	
 	[h: bonuses = &quot;[]&quot;]
@@ -2024,6 +1865,7 @@ returns:
 &lt;!-- not quite! Bonus arry needs non-choice bonus also. And give the refactoring one more go --&gt;
 &lt;!-- see saves as a new template --&gt;
 [h: macro.return = afterSkillList]
+
 </command>
         <label>dndb_getSkill</label>
         <group>Character</group>
@@ -2234,6 +2076,8 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
 
 [h: filterObj = json.remove (filterObj, &quot;object&quot;)]
 [h: filterObj = json.remove (filterObj, &quot;property&quot;)]
+[h: log.debug (&quot;dndb_searchJsonObject: filterObj after process = &quot; + filterObj)]
+[h: log.debug (&quot;dndb_searchJsonObject: property = &quot; + property)]
 &lt;!-- now build the filter --&gt;
 
 [h: rawValues = json.append (&quot;&quot;, &quot;true&quot;, &quot;false&quot;)]
@@ -2254,8 +2098,9 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
 &lt;!-- close the filter --&gt;
 [h, if (property != &quot;&quot;): filter = filter + &quot;[&apos;&quot; + property + &quot;&apos;]&quot;]
 [h: log.debug (&quot;filter: &quot; + filter)]
-
-[h: macro.return = json.path.read (object, filter)]
+[h: ret = json.path.read (object, filter)]
+[h: log.debug (&quot;dndb_searchJsonObj: &quot; + ret)]
+[h: macro.return = ret]
 </command>
         <label>dndb_searchJsonObject</label>
         <group>Utility</group>
@@ -2302,7 +2147,8 @@ All other key-value pairs are used as search terms.</toolTip>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
         <command>[h: toon = arg(0)]
-&lt;!-- But we don&apos;t look outside of the data.modifiers object, so how? --&gt;
+&lt;!-- todo: some day were gonna get a json package that isnt in english. That --&gt;
+&lt;!-- might affect how this (and many other) macros work --&gt;
 [h: savesMap = json.append (&quot;&quot;,
 			json.set (&quot;&quot;, &quot;name&quot;, &quot;Strength&quot;, &quot;valueId&quot;, &quot;1&quot;, &quot;abilityBonus&quot;, &quot;strBonus&quot;),
 			json.set (&quot;&quot;, &quot;name&quot;, &quot;Dexterity&quot;, &quot;valueId&quot;, &quot;2&quot;, &quot;abilityBonus&quot;, &quot;dexBonus&quot;),
@@ -2520,61 +2366,44 @@ All other key-value pairs are used as search terms.</toolTip>
         <index>38</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>&lt;!-- Bug: Doesnt account for saves when  &quot;availableToMulticlass&quot;: false --&gt;
-&lt;!-- Not so simple. Cant just look for availabletomulticlass false. we have to join granted results WITH --&gt;
-&lt;!-- the that value being false WITH their actual mult-classed classes --&gt;
-
-&lt;!-- Instead of the usual arg array, try a json obj --&gt;
+        <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
 [h: filterObj = arg(0)]
 [h: toon = json.get (filterObj, &quot;object&quot;)]
 [h: property = json.get (filterObj, &quot;property&quot;)]
-
-&lt;!-- filterObj is only filter terms. Well provide our own object and stuff property back in as needed --&gt;
-[h: filterObj = json.remove (filterObj, &quot;object&quot;)]
-[h: filterObj = json.remove (filterObj, &quot;property&quot;)]
+[h: log.debug (&quot;dndb_searchGrantedModifiers: property = &quot; + property)]
 
 [h: resultArry = &quot;&quot;]
 
-&lt;!-- Start with item bonuses. Thats why were here anyways. --&gt;
-&lt;!-- Item bonuses are listed in the modifiers object, but should not apply if the associated object isnt --&gt;
-&lt;!-- equipped. This first retreives a list of equipped items and builds an arry of ids. Then full modifier --&gt;
-&lt;!-- objects are pulled from items and their componentIds checked against equipped ids --&gt;
-
-[h: items = json.path.read (toon, &quot;data.inventory&quot;)]
-[h: equippedItems = json.path.read (items, &quot;.[?(@.equipped == true)]&quot;)]
-[h: equippedItemIds = json.path.read (equippedItems, &quot;[*].definition.id&quot;)]
-[h: log.debug (&quot;Equipped items: &quot; + equippedItemIds)]
-
-&lt;!-- now search for modifications from just item and compare componentId with equipped ids --&gt;
-[h: itemSearchArg = json.set (filterObj, &quot;object&quot;, json.path.read (toon, &quot;data.modifiers.item&quot;))]
-[h: itemSearchResults = dndb_searchJsonObject (itemSearchArg)]
-[h: log.debug (&quot;Item search results: &quot; + json.indent (itemSearchResults))]
-[h: equippedModifiers = &quot;[]&quot;]
-[h, foreach (itemModification, itemSearchResults), code: {
-	[h: componentId = json.get (itemModification, &quot;componentId&quot;)]
-	[h, if (json.contains (equippedItemIds, componentId) &gt; 0), code: {
-		[h: log.debug (&quot;Modification is equipped&quot;)]
-		&lt;!-- marshall the result, either scalar or object, into a list --&gt;
-		[h, if (property != &quot;&quot;): itemModification = json.path.read (itemModification, property);
-								 itemModification = json.append (&quot;&quot;, itemModification)]
-		[h: equippedModifiers = json.merge (equippedModifiers, itemModification)]
-	}]
-}]
-
 &lt;!-- whatevers in equippedModifiers is what we want --&gt;
+[h: equippedModifiers = dndb_searchForItemGrantedModifiers (filterObj)]
+[h: log.debug (&quot;dndb_searchGrantedModifiers: equippedModifiers = &quot; + equippedModifiers)]
 [h: resultArry = json.merge (resultArry, equippedModifiers)]
 
+
+&lt;!-- Ok, classes are next. Anything that is: --&gt;
+[h: classArry = dndb_searchForClassGrantedModifiers (filterObj)]
+[h: log.debug (&quot;dndb_searchGrantedModifiers: classArry = &quot; + classArry)]
+[h: resultArry = json.merge (resultArry, classArry)]
+
+&lt;!-- filterObj is only filter terms. Well provide our own object and stuff property back in as needed --&gt;
+
+[h: filterObj = json.remove (filterObj, &quot;object&quot;)]
+[h: filterObj = json.remove (filterObj, &quot;property&quot;)]
+
 &lt;!-- everything else gets the same treatement --&gt;
-&lt;!-- Not so fast! Class modifiers have to check for availableToMultiClass --&gt;
-[h: nonItems = json.append (&quot;&quot;, &quot;background&quot;, &quot;class&quot;, &quot;condition&quot;, &quot;feat&quot;, &quot;race&quot;)]
+&lt;!-- Abstracting Items and Class makese sense since they have special treatement. --&gt;
+&lt;!-- Any purpose in doing the same for these? Outside of this script, no sure what --&gt;
+&lt;!-- would want to call these scripts anyways --&gt;
+[h: nonItems = json.append (&quot;&quot;, &quot;background&quot;, &quot;condition&quot;, &quot;feat&quot;, &quot;race&quot;)]
 
 [h, foreach (classification, nonItems), code: {
+	[h: log.debug (&quot;Searching &quot; + classification)]
 	[h: searchObjectPath = &quot;data.modifiers.&quot; + classification]
 	[h: searchObject = json.path.read (toon, searchObjectPath)]
 	[h: subSearchArg = json.set (filterObj, &quot;object&quot;, searchObject, &quot;property&quot;, property)]
 
 	[h: subSearchResults = dndb_searchJsonObject (subSearchArg)]
-	[h: log.debug (&quot;subSearchResults: &quot; + subSearchResults)]
+	[h: log.debug (&quot;dndb_searchGrantedModifiers: subSearchResults = &quot; + subSearchResults)]
 	[h, if (json.length (subSearchResults) &gt; 0): resultArry = json.merge (resultArry, subSearchResults)]
 }]
 
@@ -2606,6 +2435,369 @@ Within the JSON, the &quot;object&quot; parameter is required. It must be a full
 &quot;property&quot; is a reserved parameter that indicates the values to return. If &quot;property&quot; is not provided, the full entity is returned for each match.
 
 All other key-value pairs are used as search terms.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>39</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>28c431d6-f7a1-4cee-91e5-d399a7505c14</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>39</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
+[h: filterObj = arg(0)]
+[h: toon = json.get (filterObj, &quot;object&quot;)]
+[h: property = json.get (filterObj, &quot;property&quot;)]
+
+&lt;!-- filterObj is only filter terms. Well provide our own object and stuff property back in as needed --&gt;
+[h: filterObj = json.remove (filterObj, &quot;object&quot;)]
+[h: filterObj = json.remove (filterObj, &quot;property&quot;)]
+
+[h: resultArry = &quot;&quot;]
+
+&lt;!-- Anything that is: --&gt;
+	&lt;!-- granted by a class feature with availableToMultiClass = true --&gt;
+	&lt;!-- or granted by a class feature from the starting class --&gt;
+	&lt;!-- Each modifier references a componentId. That correlates to data.classes.classFeature.id --&gt;
+[h: log.debug (&quot;Searching class&quot;)]
+[h: searchObject = json.path.read (toon, &quot;data.modifiers.class&quot;)]
+&lt;!-- property-less search. I need the objecct for reference --&gt;
+[h: subSearchConfig = json.set (filterObj, &quot;object&quot;, searchObject)]
+[h: modifiers = dndb_searchJsonObject (subSearchConfig)]
+[h: startingClassDefinition = json.get (json.path.read (toon, &quot;data.classes[*].[?(@.isStartingClass == true)][&apos;definition&apos;]&quot;), 0)]
+[h: log.debug (&quot;startingClass: &quot; + json.get(startingClassDefinition, &quot;id&quot;))]
+[h, foreach (modifier, modifiers), code: {
+	[h: qualified = 0]
+	[h: multiClassAllowed = json.get (modifier, &quot;availableToMulticlass&quot;)]
+	[h, if (multiClassAllowed == &quot;true&quot;): qualified = 1]
+	[h: componentId = json.get (modifier, &quot;componentId&quot;)]
+	[h: isGrantedByClass = json.path.read (startingClassDefinition, &quot;classFeatures[*].[?(@.id == &quot; + componentId + &quot;)][&apos;name&apos;]&quot;)]
+	[h: log.debug (&quot;isGrantedByClass: &quot; + isGrantedByClass)]
+	[h, if (json.length (isGrantedByClass) &gt; 0): qualified = 1]
+	&lt;!-- before appending, apply the result property --&gt;
+	[h, if (property != &quot;&quot;): modifier = json.get (modifier, property)]
+	[h, if (qualified &gt; 0): resultArry = json.append (resultArry, modifier)]
+}]
+
+[h: macro.return = resultArry]</command>
+        <label>dndb_searchForClassGrantedModifiers</label>
+        <group>Utility</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Searches the data.modifier.classes object for all modifiers granted by classes, restricting those not grantable via multi-classing.
+
+arg(0) = 
+{
+  &quot;object&quot;: &quot;toon&quot;,
+  &quot;property&quot;: &quot;fixedValue&quot;,
+  &quot;subType&quot;: &quot;ability-checks&quot;,
+  &quot;type&quot;: &quot;expertise&quot;
+}
+
+Within the JSON, the &quot;object&quot; parameter is required. It must be a the full character object.
+
+&quot;property&quot; is a reserved parameter that indicates the values to return. If &quot;property&quot; is not provided, the full entity is returned for each match.
+
+All other key-value pairs are used as search terms.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>40</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>78854487-24d7-4065-8011-03caa627437a</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>40</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
+[h: filterObj = arg(0)]
+[h: toon = json.get (filterObj, &quot;object&quot;)]
+[h: property = json.get (filterObj, &quot;property&quot;)]
+
+&lt;!-- filterObj is only filter terms. Well provide our own object and stuff property back in as needed --&gt;
+&lt;!-- TODO: I have to pass this object around now, so preserve the original and roll yer own here --&gt;
+[h: filterObj = json.remove (filterObj, &quot;object&quot;)]
+[h: filterObj = json.remove (filterObj, &quot;property&quot;)]
+
+&lt;!-- Item bonuses are listed in the modifiers object, but should not apply if the associated object isnt --&gt;
+&lt;!-- equipped. This first retreives a list of equipped items and builds an arry of ids. Then full modifier --&gt;
+&lt;!-- objects are pulled from items and their componentIds checked against equipped ids --&gt;
+
+[h: log.debug (&quot;Searching item&quot;)]
+[h: items = json.path.read (toon, &quot;data.inventory&quot;)]
+[h: equippedItems = json.path.read (items, &quot;.[?(@.equipped == true)]&quot;)]
+[h: equippedItemIds = json.path.read (equippedItems, &quot;[*].definition.id&quot;)]
+[h: log.debug (&quot;Equipped items: &quot; + equippedItemIds)]
+
+&lt;!-- now search for modifications from just item and compare componentId with equipped ids --&gt;
+[h: itemSearchArg = json.set (filterObj, &quot;object&quot;, json.path.read (toon, &quot;data.modifiers.item&quot;))]
+[h: itemSearchResults = dndb_searchJsonObject (itemSearchArg)]
+[h: log.debug (&quot;Item search results: &quot; + json.indent (itemSearchResults))]
+[h: equippedModifiers = &quot;[]&quot;]
+[h, foreach (itemModification, itemSearchResults), code: {
+	[h: componentId = json.get (itemModification, &quot;componentId&quot;)]
+	[h, if (json.contains (equippedItemIds, componentId) &gt; 0), code: {
+		[h: log.debug (&quot;Modification is equipped&quot;)]
+		&lt;!-- marshall the result, either scalar or object, into a list --&gt;
+		[h, if (property != &quot;&quot;): itemModification = json.path.read (itemModification, property);
+								 itemModification = json.append (&quot;&quot;, itemModification)]
+		[h: equippedModifiers = json.merge (equippedModifiers, itemModification)]
+	}]
+}]
+
+[h: macro.return = equippedModifiers]</command>
+        <label>dndb_searchForItemGrantedModifiers</label>
+        <group>Utility</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Searches the data.modifier.item object for all modifiers granted by items, restricting those not from unequipped items.
+
+arg(0) = 
+{
+  &quot;object&quot;: &quot;toon&quot;,
+  &quot;property&quot;: &quot;fixedValue&quot;,
+  &quot;subType&quot;: &quot;ability-checks&quot;,
+  &quot;type&quot;: &quot;expertise&quot;
+}
+
+Within the JSON, the &quot;object&quot; parameter is required. It must be a the full character object.
+
+&quot;property&quot; is a reserved parameter that indicates the values to return. If &quot;property&quot; is not provided, the full entity is returned for each match.
+
+All other key-value pairs are used as search terms.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>41</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>80cb8897-9470-4a97-8fdd-f52f8f6ea195</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>41</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg (0)]
+
+&lt;!-- stuff it into a single json object --&gt;
+&lt;!-- The easy bits --&gt;
+[h: basicToon = json.set (&quot;&quot;, &quot;name&quot;, json.path.read (toon, &quot;data.name&quot;),
+						&quot;age&quot;, json.path.read (toon, &quot;data.age&quot;),
+						&quot;faith&quot;, json.path.read (toon, &quot;data.faith&quot;),
+						&quot;hair&quot;, json.path.read (toon, &quot;data.hair&quot;),
+						&quot;eyes&quot;,  json.path.read (toon, &quot;data.eyes&quot;),
+						&quot;skin&quot;, json.path.read (toon, &quot;data.skin&quot;),
+						&quot;height&quot;, json.path.read (toon, &quot;data.height&quot;),
+						&quot;weight&quot;, json.path.read (toon, &quot;data.weight&quot;),
+						&quot;xp&quot;, json.path.read (toon, &quot;data.currentXp&quot;),
+						&quot;gender&quot;, json.path.read (toon, &quot;data.gender&quot;),
+						&quot;avatarUrl&quot;, json.path.read (toon, &quot;data.avatarUrl&quot;),
+						&quot;url&quot;, json.path.read (toon, &quot;data.readonlyUrl&quot;))]
+
+&lt;!-- alightment map --&gt;
+[h: alignmentMap = json.set (&quot;&quot;, &quot;3&quot;, &quot;CE&quot;)]
+[h: alignmentId =  json.path.read (toon, &quot;data.alignmentId&quot;)]
+[h: basicToon = json.set (basicToon, &quot;alignment&quot;, json.get (alignmentMap, alignmentId))]
+
+&lt;!-- character level --&gt;
+[h: totalLevel = 0]
+[h: classArry = &quot;&quot;]
+[h, foreach (class, json.path.read (toon, &quot;data.classes&quot;)), code: {
+	[h: level = json.get (class, &quot;level&quot;)]
+	[h: totalLevel = totalLevel + level]
+	[h: className = json.path.read (class, &quot;definition.name&quot;)]
+	[h: classObj = json.set (&quot;&quot;, &quot;className&quot;, className, &quot;level&quot;, level)]
+	[h: hitDice = json.path.read (class, &quot;definition.hitDice&quot;)]
+	[h: classObj = json.set (classObj, &quot;hitDice&quot;, hitDice)]
+	[h: classArry = json.append (classArry, classObj)]
+}]
+[h: log.debug (&quot;classArry: &quot;+ classArry)]
+[h: basicToon = json.set (basicToon, &quot;classes&quot;, classArry)]
+
+&lt;!-- HP --&gt;
+[h: abilities = dndb_getAbilities (toon)]
+[h: baseHp =  json.path.read (toon, &quot;data.baseHitPoints&quot;)]
+[h: maxHp = baseHp + (json.get (abilities, &quot;conBonus&quot;) * totalLevel)]
+[h: damageTaken = json.path.read (toon, &quot;data.removedHitPoints&quot;)]
+[h: temporaryHitPoints = json.path.read (toon, &quot;data.temporaryHitPoints&quot;)]
+[h: maxHpModifier = json.path.read (toon, &quot;data.bonusHitPoints&quot;)]
+[h: overrideMaxHp = json.path.read (toon, &quot;data.overrideHitPoints&quot;)]
+[h, if (maxHpModifier != &quot;&quot; &amp;&amp; isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
+[h, if (overrideMaxHp != &quot;&quot; &amp;&amp; isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
+
+[h: basicToon = json.set (basicToon, &quot;hitPoints&quot;, json.set (&quot;&quot;,
+							&quot;maxHp&quot;, maxHp,
+							&quot;currentHp&quot;, maxHp - damageTaken,
+							&quot;tempHp&quot;, temporaryHitPoints))]
+
+&lt;!-- Speed --&gt;
+[h: speeds = dndb_getSpeed (toon)]
+[h: basicToon = json.set (basicToon, &quot;speeds&quot;, speeds)]
+
+[h: macro.return = basicToon]</command>
+        <label>dndb_getBasic</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns basic information of the character, including name, race, level, speed, and hit points 
+
+arg (0) = toon</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>42</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>513c222f-0341-4c3d-90f3-465bbef1af22</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>42</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg (0)]
+
+[h: speedsMap = json.append (&quot;&quot;,
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Burrow&quot;, &quot;verb&quot;, &quot;burrowing&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Climb&quot;, &quot;verb&quot;, &quot;climbing&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Swim&quot;, &quot;verb&quot;, &quot;swimming&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Walk&quot;, &quot;verb&quot;, &quot;walking&quot;)
+			)
+]
+[h, if (json.length (macro.args) &gt; 1): 
+	speedNames = json.append (&quot;&quot;, arg(1));
+	speedNames = json.append (&quot;&quot;, &quot;Burrow&quot;, &quot;Climb&quot;, &quot;Swim&quot;, &quot;Walk&quot;)
+]
+
+[h: speeds = &quot;[]&quot;]
+
+&lt;!-- Collect base speeds from ractial traits --&gt;
+[h: baseSpeeds = json.path.read (toon, &quot;data.race.weightSpeeds.normal&quot;)]
+
+&lt;!-- all speeds bonuses --&gt;
+[h: allBonuses = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
+							&quot;object&quot;, toon,
+							&quot;property&quot;, &quot;value&quot;,
+							&quot;subType&quot;, &quot;speed&quot;,
+							&quot;type&quot;, &quot;bonus&quot;))]
+							
+[h: log.debug (&quot;allBonuses: &quot; + allBonuses)]
+
+[h: allBonus = 0]
+[h, foreach (value, allBonuses): allBonus = allBonus + value]
+
+&lt;!-- Foreach speed type, find all the granted bonuses --&gt;
+[h, foreach (speedName, speedNames), code: {
+	&lt;!-- I may have to revisit this after some testing, but so far Ive only found --&gt;
+	&lt;!-- granted bonuses as setting speeds to innate-speed-swimming, for example. --&gt;
+	&lt;!-- So look for those for each speed and well add the allBonus values after --&gt;
+	[h: verbSpeed = json.get (dndb_searchJsonObject (json.set (&quot;&quot;, &quot;object&quot;, speedsMap, &quot;property&quot;, &quot;verb&quot;, &quot;name&quot;, speedName)), 0)]
+	[h: innateSpeed = &quot;innate-speed-&quot; + verbSpeed]
+	[h: grantedSpeeds = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
+							&quot;object&quot;, toon,
+							&quot;property&quot;, &quot;value&quot;,
+							&quot;type&quot;, &quot;set&quot;,
+							&quot;subType&quot;, innateSpeed))]
+	[h: log.debug (&quot;grantedSpeeds: &quot; + json.indent (grantedSpeeds))]
+	[h: setSpeed = 0]
+	[h, if (json.length (grantedSpeeds) &gt; 0), code: {
+		&lt;!-- get the biggest one --&gt;
+		[h: grantedSpeeds = json.sort (grantedSpeeds, &quot;descending&quot;)]
+		[h: setSpeed = json.get (grantedSpeeds, 0)]
+	}]
+
+	&lt;!-- Find custom speeds and use as overrides --&gt;
+	[h: lowerName = lower (speedName)]
+	[h: baseSpeed = json.get (baseSpeeds, lowerName)]
+	[h: actualSpeed = math.max (baseSpeed, setSpeed)]
+	&lt;!-- if actualSpeed is 0, dont apply the allBonus to it --&gt;
+	[h, if (actualSpeed &gt; 0): actualSpeed = actualSpeed + allBonus]
+	[h: speed = json.set (&quot;&quot;, &quot;name&quot;, speedName,
+						&quot;speed&quot;, actualSpeed)]
+	[h: speeds = json.append (speeds, speed)]
+}]
+
+[h: macro.return = speeds]
+
+
+&lt;!-- Determine encumberance? Its a variant, so skip for now until we determine --&gt;
+&lt;!-- a good way of passing that flag --&gt;</command>
+        <label>dndb_getSpeed</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns the speeds, or requested speed, from the given character
+
+arg(0) = toon
+Optional: arg(1) = speed type (ex. &quot;Swimming&quot;)
+
+returns:
+
+[
+	{
+		&quot;name&quot;:	&quot;Walking&quot;,
+		&quot;speed&quot;:	&quot;30&quot;
+	},{
+		&quot;name&quot;:	&quot;Swimming&quot;,
+		&quot;speed&quot;:	&quot;30&quot;
+	}
+]</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
