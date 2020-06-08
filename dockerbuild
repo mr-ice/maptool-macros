@@ -1,1 +1,1 @@
-docker build docker/maker -t maker 
+docker build docker -t maker 
