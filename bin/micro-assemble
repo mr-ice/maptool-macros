@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Reassemble a macro from a .xml and .command parts"""
+
+import sys
+import argparse
+from lxml import objectify
+
+AP = argparse.ArgumentParser()
+
+AP.add_argument('xml_filename', help='the macro xml body')
+AP.add_argument('command_filename', help='the macro command body')
+AP.add_argument('output_filename', help='the macro output filename')
+
+AP.add_argument('--verbose', '-v',
+                help = 'turn on more verbose output')
+
+args = AP.parse_args()
+
+if args.command_filename is None and args.xml_filename:
+    args.command_filename = args.xml_filename.replace('.xml','.command')
+    # TODO, make this better, this replaces all we want to replace only at the
+    # end of the filename.
+
+if args.verbose:
+    print("Found via args:")
+    print('xml in ' + args.xml_filename)
+    print('command in ' + args.command_filename)
+    print('output to ' + args.output_filename)
+
+if not os.path.exists(args.xml_filename):
+    print("could not find that macro file, aborting")
+    sys.exit()
+
+if not os.path.exists(args.command_filename):
+    print("found the macro file, but no command file, aborting")
+    sys.exit()
+
+# Get the xml from the xml_filename file
+xml = objectify.parse(args.xml_filename)
+
+# Get the command text from the command_filename file
+command = open(args.command_filename).read()
+
+# add or replace the command in the xml object
+xml.getroot().command = objectify.DataElement(command, nsmap='', _pytype='')
+
+# write the resulting object to the output_filename
+xml.write(args.output_filename, pretty_print=True)
