@@ -2671,6 +2671,10 @@ All other key-value pairs are used as search terms.</toolTip>
 [h: speeds = dndb_getSpeed (toon)]
 [h: basicToon = json.set (basicToon, &quot;speeds&quot;, speeds)]
 
+&lt;!-- Vision --&gt;
+[h: vision = dndb_getVision (toon)]
+[h: basicToon = json.set (basicToon, &quot;vision&quot;, vision)]
+
 [h: macro.return = basicToon]</command>
         <label>dndb_getBasic</label>
         <group>Character</group>
@@ -2796,6 +2800,81 @@ returns:
 	},{
 		&quot;name&quot;:	&quot;Swimming&quot;,
 		&quot;speed&quot;:	&quot;30&quot;
+	}
+]</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>43</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>24fe116a-4366-4b78-94ae-7f5b7b43fd19</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>43</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg(0)]
+
+[h, if (json.length (macro.args) &gt; 1): allVisions = arg(1); allVisions = json.append (&quot;&quot;, &quot;Blindsight&quot;, &quot;Darkvision&quot;, &quot;Tremorsense&quot;, &quot;Truesight&quot;)]
+[h: visions = &quot;[]&quot;]
+
+[h, foreach (vision, allVisions), code: {
+	[h: distance = 0]
+	[h: lowerVision = lower (vision)]
+	[h: distances = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
+										&quot;object&quot;, toon,
+										&quot;property&quot;, &quot;value&quot;,
+										&quot;subType&quot;, lowerVision,
+										&quot;type&quot;, &quot;set-base&quot;))]
+	[h: log.debug (&quot;dndb_getVision: distances = &quot; + distances]
+	[h, if (json.length (distances) &gt; 0), code: {
+		[h: distance = json.get (json.sort (distances), 0)]
+	}]
+
+	[h: bonuses = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
+										&quot;object&quot;, toon,
+										&quot;property&quot;, &quot;value&quot;,
+										&quot;subType&quot;, lowerVision,
+										&quot;type&quot;, &quot;sense&quot;))]
+	[h, foreach (bonus, bonuses): distance = distance + bonus]
+	
+	[h, if (distance &gt; 0): visions = json.append (visions, json.set (&quot;&quot;, 
+										&quot;name&quot;, vision, 
+										&quot;distance&quot;, distance))]
+}]
+
+[h: macro.return = visions]</command>
+        <label>dndb_getVision</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns the vision of the passed in character. An empty result indicates &quot;normal&quot; vision.
+
+arg (0) = toon
+
+return ex.
+[
+	{
+		&quot;name&quot; : &quot;Darkvision&quot;,
+		&quot;distance&quot; : &quot;60&quot;
+	},
+	{
+		&quot;name&quot; : &quot;Blindsight&quot;,
+		&quot;distance&quot; : &quot;10&quot;
 	}
 ]</toolTip>
         <displayHotKey>true</displayHotKey>
