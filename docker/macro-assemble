@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""Reassemble a macro from parts
+
+
+input:
+   target -
+
+       given macro/Single.xml and macro/Single.command exist
+
+       target can be
+
+       macro/Single
+       macro/Single.xml
+       macro/Single.command
+
+       the path given needs to be relative to the current working directory
+
+       Single.command belongs to
+       Single.xml by virtue of the shared filename base and sharing the same
+       directory
+
+       Single.xml belongs to MyMacro.mtmacro by virtue of having a label
+       attribute set to 'MyMacro'.  This can be overridden with the --output
+       argument, below.
+
+output:
+   --output
+       override output filename.  Default is to use the label from Single.xml
+       plus the .mtmacro extension.
+
+       Note: if the label has posix filesystem unfriendly characters they will
+       be urlencoded.
+
+   --verbose
+   --quiet
+
+       be more or less verbose
+"""
+
+import io
+import os
+import sys
+import argparse
+from lxml import objectify
+from lxml.etree import tostring
+from zipfile import ZipFile, ZIP_DEFLATED
+from zipfile_infolist import print_info
+from urllib.parse import quote_plus as quote
+
+
+AP = argparse.ArgumentParser()
+
+AP.add_argument(
+    'target',
+    help="The path to the target xml.  If missing '.xml' we'll add it")
+
+AP.add_argument(
+    '--output',
+    '-o',
+    help="The output filename if not <label>.mtmacro")
+
+AP.add_argument(
+    '--verbose',
+    '-v',
+    action='store_true',
+    help="Print more verbose output")
+
+AP.add_argument(
+    '--quiet',
+    '-q',
+    action='store_true',
+    help="Print less verbose output")
+
+AP.add_argument(
+    '--output-extension',
+    help="override the output file extension, default='.mtmacro'",
+    default='.mtmacro')
+
+opts = AP.parse_args(sys.argv[1:])
+
+# find the base path of the opts.target to construct the expected
+# macro_filename and command_filename
+base,ext = os.path.splitext(opts.target)
+
+if ext == 'xml':
+    opts.macro_filename = opts.target
+else:
+    opts.macro_filename = base + '.xml'
+opts.command_file = base + '.command'
+
+if not os.path.exists(opts.macro_filename):
+    print("could not find that macro file, aborting")
+    sys.exit()
+else:
+    if opts.verbose:
+        print('I: loading',opts.macro_filename,'for the macro xml file')
+    xml = objectify.parse(opts.macro_filename)
+
+if not os.path.exists(opts.command_file):
+    print("E: found the macro file, but no command file, aborting")
+    sys.exit()
+else:
+    if opts.verbose:
+        print('I: loading',opts.command_file,'for the macro command file')
+    command = open(opts.command_file).read()
+
+#define a properties.xml body for the final .mtmacro assembly
+
+properties_xml="""<map>
+  <entry>
+    <string>version</string>
+    <string>1.6.1</string>
+  <\entry>
+</map>"""
+
+# reassemble the command into the xml
+xml.getroot().command = objectify.DataElement(command, nsmap='', _pytype='')
+
+if not opts.output:
+    label = xml.getroot().label
+    if opts.verbose:
+        print('I: got label \"',label,'\" from the xml', sep='')
+    label = quote(label.text)
+    if opts.verbose and label != xml.getroot().label:
+        print('I: transformed label to filesystem friendly',label)
+
+    opts.output = label + opts.output_extension
+
+if opts.verbose:
+    print('I: using',opts.output,'as the output filename')
+
+# then assemble the zipfile
+zf = ZipFile(opts.output, mode='w', compression=ZIP_DEFLATED)
+
+try:
+    zf.writestr('content.xml', tostring(xml, pretty_print=True))
+    zf.writestr('properties.xml', properties_xml)
+finally:
+    zf.close()
+
+if opts.verbose or not opts.quiet:
+    print_info(opts.output)

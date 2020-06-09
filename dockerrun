@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# generic docker run with our "mount" stuff, but command/args passed in as if
+# you know what you're doing.
+#
+# for example ./dockerrun automagic Lib-DNDBeyond
+# or ./dockerrun bash
+# or ./dockerrun macro-assemble macro/Single --verbose
+
+entrypoint="$1"
+shift
+
+docker run --rm -it --mount type=bind,source="$(pwd)",target=/MT --entrypoint "${entrypoint}" maker "$@"
