@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c0e54922-a509-4b79-8609-2c86af0a3145</macroUUID>
+  <macroUUID>edce3391-00e7-48bc-9cd0-f6443996f6d4</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>3</index>
+  <index>5</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <command>[h: changes = &quot;[&apos;+20&apos;,&apos;+10&apos;,&apos;+5&apos;,0,-5,-10,-20]&quot;]
@@ -11,7 +11,24 @@
   + &quot;|Elevation Change|radio|SELECT=3 ORIENT=V SPAN=FALSE&quot;
   ))]
 [h: elevation = add(elevation, number(json.get(changes,elevation_index)))]
-[h,if(elevation == 0):resetProperty(&quot;elevation&quot;);setProperty(&quot;elevation&quot;, elevation)]</command>
+[h,if(elevation == 0),CODE:
+{
+	[h:resetProperty(&quot;elevation&quot;)]
+	[h:setBarVisible(&quot;ElevationPositive&quot;, 0)]
+	[h:setBarVisible(&quot;ElevationNegative&quot;, 0)]
+};
+{
+	[h:setProperty(&quot;elevation&quot;, elevation)]
+	[h, if(elevation &gt; 0), CODE:
+	{
+		[h:setBar(&quot;ElevationPositive&quot;, elevation / 100)]
+		[h:setBarVisible(&quot;ElevationNegative&quot;, 0)]
+	};
+	{
+		[h:setBar(&quot;ElevationNegative&quot;, math.abs(elevation) / 100)]
+		[h:setBarVisible(&quot;ElevationPositive&quot;, 0)]
+	}]
+}]</command>
   <label>Change Elevation</label>
   <group>Environment</group>
   <sortby>1</sortby>
