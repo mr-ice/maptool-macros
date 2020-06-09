@@ -1015,9 +1015,9 @@
       </net.rptools.maptool.client.ui.token.TwoToneBarTokenOverlay>
     </entry>
     <entry>
-      <string>ElivationPositive</string>
+      <string>ElevationPositive</string>
       <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
-        <name>ElivationPositive</name>
+        <name>ElevationPositive</name>
         <order>1</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
