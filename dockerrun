@@ -10,4 +10,8 @@
 entrypoint="$1"
 shift
 
+if ! docker image inspect maker >/dev/null 
+    then ./dockerbuild
+fi
+
 docker run --rm -it --mount type=bind,source="$(pwd)",target=/MT --entrypoint "${entrypoint}" maker "$@"

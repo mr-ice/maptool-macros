@@ -4,10 +4,19 @@ all the macros it finds into individual files per macro.  It doesn't
 change content.xml"""
 
 import sys
+import argparse
 from lxml import objectify
 from urllib.parse import quote
 
-main = objectify.parse(sys.argv[1])
+AP = argparse.ArgumentParser()
+
+AP.add_argument('file', type=argparse.FileType('r'))
+
+AP.add_argument('--verbose','-v', action='store_true', default=False)
+
+opts = AP.parse_args()
+
+main = objectify.parse(opts.file)
 macro = 'net.rptools.maptool.model.MacroButtonProperties'
 token = 'net.rptools.maptool.model.Token'
 
@@ -28,4 +37,6 @@ for label, command in macroList(main.getroot()).items():
     if '/' in label:
         label = quote(str(label),safe=' ')
     with open(label + '.command', 'w') as f:
+        if opts.verbose:
+           print('writing {}.command'.format(label))
         f.write(str(command))

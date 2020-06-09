@@ -3,4 +3,4 @@
 *.mtmacset
 *.rptok
 tmp
-docker/automagic
+__pycache__

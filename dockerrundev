@@ -1,3 +1,6 @@
 #!/bin/bash
 
-docker run --rm -it --mount type=bind,source="$(pwd)",target=/MT --entrypoint bash maker
+# this canonicalizes the path to the current script
+DIR=$(cd $(dirname $0) && pwd)
+
+$DIR/dockerrun bash
