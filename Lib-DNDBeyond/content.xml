@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Ehs/R/pbT0WG+JmCOQXb0A==</baGUID>
+    <baGUID>mhPJsQZZR5+Xg5kHuH5tWA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>4150</x>
-  <y>-5600</y>
-  <z>7</z>
+  <x>4050</x>
+  <y>-5700</y>
+  <z>10</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>4050</lastX>
+  <lastY>-5700</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>81</x>
+        <y>-114</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>81</x>
+        <y>-114</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -394,7 +414,7 @@
     <entry>
       <int>3</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>fa383482-482d-41aa-bcb3-d880492bdb91</macroUUID>
+        <macroUUID>5d6e8950-d2ca-4780-ae97-a49e401e371f</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>3</index>
         <colorKey>default</colorKey>
@@ -438,7 +458,7 @@
     <entry>
       <int>6</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>7532cb63-229c-48d0-b17d-ee1fa752652b</macroUUID>
+        <macroUUID>7f3ac13e-47ad-4606-867a-3f2912b9326d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>6</index>
         <colorKey>default</colorKey>
@@ -530,7 +550,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>10</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>20c5df41-7985-418d-bc10-9f7c94ddc3e3</macroUUID>
+        <macroUUID>bf6a1937-aea5-421e-ac29-82c5932af1f8</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>10</index>
         <colorKey>default</colorKey>
@@ -561,7 +581,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>15</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>1def9575-a55d-49d6-8cc0-380f80ea8ebb</macroUUID>
+        <macroUUID>30a625cc-866f-4d6d-ab53-9cf4f639c584</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>15</index>
         <colorKey>default</colorKey>
@@ -660,7 +680,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>16</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>fc3ef8b5-ed20-4fb5-9166-f40c30c421d2</macroUUID>
+        <macroUUID>f3bd0405-17d1-4bd0-a3cf-2489901ffed0</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>16</index>
         <colorKey>default</colorKey>
@@ -762,7 +782,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>17</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>c46ad308-7e14-4b9d-8512-3e45125f42bd</macroUUID>
+        <macroUUID>b5ba70d3-39da-455d-a15b-f6abfe97715e</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>17</index>
         <colorKey>default</colorKey>
@@ -806,7 +826,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>19</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>85f51444-7c6f-47b1-b691-b3e33bd25ac3</macroUUID>
+        <macroUUID>0b25d06c-82cf-4098-9677-0be19eda009b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>19</index>
         <colorKey>default</colorKey>
@@ -866,7 +886,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>20</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>2bb0884a-64fd-46e7-a199-e57885bf0fee</macroUUID>
+        <macroUUID>e97115a0-db29-41c7-8f9c-3b23901b2b3c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>20</index>
         <colorKey>default</colorKey>
@@ -959,7 +979,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>21</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>12411b69-b44d-4c51-b1fb-d2ad42627b8f</macroUUID>
+        <macroUUID>ffbe30f8-8a6f-4227-906c-3b908ba936aa</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>21</index>
         <colorKey>default</colorKey>
@@ -1004,7 +1024,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>22</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>74dc6ac3-2255-4459-b558-8207d4a25c49</macroUUID>
+        <macroUUID>670dfc63-f7b4-460c-a59f-7bf812550fc8</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>22</index>
         <colorKey>default</colorKey>
@@ -1053,7 +1073,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>23</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>a59371fe-fd1b-431f-a687-1546a6c02dd0</macroUUID>
+        <macroUUID>f12f2ede-6a24-4a99-b7d5-3ddf8d213a44</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>23</index>
         <colorKey>default</colorKey>
@@ -1090,11 +1110,14 @@ arg(1) - Weapon</toolTip>
 	[h: proficientArry = json.path.read (weaponProficiencies, 
 		&quot;.[?(@.entityId == &apos;&quot; + proficiencyId + &quot;&apos;)]&quot;)]
 	[h, if (attackType == &quot;1&quot;): attackTypeLabel = &quot;Melee&quot;; attackTypeLabel = &quot;Ranged&quot;]
-
+	[h: dmgDie = json.path.read (weaponRaw, &quot;definition.damage.diceValue&quot;, &quot;SUPPRESS_EXCEPTIONS&quot;)]
+	[h, if (dmgDie == &quot;null&quot;): dmgDie = 0]
+	[h: dmgDice = json.path.read (weaponRaw, &quot;definition.damage.diceCount&quot;, &quot;SUPPRESS_EXCEPTIONS&quot;)]
+	[h, if (dmgDice == &quot;null&quot;): dmgDice = 0]
 	[h: basicWeapon = json.set (&quot;&quot;, &quot;name&quot;, json.path.read (weaponRaw, &quot;definition.name&quot;),
 		&quot;attackType&quot;, attackTypeLabel,
-		&quot;dmgDie&quot;, json.path.read (weaponRaw, &quot;definition.damage.diceValue&quot;),
-		&quot;dmgDice&quot;, json.path.read (weaponRaw, &quot;definition.damage.diceCount&quot;),
+		&quot;dmgDie&quot;, dmgDie,
+		&quot;dmgDice&quot;, dmgDice,
 		&quot;dmgType&quot;, dmgType,
 		&quot;bonus&quot;, bonus,
 		&quot;range&quot;, json.path.read (weaponRaw, &quot;definition.range&quot;),
@@ -1135,7 +1158,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>24</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>3591d3fc-6cbe-4f35-bd3e-98702a4731cd</macroUUID>
+        <macroUUID>a54e1f9f-0999-47ff-bdae-1d393b212cb4</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>24</index>
         <colorKey>default</colorKey>
@@ -1207,7 +1230,7 @@ TODO: this could be refactored to test against any item instead of just weapons.
     <entry>
       <int>26</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>0c14500e-e0c8-4af9-a760-32a4849f6ad4</macroUUID>
+        <macroUUID>c4ee6db3-bb1f-4b2f-82a9-b80a07170e25</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>26</index>
         <colorKey>default</colorKey>
@@ -1348,7 +1371,7 @@ returns acObj
     <entry>
       <int>27</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>2ee1fbb3-6841-4847-97bb-aab41cd7d49a</macroUUID>
+        <macroUUID>7682841f-0698-405c-a1d2-d2dcedb0c779</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>27</index>
         <colorKey>default</colorKey>
@@ -1402,7 +1425,7 @@ Ex. for +3 Shield
     <entry>
       <int>28</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>cb2660fa-2a5a-4e89-9640-02a53a718d95</macroUUID>
+        <macroUUID>3aaf5e4f-e971-4cc0-b3a6-01bf0b8af5f9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>28</index>
         <colorKey>default</colorKey>
@@ -1487,7 +1510,7 @@ ex.
     <entry>
       <int>29</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>a98b3af0-1c68-4a96-9582-d5e1c834e1e7</macroUUID>
+        <macroUUID>2c59b2d0-eb41-4f95-8a29-da9bfcac1b16</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>29</index>
         <colorKey>default</colorKey>
@@ -1531,7 +1554,7 @@ data.classes[]</toolTip>
     <entry>
       <int>30</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>c1cfc695-78db-4eec-b781-cca3cdd8b6b7</macroUUID>
+        <macroUUID>e1a6d72e-ebbf-49a2-adc4-cb50f46a382d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>30</index>
         <colorKey>default</colorKey>
@@ -1601,7 +1624,7 @@ ex.
     <entry>
       <int>31</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d4e69e68-872c-41e6-8a92-b003b17779fb</macroUUID>
+        <macroUUID>f37e01cb-309d-4f86-809f-30321da06957</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>31</index>
         <colorKey>default</colorKey>
@@ -1674,7 +1697,7 @@ ex.
     <entry>
       <int>32</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>52703fd2-de9b-495f-b5d5-9fedc4149f48</macroUUID>
+        <macroUUID>2d042427-573c-4bb4-96db-58dc0bc85ca2</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>32</index>
         <colorKey>default</colorKey>
@@ -1710,7 +1733,7 @@ ex.
     <entry>
       <int>33</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>83f23766-fae1-4a6c-a7e2-8542237eedfc</macroUUID>
+        <macroUUID>0cff2a7b-9998-44c3-a82f-faaf7ed01f49</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>33</index>
         <colorKey>default</colorKey>
@@ -1795,7 +1818,7 @@ returns:
     <entry>
       <int>34</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>c70b631b-8dab-44bc-82b1-8ffb8d132b21</macroUUID>
+        <macroUUID>578a6913-b079-47e2-8584-36a95628db91</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>34</index>
         <colorKey>default</colorKey>
@@ -2008,7 +2031,7 @@ ex.
     <entry>
       <int>35</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>a6dd1105-277a-49a2-9787-7e5c0f1d0270</macroUUID>
+        <macroUUID>bca6766e-3ac9-418d-a631-c0f4216a6d9d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>35</index>
         <colorKey>default</colorKey>
@@ -2141,7 +2164,7 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
     <entry>
       <int>36</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>2e9e1d7a-1cae-4ae0-aa71-64cfe2b192c9</macroUUID>
+        <macroUUID>3ea06de3-1541-43c7-b566-e7497888e7c7</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>36</index>
         <colorKey>default</colorKey>
@@ -2218,7 +2241,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>37</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>04fcbe38-591c-440c-9c50-894567621d05</macroUUID>
+        <macroUUID>0f98e222-0932-44d4-91d1-d8d3f5e1d5cf</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>37</index>
         <colorKey>default</colorKey>
@@ -2438,7 +2461,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>38</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>41b925f7-60e4-433b-8586-3f3d2089a24f</macroUUID>
+        <macroUUID>1b17a435-ffb5-4d71-b7e2-a2abb9024a70</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>38</index>
         <colorKey>default</colorKey>
@@ -2525,7 +2548,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>39</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d428a770-7dd5-4dfd-93de-28d76d2c2475</macroUUID>
+        <macroUUID>efdeb8d0-73e6-4ba3-b8a8-a5dc725ccc61</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>39</index>
         <colorKey>default</colorKey>
@@ -2605,7 +2628,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>40</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f5a59073-f60b-4d5a-8367-76a505602d00</macroUUID>
+        <macroUUID>421004a7-dcf1-4c03-8bad-9b31dbe7287b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>40</index>
         <colorKey>default</colorKey>
@@ -2686,7 +2709,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>41</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>8cd6ae2a-4443-40a2-8676-4b859d444a4c</macroUUID>
+        <macroUUID>a9cac669-b18b-49c1-8bb7-595a8016c130</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>41</index>
         <colorKey>default</colorKey>
@@ -2783,7 +2806,7 @@ arg (0) = toon</toolTip>
     <entry>
       <int>42</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>3b4d91f0-cc2d-4465-9699-441cee5ca184</macroUUID>
+        <macroUUID>18831260-f242-40d0-91ca-56435cea3179</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>42</index>
         <colorKey>default</colorKey>
@@ -2896,7 +2919,7 @@ returns:
     <entry>
       <int>45</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>16cd9917-42c4-4aa4-aa5b-79348d1d7c1a</macroUUID>
+        <macroUUID>8f4a5b9b-38ef-43af-ae5a-d52d2d7890dd</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>45</index>
         <colorKey>default</colorKey>
@@ -2930,7 +2953,7 @@ Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
     <entry>
       <int>46</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>084ed837-1826-4b0a-8b77-1b4288e4dd61</macroUUID>
+        <macroUUID>08327b35-ee62-4275-ab42-ee14d2eaf191</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>46</index>
         <colorKey>default</colorKey>
@@ -2985,7 +3008,7 @@ ex.
     <entry>
       <int>47</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b47df4e8-8acb-40ca-8a57-83a2ad0d8300</macroUUID>
+        <macroUUID>78a4ad2c-7df2-4a3a-9619-d03bd7ff87ed</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>47</index>
         <colorKey>default</colorKey>
@@ -3019,7 +3042,7 @@ Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
     <entry>
       <int>49</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>a82a2ec8-76c9-40f2-a760-64f8b2f83b5f</macroUUID>
+        <macroUUID>fc1619f0-0af8-4e3c-9c8d-b98197d10a17</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>49</index>
         <colorKey>default</colorKey>
@@ -3078,7 +3101,7 @@ Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
     <entry>
       <int>50</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>294a19fe-f23d-4ff4-8ebb-08179ebe8af3</macroUUID>
+        <macroUUID>b39b4023-bd6f-4a34-9913-e0c50a5a2839</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>50</index>
         <colorKey>blue</colorKey>
@@ -3125,7 +3148,7 @@ Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
     <entry>
       <int>51</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>abe6ddf2-6503-424b-ace5-dee54cceabed</macroUUID>
+        <macroUUID>05ad05df-d9e9-4014-bcc0-42579a866f26</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>51</index>
         <colorKey>black</colorKey>
@@ -3172,7 +3195,7 @@ Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
     <entry>
       <int>53</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>6db3822d-1576-4950-948a-e859e9496281</macroUUID>
+        <macroUUID>f06a3950-e3b1-476f-b918-f1c143ce395b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>53</index>
         <colorKey>default</colorKey>
