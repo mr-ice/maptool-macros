@@ -1,0 +1,761 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>K1fhG4FYTU2VX4jSyxHZuQ==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>g4X3y4Z8S7ySbTZlrmZi1w==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>a1dddd11fee78806f354fbe198cf3671</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>350</x>
+  <y>100</y>
+  <z>1</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>50</lastX>
+  <lastY>250</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>1</x>
+        <y>5</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>2</x>
+        <y>4</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>1</x>
+          <y>5</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>5.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>3</x>
+        <y>4</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>2</x>
+          <y>4</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>5.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>4.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>3</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>3</x>
+          <y>4</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>4.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>3.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>3</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>3</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+          <h>3.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+        </parent>
+        <h>2.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>6</x>
+        <y>2</y>
+        <g>5.0</g>
+        <distanceTraveled>5.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>3</y>
+          <g>4.0</g>
+          <distanceTraveled>4.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
+          <h>2.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
+        </parent>
+        <h>1.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>7</x>
+        <y>2</y>
+        <g>0.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>1</x>
+        <y>5</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>7</x>
+        <y>2</y>
+        <g>0.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
+  <snapToScale>true</snapToScale>
+  <width>304</width>
+  <height>291</height>
+  <isoWidth>0</isoWidth>
+  <isoHeight>0</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:DnD5e</name>
+  <ownerType>0</ownerType>
+  <tokenShape>SQUARE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>Basic</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Normal</sightType>
+  <hasSight>false</hasSight>
+  <state>
+    <entry>
+      <string>Paralyzed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stunned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 6</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Frightened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Grappled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 5</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 1</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Petrified</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconcious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Invisible</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Poisoned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Helpless</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blinded</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Deafened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Restrained</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <propertyMapCI>
+    <store>
+      <entry>
+        <string>constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>libversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>libversion</key>
+          <value class="string">0.1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>description</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Description</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>sleight of hand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Sleight of Hand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>character id</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Character ID</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception</key>
+          <value class="string">4</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>climb</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Climb</key>
+          <value class="string">20</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>deception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Deception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>burrow</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Burrow</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>elevation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Elevation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>initiative</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Initiative</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>survival</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Survival</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>animal handling</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Animal Handling</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Medicine</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>History</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>acrobatics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Acrobatics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>persuasion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Persuasion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight</key>
+          <value class="string">7</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>fly</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Fly</key>
+          <value class="string">24</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>condition</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>performance</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Performance</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight-gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight-GM</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception-gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception-GM</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>investigation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Investigation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>movement</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Movement</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intimidation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intimidation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>walk</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Walk</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>swim</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Swim</key>
+          <value class="string">23</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+    </store>
+  </propertyMapCI>
+  <macroPropertiesMap>
+    <entry>
+      <int>1</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>f82e8e31-0528-410c-9cc3-6b79212f7326</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>1</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: setProperty (&quot;libversion&quot;, &quot;0.1&quot;)]
+
+&lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
+[h: macros = getMacros()]
+[h: log.debug (&quot;macros: &quot; + macros)]
+[h, foreach (macroName, macros), code: {
+	[h, if (lastIndexOf (macroName, &quot;dnd5e_&quot;) &gt; -1), code: {
+		[h: log.debug (&quot;Registering &quot; + macroName)]
+		[h: defineFunction (macroName, macroName + &quot;@this&quot;)]
+	}]
+}]
+
+&lt;pre&gt;[r: json.indent (getInfo (&quot;client&quot;), 3)]&lt;/pre&gt;</command>
+        <label>onCampaignLoad</label>
+        <group></group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>3</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>a85df467-bec7-4175-830c-c1503a11b442</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>3</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: speedStr = &quot;&quot;]
+
+[h, if (Walk != &quot;&quot;): speedStr = &quot; / Walk &quot; + Walk]
+[h, if (Fly != &quot;&quot;): speedStr = speedStr + &quot; / Fly &quot; + Fly]
+[h, if (Climb != &quot;&quot;): speedStr = speedStr + &quot; / Climb &quot; + Climb]
+[h, if (Swim != &quot;&quot;): speedStr = speedStr + &quot; / Swim &quot; + Swim]
+[h, if (Burrow != &quot;&quot;): speedStr = speedStr + &quot; / Burrow &quot; + Burrow]
+
+[h: speedStr = substring (speedStr, 3)]
+[r: macro.return = speedStr]</command>
+        <label>dnd5e_getMovementStat</label>
+        <group>Token Properties</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns the movement value to display on the token stat sheet. Requires the token to have previously been synchronized with DNDBeyond. Will return a blank value if not.
+
+Return
+ex.
+&quot;Walk 40 / Swim 40 / Fly 120&quot;</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>5</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>e72add0d-3f99-4cfc-814a-c58234de1cd7</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>5</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: bonus = getProperty (&quot;Insight&quot;)]
+[h, if (bonus == &quot;&quot;): return (0, &quot;&quot;)]
+[h,if (bonus &gt; -1): value = &quot;+&quot;; value = &quot;&quot;]
+Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
+        <label>dnd5e_getInsightStat</label>
+        <group>Token Properties</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns the string to be displayed for the GM&apos;s view of the Insight skill on the statsheet.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>6</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>c3c622ba-6333-4d16-8775-cc431cded032</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>6</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: bonus = getProperty (&quot;Perception&quot;)]
+[h, if (bonus == &quot;&quot;): return (0, &quot;&quot;)]
+[h,if (bonus &gt; -1): value = &quot;+&quot;; value = &quot;&quot;]
+Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
+        <label>dnd5e_getPerceptionStat</label>
+        <group>Token Properties</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns the string to be displayed for the GM&apos;s view of the Perception skill on the statsheet.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>
