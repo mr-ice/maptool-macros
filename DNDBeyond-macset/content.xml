@@ -62,6 +62,7 @@
 [h: skills = json.get (basicToon, &quot;skills&quot;)]
 [h, foreach (skill, skills): setProperty (json.get (skill, &quot;name&quot;), json.get (skill, &quot;totalBonus&quot;))]
 
+[h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]</command>
     <label>Reset Properties</label>
     <group>DNDBeyond</group>
