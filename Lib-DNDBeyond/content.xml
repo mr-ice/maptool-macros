@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>4050</x>
-  <y>-5700</y>
+  <x>4000</x>
+  <y>-5900</y>
   <z>10</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>4050</lastX>
-  <lastY>-5700</lastY>
+  <lastX>4000</lastX>
+  <lastY>-5900</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
-        <x>81</x>
-        <y>-114</y>
+        <x>80</x>
+        <y>-118</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -34,8 +34,8 @@
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
-        <x>81</x>
-        <y>-114</y>
+        <x>80</x>
+        <y>-118</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -3122,6 +3122,64 @@ returns:
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
         <toolTip>Populates the player token with macros using call-backs to those in the Token group</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>54</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>fd896165-49a6-4b0c-9c43-abce405001d6</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>54</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode(basicToon) == &quot;&quot;), code: {
+	[h: errMsg = &quot;Token needs to sync with DnDBeyond first&quot;]
+	[h: abort( input(&quot; junk | | &quot; + errMsg + &quot; | LABEL | TEXT=false&quot;))]
+	[r: return (0, errMsg)]
+}]
+[h: toonAttackJson = json.get (basicToon, &quot;attacks&quot;)]
+[h: existingAttackJson = getProperty (&quot;attackJSON&quot;)]
+&lt;!-- Merge the attack JSON, which means overwrite common key names, add new ones, --&gt;
+&lt;!-- but do not clear custom keys --&gt;
+
+&lt;!-- We gotta roll our own merge --&gt;
+&lt;!-- Iterate the existing array. If an attack is found the  new array of the same --&gt;
+&lt;!-- name, ignore it. Otherwise add the attack to the array. Return the results --&gt;
+[h: newAttackJSON = toonAttackJson]
+
+[h, foreach (existingAttack, existingAttackJson), code: {
+	[h: newAttack = &quot;&quot;]
+	[h: append = 1]
+	[h, foreach (toonAttack, toonAttackJson), code: {
+		[h: toonAttackName = json.get (toonAttack, &quot;name&quot;)]
+		[h: existingAttackJsonName = json.get (existingAttack, &quot;name&quot;)]
+		[h, if (toonAttackName == existingAttackJsonName): append = 0]
+	}]
+	[h, if (append &gt; 0): newAttackJSON = json.append (newAttackJSON, existingAttack)]
+}]
+
+[h: setProperty (&quot;attackJSON&quot;, newAttackJSON)]</command>
+        <label>dndb_mergeAttackJson</label>
+        <group>Utility</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Merges the Attack configuration object from DNDBeyond object with the attack configuration stored on the AttackJSON property.</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
