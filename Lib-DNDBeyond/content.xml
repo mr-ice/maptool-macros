@@ -2759,20 +2759,8 @@ All other key-value pairs are used as search terms.</toolTip>
 [h: basicToon = json.set (basicToon, &quot;classes&quot;, classArry)]
 
 &lt;!-- HP --&gt;
-[h: abilities = dndb_getAbilities (toon)]
-[h: baseHp =  json.path.read (toon, &quot;data.baseHitPoints&quot;)]
-[h: maxHp = baseHp + (json.get (abilities, &quot;conBonus&quot;) * totalLevel)]
-[h: damageTaken = json.path.read (toon, &quot;data.removedHitPoints&quot;)]
-[h: temporaryHitPoints = json.path.read (toon, &quot;data.temporaryHitPoints&quot;)]
-[h: maxHpModifier = json.path.read (toon, &quot;data.bonusHitPoints&quot;)]
-[h: overrideMaxHp = json.path.read (toon, &quot;data.overrideHitPoints&quot;)]
-[h, if (maxHpModifier != &quot;&quot; &amp;&amp; isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
-[h, if (overrideMaxHp != &quot;&quot; &amp;&amp; isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
-
-[h: basicToon = json.set (basicToon, &quot;hitPoints&quot;, json.set (&quot;&quot;,
-							&quot;maxHp&quot;, maxHp,
-							&quot;currentHp&quot;, maxHp - damageTaken,
-							&quot;tempHp&quot;, temporaryHitPoints))]
+[h: hitPoints = dndb_getHitPoints (toon)]
+[h: basicToon = json.set (basicToon, &quot;hitPoints&quot;, hitPoints)]
 
 &lt;!-- Speed --&gt;
 [h: speeds = dndb_getSpeed (toon)]
@@ -2955,12 +2943,12 @@ returns:
 [r: atkString]</command>
         <label>Make Check</label>
         <group>Token</group>
-        <sortby></sortby>
+        <sortby>100</sortby>
         <autoExecute>true</autoExecute>
         <includeLabel>false</includeLabel>
         <applyToTokens>true</applyToTokens>
         <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
+        <fontSize>1.05em</fontSize>
         <minWidth></minWidth>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
@@ -3002,7 +2990,7 @@ returns:
 [r, macro (&quot;Make Check@Lib:DnDBeyond&quot;): skillCheckObj]</command>
         <label>Skill Check</label>
         <group>Token</group>
-        <sortby></sortby>
+        <sortby>20</sortby>
         <autoExecute>true</autoExecute>
         <includeLabel>false</includeLabel>
         <applyToTokens>true</applyToTokens>
@@ -3049,7 +3037,7 @@ returns:
 [r, macro (&quot;Make Check@Lib:DnDBeyond&quot;): savingThrowCheckObj]</command>
         <label>Saving Throw</label>
         <group>Token</group>
-        <sortby></sortby>
+        <sortby>10</sortby>
         <autoExecute>true</autoExecute>
         <includeLabel>false</includeLabel>
         <applyToTokens>true</applyToTokens>
@@ -3089,17 +3077,31 @@ returns:
 
 [h: macroCfgs = json.append (&quot;&quot;, 
 			json.set (basicCfg, &quot;name&quot;, &quot;Make Check&quot;,
-					&quot;fontSize&quot;, &quot;1.00em&quot;,
+					&quot;sortBy&quot;, &quot;100&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Make Check@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
 					
-			json.set (basicCfg, &quot;name&quot;, &quot;Saving Throw&quot;,
+			json.set (basicCfg, &quot;name&quot;, &quot;Make Attack&quot;,
+					&quot;color&quot;, &quot;red&quot;,
+					&quot;fontColor&quot;, &quot;black&quot;,
+					&quot;sortBy&quot;, &quot;1&quot;,
+					&quot;command&quot;, &quot;[macro(&apos;Make Attack@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
+
+			json.set (basicCfg, &quot;name&quot;, &quot;Attack Config&quot;,
+					&quot;color&quot;, &quot;green&quot;,
+					&quot;fontColor&quot;, &quot;black&quot;,
+					&quot;sortBy&quot;, &quot;2&quot;,
+					&quot;command&quot;, &quot;[macro(&apos;Attack Config@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
+
+json.set (basicCfg, &quot;name&quot;, &quot;Saving Throw&quot;,
 					&quot;color&quot;, &quot;black&quot;,
 					&quot;fontColor&quot;, &quot;yellow&quot;,
+					&quot;sortBy&quot;, &quot;10&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Saving Throw@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
 					
 			json.set (basicCfg, &quot;name&quot;, &quot;Skill Check&quot;,
 					&quot;color&quot;, &quot;blue&quot;,
 					&quot;fontColor&quot;, &quot;yellow&quot;,
+					&quot;sortBy&quot;, &quot;20&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Skill Check@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;))]
 					
 [h, foreach (macroCfg, macroCfgs), code: {
@@ -3180,6 +3182,342 @@ returns:
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
         <toolTip>Merges the Attack configuration object from DNDBeyond object with the attack configuration stored on the AttackJSON property.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>55</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>d0270aed-1c6a-4c15-b157-4a70853fd163</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>55</index>
+        <colorKey>red</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Constants --&gt;
+[h: ATTACK_JSON = &quot;attackJSON&quot;]
+[h: NAME = &quot;name&quot;]
+[h: ATK_BONUS = &quot;atkBonus&quot;]
+[h: DMG_BONUS = &quot;dmgBonus&quot;]
+[h: DMG_DIE = &quot;dmgDie&quot;]
+[h: DMG_DICE = &quot;dmgDice&quot;]
+[h: CRIT_BONUS_DICE = &quot;critBonusDice&quot;]
+[h: DMG_TYPE = &quot;dmgType&quot;]
+[h: DMG_BONUS_EXPR = &quot;dmgBonusExpr&quot;]
+[h: NEW_ATTACK = &quot;New Attack&quot;]
+[h: LAST_ATTACK_SELECTION = &quot;lastAttackSelection&quot;]
+[h: SHOW_DETAILS = &quot;showDetails&quot;]
+
+&lt;!-- Read attack JSON and prompt for selection --&gt;
+[h, if (!isPropertyEmpty (ATTACK_JSON)), code: {
+	&lt;!-- Property is populated. Fetch JSON data --&gt;
+    [h: attackJson = getProperty(ATTACK_JSON)]
+}; {
+	&lt;!-- Property is empty, use blank object --&gt;
+	[h: attackJson = &quot;&quot;]
+}]
+
+[h: arrLen = json.length(attackJson)]
+[h, if (arrLen &lt; 1), code: {
+	&lt;!-- no attacks found, so create one in the config macro --&gt;
+	[h, macro(&quot;Attack Config@global&quot;): &quot;&quot;]
+	[h: attackJson = getProperty(ATTACK_JSON)]
+}; {
+    &lt;!-- no-op --&gt;
+}]
+
+&lt;!-- Trying to find the right balance between using Input w/ some contextual information and avoiding
+	 the PITA of writing a Form macro --&gt;
+[h, if (isPropertyEmpty (SHOW_DETAILS)): showDetails = 0; showDetails = getProperty (SHOW_DETAILS)]
+
+&lt;!-- Build an attack list to pick from. Also, build a detailed label set for the input, if desired --&gt;
+[h: attackList = &quot;&quot;]
+[h: inputLabelList = &quot;&quot;]
+[h, foreach (attack, attackJson), code: {
+	[h: attackList = json.append(attackList, json.get(attack, NAME))]
+	[h: inputLabelList = inputLabelList + &quot;nothing | nothing | &quot; + json.get(attack, NAME) +
+		&quot;: atk=&quot; + json.get(attack,ATK_BONUS) + &quot;, dmg=&quot; + json.get(attack, DMG_DICE) +
+		&quot;d&quot; + json.get(attack, DMG_DIE) + &quot; + &quot; + json.get(attack, DMG_BONUS) +
+		&quot; + &quot; + json.get(attack, DMG_BONUS_EXPR) + &quot;|LABEL | text=false ##&quot;]
+}]
+&lt;!-- A little separator --&gt;
+[h: inputLabelList = inputLabelList + &quot;nothing | ------------------------------------ | --------------------------------------------------- | label | ##&quot;]
+&lt;!-- Locate the index of the last selection to make it the default selection --&gt;
+[h: lastSelection = getProperty(LAST_ATTACK_SELECTION)]
+[h: selectedIndex = json.indexOf(attackList, lastSelection)]
+[h: selectedIndex = if (selectedIndex &lt; 0, 0, selectedIndex)]
+
+&lt;!-- User Input --&gt;
+[h: abort( input(
+	if (showDetails &gt; 0, inputLabelList, &quot;&quot;) +
+    &quot;selectedAttack | &quot; + json.toList(attackList) + &quot; | Select Attack | list | value=string select=&quot; + selectedIndex,
+    &quot;advantageDisadvantage|None,Advantage,Disadvantage|Advantage/Disadvantage|list|value=string&quot;,
+    &quot;showDetails | &quot; + showDetails + &quot; | Show Details Next Time | check&quot;
+))]
+
+&lt;!-- Save the selection for next execution as the default selection --&gt;
+[h: setProperty(LAST_ATTACK_SELECTION, selectedAttack)]
+[h: setProperty(SHOW_DETAILS, showDetails)]
+
+&lt;!-- Attack selected! Fetch the JSON for the selected attack. --&gt;
+[h, foreach (attack, attackJson), code: {
+	[h: attackName = json.get(attack, NAME)]
+	[h, if (attackName == selectedAttack), code: {
+		[cfgAttack = attack]
+	};{ 0 }]
+}]
+
+&lt;!-- transfer json properties to input vars --&gt;
+[h: attackBonus = json.get(cfgAttack, ATK_BONUS)]
+[h: dmgBonus = json.get(cfgAttack, DMG_BONUS)]
+[h: dmgDie = json.get(cfgAttack, DMG_DIE)]
+&lt;!-- Some weapons dont do damage and probably shouldnt be here. But dont let that stop the show --&gt;
+[h, if (dmgDie == &quot;&quot;): dmgDie = 0]
+[h: dmgNumDice = json.get(cfgAttack, DMG_DICE)]
+[h, if (dmgNumDice == &quot;&quot;): dmgNumDice = 0]
+[h: attackName = json.get(cfgAttack, NAME)]
+[h: critBonus = json.get(cfgAttack, CRIT_BONUS_DICE)]
+[h: dmgType = json.get(cfgAttack, DMG_TYPE)]
+[h: dmgBonusExpr = json.get(cfgAttack, DMG_BONUS_EXPR)]
+
+&lt;!-- Roll attack dice (always roll two, determine if advantage or disadvantage applies after --&gt;
+&lt;!-- Unlike dmg rolls that use a full text expression, attack is done in discrete steps to determine criticals --&gt;
+[h: attack = 1d20]
+[h: attack2 = 1d20]
+
+&lt;!-- Calculate the correct attack roll --&gt;
+[h: realAttack = attack]
+[h,if (advantageDisadvantage == &quot;Advantage&quot;): realAttack = max(attack, attack2)]
+[h,if (advantageDisadvantage == &quot;Disadvantage&quot;): realAttack = min(attack, attack2)]
+
+&lt;!-- Apply critical --&gt;
+[h,if (realAttack == 20): dmgNumDice = (dmgNumDice * 2) + critBonus]
+
+&lt;!-- Roll damage --&gt;
+[h: dmgExpression = dmgNumDice + &quot;d&quot; + dmgDie + &quot; + &quot; + dmgBonus]
+[h: noDmgExpression = json.equals(dmgBonusExpr, &quot;&quot;) + json.equals(dmgBonusExpr, 0)]
+[h: dmgExpression = if (noDmgExpression &gt; 0, dmgExpression, dmgExpression + &quot; + &quot; + dmgBonusExpr)]
+[h: dmg = eval(dmgExpression)]
+
+&lt;!-- Build the message --&gt;
+[h: atkString = &quot;&lt;b&gt;&quot;]
+[h: atk2String = &quot;&lt;b&gt;&quot;]
+[h,if(attack == 20): atkString = atkString + &quot;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; &quot;]
+[h,if(attack2 == 20): atk2String = atk2String + &quot;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; &quot;]
+[h: attack = attack + attackBonus]
+[h: attack2 = attack2 + attackBonus]
+[h: realAttack = realAttack + attackBonus]
+[h,if(advantageDisadvantage != &quot;None&quot;): realAtkString = &quot;&lt;b&gt;&quot; + realAttack + &quot;&lt;/b&gt;&quot;]
+[h: atkString = atkString + attack + &quot;&lt;/b&gt;&quot;]
+[h: atk2String = atk2String + attack2 + &quot;&lt;/b&gt;&quot;]
+
+[h: nameStr = attackName + &quot;&lt;br&gt;(&quot; + dmgType + &quot;)&lt;br&gt;&lt;br&gt;&quot;]
+[h: atkStr = &quot;Attack (1d20 + &quot; + attackBonus + &quot;): &quot; + atkString + &quot;&lt;br&gt;&quot;]
+[h,if(advantageDisadvantage != &quot;None&quot;): atkStr = atkStr + advantageDisadvantage + &quot;: &quot; + atk2String + &quot;&lt;br&gt;&lt;br&gt;Actual Attack: &quot; + realAtkString + &quot;&lt;br&gt;&quot;]
+[h: dmgStr = &quot;Damage (&quot; + dmgExpression + &quot;): &quot; + dmg]
+
+[r: nameStr]
+[r: atkStr]
+[r: dmgStr]</command>
+        <label>Make Attack</label>
+        <group>Token</group>
+        <sortby>1</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.05em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Do the deed</toolTip>
+        <displayHotKey>false</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>56</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>81486354-954e-4ef9-af3a-df92b0432535</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>56</index>
+        <colorKey>green</colorKey>
+        <hotKey>None</hotKey>
+        <command>
+&lt;!-- Constants --&gt;
+[h: ATTACK_JSON = &quot;attackJSON&quot;]
+[h: NAME = &quot;name&quot;]
+[h: ATK_BONUS = &quot;atkBonus&quot;]
+[h: DMG_BONUS = &quot;dmgBonus&quot;]
+[h: DMG_DIE = &quot;dmgDie&quot;]
+[h: DMG_DICE = &quot;dmgDice&quot;]
+[h: CRIT_BONUS_DICE = &quot;critBonusDice&quot;]
+[h: DMG_TYPE = &quot;dmgType&quot;]
+[h: DMG_BONUS_EXPR = &quot;dmgBonusExpr&quot;]
+[h: NEW_ATTACK = &quot;New Attack&quot;]
+
+&lt;!-- Read attack JSON and prompt for selection --&gt;
+[h, if (!isPropertyEmpty (ATTACK_JSON)), code: {
+	&lt;!-- Property is populated. Fetch JSON data --&gt;
+    [h: attackJson = getProperty(ATTACK_JSON)]
+}; {
+	&lt;!-- Property is empty, use blank object --&gt;
+	[h: attackJson = &quot;&quot;]
+}]
+
+[h: arrLen = json.length(attackJson)]
+[h, if (arrLen &lt; 1), code: {
+	[h: selectedAttack = NEW_ATTACK]
+}; {
+    [h: attackList = NEW_ATTACK]  
+    [h, foreach (attack, attackJson): attackList = json.append(attackList, json.get(attack, NAME))]
+    [h: abort( input( &quot;selectedAttack | &quot; + json.toList(attackList) + &quot; | Select Attack | list | value=string&quot;))]
+}]
+
+&lt;!-- Attack selected! Fetch the JSON for the selected attack. If &quot;new&quot; was selected, nothing will be found --&gt;
+[h: cfgAttack = json.fromStrProp(NAME + &quot;=&quot; + NEW_ATTACK)]
+[h, foreach (attack, attackJson), code: {
+	[h: attackName = json.get(attack, NAME)]
+	[h, if (attackName == selectedAttack), code: {
+		[cfgAttack = attack]
+	}; {0}]
+}]
+
+&lt;!-- transfer json properties to input vars --&gt;
+[h: inputAtkBonus = json.get(cfgAttack, ATK_BONUS)]
+[h: inputDmgBonus = json.get(cfgAttack, DMG_BONUS)]
+[h: inputDmgDie = json.get(cfgAttack, DMG_DIE)]
+[h: inputDmgDice = json.get(cfgAttack, DMG_DICE)]
+[h: inputName = json.get(cfgAttack, NAME)]
+[h: inputCritBonus = json.get(cfgAttack, CRIT_BONUS_DICE)]
+[h: inputDmgType = json.get(cfgAttack, DMG_TYPE)]
+[h: inputDmgBonusExpr = json.get(cfgAttack, DMG_BONUS_EXPR)]
+
+&lt;!-- Prompt the input --&gt;
+[h: abort( input( &quot;inputName | &quot; + inputName + &quot; | Attack Name | text&quot;,
+    &quot;inputAtkBonus | &quot; + inputAtkBonus + &quot; | Attack Bonus | text&quot;,
+    &quot;inputDmgBonus | &quot; + inputDmgBonus + &quot; | Damage Bonus | text&quot;,
+    &quot;inputDmgDie | &quot; + inputDmgDie + &quot; | Damage Die | text&quot;,
+    &quot;inputDmgDice | &quot; + inputDmgDice + &quot; | Number of Damage Dice | text&quot;,
+    &quot;inputDmgType | &quot; + inputDmgType + &quot; | Damage Type | text&quot;,
+    &quot;inputCritBonus | &quot; + inputCritBonus + &quot; | Extra Critical Dice | text&quot;,
+    &quot;inputDmgBonusExpr | &quot; + inputDmgBonusExpr + &quot; | Bonus Damage Expression | text&quot;,
+    &quot;inputDeleteAttack | | Delete Attack | check&quot;))]
+
+&lt;!-- Convert the input into a new JSON object --&gt;
+[h: cfgAttack = json.set(cfgAttack, 
+    NAME, inputName,
+    ATK_BONUS, inputAtkBonus,
+    DMG_BONUS, inputDmgBonus,
+    DMG_DIE, inputDmgDie,
+    DMG_DICE, inputDmgDice,
+    CRIT_BONUS_DICE, inputCritBonus,
+    DMG_TYPE, inputDmgType,
+    DMG_BONUS_EXPR, inputDmgBonusExpr)]
+
+[h, if (NEW_ATTACK == selectedAttack), code: {
+    &lt;!-- If you added a new attack, just tack it into attackJson --&gt;
+    [h: newAttackJson = json.append(attackJson, cfgAttack)]
+}; {
+    &lt;!-- But if you modifed and existing attack, iterate through the attackJson and replace it --&gt;
+    [h: newAttackJson = &quot;&quot;]
+    [h, foreach (attack, attackJson), code: {
+        [h: attackName = json.get(attack, NAME)]
+        [h: attack = if (attackName == selectedAttack, cfgAttack, attack)]
+        [h: newAttackJson = if (inputDeleteAttack == 1 &amp;&amp; selectedAttack == json.get(attack, NAME), newAttackJson, json.append(newAttackJson, attack))]
+    }]
+}]
+[h: setProperty(ATTACK_JSON, newAttackJson)]
+[r, macro( &quot;Print AttackJSON@global&quot;): &quot;&quot;]
+
+</command>
+        <label>Attack Config</label>
+        <group>Token</group>
+        <sortby>2</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.05em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Used to configure attacks. Should be executed at least once before Make Attack.
+While this can only configure one attack per execution, bulk configuration is
+made possible via Set AttackJSON.</toolTip>
+        <displayHotKey>false</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>57</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>dde7d0c3-474d-46e9-9f90-9d7ec35eed67</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>57</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg (0)]
+
+&lt;!-- HP --&gt;
+[h: totalLevel = 0]
+[h: classArry = &quot;&quot;]
+
+[h, foreach (class, json.path.read (toon, &quot;data.classes&quot;)), code: {
+	[h: level = json.get (class, &quot;level&quot;)]
+	[h: totalLevel = totalLevel + level]
+	[h: className = json.path.read (class, &quot;definition.name&quot;)]
+	[h: classObj = json.set (&quot;&quot;, &quot;className&quot;, className, &quot;level&quot;, level)]
+	[h: hitDice = json.path.read (class, &quot;definition.hitDice&quot;)]
+	[h: classObj = json.set (classObj, &quot;hitDice&quot;, hitDice)]
+	[h: classArry = json.append (classArry, classObj)]
+}]
+
+[h: abilities = dndb_getAbilities (toon)]
+[h: baseHp =  json.path.read (toon, &quot;data.baseHitPoints&quot;)]
+[h: maxHp = baseHp + (json.get (abilities, &quot;conBonus&quot;) * totalLevel)]
+[h: damageTaken = json.path.read (toon, &quot;data.removedHitPoints&quot;)]
+[h: temporaryHitPoints = json.path.read (toon, &quot;data.temporaryHitPoints&quot;)]
+[h: maxHpModifier = json.path.read (toon, &quot;data.bonusHitPoints&quot;)]
+[h: overrideMaxHp = json.path.read (toon, &quot;data.overrideHitPoints&quot;)]
+[h, if (maxHpModifier != &quot;&quot; &amp;&amp; isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
+[h, if (overrideMaxHp != &quot;&quot; &amp;&amp; isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
+
+[h: hitPoints =  json.set (&quot;&quot;,
+							&quot;maxHp&quot;, maxHp,
+							&quot;currentHp&quot;, maxHp - damageTaken,
+							&quot;tempHp&quot;, temporaryHitPoints)]
+[h: macro.return = hitPoints]</command>
+        <label>dndb_getHitPoints</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
