@@ -1,5 +1,60 @@
 <list>
   <net.rptools.maptool.model.MacroButtonProperties>
+    <macroUUID>53aae561-b296-47b1-9e2a-b1563c20bac7</macroUUID>
+    <saveLocation>CampaignPanel</saveLocation>
+    <index>4</index>
+    <colorKey>orange</colorKey>
+    <hotKey>None</hotKey>
+    <command>[h: charId = getProperty (&quot;Character ID&quot;)]
+[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+
+[h, if (charId == &quot;&quot; || encode (basicToon) == &quot;&quot;), code: {
+	[h: message = &quot;Token needs to be initialized with DNDBeyond first&quot;]
+	[h: abort( input( &quot; junkVar | | &quot; + message + &quot; | LABEL | TEXT=false&quot;))]
+	[h: return (0, message)]
+}]
+
+[h: toon = dndb_getCharJSON (charId)]
+
+&lt;!--HP --&gt;
+[h: hitPoints = dndb_getHitPoints (toon)]
+
+&lt;!-- Speed --&gt;
+[h: speeds = dndb_getSpeed (toon)]
+
+&lt;!-- AC --&gt;
+[h: ac = dndb_getAC (toon)]
+
+[h: basicToon = json.set (basicToon, 
+				&quot;speeds&quot;, speeds,
+				&quot;hitPoints&quot;, hitPoints,
+				&quot;armorClass&quot;, ac)]
+
+[h: setProperty (&quot;dndb_BasicToon&quot;, basicToon)]
+[h, macro (&quot;Reset Properties@this&quot;): 1]
+[r,s: json.get (basicToon, &quot;name&quot;) + &quot; has been updated!&quot;]</command>
+    <label>Quick Update</label>
+    <group>DNDBeyond</group>
+    <sortby></sortby>
+    <autoExecute>true</autoExecute>
+    <includeLabel>false</includeLabel>
+    <applyToTokens>true</applyToTokens>
+    <fontColorKey>black</fontColorKey>
+    <fontSize>1.05em</fontSize>
+    <minWidth></minWidth>
+    <maxWidth></maxWidth>
+    <allowPlayerEdits>false</allowPlayerEdits>
+    <toolTip>Refreshes AC, Hitpoints, and Speed</toolTip>
+    <displayHotKey>true</displayHotKey>
+    <commonMacro>false</commonMacro>
+    <compareGroup>true</compareGroup>
+    <compareSortPrefix>true</compareSortPrefix>
+    <compareCommand>true</compareCommand>
+    <compareIncludeLabel>true</compareIncludeLabel>
+    <compareAutoExecute>true</compareAutoExecute>
+    <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+  </net.rptools.maptool.model.MacroButtonProperties>
+  <net.rptools.maptool.model.MacroButtonProperties>
     <macroUUID>08cebe05-4a8e-4d4c-833e-ba2fdeccd6b7</macroUUID>
     <saveLocation>CampaignPanel</saveLocation>
     <index>3</index>
@@ -53,10 +108,19 @@
 [h: setProperty (&quot;AC Shield&quot;, json.get (armorClass, &quot;Shield&quot;))]
 
 [h: speeds = json.get (basicToon, &quot;speeds&quot;)]
+&lt;!-- blank them out first --&gt;
+[h, foreach (speed, &quot;[&apos;Walk&apos;, &apos;Swim&apos;, &apos;Fly&apos;, &apos;Climb&apos;, &apos;Burrow&apos;]&quot;): setProperty (speed, &quot;&quot;)]
 [h, foreach (speed, speeds), code: {
 	[h: speedName = json.get (speed, &quot;name&quot;)]
 	[h: speedValue = round (json.get (speed, &quot;speed&quot;))]
 	[h: setProperty (speedName, speedValue)]
+}]
+
+[h: saves = json.get (basicToon, &quot;savingThrows&quot;)]
+[h, foreach (save, saves), code: {
+	[h: saveName = json.get (save, &quot;name&quot;) + &quot; Save&quot;]
+	[h: saveBonus = json.get (save, &quot;totalBonus&quot;)]
+	[h: setProperty (saveName, saveBonus)]
 }]
 
 [h: skills = json.get (basicToon, &quot;skills&quot;)]
@@ -122,7 +186,7 @@
 [h: setProperty (&quot;dndb_BasicToon&quot;, basicToon)]
 
 [h, macro (&quot;Reset Properties@this&quot;): &quot;1&quot;]
-[r,s: json.get (basicToon, &quot;name&quot;) + &quot; has been updated!&quot;]</command>
+[r,s: json.get (basicToon, &quot;name&quot;) + &quot; has been initialized!&quot;]</command>
     <label>Initialize DNDBeyond Character</label>
     <group>DNDBeyond</group>
     <sortby>99</sortby>
