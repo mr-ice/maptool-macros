@@ -53,6 +53,42 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>Strength Bonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Dexterity Bonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Constitution Bonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Intelligence Bonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Wisdom Bonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Charisma Bonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>HP</name>
           <highPriority>true</highPriority>
           <ownerOnly>true</ownerOnly>
@@ -70,6 +106,42 @@
           <highPriority>true</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>true</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Strength Save</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Dexterity Save</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Constitution Save</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Intelligence Save</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Wisdom Save</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Charisma Save</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Movement</name>
@@ -210,6 +282,12 @@
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Persuasion</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Religion</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
