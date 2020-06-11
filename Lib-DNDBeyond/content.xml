@@ -3011,7 +3011,7 @@ returns:
 								&quot;fontSize&quot;, &quot;1.05em&quot;,
 								&quot;sortBy&quot;, selectedSkillPos,
 								&quot;fontColor&quot;, &quot;white&quot;,
-								&quot;group&quot;, &quot;D&amp;D - Beyond Skills&quot;,
+								&quot;group&quot;, &quot;D&amp;D Beyond - Skills&quot;,
 								&quot;playerEditable&quot;, 1)]
 	[h, if (saveAsMacro &gt; 0): createMacro (macroName, cmd, macroConfig)]
 }]
@@ -3094,7 +3094,7 @@ returns:
 								&quot;sortBy&quot;, selectedsavingThrowPos,
 								&quot;fontSize&quot;, &quot;1.05em&quot;,
 								&quot;fontColor&quot;, &quot;yellow&quot;,
-								&quot;group&quot;, &quot;D&amp;D - Beyond Saves&quot;,
+								&quot;group&quot;, &quot;D&amp;D Beyond - Saves&quot;,
 								&quot;playerEditable&quot;, 1)]
 	[h, if (saveAsMacro &gt; 0): createMacro (macroName, cmd, macroConfig)]
 }]
