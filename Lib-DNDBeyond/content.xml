@@ -20,8 +20,28 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>4000</lastX>
+  <lastY>-5550</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>80</x>
+        <y>-111</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>80</x>
+        <y>-111</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -2733,7 +2753,8 @@ All other key-value pairs are used as search terms.</toolTip>
 	[h: className = json.path.read (class, &quot;definition.name&quot;)]
 	[h: classObj = json.set (&quot;&quot;, &quot;className&quot;, className, &quot;level&quot;, level)]
 	[h: hitDice = json.path.read (class, &quot;definition.hitDice&quot;)]
-	[h: classObj = json.set (classObj, &quot;hitDice&quot;, hitDice)]
+	[h: hitDiceUsed = json.get (class, &quot;hitDiceUsed&quot;)]
+	[h: classObj = json.set (classObj, &quot;hitDice&quot;, hitDice, &quot;hitDiceUsed&quot;, hitDiceUsed)]
 	[h: classArry = json.append (classArry, classObj)]
 }]
 [h: log.debug (&quot;classArry: &quot;+ classArry)]
@@ -2840,7 +2861,8 @@ arg (0) = toon</toolTip>
 	[h, if (actualSpeed &gt; 0): actualSpeed = actualSpeed + allBonus]
 	[h: speed = json.set (&quot;&quot;, &quot;name&quot;, speedName,
 						&quot;speed&quot;, actualSpeed)]
-	[h: speeds = json.append (speeds, speed)]
+	&lt;!-- except for walk, dont populate speed 0 --&gt;
+	[h, if (lowerName == &quot;walk&quot; || actualSpeed &gt; 0): speeds = json.append (speeds, speed)]
 }]
 
 [h: macro.return = speeds]
@@ -3158,15 +3180,21 @@ returns:
 					&quot;sortBy&quot;, &quot;2&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Attack Config@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
 
-json.set (basicCfg, &quot;name&quot;, &quot;Saving Throw&quot;,
+			json.set (basicCfg, &quot;name&quot;, &quot;Saving Throw&quot;,
 					&quot;color&quot;, &quot;black&quot;,
 					&quot;fontColor&quot;, &quot;yellow&quot;,
 					&quot;sortBy&quot;, &quot;10&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Saving Throw@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
+
+			json.set (basicCfg, &quot;name&quot;, &quot;Spend Hit Dice&quot;,
+					&quot;color&quot;, &quot;purple&quot;,
+					&quot;fontColor&quot;, &quot;white&quot;,
+					&quot;sortBy&quot;, &quot;30&quot;,
+					&quot;command&quot;, &quot;[macro(&apos;Spend Hit Dice@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
 					
 			json.set (basicCfg, &quot;name&quot;, &quot;Skill Check&quot;,
 					&quot;color&quot;, &quot;blue&quot;,
-					&quot;fontColor&quot;, &quot;yellow&quot;,
+					&quot;fontColor&quot;, &quot;white&quot;,
 					&quot;sortBy&quot;, &quot;20&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Skill Check@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;))]
 					
@@ -3613,6 +3641,91 @@ made possible via Set AttackJSON.</toolTip>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
         <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>58</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>698e327f-8372-4824-a738-6d89781239b1</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>58</index>
+        <colorKey>purple</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+[h: CLASS_VAR_SUFFIX = &quot;_spendHitDice&quot;]
+[h: classes = json.get (basicToon, &quot;classes&quot;)]
+
+&lt;!-- example input string --&gt;
+&lt;!-- Barbarian-spendHitDice | 0,1,2,3,4 | Spend Barbarian Hit Dice | List --&gt;
+&lt;!-- Fighter-spendHitDice  | 0,1 | Spend Fighter Hit Dice | List --&gt;
+
+&lt;!-- So the challenge here is that are variable name is dynamic. I think I can use the eval --&gt;
+&lt;!-- function to help me out here --&gt;
+
+&lt;!-- Build the input string, using ## as a line delimiter --&gt;
+[h: inputStr = &quot;&quot;]
+[h: classVars = &quot;&quot;]
+[h, foreach (class, classes), code: {
+	[h: className = json.get (class, &quot;className&quot;)]
+	[h: level = json.get (class, &quot;level&quot;)]
+	[h: hitDiceUsed = json.get (class, &quot;hitDiceUsed&quot;)]
+	[h: hitDice = json.get (class, &quot;hitDice&quot;)]
+	[h: totalAvailable = level - hitDiceUsed + 1]
+	[h: hitDiceChoices = &quot;&quot;]
+	[h, for (i, 0, totalAvailable): hitDiceChoices = hitDiceChoices + &quot;,&quot; + string (i)]
+	[h: hitDiceChoices = substring (hitDiceChoices, 1)]
+	[h: classVar = className + CLASS_VAR_SUFFIX]
+	[h: inputStr = inputStr + &quot;## &quot; + classVar + &quot; | &quot; + hitDiceChoices + 
+			&quot; | Spend &quot; + className + &quot; Hit Dice | List | &quot;]
+	[h: classVars = json.append (classVars, json.set (&quot;&quot;, &quot;classVar&quot;, classVar, 
+												&quot;hitDice&quot;, hitDice,
+												&quot;className&quot;, className))]
+}]
+&lt;!-- prune the leading ## --&gt;
+[h: inputStr = substring (inputStr, 3)]
+[h: input (inputStr)]
+[h: conBonus = getProperty (&quot;Constitution Bonus&quot;)]
+[h: total = 0]
+[h: output = &quot;&quot;]
+[h, foreach (classVar, classVars), code: {
+	[h: output = output + &quot;&lt;br&gt;&quot; + json.get (classVar, &quot;className&quot;) + &quot;:&lt;br&gt;&quot;]
+	[h: limit = eval (json.get (classVar, &quot;classVar&quot;))]
+	[h: dice = json.get (classVar, &quot;hitDice&quot;)]
+	[h, for (i, 0, limit), code: {
+		[h: expression = &quot;1d&quot; + dice + &quot; + &quot; + conBonus]
+		[h: roll = eval (expression)]
+		[h: output = output + &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot; + expression + &quot; = &quot; + roll + &quot;&lt;br&gt;&quot;]
+		[h: total = total + roll]
+	}]
+}]
+[r: output]
+[r: &quot;&lt;br&gt;Total healed: &quot; + total]</command>
+        <label>Spend Hit Dice</label>
+        <group>Token</group>
+        <sortby>30</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>white</fontColorKey>
+        <fontSize>1.05em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Note: This doesn&apos;t actually spend the character&apos;s hit dice. It only rolls for the player as if they spent those dice. The player will need to update DNDBeyond and mark the hit dice spent there. Until the next refresh, this macro will always show the same number of hit dice available to spend.</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
