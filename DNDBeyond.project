@@ -1,0 +1,9 @@
+<project>
+  <properties name="DNDBeyond"/>
+  <token name="Lib-DNDBeyond"/>
+  <macroset name="DNDBeyond">
+    <macro name="Initialize"/>
+    <macro name="Quick Update"/>
+    <macro name="Reset Properties"/>
+  </macroset>
+</project>

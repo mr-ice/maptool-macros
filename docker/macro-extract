@@ -81,14 +81,16 @@ for label, elem in macroList(xml.getroot()).items():
     label = str(label)
     if '/' in label:
         label = quote(label,safe='')
-    if label == 'onCampaignLoad':
-        # special macro, 1/token so save it with the token
+
+    if xml.getroot().name.text.startswith('Lib:'):
+        # Lib: tokens' macros stay with them
         mktokendir(base)
         xml_file = '{}/{}.xml'.format(base, label)
         command_file = "{}/{}.command".format(base, label)
     else:
         xml_file = "macro/{}.xml".format(label)
         command_file = "macro/{}.command".format(label)
+
     with open(command_file, 'w') as f:
         f.write(str(elem.command))
         if opts.verbose:
