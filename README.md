@@ -1,17 +1,21 @@
 # maptool-macros
 place for maptool macros
 
-These have all been unzipped to save the xml directly, but perhaps we will
-build an assembler to take the text -> xml -> zip so we can see directly the
-macro 
+These MapTool artifacts have all been unpacked and their macros extracted into
+xml and command (text) files.  They can be reassembled with the tools herein.
 
-## Tools
+## Meta-Tools and Tools
 
-* make build - implementation of dockerbuild with both commands we need
-* ./automagic <dir> - build a maptool object from a directory
-* ./dockermagic <dir> - run automagic via docker
-* ./xc <dir> - eXtract Commands into individual .command files in directory
-* ./dockerxc <dir> - run xc on a dir via docker
+You'll need a working git, docker, and bash.
+
+* ./dockerbuild - make our images
+* ./dockermagic <dir> - build a maptool object from a directory
+* ./dockerrun macro-extract <thing> - extract the thing and its macros 
+* ./dockerrun macro-assemble macro/1 macro/2 macro/3 --list myset
+
+#### These are obsolete
+* bin/xc <dir> - eXtract Commands into individual .command files in directory
+* bin/micro-assemble <macro>.xml <macro>.command <macro>.mtmacro
 
 ## Macros
 * RollSave - Simple roll an attribute save
@@ -40,5 +44,6 @@ macro
 * MakeAttack - Trey's JSON Attack Button
 * PrintAttackJSON - Trey's JSON print
 * SetAttackJSON - Trey's JSON Attack Import
-* RollInitiative - https://lmwcs.com/rptools/wiki/Roll_Initiative soon to be HaVoClAdded
+* RollInitiative - https://lmwcs.com/rptools/wiki/Roll_Initiative
+* RollInititative - single  every thing selected gets an initiative roll
 

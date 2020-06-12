@@ -1,0 +1,70 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>94bb8df2-cfe3-46ff-a865-cb09ff4196c3</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>31</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- get toon and maybe a armor name --&gt;
+[h: toon = arg(0)]
+[h, if (json.length (macro.args) &gt; 1): 
+				results = dndb_getInventory (toon, "Armor", arg(1)); 
+				results = dndb_getInventory (toon, "Armor")]
+[h: macro.return = results]</command>
+  <label>dndb_getArmor</label>
+  <group>Character</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the requested armor, or all amors if none specified.
+
+arg(0) = toon
+optional: arg (1) = armor name
+
+Returns armor without transformation:
+ex.
+{
+    "armorClass": 11,
+    "baseArmorName": "Leather",
+    "baseItemId": 10,
+    "baseTypeId": 701257905,
+    "bundleSize": 1,
+    "canAttune": false,
+    "canEquip": true,
+    "cost": 10,
+    "description": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials.",
+    "entityTypeId": 701257905,
+    "filterType": "Armor",
+    "grantedModifiers": [],
+    "id": 10,
+    "isConsumable": false,
+    "isHomebrew": false,
+    "isMonkWeapon": false,
+    "isPack": false,
+    "magic": false,
+    "name": "Leather",
+    "rarity": "Common",
+    "stackable": false,
+    "stealthCheck": 1,
+    "tags": [],
+    "type": "Light Armor",
+    "weaponBehaviors": [],
+    "weight": 10,
+    "sources": [],
+    "armorTypeId": 1,
+    "canBeAddedToInventory": true
+}</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

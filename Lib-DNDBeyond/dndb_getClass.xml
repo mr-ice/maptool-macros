@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f55efb56-6729-4eef-971b-e47e7c13b434</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>29</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: toon = arg (0)]
+[h: className = arg (1)]
+
+[h: classObj = json.path.read (toon, "data.classes[*].[?(@.definition.name == '" + className + "')]")]
+
+[h: macro.return = classObj]
+</command>
+  <label>dndb_getClass</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the class object from the toon json.
+
+arg(0) = toon
+arg(1) = class name
+
+returns class object found in toon's:
+
+data.classes[]</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

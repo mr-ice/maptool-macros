@@ -1,0 +1,133 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>394bcb42-a3a6-4d80-b11d-e6fb652cc0b8</macroUUID>
+  <saveLocation/>
+  <index>18</index>
+  <colorKey>red</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Constants --&gt;
+[h: ATTACK_JSON = "attackJSON"]
+[h: NAME = "name"]
+[h: ATK_BONUS = "atkBonus"]
+[h: DMG_BONUS = "dmgBonus"]
+[h: DMG_DIE = "dmgDie"]
+[h: DMG_DICE = "dmgDice"]
+[h: CRIT_BONUS_DICE = "critBonusDice"]
+[h: DMG_TYPE = "dmgType"]
+[h: DMG_BONUS_EXPR = "dmgBonusExpr"]
+[h: NEW_ATTACK = "New Attack"]
+[h: LAST_ATTACK_SELECTION = "lastAttackSelection"]
+
+&lt;!-- Read attack JSON and prompt for selection --&gt;
+[h, if (!isPropertyEmpty (ATTACK_JSON)), code: {
+	&lt;!-- Property is populated. Fetch JSON data --&gt;
+    [h: attackJson = getProperty(ATTACK_JSON)]
+}; {
+	&lt;!-- Property is empty, use blank object --&gt;
+	[h: attackJson = ""]
+}]
+
+[h: arrLen = json.length(attackJson)]
+[h, if (arrLen &lt; 1), code: {
+	&lt;!-- no attacks found, so create one in the config macro --&gt;
+	[h, macro("Attack Config@global"): ""]
+	[h: attackJson = getProperty(ATTACK_JSON)]
+}; {
+    &lt;!-- no-op --&gt;
+}]
+
+&lt;!-- Build an attack list to pick from --&gt;
+[h: attackList = ""]
+[h, foreach (attack, attackJson): attackList = json.append(attackList, json.get(attack, NAME))]
+
+&lt;!-- Locate the index of the last selection to make it the default selection --&gt;
+[h: lastSelection = getProperty(LAST_ATTACK_SELECTION)]
+[h: selectedIndex = json.indexOf(attackList, lastSelection)]
+[h: selectedIndex = if (selectedIndex &lt; 0, 0, selectedIndex)]
+
+&lt;!-- User Input --&gt;
+[h: abort( input(
+    "selectedAttack | " + json.toList(attackList) + " | Select Attack | list | value=string select=" + selectedIndex,
+    "advantageDisadvantage|None,Advantage,Disadvantage|Advantage/Disadvantage|list|value=string"
+))]
+
+&lt;!-- Save the selection for next execution as the default selection --&gt;
+[h: setProperty(LAST_ATTACK_SELECTION, selectedAttack)]
+
+&lt;!-- Attack selected! Fetch the JSON for the selected attack. --&gt;
+[r, foreach (attack, attackJson), code: {
+	[h: attackName = json.get(attack, NAME)]
+	[h, if (attackName == selectedAttack), code: {
+		[cfgAttack = attack]
+	};{ 0 }]
+}]
+
+&lt;!-- transfer json properties to input vars --&gt;
+[h: attackBonus = json.get(cfgAttack, ATK_BONUS)]
+[h: dmgBonus = json.get(cfgAttack, DMG_BONUS)]
+[h: dmgDie = json.get(cfgAttack, DMG_DIE)]
+[h: dmgNumDice = json.get(cfgAttack, DMG_DICE)]
+[h: attackName = json.get(cfgAttack, NAME)]
+[h: critBonus = json.get(cfgAttack, CRIT_BONUS_DICE)]
+[h: dmgType = json.get(cfgAttack, DMG_TYPE)]
+[h: dmgBonusExpr = json.get(cfgAttack, DMG_BONUS_EXPR)]
+
+&lt;!-- Roll attack dice (always roll two, determine if advantage or disadvantage applies after --&gt;
+&lt;!-- Unlike dmg rolls that use a full text expression, attack is done in discrete steps to determine criticals --&gt;
+[h: attack = 1d20]
+[h: attack2 = 1d20]
+
+&lt;!-- Calculate the correct attack roll --&gt;
+[h: realAttack = attack]
+[h,if (advantageDisadvantage == "Advantage"): realAttack = max(attack, attack2)]
+[h,if (advantageDisadvantage == "Disadvantage"): realAttack = min(attack, attack2)]
+
+&lt;!-- Apply critical --&gt;
+[h,if (realAttack == 20): dmgNumDice = (dmgNumDice * 2) + critBonus]
+
+&lt;!-- Roll damage --&gt;
+[h: dmgExpression = dmgNumDice + "d" + dmgDie + " + " + dmgBonus]
+[h: noDmgExpression = json.equals(dmgBonusExpr, "") + json.equals(dmgBonusExpr, 0)]
+[h: dmgExpression = if (noDmgExpression &gt; 0, dmgExpression, dmgExpression + " + " + dmgBonusExpr)]
+[h: dmg = eval(dmgExpression)]
+
+&lt;!-- Build the message --&gt;
+[h: atkString = "&lt;b&gt;"]
+[h: atk2String = "&lt;b&gt;"]
+[h,if(attack == 20): atkString = atkString + "&lt;font color='red'&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; "]
+[h,if(attack2 == 20): atk2String = atk2String + "&lt;font color='red'&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; "]
+[h: attack = attack + attackBonus]
+[h: attack2 = attack2 + attackBonus]
+[h: realAttack = realAttack + attackBonus]
+[h,if(advantageDisadvantage != "None"): realAtkString = "&lt;b&gt;" + realAttack + "&lt;/b&gt;"]
+[h: atkString = atkString + attack + "&lt;/b&gt;"]
+[h: atk2String = atk2String + attack2 + "&lt;/b&gt;"]
+
+[h: nameStr = getName() + ": " + attackName + "&lt;br&gt;(" + dmgType + ")&lt;br&gt;&lt;br&gt;"]
+[h: atkStr = "Attack (1d20 + " + attackBonus + "): " + atkString + "&lt;br&gt;"]
+[h,if(advantageDisadvantage != "None"): atkStr = atkStr + advantageDisadvantage + ": " + atk2String + "&lt;br&gt;&lt;br&gt;Actual Attack: " + realAtkString + "&lt;br&gt;"]
+[h: dmgStr = "Damage (" + dmgExpression + "): " + dmg]
+
+[r: nameStr]
+[r: atkStr]
+[r: dmgStr]</command>
+  <label>Make Attack</label>
+  <group>Attack</group>
+  <sortby>1</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth>50</minWidth>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

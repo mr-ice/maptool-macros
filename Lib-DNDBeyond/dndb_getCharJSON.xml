@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f54d3e38-b1a2-4008-ab42-ca0b899b4c27</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>17</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>
+[h: BASE_URL = "https://character-service.dndbeyond.com/character/v3/character/"]
+[h: charId = json.get( macro.args, 0 )]
+
+
+[h: charAt = lastIndexOf (charId, "/")]
+
+
+[h, if (charAt &gt; -1): charId = substring (charId, charAt + 1)]
+
+[h: url = BASE_URL + charId]
+[h: log.debug ("char url: " + url)]
+[h: character = REST.get(url)]
+[h: macro.return = character]</command>
+  <label>dndb_getCharJSON</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Fetches the JSON package for the provided character number</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,78 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>78854487-24d7-4065-8011-03caa627437a</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>40</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
+[h: filterObj = arg(0)]
+[h: toon = json.get (filterObj, "object")]
+[h: property = json.get (filterObj, "property")]
+
+&lt;!-- filterObj is only filter terms. Well provide our own object and stuff property back in as needed --&gt;
+&lt;!-- TODO: I have to pass this object around now, so preserve the original and roll yer own here --&gt;
+[h: filterObj = json.remove (filterObj, "object")]
+[h: filterObj = json.remove (filterObj, "property")]
+
+&lt;!-- Item bonuses are listed in the modifiers object, but should not apply if the associated object isnt --&gt;
+&lt;!-- equipped. This first retreives a list of equipped items and builds an arry of ids. Then full modifier --&gt;
+&lt;!-- objects are pulled from items and their componentIds checked against equipped ids --&gt;
+
+[h: log.debug ("Searching item")]
+[h: items = json.path.read (toon, "data.inventory")]
+[h: equippedItems = json.path.read (items, ".[?(@.equipped == true)]")]
+[h: equippedItemIds = json.path.read (equippedItems, "[*].definition.id")]
+[h: log.debug ("Equipped items: " + equippedItemIds)]
+
+&lt;!-- now search for modifications from just item and compare componentId with equipped ids --&gt;
+[h: itemSearchArg = json.set (filterObj, "object", json.path.read (toon, "data.modifiers.item"))]
+[h: itemSearchResults = dndb_searchJsonObject (itemSearchArg)]
+[h: log.debug ("Item search results: " + json.indent (itemSearchResults))]
+[h: equippedModifiers = "[]"]
+[h, foreach (itemModification, itemSearchResults), code: {
+	[h: componentId = json.get (itemModification, "componentId")]
+	[h, if (json.contains (equippedItemIds, componentId) &gt; 0), code: {
+		[h: log.debug ("Modification is equipped")]
+		&lt;!-- marshall the result, either scalar or object, into a list --&gt;
+		[h, if (property != ""): itemModification = json.path.read (itemModification, property);
+								 itemModification = json.append ("", itemModification)]
+		[h: equippedModifiers = json.merge (equippedModifiers, itemModification)]
+	}]
+}]
+
+[h: macro.return = equippedModifiers]</command>
+  <label>dndb_searchForItemGrantedModifiers</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Searches the data.modifier.item object for all modifiers granted by items, restricting those not from unequipped items.
+
+arg(0) = 
+{
+  "object": "toon",
+  "property": "fixedValue",
+  "subType": "ability-checks",
+  "type": "expertise"
+}
+
+Within the JSON, the "object" parameter is required. It must be a the full character object.
+
+"property" is a reserved parameter that indicates the values to return. If "property" is not provided, the full entity is returned for each match.
+
+All other key-value pairs are used as search terms.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

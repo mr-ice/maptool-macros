@@ -1,0 +1,38 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>5c47e113-3028-4a14-9e6f-49abcdfc3e68</macroUUID>
+  <saveLocation/>
+  <index>13</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Create an input w/ Tabs. Each tab is a weapon known to the token --&gt;
+&lt;!-- token property has a list of Weapons--&gt;
+
+&lt;!-- Included in the weapon list, always last, is "New Weapon" w/ default values --&gt;
+
+&lt;!-- Each tab is identical in form including a Name field and the same fields as Single Attack has --&gt;
+&lt;!-- The weapon name is the "key" for the property name that stores a json string of the chosen values for that weapon --&gt;
+
+&lt;!-- Those values are used for the attack roll --&gt;
+
+</command>
+  <label>Dynamic example</label>
+  <group>Bode</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

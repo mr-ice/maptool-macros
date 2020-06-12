@@ -1,0 +1,28 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>9e4d80e5-d39d-416f-8b79-9617de1a0bfa</macroUUID>
+  <saveLocation/>
+  <index>7</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[r:1d12]</command>
+  <label>1d12</label>
+  <group>Generic</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>true</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

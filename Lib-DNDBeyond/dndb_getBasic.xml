@@ -1,0 +1,91 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>80cb8897-9470-4a97-8fdd-f52f8f6ea195</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>41</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: toon = arg (0)]
+
+&lt;!-- stuff it into a single json object --&gt;
+&lt;!-- The easy bits --&gt;
+[h: basicToon = json.set ("", "name", json.path.read (toon, "data.name"),
+						"age", json.path.read (toon, "data.age"),
+						"faith", json.path.read (toon, "data.faith"),
+						"hair", json.path.read (toon, "data.hair"),
+						"eyes",  json.path.read (toon, "data.eyes"),
+						"skin", json.path.read (toon, "data.skin"),
+						"height", json.path.read (toon, "data.height"),
+						"weight", json.path.read (toon, "data.weight"),
+						"xp", json.path.read (toon, "data.currentXp"),
+						"gender", json.path.read (toon, "data.gender"),
+						"avatarUrl", json.path.read (toon, "data.avatarUrl"),
+						"url", json.path.read (toon, "data.readonlyUrl"))]
+
+&lt;!-- alightment map --&gt;
+[h: alignmentMap = json.set ("", "3", "CE")]
+[h: alignmentId =  json.path.read (toon, "data.alignmentId")]
+[h: basicToon = json.set (basicToon, "alignment", json.get (alignmentMap, alignmentId))]
+
+&lt;!-- character level --&gt;
+[h: totalLevel = 0]
+[h: classArry = ""]
+[h, foreach (class, json.path.read (toon, "data.classes")), code: {
+	[h: level = json.get (class, "level")]
+	[h: totalLevel = totalLevel + level]
+	[h: className = json.path.read (class, "definition.name")]
+	[h: classObj = json.set ("", "className", className, "level", level)]
+	[h: hitDice = json.path.read (class, "definition.hitDice")]
+	[h: classObj = json.set (classObj, "hitDice", hitDice)]
+	[h: classArry = json.append (classArry, classObj)]
+}]
+[h: log.debug ("classArry: "+ classArry)]
+[h: basicToon = json.set (basicToon, "classes", classArry)]
+
+&lt;!-- HP --&gt;
+[h: abilities = dndb_getAbilities (toon)]
+[h: baseHp =  json.path.read (toon, "data.baseHitPoints")]
+[h: maxHp = baseHp + (json.get (abilities, "conBonus") * totalLevel)]
+[h: damageTaken = json.path.read (toon, "data.removedHitPoints")]
+[h: temporaryHitPoints = json.path.read (toon, "data.temporaryHitPoints")]
+[h: maxHpModifier = json.path.read (toon, "data.bonusHitPoints")]
+[h: overrideMaxHp = json.path.read (toon, "data.overrideHitPoints")]
+[h, if (maxHpModifier != "" &amp;&amp; isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
+[h, if (overrideMaxHp != "" &amp;&amp; isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
+
+[h: basicToon = json.set (basicToon, "hitPoints", json.set ("",
+							"maxHp", maxHp,
+							"currentHp", maxHp - damageTaken,
+							"tempHp", temporaryHitPoints))]
+
+&lt;!-- Speed --&gt;
+[h: speeds = dndb_getSpeed (toon)]
+[h: basicToon = json.set (basicToon, "speeds", speeds)]
+
+&lt;!-- Vision --&gt;
+[h: vision = dndb_getVision (toon)]
+[h: basicToon = json.set (basicToon, "vision", vision)]
+
+[h: macro.return = basicToon]</command>
+  <label>dndb_getBasic</label>
+  <group>Character</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns basic information of the character, including name, race, level, speed, and hit points 
+
+arg (0) = toon</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,79 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>5ae8bd14-0e5e-47a8-b4f2-b50ad8b5e55f</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>23</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: toon = arg(0)]
+[h: weaponArry = arg(1)]
+
+[h: basicArry = "[]"]
+
+&lt;!-- Get proficencies --&gt;
+[h: proficiencies = json.path.read (toon, "data.modifiers..[?(@.type == 'proficiency')]")]
+&lt;!-- Get proficencies, just the two --&gt;
+[h: allProficiencies = json.path.read (toon, "data.modifiers..[?(@.type == 'proficiency')]")]
+[h: weaponProficiencies = json.path.read (allProficiencies,
+		".[?(@.subType in ['simple-weapons', 'martial-weapons'])]")]
+
+[h, foreach (weaponRaw, weaponArry), code: {
+	[h: equipped = json.path.read (weaponRaw, "equipped")]
+	[h: attackType = json.path.read (weaponRaw, "definition.attackType")]
+	[h: grantedModifiers = json.path.read (weaponRaw, "definition.grantedModifiers")]
+	[h: dmgType = json.path.read (weaponRaw, "definition.damageType")]
+	&lt;!-- cant imagine there's a weapon that grants multiple bonuses, but this is
+		an array, so treat it like one even though it's just one.--&gt;
+	[h: bonus = 0]
+	[h, foreach (modifier, grantedModifiers), code: {
+		[h: bonusType = json.get (modifier, "type")]
+		[h: weaponBonus = json.get (modifier, "value")]
+		[h, if (equals (bonusType, "bonus") &gt; 0): bonus = bonus + weaponBonus; bonus = bonus]
+		[h: dmgType = dmgType + ", " + json.get (modifier, "subType")]
+	}]
+
+	&lt;!-- correlate weapon categoryId w/ weaponProficiency entityId --&gt;
+	[h: proficiencyId = json.path.read (weaponRaw, "definition.categoryId")]
+	[h: proficientArry = json.path.read (weaponProficiencies, 
+		".[?(@.entityId == '" + proficiencyId + "')]")]
+	[h, if (attackType == "1"): attackTypeLabel = "Melee"; attackTypeLabel = "Ranged"]
+
+	[h: basicWeapon = json.set ("", "name", json.path.read (weaponRaw, "definition.name"),
+		"attackType", attackTypeLabel,
+		"dmgDie", json.path.read (weaponRaw, "definition.damage.diceValue"),
+		"dmgDice", json.path.read (weaponRaw, "definition.damage.diceCount"),
+		"dmgType", dmgType,
+		"bonus", bonus,
+		"range", json.path.read (weaponRaw, "definition.range"),
+		"longRange", json.path.read (weaponRaw, "definition.longRange"),
+		"type", json.path.read (weaponRaw, "definition.type"),
+		"properties", json.path.read (weaponRaw, "definition.properties"),
+		"proficient", json.length (proficientArry),
+		"isMonk", json.path.read (weaponRaw, "definition.isMonkWeapon"),
+		"equipped", equipped)
+	)]
+
+	&lt;!-- bleh, move this to the end so I can save a nested level of execution --&gt;
+	[h: basicArry = json.append (basicArry, basicWeapon)]
+}]
+[h: macro.return = basicArry]</command>
+  <label>dndb_convertWeapons</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>This is a function that requires the DND Beyond Character full JSON. It's not intended to run stand-alone. Returns a simplifed json object of the weapons. Optional boolean flag may be passed to direct if all or only equipped weapons are provided. Default behavior returns only equipped weapons.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# this canonicalizes the path to the current script
-DIR=$(cd $(dirname $0) && pwd)
-
-# this runs at $(pwd) so we're forcing the first arg to content.xml
-$DIR/dockerrun xc content.xml "$@"

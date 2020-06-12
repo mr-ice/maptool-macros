@@ -1,0 +1,95 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>08cebe05-4a8e-4d4c-833e-ba2fdeccd6b7</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>3</index>
+  <colorKey>pink</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h, if (json.length (macro.args) &gt; 0): noConfirm = arg(0); noConfirm = 0]
+[h: confirm = 1]
+[h, if (!noConfirm): input ("ignored | WARNING! This will reset any custom values. | All properties will be overwritten! | Label | SPAN=TRUE",
+	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0")]
+[h: abort (confirm)]
+
+[h: basicToon = getProperty ("dndb_BasicToon")]
+[r, if (json.length (basicToon) &lt; 1): return (0, "No D&amp;D Beyond data was found on the token. You need to sync, first")]
+
+[h: setProperty ("Age", json.get (basicToon, "age"))]
+[h: setProperty ("Faith", json.get (basicToon, "faith"))]
+[h: setProperty ("Hair", json.get (basicToon, "hair"))]
+[h: setProperty ("Eyes", json.get (basicToon, "eyes"))]
+[h: setProperty ("Skin", json.get (basicToon, "skin"))]
+[h: setProperty ("Height", json.get (basicToon, "height"))]
+[h: setProperty ("Weight", json.get (basicToon, "weight"))]
+[h: setProperty ("XP", json.get (basicToon, "xp"))]
+[h: setProperty ("Gender", json.get (basicToon, "gender"))]
+[h: setProperty ("Alignment", json.get (basicToon, "alignment"))]
+[h: setProperty ("AvatarUrl", json.get (basicToon, "avatarUrl"))]
+[h: setProperty ("Initiative", json.get (basicToon, "init"))]
+
+[h: abilities = json.get (basicToon, "abilities")]
+[h: setProperty ("Strength", json.get (abilities, "str"))]
+[h: setProperty ("Strength Bonus", json.get (abilities, "strBonus"))]
+[h: setProperty ("Dexterity", json.get (abilities, "dex"))]
+[h: setProperty ("Dexterity Bonus", json.get (abilities, "dexBonus"))]
+[h: setProperty ("Constitution", json.get (abilities, "con"))]
+[h: setProperty ("Constitution Bonus", json.get (abilities, "conBonus"))]
+[h: setProperty ("Intelligence", json.get (abilities, "int"))]
+[h: setProperty ("Intelligence Bonus", json.get (abilities, "intBonus"))]
+[h: setProperty ("Wisdom", json.get (abilities, "wis"))]
+[h: setProperty ("Wisdom Bonus", json.get (abilities, "wisBonus"))]
+[h: setProperty ("Charisma", json.get (abilities, "cha"))]
+[h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
+
+[h: hitPoints = json.get (basicToon, "hitPoints")]
+[h: setProperty ("HP", json.get (hitPoints, "currentHp"))]
+[h: setProperty ("Temp HP", json.get (hitPoints, "tempHp"))]
+[h: setProperty ("Max HP", json.get (hitPoints, "maxHp"))]
+
+[h: armorClass = json.get (basicToon, "armorClass")]
+[h: setProperty ("AC", json.get (armorClass, "total"))]
+[h: setProperty ("AC Dexterity", json.get (armorClass, "Dexterity"))]
+[h: setProperty ("AC Armor", json.get (armorClass, "Armor"))]
+[h: setProperty ("AC Shield", json.get (armorClass, "Shield"))]
+
+[h: speeds = json.get (basicToon, "speeds")]
+&lt;!-- blank them out first --&gt;
+[h, foreach (speed, "['Walk', 'Swim', 'Fly', 'Climb', 'Burrow']"): setProperty (speed, "")]
+[h, foreach (speed, speeds), code: {
+	[h: speedName = json.get (speed, "name")]
+	[h: speedValue = round (json.get (speed, "speed"))]
+	[h: setProperty (speedName, speedValue)]
+}]
+
+[h: saves = json.get (basicToon, "savingThrows")]
+[h, foreach (save, saves), code: {
+	[h: saveName = json.get (save, "name") + " Save"]
+	[h: saveBonus = json.get (save, "totalBonus")]
+	[h: setProperty (saveName, saveBonus)]
+}]
+
+[h: skills = json.get (basicToon, "skills")]
+[h, foreach (skill, skills): setProperty (json.get (skill, "name"), json.get (skill, "totalBonus"))]
+
+[h: dndb_mergeAttackJson ()]
+[h: dndb_createPlayerMacros()]</command>
+  <label>Reset Properties</label>
+  <group>DNDBeyond</group>
+  <sortby>1</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth>160</minWidth>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Uses the previously fetched values from DnDBeyond and applies them to the token. This will reset any custom values the Player has previously set.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

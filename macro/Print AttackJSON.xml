@@ -1,0 +1,40 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f4e1d286-c621-4337-91c9-61538b1242d3</macroUUID>
+  <saveLocation/>
+  <index>17</index>
+  <colorKey>teal</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: ATTACK_JSON = "attackJSON"]
+[h: NAME = "name"]
+[h: ATK_BONUS = "atkBonus"]
+[h: DMG_BONUS = "dmgBonus"]
+[h: DMG_DIE = "dmgDie"]
+[h: DMG_DICE = "dmgDice"]
+[h: CRIT_BONUS_DICE = "critBonusDice"]
+[h: DMG_TYPE = "dmgType"]
+[h: DMG_BONUS_EXPR = "dmgBonusExpr"]
+[h: NEW_ATTACK = "NewAttack"]
+[h: attackJson = getProperty (ATTACK_JSON)]
+[h: formatted = "&lt;pre&gt;" + json.indent(attackJson, 3) + "&lt;/pre&gt;"]
+[s, r: formatted]</command>
+  <label>Print AttackJSON</label>
+  <group>Attack</group>
+  <sortby>3</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,76 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>0988083c-41aa-4d33-a8cf-64f129cfc5d0</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>36</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
+
+[h: filterObj = arg(0)]
+[h: object = json.get (filterObj, "object")]
+[h: property = json.get (filterObj, "property")]
+[h: even = 1]
+
+[h: filterObj = json.remove (filterObj, "object")]
+[h: filterObj = json.remove (filterObj, "property")]
+[h: log.debug ("dndb_searchJsonObject: filterObj after process = " + filterObj)]
+[h: log.debug ("dndb_searchJsonObject: property = " + property)]
+&lt;!-- now build the filter --&gt;
+
+[h: rawValues = json.append ("", "true", "false")]
+
+[h: filter = ""]
+[h, foreach (field, json.fields (filterObj)), code: {
+	&lt;!-- to avoid nesting code, build the filter first, then check if we want it --&gt;
+	[h, if (filter == ""): filter = ".[?("; filter = filter + " &amp;&amp; "]
+	[h: rawValue = json.get (filterObj, field)]
+	&lt;!-- This is fucking stupid. Ask me why, sometime --&gt;
+	[h, if (json.contains (rawValues, rawValue) &gt; 0 || isNumber (rawValue) &gt; 0): 
+		filterToken = "@." + field + " == " + rawValue;
+		filterToken = "@." + field + " == " + "'" + rawValue + "'"]
+
+	[h: filter = filter + filterToken]
+}]
+[h: filter = filter + ")]"]
+&lt;!-- close the filter --&gt;
+[h, if (property != ""): filter = filter + "['" + property + "']"]
+[h: log.debug ("filter: " + filter)]
+[h: ret = json.path.read (object, filter)]
+[h: log.debug ("dndb_searchJsonObj: " + ret)]
+[h: macro.return = ret]
+</command>
+  <label>dndb_searchJsonObject</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Performs searches against a JSON object as would json.path.read does. Takes a JSON argument:
+
+arg(0) = 
+{
+  "object": "toon",
+  "property": "fixedValue",
+  "subType": "ability-checks",
+  "type": "expertise"
+}
+
+Within the JSON, the "object" parameter is required. It can be a full character JSON or a sub-section.
+
+"property" is a reserved parameter that indicates the values to return. If "property" is not provided, the full entity is returned for each match.
+
+All other key-value pairs are used as search terms.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

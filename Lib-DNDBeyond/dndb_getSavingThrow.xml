@@ -1,0 +1,217 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>05f2a6d6-72a7-47a0-aeaa-45ef54775a55</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>37</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: toon = arg(0)]
+&lt;!-- todo: some day were gonna get a json package that isnt in english. That --&gt;
+&lt;!-- might affect how this (and many other) macros work --&gt;
+[h: savesMap = json.append ("",
+			json.set ("", "name", "Strength", "valueId", "1", "abilityBonus", "strBonus"),
+			json.set ("", "name", "Dexterity", "valueId", "2", "abilityBonus", "dexBonus"),
+			json.set ("", "name", "Constitution", "valueId", "3", "abilityBonus", "conBonus"),
+			json.set ("", "name", "Intelligence", "valueId", "4", "abilityBonus", "intBonus"),
+			json.set ("", "name", "Wisdom", "valueId", "5", "abilityBonus", "wisBonus"),
+			json.set ("", "name", "Charisma", "valueId", "6", "abilityBonus", "chaBonus")
+			)
+]
+[h, if (json.length (macro.args) &gt; 1): 
+	saveNames = json.append ("", arg(1));
+	saveNames = json.append ("", "Strength", "Dexterity", "Constitution",
+					"Intelligence", "Wisdom", "Charisma")
+]
+
+&lt;!-- Saving throws are about as stupid as skills, but here we go --&gt;
+[h: allProfValue = 1]
+[h: searchArgs = json.set ("", "object", toon,
+							"property", "type",
+							"subType", "saving-throws",
+							"type", "half-proficiency")]
+[h: halfArry = dndb_searchGrantedModifiers (searchArgs)]
+[h, if ( json.length (halfArry) &gt; 0): allProfValue = 2]
+
+[h: searchArgs = json.set (searchArgs, "type", "proficiency")]
+[h: fullArry = dndb_searchGrantedModifiers (searchArgs)]
+[h, if (json.length (fullArry) &gt; 0): allProfValue = 3]
+
+[h: searchArgs = json.set (searchArgs, "type", "expertise")]
+[h: expertArry = dndb_searchGrantedModifiers (searchArgs)]
+[h, if (json.length (expertArry) &gt; 0): allProfValue = 4]
+
+&lt;!-- all Saves bonus --&gt;
+[h: searchArgs = json.set (searchArgs, 
+							"property", "fixedValue",
+							"subType", "saving-throws",
+							"type", "bonus")]
+
+[h: allSaveBonusArry = dndb_searchGrantedModifiers (searchArgs)]
+[h: log.debug ("allSaveBonusArry: " + json.indent (allSaveBonusArry))]
+[h: finalSaves = "[]"]
+
+[h, foreach (saveName, saveNames), code: {
+	[h: valueIdArry = dndb_searchJsonObject (json.set ("",
+						"object", savesMap,
+						"name", saveName,
+						"property", "valueId"))]
+	[h: valueId = json.get (valueIdArry, 0))]
+	[h: searchSaveName = lower (saveName + "-saving-throws")]
+	[h: log.debug ("searchSaveName: " + searchSaveName)]
+
+	&lt;!-- first proficiencies --&gt;
+	[h: profValue = 1]
+	[h: searchArgs = json.set ("", "object", toon,
+							"subType", searchSaveName,
+							"type", "half-proficiency",
+							"property", "type")]
+	[h: halfArry = dndb_searchGrantedModifiers (searchArgs)]
+	[h: log.debug ("halfArry: " + json.indent (halfArry))]
+	[h, if (json.length (halfArry) &gt; 0): profValue = 2]
+
+	[h: searchArgs = json.set (searchArgs, "type", "proficiency")]
+	[h: fullArry = dndb_searchGrantedModifiers (searchArgs)]
+	[h: log.debug ("fullArry: " + json.indent (fullArry))]
+	[h, if (json.length (fullArry) &gt; 0): profValue = 3]
+
+	[h: searchArgs = json.set (searchArgs, "type", "expertise")]
+	[h: expertArry = dndb_searchGrantedModifiers (searchArgs)]
+	[h: log.debug ("expertArry: " + json.indent (expertArry))]
+	[h, if (json.length (expertArry) &gt; 0): profValue = 4]
+
+	[h: bonusArry = "[]"]
+	&lt;!-- bonuses array --&gt;
+	[h: searchArgs = json.set (searchArgs, "subType", searchSaveName,
+							"property", "value",
+							"type", "bonus")]
+	[h: saveBonusArry = dndb_searchGrantedModifiers (searchArgs)]
+	[h: log.debug ("saveBonusArry: " + json.indent (saveBonusArry))]
+	
+	&lt;!-- character choices; These are not found under data.modifiers, so use the generic searchJsonObject --&gt;
+	&lt;!-- override --&gt;
+	[h: searchArgs = json.set ("", "object", json.path.read (toon, "data.characterValues"),
+							"typeId", "38",
+							"property", "value",
+							"valueId", valueId)]
+	[h: overrideArry = dndb_searchJsonObject (searchArgs)]
+
+	&lt;!-- Magic Bonus --&gt;
+	[h: searchArgs = json.set (searchArgs, "typeId", "40")]
+	[h: magicArry = dndb_searchJsonObject (searchArgs)]
+	[h: log.debug ("magicArry: " + json.indent (magicArry))]
+
+	&lt;!-- Misc Bonus --&gt;
+	[h: searchArgs = json.set (searchArgs, "typeId", "39")]
+	[h: miscArry = dndb_searchJsonObject (searchArgs)]
+	[h: log.debug ("miscArry: " + json.indent (miscArry))]
+
+	&lt;!-- Proficiency (character choice overrides) --&gt;
+	[h: searchArgs = json.set (searchArgs, "typeId", "41")]
+	[h: profArry = dndb_searchJsonObject (searchArgs)]
+	[h: log.debug ("profArry: " + json.indent (profArry))]
+	
+	[h: choiceProfValue = 0]
+	[h, if (json.length(profArry) &gt; 0): choiceProfValue = json.get (profArry, 0)]
+
+
+	&lt;!-- build the save --&gt;
+	[h: abilities = dndb_getAbilities (toon)]
+	[h: bonusArry = ""]
+	[h: totalBonus = 0]
+
+	&lt;!-- determine ability bonus --&gt;
+	[h: abilitySearchResult = dndb_searchJsonObject (json.set ("",
+									"object", savesMap,
+									"name", saveName,
+									"property", "abilityBonus"))]
+	[h: log.debug ("abilitySearchResult: " + abilitySearchResult)]
+	[h: abilityBonusName = json.get (abilitySearchResult, 0)]
+	[h: abilityBonus = json.get (abilities, abilityBonusName)]
+	[h: bonusArry = json.append (bonusArry, json.set ("", "type", "Ability", "value", abilityBonus))]
+	[h: totalBonus = totalBonus + abilityBonus]
+
+	&lt;!-- determine proficiency value --&gt;
+	[h, if (choiceProfValue &gt; 0): actualProfValue = choiceProfValue;
+								actualProfValue = round (math.max (profValue, allProfValue))]
+
+	[h, switch (actualProfValue), code:
+		case 1: {
+			[h: profBonus = 0]
+			[h: proficient = ""]
+		};
+		case 2: {
+			[h: profBonus = round (math.floor (profBonus / 2))]
+			[h: proficient = "half"]
+		};
+		case 3: {
+			[h: profBonus = dndb_getProficiencyBonus (toon)]
+			[h: proficient = "proficient"]
+		};
+		case 4: {
+			[h: profBonus = profBonus * 2]
+			[h: proficient = "expert"]
+		}
+	]
+	[h: totalBonus = totalBonus + profBonus]
+
+	[h: savingThrow = json.set ("", "name", saveName,
+								"proficient", proficient,
+								"valueId", valueId)]
+	[h: bonusArry = json.append (bonusArry, json.set ("", "type", "Proficiency", "value", profBonus))]
+	
+	&lt;!-- class, background, item "bonus" bonuses --&gt;
+	[h: bonus = 0]
+	[h, foreach (saveBonus, saveBonusArry): bonus = bonus + saveBonus]
+	[h, foreach (allSaveBonus, allSaveBonusArry): bonus = bonus + allSaveBonus]
+	[h: bonusArry = json.append (bonusArry, json.set ("", "type", "Bonus", "value", bonus))]
+	[h: totalBonus = totalBonus + bonus]
+
+	&lt;!-- character choices bonuses (magic and misc) --&gt;
+	[h: totalMagicBonus = 0]
+	[h, foreach (magicBonus, magicArry): totalMagicBonus = totalMagicBonus + magicBonus]
+	[h: bonusArry = json.append (bonusArry, json.set ("", "type", "Magic", "value", totalMagicBonus))]
+	[h: totalBonus = totalBonus + totalMagicBonus]
+
+	[h: totalMiscBonus = 0]
+	[h, foreach (miscBonus, miscArry): totalMiscBonus = totalMiscBonus + miscBonus]
+	[h: bonusArry = json.append (bonusArry, json.set ("", "type", "Misc", "value", totalMiscBonus))]
+	[h: totalBonus = totalBonus + totalMiscBonus]
+
+	&lt;!-- finally, the override --&gt;
+	[h: overrideValue = ""]
+	[h, if (json.length (overrideArry) &gt; 0), code: {
+		&lt;!-- should only be one value --&gt;
+		[h: overrideValue = json.get (overrideArry, 0)]
+		[h: totalBonus = overrideValue]
+	}]
+	[h: bonusArry = json.append (bonusArry, json.set ("", "type", "Override", "value", overrideValue))]
+
+	[h: savingThrow = json.set (savingThrow, "totalBonus", totalBonus,
+									"bonuses", bonusArry)]
+	[h: finalSaves = json.append (finalSaves, savingThrow)]							
+}]
+
+[h: macro.return = finalSaves]
+
+
+</command>
+  <label>dndb_getSavingThrow</label>
+  <group>Character</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,29 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3112890f-b32a-48c6-bea2-919d7c5b1725</macroUUID>
+  <saveLocation/>
+  <index>4</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>Roll 1: [r:1d20]&lt;br&gt;
+Roll 2: [r:1d20]</command>
+  <label> d20 Advantage/Disadvantage</label>
+  <group>Generic</group>
+  <sortby>99</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>true</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

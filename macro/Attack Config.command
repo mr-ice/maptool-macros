@@ -1,10 +1,4 @@
-<net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>15bf8c97-428b-46ef-82fa-a948276d9ffe</macroUUID>
-  <saveLocation/>
-  <index>15</index>
-  <colorKey>green</colorKey>
-  <hotKey>None</hotKey>
-  <command>&lt;!-- Constants --&gt;
+<!-- Constants -->
 [h: ATTACK_JSON = "attackJSON"]
 [h: NAME = "name"]
 [h: ATK_BONUS = "atkBonus"]
@@ -16,17 +10,17 @@
 [h: DMG_BONUS_EXPR = "dmgBonusExpr"]
 [h: NEW_ATTACK = "New Attack"]
 
-&lt;!-- Read attack JSON and prompt for selection --&gt;
+<!-- Read attack JSON and prompt for selection -->
 [h, if (!isPropertyEmpty (ATTACK_JSON)), code: {
-	&lt;!-- Property is populated. Fetch JSON data --&gt;
+	<!-- Property is populated. Fetch JSON data -->
     [h: attackJson = getProperty(ATTACK_JSON)]
 }; {
-	&lt;!-- Property is empty, use blank object --&gt;
+	<!-- Property is empty, use blank object -->
 	[h: attackJson = ""]
 }]
 
 [h: arrLen = json.length(attackJson)]
-[h, if (arrLen &lt; 1), code: {
+[h, if (arrLen < 1), code: {
 	[h: selectedAttack = NEW_ATTACK]
 }; {
     [h: attackList = NEW_ATTACK]  
@@ -34,7 +28,7 @@
     [h: abort( input( "selectedAttack | " + json.toList(attackList) + " | Select Attack | list | value=string"))]
 }]
 
-&lt;!-- Attack selected! Fetch the JSON for the selected attack. If "new" was selected, nothing will be found --&gt;
+<!-- Attack selected! Fetch the JSON for the selected attack. If "new" was selected, nothing will be found -->
 [h: cfgAttack = json.fromStrProp(NAME + "=" + NEW_ATTACK)]
 [r, foreach (attack, attackJson), code: {
 	[h: attackName = json.get(attack, NAME)]
@@ -43,7 +37,7 @@
 	};{ 0 }]
 }]
 
-&lt;!-- transfer json properties to input vars --&gt;
+<!-- transfer json properties to input vars -->
 [h: inputAtkBonus = json.get(cfgAttack, ATK_BONUS)]
 [h: inputDmgBonus = json.get(cfgAttack, DMG_BONUS)]
 [h: inputDmgDie = json.get(cfgAttack, DMG_DIE)]
@@ -53,7 +47,7 @@
 [h: inputDmgType = json.get(cfgAttack, DMG_TYPE)]
 [h: inputDmgBonusExpr = json.get(cfgAttack, DMG_BONUS_EXPR)]
 
-&lt;!-- Prompt the input --&gt;
+<!-- Prompt the input -->
 [h: abort( input( "inputName | " + inputName + " | Attack Name | text",
     "inputAtkBonus | " + inputAtkBonus + " | Attack Bonus | text",
     "inputDmgBonus | " + inputDmgBonus + " | Damage Bonus | text",
@@ -64,7 +58,7 @@
     "inputDmgBonusExpr | " + inputDmgBonusExpr + " | Bonus Damage Expression | text",
     "inputDeleteAttack | | Delete Attack | check"))]
 
-&lt;!-- Convert the input into a new JSON object --&gt;
+<!-- Convert the input into a new JSON object -->
 [h: cfgAttack = json.set(cfgAttack, 
     NAME, inputName,
     ATK_BONUS, inputAtkBonus,
@@ -76,40 +70,16 @@
     DMG_BONUS_EXPR, inputDmgBonusExpr)]
 
 [h, if (NEW_ATTACK == selectedAttack), code: {
-    &lt;!-- If you added a new attack, just tack it into attackJson --&gt;
+    <!-- If you added a new attack, just tack it into attackJson -->
     [h: newAttackJson = json.append(attackJson, cfgAttack)]
 }; {
-    &lt;!-- But if you modifed and existing attack, iterate through the attackJson and replated it --&gt;
+    <!-- But if you modifed and existing attack, iterate through the attackJson and replated it -->
     [h: newAttackJson = ""]
     [h, foreach (attack, attackJson), code: {
         [h: attackName = json.get(attack, NAME)]
         [h: attack = if (attackName == selectedAttack, cfgAttack, attack)]
-        [h: newAttackJson = if (inputDeleteAttack == 1 &amp;&amp; selectedAttack == json.get(attack, NAME), newAttackJson, json.append(newAttackJson, attack))]
+        [h: newAttackJson = if (inputDeleteAttack == 1 && selectedAttack == json.get(attack, NAME), newAttackJson, json.append(newAttackJson, attack))]
     }]
 }]
 [h: setProperty(ATTACK_JSON, newAttackJson)]
 [r, macro( "Print AttackJSON@global"): ""]
-</command>
-  <label>Attack Config</label>
-  <group>Attack</group>
-  <sortby>2</sortby>
-  <autoExecute>true</autoExecute>
-  <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
-  <minWidth/>
-  <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>Used to configure attacks. Should be executed at least once before Make Attack.
-While this can only configure one attack per execution, bulk configuration is
-made possible via Set AttackJSON.</toolTip>
-  <displayHotKey>true</displayHotKey>
-  <commonMacro>false</commonMacro>
-  <compareGroup>true</compareGroup>
-  <compareSortPrefix>true</compareSortPrefix>
-  <compareCommand>true</compareCommand>
-  <compareIncludeLabel>true</compareIncludeLabel>
-  <compareAutoExecute>true</compareAutoExecute>
-  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-</net.rptools.maptool.model.MacroButtonProperties>

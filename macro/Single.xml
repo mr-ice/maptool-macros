@@ -8,43 +8,43 @@
 [h: ATK_BONUS = 10]
 [h: DMG_BONUS = 8]
 [h: RAGE_BONUS = 3]
-[h: DMG_DIE = &quot;6&quot;]
+[h: DMG_DIE = "6"]
 
 &lt;!-- fetch values from properties --&gt;
-[h: isRage = getProperty(&quot;isRaging&quot;)]
-[h,if (isPropertyEmpty(&quot;attackBonus&quot;)): attackBonus = ATK_BONUS; attackBonus = getProperty(&quot;attackBonus&quot;)]
-[h,if (isPropertyEmpty(&quot;dmgNumDice&quot;)): dmgNumDice = 1; dmgNumDice = getProperty(&quot;dmgNumDice&quot;)]
-[h,if (isPropertyEmpty(&quot;dmgDie&quot;)): dmgDie = DMG_DIE; dmgDie = getProperty(&quot;dmgDie&quot;)]
-[h,if (isPropertyEmpty(&quot;dmgBonus&quot;)): dmgBonus = DMG_BONUS; dmgBonus = getProperty(&quot;dmgBonus&quot;)]
-[h,if (isPropertyEmpty(&quot;rageBonus&quot;)): rageBonus = RAGE_BONUS; rageBonus = getProperty(&quot;rageBonus&quot;)]
-[h,if (isPropertyEmpty(&quot;critBonus&quot;)): critBonus = 1; critBonus = getProperty(&quot;critBonus&quot;)]
-[h,if (isPropertyEmpty(&quot;isBlessed&quot;)): isBlessed = 0; isBlessed = getProperty(&quot;isBlessed&quot;)]
-[h,if (isPropertyEmpty(&quot;blessBonus&quot;)): blessBonus=4; blessBonus = getProperty(&quot;blessBonus&quot;)]
+[h: isRage = getProperty("isRaging")]
+[h,if (isPropertyEmpty("attackBonus")): attackBonus = ATK_BONUS; attackBonus = getProperty("attackBonus")]
+[h,if (isPropertyEmpty("dmgNumDice")): dmgNumDice = 1; dmgNumDice = getProperty("dmgNumDice")]
+[h,if (isPropertyEmpty("dmgDie")): dmgDie = DMG_DIE; dmgDie = getProperty("dmgDie")]
+[h,if (isPropertyEmpty("dmgBonus")): dmgBonus = DMG_BONUS; dmgBonus = getProperty("dmgBonus")]
+[h,if (isPropertyEmpty("rageBonus")): rageBonus = RAGE_BONUS; rageBonus = getProperty("rageBonus")]
+[h,if (isPropertyEmpty("critBonus")): critBonus = 1; critBonus = getProperty("critBonus")]
+[h,if (isPropertyEmpty("isBlessed")): isBlessed = 0; isBlessed = getProperty("isBlessed")]
+[h,if (isPropertyEmpty("blessBonus")): blessBonus=4; blessBonus = getProperty("blessBonus")]
 
 &lt;!-- Prompt user --&gt;
-[h: abort(input(&quot;attackBonus|&quot; + attackBonus + &quot;|Attack bonus|text&quot;,
-    &quot;dmgNumDice|&quot; + dmgNumDice + &quot;|Number of Damage Dice|text&quot;,
-    &quot;dmgDie|&quot; + dmgDie + &quot;|Damage Die|text&quot;,
-    &quot;dmgBonus|&quot; + dmgBonus + &quot;|Damage bonus|text&quot;,
-    &quot;critBonus|&quot; + critBonus + &quot;|Number of extra crit dice|text&quot;,
-    &quot;rageBonus|&quot; + rageBonus + &quot;|Rage bonus|text&quot;,
-	&quot;isRage|&quot; + isRage + &quot;|Raging|check&quot;,
-	&quot;blessBonus|&quot; + blessBonus + &quot;|Bless Bonus Die|text&quot;,
-	&quot;isBlessed|&quot; + isBlessed + &quot;|Blessed|check&quot;,
-	&quot;advantageDisadvantage|None,Advantage,Disadvantage|Advantage/Disadvantage|list|value=string&quot;,
-	&quot;damageType|Bludgeoning,Piercing,Slashing|Damage Type|list|value=string&quot;))]
+[h: abort(input("attackBonus|" + attackBonus + "|Attack bonus|text",
+    "dmgNumDice|" + dmgNumDice + "|Number of Damage Dice|text",
+    "dmgDie|" + dmgDie + "|Damage Die|text",
+    "dmgBonus|" + dmgBonus + "|Damage bonus|text",
+    "critBonus|" + critBonus + "|Number of extra crit dice|text",
+    "rageBonus|" + rageBonus + "|Rage bonus|text",
+	"isRage|" + isRage + "|Raging|check",
+	"blessBonus|" + blessBonus + "|Bless Bonus Die|text",
+	"isBlessed|" + isBlessed + "|Blessed|check",
+	"advantageDisadvantage|None,Advantage,Disadvantage|Advantage/Disadvantage|list|value=string",
+	"damageType|Bludgeoning,Piercing,Slashing|Damage Type|list|value=string"))]
 
 &lt;!-- Preserve the interesting choices so they default for the next prompt --&gt;
-[h: setProperty(&quot;isRaging&quot;, isRage)]
-[h: setProperty(&quot;attackBonus&quot;, attackBonus)]
-[h: setProperty(&quot;dmgBonus&quot;, dmgBonus)]
-[h: setProperty(&quot;rageBonus&quot;, rageBonus)]
-[h: setProperty(&quot;dmgNumDice&quot;, dmgNumDice)]
-[h: setProperty(&quot;dmgDie&quot;, dmgDie)]
-[h: setProperty(&quot;critBonus&quot;, critBonus)]
-[h: setProperty(&quot;isBlessed&quot;, isBlessed)]
-[h: setProperty(&quot;blessBonus&quot;, blessBonus)]
-[h: setProperty(&quot;damageType&quot;, damageType)]
+[h: setProperty("isRaging", isRage)]
+[h: setProperty("attackBonus", attackBonus)]
+[h: setProperty("dmgBonus", dmgBonus)]
+[h: setProperty("rageBonus", rageBonus)]
+[h: setProperty("dmgNumDice", dmgNumDice)]
+[h: setProperty("dmgDie", dmgDie)]
+[h: setProperty("critBonus", critBonus)]
+[h: setProperty("isBlessed", isBlessed)]
+[h: setProperty("blessBonus", blessBonus)]
+[h: setProperty("damageType", damageType)]
 
 &lt;!-- Roll attack dice (always roll two, determine if advantage or disadvantage applies after --&gt;
 [h: attack = 1d20]
@@ -60,41 +60,41 @@
 
 &lt;!-- Calculate the correct dmg roll --&gt;
 [h: realAttack = attack]
-[h,if (advantageDisadvantage == &quot;Advantage&quot;): realAttack = max(attack, attack2)]
-[h,if (advantageDisadvantage == &quot;Disadvantage&quot;): realAttack = min(attack, attack2)]
+[h,if (advantageDisadvantage == "Advantage"): realAttack = max(attack, attack2)]
+[h,if (advantageDisadvantage == "Disadvantage"): realAttack = min(attack, attack2)]
 
 &lt;!-- Apply critical --&gt;
 [h,if (realAttack == 20): dmgNumDice = dmgNumDice + critBonus]
 &lt;!-- Roll damage --&gt;
 [h: dmg = roll(dmgNumDice,dmgDie) + dmgBonus]
 &lt;!-- Build the message --&gt;
-[h: atkString = &quot;&lt;b&gt;&quot;]
-[h: atk2String = &quot;&lt;b&gt;&quot;]
-[h,if(attack == 20): atkString = atkString + &quot;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; &quot;]
-[h,if(attack2 == 20): atk2String = atk2String + &quot;&lt;font color=&apos;red&apos;&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; &quot;]
+[h: atkString = "&lt;b&gt;"]
+[h: atk2String = "&lt;b&gt;"]
+[h,if(attack == 20): atkString = atkString + "&lt;font color='red'&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; "]
+[h,if(attack2 == 20): atk2String = atk2String + "&lt;font color='red'&gt;&lt;i&gt;CRITICAL&lt;/i&gt;&lt;/font&gt; "]
 [h: attack = attack + attackBonus]
 [h: attack2 = attack2 + attackBonus]
 [h,if(isBlessed &gt; 0),CODE:
 {
 	[h:attack = attack + blessAttackBonus]
-	[h:atkString = atkString + &quot;&lt;font color=&apos;green&apos;&gt;Blessed &lt;&lt;d&quot;+blessBonus+&quot;=&quot;+blessAttackBonus+&quot;&lt;/font&gt; &quot;]
-	[h:atk2String = atk2String + &quot;&lt;font color=&apos;green&apos;&gt;Blessed &lt;&lt;d&quot;+blessBonus+&quot;=&quot;+blessAttackBonus+&quot;&lt;/font&gt; &quot;]
+	[h:atkString = atkString + "&lt;font color='green'&gt;Blessed &lt;&lt;d"+blessBonus+"="+blessAttackBonus+"&lt;/font&gt; "]
+	[h:atk2String = atk2String + "&lt;font color='green'&gt;Blessed &lt;&lt;d"+blessBonus+"="+blessAttackBonus+"&lt;/font&gt; "]
 };
 {
     This may be the fallthrough (false isBlessed)
 }]
 [h: realAttack = realAttack + attackBonus]
-[h,if(advantageDisadvantage != &quot;None&quot;): realAtkString = &quot;&lt;b&gt;&quot; + realAttack + &quot;&lt;/b&gt;&quot;]
-[h: atkString = atkString + attack + &quot;&lt;/b&gt;&quot;]
-[h: atk2String = atk2String + attack2 + &quot;&lt;/b&gt;&quot;]
+[h,if(advantageDisadvantage != "None"): realAtkString = "&lt;b&gt;" + realAttack + "&lt;/b&gt;"]
+[h: atkString = atkString + attack + "&lt;/b&gt;"]
+[h: atk2String = atk2String + attack2 + "&lt;/b&gt;"]
 
 
-[h: nameStr = getName() + &quot;&lt;br&gt;&lt;br&gt;&quot;]
-[h: atkStr = &quot;Attack (1d20 + &quot; + attackBonus + &quot;): &quot; + atkString + &quot;&lt;br&gt;&quot;]
-[h,if(advantageDisadvantage != &quot;None&quot;): atkStr = atkStr + advantageDisadvantage + &quot;: &quot; + atk2String + &quot;&lt;br&gt;&quot; + &quot;Actual Attack: &quot; + realAtkString + &quot;&lt;br&gt;&quot;]
-[h: dmgStr = &quot;Damage (&quot; + dmgNumDice + &quot;d&quot; + dmgDie + &quot; + &quot; + dmgBonus]
+[h: nameStr = getName() + "&lt;br&gt;&lt;br&gt;"]
+[h: atkStr = "Attack (1d20 + " + attackBonus + "): " + atkString + "&lt;br&gt;"]
+[h,if(advantageDisadvantage != "None"): atkStr = atkStr + advantageDisadvantage + ": " + atk2String + "&lt;br&gt;" + "Actual Attack: " + realAtkString + "&lt;br&gt;"]
+[h: dmgStr = "Damage (" + dmgNumDice + "d" + dmgDie + " + " + dmgBonus]
 
-[h: dmgStr = dmgStr + &quot;): &quot; + dmg + &quot; &quot; + damageType ]
+[h: dmgStr = dmgStr + "): " + dmg + " " + damageType ]
 
 [r: atkStr]
 [r: dmgStr]</command>
@@ -106,8 +106,8 @@
   <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
-  <minWidth></minWidth>
-  <maxWidth></maxWidth>
+  <minWidth/>
+  <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>Requires selected token</toolTip>
   <displayHotKey>true</displayHotKey>

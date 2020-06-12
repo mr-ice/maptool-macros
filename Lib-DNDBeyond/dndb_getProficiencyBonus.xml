@@ -1,0 +1,42 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>a2c06007-2466-4562-a560-22ed9d96ee58</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>21</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
+&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
+[h: character = arg(0)]
+
+[h: classArry = json.path.read (character, "data.classes")]
+&lt;!--Subtract by one for div operation --&gt;
+[h: totalClassLevel = -1]
+[h, foreach (classDef, classArry), code: {
+	[h: totalClassLevel = totalClassLevel + json.get (classDef, "level")]
+}]
+[h: profBase = round(math.floor(totalClassLevel / 4))]
+&lt;!-- add one, viola --&gt;
+[h: proficiency = profBase + 2]
+[r: proficiency]
+[h: macro.return = proficiency]</command>
+  <label>dndb_getProficiencyBonus</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>This is a function that requires the DND Beyond Character full JSON. It's not intended to run stand-alone. Returns the proficiency bonus based on class level.</toolTip>
+  <displayHotKey>false</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

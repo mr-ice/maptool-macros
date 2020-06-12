@@ -1,0 +1,30 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>1d3c6d9a-c9f5-46dc-9420-dafb76d220c5</macroUUID>
+  <saveLocation/>
+  <index>14</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: input("selectedWeapon | New Weapon,Scimitard of Speed,Good Sword |Select the weapon | LIST | select=2 value=string")]
+[r: selectedWeapon]
+</command>
+  <label>Iteration Testing</label>
+  <group>Generic</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
