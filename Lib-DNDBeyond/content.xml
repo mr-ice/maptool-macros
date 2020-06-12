@@ -2443,31 +2443,38 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 ]
 
 &lt;!-- Saving throws are about as stupid as skills, but here we go --&gt;
+&lt;!-- Slim down the toon --&gt;
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;)]
+&lt;!-- need these later, but now is a good time to get them --&gt;
+[h: abilities = dndb_getAbilities (toon)]
+[h: profBonus = dndb_getProficiencyBonus (toon)]
+
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+&lt;!-- Skinnify the toon --&gt;
+[h: fatToon = toon]
+[h: skinnyToon = json.set (toon, &quot;data&quot;, skinnyData)]
+
 [h: allProfValue = 1]
 [h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
-							&quot;property&quot;, &quot;type&quot;,
-							&quot;subType&quot;, &quot;saving-throws&quot;,
-							&quot;type&quot;, &quot;half-proficiency&quot;)]
-[h: halfArry = dndb_searchGrantedModifiers (searchArgs)]
-[h, if ( json.length (halfArry) &gt; 0): allProfValue = 2]
+							&quot;subType&quot;, &quot;saving-throws&quot;)]
+[h: saveMods = dndb_searchGrantedModifiers (searchArgs)]
 
-[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;proficiency&quot;)]
-[h: fullArry = dndb_searchGrantedModifiers (searchArgs)]
-[h, if (json.length (fullArry) &gt; 0): allProfValue = 3]
-
-[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;expertise&quot;)]
-[h: expertArry = dndb_searchGrantedModifiers (searchArgs)]
-[h, if (json.length (expertArry) &gt; 0): allProfValue = 4]
-
-&lt;!-- all Saves bonus --&gt;
-[h: searchArgs = json.set (searchArgs, 
-							&quot;property&quot;, &quot;fixedValue&quot;,
-							&quot;subType&quot;, &quot;saving-throws&quot;,
-							&quot;type&quot;, &quot;bonus&quot;)]
-
-[h: allSaveBonusArry = dndb_searchGrantedModifiers (searchArgs)]
-[h: log.debug (&quot;allSaveBonusArry: &quot; + json.indent (allSaveBonusArry))]
+[h: allProfValue = 0]
+[h: allBonus = 0]
+[h, foreach (saveMod, saveMods), code: {
+	[h: log.debug (&quot;allSaves - saveMod: &quot; + json.indent(saveMod))]
+	[h: modLabel = json.get (saveMod, &quot;type&quot;)]
+	[h, switch (modLabel):
+		case &quot;expertise&quot;: allProfValue = 3;
+		case &quot;proficiency&quot;: allProfValue = math.max (allProfValue, 2);
+		case &quot;half-proficiency&quot;: allProfValue = math.max (allProfValue, 1);
+		case &quot;bonus&quot;: allBonus = allBonus + json.get(saveMod, &quot;value&quot;);
+		default: &quot;Someday we&apos;ll care about you, but not today&quot;]
+}]
+[h: log.debug (&quot;allBonus: &quot; + allBonus)]
 [h: finalSaves = &quot;[]&quot;]
+
 
 [h, foreach (saveName, saveNames), code: {
 	[h: valueIdArry = dndb_searchJsonObject (json.set (&quot;&quot;,
@@ -2478,34 +2485,27 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 	[h: searchSaveName = lower (saveName + &quot;-saving-throws&quot;)]
 	[h: log.debug (&quot;searchSaveName: &quot; + searchSaveName)]
 
+							&quot;type&quot;, &quot;half-proficiency&quot;,
+							&quot;property&quot;, &quot;type&quot;
 	&lt;!-- first proficiencies --&gt;
 	[h: profValue = 1]
-	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
-							&quot;subType&quot;, searchSaveName,
-							&quot;type&quot;, &quot;half-proficiency&quot;,
-							&quot;property&quot;, &quot;type&quot;)]
-	[h: halfArry = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;halfArry: &quot; + json.indent (halfArry))]
-	[h, if (json.length (halfArry) &gt; 0): profValue = 2]
+	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, skinnyToon,
+							&quot;subType&quot;, searchSaveName)]
+							
+	[h: saveMods = dndb_searchGrantedModifiers (searchArgs)]
+	[h: profValue = 0]
+	[h: bonus = allBonus]
+	[h, foreach (saveMod, saveMods), code: {
+		[h: modLabel = json.get (saveMod, &quot;type&quot;)]
+		[h, switch (modLabel):
+			case &quot;expertise&quot;: profValue = 3;
+			case &quot;proficiency&quot;: profValue = math.max (profValue, 2);
+			case &quot;half-proficiency&quot;: profValue = math.max (profValue, 1);
+			case &quot;bonus&quot;: bonus = bonus + json.get(saveMod, &quot;value&quot;);
+			default: &quot;Someday we&apos;ll care about you, but not today&quot;]
+	}]
 
-	[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;proficiency&quot;)]
-	[h: fullArry = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;fullArry: &quot; + json.indent (fullArry))]
-	[h, if (json.length (fullArry) &gt; 0): profValue = 3]
 
-	[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;expertise&quot;)]
-	[h: expertArry = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;expertArry: &quot; + json.indent (expertArry))]
-	[h, if (json.length (expertArry) &gt; 0): profValue = 4]
-
-	[h: bonusArry = &quot;[]&quot;]
-	&lt;!-- bonuses array --&gt;
-	[h: searchArgs = json.set (searchArgs, &quot;subType&quot;, searchSaveName,
-							&quot;property&quot;, &quot;value&quot;,
-							&quot;type&quot;, &quot;bonus&quot;)]
-	[h: saveBonusArry = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;saveBonusArry: &quot; + json.indent (saveBonusArry))]
-	
 	&lt;!-- character choices; These are not found under data.modifiers, so use the generic searchJsonObject --&gt;
 	&lt;!-- override --&gt;
 	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, json.path.read (toon, &quot;data.characterValues&quot;),
@@ -2517,24 +2517,21 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 	&lt;!-- Magic Bonus --&gt;
 	[h: searchArgs = json.set (searchArgs, &quot;typeId&quot;, &quot;40&quot;)]
 	[h: magicArry = dndb_searchJsonObject (searchArgs)]
-	[h: log.debug (&quot;magicArry: &quot; + json.indent (magicArry))]
 
 	&lt;!-- Misc Bonus --&gt;
 	[h: searchArgs = json.set (searchArgs, &quot;typeId&quot;, &quot;39&quot;)]
 	[h: miscArry = dndb_searchJsonObject (searchArgs)]
-	[h: log.debug (&quot;miscArry: &quot; + json.indent (miscArry))]
 
 	&lt;!-- Proficiency (character choice overrides) --&gt;
 	[h: searchArgs = json.set (searchArgs, &quot;typeId&quot;, &quot;41&quot;)]
 	[h: profArry = dndb_searchJsonObject (searchArgs)]
-	[h: log.debug (&quot;profArry: &quot; + json.indent (profArry))]
 	
 	[h: choiceProfValue = 0]
 	[h, if (json.length(profArry) &gt; 0): choiceProfValue = json.get (profArry, 0)]
 
 
 	&lt;!-- build the save --&gt;
-	[h: abilities = dndb_getAbilities (toon)]
+
 	[h: bonusArry = &quot;&quot;]
 	[h: totalBonus = 0]
 
@@ -2543,7 +2540,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 									&quot;object&quot;, savesMap,
 									&quot;name&quot;, saveName,
 									&quot;property&quot;, &quot;abilityBonus&quot;))]
-	[h: log.debug (&quot;abilitySearchResult: &quot; + abilitySearchResult)]
+
 	[h: abilityBonusName = json.get (abilitySearchResult, 0)]
 	[h: abilityBonus = json.get (abilities, abilityBonusName)]
 	[h: bonusArry = json.append (bonusArry, json.set (&quot;&quot;, &quot;type&quot;, &quot;Ability&quot;, &quot;value&quot;, abilityBonus))]
@@ -2554,19 +2551,19 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 								actualProfValue = round (math.max (profValue, allProfValue))]
 
 	[h, switch (actualProfValue), code:
-		case 1: {
+		case 0: {
 			[h: profBonus = 0]
 			[h: proficient = &quot;&quot;]
 		};
-		case 2: {
+		case 1: {
 			[h: profBonus = round (math.floor (profBonus / 2))]
 			[h: proficient = &quot;half&quot;]
 		};
-		case 3: {
+		case 2: {
 			[h: profBonus = dndb_getProficiencyBonus (toon)]
 			[h: proficient = &quot;proficient&quot;]
 		};
-		case 4: {
+		case 3: {
 			[h: profBonus = profBonus * 2]
 			[h: proficient = &quot;expert&quot;]
 		}
@@ -2579,10 +2576,6 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 	[h: bonusArry = json.append (bonusArry, json.set (&quot;&quot;, &quot;type&quot;, &quot;Proficiency&quot;, &quot;value&quot;, profBonus))]
 	
 	&lt;!-- class, background, item &quot;bonus&quot; bonuses --&gt;
-	[h: bonus = 0]
-	[h, foreach (saveBonus, saveBonusArry): bonus = bonus + saveBonus]
-	[h, foreach (allSaveBonus, allSaveBonusArry): bonus = bonus + allSaveBonus]
-	[h: bonusArry = json.append (bonusArry, json.set (&quot;&quot;, &quot;type&quot;, &quot;Bonus&quot;, &quot;value&quot;, bonus))]
 	[h: totalBonus = totalBonus + bonus]
 
 	&lt;!-- character choices bonuses (magic and misc) --&gt;
@@ -2604,6 +2597,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
 		[h: totalBonus = overrideValue]
 	}]
 	[h: bonusArry = json.append (bonusArry, json.set (&quot;&quot;, &quot;type&quot;, &quot;Override&quot;, &quot;value&quot;, overrideValue))]
+	[h, if (allBonus &gt; 0): bonusArry = json.append (bonusArry, json.set (&quot;&quot;, &quot;type&quot;, &quot;All Bonus&quot;, &quot;value&quot;, allBonus))]
 
 	[h: savingThrow = json.set (savingThrow, &quot;totalBonus&quot;, totalBonus,
 									&quot;bonuses&quot;, bonusArry)]
