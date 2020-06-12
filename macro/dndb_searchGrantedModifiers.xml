@@ -1,0 +1,84 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f83d8d11-1eba-481d-afd9-873b9b849271</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>38</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
+[h: filterObj = arg(0)]
+[h: toon = json.get (filterObj, "object")]
+[h: property = json.get (filterObj, "property")]
+[h: log.debug ("dndb_searchGrantedModifiers: property = " + property)]
+
+[h: resultArry = ""]
+
+&lt;!-- whatevers in equippedModifiers is what we want --&gt;
+[h: equippedModifiers = dndb_searchForItemGrantedModifiers (filterObj)]
+[h: log.debug ("dndb_searchGrantedModifiers: equippedModifiers = " + equippedModifiers)]
+[h: resultArry = json.merge (resultArry, equippedModifiers)]
+
+
+&lt;!-- Ok, classes are next. Anything that is: --&gt;
+[h: classArry = dndb_searchForClassGrantedModifiers (filterObj)]
+[h: log.debug ("dndb_searchGrantedModifiers: classArry = " + classArry)]
+[h: resultArry = json.merge (resultArry, classArry)]
+
+&lt;!-- filterObj is only filter terms. Well provide our own object and stuff property back in as needed --&gt;
+
+[h: filterObj = json.remove (filterObj, "object")]
+[h: filterObj = json.remove (filterObj, "property")]
+
+&lt;!-- everything else gets the same treatement --&gt;
+&lt;!-- Abstracting Items and Class makese sense since they have special treatement. --&gt;
+&lt;!-- Any purpose in doing the same for these? Outside of this script, no sure what --&gt;
+&lt;!-- would want to call these scripts anyways --&gt;
+[h: nonItems = json.append ("", "background", "condition", "feat", "race")]
+
+[h, foreach (classification, nonItems), code: {
+	[h: log.debug ("Searching " + classification)]
+	[h: searchObjectPath = "data.modifiers." + classification]
+	[h: searchObject = json.path.read (toon, searchObjectPath)]
+	[h: subSearchArg = json.set (filterObj, "object", searchObject, "property", property)]
+
+	[h: subSearchResults = dndb_searchJsonObject (subSearchArg)]
+	[h: log.debug ("dndb_searchGrantedModifiers: subSearchResults = " + subSearchResults)]
+	[h, if (json.length (subSearchResults) &gt; 0): resultArry = json.merge (resultArry, subSearchResults)]
+}]
+
+[h: log.debug (resultArry)]
+[h: macro.return = resultArry]</command>
+  <label>dndb_searchGrantedModifiers</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Searches the data.modifier object for all modifiers granted by classes, backgrounds, feats, conditions, race, and equipped items.
+
+arg(0) = 
+{
+  "object": "toon",
+  "property": "fixedValue",
+  "subType": "ability-checks",
+  "type": "expertise"
+}
+
+Within the JSON, the "object" parameter is required. It must be a full character JSON.
+
+"property" is a reserved parameter that indicates the values to return. If "property" is not provided, the full entity is returned for each match.
+
+All other key-value pairs are used as search terms.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

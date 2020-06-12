@@ -1,0 +1,46 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>2579d20f-819b-4c77-baeb-cda99512fbb4</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>22</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: toon = arg(0)]
+
+&lt;!-- Build it like our simplified weapon json --&gt;
+&lt;!-- Do I need the toon? Maybe there are class mods that apply a damage die. --&gt;
+[h: unarmedStrike = json.set ("",
+	"name", "Unarmed Strike",
+	"attackType", "Melee",
+	"dmgDie", "1",
+	"dmgDice", "1",
+	"dmgType", "Bludgeoning",
+	"bonus", "0",
+	"range", "5",
+	"longRange", "5",
+	"type", "Unarmed",
+	"properties", "[]",
+	"proficient", "1",
+	"isMonk", "true")]
+
+[h: macro.return = unarmedStrike]</command>
+  <label>dndb_getUnarmedStrike</label>
+  <group>Character</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg(0): toon -although currently unused</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

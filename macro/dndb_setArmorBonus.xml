@@ -1,0 +1,51 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3c69b0e1-53ac-4f8f-b364-68912b6556d3</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>27</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: armor = arg(0)]
+[h: log.debug ("Getting AC for " + json.path.read (armor, "definition.name"))]
+[h: baseAC = json.path.read (armor, "definition.armorClass")]
+[h: log.debug ("baseAC: " + baseAc)]
+
+[h: bonuses = json.path.read (armor, "definition.grantedModifiers.[?(@.subType == 'armor-class')]['value']", "SUPPRESS_EXCEPTIONS,ALWAYS_RETURN_LIST")]
+[h: log.debug ("bonuses: " + bonuses)]
+[h: totalBonus = 0]
+[h, foreach (bonus, bonuses): totalBonus = totalBonus + bonus]
+[h: armor = json.set (armor, "bonusAC", totalBonus, "totalAC", baseAC + totalBonus)]
+
+[h: macro.return = armor]</command>
+  <label>dndb_setArmorBonus</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Utility method to calculate amor class bonuses from the input armor
+
+arg(0) = armor
+
+Return armor with bonus added
+
+Ex. for +3 Shield
+{
+	"equipped" : true,
+	"definition" : [..],
+	"bonusAC": 3
+	"totalAC": 5
+}</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

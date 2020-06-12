@@ -1,0 +1,33 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>e3051e3e-4f96-42d4-8454-1bfa0975a50c</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>32</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- get toon and maybe an item name --&gt;
+[h: toon = arg(0)]
+[h, if (json.length (macro.args) &gt; 1): 
+				results = dndb_getInventory (toon, "Other Gear", arg(1)); 
+				results = dndb_getInventory (toon, "Other Gear")]
+[h: macro.return = results]</command>
+  <label>dndb_getItem</label>
+  <group>Character</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

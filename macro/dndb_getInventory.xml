@@ -1,0 +1,82 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>6ecf5fe2-3e03-4b4b-89d7-4c569865c73a</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>33</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: log.debug ("Entering getInventory")]
+
+[h: toon = arg(0)]
+[h: filterType = arg(1)]
+[h, if (json.length (macro.args) &gt; 2): itemName = arg(2); itemName = "_all"]
+
+[h: log.debug (json.get (toon, "name"))]
+[h: log.debug (filterType)]
+
+[h: inventoryArry = json.path.read (toon, "data.inventory[*].[?(@.definition.filterType == '" + filterType + "')]")]
+[h: selectedItem = json.path.read (inventoryArry, ".[?(@.name == '" + itemName + "')]")]
+[h, if (json.length (selectedItem) &gt; 0): 
+		selectedItem = json.get (selectedItem, 0);
+		selectedItem = "{}"]
+[h: log.debug ("selectedItem: " + json.indent (selectedItem))]
+[h, if (itemName == "_all"): macro.return = inventoryArry; macro.return = selectedItem]</command>
+  <label>dndb_getInventory</label>
+  <group>Character</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns an item or items. A filterType must be specified, but a name may be optional.
+
+arg(0) = toon
+arg(1) = filterType
+optional: arg(2) = name
+
+ex.
+dnd_getInventory (toon, "Other Gear", "Backpack")
+
+returns:
+{
+  "baseTypeId": 2103445194,
+  "bundleSize": 1,
+  "canAttune": false,
+  "canEquip": false,
+  "cost": 2,
+  "description": "A backpack",
+  "entityTypeId": 2103445194,
+  "filterType": "Other Gear",
+  "grantedModifiers": [],
+  "id": 20,
+  "isConsumable": false,
+  "isHomebrew": false,
+  "isMonkWeapon": false,
+  "isPack": false,
+  "magic": false,
+  "name": "Backpack",
+  "rarity": "Common",
+  "stackable": true,
+  "subType": "Adventuring Gear",
+  "tags": ["Container"],
+  "type": "Gear",
+  "weaponBehaviors": [],
+  "weight": 5,
+  "sources": [],
+  "gearTypeId": 1,
+  "canBeAddedToInventory": true
+}
+
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

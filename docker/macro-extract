@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+# vim: textwidth=69 tabstop=4 sofftabstop=4 shiftwidth=4
+"""parse a zipfile which is one of
+
+  .mtmacro - a maptool export of a macro
+  .mtmacset - a maptool export of a set of macros
+  .rptok - a maptool export of a token
+
+
+Each of these has a content.xml.  Parse that and extract all
+net.rptools.maptool.model.MacroButtonProperties to their own files under macro,
+named based on the label attribute of each MacroButton.
+
+In addtion, extract the command attribute, writing the .xml without one and
+writing the command to its own file at <label>.command.
+
+labels will be modified slightly to be more filesystem friendly.
+
+In this iteration, leave content.xml intact.  Eventually we want to leave a
+placeholder so that we can pick up the pieces from the filesystem.
+
+"""
+
+import os
+import sys
+import argparse
+from lxml import objectify
+from lxml.etree import tostring
+import zipfile
+from urllib.parse import quote
+
+AP = argparse.ArgumentParser()
+
+AP.add_argument('file', help="file to open, should be a .mtmacro, .mtmacset,"
+                ".rptok, or .mtprops file")
+
+AP.add_argument('--verbose','-v', action='store_true', default=False)
+
+opts = AP.parse_args()
+
+if not zipfile.is_zipfile(opts.file):
+    print("This script works on a zipfile, the first argument needs to be one"
+          "of a .mtmacro, .mtmacset, or .rptok file", file=sys.stderr)
+    sys.exit()
+
+zf = zipfile.ZipFile(opts.file)
+main = objectify.parse(zf.open('content.xml'))
+macro = 'net.rptools.maptool.model.MacroButtonProperties'
+token = 'net.rptools.maptool.model.Token'
+
+def macroList(elem):
+    if elem.tag == 'list':
+        # usually a list of macros
+        return {x.label:x for x in elem.findall('./'+macro)}
+    elif elem.tag == macro:
+        # it's already a macro
+        return {elem.label:elem}
+    elif elem.tag == token:
+        # a token has a macroPropertiesMap with macros:
+        mpm = elem.macroPropertiesMap
+        return {x.label:x for x in mpm.findall('./entry/'+macro)}
+
+for label, elem in macroList(main.getroot()).items():
+    label = str(label)
+    if '/' in label:
+        label = quote(label,safe='')
+    xml_file = "macro/{}.xml".format(label)
+    command_file = "macro/{}.command".format(label)
+    with open(command_file, 'w') as f:
+        f.write(str(elem.command))
+        if opts.verbose:
+           print('wrote {} bytes to {}'.format(
+               len(elem.command.text),command_file))
+    with open('macro/' + label + '.xml', 'w') as f:
+        f.write(tostring(elem, pretty_print=True).decode())
+        if opts.verbose:
+            print('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
+
+
+# Special handling of tokens -- they have more stuff in their content.xml and
+# their properties.xml is usually more than just the version of maptools.  So
+# we'll extract those as well.
+if main.getroot().tag == token:
+    base,ext = os.path.splitext(opts.file)
+    if not os.path.exists(base):
+        if opts.verbose:
+            print("I: creating directory "+base)
+        os.mkdir(base, mode=0o755)
+    zf.extractall(path=base)
+    if opts.verbose:
+        print("Extracting to "+base)
+        zf.printdir()

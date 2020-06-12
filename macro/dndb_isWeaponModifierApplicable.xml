@@ -1,0 +1,69 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>39506feb-d52a-41ce-a0ce-8f662b883dd0</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>24</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>&lt;!-- Primarily via the subType attribute of the modifier, determine if the weapon applies. --&gt;
+&lt;!-- Originally written for weapons, but could be expanded to easily apply to any item --&gt;
+[h: modifier = arg(0)]
+[h: weapon = arg(1)]
+&lt;!-- todo - add a third optional argument to change from an optimistic behavior to a pessimistic --&gt;
+
+[h: qualified = 1]
+
+[h: subType = json.get (modifier, "subType")]
+
+&lt;!-- if subType is blank, most of our work is pointless --&gt;
+[h, if (json.length (subType) == 0): subType = ""]
+
+[h: attackType = json.get (weapon, "attackType")]
+
+&lt;!-- subType must have "weapon-attack" or weapon-ish attack --&gt;
+[h: weaponAttacks = lastIndexOf (subType, "weapon-attack")]
+[h: weaponAttacks = weaponAttacks + lastIndexOf (subType, "melee-attack")]
+[h: weaponAttacks = weaponAttacks + lastIndexOf (subType, "range-attack")]
+[h, if (weaponAttacks &lt; 0): qualified = 0]
+
+&lt;!-- Ranged required? --&gt;
+[h: isRangedModifier = lastIndexOf (subType, "range")]
+[h: isMeleeModifier = lastIndexOf (subType, "melee")]
+[h, if (isRangedModifier &gt; -1 &amp;&amp; equals (attackType, "Melee")): qualified = 0]
+[h, if (isMeleeModifier &gt; -1 &amp;&amp; equals (attackType, "Ranged")): qualified = 0]
+
+&lt;!-- one hand vs two hand restriction --&gt;
+[h: twoHandedProperty = json.path.read (weapon, "properties..[?(@.name == 'Two-Handed')]")]
+[h: oneHandedRestriction = lastIndexOf (subType, "one-handed")]
+[h, if (oneHandedRestriction &gt; -1 &amp;&amp; json.length (twoHandedProperty) &gt; 0): qualified = 0]
+
+
+
+[h: macro.return = qualified]</command>
+  <label>dndb_isWeaponModifierApplicable</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Utility method that tests if a weapon applies to a given modifier. For instance, does the modifier to add 2 points of damage to weapons wielded in one hand apply to the passed in weapon, which may be two-handed.
+
+[h: modifier = arg(0)]
+[h: weapon = arg(1)]
+
+Returns 0 (false) or 1 (true)
+
+TODO: this could be refactored to test against any item instead of just weapons.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
