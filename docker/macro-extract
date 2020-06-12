@@ -53,34 +53,48 @@ if not zipfile.is_zipfile(opts.file):
     sys.exit()
 
 zf = zipfile.ZipFile(opts.file)
-main = objectify.parse(zf.open('content.xml'))
-macro = 'net.rptools.maptool.model.MacroButtonProperties'
-token = 'net.rptools.maptool.model.Token'
+xml = objectify.parse(zf.open('content.xml'))
+macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
+tokentag = 'net.rptools.maptool.model.Token'
+base,ext = os.path.splitext(opts.file)
+
+def mktokendir(path):
+    if not os.path.exists(path):
+        if opts.verbose:
+            print("I: creating directory",path)
+        os.mkdir(path, mode=0o755)
+
 
 def macroList(elem):
     if elem.tag == 'list':
         # usually a list of macros
-        return {x.label:x for x in elem.findall('./'+macro)}
-    elif elem.tag == macro:
+        return {x.label:x for x in elem.findall('./'+macrotag)}
+    elif elem.tag == macrotag:
         # it's already a macro
         return {elem.label:elem}
-    elif elem.tag == token:
+    elif elem.tag == tokentag:
         # a token has a macroPropertiesMap with macros:
         mpm = elem.macroPropertiesMap
-        return {x.label:x for x in mpm.findall('./entry/'+macro)}
+        return {x.label:x for x in mpm.findall('./entry/'+macrotag)}
 
-for label, elem in macroList(main.getroot()).items():
+for label, elem in macroList(xml.getroot()).items():
     label = str(label)
     if '/' in label:
         label = quote(label,safe='')
-    xml_file = "macro/{}.xml".format(label)
-    command_file = "macro/{}.command".format(label)
+    if label == 'onCampaignLoad':
+        # special macro, 1/token so save it with the token
+        mktokendir(base)
+        xml_file = '{}/{}.xml'.format(base, label)
+        command_file = "{}/{}.command".format(base, label)
+    else:
+        xml_file = "macro/{}.xml".format(label)
+        command_file = "macro/{}.command".format(label)
     with open(command_file, 'w') as f:
         f.write(str(elem.command))
         if opts.verbose:
            print('wrote {} bytes to {}'.format(
                len(elem.command.text),command_file))
-    with open('macro/' + label + '.xml', 'w') as f:
+    with open(xml_file, 'w') as f:
         f.write(tostring(elem, pretty_print=True).decode())
         if opts.verbose:
             print('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
@@ -89,12 +103,8 @@ for label, elem in macroList(main.getroot()).items():
 # Special handling of tokens -- they have more stuff in their content.xml and
 # their properties.xml is usually more than just the version of maptools.  So
 # we'll extract those as well.
-if main.getroot().tag == token:
-    base,ext = os.path.splitext(opts.file)
-    if not os.path.exists(base):
-        if opts.verbose:
-            print("I: creating directory "+base)
-        os.mkdir(base, mode=0o755)
+if xml.getroot().tag == tokentag:
+    mktokendir(base)
     zf.extractall(path=base)
     if opts.verbose:
         print("Extracting to "+base)
