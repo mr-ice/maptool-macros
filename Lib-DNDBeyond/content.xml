@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>mhPJsQZZR5+Xg5kHuH5tWA==</baGUID>
+    <baGUID>GdU5bb6ZScmytMapWjcJUw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,31 +14,190 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>4000</x>
-  <y>-5550</y>
-  <z>10</z>
+  <x>500</x>
+  <y>300</y>
+  <z>8</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>4000</lastX>
-  <lastY>-5550</lastY>
+  <lastX>150</lastX>
+  <lastY>600</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>80</x>
-        <y>-111</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>3</x>
+        <y>12</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>11</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>3</x>
+          <y>12</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>6.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>10</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>11</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>6.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>5.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>6</x>
+        <y>9</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>10</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>5.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>4.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>7</x>
+        <y>9</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>6</x>
+          <y>9</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+          <h>4.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+        </parent>
+        <h>3.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>8</y>
+        <g>5.0</g>
+        <distanceTraveled>5.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>7</x>
+          <y>9</y>
+          <g>4.0</g>
+          <distanceTraveled>4.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
+          <h>3.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
+        </parent>
+        <h>2.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>9</x>
+        <y>7</y>
+        <g>6.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>8</x>
+          <y>8</y>
+          <g>5.0</g>
+          <distanceTraveled>5.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/parent"/>
+          <h>2.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/validMoves"/>
+        </parent>
+        <h>1.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>10</x>
+        <y>6</y>
+        <g>0.0</g>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>80</x>
-        <y>-111</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>3</x>
+        <y>12</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>10</x>
+        <y>6</y>
+        <g>0.0</g>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -414,7 +573,7 @@
     <entry>
       <int>3</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d5ffa65e-47f5-4084-a8d6-a3fa1316be9c</macroUUID>
+        <macroUUID>04a7efa6-9cae-4c76-9f96-b9effe1868e6</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>3</index>
         <colorKey>default</colorKey>
@@ -458,7 +617,7 @@
     <entry>
       <int>6</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b97abf58-fc89-4c9d-b1e4-d8d8bdbe55ad</macroUUID>
+        <macroUUID>d1006b6e-c265-4e19-9f38-4ccaca0994ed</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>6</index>
         <colorKey>default</colorKey>
@@ -552,7 +711,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>10</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f4645e23-1629-470a-bfe2-50d17354e7b0</macroUUID>
+        <macroUUID>14de5160-5bc1-4197-a429-4d5c293c807c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>10</index>
         <colorKey>default</colorKey>
@@ -583,7 +742,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>15</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ec70c563-f3a3-4c0f-a44e-a7ccc33a6bf4</macroUUID>
+        <macroUUID>178cb065-a848-4794-8b54-9403ba53fffa</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>15</index>
         <colorKey>default</colorKey>
@@ -682,7 +841,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>16</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4f144841-ce2b-4736-9378-d530a8029690</macroUUID>
+        <macroUUID>5f9c813e-6f33-46d3-addc-959d716dfaae</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>16</index>
         <colorKey>default</colorKey>
@@ -784,7 +943,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>17</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>7b2cbdc6-d5e4-4a05-86ad-3c1aed225be7</macroUUID>
+        <macroUUID>f71b85f6-778c-44e5-a088-abf6401b9c2e</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>17</index>
         <colorKey>default</colorKey>
@@ -828,7 +987,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>19</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>22a19511-ab63-42a2-bb93-e1c6620adffb</macroUUID>
+        <macroUUID>0cd7a488-fe05-4178-85c7-f6363d8e7f36</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>19</index>
         <colorKey>default</colorKey>
@@ -888,7 +1047,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>20</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>9ad7e0db-c41b-4843-bc31-b8431a1b318b</macroUUID>
+        <macroUUID>31365094-c23b-4025-9da6-97c850251edb</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>20</index>
         <colorKey>default</colorKey>
@@ -981,7 +1140,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>21</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>9b85febe-bdd3-4185-ab2a-5fb90a536e40</macroUUID>
+        <macroUUID>0f87feca-72de-4d20-ae3d-420a97dca62a</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>21</index>
         <colorKey>default</colorKey>
@@ -1026,7 +1185,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>22</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>758a7fca-9009-46fe-8dff-5f6a5f9280d1</macroUUID>
+        <macroUUID>d505d03c-6f6d-4129-a638-289402e3848d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>22</index>
         <colorKey>default</colorKey>
@@ -1075,7 +1234,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>23</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4a67c8ce-b081-4505-b4ea-8e671124a6bc</macroUUID>
+        <macroUUID>f31ae75b-20bb-49d8-b07a-333970bebedf</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>23</index>
         <colorKey>default</colorKey>
@@ -1160,7 +1319,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>24</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>08d6200b-552c-4c1a-9d4d-b4204791d6fc</macroUUID>
+        <macroUUID>b3c91d02-c2aa-45dc-bdea-868411096c0c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>24</index>
         <colorKey>default</colorKey>
@@ -1232,7 +1391,7 @@ TODO: this could be refactored to test against any item instead of just weapons.
     <entry>
       <int>26</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4537c43b-3f4a-49d3-8ed0-8f599251b1c2</macroUUID>
+        <macroUUID>368dcb60-1124-4430-a782-af9d9fb41549</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>26</index>
         <colorKey>default</colorKey>
@@ -1372,7 +1531,7 @@ returns acObj
     <entry>
       <int>27</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>abf06921-ba46-4518-b652-f4f725949653</macroUUID>
+        <macroUUID>572baa50-10b2-439b-87b8-5a751de36bb8</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>27</index>
         <colorKey>default</colorKey>
@@ -1426,7 +1585,7 @@ Ex. for +3 Shield
     <entry>
       <int>28</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>cb0882ac-b519-4fd8-bb25-0dcda7825fc8</macroUUID>
+        <macroUUID>50a2c364-985a-4e3a-8dd3-bbf9a520dc05</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>28</index>
         <colorKey>default</colorKey>
@@ -1511,7 +1670,7 @@ ex.
     <entry>
       <int>29</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>205f32d6-664d-4ea1-a0d0-c22437be7dc9</macroUUID>
+        <macroUUID>9d1783b5-7cde-46f2-85cb-f64bc7ebad4f</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>29</index>
         <colorKey>default</colorKey>
@@ -1555,7 +1714,7 @@ data.classes[]</toolTip>
     <entry>
       <int>30</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>0dd76bc2-c442-42cc-9870-cbd420264624</macroUUID>
+        <macroUUID>64a40aad-4f95-4f5e-9702-7a920daa88f5</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>30</index>
         <colorKey>default</colorKey>
@@ -1625,7 +1784,7 @@ ex.
     <entry>
       <int>31</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b1db0146-e5f6-4a97-8b87-875eddf602d2</macroUUID>
+        <macroUUID>d8191b89-89d3-4d8a-acd1-85b53de37b08</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>31</index>
         <colorKey>default</colorKey>
@@ -1698,7 +1857,7 @@ ex.
     <entry>
       <int>32</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b9d58351-85b0-4784-b5c0-9b66cde63376</macroUUID>
+        <macroUUID>15a3ebd6-91d5-42ac-ab16-e45e208851e4</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>32</index>
         <colorKey>default</colorKey>
@@ -1734,7 +1893,7 @@ ex.
     <entry>
       <int>33</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ace8b9db-ddc5-4a10-90ce-cf92970a82ed</macroUUID>
+        <macroUUID>ea018cb1-14cd-4417-a42b-5be005674ed7</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>33</index>
         <colorKey>default</colorKey>
@@ -1819,7 +1978,7 @@ returns:
     <entry>
       <int>34</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d5d333ec-38a8-4b62-8293-a5fe2ff55f94</macroUUID>
+        <macroUUID>f1387c74-f57e-4dda-af64-5bb56d9cd08f</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>34</index>
         <colorKey>default</colorKey>
@@ -1868,28 +2027,52 @@ returns:
 	[h, if (skillName == &quot;_all&quot; || skillName == json.get (skill, &quot;name&quot;)): skills = json.append (skills, skill)] 
 }]
 
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;)]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+&lt;!-- Skinnify the toon --&gt;
+[h: fatToon = toon]
+[h: toon = json.set (toon, &quot;data&quot;, skinnyData)]
+
 &lt;!-- Lets call this the Rex Redrum bug: features that grant all ability checks some level of proficiency have --&gt;
 &lt;!-- to be accounted for, but they wont be found tied to any particular skill --&gt;
+&lt;!-- Find ALL modifiers related to ability-checks --&gt;
 [h: abilitySearchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon, 
-						&quot;subType&quot;, &quot;ability-checks&quot;,
-						&quot;type&quot;, &quot;expertise&quot;)]
-&lt;!-- what fucking DM allowed this? --&gt;
-[h: abilityExpertise = dndb_searchGrantedModifiers (abilitySearchArgs)]
+						&quot;subType&quot;, &quot;ability-checks&quot;)]
+[h: abilityMods = dndb_searchGrantedModifiers (abilitySearchArgs)]
 
-[h: abilitySearchArgs = json.set (abilitySearchArgs, &quot;type&quot;, &quot;proficiency&quot;)]
-[h: abilityProficiency = dndb_searchGrantedModifiers (abilitySearchArgs)]
-
-[h: abilitySearchArgs = json.set (abilitySearchArgs, &quot;type&quot;, &quot;half-proficiency&quot;)]
-[h: abilityHalfProficiency = dndb_searchGrantedModifiers (abilitySearchArgs)]
-
+&lt;!-- Now tease out the interesting bits --&gt;
+&lt;!-- No need to keep searching for stuff. This arry shouldnt be very big --&gt;
 [h: abilityValue = 0]
-[h, if (json.length (abilityHalfProficiency) &gt; 0): abilityValue = 1]
-[h, if (json.length (abilityProficiency) &gt; 0): abilityValue = 2]
-[h, if (json.length (abilityExpertise) &gt; 0): abilityValue = 3]
+[h, foreach (abilityMod, abilityMods), code: {
+	[h: value = json.get (abilityMod, &quot;type&quot;)]
+	[h, switch (value):
+		case &quot;expertise&quot;: tempAbilityValue = 3;
+		case &quot;proficiency&quot;: tempAbilityValue = 2;
+		case &quot;half-proficiency&quot;: tempAbilityValue = 1]
+	[h: abilityValue = math.max (abilityValue, tempAbilityValue)]
+}]
+
+&lt;!-- The most frustrating part about any DTO is trying to sniff out the weird places for user override --&gt;
+&lt;!-- values. And its an edge case anyways! So lets fetch all the relevant character values outside of --&gt;
+&lt;!-- of the skill loop and just cobble up a dumb map of relevant values --&gt;
+[h: characterValues = json.path.read (fatToon, &quot;data.characterValues&quot;)]
+[h: characterValuesSearchObj = json.set (&quot;&quot;, &quot;object&quot;, characterValues,
+					&quot;valueTypeId&quot;, SKILL_ENTITY_TYPE_ID)]
+[h: skillValues = dndb_searchJsonObject (characterValuesSearchObj)]
+
 
 &lt;!-- Since we cant modify existing skill objects, well build new ones instead. Stuff them into this array --&gt;
 [h: afterSkillList = &quot;[]&quot;]
 
+[h: toon = json.set (toon, &quot;data&quot;, skinnyData)]
+[h: skillSearchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
+							&quot;entityTypeId&quot;, SKILL_ENTITY_TYPE_ID)]
+[h: skillMods = dndb_searchGrantedModifiers (skillSearchArgs)]
+
+
+&lt;!-- Too many uncertainties here, so just go through the skill list --&gt;
+&lt;!-- Fall back to the generic search instead of more granted modifiers search --&gt;
 [h, foreach (skill, skills), code: {
     [h: log.debug (&quot;skill: &quot; + skill)]
 	[h: entityId = json.get (skill, &quot;entityId&quot;)]
@@ -1897,20 +2080,16 @@ returns:
 
 	&lt;!-- Start with proficiencies --&gt;
 	&lt;!-- Looks for the proficiencies granted by background, class, race, etc --&gt;
-	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
-							&quot;entityTypeId&quot;, SKILL_ENTITY_TYPE_ID,
+	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, skillMods,
 							&quot;type&quot;, &quot;expertise&quot;,
 							&quot;entityId&quot;, entityId)]
-	[h: expertise = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;Expertise: &quot; + json.indent (expertise))]
+	[h: expertise = dndb_searchJsonObject (searchArgs)]
 
 	[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;proficiency&quot;)]
-	[h: proficiencies = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;Proficiencies: &quot; + json.indent (proficiencies))]
+	[h: proficiencies = dndb_searchJsonObject (searchArgs)]
 
 	[h: searchArgs = json.set (searchArgs, &quot;type&quot;, &quot;half-proficiency&quot;)]
-	[h: halfProfs = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;Half Profs: &quot; + json.indent (halfProfs))]
+	[h: halfProfs = dndb_searchJsonObject (searchArgs)]
 
 	&lt;!-- go from least to best --&gt;
 	[h: proficientValue = 0]
@@ -1929,11 +2108,9 @@ returns:
 	[h: skill = json.set (skill, &quot;proficient&quot;, proficientStr)]
 
 	 &lt;!-- now look for the other ridiculousness --&gt;
-	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, toon,
-					&quot;valueTypeId&quot;, SKILL_ENTITY_TYPE_ID, 
+	[h: searchArgs = json.set (&quot;&quot;, &quot;object&quot;, skillValues,
 					&quot;valueId&quot;, entityId)]
-	[h: characterValues = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug (&quot;characterValues: &quot; + characterValues)]
+	[h: characterValues = dndb_searchJsonObject (searchArgs)]
 	
 	[h: bonuses = &quot;[]&quot;]
 	&lt;!-- for each choice, inspect the typeId --&gt;
@@ -2032,7 +2209,7 @@ ex.
     <entry>
       <int>35</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>dee5a966-0e48-422d-8159-1c6352053afa</macroUUID>
+        <macroUUID>67b3be6b-33b4-4d04-b51e-ac191dddc2ae</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>35</index>
         <colorKey>default</colorKey>
@@ -2165,7 +2342,7 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
     <entry>
       <int>36</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>3f460c08-b207-4a81-906d-35cc3b60d9c8</macroUUID>
+        <macroUUID>7b02b63c-4635-4c9c-92ef-9ab5256a5fbe</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>36</index>
         <colorKey>default</colorKey>
@@ -2242,7 +2419,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>37</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>5f984a78-1b6d-48ce-87f4-83f2ec0f7ae6</macroUUID>
+        <macroUUID>804a797d-6805-4436-86a7-9bf29c94a464</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>37</index>
         <colorKey>default</colorKey>
@@ -2462,7 +2639,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>38</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b20645fe-182f-4dd0-8170-df0472681a0c</macroUUID>
+        <macroUUID>df00b2ef-138c-47df-b17d-f693ccbd675b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>38</index>
         <colorKey>default</colorKey>
@@ -2549,7 +2726,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>39</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>db2d7c53-caca-486c-ae27-d71079a2b1b2</macroUUID>
+        <macroUUID>2d2886c7-16e8-4806-851d-9058d425f449</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>39</index>
         <colorKey>default</colorKey>
@@ -2629,7 +2806,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>40</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>44d21a14-1548-4278-ae1a-6887024c7c33</macroUUID>
+        <macroUUID>cc778d0b-ed2a-4e00-989b-6dfc4b2d14aa</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>40</index>
         <colorKey>default</colorKey>
@@ -2710,7 +2887,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>41</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b8006dfd-03a2-4232-81e3-9ffb53ae4f9f</macroUUID>
+        <macroUUID>e5690a23-7113-4501-9d06-154e3ef5e045</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>41</index>
         <colorKey>default</colorKey>
@@ -2796,7 +2973,7 @@ arg (0) = toon</toolTip>
     <entry>
       <int>42</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f758dfbd-fd34-471e-bc4a-208f502c1fe1</macroUUID>
+        <macroUUID>bf008779-b292-4919-90af-aefd899aff14</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>42</index>
         <colorKey>default</colorKey>
@@ -2910,7 +3087,7 @@ returns:
     <entry>
       <int>49</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>57fe1c9b-47c2-4131-85d9-2258b47db38b</macroUUID>
+        <macroUUID>5d3adb87-b98f-410d-87d4-15ae627149fa</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>49</index>
         <colorKey>default</colorKey>
@@ -2969,7 +3146,7 @@ returns:
     <entry>
       <int>50</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>795c7c23-69d1-4d53-b836-0b02d92d8a5c</macroUUID>
+        <macroUUID>08fc638a-9d30-479f-9e2d-a1af3960ba2b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>50</index>
         <colorKey>blue</colorKey>
@@ -3063,7 +3240,7 @@ returns:
     <entry>
       <int>51</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>40f7d4d3-674e-4537-a17c-5b6acfe7d7cb</macroUUID>
+        <macroUUID>de3c2d1b-1ada-4781-8081-dcacec15120c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>51</index>
         <colorKey>black</colorKey>
@@ -3148,7 +3325,7 @@ returns:
     <entry>
       <int>53</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>40e716aa-f27e-4dc2-8bab-cc01561222d7</macroUUID>
+        <macroUUID>35321cfe-5832-4cfa-a47a-7a70746802e5</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>53</index>
         <colorKey>default</colorKey>
@@ -3231,7 +3408,7 @@ returns:
     <entry>
       <int>54</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>86d14b5a-f1c1-491c-8d8e-c2f6e6fafec8</macroUUID>
+        <macroUUID>80fc1873-4419-452c-ab86-d1e5d3e6980c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>54</index>
         <colorKey>default</colorKey>
@@ -3289,7 +3466,7 @@ returns:
     <entry>
       <int>55</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>3dc44f67-a33c-49c4-9e37-be544f1b9003</macroUUID>
+        <macroUUID>6b19a10a-0b15-4f50-bd7a-9507efe04240</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>55</index>
         <colorKey>red</colorKey>
@@ -3473,7 +3650,7 @@ returns:
     <entry>
       <int>56</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d14502a9-17c4-4d3a-a73f-08829a45c7d5</macroUUID>
+        <macroUUID>d1536420-1a1e-483c-b779-f8d401d4ccc8</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>56</index>
         <colorKey>green</colorKey>
@@ -3593,7 +3770,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>57</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4f1f8d1a-9a97-4b8c-b547-d5104b7d7910</macroUUID>
+        <macroUUID>b10053d2-ba79-42d6-aa9f-84982aa202e7</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>57</index>
         <colorKey>default</colorKey>
@@ -3654,7 +3831,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>58</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>698e327f-8372-4824-a738-6d89781239b1</macroUUID>
+        <macroUUID>54049ea9-d360-4107-b703-f7a82040e131</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>58</index>
         <colorKey>purple</colorKey>
@@ -3726,6 +3903,47 @@ made possible via Set AttackJSON.</toolTip>
         <maxWidth></maxWidth>
         <allowPlayerEdits>false</allowPlayerEdits>
         <toolTip>Note: This doesn&apos;t actually spend the character&apos;s hit dice. It only rolls for the player as if they spent those dice. The player will need to update DNDBeyond and mark the hit dice spent there. Until the next refresh, this macro will always show the same number of hit dice available to spend.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>59</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>bc443653-0d1d-4b98-bc22-366f2861b57f</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>59</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: object = arg(0)]
+[h: retains = arg(1)]
+
+[h: skinnyObj = &quot;{}&quot;]
+[h, foreach (field, json.fields (object)), code: {
+	[h, if (json.contains (retains, field)): skinnyObj = json.set (skinnyObj, field, json.get (object, field))]
+}]
+[h: macro.return = skinnyObj]</command>
+        <label>dndb_getSkinnyObject</label>
+        <group>Utility</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns a object with selected chunks preserved.
+
+arg(0) - object
+arg(1) - [fields to preserve]</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
