@@ -1,21 +1,22 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d558dfa3-dd16-4ad1-895b-0773b867e639</macroUUID>
+  <macroUUID>de6bca90-95b6-44dd-9102-b5140184e420</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>1</index>
+  <index>3</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <command>[h: initList = "booga=-1"]
+[h: removeAllFromInitiative()]
 [h, foreach(Selected, getSelected("json")), CODE:
 {
 	[switchToken(Selected)]
-	[SelectedGMName = getTokenImage()]
+	[SelectedGMName = getName()]
 	[arr = json.fromStrProp(initList)]
 	[if(json.contains(arr, SelectedGMName) != 0), CODE:
 	{
 		[init = json.get(arr, SelectedGMName)]
 	};
 	{
-		[init = getProperty("Initiative", Selected)]
+		[init=if(isNumber(getProperty("Initiative", Selected)),getProperty("Initiative", Selected),0)]
 		[tie = init / 100]
 		[init = 1d20 + init + tie]
 		[initList = concat(initList, ";", SelectedGMName, "=", init)]
@@ -31,7 +32,7 @@
 	[init = floor(init)]
 	[setInitiative(init)]
 }]</command>
-  <label>Roll Initiative</label>
+  <label>Roll Initiative - separate</label>
   <group/>
   <sortby/>
   <autoExecute>true</autoExecute>

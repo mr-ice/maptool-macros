@@ -1,8 +1,9 @@
 <project>
-  <properties name="DNDBeyond"/>
+  <properties name="DND5e"/>
   <token name="Lib-DNDBeyond"/>
+  <token name="Lib-DND5e"/>
   <macroset name="DNDBeyond">
-    <macro name="Initialize"/>
+    <macro name="Initialize DNDBeyond Character"/>
     <macro name="Quick Update"/>
     <macro name="Reset Properties"/>
   </macroset>

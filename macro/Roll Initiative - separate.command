@@ -1,15 +1,16 @@
 [h: initList = "booga=-1"]
+[h: removeAllFromInitiative()]
 [h, foreach(Selected, getSelected("json")), CODE:
 {
 	[switchToken(Selected)]
-	[SelectedGMName = getTokenImage()]
+	[SelectedGMName = getName()]
 	[arr = json.fromStrProp(initList)]
 	[if(json.contains(arr, SelectedGMName) != 0), CODE:
 	{
 		[init = json.get(arr, SelectedGMName)]
 	};
 	{
-		[init = getProperty("Initiative", Selected)]
+		[init=if(isNumber(getProperty("Initiative", Selected)),getProperty("Initiative", Selected),0)]
 		[tie = init / 100]
 		[init = 1d20 + init + tie]
 		[initList = concat(initList, ";", SelectedGMName, "=", init)]
