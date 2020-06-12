@@ -28,6 +28,7 @@ from lxml import objectify
 from lxml.etree import tostring
 import zipfile
 from urllib.parse import quote
+from textwrap import wrap
 
 AP = argparse.ArgumentParser()
 
@@ -38,9 +39,17 @@ AP.add_argument('--verbose','-v', action='store_true', default=False)
 
 opts = AP.parse_args()
 
+if not os.path.isfile(opts.file):
+    print("\n".join(wrap("{} could not be found, careful that it is "
+          "in the current working directory when running with docker"
+          "".format(opts.file))), file=sys.stderr)
+    sys.exit()
+
 if not zipfile.is_zipfile(opts.file):
-    print("This script works on a zipfile, the first argument needs to be one"
-          "of a .mtmacro, .mtmacset, or .rptok file", file=sys.stderr)
+    print("\n".join(wrap("This script works on a zipfile, the first "
+          "argument needs to be one of a .mtmacro, .mtmacset, or "
+          ".rptok file. What I got was {}".format(opts.file))),
+          file=sys.stderr)
     sys.exit()
 
 zf = zipfile.ZipFile(opts.file)
