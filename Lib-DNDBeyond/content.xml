@@ -20,184 +20,25 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>150</lastX>
-  <lastY>600</lastY>
+  <lastX>500</lastX>
+  <lastY>300</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>3</x>
-        <y>12</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>4</x>
-        <y>11</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>3</x>
-          <y>12</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>6.001</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>5</x>
-        <y>10</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>4</x>
-          <y>11</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>6.001</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>5.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>6</x>
-        <y>9</y>
-        <g>3.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>5</x>
-          <y>10</y>
-          <g>2.0</g>
-          <distanceTraveled>2.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
-          <h>5.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
-        </parent>
-        <h>4.003</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>7</x>
-        <y>9</y>
-        <g>4.0</g>
-        <distanceTraveled>4.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>6</x>
-          <y>9</y>
-          <g>3.0</g>
-          <distanceTraveled>3.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
-          <h>4.003</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
-        </parent>
-        <h>3.003</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>8</x>
-        <y>8</y>
-        <g>5.0</g>
-        <distanceTraveled>5.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>7</x>
-          <y>9</y>
-          <g>4.0</g>
-          <distanceTraveled>4.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
-          <h>3.003</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
-        </parent>
-        <h>2.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>9</x>
-        <y>7</y>
-        <g>6.0</g>
-        <distanceTraveled>6.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>8</x>
-          <y>8</y>
-          <g>5.0</g>
-          <distanceTraveled>5.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/parent"/>
-          <h>2.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/validMoves"/>
-        </parent>
-        <h>1.001</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
         <x>10</x>
         <y>6</y>
         <g>0.0</g>
-        <distanceTraveled>7.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>3</x>
-        <y>12</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
         <x>10</x>
         <y>6</y>
         <g>0.0</g>
-        <distanceTraveled>7.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -615,100 +456,6 @@
       </net.rptools.maptool.model.MacroButtonProperties>
     </entry>
     <entry>
-      <int>6</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d1006b6e-c265-4e19-9f38-4ccaca0994ed</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>6</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
-&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
-[h: toon = arg(0)]
-
-&lt;!-- AttackJSON constants --&gt;
-[h: ATTACK_JSON = &quot;attackJSON&quot;]
-[h: JSON_NAME = &quot;name&quot;]
-[h: ATK_BONUS = &quot;atkBonus&quot;]
-[h: DMG_BONUS = &quot;dmgBonus&quot;]
-[h: DMG_DIE = &quot;dmgDie&quot;]
-[h: DMG_DICE = &quot;dmgDice&quot;]
-
-&lt;!-- Crit bonus dice is gonna be dodgey... Use Bode to see if theres a common json path--&gt;
-[h: CRIT_BONUS_DICE = &quot;critBonusDice&quot;]
-[h: DMG_TYPE = &quot;dmgType&quot;]
-[h: DMG_BONUS_EXPR = &quot;dmgBonusExpr&quot;]
-
-[h: attributes = dndb_getAbilities (toon)]
-[h: proficiencyBonus = dndb_getProficiencyBonus (toon)]
-[h: weapons = dndb_getWeapon (toon)]
-
-&lt;!-- restrict to those that are equipped --&gt;
-[h: weapons = json.path.read (weapons, &quot;.[?(@.equipped == &apos;true&apos;)]&quot;)]
-
-[h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
-&lt;!-- default to getting equipped weapons. Maybe we&apos;ll add an option later for full list.
-&lt;!-- Fuck that, make getWeapons do it
-&lt;!-- Defer attack and damage calculations to other macros. They need the work --&gt;
-
-&lt;!-- get Rage feature --&gt;
-[h: rageBonus = 0]
-[h: ragefeatures = json.path.read (toon, &quot;data.classes..[?(@.definition.name == &apos;Rage&apos;)][&apos;levelScale&apos;]&quot;)]
-[h, if (json.length (rageFeatures) &gt; 0): rageBonus = json.get (json.get (rageFeatures, 0), &quot;fixedValue&quot;)]
-
-[h: attackJson = &quot;&quot;]
-[h, foreach (weapon, weapons), code: {
-	&lt;!-- does not include normal critical dice --&gt;
-	[h: critBonusDice = dndb_getCriticalBonusDice (toon, weapon)]
-	[h: weaponDmgBonus = dndb_getDamageModifierForWeapon (toon, weapon)]
-	[h: weaponAtkBonus = dndb_getAttackModifierForWeapon (toon, weapon)]
-	[h: critBonus = dndb_getCriticalBonusDice (toon, weapon)]
-	[h: name = json.get (weapon, &quot;name&quot;)]
-	&lt;!-- commas are scary --&gt;
-	[h: name = replace (name, &quot;,&quot;, &quot; &quot;)]
-	[h: attackJsonObj = json.set (&quot;&quot;, JSON_NAME, name,
-			ATK_BONUS, weaponAtkBonus,
-			DMG_BONUS, weaponDmgBonus,
-			DMG_DIE, json.get (weapon, &quot;dmgDie&quot;),
-			DMG_DICE, json.get (weapon, &quot;dmgDice&quot;),
-			CRIT_BONUS_DICE, critBonus,
-			DMG_TYPE, json.get (weapon, &quot;dmgType&quot;))]
-	[h: attackJson = json.append (attackJson, attackJsonObj)]
-	&lt;!-- Ragable? Make a rage version --&gt;
-	[h, if (rageBonus &gt; 0 &amp;&amp; json.get (weapon, &quot;attackType&quot;) == &quot;Melee&quot;), code: {
-		[h: attackJsonObj = json.set (attackJsonObj, 
-			JSON_NAME, name + &quot; - Raging&quot;,
-			DMG_BONUS, weaponDmgBonus + rageBonus)]
-		[h: attackJson = json.append (attackJson, attackJsonObj)]
-	}]
-}]
-
-[h: macro.return = attackJson]</command>
-        <label>dndb_getAttackJSON</label>
-        <group>Utility</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>false</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone.
-
-This will pair with a separate class of macros centered around the property &apos;attackJSON&apos;. It will build this property from the class, inventory, and modifier information from the character JSON.</toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
-    </entry>
-    <entry>
       <int>10</int>
       <net.rptools.maptool.model.MacroButtonProperties>
         <macroUUID>14de5160-5bc1-4197-a429-4d5c293c807c</macroUUID>
@@ -780,9 +527,12 @@ This will pair with a separate class of macros centered around the property &apo
 [h, foreach (classAtkModifier, classAtkModifiers), code : {
 	[h: bonus = json.get (classAtkModifier, &quot;value&quot;)]
 	[h: qualified = dndb_isWeaponModifierApplicable (classAtkModifier, weapon)]
-	[h: log.debug (json.indent (classAtkModifier, 3))]
-	[h: log.debug (&quot;qualified: &quot; + qualified)]
-	[h, if (qualified &gt; 0): totalAtkBonus = totalAtkBonus + bonus]
+	[h, if (qualified &gt; 0), code: {
+		[h: totalAtkBonus = totalAtkBonus + bonus]
+		[h: log.debug (json.indent (classAtkModifier, 3))]
+		[h: log.debug (&quot;qualified: &quot; + qualified)]
+
+	}]
 }]
 
 [h: log.debug (&quot;totalAtkBonus after class: &quot; + totalAtkBonus)]
@@ -794,7 +544,7 @@ This will pair with a separate class of macros centered around the property &apo
 &lt;!-- for ech itemDamageMod, get the componentId. Find the item in inventory with the matching id and check equipped --&gt;
 [h, foreach (itemAtkModifier, itemAtkModifiers), code: {
 	[h: qualified = dndb_isWeaponModifierApplicable (itemAtkModifier, weapon)]
-	[h: log.debug (json.indent (itemAtkModifier, 3))]
+	[h, if (qualified &gt; 0): log.debug (json.indent (itemAtkModifier, 3))]
 	[h: log.debug (&quot;qualified: &quot; + qualified)]
 	
 	[h: componentId = json.get (itemAtkModifier, &quot;componentId&quot;)]
@@ -1082,7 +832,10 @@ arg(1) - Weapon</toolTip>
 	[h: bonus = json.get (classModifier, &quot;value&quot;)]
 	[h: qualified = dndb_isWeaponModifierApplicable (classModifier, weapon)]
 
-	[h, if (qualified &gt; 0): totalBonus = totalBonus + bonus]
+	[h, if (qualified &gt; 0), code: {
+		[h: totalBonus = totalBonus + bonus]
+		[h: log.debug (json.indent (classModifier))]
+	}]
 }]
 
 &lt;!-- no qualification checks on Race, yet --&gt;
@@ -1098,6 +851,7 @@ arg(1) - Weapon</toolTip>
 [h, foreach (itemModifier, itemModifiers), code: {
 	&lt;!-- itemModifier may have attack specific sub-types --&gt;
 	[h: qualified = dndb_isWeaponModifierApplicable (itemModifier, weapon)]
+	[h, if (qualified &gt; 0): log.debug (json.indent (itemModifier))]
 	[h: componentId = json.get (itemModifier, &quot;componentId&quot;)]
 	[h: items = json.path.read (toon, &quot;data.inventory..[?(@.definition.id == &apos;&quot; + componentId + &quot;&apos;)]&quot;)]
 	&lt;!-- should only be one --&gt;
@@ -2892,6 +2646,7 @@ All other key-value pairs are used as search terms.</toolTip>
 &lt;!-- The easy bits --&gt;
 &lt;!-- need this for init, and I need to come back and do an init DTO --&gt;
 [h: abilities = dndb_getAbilities (toon)]
+[h: log.info (&quot;dndb_getBasic: Building base details&quot;)]
 [h: basicToon = json.set (&quot;&quot;, &quot;name&quot;, replace (json.path.read (toon, &quot;data.name&quot;),&quot;null&quot;, &quot;&quot;),
 						&quot;age&quot;, replace (json.path.read (toon, &quot;data.age&quot;),&quot;null&quot;, &quot;&quot;),
 						&quot;faith&quot;, replace (json.path.read (toon, &quot;data.faith&quot;),&quot;null&quot;, &quot;&quot;),
@@ -2907,15 +2662,18 @@ All other key-value pairs are used as search terms.</toolTip>
 						&quot;abilities&quot;, abilities)]
 
 &lt;!-- init --&gt;
+[h: log.info (&quot;dndb_getBasic: Initiative&quot;)]
 [h: init = json.get (abilities, &quot;dexBonus&quot;)]
 [h: basicToon = json.set (basicToon, &quot;init&quot;, init)]
 
 &lt;!-- alightment map --&gt;
+[h: log.info (&quot;dndb_getBasic: Alignment&quot;)]
 [h: alignmentMap = json.set (&quot;&quot;, &quot;3&quot;, &quot;CE&quot;)]
 [h: alignmentId =  json.path.read (toon, &quot;data.alignmentId&quot;)]
 [h: basicToon = json.set (basicToon, &quot;alignment&quot;, json.get (alignmentMap, alignmentId))]
 
 &lt;!-- character level --&gt;
+[h: log.info (&quot;dndb_getBasic: Character level&quot;)]
 [h: totalLevel = 0]
 [h: classArry = &quot;&quot;]
 [h, foreach (class, json.path.read (toon, &quot;data.classes&quot;)), code: {
@@ -2932,13 +2690,15 @@ All other key-value pairs are used as search terms.</toolTip>
 [h: basicToon = json.set (basicToon, &quot;classes&quot;, classArry)]
 
 &lt;!-- HP --&gt;
+[h: log.info (&quot;dndb_getBasic: Hitpoints&quot;)]
 [h: hitPoints = dndb_getHitPoints (toon)]
 [h: basicToon = json.set (basicToon, &quot;hitPoints&quot;, hitPoints)]
 
 &lt;!-- Speed --&gt;
+[h: log.info (&quot;dndb_getBasic: Speed&quot;)]
 [h: speeds = dndb_getSpeed (toon)]
 [h: basicToon = json.set (basicToon, &quot;speeds&quot;, speeds)]
-
+[h: log.info (&quot;dndb_getBasic: Done!&quot;)]
 [h: macro.return = basicToon]</command>
         <label>dndb_getBasic</label>
         <group>Character</group>
@@ -2992,6 +2752,13 @@ arg (0) = toon</toolTip>
 &lt;!-- Collect base speeds from ractial traits --&gt;
 [h: baseSpeeds = json.path.read (toon, &quot;data.race.weightSpeeds.normal&quot;)]
 
+&lt;!-- toon goes on a diet --&gt;
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;)]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+[h: fatToon = toon]
+[h: toon = json.set (toon, &quot;data&quot;, skinnyData)]
+
 &lt;!-- all speeds bonuses --&gt;
 [h: allBonuses = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
 							&quot;object&quot;, toon,
@@ -3003,6 +2770,10 @@ arg (0) = toon</toolTip>
 
 [h: allBonus = 0]
 [h, foreach (value, allBonuses): allBonus = allBonus + value]
+							
+[h: speedMods = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
+							&quot;object&quot;, toon,
+							&quot;type&quot;, &quot;set&quot;))]
 
 &lt;!-- Foreach speed type, find all the granted bonuses --&gt;
 [h, foreach (speedName, speedNames), code: {
@@ -3011,11 +2782,12 @@ arg (0) = toon</toolTip>
 	&lt;!-- So look for those for each speed and well add the allBonus values after --&gt;
 	[h: verbSpeed = json.get (dndb_searchJsonObject (json.set (&quot;&quot;, &quot;object&quot;, speedsMap, &quot;property&quot;, &quot;verb&quot;, &quot;name&quot;, speedName)), 0)]
 	[h: innateSpeed = &quot;innate-speed-&quot; + verbSpeed]
-	[h: grantedSpeeds = dndb_searchGrantedModifiers (json.set (&quot;&quot;, 
-							&quot;object&quot;, toon,
+
+	[h: searchArg = json.set (&quot;&quot;, &quot;object&quot;, speedMods,
 							&quot;property&quot;, &quot;value&quot;,
-							&quot;type&quot;, &quot;set&quot;,
-							&quot;subType&quot;, innateSpeed))]
+							&quot;subType&quot;, innateSpeed)]
+	[h: grantedSpeeds = dndb_searchJsonObject (searchArg)]
+
 	[h: log.debug (&quot;grantedSpeeds: &quot; + json.indent (grantedSpeeds))]
 	[h: setSpeed = 0]
 	[h, if (json.length (grantedSpeeds) &gt; 0), code: {
@@ -3938,6 +3710,100 @@ made possible via Set AttackJSON.</toolTip>
 
 arg(0) - object
 arg(1) - [fields to preserve]</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>60</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>802b206a-8d98-4f34-99d0-de912510625d</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>60</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
+&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
+[h: toon = arg(0)]
+
+&lt;!-- AttackJSON constants --&gt;
+[h: ATTACK_JSON = &quot;attackJSON&quot;]
+[h: JSON_NAME = &quot;name&quot;]
+[h: ATK_BONUS = &quot;atkBonus&quot;]
+[h: DMG_BONUS = &quot;dmgBonus&quot;]
+[h: DMG_DIE = &quot;dmgDie&quot;]
+[h: DMG_DICE = &quot;dmgDice&quot;]
+
+&lt;!-- Crit bonus dice is gonna be dodgey... Use Bode to see if theres a common json path--&gt;
+[h: CRIT_BONUS_DICE = &quot;critBonusDice&quot;]
+[h: DMG_TYPE = &quot;dmgType&quot;]
+[h: DMG_BONUS_EXPR = &quot;dmgBonusExpr&quot;]
+
+[h: attributes = dndb_getAbilities (toon)]
+[h: proficiencyBonus = dndb_getProficiencyBonus (toon)]
+[h: weapons = dndb_getWeapon (toon)]
+
+&lt;!-- restrict to those that are equipped --&gt;
+[h: weapons = json.path.read (weapons, &quot;.[?(@.equipped == &apos;true&apos;)]&quot;)]
+
+[h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
+&lt;!-- default to getting equipped weapons. Maybe we&apos;ll add an option later for full list.
+&lt;!-- Fuck that, make getWeapons do it
+&lt;!-- Defer attack and damage calculations to other macros. They need the work --&gt;
+
+&lt;!-- get Rage feature --&gt;
+[h: rageBonus = 0]
+[h: ragefeatures = json.path.read (toon, &quot;data.classes..[?(@.definition.name == &apos;Rage&apos;)][&apos;levelScale&apos;]&quot;)]
+[h, if (json.length (rageFeatures) &gt; 0): rageBonus = json.get (json.get (rageFeatures, 0), &quot;fixedValue&quot;)]
+
+[h: attackJson = &quot;&quot;]
+[h, foreach (weapon, weapons), code: {
+	&lt;!-- does not include normal critical dice --&gt;
+	[h: critBonusDice = dndb_getCriticalBonusDice (toon, weapon)]
+	[h: weaponDmgBonus = dndb_getDamageModifierForWeapon (toon, weapon)]
+	[h: weaponAtkBonus = dndb_getAttackModifierForWeapon (toon, weapon)]
+	[h: critBonus = dndb_getCriticalBonusDice (toon, weapon)]
+	[h: name = json.get (weapon, &quot;name&quot;)]
+	&lt;!-- commas are scary --&gt;
+	[h: name = replace (name, &quot;,&quot;, &quot; &quot;)]
+	[h: attackJsonObj = json.set (&quot;&quot;, JSON_NAME, name,
+			ATK_BONUS, weaponAtkBonus,
+			DMG_BONUS, weaponDmgBonus,
+			DMG_DIE, json.get (weapon, &quot;dmgDie&quot;),
+			DMG_DICE, json.get (weapon, &quot;dmgDice&quot;),
+			CRIT_BONUS_DICE, critBonus,
+			DMG_TYPE, json.get (weapon, &quot;dmgType&quot;))]
+	[h: attackJson = json.append (attackJson, attackJsonObj)]
+	&lt;!-- Ragable? Make a rage version --&gt;
+	[h, if (rageBonus &gt; 0 &amp;&amp; json.get (weapon, &quot;attackType&quot;) == &quot;Melee&quot;), code: {
+		[h: attackJsonObj = json.set (attackJsonObj, 
+			JSON_NAME, name + &quot; - Raging&quot;,
+			DMG_BONUS, weaponDmgBonus + rageBonus)]
+		[h: attackJson = json.append (attackJson, attackJsonObj)]
+	}]
+}]
+
+[h: macro.return = attackJson]</command>
+        <label>dndb_getAttack</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone.
+
+This will pair with a separate class of macros centered around the property &apos;attackJSON&apos;. It will build this property from the class, inventory, and modifier information from the character JSON.</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>
