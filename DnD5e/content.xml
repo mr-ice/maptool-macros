@@ -794,7 +794,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Bloodied</name>
         <order>0</order>
-        <group></group>
+        <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -811,7 +811,7 @@
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Dead</name>
         <order>1</order>
-        <group></group>
+        <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
         <showGM>true</showGM>
@@ -827,7 +827,7 @@
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Dying</name>
         <order>2</order>
-        <group></group>
+        <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
         <showGM>true</showGM>
@@ -839,35 +839,34 @@
       </net.rptools.maptool.client.ui.token.ImageTokenOverlay>
     </entry>
     <entry>
-      <string>Hidden</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hidden</name>
+      <string>Stable</string>
+      <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
+        <name>Stable</name>
         <order>3</order>
-        <group></group>
+        <group>1. Health</group>
         <mouseover>false</mouseover>
-        <opacity>100</opacity>
+        <opacity>50</opacity>
         <showGM>true</showGM>
         <showOwner>true</showOwner>
         <showOthers>true</showOthers>
         <assetId>
-          <id>6bcb5f01fa8e7829fd1bf810e6aaa80f</id>
+          <id>36a224b032378dee8fe22b9906ffa2cc</id>
         </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      </net.rptools.maptool.client.ui.token.ImageTokenOverlay>
     </entry>
     <entry>
-      <string>Helpless</string>
+      <string>Blinded</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Helpless</name>
+        <name>Blinded</name>
         <order>4</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
         <showOwner>true</showOwner>
         <showOthers>true</showOthers>
         <assetId>
-          <id>a68d93eee39bfd74d515c07dcca24f1c</id>
+          <id>88bd0bda291744ad75ff12ca0ab73c9e</id>
         </assetId>
         <grid>2</grid>
       </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
@@ -877,7 +876,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Charmed</name>
         <order>5</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -894,7 +893,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Deafened</name>
         <order>6</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -911,7 +910,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Frightened</name>
         <order>7</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -928,7 +927,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Grappled</name>
         <order>8</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -945,7 +944,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Incapacitated</name>
         <order>9</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -962,7 +961,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Invisible</name>
         <order>10</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -979,7 +978,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Paralyzed</name>
         <order>11</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -996,7 +995,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Petrified</name>
         <order>12</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1013,7 +1012,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Poisoned</name>
         <order>13</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1030,7 +1029,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Prone</name>
         <order>14</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1047,7 +1046,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Restrained</name>
         <order>15</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1064,7 +1063,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Stunned</name>
         <order>16</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1077,11 +1076,11 @@
       </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
     </entry>
     <entry>
-      <string>Unconcious</string>
+      <string>Unconscious</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Unconcious</name>
+        <name>Unconscious</name>
         <order>17</order>
-        <group></group>
+        <group>2. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1094,28 +1093,11 @@
       </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
     </entry>
     <entry>
-      <string>Blinded</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Blinded</name>
-        <order>18</order>
-        <group></group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>88bd0bda291744ad75ff12ca0ab73c9e</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
       <string>Exhaustion 1</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 1</name>
-        <order>19</order>
-        <group>Fatigued</group>
+        <order>18</order>
+        <group>4. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1131,8 +1113,8 @@
       <string>Exhaustion 2</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 2</name>
-        <order>20</order>
-        <group>Fatigued</group>
+        <order>19</order>
+        <group>4. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1148,8 +1130,8 @@
       <string>Exhaustion 3</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 3</name>
-        <order>21</order>
-        <group>Fatigued</group>
+        <order>20</order>
+        <group>4. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1165,8 +1147,8 @@
       <string>Exhaustion 4</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 4</name>
-        <order>22</order>
-        <group>Fatigued</group>
+        <order>21</order>
+        <group>4. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1182,8 +1164,8 @@
       <string>Exhaustion 5</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 5</name>
-        <order>23</order>
-        <group>Fatigued</group>
+        <order>22</order>
+        <group>4. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1199,8 +1181,8 @@
       <string>Exhaustion 6</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 6</name>
-        <order>24</order>
-        <group>Fatigued</group>
+        <order>23</order>
+        <group>4. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -1208,6 +1190,618 @@
         <showOthers>true</showOthers>
         <assetId>
           <id>4796dc4ef9efb88ea77c07165514ba90</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Blessed</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Blessed</name>
+        <order>24</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>8b61a3dfcd23bb279b69d055242b4fc9</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Concentration</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Concentration</name>
+        <order>25</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>88efd1d7c3761b2a29bfbbeafc31b4c8</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Confused</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Confused</name>
+        <order>26</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>fabe1caa4be3d037cd20d3a1b31371e8</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Diseased</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Diseased</name>
+        <order>27</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>264d78c2d74c06d4642914fbf7fa1d00</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Expeditious Retreat</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Expeditious Retreat</name>
+        <order>28</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>eda3b494fbef37bf1562f95b5962b934</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Faerie Fire</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Faerie Fire</name>
+        <order>29</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>03fe452ce13d903d678955ca035a700f</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Freedom of Movement</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Freedom of Movement</name>
+        <order>30</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>8fa60d1aadac557f9e3e5d976f9d87c3</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Haste</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Haste</name>
+        <order>31</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>3d605675d4337d04bbe46c9a99ebc4a1</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Helpless</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Helpless</name>
+        <order>32</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>a68d93eee39bfd74d515c07dcca24f1c</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hidden</name>
+        <order>33</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bcb5f01fa8e7829fd1bf810e6aaa80f</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Longstrider</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Longstrider</name>
+        <order>34</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>10f8f9e9dc1fa6332d99cf9e0c595cd9</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Rage</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Rage</name>
+        <order>35</order>
+        <group>3. Game States</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>9cb883e148d62ab23afdfff5fd1fb021</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Cross - Blue</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Cross - Blue</name>
+        <order>36</order>
+        <group>5. Crosses</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>bfa0613dd41d0fad5ab91650f820032e</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Cross - Green</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Cross - Green</name>
+        <order>37</order>
+        <group>5. Crosses</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>4a79e9460300400cbba569ac35d5635a</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Cross - Orange</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Cross - Orange</name>
+        <order>38</order>
+        <group>5. Crosses</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>b3cce752588f785ca62ddd55dd354e97</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Cross - Red</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Cross - Red</name>
+        <order>39</order>
+        <group>5. Crosses</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>a1899d4c5acb4c6dbb5c33d19640890c</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Cross - Turquoise</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Cross - Turquoise</name>
+        <order>40</order>
+        <group>5. Crosses</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>255d7466ea19a125d36eb8ff27735886</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Cross - Yellow</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Cross - Yellow</name>
+        <order>41</order>
+        <group>5. Crosses</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>a2a67bf543902519b6af7637375b94a1</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hex - Blue</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hex - Blue</name>
+        <order>42</order>
+        <group>6. Hexes</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7f55ace385dbc390c289d21e9abff116</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hex - Green</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hex - Green</name>
+        <order>43</order>
+        <group>6. Hexes</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>24d227148e605eb822c0c49fc0f1e441</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hex - Orange</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hex - Orange</name>
+        <order>44</order>
+        <group>6. Hexes</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>5c2043e19b8082b092156dc93f857ebf</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hex - Red</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hex - Red</name>
+        <order>45</order>
+        <group>6. Hexes</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>add4aacf777e96267505928698c8d4d9</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hex - Turquoise</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hex - Turquoise</name>
+        <order>46</order>
+        <group>6. Hexes</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6db656b526df64a68196785539002d8f</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Hex - Yellow</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Hex - Yellow</name>
+        <order>47</order>
+        <group>6. Hexes</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>9951d58f3cf9076a4aa7b478c57802c6</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Target - Blue</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Target - Blue</name>
+        <order>48</order>
+        <group>7. Targets</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>c981d85a55d1e82f8fbafb3ed53383e7</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Target - Green</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Target - Green</name>
+        <order>49</order>
+        <group>7. Targets</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>85027c58e5728e903328fde859a1a658</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Target - Orange</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Target - Orange</name>
+        <order>50</order>
+        <group>7. Targets</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>0e93b03f91219f98832cce36afdda5d1</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Target - Red</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Target - Red</name>
+        <order>51</order>
+        <group>7. Targets</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>65b392368ad990a24cfa7aba4a17825a</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Target - Turquoise</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Target - Turquoise</name>
+        <order>52</order>
+        <group>7. Targets</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>dff2369345f3fedcbb0a5cc7396e4b8f</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Target - Yellow</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Target - Yellow</name>
+        <order>53</order>
+        <group>7. Targets</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>4e1b1f469c8ac6cb4a1c8df489d8face</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Wheel - Blue</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Wheel - Blue</name>
+        <order>54</order>
+        <group>8. Wheels</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>0b316321d3d74eae593023eb164d8c78</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Wheel - Green</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Wheel - Green</name>
+        <order>55</order>
+        <group>8. Wheels</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>c6556e9559768e48b6cec55f03f91e92</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Wheel - Orange</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Wheel - Orange</name>
+        <order>56</order>
+        <group>8. Wheels</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c7169103e01c0003aa5542c44bc7b63</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Wheel - Red</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Wheel - Red</name>
+        <order>57</order>
+        <group>8. Wheels</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6cacac3486daa74c438a8e9b0b561318</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Wheel - Turquoise</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Wheel - Turquoise</name>
+        <order>58</order>
+        <group>8. Wheels</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>1bab4f6a2306c9427761577701d8e5ab</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Wheel - Yellow</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Wheel - Yellow</name>
+        <order>59</order>
+        <group>8. Wheels</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>d7087b90adcc0de33f99fa380bc4732a</id>
         </assetId>
         <grid>2</grid>
       </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>

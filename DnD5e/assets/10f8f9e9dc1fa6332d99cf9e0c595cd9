@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>10f8f9e9dc1fa6332d99cf9e0c595cd9</id>
+  </id>
+  <name>Longstrider</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>
