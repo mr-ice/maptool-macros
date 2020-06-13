@@ -5,6 +5,7 @@
   .mtmacro - a maptool export of a macro
   .mtmacset - a maptool export of a set of macros
   .rptok - a maptool export of a token
+  .mtprpos - a properties export
 
 
 Each of these has a content.xml.  Parse that and extract all
@@ -56,6 +57,7 @@ zf = zipfile.ZipFile(opts.file)
 xml = objectify.parse(zf.open('content.xml'))
 macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
 tokentag = 'net.rptools.maptool.model.Token'
+proptag = 'net.rptools.maptool.model.CampaignProperties'
 base,ext = os.path.splitext(opts.file)
 
 def mktokendir(path):
@@ -76,6 +78,8 @@ def macroList(elem):
         # a token has a macroPropertiesMap with macros:
         mpm = elem.macroPropertiesMap
         return {x.label:x for x in mpm.findall('./entry/'+macrotag)}
+    elif elem.tag == proptag:
+        return {}
 
 for label, elem in macroList(xml.getroot()).items():
     label = str(label)
@@ -102,10 +106,10 @@ for label, elem in macroList(xml.getroot()).items():
             print('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
 
 
-# Special handling of tokens -- they have more stuff in their content.xml and
-# their properties.xml is usually more than just the version of maptools.  So
-# we'll extract those as well.
-if xml.getroot().tag == tokentag:
+# Special handling of tokens and properties -- they have more stuff in their
+# content.xml and their properties.xml is usually more than just the version of
+# maptools.  So we'll extract those as well.
+if xml.getroot().tag == tokentag or xml.getroot().tag == proptag:
     mktokendir(base)
     zf.extractall(path=base)
     if opts.verbose:
