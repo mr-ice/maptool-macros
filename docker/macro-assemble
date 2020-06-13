@@ -87,7 +87,7 @@ properties_xml="""<map>
   <entry>
     <string>version</string>
     <string>1.6.1</string>
-  <\entry>
+  </entry>
 </map>"""
 
 # find the base path of the opts.target to construct the expected
