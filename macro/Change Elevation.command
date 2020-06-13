@@ -5,4 +5,21 @@
   + "|Elevation Change|radio|SELECT=3 ORIENT=V SPAN=FALSE"
   ))]
 [h: elevation = add(elevation, number(json.get(changes,elevation_index)))]
-[h,if(elevation == 0):resetProperty("elevation");setProperty("elevation", elevation)]
+[h,if(elevation == 0),CODE:
+{
+	[h:resetProperty("elevation")]
+	[h:setBarVisible("ElevationPositive", 0)]
+	[h:setBarVisible("ElevationNegative", 0)]
+};
+{
+	[h:setProperty("elevation", elevation)]
+	[h, if(elevation > 0), CODE:
+	{
+		[h:setBar("ElevationPositive", elevation / 100)]
+		[h:setBarVisible("ElevationNegative", 0)]
+	};
+	{
+		[h:setBar("ElevationNegative", math.abs(elevation) / 100)]
+		[h:setBarVisible("ElevationPositive", 0)]
+	}]
+}]
