@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a68dca2d-f9ff-43c6-8050-ddcb85ec7e61</macroUUID>
+  <macroUUID>6c3efae6-46d7-40b4-8576-57fdc862945b</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>60</index>
   <colorKey>default</colorKey>
@@ -27,16 +27,8 @@
 
 &lt;!-- restrict to those that are equipped --&gt;
 [h: weapons = json.path.read (weapons, ".[?(@.equipped == 'true')]")]
-
 [h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
-&lt;!-- default to getting equipped weapons. Maybe we'll add an option later for full list.
-&lt;!-- Fuck that, make getWeapons do it
-&lt;!-- Defer attack and damage calculations to other macros. They need the work --&gt;
-
-&lt;!-- get Rage feature --&gt;
-[h: rageBonus = 0]
-[h: ragefeatures = json.path.read (toon, "data.classes..[?(@.definition.name == 'Rage')]['levelScale']")]
-[h, if (json.length (rageFeatures) &gt; 0): rageBonus = json.get (json.get (rageFeatures, 0), "fixedValue")]
+[h: weapons = json.merge (weapons, dndb_getNaturalWeapon (toon))]
 
 [h: attackJson = ""]
 [h, foreach (weapon, weapons), code: {
@@ -56,13 +48,6 @@
 			CRIT_BONUS_DICE, critBonus,
 			DMG_TYPE, json.get (weapon, "dmgType"))]
 	[h: attackJson = json.append (attackJson, attackJsonObj)]
-	&lt;!-- Ragable? Make a rage version --&gt;
-	[h, if (rageBonus &gt; 0 &amp;&amp; json.get (weapon, "attackType") == "Melee"), code: {
-		[h: attackJsonObj = json.set (attackJsonObj, 
-			JSON_NAME, name + " - Raging",
-			DMG_BONUS, weaponDmgBonus + rageBonus)]
-		[h: attackJson = json.append (attackJson, attackJsonObj)]
-	}]
 }]
 
 [h: macro.return = attackJson]</command>

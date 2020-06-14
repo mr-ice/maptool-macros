@@ -1,22 +1,24 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>96e49878-8923-4685-940c-1c828604c1dd</macroUUID>
+  <macroUUID>ec7b60b7-474f-4ee3-a9ce-cd3ac952059c</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>19</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <command>[h: toon = arg(0)]
 [h: weapon = arg(1)]
-
+[h: log.debug ("dndb_getCriticalBonusDice: weapon = " + weapon)]
 &lt;!-- only way we know how to do this is by looking for known features --&gt;
 [h: bonusCritDice = 0]
 
 &lt;!-- Savage Attacks --&gt;
-[h: savageAttackFeatureArry = json.path.read (toon, "data.race..[?(@.definition.name == 'Savage Attacks')]")]
+[h: savageAttackFeatureArry = json.path.read (toon, "data.race.[?(@.definition.name == 'Savage Attacks')]")]
+
 [h, if (json.length (savageAttackFeatureArry) &gt; 0 &amp;&amp; json.get(weapon, "attackType") == "Melee"): bonusCritDice = bonusCritDice + 1]
 
 &lt;!-- Brutal Critical --&gt;
 &lt;!-- Get the barbarian class --&gt;
-[h: barbarianClassLevelArry = json.path.read (toon, "data.classes..[?(@.definition.name == 'Barbarian')]['level']")]
+[h: barbarianClassLevelArry = json.path.read (toon, "data.classes.[?(@.definition.name == 'Barbarian')]['level']")]
+
 
 [h: barbarianClassLevel = 0]
 [h, if (json.length (barbarianClassLevelArry) &gt; 0): barbarianClassLevel = json.get (barbarianClassLevelArry, 0)]

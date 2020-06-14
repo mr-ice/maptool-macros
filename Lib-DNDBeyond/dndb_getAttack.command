@@ -21,16 +21,8 @@
 
 <!-- restrict to those that are equipped -->
 [h: weapons = json.path.read (weapons, ".[?(@.equipped == 'true')]")]
-
 [h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
-<!-- default to getting equipped weapons. Maybe we'll add an option later for full list.
-<!-- Fuck that, make getWeapons do it
-<!-- Defer attack and damage calculations to other macros. They need the work -->
-
-<!-- get Rage feature -->
-[h: rageBonus = 0]
-[h: ragefeatures = json.path.read (toon, "data.classes..[?(@.definition.name == 'Rage')]['levelScale']")]
-[h, if (json.length (rageFeatures) > 0): rageBonus = json.get (json.get (rageFeatures, 0), "fixedValue")]
+[h: weapons = json.merge (weapons, dndb_getNaturalWeapon (toon))]
 
 [h: attackJson = ""]
 [h, foreach (weapon, weapons), code: {
@@ -50,13 +42,6 @@
 			CRIT_BONUS_DICE, critBonus,
 			DMG_TYPE, json.get (weapon, "dmgType"))]
 	[h: attackJson = json.append (attackJson, attackJsonObj)]
-	<!-- Ragable? Make a rage version -->
-	[h, if (rageBonus > 0 && json.get (weapon, "attackType") == "Melee"), code: {
-		[h: attackJsonObj = json.set (attackJsonObj, 
-			JSON_NAME, name + " - Raging",
-			DMG_BONUS, weaponDmgBonus + rageBonus)]
-		[h: attackJson = json.append (attackJson, attackJsonObj)]
-	}]
 }]
 
 [h: macro.return = attackJson]
