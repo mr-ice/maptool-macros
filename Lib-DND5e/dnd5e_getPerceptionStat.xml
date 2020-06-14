@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>c3c622ba-6333-4d16-8775-cc431cded032</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>6</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: bonus = getProperty ("Perception")]
+[h, if (bonus == ""): return (0, "")]
+[h,if (bonus &gt; -1): value = "+"; value = ""]
+Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
+  <label>dnd5e_getPerceptionStat</label>
+  <group>Token Properties</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the string to be displayed for the GM's view of the Perception skill on the statsheet.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

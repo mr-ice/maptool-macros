@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5ae8bd14-0e5e-47a8-b4f2-b50ad8b5e55f</macroUUID>
+  <macroUUID>76980635-5feb-4b00-914f-2c48dab0e876</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>23</index>
   <colorKey>default</colorKey>
@@ -36,11 +36,14 @@
 	[h: proficientArry = json.path.read (weaponProficiencies, 
 		".[?(@.entityId == '" + proficiencyId + "')]")]
 	[h, if (attackType == "1"): attackTypeLabel = "Melee"; attackTypeLabel = "Ranged"]
-
+	[h: dmgDie = json.path.read (weaponRaw, "definition.damage.diceValue", "SUPPRESS_EXCEPTIONS")]
+	[h, if (dmgDie == "null"): dmgDie = 0]
+	[h: dmgDice = json.path.read (weaponRaw, "definition.damage.diceCount", "SUPPRESS_EXCEPTIONS")]
+	[h, if (dmgDice == "null"): dmgDice = 0]
 	[h: basicWeapon = json.set ("", "name", json.path.read (weaponRaw, "definition.name"),
 		"attackType", attackTypeLabel,
-		"dmgDie", json.path.read (weaponRaw, "definition.damage.diceValue"),
-		"dmgDice", json.path.read (weaponRaw, "definition.damage.diceCount"),
+		"dmgDie", dmgDie,
+		"dmgDice", dmgDice,
 		"dmgType", dmgType,
 		"bonus", bonus,
 		"range", json.path.read (weaponRaw, "definition.range"),

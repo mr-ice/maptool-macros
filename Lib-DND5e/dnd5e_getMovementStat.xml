@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>a85df467-bec7-4175-830c-c1503a11b442</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>3</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: speedStr = ""]
+
+[h, if (Walk != ""): speedStr = " / Walk " + Walk]
+[h, if (Fly != ""): speedStr = speedStr + " / Fly " + Fly]
+[h, if (Climb != ""): speedStr = speedStr + " / Climb " + Climb]
+[h, if (Swim != ""): speedStr = speedStr + " / Swim " + Swim]
+[h, if (Burrow != ""): speedStr = speedStr + " / Burrow " + Burrow]
+
+[h: speedStr = substring (speedStr, 3)]
+[r: macro.return = speedStr]</command>
+  <label>dnd5e_getMovementStat</label>
+  <group>Token Properties</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the movement value to display on the token stat sheet. Requires the token to have previously been synchronized with DNDBeyond. Will return a blank value if not.
+
+Return
+ex.
+"Walk 40 / Swim 40 / Fly 120"</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

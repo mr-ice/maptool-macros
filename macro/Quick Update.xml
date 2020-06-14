@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>53aae561-b296-47b1-9e2a-b1563c20bac7</macroUUID>
+  <macroUUID>69ae8677-ed66-42af-a458-b1576d4d6cb4</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>4</index>
+  <index>1</index>
   <colorKey>orange</colorKey>
   <hotKey>None</hotKey>
   <command>[h: charId = getProperty ("Character ID")]
@@ -24,10 +24,14 @@
 &lt;!-- AC --&gt;
 [h: ac = dndb_getAC (toon)]
 
+&lt;!-- Conditions --&gt;
+[h: conditions = dndb_getConditions (toon)]
+
 [h: basicToon = json.set (basicToon, 
 				"speeds", speeds,
 				"hitPoints", hitPoints,
-				"armorClass", ac)]
+				"armorClass", ac,
+				"conditions", conditions)]
 
 [h: setProperty ("dndb_BasicToon", basicToon)]
 [h, macro ("Reset Properties@this"): 1]

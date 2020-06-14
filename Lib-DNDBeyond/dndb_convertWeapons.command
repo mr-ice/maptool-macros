@@ -30,11 +30,14 @@
 	[h: proficientArry = json.path.read (weaponProficiencies, 
 		".[?(@.entityId == '" + proficiencyId + "')]")]
 	[h, if (attackType == "1"): attackTypeLabel = "Melee"; attackTypeLabel = "Ranged"]
-
+	[h: dmgDie = json.path.read (weaponRaw, "definition.damage.diceValue", "SUPPRESS_EXCEPTIONS")]
+	[h, if (dmgDie == "null"): dmgDie = 0]
+	[h: dmgDice = json.path.read (weaponRaw, "definition.damage.diceCount", "SUPPRESS_EXCEPTIONS")]
+	[h, if (dmgDice == "null"): dmgDice = 0]
 	[h: basicWeapon = json.set ("", "name", json.path.read (weaponRaw, "definition.name"),
 		"attackType", attackTypeLabel,
-		"dmgDie", json.path.read (weaponRaw, "definition.damage.diceValue"),
-		"dmgDice", json.path.read (weaponRaw, "definition.damage.diceCount"),
+		"dmgDie", dmgDie,
+		"dmgDice", dmgDice,
 		"dmgType", dmgType,
 		"bonus", bonus,
 		"range", json.path.read (weaponRaw, "definition.range"),

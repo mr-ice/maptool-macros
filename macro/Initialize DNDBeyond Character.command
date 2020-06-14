@@ -11,8 +11,18 @@
 [h: toon = dndb_getCharJSON (charId)]
 [h: name = json.path.read (toon, "data.name")]
 
+
+
 [h: log.info ("Building basic character")]
 [h: basicToon = dndb_getBasic (toon)]
+
+<!-- slim down -->
+[h: data = json.get (toon, "data")]
+[h: dataRetains = json.append ("", "race", "modifiers", "inventory", "classes", "stats", "bonusStats", "overrideStats", "characterValues")]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+<!-- Skinnify the toon -->
+[h: fatToon = toon]
+[h: btoon = json.set (toon, "data", skinnyData)]
 
 [h: log.info ("Building Armor Class")]
 [h: basicToon = json.set (basicToon, "armorClass", dndb_getAC (toon))]
@@ -24,9 +34,14 @@
 [h: basicToon = json.set (basicToon, "skills", dndb_getSkill (toon))]
 
 [h: log.info ("Building Attacks")]
-[h: basicToon = json.set (basicToon, "attacks", dndb_getAttackJSON (toon))]
+[h: basicToon = json.set (basicToon, "attacks", dndb_getAttack (toon))]
+
+[h: log.info ("Building Conditions")]
+[h: basicToon = json.set (basicToon, "conditions", dndb_getConditions (toon))]
 
 [h: setProperty ("dndb_BasicToon", basicToon)]
 
 [h, macro ("Reset Properties@this"): "1"]
-[r,s: json.get (basicToon, "name") + " has been initialized!"]
+[h: msg = json.get (basicToon, "name") + " has been initialized!"]
+[h: log.info (msg)]
+[r,s: msg]

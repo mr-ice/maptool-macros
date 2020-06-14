@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>GdU5bb6ZScmytMapWjcJUw==</baGUID>
+    <baGUID>E0FCEcZARXabAAB9n1rkaA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -16,7 +16,7 @@
   </imageAssetMap>
   <x>500</x>
   <y>300</y>
-  <z>8</z>
+  <z>9</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -141,15 +141,15 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Unconcious</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>Prone</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconscious</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -412,9 +412,73 @@
   </propertyMapCI>
   <macroPropertiesMap>
     <entry>
+      <int>64</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>68a09c05-b338-4711-8d4c-52d683371006</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>64</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+[h: setState (&quot;Bloodied&quot;, 0)]
+[h: setState (&quot;Dying&quot;, 0)]
+
+[h: isHalved = getState (&quot;Exhaustion 4&quot;)]
+[h: isDead = getState (&quot;Exhaustion 6&quot;)]
+[h: hitPoints = json.get (basicToon, &quot;hitPoints&quot;)]
+[h: log.debug (hitPoints)]
+[h: current = json.get (hitPoints, &quot;currentHp&quot;)]
+[h: maximum = json.get (hitPoints, &quot;maxHp&quot;)]
+&lt;!-- dont apply effects of half-max from exhaustion. Not sure I want to do that yet --&gt;
+[h: halfMax = round (math.floor( maximum / 2))]
+[h, if (maximum &lt; current): current = maximum]
+[h: setProperty (&quot;HP&quot;, current)]
+[h: setProperty (&quot;Temp HP&quot;, json.get (hitPoints, &quot;tempHp&quot;))]
+[h: setProperty (&quot;MaxHP&quot;, maximum)]
+[h, if (current &lt; halfMax): setState (&quot;Bloodied&quot;, 1); setState (&quot;Bloodied&quot;, 0)]
+[h, if (current == 0 &amp;&amp; isDead == 0), code: {
+	[h: setState (&quot;Dying&quot;, 1)]
+}]
+[h, if (current &gt; 0 &amp;&amp; isDead == 0), code: {
+	[h: setState (&quot;Dead&quot;, 0)]
+}]
+[h, if (isDead &gt; 0), code: {
+	[h: setState (&quot;Dying&quot;, 0)]
+	[h: setState (&quot;Dead&quot;, 1)]
+}]
+</command>
+        <label>dndb_applyHealth</label>
+        <group>Basic Toon</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Applies the current health to the token</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
       <int>3</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>04a7efa6-9cae-4c76-9f96-b9effe1868e6</macroUUID>
+        <macroUUID>136ab42c-f356-4f09-8b61-9d3d5856b173</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>3</index>
         <colorKey>default</colorKey>
@@ -458,7 +522,7 @@
     <entry>
       <int>10</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>14de5160-5bc1-4197-a429-4d5c293c807c</macroUUID>
+        <macroUUID>fd87e054-62a7-4afa-9bfe-9525befb8f6a</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>10</index>
         <colorKey>default</colorKey>
@@ -489,7 +553,7 @@
     <entry>
       <int>15</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>178cb065-a848-4794-8b54-9403ba53fffa</macroUUID>
+        <macroUUID>cd64873c-02c7-47ab-92b0-c947eb7c8edc</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>15</index>
         <colorKey>default</colorKey>
@@ -591,7 +655,7 @@
     <entry>
       <int>16</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>5f9c813e-6f33-46d3-addc-959d716dfaae</macroUUID>
+        <macroUUID>e8d07929-81b9-4170-9c51-23554e9ffb38</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>16</index>
         <colorKey>default</colorKey>
@@ -693,7 +757,7 @@
     <entry>
       <int>17</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f71b85f6-778c-44e5-a088-abf6401b9c2e</macroUUID>
+        <macroUUID>5024828a-b31b-4a6a-be5e-ffadfeb12cd9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>17</index>
         <colorKey>default</colorKey>
@@ -709,7 +773,7 @@
 [h, if (charAt &gt; -1): charId = substring (charId, charAt + 1)]
 
 [h: url = BASE_URL + charId]
-[h: log.debug (&quot;char url: &quot; + url)]
+[h: log.info (&quot;char url: &quot; + url)]
 [h: character = REST.get(url)]
 [h: macro.return = character]</command>
         <label>dndb_getCharJSON</label>
@@ -737,7 +801,7 @@
     <entry>
       <int>19</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>0cd7a488-fe05-4178-85c7-f6363d8e7f36</macroUUID>
+        <macroUUID>96e49878-8923-4685-940c-1c828604c1dd</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>19</index>
         <colorKey>default</colorKey>
@@ -797,7 +861,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>20</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>31365094-c23b-4025-9da6-97c850251edb</macroUUID>
+        <macroUUID>7a158c59-8bbd-439e-ab75-9897ea22033e</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>20</index>
         <colorKey>default</colorKey>
@@ -894,7 +958,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>21</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>0f87feca-72de-4d20-ae3d-420a97dca62a</macroUUID>
+        <macroUUID>65aebac5-5268-4bb4-b0e2-4be4e45dfd6e</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>21</index>
         <colorKey>default</colorKey>
@@ -939,7 +1003,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>22</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d505d03c-6f6d-4129-a638-289402e3848d</macroUUID>
+        <macroUUID>650bfa78-9547-404e-8e20-d9257c9e1949</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>22</index>
         <colorKey>default</colorKey>
@@ -988,7 +1052,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>23</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f31ae75b-20bb-49d8-b07a-333970bebedf</macroUUID>
+        <macroUUID>76980635-5feb-4b00-914f-2c48dab0e876</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>23</index>
         <colorKey>default</colorKey>
@@ -1073,7 +1137,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>24</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b3c91d02-c2aa-45dc-bdea-868411096c0c</macroUUID>
+        <macroUUID>8d40ff5c-13b4-4454-8356-80f59970aa52</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>24</index>
         <colorKey>default</colorKey>
@@ -1145,7 +1209,7 @@ TODO: this could be refactored to test against any item instead of just weapons.
     <entry>
       <int>26</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>368dcb60-1124-4430-a782-af9d9fb41549</macroUUID>
+        <macroUUID>18d8bd96-bfac-49b8-967d-f467d39e79ae</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>26</index>
         <colorKey>default</colorKey>
@@ -1285,7 +1349,7 @@ returns acObj
     <entry>
       <int>27</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>572baa50-10b2-439b-87b8-5a751de36bb8</macroUUID>
+        <macroUUID>1ee1858a-be82-40c3-9bc8-205797a89839</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>27</index>
         <colorKey>default</colorKey>
@@ -1339,7 +1403,7 @@ Ex. for +3 Shield
     <entry>
       <int>28</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>50a2c364-985a-4e3a-8dd3-bbf9a520dc05</macroUUID>
+        <macroUUID>ddfc6e19-e628-4ef0-aa47-6c3aff6927ca</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>28</index>
         <colorKey>default</colorKey>
@@ -1424,7 +1488,7 @@ ex.
     <entry>
       <int>29</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>9d1783b5-7cde-46f2-85cb-f64bc7ebad4f</macroUUID>
+        <macroUUID>d7c376d9-f80e-497d-b6d3-dae3f5889c4e</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>29</index>
         <colorKey>default</colorKey>
@@ -1468,7 +1532,7 @@ data.classes[]</toolTip>
     <entry>
       <int>30</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>64a40aad-4f95-4f5e-9702-7a920daa88f5</macroUUID>
+        <macroUUID>85b0748d-f51b-4bbd-8901-42cd23283877</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>30</index>
         <colorKey>default</colorKey>
@@ -1538,7 +1602,7 @@ ex.
     <entry>
       <int>31</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d8191b89-89d3-4d8a-acd1-85b53de37b08</macroUUID>
+        <macroUUID>9c8d7098-b2b9-4b8d-b8bb-c46432e10c87</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>31</index>
         <colorKey>default</colorKey>
@@ -1611,7 +1675,7 @@ ex.
     <entry>
       <int>32</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>15a3ebd6-91d5-42ac-ab16-e45e208851e4</macroUUID>
+        <macroUUID>c6e03279-1a88-426f-8d24-199becdf323a</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>32</index>
         <colorKey>default</colorKey>
@@ -1647,7 +1711,7 @@ ex.
     <entry>
       <int>33</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ea018cb1-14cd-4417-a42b-5be005674ed7</macroUUID>
+        <macroUUID>2434ad88-bfdf-4085-9b3a-57340d8d197b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>33</index>
         <colorKey>default</colorKey>
@@ -1732,7 +1796,7 @@ returns:
     <entry>
       <int>34</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f1387c74-f57e-4dda-af64-5bb56d9cd08f</macroUUID>
+        <macroUUID>8db24840-d387-4293-8f50-c8d4a95a3bf9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>34</index>
         <colorKey>default</colorKey>
@@ -1963,7 +2027,7 @@ ex.
     <entry>
       <int>35</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>67b3be6b-33b4-4d04-b51e-ac191dddc2ae</macroUUID>
+        <macroUUID>97881e8f-2d18-41e0-a142-60df1fa1f48c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>35</index>
         <colorKey>default</colorKey>
@@ -2096,7 +2160,7 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
     <entry>
       <int>36</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>7b02b63c-4635-4c9c-92ef-9ab5256a5fbe</macroUUID>
+        <macroUUID>8c504fbd-fc3d-47ef-9323-bae130235863</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>36</index>
         <colorKey>default</colorKey>
@@ -2173,7 +2237,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>37</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>804a797d-6805-4436-86a7-9bf29c94a464</macroUUID>
+        <macroUUID>512687c2-734c-4876-be59-76eccd763242</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>37</index>
         <colorKey>default</colorKey>
@@ -2387,7 +2451,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>38</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>df00b2ef-138c-47df-b17d-f693ccbd675b</macroUUID>
+        <macroUUID>835b0813-d4f4-43e8-8249-a3920b7e8fcb</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>38</index>
         <colorKey>default</colorKey>
@@ -2474,7 +2538,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>39</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>2d2886c7-16e8-4806-851d-9058d425f449</macroUUID>
+        <macroUUID>3cf7139e-130a-47fa-9781-0c7e0c1d01d1</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>39</index>
         <colorKey>default</colorKey>
@@ -2554,7 +2618,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>40</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>cc778d0b-ed2a-4e00-989b-6dfc4b2d14aa</macroUUID>
+        <macroUUID>2405d108-0bca-455e-81f5-49d4b5e33bf8</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>40</index>
         <colorKey>default</colorKey>
@@ -2635,7 +2699,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>41</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>e5690a23-7113-4501-9d06-154e3ef5e045</macroUUID>
+        <macroUUID>bacd4ca8-3fc0-4783-80b9-04cbf3b6da80</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>41</index>
         <colorKey>default</colorKey>
@@ -2727,7 +2791,7 @@ arg (0) = toon</toolTip>
     <entry>
       <int>42</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>bf008779-b292-4919-90af-aefd899aff14</macroUUID>
+        <macroUUID>6ce6f4dd-2750-459c-bbfb-ae33a5e037e3</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>42</index>
         <colorKey>default</colorKey>
@@ -2853,7 +2917,7 @@ returns:
     <entry>
       <int>49</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>5d3adb87-b98f-410d-87d4-15ae627149fa</macroUUID>
+        <macroUUID>27b2e1b7-83e4-4f18-be7c-f48da586a6cd</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>49</index>
         <colorKey>default</colorKey>
@@ -2912,7 +2976,7 @@ returns:
     <entry>
       <int>50</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>08fc638a-9d30-479f-9e2d-a1af3960ba2b</macroUUID>
+        <macroUUID>118fc089-471e-4222-b8f5-97a84e0ac94a</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>50</index>
         <colorKey>blue</colorKey>
@@ -2943,6 +3007,14 @@ returns:
 	&lt;!-- never let the passed in object allow to save a macro. else a never ending cycle --&gt;
 	[h: saveAsMacro = 0]
 }]
+
+&lt;!-- Check the state for forced adv/disadv from state --&gt;
+[h: isPoisoned = getState (&quot;Poisoned&quot;)]
+[h: log.debug (&quot;isPoisoned: &quot; + isPoisoned)]
+[r, if (isPoisoned &gt; 0), code: {
+	[r: &quot;You&apos;re &lt;font color=&apos;red&apos;&gt;&lt;b&gt;Poisoned&lt;/b&gt;&lt;/font&gt;! Applying Disadvantage&lt;br&gt;&quot;]
+	[h, if (advDisadv == 1): advDisadv = 0; advDisadv = 2]
+}; {}]
 
 [h: skill = json.get (skills, selectedSkillPos)]
 [h: skillName = json.get (skill, &quot;name&quot;)]
@@ -3006,7 +3078,7 @@ returns:
     <entry>
       <int>51</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>de3c2d1b-1ada-4781-8081-dcacec15120c</macroUUID>
+        <macroUUID>319f7136-541d-494d-9b05-4cc99b2fbe14</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>51</index>
         <colorKey>black</colorKey>
@@ -3038,6 +3110,34 @@ returns:
 [h: savingThrow = json.get (savingThrows, selectedsavingThrowPos)]
 [h: savingThrowName = json.get (savingThrow, &quot;name&quot;) + &quot; Save&quot;]
 [h: bonus = getProperty (savingThrowName)]
+
+&lt;!-- Determine current state --&gt;
+&lt;!-- Fails str and dex --&gt;
+[h: fuckedStates = json.append (&quot;&quot;, &quot;Paralyzed&quot;, &quot;Petrified&quot;, &quot;Stunned&quot;, &quot;Unconscious&quot;)]
+[h: isFucked = 0]
+[h: fuckedMsg = &quot;&quot;]
+[h, foreach (fuckedState, fuckedStates), code: {
+	[h: theState = getState (fuckedState)]
+	[h, if (theState &gt; 0), code: {
+		[h: isFucked = isFucked + 1]
+		[h: fuckedMsg = fuckedMsg + &quot;You&apos;re &lt;font color=&apos;red&apos;&gt;&lt;b&gt;&quot; + fuckedState + &quot;&lt;/b&gt;&lt;/font&gt;!&lt;br&gt;&quot;]
+	}]
+}]
+&lt;!-- disadv on dex --&gt;
+[h: isRestrained = getState (&quot;Restrained&quot;)]
+
+&lt;!-- Auto fails --&gt;
+[r, if ( selectedsavingThrowPos &lt;= 1 &amp;&amp; isFucked &gt; 0), code: {
+	[r: fuckedMsg]
+	[r: &quot;&lt;b&gt;You automatically &lt;font color=&apos;red&apos;&gt;&lt;i&gt;FAIL&lt;/i&gt;&lt;/font&gt;!!&lt;b&gt;&lt;br&gt;&quot;]
+}; {}]
+
+
+[r, if (selectedsavingThrowPos == 1 &amp;&amp; isRestrained &gt; 0), code: {
+	[r: &quot;&lt;font color=&apos;red&apos;&gt;Applying Restrained effect (Disadvantage)&lt;/font&gt;&lt;br&gt;&quot;]
+	[h, if (advDisadv == 1): advDisadv = 0; advDisadv = 2]
+}; {}]
+
 [h: savingThrowCheckObj = json.set (&quot;&quot;, &quot;checkLabel&quot;, json.get (savingThrow, &quot;name&quot;) + &quot; Saving Throw&quot;,
 							&quot;bonus&quot;, bonus,
 							&quot;advDisadv&quot;, advDisadv)]
@@ -3091,7 +3191,7 @@ returns:
     <entry>
       <int>53</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>35321cfe-5832-4cfa-a47a-7a70746802e5</macroUUID>
+        <macroUUID>86f553d2-989f-46c9-8561-9d24ff8e35bb</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>53</index>
         <colorKey>default</colorKey>
@@ -3174,7 +3274,7 @@ returns:
     <entry>
       <int>54</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>80fc1873-4419-452c-ab86-d1e5d3e6980c</macroUUID>
+        <macroUUID>2920103c-ef1f-4fb6-b687-bde93592c3ae</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>54</index>
         <colorKey>default</colorKey>
@@ -3232,7 +3332,7 @@ returns:
     <entry>
       <int>55</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>6b19a10a-0b15-4f50-bd7a-9507efe04240</macroUUID>
+        <macroUUID>717677be-671c-400c-b80e-94c614bd716c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>55</index>
         <colorKey>red</colorKey>
@@ -3416,7 +3516,7 @@ returns:
     <entry>
       <int>56</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>d1536420-1a1e-483c-b779-f8d401d4ccc8</macroUUID>
+        <macroUUID>b2521784-a31d-4080-b94d-defa5fd14398</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>56</index>
         <colorKey>green</colorKey>
@@ -3536,7 +3636,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>57</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b10053d2-ba79-42d6-aa9f-84982aa202e7</macroUUID>
+        <macroUUID>a0597d47-a3da-4428-9788-51aa03fa9f0b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>57</index>
         <colorKey>default</colorKey>
@@ -3597,7 +3697,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>58</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>54049ea9-d360-4107-b703-f7a82040e131</macroUUID>
+        <macroUUID>21d5ab8b-6b5d-4512-974c-6c7d6667eafa</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>58</index>
         <colorKey>purple</colorKey>
@@ -3682,7 +3782,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>59</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>bc443653-0d1d-4b98-bc22-366f2861b57f</macroUUID>
+        <macroUUID>1ac79b23-624d-472d-81b6-8301481995a1</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>59</index>
         <colorKey>default</colorKey>
@@ -3723,7 +3823,7 @@ arg(1) - [fields to preserve]</toolTip>
     <entry>
       <int>60</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>802b206a-8d98-4f34-99d0-de912510625d</macroUUID>
+        <macroUUID>a68dca2d-f9ff-43c6-8050-ddcb85ec7e61</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>60</index>
         <colorKey>default</colorKey>
@@ -3804,6 +3904,190 @@ arg(1) - [fields to preserve]</toolTip>
         <toolTip>This is a function that requires the DND Beyond Character full JSON. It&apos;s not intended to run stand-alone.
 
 This will pair with a separate class of macros centered around the property &apos;attackJSON&apos;. It will build this property from the class, inventory, and modifier information from the character JSON.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>61</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>c2aa8856-1fbc-4fa0-8334-c90c5b93be21</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>61</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg(0)]
+
+&lt;!-- Conditions are nothing more than array of magic numbers. As of now, they --&gt;
+&lt;!-- do not provide any modifiers. --&gt;
+
+[h: conditionsMap = json.append (&quot;&quot;, 
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Blinded&quot;, &quot;id&quot;, &quot;1&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Charmed&quot;, &quot;id&quot;, &quot;2&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Deafened&quot;, &quot;id&quot;, &quot;3&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Exhaustion&quot;, &quot;id&quot;, &quot;4&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Frightened&quot;, &quot;id&quot;, &quot;5&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Grappled&quot;, &quot;id&quot;, &quot;6&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Incapacitated&quot;, &quot;id&quot;, &quot;7&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Invisible&quot;, &quot;id&quot;, &quot;8&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Paralyzed&quot;, &quot;id&quot;, &quot;9&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Petrified&quot;, &quot;id&quot;, &quot;10&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Poisoned&quot;, &quot;id&quot;, &quot;11&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Prone&quot;, &quot;id&quot;, &quot;12&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Restrained&quot;, &quot;id&quot;, &quot;13&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Stunned&quot;, &quot;id&quot;, &quot;14&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Unconscious&quot;, &quot;id&quot;, &quot;15&quot;))]
+
+[h: toonConditions = json.path.read (toon, &quot;data.conditions&quot;)]
+[h: conditions = &quot;[]&quot;]
+[h, foreach (toonCondition, toonConditions), code: {
+	[h: id = json.get (toonCondition, &quot;id&quot;)]
+	&lt;!-- Dont use condition as a var name --&gt;
+	[h: cond = json.path.read (conditionsMap, &quot;.[?(@.id == &apos;&quot; + id + &quot;&apos;)]&quot;)]
+	[h: cond = json.get (cond, 0)]
+	[h: level = json.get (toonCondition, &quot;level&quot;)]
+	[h, if (level != &quot;&quot;): cond = json.set (cond, &quot;level&quot;, level)]
+	[h: conditions = json.append (conditions, cond)]
+}]
+
+[h: macro.return = conditions]</command>
+        <label>dndb_getConditions</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Returns the conditions currently affecting the provided toon.
+
+arg(0) = toon</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>62</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>72c2ff57-0b2e-4d52-98e8-7e680201a5ac</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>62</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+[h: conditions = json.get (basicToon, &quot;conditions&quot;)]
+[h: log.debug (json.indent (conditions))]
+[h: states = &quot;&quot;]
+[h: clearStates = json.append (&quot;&quot;, &quot;Blinded&quot;, &quot;Charmed&quot;, &quot;Deafened&quot;, &quot;Frightened&quot;, &quot;Grappled&quot;,
+							&quot;Incapacitated&quot;, &quot;Invisible&quot;, &quot;Paralyzed&quot;, &quot;Poisoned&quot;, &quot;Restrained&quot;,
+							&quot;Prone&quot;, &quot;Stunned&quot;, &quot;Unconscious&quot;, &quot;Exhaustion 1&quot;, &quot;Exhaustion 2&quot;,
+							&quot;Exhaustion 3&quot;, &quot;Exhaustion 4&quot;, &quot;Exhaustion 5&quot;, &quot;Exhaustion 6&quot;)]
+[h, foreach (clearState, clearStates): setState (clearState, 0)]
+&lt;!-- note! do NOT use the var condition --&gt;
+[h, foreach (cond, conditions), code: {
+	[h: conditionName = json.get (cond, &quot;name&quot;)]
+	[h, if (conditionName == &quot;Exhaustion&quot;): conditionName = conditionName + &quot; &quot; + json.get (cond, &quot;level&quot;)]
+
+	[h: setState (conditionName, 0)]
+	[h, switch (conditionName):
+		case &quot;Paralyzed&quot;: states = json.append (states, &quot;Incapacitated&quot;);
+		case &quot;Petrified&quot;: states = json.append (states, &quot;Incapacitated&quot;);
+		case &quot;Stunned&quot;: states = json.append (states, &quot;Incapacitated&quot;);
+		case &quot;Unconscious&quot;: states = json.append (states, &quot;Incapacitated&quot;, &quot;Prone&quot;);
+		default: &quot;only because I have to put this here&quot;
+	]
+
+	[h: states = json.append (states, conditionName)]
+}]
+
+[h: states = json.unique (states)]
+[h, foreach (state, states): setState (state, 1)]</command>
+        <label>dndb_applyConditions</label>
+        <group>Basic Toon</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Given the current conditions on the Basic Toon, apply the appropriate state. This should be the first macro run when applying the BasicToon to the token. Other macros later in that process will rely on the current state of the token.</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>63</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>bdb4d769-e0fc-44d8-b73f-eb00a9b19189</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>63</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+[h: speeds = json.get (basicToon, &quot;speeds&quot;)]
+&lt;!-- blank them out first --&gt;
+[h, foreach (speed, &quot;[&apos;Walk&apos;, &apos;Swim&apos;, &apos;Fly&apos;, &apos;Climb&apos;, &apos;Burrow&apos;]&quot;): setProperty (speed, &quot;&quot;)]
+
+[h: noMove = getState (&quot;Paralyzed&quot;) + getState (&quot;Grappled&quot;) + getState (&quot;Petrified&quot;) + getState (&quot;Restrained&quot;) + getState (&quot;Stunned&quot;) + getState (&quot;Unconscious&quot;) + getState (&quot;Exhaustion 5&quot;) + getState (&quot;Exhaustion 6&quot;)]
+[h: onlyCrawl = getState (&quot;Prone&quot;)]
+[h: halfSpeed = getState (&quot;Exhaustion 3&quot;)]
+&lt;!-- someday we might want to distinguish between crawl and no speed, but for now they --&gt;
+&lt;!-- end up working the same --&gt;
+[h, foreach (speed, speeds), code: {
+	[h: speedName = json.get (speed, &quot;name&quot;)]
+	[h: speedValue = round (json.get (speed, &quot;speed&quot;))]
+	[h, if (halfSpeed &gt; 0): speedValue = round (math.floor (speedValue / 2))]
+	[h, if (noMove + onlyCrawl &gt; 0): speedValue = 0]
+	[h: setProperty (speedName, speedValue)]
+}]</command>
+        <label>dndb_applySpeed</label>
+        <group>Basic Toon</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>true</allowPlayerEdits>
+        <toolTip></toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>

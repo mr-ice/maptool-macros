@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>36a224b032378dee8fe22b9906ffa2cc</id>
+  </id>
+  <name>StableHP</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>

@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>513c222f-0341-4c3d-90f3-465bbef1af22</macroUUID>
+  <macroUUID>6ce6f4dd-2750-459c-bbfb-ae33a5e037e3</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>42</index>
   <colorKey>default</colorKey>
@@ -10,18 +10,26 @@
 			json.set ("", "name", "Burrow", "verb", "burrowing"),
 			json.set ("", "name", "Climb", "verb", "climbing"),
 			json.set ("", "name", "Swim", "verb", "swimming"),
-			json.set ("", "name", "Walk", "verb", "walking")
+			json.set ("", "name", "Walk", "verb", "walking"),
+			json.set ("", "name", "Fly", "verb", "flying")
 			)
 ]
 [h, if (json.length (macro.args) &gt; 1): 
 	speedNames = json.append ("", arg(1));
-	speedNames = json.append ("", "Burrow", "Climb", "Swim", "Walk")
+	speedNames = json.append ("", "Burrow", "Climb", "Swim", "Walk", "Fly")
 ]
 
 [h: speeds = "[]"]
 
 &lt;!-- Collect base speeds from ractial traits --&gt;
 [h: baseSpeeds = json.path.read (toon, "data.race.weightSpeeds.normal")]
+
+&lt;!-- toon goes on a diet --&gt;
+[h: data = json.get (toon, "data")]
+[h: dataRetains = json.append ("", "modifiers", "inventory", "classes", "stats", "bonusStats", "overrideStats")]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+[h: fatToon = toon]
+[h: toon = json.set (toon, "data", skinnyData)]
 
 &lt;!-- all speeds bonuses --&gt;
 [h: allBonuses = dndb_searchGrantedModifiers (json.set ("", 
@@ -34,6 +42,10 @@
 
 [h: allBonus = 0]
 [h, foreach (value, allBonuses): allBonus = allBonus + value]
+							
+[h: speedMods = dndb_searchGrantedModifiers (json.set ("", 
+							"object", toon,
+							"type", "set"))]
 
 &lt;!-- Foreach speed type, find all the granted bonuses --&gt;
 [h, foreach (speedName, speedNames), code: {
@@ -42,11 +54,12 @@
 	&lt;!-- So look for those for each speed and well add the allBonus values after --&gt;
 	[h: verbSpeed = json.get (dndb_searchJsonObject (json.set ("", "object", speedsMap, "property", "verb", "name", speedName)), 0)]
 	[h: innateSpeed = "innate-speed-" + verbSpeed]
-	[h: grantedSpeeds = dndb_searchGrantedModifiers (json.set ("", 
-							"object", toon,
+
+	[h: searchArg = json.set ("", "object", speedMods,
 							"property", "value",
-							"type", "set",
-							"subType", innateSpeed))]
+							"subType", innateSpeed)]
+	[h: grantedSpeeds = dndb_searchJsonObject (searchArg)]
+
 	[h: log.debug ("grantedSpeeds: " + json.indent (grantedSpeeds))]
 	[h: setSpeed = 0]
 	[h, if (json.length (grantedSpeeds) &gt; 0), code: {
@@ -63,7 +76,8 @@
 	[h, if (actualSpeed &gt; 0): actualSpeed = actualSpeed + allBonus]
 	[h: speed = json.set ("", "name", speedName,
 						"speed", actualSpeed)]
-	[h: speeds = json.append (speeds, speed)]
+	&lt;!-- except for walk, dont populate speed 0 --&gt;
+	[h, if (lowerName == "walk" || actualSpeed &gt; 0): speeds = json.append (speeds, speed)]
 }]
 
 [h: macro.return = speeds]

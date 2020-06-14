@@ -7,6 +7,9 @@
 [h: basicToon = getProperty ("dndb_BasicToon")]
 [r, if (json.length (basicToon) < 1): return (0, "No D&D Beyond data was found on the token. You need to sync, first")]
 
+<!-- do this first! -->
+[h: dndb_applyConditions (basicToon)]
+
 [h: setProperty ("Age", json.get (basicToon, "age"))]
 [h: setProperty ("Faith", json.get (basicToon, "faith"))]
 [h: setProperty ("Hair", json.get (basicToon, "hair"))]
@@ -34,10 +37,8 @@
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
 [h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
 
-[h: hitPoints = json.get (basicToon, "hitPoints")]
-[h: setProperty ("HP", json.get (hitPoints, "currentHp"))]
-[h: setProperty ("Temp HP", json.get (hitPoints, "tempHp"))]
-[h: setProperty ("Max HP", json.get (hitPoints, "maxHp"))]
+<!-- Health -->
+[h: dndb_applyHealth ()]
 
 [h: armorClass = json.get (basicToon, "armorClass")]
 [h: setProperty ("AC", json.get (armorClass, "total"))]
@@ -45,14 +46,8 @@
 [h: setProperty ("AC Armor", json.get (armorClass, "Armor"))]
 [h: setProperty ("AC Shield", json.get (armorClass, "Shield"))]
 
-[h: speeds = json.get (basicToon, "speeds")]
-<!-- blank them out first -->
-[h, foreach (speed, "['Walk', 'Swim', 'Fly', 'Climb', 'Burrow']"): setProperty (speed, "")]
-[h, foreach (speed, speeds), code: {
-	[h: speedName = json.get (speed, "name")]
-	[h: speedValue = round (json.get (speed, "speed"))]
-	[h: setProperty (speedName, speedValue)]
-}]
+<!-- Speeds -->
+[h: dndb_applySpeed ()]
 
 [h: saves = json.get (basicToon, "savingThrows")]
 [h, foreach (save, saves), code: {
@@ -63,6 +58,8 @@
 
 [h: skills = json.get (basicToon, "skills")]
 [h, foreach (skill, skills): setProperty (json.get (skill, "name"), json.get (skill, "totalBonus"))]
+
+
 
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]

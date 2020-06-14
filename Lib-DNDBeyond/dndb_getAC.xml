@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>0c3fa536-271f-4593-8593-540233919c7f</macroUUID>
+  <macroUUID>18d8bd96-bfac-49b8-967d-f467d39e79ae</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>26</index>
   <colorKey>default</colorKey>
@@ -25,7 +25,6 @@
 
 &lt;!-- Get all armors and shields from inventory --&gt;
 [h: allArmors = dndb_getArmor (toon)]
-[h: log.debug ("allArmors: " + json.indent (allArmors))]
 
 &lt;!-- Determine equipped armor --&gt;
 [h: armors = json.path.read (allArmors, "[*].[?(@.definition.armorTypeId != 4)]")]

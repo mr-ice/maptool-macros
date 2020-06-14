@@ -18,10 +18,14 @@
 <!-- AC -->
 [h: ac = dndb_getAC (toon)]
 
+<!-- Conditions -->
+[h: conditions = dndb_getConditions (toon)]
+
 [h: basicToon = json.set (basicToon, 
 				"speeds", speeds,
 				"hitPoints", hitPoints,
-				"armorClass", ac)]
+				"armorClass", ac,
+				"conditions", conditions)]
 
 [h: setProperty ("dndb_BasicToon", basicToon)]
 [h, macro ("Reset Properties@this"): 1]

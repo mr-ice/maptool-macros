@@ -1,0 +1,61 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>72c2ff57-0b2e-4d52-98e8-7e680201a5ac</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>62</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
+[h, if (encode (basicToon) == ""), code: {
+	[h: error = "You must initialize with DNDBeyond first"]
+	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
+	[h: return (0, error)]
+}]
+
+[h: conditions = json.get (basicToon, "conditions")]
+[h: log.debug (json.indent (conditions))]
+[h: states = ""]
+[h: clearStates = json.append ("", "Blinded", "Charmed", "Deafened", "Frightened", "Grappled",
+							"Incapacitated", "Invisible", "Paralyzed", "Poisoned", "Restrained",
+							"Prone", "Stunned", "Unconscious", "Exhaustion 1", "Exhaustion 2",
+							"Exhaustion 3", "Exhaustion 4", "Exhaustion 5", "Exhaustion 6")]
+[h, foreach (clearState, clearStates): setState (clearState, 0)]
+&lt;!-- note! do NOT use the var condition --&gt;
+[h, foreach (cond, conditions), code: {
+	[h: conditionName = json.get (cond, "name")]
+	[h, if (conditionName == "Exhaustion"): conditionName = conditionName + " " + json.get (cond, "level")]
+
+	[h: setState (conditionName, 0)]
+	[h, switch (conditionName):
+		case "Paralyzed": states = json.append (states, "Incapacitated");
+		case "Petrified": states = json.append (states, "Incapacitated");
+		case "Stunned": states = json.append (states, "Incapacitated");
+		case "Unconscious": states = json.append (states, "Incapacitated", "Prone");
+		default: "only because I have to put this here"
+	]
+
+	[h: states = json.append (states, conditionName)]
+}]
+
+[h: states = json.unique (states)]
+[h, foreach (state, states): setState (state, 1)]</command>
+  <label>dndb_applyConditions</label>
+  <group>Basic Toon</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Given the current conditions on the Basic Toon, apply the appropriate state. This should be the first macro run when applying the BasicToon to the token. Other macros later in that process will rely on the current state of the token.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

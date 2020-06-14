@@ -29,10 +29,14 @@
 
 <!-- WIP: we only know of some class abilities to parse -->
 [h, foreach (classAtkModifier, classAtkModifiers), code : {
+	[h: bonus = json.get (classAtkModifier, "value")]
 	[h: qualified = dndb_isWeaponModifierApplicable (classAtkModifier, weapon)]
-	[h: log.debug (json.indent (classAtkModifier, 3))]
-	[h: log.debug ("qualified: " + qualified)]
-	[h, if (qualified > 0): totalAtkBonus = totalAtkBonus + bonus]
+	[h, if (qualified > 0), code: {
+		[h: totalAtkBonus = totalAtkBonus + bonus]
+		[h: log.debug (json.indent (classAtkModifier, 3))]
+		[h: log.debug ("qualified: " + qualified)]
+
+	}]
 }]
 
 [h: log.debug ("totalAtkBonus after class: " + totalAtkBonus)]
@@ -44,7 +48,7 @@
 <!-- for ech itemDamageMod, get the componentId. Find the item in inventory with the matching id and check equipped -->
 [h, foreach (itemAtkModifier, itemAtkModifiers), code: {
 	[h: qualified = dndb_isWeaponModifierApplicable (itemAtkModifier, weapon)]
-	[h: log.debug (json.indent (itemAtkModifier, 3))]
+	[h, if (qualified > 0): log.debug (json.indent (itemAtkModifier, 3))]
 	[h: log.debug ("qualified: " + qualified)]
 	
 	[h: componentId = json.get (itemAtkModifier, "componentId")]
@@ -54,7 +58,7 @@
 	[h: bonus = json.get (itemAtkModifier, "value")]
 	[h: equipped = json.get (item, "equipped")]
 	[h, if (equipped != "true"): qualified = 0]
-	[h: log.debug ("Qualified after equipped: " + qualified]
+	[h: log.debug ("Qualified after equipped: " + qualified)]
 	[h, if (qualified > 0): totalAtkBonus = totalAtkBonus + bonus]
 }]
 

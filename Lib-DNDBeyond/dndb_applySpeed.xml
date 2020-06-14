@@ -1,0 +1,50 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>bdb4d769-e0fc-44d8-b73f-eb00a9b19189</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>63</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
+[h, if (encode (basicToon) == ""), code: {
+	[h: error = "You must initialize with DNDBeyond first"]
+	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
+	[h: return (0, error)]
+}]
+
+[h: speeds = json.get (basicToon, "speeds")]
+&lt;!-- blank them out first --&gt;
+[h, foreach (speed, "['Walk', 'Swim', 'Fly', 'Climb', 'Burrow']"): setProperty (speed, "")]
+
+[h: noMove = getState ("Paralyzed") + getState ("Grappled") + getState ("Petrified") + getState ("Restrained") + getState ("Stunned") + getState ("Unconscious") + getState ("Exhaustion 5") + getState ("Exhaustion 6")]
+[h: onlyCrawl = getState ("Prone")]
+[h: halfSpeed = getState ("Exhaustion 3")]
+&lt;!-- someday we might want to distinguish between crawl and no speed, but for now they --&gt;
+&lt;!-- end up working the same --&gt;
+[h, foreach (speed, speeds), code: {
+	[h: speedName = json.get (speed, "name")]
+	[h: speedValue = round (json.get (speed, "speed"))]
+	[h, if (halfSpeed &gt; 0): speedValue = round (math.floor (speedValue / 2))]
+	[h, if (noMove + onlyCrawl &gt; 0): speedValue = 0]
+	[h: setProperty (speedName, speedValue)]
+}]</command>
+  <label>dndb_applySpeed</label>
+  <group>Basic Toon</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

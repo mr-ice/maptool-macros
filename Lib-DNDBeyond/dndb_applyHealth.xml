@@ -1,0 +1,61 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>68a09c05-b338-4711-8d4c-52d683371006</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>64</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
+[h, if (encode (basicToon) == ""), code: {
+	[h: error = "You must initialize with DNDBeyond first"]
+	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
+	[h: return (0, error)]
+}]
+
+[h: setState ("Bloodied", 0)]
+[h: setState ("Dying", 0)]
+
+[h: isHalved = getState ("Exhaustion 4")]
+[h: isDead = getState ("Exhaustion 6")]
+[h: hitPoints = json.get (basicToon, "hitPoints")]
+[h: log.debug (hitPoints)]
+[h: current = json.get (hitPoints, "currentHp")]
+[h: maximum = json.get (hitPoints, "maxHp")]
+&lt;!-- dont apply effects of half-max from exhaustion. Not sure I want to do that yet --&gt;
+[h: halfMax = round (math.floor( maximum / 2))]
+[h, if (maximum &lt; current): current = maximum]
+[h: setProperty ("HP", current)]
+[h: setProperty ("Temp HP", json.get (hitPoints, "tempHp"))]
+[h: setProperty ("MaxHP", maximum)]
+[h, if (current &lt; halfMax): setState ("Bloodied", 1); setState ("Bloodied", 0)]
+[h, if (current == 0 &amp;&amp; isDead == 0), code: {
+	[h: setState ("Dying", 1)]
+}]
+[h, if (current &gt; 0 &amp;&amp; isDead == 0), code: {
+	[h: setState ("Dead", 0)]
+}]
+[h, if (isDead &gt; 0), code: {
+	[h: setState ("Dying", 0)]
+	[h: setState ("Dead", 1)]
+}]
+</command>
+  <label>dndb_applyHealth</label>
+  <group>Basic Toon</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Applies the current health to the token</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

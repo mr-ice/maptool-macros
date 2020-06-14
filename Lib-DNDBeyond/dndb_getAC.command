@@ -19,7 +19,6 @@
 
 <!-- Get all armors and shields from inventory -->
 [h: allArmors = dndb_getArmor (toon)]
-[h: log.debug ("allArmors: " + json.indent (allArmors))]
 
 <!-- Determine equipped armor -->
 [h: armors = json.path.read (allArmors, "[*].[?(@.definition.armorTypeId != 4)]")]

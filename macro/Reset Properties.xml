@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>08cebe05-4a8e-4d4c-833e-ba2fdeccd6b7</macroUUID>
+  <macroUUID>6fdd3976-4eb1-4ce3-84c4-cdf8aa42afd0</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>3</index>
+  <index>2</index>
   <colorKey>pink</colorKey>
   <hotKey>None</hotKey>
   <command>[h, if (json.length (macro.args) &gt; 0): noConfirm = arg(0); noConfirm = 0]
@@ -12,6 +12,9 @@
 
 [h: basicToon = getProperty ("dndb_BasicToon")]
 [r, if (json.length (basicToon) &lt; 1): return (0, "No D&amp;D Beyond data was found on the token. You need to sync, first")]
+
+&lt;!-- do this first! --&gt;
+[h: dndb_applyConditions (basicToon)]
 
 [h: setProperty ("Age", json.get (basicToon, "age"))]
 [h: setProperty ("Faith", json.get (basicToon, "faith"))]
@@ -40,10 +43,8 @@
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
 [h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
 
-[h: hitPoints = json.get (basicToon, "hitPoints")]
-[h: setProperty ("HP", json.get (hitPoints, "currentHp"))]
-[h: setProperty ("Temp HP", json.get (hitPoints, "tempHp"))]
-[h: setProperty ("Max HP", json.get (hitPoints, "maxHp"))]
+&lt;!-- Health --&gt;
+[h: dndb_applyHealth ()]
 
 [h: armorClass = json.get (basicToon, "armorClass")]
 [h: setProperty ("AC", json.get (armorClass, "total"))]
@@ -51,14 +52,8 @@
 [h: setProperty ("AC Armor", json.get (armorClass, "Armor"))]
 [h: setProperty ("AC Shield", json.get (armorClass, "Shield"))]
 
-[h: speeds = json.get (basicToon, "speeds")]
-&lt;!-- blank them out first --&gt;
-[h, foreach (speed, "['Walk', 'Swim', 'Fly', 'Climb', 'Burrow']"): setProperty (speed, "")]
-[h, foreach (speed, speeds), code: {
-	[h: speedName = json.get (speed, "name")]
-	[h: speedValue = round (json.get (speed, "speed"))]
-	[h: setProperty (speedName, speedValue)]
-}]
+&lt;!-- Speeds --&gt;
+[h: dndb_applySpeed ()]
 
 [h: saves = json.get (basicToon, "savingThrows")]
 [h, foreach (save, saves), code: {
@@ -69,6 +64,8 @@
 
 [h: skills = json.get (basicToon, "skills")]
 [h, foreach (skill, skills): setProperty (json.get (skill, "name"), json.get (skill, "totalBonus"))]
+
+
 
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]</command>

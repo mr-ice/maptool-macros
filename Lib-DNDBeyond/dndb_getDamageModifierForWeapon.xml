@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>123b4eb5-93a8-446e-ab73-a384b15e58c7</macroUUID>
+  <macroUUID>7a158c59-8bbd-439e-ab75-9897ea22033e</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>20</index>
   <colorKey>default</colorKey>
@@ -34,7 +34,10 @@
 	[h: bonus = json.get (classModifier, "value")]
 	[h: qualified = dndb_isWeaponModifierApplicable (classModifier, weapon)]
 
-	[h, if (qualified &gt; 0): totalBonus = totalBonus + bonus]
+	[h, if (qualified &gt; 0), code: {
+		[h: totalBonus = totalBonus + bonus]
+		[h: log.debug (json.indent (classModifier))]
+	}]
 }]
 
 &lt;!-- no qualification checks on Race, yet --&gt;
@@ -50,6 +53,7 @@
 [h, foreach (itemModifier, itemModifiers), code: {
 	&lt;!-- itemModifier may have attack specific sub-types --&gt;
 	[h: qualified = dndb_isWeaponModifierApplicable (itemModifier, weapon)]
+	[h, if (qualified &gt; 0): log.debug (json.indent (itemModifier))]
 	[h: componentId = json.get (itemModifier, "componentId")]
 	[h: items = json.path.read (toon, "data.inventory..[?(@.definition.id == '" + componentId + "')]")]
 	&lt;!-- should only be one --&gt;
