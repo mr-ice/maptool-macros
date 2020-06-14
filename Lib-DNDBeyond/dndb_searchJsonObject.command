@@ -7,8 +7,6 @@
 
 [h: filterObj = json.remove (filterObj, "object")]
 [h: filterObj = json.remove (filterObj, "property")]
-[h: log.debug ("dndb_searchJsonObject: filterObj after process = " + filterObj)]
-[h: log.debug ("dndb_searchJsonObject: property = " + property)]
 <!-- now build the filter -->
 
 [h: rawValues = json.append ("", "true", "false")]
@@ -28,7 +26,5 @@
 [h: filter = filter + ")]"]
 <!-- close the filter -->
 [h, if (property != ""): filter = filter + "['" + property + "']"]
-[h: log.debug ("filter: " + filter)]
 [h: ret = json.path.read (object, filter)]
-[h: log.debug ("dndb_searchJsonObj: " + ret)]
 [h: macro.return = ret]

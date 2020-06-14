@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f54d3e38-b1a2-4008-ab42-ca0b899b4c27</macroUUID>
+  <macroUUID>5024828a-b31b-4a6a-be5e-ffadfeb12cd9</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>17</index>
   <colorKey>default</colorKey>
@@ -15,7 +15,7 @@
 [h, if (charAt &gt; -1): charId = substring (charId, charAt + 1)]
 
 [h: url = BASE_URL + charId]
-[h: log.debug ("char url: " + url)]
+[h: log.info ("char url: " + url)]
 [h: character = REST.get(url)]
 [h: macro.return = character]</command>
   <label>dndb_getCharJSON</label>

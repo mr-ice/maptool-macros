@@ -1,0 +1,99 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>118fc089-471e-4222-b8f5-97a84e0ac94a</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>50</index>
+  <colorKey>blue</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h, if (json.length (macro.args) &gt; 0): inputObj = arg (0); inputObj = ""]
+[h: basicToon = getProperty ("dndb_BasicToon")]
+[h, if (encode (basicToon) == ""), code: {
+	[h: error = "You must initialize with DNDBeyond first"]
+	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
+	[h: return (0, error)]
+}]
+
+&lt;!-- if an inputObj was provide, use that instead of the input --&gt;
+
+[h: skills = json.get (basicToon, "skills")]
+[h: skillNameCsv = ""]
+[h, foreach (skill, skills), code: {
+	[h: skillNameCsv = skillNameCsv + "," + json.get (skill, "name")]
+}]
+[h: skillNameCsv = substring (skillNameCsv, 1)]
+[h, if (encode (inputObj) == ""): abort (input ( " selectedSkillPos | " + skillNameCsv + " | Select skill | List ",
+					" advDisadv | None, Advantage, Disadvantage | Advantage / Disadvantage | List ",
+					" saveAsMacro | 0 | Save as Macro | check "))]
+&lt;!-- selection should correspond to the arry position of the skill object --&gt;
+[h, if (encode (inputObj) != ""), code: {
+	[h: selectedSkillPos = json.get (inputObj, "selectedSkillPos")]
+	[h: advDisadv = json.get (inputObj, "advDisadv")]
+	&lt;!-- never let the passed in object allow to save a macro. else a never ending cycle --&gt;
+	[h: saveAsMacro = 0]
+}]
+
+&lt;!-- Check the state for forced adv/disadv from state --&gt;
+[h: isPoisoned = getState ("Poisoned")]
+[h: log.debug ("isPoisoned: " + isPoisoned)]
+[r, if (isPoisoned &gt; 0), code: {
+	[r: "You're &lt;font color='red'&gt;&lt;b&gt;Poisoned&lt;/b&gt;&lt;/font&gt;! Applying Disadvantage&lt;br&gt;"]
+	[h, if (advDisadv == 1): advDisadv = 0; advDisadv = 2]
+}; {}]
+
+[h: skill = json.get (skills, selectedSkillPos)]
+[h: skillName = json.get (skill, "name")]
+&lt;!-- if its a 'xxxx Ability' then get the xxxx property instead of the skill --&gt;
+[h: abilityIndex = indexOf (skillName, " Ability")]
+[h, if (abilityIndex &gt; -1), code: {
+	[h: skillName = substring (skillName, 0, abilityIndex)]
+	[h: bonus = getProperty (skillName + " Bonus")]
+}; {
+	[h: bonus = getProperty (skillName)]
+}]
+
+[h: skillCheckObj = json.set ("", "checkLabel", json.get (skill, "name") + " Check",
+							"bonus", bonus,
+							"advDisadv", advDisadv)]
+
+[h, if (saveAsMacro &gt; 0), code: {
+	[h: cmdArg = json.set ("", "selectedSkillPos", selectedSkillPos, 
+							"advDisadv", advDisadv)]
+	[h, if (advDisadv == 0): advLabel = ""]
+	[h, if (advDisadv == 1): advLabel = " (+)"]
+	[h, if (advDisadv == 2): advLabel = " (-)"]
+	[h: macroName = skillName + advLabel + " Check"]
+	[h: currentMacros = getMacros()]
+	[h: cmd = "[macro ('Skill Check@Lib:DnDBeyond'): '" + cmdArg + "']"]
+	&lt;!-- dont create duplicates --&gt;
+	[h, foreach (currentMacro, currentMacros), if (currentMacro == macroName): saveAsMacro = 0]
+	[h: macroConfig = json.set ("", "applyToSelected", 1,
+								"autoExecute", 1,
+								"color", "blue",
+								"fontSize", "1.05em",
+								"sortBy", selectedSkillPos,
+								"fontColor", "white",
+								"group", "D&amp;D Beyond - Skills",
+								"playerEditable", 1)]
+	[h, if (saveAsMacro &gt; 0): createMacro (macroName, cmd, macroConfig)]
+}]
+[r, macro ("Make Check@Lib:DnDBeyond"): skillCheckObj]</command>
+  <label>Skill Check</label>
+  <group>Token</group>
+  <sortby>20</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -12,6 +12,7 @@
 <!-- Get the barbarian class -->
 [h: barbarianClassLevelArry = json.path.read (toon, "data.classes..[?(@.definition.name == 'Barbarian')]['level']")]
 
+[h: barbarianClassLevel = 0]
 [h, if (json.length (barbarianClassLevelArry) > 0): barbarianClassLevel = json.get (barbarianClassLevelArry, 0)]
 
 [h: brutalCrit = 0]

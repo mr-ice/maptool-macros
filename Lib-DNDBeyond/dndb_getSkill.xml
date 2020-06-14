@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1e117bb6-5e9c-4b9d-beaf-72f275eacf92</macroUUID>
+  <macroUUID>8db24840-d387-4293-8f50-c8d4a95a3bf9</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>34</index>
   <colorKey>default</colorKey>
@@ -34,7 +34,13 @@
 		json.set ("", "name", "Religion", "ability", "int", "entityId", "10"),
 		json.set ("", "name", "Sleight of Hand", "ability", "dex", "entityId", "4"),
 		json.set ("", "name", "Stealth", "ability", "dex", "entityId", "5"),
-		json.set ("", "name", "Survival", "ability", "wis", "entityId", "15")
+		json.set ("", "name", "Survival", "ability", "wis", "entityId", "15"),
+		json.set ("", "name", "Strength Ability", "ability", "str", "entityId", "dummyId"),
+		json.set ("", "name", "Dexterity Ability", "ability", "dex", "entityId", "dummyId"),
+		json.set ("", "name", "Constitution Ability", "ability", "con", "entityId", "dummyId"),
+		json.set ("", "name", "Intelligence Ability", "ability", "int", "entityId", "dummyId"),
+		json.set ("", "name", "Wisdom Ability", "ability", "wis", "entityId", "dummyId"),
+		json.set ("", "name", "Charisma Ability", "ability", "cha", "entityId", "dummyId")
 )]
 
 [h: skills = "[]"]
@@ -42,28 +48,52 @@
 	[h, if (skillName == "_all" || skillName == json.get (skill, "name")): skills = json.append (skills, skill)] 
 }]
 
+[h: data = json.get (toon, "data")]
+[h: dataRetains = json.append ("", "modifiers", "inventory", "classes", "stats", "bonusStats", "overrideStats")]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+&lt;!-- Skinnify the toon --&gt;
+[h: fatToon = toon]
+[h: toon = json.set (toon, "data", skinnyData)]
+
 &lt;!-- Lets call this the Rex Redrum bug: features that grant all ability checks some level of proficiency have --&gt;
 &lt;!-- to be accounted for, but they wont be found tied to any particular skill --&gt;
+&lt;!-- Find ALL modifiers related to ability-checks --&gt;
 [h: abilitySearchArgs = json.set ("", "object", toon, 
-						"subType", "ability-checks",
-						"type", "expertise")]
-&lt;!-- what fucking DM allowed this? --&gt;
-[h: abilityExpertise = dndb_searchGrantedModifiers (abilitySearchArgs)]
+						"subType", "ability-checks")]
+[h: abilityMods = dndb_searchGrantedModifiers (abilitySearchArgs)]
 
-[h: abilitySearchArgs = json.set (abilitySearchArgs, "type", "proficiency")]
-[h: abilityProficiency = dndb_searchGrantedModifiers (abilitySearchArgs)]
-
-[h: abilitySearchArgs = json.set (abilitySearchArgs, "type", "half-proficiency")]
-[h: abilityHalfProficiency = dndb_searchGrantedModifiers (abilitySearchArgs)]
-
+&lt;!-- Now tease out the interesting bits --&gt;
+&lt;!-- No need to keep searching for stuff. This arry shouldnt be very big --&gt;
 [h: abilityValue = 0]
-[h, if (json.length (abilityHalfProficiency) &gt; 0): abilityValue = 1]
-[h, if (json.length (abilityProficiency) &gt; 0): abilityValue = 2]
-[h, if (json.length (abilityExpertise) &gt; 0): abilityValue = 3]
+[h, foreach (abilityMod, abilityMods), code: {
+	[h: value = json.get (abilityMod, "type")]
+	[h, switch (value):
+		case "expertise": tempAbilityValue = 3;
+		case "proficiency": tempAbilityValue = 2;
+		case "half-proficiency": tempAbilityValue = 1]
+	[h: abilityValue = math.max (abilityValue, tempAbilityValue)]
+}]
+
+&lt;!-- The most frustrating part about any DTO is trying to sniff out the weird places for user override --&gt;
+&lt;!-- values. And its an edge case anyways! So lets fetch all the relevant character values outside of --&gt;
+&lt;!-- of the skill loop and just cobble up a dumb map of relevant values --&gt;
+[h: characterValues = json.path.read (fatToon, "data.characterValues")]
+[h: characterValuesSearchObj = json.set ("", "object", characterValues,
+					"valueTypeId", SKILL_ENTITY_TYPE_ID)]
+[h: skillValues = dndb_searchJsonObject (characterValuesSearchObj)]
+
 
 &lt;!-- Since we cant modify existing skill objects, well build new ones instead. Stuff them into this array --&gt;
 [h: afterSkillList = "[]"]
 
+[h: toon = json.set (toon, "data", skinnyData)]
+[h: skillSearchArgs = json.set ("", "object", toon,
+							"entityTypeId", SKILL_ENTITY_TYPE_ID)]
+[h: skillMods = dndb_searchGrantedModifiers (skillSearchArgs)]
+
+
+&lt;!-- Too many uncertainties here, so just go through the skill list --&gt;
+&lt;!-- Fall back to the generic search instead of more granted modifiers search --&gt;
 [h, foreach (skill, skills), code: {
     [h: log.debug ("skill: " + skill)]
 	[h: entityId = json.get (skill, "entityId")]
@@ -71,20 +101,16 @@
 
 	&lt;!-- Start with proficiencies --&gt;
 	&lt;!-- Looks for the proficiencies granted by background, class, race, etc --&gt;
-	[h: searchArgs = json.set ("", "object", toon,
-							"entityTypeId", SKILL_ENTITY_TYPE_ID,
+	[h: searchArgs = json.set ("", "object", skillMods,
 							"type", "expertise",
 							"entityId", entityId)]
-	[h: expertise = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug ("Expertise: " + json.indent (expertise))]
+	[h: expertise = dndb_searchJsonObject (searchArgs)]
 
 	[h: searchArgs = json.set (searchArgs, "type", "proficiency")]
-	[h: proficiencies = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug ("Proficiencies: " + json.indent (proficiencies))]
+	[h: proficiencies = dndb_searchJsonObject (searchArgs)]
 
 	[h: searchArgs = json.set (searchArgs, "type", "half-proficiency")]
-	[h: halfProfs = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug ("Half Profs: " + json.indent (halfProfs))]
+	[h: halfProfs = dndb_searchJsonObject (searchArgs)]
 
 	&lt;!-- go from least to best --&gt;
 	[h: proficientValue = 0]
@@ -103,11 +129,9 @@
 	[h: skill = json.set (skill, "proficient", proficientStr)]
 
 	 &lt;!-- now look for the other ridiculousness --&gt;
-	[h: searchArgs = json.set ("", "object", toon,
-					"valueTypeId", SKILL_ENTITY_TYPE_ID, 
+	[h: searchArgs = json.set ("", "object", skillValues,
 					"valueId", entityId)]
-	[h: characterValues = dndb_searchGrantedModifiers (searchArgs)]
-	[h: log.debug ("characterValues: " + characterValues)]
+	[h: characterValues = dndb_searchJsonObject (searchArgs)]
 	
 	[h: bonuses = "[]"]
 	&lt;!-- for each choice, inspect the typeId --&gt;

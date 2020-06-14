@@ -28,7 +28,10 @@
 	[h: bonus = json.get (classModifier, "value")]
 	[h: qualified = dndb_isWeaponModifierApplicable (classModifier, weapon)]
 
-	[h, if (qualified > 0): totalBonus = totalBonus + bonus]
+	[h, if (qualified > 0), code: {
+		[h: totalBonus = totalBonus + bonus]
+		[h: log.debug (json.indent (classModifier))]
+	}]
 }]
 
 <!-- no qualification checks on Race, yet -->
@@ -44,6 +47,7 @@
 [h, foreach (itemModifier, itemModifiers), code: {
 	<!-- itemModifier may have attack specific sub-types -->
 	[h: qualified = dndb_isWeaponModifierApplicable (itemModifier, weapon)]
+	[h, if (qualified > 0): log.debug (json.indent (itemModifier))]
 	[h: componentId = json.get (itemModifier, "componentId")]
 	[h: items = json.path.read (toon, "data.inventory..[?(@.definition.id == '" + componentId + "')]")]
 	<!-- should only be one -->

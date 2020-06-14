@@ -1,0 +1,38 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>1ac79b23-624d-472d-81b6-8301481995a1</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>59</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: object = arg(0)]
+[h: retains = arg(1)]
+
+[h: skinnyObj = "{}"]
+[h, foreach (field, json.fields (object)), code: {
+	[h, if (json.contains (retains, field)): skinnyObj = json.set (skinnyObj, field, json.get (object, field))]
+}]
+[h: macro.return = skinnyObj]</command>
+  <label>dndb_getSkinnyObject</label>
+  <group>Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns a object with selected chunks preserved.
+
+arg(0) - object
+arg(1) - [fields to preserve]</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>0988083c-41aa-4d33-a8cf-64f129cfc5d0</macroUUID>
+  <macroUUID>8c504fbd-fc3d-47ef-9323-bae130235863</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>36</index>
   <colorKey>default</colorKey>
@@ -13,8 +13,6 @@
 
 [h: filterObj = json.remove (filterObj, "object")]
 [h: filterObj = json.remove (filterObj, "property")]
-[h: log.debug ("dndb_searchJsonObject: filterObj after process = " + filterObj)]
-[h: log.debug ("dndb_searchJsonObject: property = " + property)]
 &lt;!-- now build the filter --&gt;
 
 [h: rawValues = json.append ("", "true", "false")]
@@ -34,9 +32,7 @@
 [h: filter = filter + ")]"]
 &lt;!-- close the filter --&gt;
 [h, if (property != ""): filter = filter + "['" + property + "']"]
-[h: log.debug ("filter: " + filter)]
 [h: ret = json.path.read (object, filter)]
-[h: log.debug ("dndb_searchJsonObj: " + ret)]
 [h: macro.return = ret]
 </command>
   <label>dndb_searchJsonObject</label>
@@ -64,7 +60,9 @@ Within the JSON, the "object" parameter is required. It can be a full character 
 
 "property" is a reserved parameter that indicates the values to return. If "property" is not provided, the full entity is returned for each match.
 
-All other key-value pairs are used as search terms.</toolTip>
+All other key-value pairs are used as search terms.
+
+Note: dndb_searchJsonObject must be available to call as an untrusted macro.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
