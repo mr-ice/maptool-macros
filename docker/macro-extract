@@ -86,7 +86,7 @@ for label, elem in macroList(xml.getroot()).items():
     if '/' in label:
         label = quote(label,safe='')
 
-    if xml.getroot().name.text.startswith('Lib:'):
+    if xml.getroot().tag == tokentag and xml.getroot().name.text.startswith('Lib:'):
         # Lib: tokens' macros stay with them
         mktokendir(base)
         xml_file = '{}/{}.xml'.format(base, label)
