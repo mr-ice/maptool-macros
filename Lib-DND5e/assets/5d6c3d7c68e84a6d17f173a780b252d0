@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>5d6c3d7c68e84a6d17f173a780b252d0</id>
+  </id>
+  <name>Stunned</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>

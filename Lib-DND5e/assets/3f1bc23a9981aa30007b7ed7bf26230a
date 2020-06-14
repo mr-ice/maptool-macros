@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>3f1bc23a9981aa30007b7ed7bf26230a</id>
+  </id>
+  <name>Elevation85</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>

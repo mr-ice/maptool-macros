@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>e72add0d-3f99-4cfc-814a-c58234de1cd7</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>5</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: bonus = getProperty ("Insight")]
+[h, if (bonus == ""): return (0, "")]
+[h,if (bonus &gt; -1): value = "+"; value = ""]
+Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
+  <label>dnd5e_getInsightStat</label>
+  <group>Token Properties</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the string to be displayed for the GM's view of the Insight skill on the statsheet.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

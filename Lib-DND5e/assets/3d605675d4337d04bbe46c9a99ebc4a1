@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>3d605675d4337d04bbe46c9a99ebc4a1</id>
+  </id>
+  <name>Haste</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>
