@@ -1,8 +1,8 @@
 <list>
   <net.rptools.maptool.model.MacroButtonProperties>
-    <macroUUID>53aae561-b296-47b1-9e2a-b1563c20bac7</macroUUID>
+    <macroUUID>69ae8677-ed66-42af-a458-b1576d4d6cb4</macroUUID>
     <saveLocation>CampaignPanel</saveLocation>
-    <index>4</index>
+    <index>1</index>
     <colorKey>orange</colorKey>
     <hotKey>None</hotKey>
     <command>[h: charId = getProperty (&quot;Character ID&quot;)]
@@ -25,10 +25,14 @@
 &lt;!-- AC --&gt;
 [h: ac = dndb_getAC (toon)]
 
+&lt;!-- Conditions --&gt;
+[h: conditions = dndb_getConditions (toon)]
+
 [h: basicToon = json.set (basicToon, 
 				&quot;speeds&quot;, speeds,
 				&quot;hitPoints&quot;, hitPoints,
-				&quot;armorClass&quot;, ac)]
+				&quot;armorClass&quot;, ac,
+				&quot;conditions&quot;, conditions)]
 
 [h: setProperty (&quot;dndb_BasicToon&quot;, basicToon)]
 [h, macro (&quot;Reset Properties@this&quot;): 1]
@@ -55,9 +59,9 @@
     <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
   </net.rptools.maptool.model.MacroButtonProperties>
   <net.rptools.maptool.model.MacroButtonProperties>
-    <macroUUID>08cebe05-4a8e-4d4c-833e-ba2fdeccd6b7</macroUUID>
+    <macroUUID>6fdd3976-4eb1-4ce3-84c4-cdf8aa42afd0</macroUUID>
     <saveLocation>CampaignPanel</saveLocation>
-    <index>3</index>
+    <index>2</index>
     <colorKey>pink</colorKey>
     <hotKey>None</hotKey>
     <command>[h, if (json.length (macro.args) &gt; 0): noConfirm = arg(0); noConfirm = 0]
@@ -68,6 +72,9 @@
 
 [h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
 [r, if (json.length (basicToon) &lt; 1): return (0, &quot;No D&amp;D Beyond data was found on the token. You need to sync, first&quot;)]
+
+&lt;!-- do this first! --&gt;
+[h: dndb_applyConditions (basicToon)]
 
 [h: setProperty (&quot;Age&quot;, json.get (basicToon, &quot;age&quot;))]
 [h: setProperty (&quot;Faith&quot;, json.get (basicToon, &quot;faith&quot;))]
@@ -96,10 +103,8 @@
 [h: setProperty (&quot;Charisma&quot;, json.get (abilities, &quot;cha&quot;))]
 [h: setProperty (&quot;Charisma Bonus&quot;, json.get (abilities, &quot;chaBonus&quot;))]
 
-[h: hitPoints = json.get (basicToon, &quot;hitPoints&quot;)]
-[h: setProperty (&quot;HP&quot;, json.get (hitPoints, &quot;currentHp&quot;))]
-[h: setProperty (&quot;Temp HP&quot;, json.get (hitPoints, &quot;tempHp&quot;))]
-[h: setProperty (&quot;Max HP&quot;, json.get (hitPoints, &quot;maxHp&quot;))]
+&lt;!-- Health --&gt;
+[h: dndb_applyHealth ()]
 
 [h: armorClass = json.get (basicToon, &quot;armorClass&quot;)]
 [h: setProperty (&quot;AC&quot;, json.get (armorClass, &quot;total&quot;))]
@@ -107,14 +112,8 @@
 [h: setProperty (&quot;AC Armor&quot;, json.get (armorClass, &quot;Armor&quot;))]
 [h: setProperty (&quot;AC Shield&quot;, json.get (armorClass, &quot;Shield&quot;))]
 
-[h: speeds = json.get (basicToon, &quot;speeds&quot;)]
-&lt;!-- blank them out first --&gt;
-[h, foreach (speed, &quot;[&apos;Walk&apos;, &apos;Swim&apos;, &apos;Fly&apos;, &apos;Climb&apos;, &apos;Burrow&apos;]&quot;): setProperty (speed, &quot;&quot;)]
-[h, foreach (speed, speeds), code: {
-	[h: speedName = json.get (speed, &quot;name&quot;)]
-	[h: speedValue = round (json.get (speed, &quot;speed&quot;))]
-	[h: setProperty (speedName, speedValue)]
-}]
+&lt;!-- Speeds --&gt;
+[h: dndb_applySpeed ()]
 
 [h: saves = json.get (basicToon, &quot;savingThrows&quot;)]
 [h, foreach (save, saves), code: {
@@ -125,6 +124,8 @@
 
 [h: skills = json.get (basicToon, &quot;skills&quot;)]
 [h, foreach (skill, skills): setProperty (json.get (skill, &quot;name&quot;), json.get (skill, &quot;totalBonus&quot;))]
+
+
 
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]</command>
@@ -150,9 +151,9 @@
     <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
   </net.rptools.maptool.model.MacroButtonProperties>
   <net.rptools.maptool.model.MacroButtonProperties>
-    <macroUUID>34ea8ec8-933b-431b-8435-c2c9e07f333b</macroUUID>
+    <macroUUID>cf32d7ba-eb73-495a-aba9-a019bcafa565</macroUUID>
     <saveLocation>CampaignPanel</saveLocation>
-    <index>2</index>
+    <index>3</index>
     <colorKey>red</colorKey>
     <hotKey>None</hotKey>
     <command>[h: charId = getProperty (&quot;Character ID&quot;)]
@@ -168,8 +169,18 @@
 [h: toon = dndb_getCharJSON (charId)]
 [h: name = json.path.read (toon, &quot;data.name&quot;)]
 
+
+
 [h: log.info (&quot;Building basic character&quot;)]
 [h: basicToon = dndb_getBasic (toon)]
+
+&lt;!-- slim down --&gt;
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;race&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;, &quot;characterValues&quot;)]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+&lt;!-- Skinnify the toon --&gt;
+[h: fatToon = toon]
+[h: btoon = json.set (toon, &quot;data&quot;, skinnyData)]
 
 [h: log.info (&quot;Building Armor Class&quot;)]
 [h: basicToon = json.set (basicToon, &quot;armorClass&quot;, dndb_getAC (toon))]
@@ -181,12 +192,17 @@
 [h: basicToon = json.set (basicToon, &quot;skills&quot;, dndb_getSkill (toon))]
 
 [h: log.info (&quot;Building Attacks&quot;)]
-[h: basicToon = json.set (basicToon, &quot;attacks&quot;, dndb_getAttackJSON (toon))]
+[h: basicToon = json.set (basicToon, &quot;attacks&quot;, dndb_getAttack (toon))]
+
+[h: log.info (&quot;Building Conditions&quot;)]
+[h: basicToon = json.set (basicToon, &quot;conditions&quot;, dndb_getConditions (toon))]
 
 [h: setProperty (&quot;dndb_BasicToon&quot;, basicToon)]
 
 [h, macro (&quot;Reset Properties@this&quot;): &quot;1&quot;]
-[r,s: json.get (basicToon, &quot;name&quot;) + &quot; has been initialized!&quot;]</command>
+[h: msg = json.get (basicToon, &quot;name&quot;) + &quot; has been initialized!&quot;]
+[h: log.info (msg)]
+[r,s: msg]</command>
     <label>Initialize DNDBeyond Character</label>
     <group>DNDBeyond</group>
     <sortby>99</sortby>
