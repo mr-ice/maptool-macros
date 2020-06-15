@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>K1fhG4FYTU2VX4jSyxHZuQ==</baGUID>
+    <baGUID>T0eeRHTmQGuN3CH9Dze7ag==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>350</x>
-  <y>100</y>
+  <x>300</x>
+  <y>450</y>
   <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>50</lastX>
-  <lastY>250</lastY>
+  <lastX>350</lastX>
+  <lastY>550</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>1</x>
-        <y>5</y>
+        <x>7</x>
+        <y>11</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -36,14 +36,14 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>2</x>
-        <y>4</y>
+        <x>6</x>
+        <y>10</y>
         <g>1.0</g>
         <distanceTraveled>1.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>1</x>
-          <y>5</y>
+          <x>7</x>
+          <y>11</y>
           <g>0.0</g>
           <distanceTraveled>0.0</distanceTraveled>
           <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -52,115 +52,23 @@
           <terrainModifier>0.0</terrainModifier>
           <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
         </parent>
-        <h>5.003</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>3</x>
-        <y>4</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>2</x>
-          <y>4</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>5.003</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>4.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>4</x>
-        <y>3</y>
-        <g>3.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>3</x>
-          <y>4</y>
-          <g>2.0</g>
-          <distanceTraveled>2.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
-          <h>4.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
-        </parent>
-        <h>3.003</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>5</x>
-        <y>3</y>
-        <g>4.0</g>
-        <distanceTraveled>4.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>4</x>
-          <y>3</y>
-          <g>3.0</g>
-          <distanceTraveled>3.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
-          <h>3.003</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
-        </parent>
-        <h>2.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>6</x>
-        <y>2</y>
-        <g>5.0</g>
-        <distanceTraveled>5.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>5</x>
-          <y>3</y>
-          <g>4.0</g>
-          <distanceTraveled>4.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
-          <h>2.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
-        </parent>
-        <h>1.003</h>
+        <h>1.001</h>
         <f>0.0</f>
         <terrainModifier>0.0</terrainModifier>
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>2</y>
+        <x>6</x>
+        <y>9</y>
         <g>0.0</g>
-        <distanceTraveled>6.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>1</x>
-        <y>5</y>
+        <x>7</x>
+        <y>11</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -170,19 +78,19 @@
         <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>2</y>
+        <x>6</x>
+        <y>9</y>
         <g>0.0</g>
-        <distanceTraveled>6.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
-  <isoWidth>0</isoWidth>
-  <isoHeight>0</isoHeight>
+  <isoWidth>304</isoWidth>
+  <isoHeight>291</isoHeight>
   <scaleX>1.0</scaleX>
   <scaleY>1.0</scaleY>
   <sizeMap>
@@ -377,17 +285,17 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>wisdom</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Wisdom</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>perception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Perception</key>
           <value class="string">4</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -549,16 +457,16 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>arcana</string>
+        <string>investigation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Arcana</key>
+          <key>Investigation</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>investigation</string>
+        <string>arcana</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Investigation</key>
+          <key>Arcana</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -570,16 +478,16 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>movement</string>
+        <string>intimidation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Movement</key>
+          <key>Intimidation</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>intimidation</string>
+        <string>movement</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intimidation</key>
+          <key>Movement</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -604,7 +512,7 @@
     <entry>
       <int>1</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f82e8e31-0528-410c-9cc3-6b79212f7326</macroUUID>
+        <macroUUID>659059b1-dec2-48f4-8a22-2db3609416b8</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>1</index>
         <colorKey>default</colorKey>
@@ -647,7 +555,7 @@
     <entry>
       <int>3</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>a85df467-bec7-4175-830c-c1503a11b442</macroUUID>
+        <macroUUID>f74711b9-e34b-46f6-852b-146f4ac954b9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>3</index>
         <colorKey>default</colorKey>
@@ -691,7 +599,7 @@ ex.
     <entry>
       <int>5</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>e72add0d-3f99-4cfc-814a-c58234de1cd7</macroUUID>
+        <macroUUID>4f92c699-053d-4c8f-bd7f-2b4634b7fc18</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>5</index>
         <colorKey>default</colorKey>
@@ -725,7 +633,7 @@ Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
     <entry>
       <int>6</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>c3c622ba-6333-4d16-8775-cc431cded032</macroUUID>
+        <macroUUID>72d137a8-9e47-404c-8041-526a25c11826</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>6</index>
         <colorKey>default</colorKey>
