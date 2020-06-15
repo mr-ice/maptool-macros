@@ -1,17 +1,16 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>191aff96-9fd0-49b4-b45e-68a6dc900706</macroUUID>
+  <macroUUID>e42cee8b-7125-48c8-b1ed-b442e084aeee</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>4</index>
+  <index>3</index>
   <colorKey>pink</colorKey>
   <hotKey>None</hotKey>
-  <command>[h, if (json.length (macro.args) &gt; 0): noConfirm = arg(0); noConfirm = 0]
+  <command>[h: basicToon = dndb_getBasicToon ()]
+
+[h, if (json.length (macro.args) &gt; 0): noConfirm = arg(0); noConfirm = 0]
 [h: confirm = 1]
 [h, if (!noConfirm): input ("ignored | WARNING! This will reset any custom values. | All properties will be overwritten! | Label | SPAN=TRUE",
-	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0")]
+	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0");""]
 [h: abort (confirm)]
-
-[h: basicToon = getProperty ("dndb_BasicToon")]
-[r, if (json.length (basicToon) &lt; 1): return (0, "No D&amp;D Beyond data was found on the token. You need to sync, first")]
 
 &lt;!-- do this first! --&gt;
 [h: dndb_applyConditions (basicToon)]
@@ -71,7 +70,9 @@
 
 
 [h: dndb_mergeAttackJson ()]
-[h: dndb_createPlayerMacros()]</command>
+[h: dndb_createPlayerMacros()]
+
+</command>
   <label>Reset Properties</label>
   <group>DNDBeyond</group>
   <sortby>1</sortby>

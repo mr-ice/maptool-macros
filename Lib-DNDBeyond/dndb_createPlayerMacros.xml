@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>74cf8d14-b01d-41ff-9681-b769f6ceb776</macroUUID>
+  <macroUUID>55817625-d8c6-42d3-8341-173cf6b37c1b</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>53</index>
   <colorKey>default</colorKey>
@@ -42,7 +42,12 @@
 					"fontColor", "white",
 					"sortBy", "30",
 					"command", "[macro('Spend Hit Dice@Lib:DnDBeyond'): '']"),
-					
+
+			json.set (basicCfg, "name", "Print Basic Toon",
+					"color", "silver",
+					"sortBy", "9999",
+					"command", "[macro('Print BasicToon@Lib:DnDBeyond'): '']"),
+
 			json.set (basicCfg, "name", "Skill Check",
 					"color", "blue",
 					"fontColor", "white",
@@ -54,7 +59,7 @@
 	[h: currentIndexes = getMacroIndexes(macroName)]
 	[h, if (currentIndexes == ""), code: {
 		[h: createMacro (macroName, json.get (macroCfg, "command"), macroCfg)]
-	}]
+	}; {}]
 }]
 </command>
   <label>dndb_createPlayerMacros</label>

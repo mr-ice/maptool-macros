@@ -1,35 +1,29 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c58e96e6-27ca-49e6-883e-232837b098c4</macroUUID>
+  <macroUUID>c1d344f3-026c-4132-9ac7-043b171389aa</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>29</index>
-  <colorKey>default</colorKey>
+  <index>70</index>
+  <colorKey>silver</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: toon = arg (0)]
-[h: className = arg (1)]
+  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
+[h, if (encode (basicToon) == ""), code: {
+	[h: error = "You must initialize with DNDBeyond first"]
+	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
+	[h: return (0, error)]
+}]
 
-[h: classObj = json.path.read (toon, "data.classes[*].[?(@.definition.name == '" + className + "')]")]
-
-[h: macro.return = classObj]
-</command>
-  <label>dndb_getClass</label>
-  <group>Utility</group>
-  <sortby/>
+&lt;pre&gt;[r, s: json.indent (basicToon)]&lt;/pre&gt;</command>
+  <label>Print BasicToon</label>
+  <group>Token</group>
+  <sortby>999</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the class object from the toon json.
-
-arg(0) = toon
-arg(1) = class name
-
-returns class object found in toon's:
-
-data.classes[]</toolTip>
+  <toolTip>Prints the BasicToon to chat (self)</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

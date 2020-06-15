@@ -1,15 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>990c062f-a818-46b9-a959-9fb9ff780062</macroUUID>
+  <macroUUID>983cdb46-4922-46b4-a0d7-f38d29ec6220</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>63</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
+  <command>[h: basicToon = dndb_getBasicToon ()]
 
 [h: speeds = json.get (basicToon, "speeds")]
 &lt;!-- blank them out first --&gt;
@@ -23,8 +18,8 @@
 [h, foreach (speed, speeds), code: {
 	[h: speedName = json.get (speed, "name")]
 	[h: speedValue = round (json.get (speed, "speed"))]
-	[h, if (halfSpeed &gt; 0): speedValue = round (math.floor (speedValue / 2))]
-	[h, if (noMove + onlyCrawl &gt; 0): speedValue = 0]
+	[h, if (halfSpeed &gt; 0): speedValue = round (math.floor (speedValue / 2)); ""]
+	[h, if (noMove + onlyCrawl &gt; 0): speedValue = 0; ""]
 	[h: setProperty (speedName, speedValue)]
 }]</command>
   <label>dndb_applySpeed</label>

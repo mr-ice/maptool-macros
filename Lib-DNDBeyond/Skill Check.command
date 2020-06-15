@@ -27,6 +27,7 @@
 
 <!-- Check the state for forced adv/disadv from state -->
 [h: isPoisoned = getState ("Poisoned")]
+[h: log.debug ("isPoisoned: " + isPoisoned)]
 [r, if (isPoisoned > 0), code: {
 	[r: "You're <font color='red'><b>Poisoned</b></font>! Applying Disadvantage<br>"]
 	[h, if (advDisadv == 1): advDisadv = 0; advDisadv = 2]

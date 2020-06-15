@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>CsY/3/iMRuC8aopb324G/A==</baGUID>
+    <baGUID>4T9nuXFEQDiyANbiP71Jlg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>400</x>
-  <y>600</y>
+  <x>150</x>
+  <y>300</y>
   <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>450</lastX>
-  <lastY>600</lastY>
+  <lastX>100</lastX>
+  <lastY>400</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>9</x>
-        <y>12</y>
+        <x>2</x>
+        <y>8</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -35,18 +35,40 @@
         <terrainModifier>0.0</terrainModifier>
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>12</y>
-        <g>0.0</g>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>3</x>
+        <y>7</y>
+        <g>1.0</g>
         <distanceTraveled>1.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>2</x>
+          <y>8</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>1.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>3</x>
+        <y>6</y>
+        <g>0.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>9</x>
-        <y>12</y>
+        <x>2</x>
+        <y>8</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -56,11 +78,11 @@
         <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>12</y>
+        <x>3</x>
+        <y>6</y>
         <g>0.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -436,7 +458,7 @@
     <entry>
       <int>3</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>7ac2c5e5-6205-4853-a5cf-55ca23daa7c6</macroUUID>
+        <macroUUID>abd0942c-e52f-490a-9b2f-682fb15a12f9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>3</index>
         <colorKey>default</colorKey>
@@ -480,7 +502,7 @@
     <entry>
       <int>10</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>3823a34a-3b79-4564-ab22-dbdb9557caf8</macroUUID>
+        <macroUUID>af486af1-b651-435e-b5df-c5ff70c5fbf0</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>10</index>
         <colorKey>default</colorKey>
@@ -511,7 +533,7 @@
     <entry>
       <int>15</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>9d618e17-7188-468f-86b8-48185c9544d2</macroUUID>
+        <macroUUID>e92f20fc-506b-4f54-8002-cb29eaeb3bf2</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>15</index>
         <colorKey>default</colorKey>
@@ -613,7 +635,7 @@
     <entry>
       <int>16</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>fd975ecf-b190-4b30-ae49-35f4c5b5228f</macroUUID>
+        <macroUUID>05e208aa-a3c2-4890-9e24-c5285babf64d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>16</index>
         <colorKey>default</colorKey>
@@ -715,7 +737,7 @@
     <entry>
       <int>17</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>5b9a4097-be7d-418c-9e3d-5299b70e31de</macroUUID>
+        <macroUUID>ee7db996-422f-420c-b7f5-d6730deb2b6b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>17</index>
         <colorKey>default</colorKey>
@@ -759,7 +781,7 @@
     <entry>
       <int>19</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ec7b60b7-474f-4ee3-a9ce-cd3ac952059c</macroUUID>
+        <macroUUID>5bd55218-d402-4e33-ab37-bcd278f775fc</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>19</index>
         <colorKey>default</colorKey>
@@ -821,7 +843,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>20</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>66521da4-fe04-4a23-901d-8203bfd7ee02</macroUUID>
+        <macroUUID>42b9cde7-616e-4e20-87d9-82c5f2b69225</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>20</index>
         <colorKey>default</colorKey>
@@ -918,7 +940,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>21</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f8829bb2-6d20-426a-99a7-b4b37a4860e6</macroUUID>
+        <macroUUID>769b97b0-d838-4f25-9b02-231072e6cf3c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>21</index>
         <colorKey>default</colorKey>
@@ -963,7 +985,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>22</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>39cd0e29-56a3-40ba-83fc-191b4f0c3b6b</macroUUID>
+        <macroUUID>4f8e38aa-2ecd-4e8f-982e-ea5c39d45a51</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>22</index>
         <colorKey>default</colorKey>
@@ -1012,7 +1034,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>23</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>89760cd9-9c84-4ef5-a353-e00cfb27e7b6</macroUUID>
+        <macroUUID>964ebd10-c64c-449e-b2dc-2727cffc986c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>23</index>
         <colorKey>default</colorKey>
@@ -1097,7 +1119,7 @@ arg(1) - Weapon</toolTip>
     <entry>
       <int>24</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>6bd918c2-54f5-4781-b31c-659985ff6f6e</macroUUID>
+        <macroUUID>4d03a4a4-9db5-4749-8b9d-91225ae79ba9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>24</index>
         <colorKey>default</colorKey>
@@ -1169,7 +1191,7 @@ TODO: this could be refactored to test against any item instead of just weapons.
     <entry>
       <int>26</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>60638481-abef-4f11-b5bf-b4d103d8b20c</macroUUID>
+        <macroUUID>72eb36c8-6ed2-4f4a-aa04-64ce38e39c1c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>26</index>
         <colorKey>default</colorKey>
@@ -1350,7 +1372,7 @@ returns acObj
     <entry>
       <int>27</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>42c57b08-3d7d-4a45-be5e-5d365345cd45</macroUUID>
+        <macroUUID>767d331d-55aa-4671-bd3b-5f49cf83a6ae</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>27</index>
         <colorKey>default</colorKey>
@@ -1404,7 +1426,7 @@ Ex. for +3 Shield
     <entry>
       <int>28</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>c81b43ab-a7c1-4737-8dd8-20e49df2bd60</macroUUID>
+        <macroUUID>ed5db06c-9fbb-43b8-8722-fc44c7bf55b6</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>28</index>
         <colorKey>default</colorKey>
@@ -1490,7 +1512,7 @@ ex.
     <entry>
       <int>29</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>504ccba6-2453-42b1-9fb0-2a21be6f53cc</macroUUID>
+        <macroUUID>c58e96e6-27ca-49e6-883e-232837b098c4</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>29</index>
         <colorKey>default</colorKey>
@@ -1534,7 +1556,7 @@ data.classes[]</toolTip>
     <entry>
       <int>30</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>5ba21d73-962b-444e-800a-ea991398d24f</macroUUID>
+        <macroUUID>437364aa-8c40-41b7-a850-93f13a7dc597</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>30</index>
         <colorKey>default</colorKey>
@@ -1604,7 +1626,7 @@ ex.
     <entry>
       <int>31</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4b8ca808-e991-4ad6-a50e-054e5d7bea25</macroUUID>
+        <macroUUID>829074d3-9cce-4973-8b8d-b9769f518ac9</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>31</index>
         <colorKey>default</colorKey>
@@ -1677,7 +1699,7 @@ ex.
     <entry>
       <int>32</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>bbfd00db-250b-4af5-80e5-2f38eb442e14</macroUUID>
+        <macroUUID>8f80ed12-d342-44be-9871-7976b5253990</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>32</index>
         <colorKey>default</colorKey>
@@ -1713,7 +1735,7 @@ ex.
     <entry>
       <int>33</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>cf2d30f9-ee53-43a6-b532-e98dc6d43cc5</macroUUID>
+        <macroUUID>f1f4d0c6-faa0-4758-8010-8ac04970d719</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>33</index>
         <colorKey>default</colorKey>
@@ -1798,7 +1820,7 @@ returns:
     <entry>
       <int>34</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f5781d38-97ab-4d0e-856c-1658bea9b35a</macroUUID>
+        <macroUUID>a8fde760-83ce-4608-a138-7a79de66e4ab</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>34</index>
         <colorKey>default</colorKey>
@@ -2030,7 +2052,7 @@ ex.
     <entry>
       <int>35</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>2fc5852d-f893-44e0-a29e-4e4edd967925</macroUUID>
+        <macroUUID>f57c7a3c-913c-4c56-bfb2-b0feb088c990</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>35</index>
         <colorKey>default</colorKey>
@@ -2163,7 +2185,7 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
     <entry>
       <int>36</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>008e8e1f-702d-4551-aa18-cbf37867037e</macroUUID>
+        <macroUUID>d3b012e1-0a31-42c3-a265-b4594876b1b7</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>36</index>
         <colorKey>default</colorKey>
@@ -2246,7 +2268,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>37</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>36cfef05-5aa5-4da1-81d0-492f6804fd1b</macroUUID>
+        <macroUUID>6abaeac2-7ac8-4ce6-a478-87a0698d0f23</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>37</index>
         <colorKey>default</colorKey>
@@ -2460,7 +2482,7 @@ Note: dndb_searchJsonObject must be available to call as an untrusted macro.</to
     <entry>
       <int>38</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>57650d96-b111-4d2d-a380-1938835fdedb</macroUUID>
+        <macroUUID>66e1ccfe-f8c0-4e7f-9070-62d43970d089</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>38</index>
         <colorKey>default</colorKey>
@@ -2547,7 +2569,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>39</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>97375e28-3d64-43af-971b-56097deef888</macroUUID>
+        <macroUUID>51e0dbdc-cff1-489c-a9c6-65f09f57ee3a</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>39</index>
         <colorKey>default</colorKey>
@@ -2627,7 +2649,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>40</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>13d05564-b1c7-496e-8d02-d25a8e36e058</macroUUID>
+        <macroUUID>3312b53d-cff9-4fe7-a8b7-098b8da94030</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>40</index>
         <colorKey>default</colorKey>
@@ -2708,7 +2730,7 @@ All other key-value pairs are used as search terms.</toolTip>
     <entry>
       <int>41</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>0df8134c-95b4-4c99-8d6d-5ca36bc64763</macroUUID>
+        <macroUUID>bc311615-a67b-4c69-b884-584c8ba6ae5b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>41</index>
         <colorKey>default</colorKey>
@@ -2810,7 +2832,7 @@ arg (0) = toon</toolTip>
     <entry>
       <int>42</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>7c68f27c-e8dd-459f-a102-21dbe227cae5</macroUUID>
+        <macroUUID>70e7d49a-a1f7-4d20-b8cf-cec35fd4fdb4</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>42</index>
         <colorKey>default</colorKey>
@@ -2945,7 +2967,7 @@ returns:
     <entry>
       <int>49</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>72982606-d868-4a6f-9a4c-ae71cd04b251</macroUUID>
+        <macroUUID>81d71a98-db40-48db-9ae5-31ce332ad523</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>49</index>
         <colorKey>default</colorKey>
@@ -3004,7 +3026,7 @@ returns:
     <entry>
       <int>50</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>e8bbdea9-22e8-4348-a57f-eef2fc03d1d1</macroUUID>
+        <macroUUID>00e5460c-7190-4651-b1b1-33ec99ff4319</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>50</index>
         <colorKey>blue</colorKey>
@@ -3106,7 +3128,7 @@ returns:
     <entry>
       <int>51</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>b0a7afce-335d-4b68-8a56-15d794606715</macroUUID>
+        <macroUUID>86710f9b-e09c-4833-9a26-510cc7a6a13d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>51</index>
         <colorKey>black</colorKey>
@@ -3219,7 +3241,7 @@ returns:
     <entry>
       <int>53</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>74cf8d14-b01d-41ff-9681-b769f6ceb776</macroUUID>
+        <macroUUID>55817625-d8c6-42d3-8341-173cf6b37c1b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>53</index>
         <colorKey>default</colorKey>
@@ -3262,7 +3284,12 @@ returns:
 					&quot;fontColor&quot;, &quot;white&quot;,
 					&quot;sortBy&quot;, &quot;30&quot;,
 					&quot;command&quot;, &quot;[macro(&apos;Spend Hit Dice@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
-					
+
+			json.set (basicCfg, &quot;name&quot;, &quot;Print Basic Toon&quot;,
+					&quot;color&quot;, &quot;silver&quot;,
+					&quot;sortBy&quot;, &quot;9999&quot;,
+					&quot;command&quot;, &quot;[macro(&apos;Print BasicToon@Lib:DnDBeyond&apos;): &apos;&apos;]&quot;),
+
 			json.set (basicCfg, &quot;name&quot;, &quot;Skill Check&quot;,
 					&quot;color&quot;, &quot;blue&quot;,
 					&quot;fontColor&quot;, &quot;white&quot;,
@@ -3274,7 +3301,7 @@ returns:
 	[h: currentIndexes = getMacroIndexes(macroName)]
 	[h, if (currentIndexes == &quot;&quot;), code: {
 		[h: createMacro (macroName, json.get (macroCfg, &quot;command&quot;), macroCfg)]
-	}]
+	}; {}]
 }]
 </command>
         <label>dndb_createPlayerMacros</label>
@@ -3302,7 +3329,7 @@ returns:
     <entry>
       <int>54</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ba3a0aa8-5213-40d8-967d-46d06ebed554</macroUUID>
+        <macroUUID>9e749fe8-ea91-4d4f-97ac-ffa3e581241b</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>54</index>
         <colorKey>default</colorKey>
@@ -3312,7 +3339,7 @@ returns:
 	[h: errMsg = &quot;Token needs to sync with DnDBeyond first&quot;]
 	[h: abort( input(&quot; junk | | &quot; + errMsg + &quot; | LABEL | TEXT=false&quot;))]
 	[r: return (0, errMsg)]
-}]
+}; {}]
 [h: toonAttackJson = json.get (basicToon, &quot;attacks&quot;)]
 [h: existingAttackJson = getProperty (&quot;attackJSON&quot;)]
 &lt;!-- Merge the attack JSON, which means overwrite common key names, add new ones, --&gt;
@@ -3331,7 +3358,7 @@ returns:
 		[h: existingAttackJsonName = json.get (existingAttack, &quot;name&quot;)]
 		[h, if (toonAttackName == existingAttackJsonName): append = 0]
 	}]
-	[h, if (append &gt; 0): newAttackJSON = json.append (newAttackJSON, existingAttack)]
+	[h, if (append &gt; 0): newAttackJSON = json.append (newAttackJSON, existingAttack); &quot;&quot;]
 }]
 
 [h: setProperty (&quot;attackJSON&quot;, newAttackJSON)]</command>
@@ -3360,7 +3387,7 @@ returns:
     <entry>
       <int>55</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>3a0ff5fc-cec3-4e22-b31a-9090b7ad42d3</macroUUID>
+        <macroUUID>4b031f13-4568-4957-855c-60981f7c6fb3</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>55</index>
         <colorKey>red</colorKey>
@@ -3544,7 +3571,7 @@ returns:
     <entry>
       <int>56</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>442f42cc-88ee-4a40-a1c5-f15a863a1d5c</macroUUID>
+        <macroUUID>be8ee24c-b4f1-4f5e-93fa-62f3da336ffd</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>56</index>
         <colorKey>green</colorKey>
@@ -3661,7 +3688,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>57</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>12867d2e-bae1-41c3-ba35-51af5a13466b</macroUUID>
+        <macroUUID>fcfe1953-ef61-44db-9933-1c502ffdf581</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>57</index>
         <colorKey>default</colorKey>
@@ -3722,7 +3749,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>58</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>9e730e6a-b8c3-4fca-894c-e0fab9d8a0ef</macroUUID>
+        <macroUUID>2784c78c-9106-43d5-a6a5-74998278dc8f</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>58</index>
         <colorKey>purple</colorKey>
@@ -3807,7 +3834,7 @@ made possible via Set AttackJSON.</toolTip>
     <entry>
       <int>59</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ac8511c2-311e-4376-866f-b0ff9d736e1c</macroUUID>
+        <macroUUID>e4acb1db-8115-433a-9240-e6eeab6e49e6</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>59</index>
         <colorKey>default</colorKey>
@@ -3848,7 +3875,7 @@ arg(1) - [fields to preserve]</toolTip>
     <entry>
       <int>60</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>6c3efae6-46d7-40b4-8576-57fdc862945b</macroUUID>
+        <macroUUID>723c09ce-0672-48c5-9efb-dd2ba59ae6d0</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>60</index>
         <colorKey>default</colorKey>
@@ -3927,7 +3954,7 @@ This will pair with a separate class of macros centered around the property &apo
     <entry>
       <int>61</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4c035f6f-c911-489b-87d1-249b4e6c4ef2</macroUUID>
+        <macroUUID>2130a95f-440b-448d-86af-9c8f657e9a52</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>61</index>
         <colorKey>default</colorKey>
@@ -3994,17 +4021,13 @@ arg(0) = toon</toolTip>
     <entry>
       <int>62</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>a83b7955-a4f8-4f9f-9b30-4e3a7110d283</macroUUID>
+        <macroUUID>838ba2ac-3f6b-4e72-adbf-6acdf5acbfe2</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>62</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
-[h, if (encode (basicToon) == &quot;&quot;), code: {
-	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
-	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
-	[h: return (0, error)]
-}]
+        <command>
+[h: basicToon = dndb_getBasicToon ()]
 
 [h: conditions = json.get (basicToon, &quot;conditions&quot;)]
 [h: log.debug (json.indent (conditions))]
@@ -4014,10 +4037,10 @@ arg(0) = toon</toolTip>
 							&quot;Prone&quot;, &quot;Stunned&quot;, &quot;Unconscious&quot;, &quot;Exhaustion 1&quot;, &quot;Exhaustion 2&quot;,
 							&quot;Exhaustion 3&quot;, &quot;Exhaustion 4&quot;, &quot;Exhaustion 5&quot;, &quot;Exhaustion 6&quot;)]
 [h, foreach (clearState, clearStates): setState (clearState, 0)]
-&lt;!-- note! do NOT use the var condition --&gt;
+
 [h, foreach (cond, conditions), code: {
 	[h: conditionName = json.get (cond, &quot;name&quot;)]
-	[h, if (conditionName == &quot;Exhaustion&quot;): conditionName = conditionName + &quot; &quot; + json.get (cond, &quot;level&quot;)]
+	[h, if (conditionName == &quot;Exhaustion&quot;): conditionName = conditionName + &quot; &quot; + json.get (cond, &quot;level&quot;); &quot;&quot;]
 
 	[h: setState (conditionName, 0)]
 	[h, switch (conditionName):
@@ -4058,17 +4081,12 @@ arg(0) = toon</toolTip>
     <entry>
       <int>63</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>990c062f-a818-46b9-a959-9fb9ff780062</macroUUID>
+        <macroUUID>983cdb46-4922-46b4-a0d7-f38d29ec6220</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>63</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
-[h, if (encode (basicToon) == &quot;&quot;), code: {
-	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
-	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
-	[h: return (0, error)]
-}]
+        <command>[h: basicToon = dndb_getBasicToon ()]
 
 [h: speeds = json.get (basicToon, &quot;speeds&quot;)]
 &lt;!-- blank them out first --&gt;
@@ -4082,8 +4100,8 @@ arg(0) = toon</toolTip>
 [h, foreach (speed, speeds), code: {
 	[h: speedName = json.get (speed, &quot;name&quot;)]
 	[h: speedValue = round (json.get (speed, &quot;speed&quot;))]
-	[h, if (halfSpeed &gt; 0): speedValue = round (math.floor (speedValue / 2))]
-	[h, if (noMove + onlyCrawl &gt; 0): speedValue = 0]
+	[h, if (halfSpeed &gt; 0): speedValue = round (math.floor (speedValue / 2)); &quot;&quot;]
+	[h, if (noMove + onlyCrawl &gt; 0): speedValue = 0; &quot;&quot;]
 	[h: setProperty (speedName, speedValue)]
 }]</command>
         <label>dndb_applySpeed</label>
@@ -4111,17 +4129,12 @@ arg(0) = toon</toolTip>
     <entry>
       <int>64</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ebddbd62-58f6-422f-a140-58c8d24bca3f</macroUUID>
+        <macroUUID>d68d982a-ae75-4240-9a3a-aae8ede39e7c</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>64</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
-[h, if (encode (basicToon) == &quot;&quot;), code: {
-	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
-	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
-	[h: return (0, error)]
-}]
+        <command>[h: basicToon = dndb_getBasicToon ()]
 
 [h: setState (&quot;Bloodied&quot;, 0)]
 [h: setState (&quot;Dying&quot;, 0)]
@@ -4134,21 +4147,21 @@ arg(0) = toon</toolTip>
 [h: maximum = json.get (hitPoints, &quot;maxHp&quot;)]
 &lt;!-- dont apply effects of half-max from exhaustion. Not sure I want to do that yet --&gt;
 [h: halfMax = round (math.floor( maximum / 2))]
-[h, if (maximum &lt; current): current = maximum]
+[h, if (maximum &lt; current): current = maximum; &quot;&quot;]
 [h: setProperty (&quot;HP&quot;, current)]
 [h: setProperty (&quot;TempHP&quot;, json.get (hitPoints, &quot;tempHp&quot;))]
 [h: setProperty (&quot;MaxHP&quot;, maximum)]
-[h, if (current &lt; halfMax): setState (&quot;Bloodied&quot;, 1); setState (&quot;Bloodied&quot;, 0)]
+[h, if (current &lt; halfMax): setState (&quot;Bloodied&quot;, 1); setState (&quot;Bloodied&quot;, 0);]
 [h, if (current == 0 &amp;&amp; isDead == 0), code: {
 	[h: setState (&quot;Dying&quot;, 1)]
-}]
+}; {}]
 [h, if (current &gt; 0 &amp;&amp; isDead == 0), code: {
 	[h: setState (&quot;Dead&quot;, 0)]
-}]
+}; {}]
 [h, if (isDead &gt; 0), code: {
 	[h: setState (&quot;Dying&quot;, 0)]
 	[h: setState (&quot;Dead&quot;, 1)]
-}]
+}; {}]
 </command>
         <label>dndb_applyHealth</label>
         <group>Basic Toon</group>
@@ -4175,7 +4188,7 @@ arg(0) = toon</toolTip>
     <entry>
       <int>65</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>8348d0d8-2264-467a-850f-cc56b00cc77a</macroUUID>
+        <macroUUID>bff86fcc-437c-483a-9f47-9bbc87aa5f3d</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>65</index>
         <colorKey>default</colorKey>
@@ -4256,7 +4269,7 @@ arg(0) = toon</toolTip>
     <entry>
       <int>66</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>7679fcd8-e01f-495d-abfe-96e1f02a83f2</macroUUID>
+        <macroUUID>01706210-15f5-4b63-ba81-280a6867deb6</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>66</index>
         <colorKey>default</colorKey>
@@ -4312,7 +4325,7 @@ toon = arg(0)</toolTip>
     <entry>
       <int>67</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>88a8a7a5-f3d5-4062-8e10-1b1fa8e8fc67</macroUUID>
+        <macroUUID>ff6e6b7a-50e7-4611-bea5-c0d6c8ea8036</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>67</index>
         <colorKey>default</colorKey>
@@ -4375,7 +4388,7 @@ modifier = arg (1)</toolTip>
     <entry>
       <int>68</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>cc41bfaf-e1d4-4ac5-9576-67513a1fe8b2</macroUUID>
+        <macroUUID>c3732c7a-b602-43cc-8d70-890a47414647</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>68</index>
         <colorKey>default</colorKey>
@@ -4474,17 +4487,12 @@ returns
     <entry>
       <int>69</int>
       <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>59096d0c-d5c6-4caa-af7d-4a64b9a6abd1</macroUUID>
+        <macroUUID>b4291a16-1b6d-4c59-81f4-e252d576aa2e</macroUUID>
         <saveLocation>Token</saveLocation>
         <index>69</index>
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
-        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
-[h, if (encode (basicToon) == &quot;&quot;), code: {
-	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
-	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
-	[h: return (0, error)]
-}]
+        <command>[h: basicToon = dndb_getBasicToon ()]
 
 [h: senses = json.get (basicToon, &quot;senses&quot;)]
 [h: senseStr = &quot;&quot;]
@@ -4492,9 +4500,9 @@ returns
 	[h: senseName = json.get (sense, &quot;name&quot;)]
 	[h: distance = json.get (sense, &quot;distance&quot;)]
 	[h, if (distance &gt; 0): senseStr = senseStr + &quot;, &quot; + senseName +
-				&quot; &quot; + distance]
+				&quot; &quot; + distance; &quot;&quot;]
 	&lt;!-- Currently, the only Sight Type to apply is Darkvision --&gt;
-	[h, if (senseName == &quot;Darkvision&quot;): setSightType (&quot;Darkvision&quot;)]
+	[h, if (senseName == &quot;Darkvision&quot;): setSightType (&quot;Darkvision&quot;); &quot;&quot;]
 }]
 [h, if (senseStr == &quot;&quot;): senseStr = &quot;Normal&quot;; senseStr = substring (senseStr, 2)]
 [h: setProperty (&quot;Senses&quot;, senseStr)]</command>
@@ -4511,6 +4519,90 @@ returns
         <allowPlayerEdits>false</allowPlayerEdits>
         <toolTip>Applies the vision to the token based on the BasicToon senses
 </toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>70</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>c1d344f3-026c-4132-9ac7-043b171389aa</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>70</index>
+        <colorKey>silver</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+&lt;pre&gt;[r, s: json.indent (basicToon)]&lt;/pre&gt;</command>
+        <label>Print BasicToon</label>
+        <group>Token</group>
+        <sortby>999</sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.05em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Prints the BasicToon to chat (self)</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>71</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>3cbee648-5481-4a0c-aa81-e2c06ea689d0</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>71</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=false&quot;))]
+	[h: return (0, error)]
+}; {}]
+
+[h: overrideSubObj = getProperty (&quot;_dndb_OverrideBasicToon&quot;)]
+[h: log.debug (&quot;overrideSubObj: &quot; + overrideSubObj)]
+[h, if (json.length (overrideSubObj) &gt; 0), code: {
+	[h: basicToon = json.merge (basicToon, overrideSubObj)]
+	&lt;!-- Do not save basicToon back to token. This should be a --&gt;
+	&lt;!-- transient override --&gt;
+	[h: log.warn (json.get (basicToon, &quot;name&quot;) + &quot; has had override values applied&quot;)]
+}; {}]
+[h: macro.return = basicToon]</command>
+        <label>dndb_getBasicToon</label>
+        <group>Basic Toon</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Reads data in _dndb_OverrideBasicToon and merges the defined JSON object into dndb_BasicToon. Then returns that BasicToon</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>

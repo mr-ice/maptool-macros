@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ba3a0aa8-5213-40d8-967d-46d06ebed554</macroUUID>
+  <macroUUID>9e749fe8-ea91-4d4f-97ac-ffa3e581241b</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>54</index>
   <colorKey>default</colorKey>
@@ -9,7 +9,7 @@
 	[h: errMsg = "Token needs to sync with DnDBeyond first"]
 	[h: abort( input(" junk | | " + errMsg + " | LABEL | TEXT=false"))]
 	[r: return (0, errMsg)]
-}]
+}; {}]
 [h: toonAttackJson = json.get (basicToon, "attacks")]
 [h: existingAttackJson = getProperty ("attackJSON")]
 &lt;!-- Merge the attack JSON, which means overwrite common key names, add new ones, --&gt;
@@ -28,7 +28,7 @@
 		[h: existingAttackJsonName = json.get (existingAttack, "name")]
 		[h, if (toonAttackName == existingAttackJsonName): append = 0]
 	}]
-	[h, if (append &gt; 0): newAttackJSON = json.append (newAttackJSON, existingAttack)]
+	[h, if (append &gt; 0): newAttackJSON = json.append (newAttackJSON, existingAttack); ""]
 }]
 
 [h: setProperty ("attackJSON", newAttackJSON)]</command>

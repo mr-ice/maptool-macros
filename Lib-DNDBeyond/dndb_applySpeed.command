@@ -1,9 +1,4 @@
-[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
+[h: basicToon = dndb_getBasicToon ()]
 
 [h: speeds = json.get (basicToon, "speeds")]
 <!-- blank them out first -->
@@ -17,7 +12,7 @@
 [h, foreach (speed, speeds), code: {
 	[h: speedName = json.get (speed, "name")]
 	[h: speedValue = round (json.get (speed, "speed"))]
-	[h, if (halfSpeed > 0): speedValue = round (math.floor (speedValue / 2))]
-	[h, if (noMove + onlyCrawl > 0): speedValue = 0]
+	[h, if (halfSpeed > 0): speedValue = round (math.floor (speedValue / 2)); ""]
+	[h, if (noMove + onlyCrawl > 0): speedValue = 0; ""]
 	[h: setProperty (speedName, speedValue)]
 }]

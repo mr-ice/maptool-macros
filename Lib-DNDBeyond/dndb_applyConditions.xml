@@ -1,15 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a83b7955-a4f8-4f9f-9b30-4e3a7110d283</macroUUID>
+  <macroUUID>838ba2ac-3f6b-4e72-adbf-6acdf5acbfe2</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>62</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
+  <command>
+[h: basicToon = dndb_getBasicToon ()]
 
 [h: conditions = json.get (basicToon, "conditions")]
 [h: log.debug (json.indent (conditions))]
@@ -19,10 +15,10 @@
 							"Prone", "Stunned", "Unconscious", "Exhaustion 1", "Exhaustion 2",
 							"Exhaustion 3", "Exhaustion 4", "Exhaustion 5", "Exhaustion 6")]
 [h, foreach (clearState, clearStates): setState (clearState, 0)]
-&lt;!-- note! do NOT use the var condition --&gt;
+
 [h, foreach (cond, conditions), code: {
 	[h: conditionName = json.get (cond, "name")]
-	[h, if (conditionName == "Exhaustion"): conditionName = conditionName + " " + json.get (cond, "level")]
+	[h, if (conditionName == "Exhaustion"): conditionName = conditionName + " " + json.get (cond, "level"); ""]
 
 	[h: setState (conditionName, 0)]
 	[h, switch (conditionName):

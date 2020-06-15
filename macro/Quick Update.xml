@@ -1,10 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>aa5e99b1-c88f-441c-a884-5746c041fd33</macroUUID>
+  <macroUUID>c0c5f592-189f-40bc-8411-ae8a2b3c03d8</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>6</index>
+  <index>1</index>
   <colorKey>orange</colorKey>
   <hotKey>None</hotKey>
   <command>[h: charId = getProperty ("Character ID")]
+&lt;!-- This script must deal with the raw Basic Toon, avoid dndb_getBasicToon --&gt;
 [h: basicToon = getProperty ("dndb_BasicToon")]
 
 [h, if (charId == "" || encode (basicToon) == ""), code: {

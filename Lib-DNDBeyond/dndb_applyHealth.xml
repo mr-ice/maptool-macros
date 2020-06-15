@@ -1,15 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ebddbd62-58f6-422f-a140-58c8d24bca3f</macroUUID>
+  <macroUUID>d68d982a-ae75-4240-9a3a-aae8ede39e7c</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>64</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
+  <command>[h: basicToon = dndb_getBasicToon ()]
 
 [h: setState ("Bloodied", 0)]
 [h: setState ("Dying", 0)]
@@ -22,21 +17,21 @@
 [h: maximum = json.get (hitPoints, "maxHp")]
 &lt;!-- dont apply effects of half-max from exhaustion. Not sure I want to do that yet --&gt;
 [h: halfMax = round (math.floor( maximum / 2))]
-[h, if (maximum &lt; current): current = maximum]
+[h, if (maximum &lt; current): current = maximum; ""]
 [h: setProperty ("HP", current)]
 [h: setProperty ("TempHP", json.get (hitPoints, "tempHp"))]
 [h: setProperty ("MaxHP", maximum)]
-[h, if (current &lt; halfMax): setState ("Bloodied", 1); setState ("Bloodied", 0)]
+[h, if (current &lt; halfMax): setState ("Bloodied", 1); setState ("Bloodied", 0);]
 [h, if (current == 0 &amp;&amp; isDead == 0), code: {
 	[h: setState ("Dying", 1)]
-}]
+}; {}]
 [h, if (current &gt; 0 &amp;&amp; isDead == 0), code: {
 	[h: setState ("Dead", 0)]
-}]
+}; {}]
 [h, if (isDead &gt; 0), code: {
 	[h: setState ("Dying", 0)]
 	[h: setState ("Dead", 1)]
-}]
+}; {}]
 </command>
   <label>dndb_applyHealth</label>
   <group>Basic Toon</group>

@@ -1,4 +1,5 @@
 [h: charId = getProperty ("Character ID")]
+<!-- This script must deal with the raw Basic Toon, avoid dndb_getBasicToon -->
 [h: basicToon = getProperty ("dndb_BasicToon")]
 
 [h, if (charId == "" || encode (basicToon) == ""), code: {
