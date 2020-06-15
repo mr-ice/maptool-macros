@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cf32d7ba-eb73-495a-aba9-a019bcafa565</macroUUID>
+  <macroUUID>3f158254-2399-44ff-b7cd-08fdaa725664</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>3</index>
+  <index>5</index>
   <colorKey>red</colorKey>
   <hotKey>None</hotKey>
   <command>[h: charId = getProperty ("Character ID")]
@@ -29,6 +29,11 @@
 &lt;!-- Skinnify the toon --&gt;
 [h: fatToon = toon]
 [h: btoon = json.set (toon, "data", skinnyData)]
+
+
+[h: log.info ("dndb_getBasic: Initiative")]
+[h: initiative = dndb_getInitiative (toon)]
+[h: basicToon = json.set (basicToon, "init", initiative)]
 
 [h: log.info ("Building Armor Class")]
 [h: basicToon = json.set (basicToon, "armorClass", dndb_getAC (toon))]

@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6fdd3976-4eb1-4ce3-84c4-cdf8aa42afd0</macroUUID>
+  <macroUUID>191aff96-9fd0-49b4-b45e-68a6dc900706</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>2</index>
+  <index>4</index>
   <colorKey>pink</colorKey>
   <hotKey>None</hotKey>
   <command>[h, if (json.length (macro.args) &gt; 0): noConfirm = arg(0); noConfirm = 0]
@@ -42,6 +42,9 @@
 [h: setProperty ("Wisdom Bonus", json.get (abilities, "wisBonus"))]
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
 [h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
+
+&lt;!-- Senses --&gt;
+[h: dndb_applyVision (basicToon)]
 
 &lt;!-- Health --&gt;
 [h: dndb_applyHealth ()]

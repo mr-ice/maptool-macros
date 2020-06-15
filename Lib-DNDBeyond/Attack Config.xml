@@ -88,10 +88,7 @@
         [h: newAttackJson = if (inputDeleteAttack == 1 &amp;&amp; selectedAttack == json.get(attack, NAME), newAttackJson, json.append(newAttackJson, attack))]
     }]
 }]
-[h: setProperty(ATTACK_JSON, newAttackJson)]
-[r, macro( "Print AttackJSON@global"): ""]
-
-</command>
+[h: setProperty(ATTACK_JSON, newAttackJson)]</command>
   <label>Attack Config</label>
   <group>Token</group>
   <sortby>2</sortby>

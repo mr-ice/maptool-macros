@@ -37,6 +37,9 @@
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
 [h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
 
+<!-- Senses -->
+[h: dndb_applyVision (basicToon)]
+
 <!-- Health -->
 [h: dndb_applyHealth ()]
 

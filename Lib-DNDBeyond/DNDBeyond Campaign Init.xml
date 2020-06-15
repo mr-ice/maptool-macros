@@ -5,7 +5,7 @@
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <command>
-[h: setProperty ("libversion", "0.1")]
+[h: setProperty ("libversion", "0.15")]
 
 &lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
 [h: macros = getMacros()]

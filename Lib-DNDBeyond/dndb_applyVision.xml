@@ -1,0 +1,47 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>59096d0c-d5c6-4caa-af7d-4a64b9a6abd1</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>69</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
+[h, if (encode (basicToon) == ""), code: {
+	[h: error = "You must initialize with DNDBeyond first"]
+	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
+	[h: return (0, error)]
+}]
+
+[h: senses = json.get (basicToon, "senses")]
+[h: senseStr = ""]
+[h, foreach (sense, senses), code: {
+	[h: senseName = json.get (sense, "name")]
+	[h: distance = json.get (sense, "distance")]
+	[h, if (distance &gt; 0): senseStr = senseStr + ", " + senseName +
+				" " + distance]
+	&lt;!-- Currently, the only Sight Type to apply is Darkvision --&gt;
+	[h, if (senseName == "Darkvision"): setSightType ("Darkvision")]
+}]
+[h, if (senseStr == ""): senseStr = "Normal"; senseStr = substring (senseStr, 2)]
+[h: setProperty ("Senses", senseStr)]</command>
+  <label>dndb_applyVision</label>
+  <group>Basic Toon</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Applies the vision to the token based on the BasicToon senses
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

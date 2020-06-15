@@ -8,8 +8,9 @@
 
 [h: totalClassACBonus = 0]
 [h: classFeatures = "[]"]
-&lt;!-- Look for known features --&gt;
+&lt;!-- Look for armor based features --&gt;
 
+&lt;!-- Try and look for sub-type ends-with armor-class and use known ids for applying restrictions --&gt;
 &lt;!-- Barbarian --&gt;
 [h: barbarian = json.path.read (toon, "data.classes[*].[?(@.definition.name == 'Barbarian')]")]
 [h, if (json.length (barbarian) == 0): barbarian = "{}"]

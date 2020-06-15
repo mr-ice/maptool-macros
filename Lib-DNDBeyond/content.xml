@@ -73,15 +73,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.SquareGrid</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -253,7 +253,7 @@
         <string>libversion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>libversion</key>
-          <value class="string">0.1</value>
+          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -434,151 +434,6 @@
   </propertyMapCI>
   <macroPropertiesMap>
     <entry>
-      <int>64</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>ebddbd62-58f6-422f-a140-58c8d24bca3f</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>64</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
-[h, if (encode (basicToon) == &quot;&quot;), code: {
-	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
-	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
-	[h: return (0, error)]
-}]
-
-[h: setState (&quot;Bloodied&quot;, 0)]
-[h: setState (&quot;Dying&quot;, 0)]
-
-[h: isHalved = getState (&quot;Exhaustion 4&quot;)]
-[h: isDead = getState (&quot;Exhaustion 6&quot;)]
-[h: hitPoints = json.get (basicToon, &quot;hitPoints&quot;)]
-[h: log.debug (hitPoints)]
-[h: current = json.get (hitPoints, &quot;currentHp&quot;)]
-[h: maximum = json.get (hitPoints, &quot;maxHp&quot;)]
-&lt;!-- dont apply effects of half-max from exhaustion. Not sure I want to do that yet --&gt;
-[h: halfMax = round (math.floor( maximum / 2))]
-[h, if (maximum &lt; current): current = maximum]
-[h: setProperty (&quot;HP&quot;, current)]
-[h: setProperty (&quot;Temp HP&quot;, json.get (hitPoints, &quot;tempHp&quot;))]
-[h: setProperty (&quot;MaxHP&quot;, maximum)]
-[h, if (current &lt; halfMax): setState (&quot;Bloodied&quot;, 1); setState (&quot;Bloodied&quot;, 0)]
-[h, if (current == 0 &amp;&amp; isDead == 0), code: {
-	[h: setState (&quot;Dying&quot;, 1)]
-}]
-[h, if (current &gt; 0 &amp;&amp; isDead == 0), code: {
-	[h: setState (&quot;Dead&quot;, 0)]
-}]
-[h, if (isDead &gt; 0), code: {
-	[h: setState (&quot;Dying&quot;, 0)]
-	[h: setState (&quot;Dead&quot;, 1)]
-}]
-</command>
-        <label>dndb_applyHealth</label>
-        <group>Basic Toon</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>true</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip>Applies the current health to the token</toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
-    </entry>
-    <entry>
-      <int>65</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>8348d0d8-2264-467a-850f-cc56b00cc77a</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>65</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: toon = arg(0)]
-
-&lt;!-- look in data.modifiers for &apos;type == natural-weapon&apos; --&gt;
-
-&lt;!-- for each modifier found, search for data.actions.race for --&gt;
-&lt;!-- the corresponding component ID --&gt;
-
-[h: data = json.get (toon, &quot;data&quot;)]
-[h: skinnyData = dndb_getSkinnyObject (data, json.append (&quot;&quot;, &quot;actions&quot;, &quot;modifiers&quot;,
-							&quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;))]
-[h: skinnyToon = json.set (toon, &quot;data&quot;, skinnyData)]
-
-[h: searchObj = json.set (&quot;&quot;, &quot;object&quot;, skinnyToon,
-							&quot;type&quot;, &quot;natural-weapon&quot;)]
-
-[h: naturalWeaponMods = dndb_searchGrantedModifiers (searchObj)]
-[h: naturalWeapons = &quot;[]&quot;]
-[h, foreach (naturalWeaponMod, naturalWeaponMods), code: {
-	[h: componentId = json.get (naturalWeaponMod, &quot;componentId&quot;)]
-	[h: actionSearchObj = json.set (&quot;&quot;, 
-							&quot;object&quot;, json.path.read (skinnyToon, &quot;data.actions.race&quot;),
-							&quot;componentId&quot;, componentId)]
-	[h: actions = dndb_searchJsonObject (actionSearchObj)]
-	&lt;!-- Should only be one. Or I only care about one --&gt;
-	[h: action = json.get (actions, 0)]
-	[h, switch (json.get (action, &quot;actionType&quot;)):
-		case &quot;1&quot;: attackType = &quot;Melee&quot;;
-		case &quot;2&quot;: attackType = &quot;Ranged&quot;;
-		default: attackType = &quot;Natural&quot;
-	]
-	[h, switch (json.get (action, &quot;attackTypeRange&quot;)):
-		case &quot;1&quot;: range = &quot;5&quot;;
-		default: range = &quot;Dunno&quot;
-	]
-	[h: name = json.get (action, &quot;name&quot;)]
-	[h: properties = json.append (&quot;&quot;, json.set (&quot;&quot;, &quot;description&quot;, &quot;Natural Attack&quot;, &quot;name&quot;, name))]
-	[h: naturalWeapon = json.set (&quot;&quot;, &quot;name&quot;, name,
-							&quot;attackType&quot;, attackType,
-							&quot;dmgDie&quot;, json.path.read (action, &quot;dice.diceValue&quot;),
-							&quot;dmgDice&quot;, json.path.read (action, &quot;dice.diceCount&quot;),
-							&quot;dmgType&quot;, json.get (naturalWeaponMod, &quot;friendlySubtypeName&quot;),
-							&quot;range&quot;, range,
-							&quot;type&quot;, json.get (naturalWeaponMod, &quot;friendlyTypeName&quot;),
-							&quot;proficient&quot;, 1,
-							&quot;isMonk&quot;, &quot;true&quot;,
-							&quot;properties&quot;, properties,
-							&quot;equipped&quot;, &quot;true&quot;)]
-	[h: naturalWeapons = json.append (naturalWeapons, naturalWeapon)]
-}]
-
-[h: macro.return = naturalWeapons]</command>
-        <label>dndb_getNaturalWeapon</label>
-        <group>Character</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>true</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip></toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
-    </entry>
-    <entry>
       <int>3</int>
       <net.rptools.maptool.model.MacroButtonProperties>
         <macroUUID>7ac2c5e5-6205-4853-a5cf-55ca23daa7c6</macroUUID>
@@ -587,7 +442,7 @@
         <colorKey>default</colorKey>
         <hotKey>None</hotKey>
         <command>
-[h: setProperty (&quot;libversion&quot;, &quot;0.1&quot;)]
+[h: setProperty (&quot;libversion&quot;, &quot;0.15&quot;)]
 
 &lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
 [h: macros = getMacros()]
@@ -1349,8 +1204,12 @@ TODO: this could be refactored to test against any item instead of just weapons.
 [h, if (equippedArmorNum &gt; 1): log.warn (&quot;Too many armors equipped, selecting first found armor&quot;)]
 [h, if (equippedArmorNum &gt; 0): equippedArmor = json.get(equippedArmors, 0); 
 	equippedArmor = unarmored]
-&lt;!-- adorn the armor with bonuses --&gt;
+&lt;!-- adorn the armor with basic details --&gt;
 [h: equippedArmor = dndb_setArmorBonus (equippedArmor)]
+[h: equippedArmorName = json.path.read (equippedArmor, &quot;definition.name&quot;)]
+
+&lt;!-- adorn the armor with bonuses --&gt;
+&lt;!-- New approach, get modifiers all at once --&gt;
 [h: log.debug (&quot;Selecting equipped armor: &quot; + equippedArmor)]
 
 &lt;!-- determine equipped shield --&gt;
@@ -1361,7 +1220,6 @@ TODO: this could be refactored to test against any item instead of just weapons.
 [h, if (equippedShieldNum &gt; 1): log.warn (&quot;Too many shields equipped, selecting first found shield&quot;)]
 [h, if (equippedShieldNum &gt; 0): equippedShield = json.get(equippedShields, 0); 
 	equippedShield = noShield]
-&lt;!-- adorn the shield with bonuses --&gt;
 [h: equippedShield = dndb_setArmorBonus (equippedShield)]
 [h: log.debug (&quot;Selecting equipped shield: &quot; + equippedShield)]
 
@@ -1381,12 +1239,56 @@ TODO: this could be refactored to test against any item instead of just weapons.
 	case &quot;2&quot; : dexBonus = math.min (dexBonus, 2);
 	case &quot;3&quot; : dexBonus = 0
 ]
+[h: dexBonus = round (dexBonus)]
 [h: log.debug (&quot;dexBonus (calculated): &quot; + dexBonus)]
 
-&lt;!-- Look for other modifiers from class abilities --&gt;
-&lt;!-- Lets defer this to another script for brevity --&gt;
-[h: classACBonus = dndb_getACBonusFromClasses (toon)]
-[h: log.debug (&quot;classACBonus: &quot; + json.indent (classACBonus))]
+&lt;!-- Look for other modifiers --&gt;
+[h: bonus = 0]
+[h: searchObj = json.set (&quot;&quot;, &quot;object&quot;, toon, 
+						&quot;_searchType&quot;, &quot;=~&quot;,
+						&quot;subType&quot;, &quot;/.*armor-class/&quot;)]
+[h: modifiers = dndb_searchGrantedModifiers (searchObj)]
+
+[h: totalBonus = 0]
+[h, foreach (modifier, modifiers), code: {
+	[h: bonus = dndb_getModValue (toon, modifier)]
+	&lt;!-- test some specific conditions --&gt;
+	[h: id = json.get (modifier, &quot;id&quot;)]
+	[h: unarmoredRequired = 0]
+	[h, switch (id):
+		case &quot;2206&quot;: unarmoredRequired = 1;
+		default: totalBonus = totalBonus + bonus
+	]
+	[h, if (unarmoredRequired &gt; 0 &amp;&amp; equippedArmorName == &quot;Unarmored&quot;): totalBonus = totalBonus + bonus]
+}]
+
+&lt;!-- And the customizations, by TypeID --&gt;
+
+&lt;!-- typeId 4 - Override base + DEX --&gt;
+&lt;!-- do type 4 before type 1 --&gt;
+[h: overrideValue = -1]
+[h: customSearchObject = json.set (&quot;&quot;, &quot;object&quot;, json.path.read (toon, &quot;data.characterValues&quot;),
+										&quot;typeId&quot;, &quot;4&quot;,
+										&quot;property&quot;, &quot;value&quot;)]
+[h: overridePlusDexValues = dndb_searchJsonObject (customSearchObject)]
+[h, if (json.length (overridePlusDexValues) &gt; 0): overrideValue = json.get (overridePlusDexValues, 0)]
+
+&lt;!-- Not recognizing a difference between types 1 and 4. So for now, they act the same --&gt;
+&lt;!-- typeId 1 - Override --&gt;
+[h: customSearchObject = json.set (customSearchObject, &quot;typeId&quot;, &quot;1&quot;)]
+[h: overrideValues = dndb_searchJsonObject (customSearchObject)]
+[h, if (json.length (overrideValues) &gt; 0): overrideValue = json.get (overrideValues, 0)]
+
+&lt;!-- typeId 2 - Magic bonus --&gt;
+[h: customSearchObject = json.set (customSearchObject, &quot;typeId&quot;, &quot;2&quot;)]
+[h: magicBonusValues = dndb_searchJsonObject (customSearchObject)]
+[h, if (json.length (magicBonusValues) &gt; 0): totalBonus = totalBonus + json.get (magicBonusValues, 0)]
+
+&lt;!-- typeId 3 - Additional Misc bonus --&gt;
+[h: customSearchObject = json.set (customSearchObject, &quot;typeId&quot;, &quot;3&quot;)]
+[h: miscBonusValues = dndb_searchJsonObject (customSearchObject)]
+[h, if (json.length (miscBonusValues) &gt; 0): totalBonus = totalBonus + json.get (miscBonusValues, 0)]
+
 
 &lt;!-- And build it --&gt;
 &lt;!-- Lets recap the players --&gt;
@@ -1395,24 +1297,18 @@ TODO: this could be refactored to test against any item instead of just weapons.
 &lt;!-- armor: just the equipped armor --&gt;
 &lt;!-- shield: just the equipped shield --&gt;
 &lt;!-- feature: whatever the feature is providing --&gt;
-[h: armorBonus = json.get (equippedArmor, &quot;totalAC&quot;)]
+[h: armorBonus = json.get (equippedArmor, &quot;baseArmorClass&quot;)]
 [h: log.debug (&quot;armorBonus: &quot; + armorBonus)]
-[h: shieldBonus = json.get (equippedShield, &quot;totalAC&quot;)]
+[h: shieldBonus = json.get (equippedShield, &quot;baseArmorClass&quot;)]
 [h: log.debug (&quot;shieldBonus: &quot; + shieldBonus)]
 &lt;!-- calculate what we have so far --&gt;
-[h: totalACBonus = armorBonus + shieldBonus + dexBonus]
+[h: totalACBonus = armorBonus + shieldBonus + dexBonus + totalBonus]
+[h, if (overrideValue &gt; -1): totalACBonus = overrideValue]
 &lt;!-- build the base object --&gt;
 [h: acObj = json.set (&quot;&quot;, &quot;Dexterity&quot;, dexBonus,
 		&quot;Armor&quot;, armorBonus,
-		&quot;Shield&quot;, shieldBonus)]
-&lt;!-- and the class features --&gt;
-[h: totalClassACBonus = json.get (classACBonus, &quot;totalClassACBonus&quot;)]
-[h: totalACBonus = totalACBonus + totalClassACBonus]
-[h, foreach (classFeature, json.get (classACBonus, &quot;classFeatures&quot;)), code: {
-	[h: classBonus = json.get (classFeature, &quot;dndb_bonus&quot;)]
-	[h: featureName = json.path.read (classFeature, &quot;definition.name&quot;)]
-	[h: acObj = json.set (acObj, featureName, classBonus)]
-}]
+		&quot;Shield&quot;, shieldBonus,
+		&quot;Bonus&quot;, totalBonus)]
 &lt;!-- hope this added up correctly --&gt;
 [h: acObj = json.set (acObj, &quot;total&quot;, totalACBonus)]
 [h: macro.return = acObj]</command>
@@ -1465,10 +1361,10 @@ returns acObj
 [h: log.debug (&quot;baseAC: &quot; + baseAc)]
 
 [h: bonuses = json.path.read (armor, &quot;definition.grantedModifiers.[?(@.subType == &apos;armor-class&apos;)][&apos;value&apos;]&quot;, &quot;SUPPRESS_EXCEPTIONS,ALWAYS_RETURN_LIST&quot;)]
-[h: log.debug (&quot;bonuses: &quot; + bonuses)]
 [h: totalBonus = 0]
 [h, foreach (bonus, bonuses): totalBonus = totalBonus + bonus]
-[h: armor = json.set (armor, &quot;bonusAC&quot;, totalBonus, &quot;totalAC&quot;, baseAC + totalBonus)]
+[h: log.debug (&quot;bonuses: &quot; + bonuses)]
+[h: armor = json.set (armor, &quot;bonus&quot;, totalBonus, &quot;baseArmorClass&quot;, baseAC)]
 
 [h: macro.return = armor]</command>
         <label>dndb_setArmorBonus</label>
@@ -1517,8 +1413,9 @@ Ex. for +3 Shield
 
 [h: totalClassACBonus = 0]
 [h: classFeatures = &quot;[]&quot;]
-&lt;!-- Look for known features --&gt;
+&lt;!-- Look for armor based features --&gt;
 
+&lt;!-- Try and look for sub-type ends-with armor-class and use known ids for applying restrictions --&gt;
 &lt;!-- Barbarian --&gt;
 [h: barbarian = json.path.read (toon, &quot;data.classes[*].[?(@.definition.name == &apos;Barbarian&apos;)]&quot;)]
 [h, if (json.length (barbarian) == 0): barbarian = &quot;{}&quot;]
@@ -1972,7 +1869,8 @@ returns:
 	[h, switch (value):
 		case &quot;expertise&quot;: tempAbilityValue = 3;
 		case &quot;proficiency&quot;: tempAbilityValue = 2;
-		case &quot;half-proficiency&quot;: tempAbilityValue = 1]
+		case &quot;half-proficiency&quot;: tempAbilityValue = 1;
+		default: tempAbilityValue = 0]
 	[h: abilityValue = math.max (abilityValue, tempAbilityValue)]
 }]
 
@@ -2275,10 +2173,13 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
 [h: filterObj = arg(0)]
 [h: object = json.get (filterObj, &quot;object&quot;)]
 [h: property = json.get (filterObj, &quot;property&quot;)]
+[h: searchType = json.get (filterObj, &quot;_searchType&quot;)]
+[h, if (searchType == &quot;&quot;): searchType = &quot;==&quot;]
 [h: even = 1]
 
 [h: filterObj = json.remove (filterObj, &quot;object&quot;)]
 [h: filterObj = json.remove (filterObj, &quot;property&quot;)]
+[h: filterObj = json.remove (filterObj, &quot;_searchType&quot;)]
 &lt;!-- now build the filter --&gt;
 
 [h: rawValues = json.append (&quot;&quot;, &quot;true&quot;, &quot;false&quot;)]
@@ -2288,16 +2189,19 @@ Callers not dndb_getSkill are unlikely to need this method.</toolTip>
 	&lt;!-- to avoid nesting code, build the filter first, then check if we want it --&gt;
 	[h, if (filter == &quot;&quot;): filter = &quot;.[?(&quot;; filter = filter + &quot; &amp;&amp; &quot;]
 	[h: rawValue = json.get (filterObj, field)]
+	[h: useRawValue = 0]
+	[h, if (json.contains (rawValues, rawValue) &gt; 0 || isNumber (rawValue) || searchType == &quot;=~&quot;): useRawValue = 1]
 	&lt;!-- This is fucking stupid. Ask me why, sometime --&gt;
-	[h, if (json.contains (rawValues, rawValue) &gt; 0 || isNumber (rawValue) &gt; 0): 
-		filterToken = &quot;@.&quot; + field + &quot; == &quot; + rawValue;
-		filterToken = &quot;@.&quot; + field + &quot; == &quot; + &quot;&apos;&quot; + rawValue + &quot;&apos;&quot;]
+	[h, if (useRawValue &gt; 0): 
+		filterToken = &quot;@.&quot; + field + &quot; &quot; + searchType + &quot; &quot; + rawValue;
+		filterToken = &quot;@.&quot; + field + &quot; &quot; + searchType + &quot; &quot; + &quot;&apos;&quot; + rawValue + &quot;&apos;&quot;]
 
 	[h: filter = filter + filterToken]
 }]
 [h: filter = filter + &quot;)]&quot;]
 &lt;!-- close the filter --&gt;
 [h, if (property != &quot;&quot;): filter = filter + &quot;[&apos;&quot; + property + &quot;&apos;]&quot;]
+[h: log.debug (&quot;dndb_searchJsonObject: filter = &quot; + filter)]
 [h: ret = json.path.read (object, filter)]
 [h: macro.return = ret]
 </command>
@@ -2830,14 +2734,19 @@ All other key-value pairs are used as search terms.</toolTip>
 						&quot;url&quot;, replace (json.path.read (toon, &quot;data.readonlyUrl&quot;),&quot;null&quot;, &quot;&quot;),
 						&quot;abilities&quot;, abilities)]
 
-&lt;!-- init --&gt;
-[h: log.info (&quot;dndb_getBasic: Initiative&quot;)]
-[h: init = json.get (abilities, &quot;dexBonus&quot;)]
-[h: basicToon = json.set (basicToon, &quot;init&quot;, init)]
 
 &lt;!-- alightment map --&gt;
 [h: log.info (&quot;dndb_getBasic: Alignment&quot;)]
-[h: alignmentMap = json.set (&quot;&quot;, &quot;3&quot;, &quot;CE&quot;)]
+[h: alignmentMap = json.set (&quot;&quot;, &quot;1&quot;, &quot;LG&quot;,
+							     &quot;2&quot;, &quot;NG&quot;,
+							     &quot;3&quot;, &quot;CG&quot;,
+							     &quot;4&quot;, &quot;LN&quot;,
+							     &quot;5&quot;, &quot;N&quot;,
+							     &quot;6&quot;, &quot;CN&quot;,
+							     &quot;7&quot;, &quot;LE&quot;,
+							     &quot;8&quot;, &quot;NE&quot;,
+							     &quot;9&quot;, &quot;CE&quot;,
+							     &quot;10&quot;, &quot;Unaligned&quot;)]
 [h: alignmentId =  json.path.read (toon, &quot;data.alignmentId&quot;)]
 [h: basicToon = json.set (basicToon, &quot;alignment&quot;, json.get (alignmentMap, alignmentId))]
 
@@ -2857,6 +2766,11 @@ All other key-value pairs are used as search terms.</toolTip>
 }]
 [h: log.debug (&quot;classArry: &quot;+ classArry)]
 [h: basicToon = json.set (basicToon, &quot;classes&quot;, classArry)]
+
+&lt;!-- Senses --&gt;
+[h: log.info (&quot;dndb_getBasic: Senses&quot;)]
+[h: senses = dndb_getSenses (toon)]
+[h: basicToon = json.set (basicToon, &quot;senses&quot;, senses)]
 
 &lt;!-- HP --&gt;
 [h: log.info (&quot;dndb_getBasic: Hitpoints&quot;)]
@@ -2904,11 +2818,11 @@ arg (0) = toon</toolTip>
         <command>[h: toon = arg (0)]
 
 [h: speedsMap = json.append (&quot;&quot;,
-			json.set (&quot;&quot;, &quot;name&quot;, &quot;Burrow&quot;, &quot;verb&quot;, &quot;burrowing&quot;),
-			json.set (&quot;&quot;, &quot;name&quot;, &quot;Climb&quot;, &quot;verb&quot;, &quot;climbing&quot;),
-			json.set (&quot;&quot;, &quot;name&quot;, &quot;Swim&quot;, &quot;verb&quot;, &quot;swimming&quot;),
-			json.set (&quot;&quot;, &quot;name&quot;, &quot;Walk&quot;, &quot;verb&quot;, &quot;walking&quot;),
-			json.set (&quot;&quot;, &quot;name&quot;, &quot;Fly&quot;, &quot;verb&quot;, &quot;flying&quot;)
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Burrow&quot;, &quot;verb&quot;, &quot;burrowing&quot;, &quot;id&quot;, &quot;2&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Climb&quot;, &quot;verb&quot;, &quot;climbing&quot;, &quot;id&quot;, &quot;3&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Swim&quot;, &quot;verb&quot;, &quot;swimming&quot;, &quot;id&quot;, &quot;5&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Walk&quot;, &quot;verb&quot;, &quot;walking&quot;, &quot;id&quot;, &quot;1&quot;),
+			json.set (&quot;&quot;, &quot;name&quot;, &quot;Fly&quot;, &quot;verb&quot;, &quot;flying&quot;, &quot;id&quot;, &quot;4&quot;)
 			)
 ]
 [h, if (json.length (macro.args) &gt; 1): 
@@ -2923,7 +2837,7 @@ arg (0) = toon</toolTip>
 
 &lt;!-- toon goes on a diet --&gt;
 [h: data = json.get (toon, &quot;data&quot;)]
-[h: dataRetains = json.append (&quot;&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;, &quot;customSpeeds&quot;)]
 [h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
 [h: fatToon = toon]
 [h: toon = json.set (toon, &quot;data&quot;, skinnyData)]
@@ -2949,7 +2863,8 @@ arg (0) = toon</toolTip>
 	&lt;!-- I may have to revisit this after some testing, but so far Ive only found --&gt;
 	&lt;!-- granted bonuses as setting speeds to innate-speed-swimming, for example. --&gt;
 	&lt;!-- So look for those for each speed and well add the allBonus values after --&gt;
-	[h: verbSpeed = json.get (dndb_searchJsonObject (json.set (&quot;&quot;, &quot;object&quot;, speedsMap, &quot;property&quot;, &quot;verb&quot;, &quot;name&quot;, speedName)), 0)]
+	[h: templateSpeed = json.get (dndb_searchJsonObject (json.set (&quot;&quot;, &quot;object&quot;, speedsMap, &quot;name&quot;, speedName)), 0)]
+	[h: verbSpeed = json.get (templateSpeed, &quot;verb&quot;)]
 	[h: innateSpeed = &quot;innate-speed-&quot; + verbSpeed]
 
 	[h: searchArg = json.set (&quot;&quot;, &quot;object&quot;, speedMods,
@@ -2971,8 +2886,16 @@ arg (0) = toon</toolTip>
 	[h: actualSpeed = math.max (baseSpeed, setSpeed)]
 	&lt;!-- if actualSpeed is 0, dont apply the allBonus to it --&gt;
 	[h, if (actualSpeed &gt; 0): actualSpeed = actualSpeed + allBonus]
-	[h: speed = json.set (&quot;&quot;, &quot;name&quot;, speedName,
-						&quot;speed&quot;, actualSpeed)]
+
+	&lt;!-- Finally, look in data.customSpeeds. Treat these values as overrides --&gt;
+	[h: id = json.get (templateSpeed, &quot;id&quot;)]
+	[h: customSearchObj = json.set (&quot;&quot;, &quot;object&quot;, json.path.read (toon, &quot;data.customSpeeds&quot;),
+									&quot;movementId&quot;, id,
+									&quot;property&quot;, &quot;distance&quot;)]
+	[h: customSpeed = dndb_searchJsonObject (customSearchObj)]
+	&lt;!-- There will be exactly zero or one --&gt;
+	[h, if (encode (customSpeed) != &quot;&quot; &amp;&amp; json.length (customSpeed) &gt; 0): actualSpeed = json.get (customSpeed, 0)]
+	[h: speed = json.set (templateSpeed, &quot;speed&quot;, actualSpeed)]
 	&lt;!-- except for walk, dont populate speed 0 --&gt;
 	[h, if (lowerName == &quot;walk&quot; || actualSpeed &gt; 0): speeds = json.append (speeds, speed)]
 }]
@@ -3710,10 +3633,7 @@ returns:
         [h: newAttackJson = if (inputDeleteAttack == 1 &amp;&amp; selectedAttack == json.get(attack, NAME), newAttackJson, json.append(newAttackJson, attack))]
     }]
 }]
-[h: setProperty(ATTACK_JSON, newAttackJson)]
-[r, macro( &quot;Print AttackJSON@global&quot;): &quot;&quot;]
-
-</command>
+[h: setProperty(ATTACK_JSON, newAttackJson)]</command>
         <label>Attack Config</label>
         <group>Token</group>
         <sortby>2</sortby>
@@ -4178,6 +4098,419 @@ arg(0) = toon</toolTip>
         <maxWidth></maxWidth>
         <allowPlayerEdits>true</allowPlayerEdits>
         <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>64</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>ebddbd62-58f6-422f-a140-58c8d24bca3f</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>64</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+[h: setState (&quot;Bloodied&quot;, 0)]
+[h: setState (&quot;Dying&quot;, 0)]
+
+[h: isHalved = getState (&quot;Exhaustion 4&quot;)]
+[h: isDead = getState (&quot;Exhaustion 6&quot;)]
+[h: hitPoints = json.get (basicToon, &quot;hitPoints&quot;)]
+[h: log.debug (hitPoints)]
+[h: current = json.get (hitPoints, &quot;currentHp&quot;)]
+[h: maximum = json.get (hitPoints, &quot;maxHp&quot;)]
+&lt;!-- dont apply effects of half-max from exhaustion. Not sure I want to do that yet --&gt;
+[h: halfMax = round (math.floor( maximum / 2))]
+[h, if (maximum &lt; current): current = maximum]
+[h: setProperty (&quot;HP&quot;, current)]
+[h: setProperty (&quot;TempHP&quot;, json.get (hitPoints, &quot;tempHp&quot;))]
+[h: setProperty (&quot;MaxHP&quot;, maximum)]
+[h, if (current &lt; halfMax): setState (&quot;Bloodied&quot;, 1); setState (&quot;Bloodied&quot;, 0)]
+[h, if (current == 0 &amp;&amp; isDead == 0), code: {
+	[h: setState (&quot;Dying&quot;, 1)]
+}]
+[h, if (current &gt; 0 &amp;&amp; isDead == 0), code: {
+	[h: setState (&quot;Dead&quot;, 0)]
+}]
+[h, if (isDead &gt; 0), code: {
+	[h: setState (&quot;Dying&quot;, 0)]
+	[h: setState (&quot;Dead&quot;, 1)]
+}]
+</command>
+        <label>dndb_applyHealth</label>
+        <group>Basic Toon</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Applies the current health to the token</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>65</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>8348d0d8-2264-467a-850f-cc56b00cc77a</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>65</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg(0)]
+
+&lt;!-- look in data.modifiers for &apos;type == natural-weapon&apos; --&gt;
+
+&lt;!-- for each modifier found, search for data.actions.race for --&gt;
+&lt;!-- the corresponding component ID --&gt;
+
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: skinnyData = dndb_getSkinnyObject (data, json.append (&quot;&quot;, &quot;actions&quot;, &quot;modifiers&quot;,
+							&quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;))]
+[h: skinnyToon = json.set (toon, &quot;data&quot;, skinnyData)]
+
+[h: searchObj = json.set (&quot;&quot;, &quot;object&quot;, skinnyToon,
+							&quot;type&quot;, &quot;natural-weapon&quot;)]
+
+[h: naturalWeaponMods = dndb_searchGrantedModifiers (searchObj)]
+[h: naturalWeapons = &quot;[]&quot;]
+[h, foreach (naturalWeaponMod, naturalWeaponMods), code: {
+	[h: componentId = json.get (naturalWeaponMod, &quot;componentId&quot;)]
+	[h: actionSearchObj = json.set (&quot;&quot;, 
+							&quot;object&quot;, json.path.read (skinnyToon, &quot;data.actions.race&quot;),
+							&quot;componentId&quot;, componentId)]
+	[h: actions = dndb_searchJsonObject (actionSearchObj)]
+	&lt;!-- Should only be one. Or I only care about one --&gt;
+	[h: action = json.get (actions, 0)]
+	[h, switch (json.get (action, &quot;actionType&quot;)):
+		case &quot;1&quot;: attackType = &quot;Melee&quot;;
+		case &quot;2&quot;: attackType = &quot;Ranged&quot;;
+		default: attackType = &quot;Natural&quot;
+	]
+	[h, switch (json.get (action, &quot;attackTypeRange&quot;)):
+		case &quot;1&quot;: range = &quot;5&quot;;
+		default: range = &quot;Dunno&quot;
+	]
+	[h: name = json.get (action, &quot;name&quot;)]
+	[h: properties = json.append (&quot;&quot;, json.set (&quot;&quot;, &quot;description&quot;, &quot;Natural Attack&quot;, &quot;name&quot;, name))]
+	[h: naturalWeapon = json.set (&quot;&quot;, &quot;name&quot;, name,
+							&quot;attackType&quot;, attackType,
+							&quot;dmgDie&quot;, json.path.read (action, &quot;dice.diceValue&quot;),
+							&quot;dmgDice&quot;, json.path.read (action, &quot;dice.diceCount&quot;),
+							&quot;dmgType&quot;, json.get (naturalWeaponMod, &quot;friendlySubtypeName&quot;),
+							&quot;range&quot;, range,
+							&quot;type&quot;, json.get (naturalWeaponMod, &quot;friendlyTypeName&quot;),
+							&quot;proficient&quot;, 1,
+							&quot;isMonk&quot;, &quot;true&quot;,
+							&quot;properties&quot;, properties,
+							&quot;equipped&quot;, &quot;true&quot;)]
+	[h: naturalWeapons = json.append (naturalWeapons, naturalWeapon)]
+}]
+
+[h: macro.return = naturalWeapons]</command>
+        <label>dndb_getNaturalWeapon</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip></toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>66</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>7679fcd8-e01f-495d-abfe-96e1f02a83f2</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>66</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg (0)]
+
+&lt;!-- slim down --&gt;
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;race&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;, &quot;characterValues&quot;)]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+&lt;!-- Skinnify the toon --&gt;
+[h: skinnyToon = json.set (toon, &quot;data&quot;, skinnyData)]
+
+[h: abilities = dndb_getAbilities (toon)]
+[h: init = json.get (abilities, &quot;dexBonus&quot;)]
+[h: modSearchArgs = json.set (&quot;&quot;, &quot;object&quot;, skinnyToon,
+							&quot;subType&quot;, &quot;initiative&quot;)]
+
+[h: initMods = dndb_searchGrantedModifiers (modSearchArgs)]
+
+[h, foreach (initMod, initMods), code: {
+	[h: type = json.get (initMod, &quot;type&quot;)]
+	[h, switch (type):
+		case &quot;bonus&quot;: init = init + dndb_getModValue (skinnyToon, initMod);
+		default: &quot;Don&apos;t care right now&quot;]
+}]
+
+[h: macro.return = init]</command>
+        <label>dndb_getInitiative</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Builds the initiatve for a given toon
+
+toon = arg(0)</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>67</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>88a8a7a5-f3d5-4062-8e10-1b1fa8e8fc67</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>67</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg (0)]
+[h: modifier = arg (1)]
+
+&lt;!-- For now, we assume its of type &apos;bonus&apos;. We may need to revisit this if we find others --&gt;
+[h: bonus = 0]
+&lt;!-- Check fixedValue. If its numeric, use that. --&gt;
+[h: fixedValue = json.get (modifier, &quot;fixedValue&quot;)]
+[h, if (fixedValue != &quot;&quot; &amp;&amp; isNumber (fixedValue)): bonus = fixedValue]
+
+&lt;!-- If nothing found in fixedValue, check value --&gt;
+[h: value = json.get (modifier, &quot;value&quot;)]
+[h, if (value != &quot;&quot; &amp;&amp; isNumber (value)): bonus = value]
+
+&lt;!-- Still nothing? check statId and apply the bonus for the relevant stat bonus --&gt;
+[h: statId = json.get (modifier, &quot;statId&quot;)]
+[h, if (statId != &quot;&quot; &amp;&amp; isNumber (statId)), code: {
+	[h: statBonus = 0]
+	[h: abilities = dndb_getAbilities (toon)]
+	[h, switch (statId):
+		case 1: statBonus = json.get (abilities, &quot;strBonus&quot;);
+		case 2: statBonus = json.get (abilities, &quot;dexBonus&quot;);
+		case 3: statBonus = json.get (abilities, &quot;conBonus&quot;);
+		case 4: statBonus = json.get (abilities, &quot;intBonus&quot;);
+		case 5: statBonus = json.get (abilities, &quot;wisBonus&quot;);
+		case 6: statBonus = json.get (abilities, &quot;chaBonus&quot;)]
+	[h, if (statBonus &gt; 0): bonus = statBonus]
+}]
+
+&lt;!-- return default bonus of 0 --&gt;
+[h: macro.return = bonus]</command>
+        <label>dndb_getModValue</label>
+        <group>Utility</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Given a modifier, determine the numeric value it provides. Returns 0 if value is not numeric (like advantage and disadvantage)
+
+toon = arg (0)
+modifier = arg (1)</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>68</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>cc41bfaf-e1d4-4ac5-9576-67513a1fe8b2</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>68</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: toon = arg (0)]
+
+[h: VISION_NAMES = json.append (&quot;&quot;, &quot;Darkvision&quot;, &quot;Blindsight&quot;, &quot;Truesight&quot;, &quot;Tremorsense&quot;)]
+
+[h: data = json.get (toon, &quot;data&quot;)]
+[h: dataRetains = json.append (&quot;&quot;, &quot;modifiers&quot;, &quot;inventory&quot;, &quot;classes&quot;, &quot;stats&quot;, &quot;bonusStats&quot;, &quot;overrideStats&quot;)]
+[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
+&lt;!-- Skinnify the toon --&gt;
+[h: skinnytoon = json.set (toon, &quot;data&quot;, skinnyData)]
+
+[h: searchObj = json.set (&quot;&quot;, &quot;object&quot;, skinnytoon,
+							&quot;type&quot;, &quot;set-base&quot;)]
+[h: baseMods = dndb_searchGrantedModifiers (searchObj)]
+
+[h: searchObj = json.set (searchObj, &quot;type&quot;, &quot;sense&quot;)]
+[h: bonusMods = dndb_searchGrantedModifiers (searchObj)]
+
+[h: visions = &quot;[]&quot;]
+&lt;!-- set the bases --&gt;
+[h, foreach (visionName, VISION_NAMES), code: {
+	[h: log.debug (&quot;dndb_getSenses: visionName = &quot; + visionName)]
+	[h: lVisionName = lower (visionName)]
+	&lt;!-- search in the base Mod for the biggest base value --&gt;
+	[h: modSearchObj = json.set (&quot;&quot;, &quot;object&quot;, baseMods,
+								&quot;subType&quot;, lVisionName,
+								&quot;property&quot;, &quot;value&quot;)]
+	[h: distances = dndb_searchJsonObject (modSearchObj)]
+	[h: log.debug (&quot;base distances: &quot; + distances)]
+	[h, if (json.length (distances) == 0), code: {
+		[h: distance = 0]
+	}; {
+		[h: distances = json.sort (distances, &quot;desc&quot;)]
+		[h: distance = json.get (distances, 0)]
+	}]
+	[h: baseDistance = distance]
+
+	&lt;!-- add the bonsues --&gt;
+	[h: modSearchObj = json.set (modSearchObj, &quot;object&quot;, bonusMods)]
+	[h: distances = dndb_searchJsonObject (modSearchObj)]
+	[h: log.debug (&quot;bonus distances: &quot; + distances)]
+	[h, if (json.length (distances) == 0), code: {
+		[h: distance = 0]
+	}; {
+		[h: distances = json.sort (distances, &quot;desc&quot;)]
+		[h: distance = json.get (distances, 0)]
+	}]
+	[h: bonusDistance = distance]
+	
+	[h: vision = json.set (&quot;&quot;, &quot;name&quot;, visionName, &quot;distance&quot;, baseDistance + bonusDistance)]	
+	[h: visions = json.append (visions, vision)]
+}]
+
+[h: macro.return = visions]</command>
+        <label>dndb_getSenses</label>
+        <group>Character</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>false</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Fetches the sense for the toon
+
+arg (0) = toon
+
+returns
+[
+	{
+		&quot;name&quot;: &quot;Darkvision&quot;,
+		&quot;distance&quot;: 60
+	},
+	{
+		&quot;name&quot;: &quot;Blindsight&quot;,
+		&quot;distance&quot;: 15
+	}
+]
+
+</toolTip>
+        <displayHotKey>true</displayHotKey>
+        <commonMacro>false</commonMacro>
+        <compareGroup>true</compareGroup>
+        <compareSortPrefix>true</compareSortPrefix>
+        <compareCommand>true</compareCommand>
+        <compareIncludeLabel>true</compareIncludeLabel>
+        <compareAutoExecute>true</compareAutoExecute>
+        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+      </net.rptools.maptool.model.MacroButtonProperties>
+    </entry>
+    <entry>
+      <int>69</int>
+      <net.rptools.maptool.model.MacroButtonProperties>
+        <macroUUID>59096d0c-d5c6-4caa-af7d-4a64b9a6abd1</macroUUID>
+        <saveLocation>Token</saveLocation>
+        <index>69</index>
+        <colorKey>default</colorKey>
+        <hotKey>None</hotKey>
+        <command>[h: basicToon = getProperty (&quot;dndb_BasicToon&quot;)]
+[h, if (encode (basicToon) == &quot;&quot;), code: {
+	[h: error = &quot;You must initialize with DNDBeyond first&quot;]
+	[h: abort (input ( &quot; junk | | &quot; + error + &quot; | LABEL | TEXT=fals&quot;))]
+	[h: return (0, error)]
+}]
+
+[h: senses = json.get (basicToon, &quot;senses&quot;)]
+[h: senseStr = &quot;&quot;]
+[h, foreach (sense, senses), code: {
+	[h: senseName = json.get (sense, &quot;name&quot;)]
+	[h: distance = json.get (sense, &quot;distance&quot;)]
+	[h, if (distance &gt; 0): senseStr = senseStr + &quot;, &quot; + senseName +
+				&quot; &quot; + distance]
+	&lt;!-- Currently, the only Sight Type to apply is Darkvision --&gt;
+	[h, if (senseName == &quot;Darkvision&quot;): setSightType (&quot;Darkvision&quot;)]
+}]
+[h, if (senseStr == &quot;&quot;): senseStr = &quot;Normal&quot;; senseStr = substring (senseStr, 2)]
+[h: setProperty (&quot;Senses&quot;, senseStr)]</command>
+        <label>dndb_applyVision</label>
+        <group>Basic Toon</group>
+        <sortby></sortby>
+        <autoExecute>true</autoExecute>
+        <includeLabel>false</includeLabel>
+        <applyToTokens>true</applyToTokens>
+        <fontColorKey>black</fontColorKey>
+        <fontSize>1.00em</fontSize>
+        <minWidth></minWidth>
+        <maxWidth></maxWidth>
+        <allowPlayerEdits>false</allowPlayerEdits>
+        <toolTip>Applies the vision to the token based on the BasicToon senses
+</toolTip>
         <displayHotKey>true</displayHotKey>
         <commonMacro>false</commonMacro>
         <compareGroup>true</compareGroup>

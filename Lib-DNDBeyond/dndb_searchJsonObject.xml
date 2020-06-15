@@ -9,10 +9,13 @@
 [h: filterObj = arg(0)]
 [h: object = json.get (filterObj, "object")]
 [h: property = json.get (filterObj, "property")]
+[h: searchType = json.get (filterObj, "_searchType")]
+[h, if (searchType == ""): searchType = "=="]
 [h: even = 1]
 
 [h: filterObj = json.remove (filterObj, "object")]
 [h: filterObj = json.remove (filterObj, "property")]
+[h: filterObj = json.remove (filterObj, "_searchType")]
 &lt;!-- now build the filter --&gt;
 
 [h: rawValues = json.append ("", "true", "false")]
@@ -22,16 +25,19 @@
 	&lt;!-- to avoid nesting code, build the filter first, then check if we want it --&gt;
 	[h, if (filter == ""): filter = ".[?("; filter = filter + " &amp;&amp; "]
 	[h: rawValue = json.get (filterObj, field)]
+	[h: useRawValue = 0]
+	[h, if (json.contains (rawValues, rawValue) &gt; 0 || isNumber (rawValue) || searchType == "=~"): useRawValue = 1]
 	&lt;!-- This is fucking stupid. Ask me why, sometime --&gt;
-	[h, if (json.contains (rawValues, rawValue) &gt; 0 || isNumber (rawValue) &gt; 0): 
-		filterToken = "@." + field + " == " + rawValue;
-		filterToken = "@." + field + " == " + "'" + rawValue + "'"]
+	[h, if (useRawValue &gt; 0): 
+		filterToken = "@." + field + " " + searchType + " " + rawValue;
+		filterToken = "@." + field + " " + searchType + " " + "'" + rawValue + "'"]
 
 	[h: filter = filter + filterToken]
 }]
 [h: filter = filter + ")]"]
 &lt;!-- close the filter --&gt;
 [h, if (property != ""): filter = filter + "['" + property + "']"]
+[h: log.debug ("dndb_searchJsonObject: filter = " + filter)]
 [h: ret = json.path.read (object, filter)]
 [h: macro.return = ret]
 </command>

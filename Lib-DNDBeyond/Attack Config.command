@@ -83,5 +83,3 @@
     }]
 }]
 [h: setProperty(ATTACK_JSON, newAttackJson)]
-[r, macro( "Print AttackJSON@global"): ""]
-
