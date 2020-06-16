@@ -1,22 +1,22 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cd64873c-02c7-47ab-92b0-c947eb7c8edc</macroUUID>
+  <macroUUID>717677be-671c-400c-b80e-94c614bd716c</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>15</index>
-  <colorKey>default</colorKey>
+  <index>55</index>
+  <colorKey>red</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getAttackModifierForWeapon</label>
-  <group>Utility</group>
-  <sortby/>
+  <label>Make Attack</label>
+  <group>Token</group>
+  <sortby>1</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
-  <displayHotKey>true</displayHotKey>
+  <toolTip>Do the deed</toolTip>
+  <displayHotKey>false</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
   <compareSortPrefix>true</compareSortPrefix>

@@ -4,34 +4,6 @@
   <index>19</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: toon = arg(0)]
-[h: weapon = arg(1)]
-
-&lt;!-- only way we know how to do this is by looking for known features --&gt;
-[h: bonusCritDice = 0]
-
-&lt;!-- Savage Attacks --&gt;
-[h: savageAttackFeatureArry = json.path.read (toon, "data.race..[?(@.definition.name == 'Savage Attacks')]")]
-[h, if (json.length (savageAttackFeatureArry) &gt; 0 &amp;&amp; json.get(weapon, "attackType") == "Melee"): bonusCritDice = bonusCritDice + 1]
-
-&lt;!-- Brutal Critical --&gt;
-&lt;!-- Get the barbarian class --&gt;
-[h: barbarianClassLevelArry = json.path.read (toon, "data.classes..[?(@.definition.name == 'Barbarian')]['level']")]
-
-[h: barbarianClassLevel = 0]
-[h, if (json.length (barbarianClassLevelArry) &gt; 0): barbarianClassLevel = json.get (barbarianClassLevelArry, 0)]
-
-[h: brutalCrit = 0]
-[h: log.debug ("barbarianClassLevel [raw]: " + barbarianClassLevel)]
-[h, if (isNumber (barbarianClassLevel)): barbarianClassLevel = number (barbarianClassLevel); barbarianClassLevel = 0]
-[h: log.debug ("barbarianClassLevel [number]: " + barbarianClassLevel)]
-[h, if (barbarianClassLevel &gt;= 9): brutalCrit = 1]
-[h, if (barbarianClassLevel &gt;= 13): brutalCrit = 2]
-[h, if (barbarianClassLevel &gt;= 17): brutalCrit = 3]
-[h, if (json.get (weapon, "attackType") == "Melee"): bonusCritDice = bonusCritDice + brutalCrit]
-
-
-[h: macro.return = bonusCritDice]</command>
   <label>dndb_getCriticalBonusDice</label>
   <group>Utility</group>
   <sortby/>

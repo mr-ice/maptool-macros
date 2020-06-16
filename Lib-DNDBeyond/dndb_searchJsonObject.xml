@@ -4,37 +4,6 @@
   <index>36</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>&lt;!-- Instead of the usual arg array, try a json obj --&gt;
-
-[h: filterObj = arg(0)]
-[h: object = json.get (filterObj, "object")]
-[h: property = json.get (filterObj, "property")]
-[h: even = 1]
-
-[h: filterObj = json.remove (filterObj, "object")]
-[h: filterObj = json.remove (filterObj, "property")]
-&lt;!-- now build the filter --&gt;
-
-[h: rawValues = json.append ("", "true", "false")]
-
-[h: filter = ""]
-[h, foreach (field, json.fields (filterObj)), code: {
-	&lt;!-- to avoid nesting code, build the filter first, then check if we want it --&gt;
-	[h, if (filter == ""): filter = ".[?("; filter = filter + " &amp;&amp; "]
-	[h: rawValue = json.get (filterObj, field)]
-	&lt;!-- This is fucking stupid. Ask me why, sometime --&gt;
-	[h, if (json.contains (rawValues, rawValue) &gt; 0 || isNumber (rawValue) &gt; 0): 
-		filterToken = "@." + field + " == " + rawValue;
-		filterToken = "@." + field + " == " + "'" + rawValue + "'"]
-
-	[h: filter = filter + filterToken]
-}]
-[h: filter = filter + ")]"]
-&lt;!-- close the filter --&gt;
-[h, if (property != ""): filter = filter + "['" + property + "']"]
-[h: ret = json.path.read (object, filter)]
-[h: macro.return = ret]
-</command>
   <label>dndb_searchJsonObject</label>
   <group>Utility</group>
   <sortby/>

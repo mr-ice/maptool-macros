@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cd64873c-02c7-47ab-92b0-c947eb7c8edc</macroUUID>
+  <macroUUID>21d5ab8b-6b5d-4512-974c-6c7d6667eafa</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>15</index>
-  <colorKey>default</colorKey>
+  <index>58</index>
+  <colorKey>purple</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getAttackModifierForWeapon</label>
-  <group>Utility</group>
-  <sortby/>
+  <label>Spend Hit Dice</label>
+  <group>Token</group>
+  <sortby>30</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Note: This doesn't actually spend the character's hit dice. It only rolls for the player as if they spent those dice. The player will need to update DNDBeyond and mark the hit dice spent there. Until the next refresh, this macro will always show the same number of hit dice available to spend.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

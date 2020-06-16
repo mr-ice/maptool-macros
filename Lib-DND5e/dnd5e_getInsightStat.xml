@@ -4,10 +4,6 @@
   <index>5</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: bonus = getProperty ("Insight")]
-[h, if (bonus == ""): return (0, "")]
-[h,if (bonus &gt; -1): value = "+"; value = ""]
-Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
   <label>dnd5e_getInsightStat</label>
   <group>Token Properties</group>
   <sortby/>

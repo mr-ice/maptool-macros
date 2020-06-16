@@ -1,22 +1,24 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cd64873c-02c7-47ab-92b0-c947eb7c8edc</macroUUID>
+  <macroUUID>b2521784-a31d-4080-b94d-defa5fd14398</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>15</index>
-  <colorKey>default</colorKey>
+  <index>56</index>
+  <colorKey>green</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getAttackModifierForWeapon</label>
-  <group>Utility</group>
-  <sortby/>
+  <label>Attack Config</label>
+  <group>Token</group>
+  <sortby>2</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
-  <displayHotKey>true</displayHotKey>
+  <toolTip>Used to configure attacks. Should be executed at least once before Make Attack.
+While this can only configure one attack per execution, bulk configuration is
+made possible via Set AttackJSON.</toolTip>
+  <displayHotKey>false</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
   <compareSortPrefix>true</compareSortPrefix>
