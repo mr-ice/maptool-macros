@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+# vim: textwidth=69 tabstop=4 sofftabstop=4 shiftwidth=4
+"""parse a token into
+
+   <dir>/          -- based on the name of the token or token file
+         content.xml
+         properties.xml
+         assets/[...]        |
+         thumbnail           | These extracted as-is
+         thumbnail_large     |
+         macro1.command
+         macro1.xml
+         macro1.command
+         macro2.xml
+         [...]
+"""
+
+import os
+import sys
+import argparse
+from lxml import objectify
+from lxml.etree import tostring
+import zipfile
+from urllib.parse import quote
+from textwrap import wrap
+
+AP = argparse.ArgumentParser()
+
+AP.add_argument('file', help="Gimme a Token file (.rptok)")
+
+AP.add_argument('--verbose','-v', action='store_true', default=False)
+
+opts = AP.parse_args()
+
+if not os.path.isfile(opts.file):
+    print("\n".join(wrap("{} could not be found, careful that it is "
+          "in the current working directory when running with docker"
+          "".format(opts.file))), file=sys.stderr)
+    sys.exit()
+
+if not zipfile.is_zipfile(opts.file):
+    print("\n".join(wrap("This script works on a token file, which is"
+          "essentially a zipfile.  The first argument needs to be a"
+          ".rptok file. What I got was {}".format(opts.file))),
+          file=sys.stderr)
+    sys.exit()
+
+zf = zipfile.ZipFile(opts.file)
+xml = objectify.parse(zf.open('content.xml'))
+macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
+tokentag = 'net.rptools.maptool.model.Token'
+proptag = 'net.rptools.maptool.model.CampaignProperties'
+base,ext = os.path.splitext(opts.file)
+
+def mktokendir(path):
+    if not os.path.exists(path):
+        if opts.verbose:
+            print("I: creating directory",path)
+        os.mkdir(path, mode=0o755)
+
+
+# Extract everything to the directory, we'll overwrite content.xml
+# afterward
+
+mktokendir(base)
+zf.extractall(path=base)
+if opts.verbose:
+    print("Extracting to "+base)
+    zf.printdir()
+
+# go through content.xml, extracting the macros to .xml and .command to
+# files.  Use a modified label (quoted for filesystem safety), and
+# replace them in content.xml with a placeholder referencing the
+# filename.
+
+# given a macro, write it to disk
+def write_macro_files(macro, tofilebase):
+    command_file = tofilebase + '.command'
+    xml_file = tofilebase + '.xml'
+    with open(command_file, 'w') as f:
+        f.write(macro.command.text)
+        if opts.verbose:
+           print('wrote {} bytes to {}'.format(
+               len(macro.command.text),command_file))
+    # Now that the command is saved to file, we'll remove it
+    # from the macro.xml before saving it.  To restore we just read it
+    # off disk and add it back (order doesn't matter).
+    macro.remove(macro.command)
+    with open(xml_file, 'w') as f:
+        f.write(tostring(macro, pretty_print=True).decode())
+        if opts.verbose:
+            print('wrote {} bytes to {}'.format(len(tostring(macro)),xml_file))
+
+new_entry_template = '<entry><int>{}</int><macro name="{}"/></entry>'
+
+
+root = xml.getroot()
+for i, entry in enumerate(root.macroPropertiesMap.entry):
+    macro = entry[macrotag]
+    label = quote(macro.label.text)
+    macrobase = os.path.join(base, label)
+    write_macro_files(macro, macrobase)
+
+    # replace the macro tag with a placeholder that we can find later
+    new_entry = new_entry_template.format(entry.int, label)
+    new_entry = objectify.fromstring(new_entry)
+    root.macroPropertiesMap.entry[i] = new_entry
+
+
+# Now save the content.xml that we modified
+with open(base + '/content.xml', 'w') as f:
+    f.write(tostring(xml, pretty_print=True).decode())
+    if opts.verbose:
+        print('wrote {} bytes to modified {}'.format(len(tostring(xml, pretty_print=True)), base + '/content.xml'))
+
+
+sys.exit()
+def macroList(elem):
+    if elem.tag == 'list':
+        # usually a list of macros
+        return {x.label:x for x in elem.findall('./'+macrotag)}
+    elif elem.tag == macrotag:
+        # it's already a macro
+        return {elem.label:elem}
+    elif elem.tag == tokentag:
+        # a token has a macroPropertiesMap with macros:
+        mpm = elem.macroPropertiesMap
+        return {x.label:x for x in mpm.findall('./entry/'+macrotag)}
+    elif elem.tag == proptag:
+        return {}
+
+
+for label, elem in macroList(xml.getroot()).items():
+    label = str(label)
+    if '/' in label:
+        label = quote(label,safe='')
+
+    if xml.getroot().tag == tokentag and xml.getroot().name.text.startswith('Lib:'):
+        # Lib: tokens' macros stay with them
+        mktokendir(base)
+        xml_file = '{}/{}.xml'.format(base, label)
+        command_file = "{}/{}.command".format(base, label)
+    else:
+        xml_file = "macro/{}.xml".format(label)
+        command_file = "macro/{}.command".format(label)
+
+    with open(command_file, 'w') as f:
+        f.write(str(elem.command))
+        if opts.verbose:
+           print('wrote {} bytes to {}'.format(
+               len(elem.command.text),command_file))
+    with open(xml_file, 'w') as f:
+        f.write(tostring(elem, pretty_print=True).decode())
+        if opts.verbose:
+            print('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
+
