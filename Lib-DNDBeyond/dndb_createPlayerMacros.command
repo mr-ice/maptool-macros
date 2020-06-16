@@ -36,7 +36,12 @@
 					"fontColor", "white",
 					"sortBy", "30",
 					"command", "[macro('Spend Hit Dice@Lib:DnDBeyond'): '']"),
-					
+
+			json.set (basicCfg, "name", "Print Basic Toon",
+					"color", "silver",
+					"sortBy", "9999",
+					"command", "[macro('Print BasicToon@Lib:DnDBeyond'): '']"),
+
 			json.set (basicCfg, "name", "Skill Check",
 					"color", "blue",
 					"fontColor", "white",
@@ -48,5 +53,5 @@
 	[h: currentIndexes = getMacroIndexes(macroName)]
 	[h, if (currentIndexes == ""), code: {
 		[h: createMacro (macroName, json.get (macroCfg, "command"), macroCfg)]
-	}]
+	}; {}]
 }]
