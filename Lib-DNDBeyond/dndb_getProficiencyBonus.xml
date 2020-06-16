@@ -4,21 +4,6 @@
   <index>21</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>&lt;!-- Callers must pass in the character json themselves. No getter methods should shoulder the --&gt;
-&lt;!-- responsibility of calling dndb_getCharJSON --&gt;
-[h: character = arg(0)]
-
-[h: classArry = json.path.read (character, "data.classes")]
-&lt;!--Subtract by one for div operation --&gt;
-[h: totalClassLevel = -1]
-[h, foreach (classDef, classArry), code: {
-	[h: totalClassLevel = totalClassLevel + json.get (classDef, "level")]
-}]
-[h: profBase = round(math.floor(totalClassLevel / 4))]
-&lt;!-- add one, viola --&gt;
-[h: proficiency = profBase + 2]
-[r: proficiency]
-[h: macro.return = proficiency]</command>
   <label>dndb_getProficiencyBonus</label>
   <group>Utility</group>
   <sortby/>

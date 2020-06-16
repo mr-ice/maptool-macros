@@ -1,17 +1,17 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>12867d2e-bae1-41c3-ba35-51af5a13466b</macroUUID>
+  <macroUUID>e8bbdea9-22e8-4348-a57f-eef2fc03d1d1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>57</index>
-  <colorKey>default</colorKey>
+  <index>50</index>
+  <colorKey>blue</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getHitPoints</label>
-  <group>Character</group>
-  <sortby/>
+  <label>Skill Check</label>
+  <group>Token</group>
+  <sortby>20</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>

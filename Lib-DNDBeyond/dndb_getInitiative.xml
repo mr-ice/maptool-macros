@@ -4,30 +4,6 @@
   <index>66</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: toon = arg (0)]
-
-&lt;!-- slim down --&gt;
-[h: data = json.get (toon, "data")]
-[h: dataRetains = json.append ("", "race", "modifiers", "inventory", "classes", "stats", "bonusStats", "overrideStats", "characterValues")]
-[h: skinnyData = dndb_getSkinnyObject (data, dataRetains)]
-&lt;!-- Skinnify the toon --&gt;
-[h: skinnyToon = json.set (toon, "data", skinnyData)]
-
-[h: abilities = dndb_getAbilities (toon)]
-[h: init = json.get (abilities, "dexBonus")]
-[h: modSearchArgs = json.set ("", "object", skinnyToon,
-							"subType", "initiative")]
-
-[h: initMods = dndb_searchGrantedModifiers (modSearchArgs)]
-
-[h, foreach (initMod, initMods), code: {
-	[h: type = json.get (initMod, "type")]
-	[h, switch (type):
-		case "bonus": init = init + dndb_getModValue (skinnyToon, initMod);
-		default: "Don't care right now"]
-}]
-
-[h: macro.return = init]</command>
   <label>dndb_getInitiative</label>
   <group>Character</group>
   <sortby/>

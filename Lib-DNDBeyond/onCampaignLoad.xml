@@ -4,7 +4,6 @@
   <index>10</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[r, macro ("DNDBeyond Campaign Init@this"): ""]</command>
   <label>onCampaignLoad</label>
   <group/>
   <sortby/>

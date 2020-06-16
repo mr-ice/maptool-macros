@@ -4,15 +4,6 @@
   <index>30</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>&lt;!-- get toon and maybe a weapon name --&gt;
-[h: toon = arg(0)]
-[h, if (json.length (macro.args) &gt; 1):
-				weapons = dndb_getInventory (toon, "Weapon", arg(1)); 
-				weapons = dndb_getInventory (toon, "Weapon")]
-
-[h: weapons = dndb_convertWeapons (toon, weapons)]
-
-[h: macro.return = weapons]</command>
   <label>dndb_getWeapon</label>
   <group>Character</group>
   <sortby/>

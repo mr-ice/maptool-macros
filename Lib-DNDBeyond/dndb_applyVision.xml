@@ -4,25 +4,6 @@
   <index>69</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
-
-[h: senses = json.get (basicToon, "senses")]
-[h: senseStr = ""]
-[h, foreach (sense, senses), code: {
-	[h: senseName = json.get (sense, "name")]
-	[h: distance = json.get (sense, "distance")]
-	[h, if (distance &gt; 0): senseStr = senseStr + ", " + senseName +
-				" " + distance]
-	&lt;!-- Currently, the only Sight Type to apply is Darkvision --&gt;
-	[h, if (senseName == "Darkvision"): setSightType ("Darkvision")]
-}]
-[h, if (senseStr == ""): senseStr = "Normal"; senseStr = substring (senseStr, 2)]
-[h: setProperty ("Senses", senseStr)]</command>
   <label>dndb_applyVision</label>
   <group>Basic Toon</group>
   <sortby/>

@@ -4,20 +4,6 @@
   <index>3</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>
-[h: setProperty ("libversion", "0.15")]
-
-&lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
-[h: macros = getMacros()]
-[h: log.debug ("macros: " + macros)]
-[h, foreach (macroName, macros), code: {
-	[h, if (lastIndexOf (macroName, "dndb_") &gt; -1), code: {
-		[h: log.debug ("Registering " + macroName)]
-		[h: defineFunction (macroName, macroName + "@this")]
-	}]
-}]
-
-&lt;pre&gt;[r: json.indent (getInfo ("client"), 3)]&lt;/pre&gt;</command>
   <label>DNDBeyond Campaign Init</label>
   <group/>
   <sortby/>

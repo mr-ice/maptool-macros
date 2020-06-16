@@ -511,158 +511,19 @@
   <macroPropertiesMap>
     <entry>
       <int>1</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>659059b1-dec2-48f4-8a22-2db3609416b8</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>1</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: setProperty (&quot;libversion&quot;, &quot;0.1&quot;)]
-
-&lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
-[h: macros = getMacros()]
-[h: log.debug (&quot;macros: &quot; + macros)]
-[h, foreach (macroName, macros), code: {
-	[h, if (lastIndexOf (macroName, &quot;dnd5e_&quot;) &gt; -1), code: {
-		[h: log.debug (&quot;Registering &quot; + macroName)]
-		[h: defineFunction (macroName, macroName + &quot;@this&quot;)]
-	}]
-}]
-
-&lt;pre&gt;[r: json.indent (getInfo (&quot;client&quot;), 3)]&lt;/pre&gt;</command>
-        <label>onCampaignLoad</label>
-        <group></group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>false</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip></toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
+      <macro name="onCampaignLoad"/>
     </entry>
     <entry>
       <int>3</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>f74711b9-e34b-46f6-852b-146f4ac954b9</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>3</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: speedStr = &quot;&quot;]
-
-[h, if (Walk != &quot;&quot;): speedStr = &quot; / Walk &quot; + Walk]
-[h, if (Fly != &quot;&quot;): speedStr = speedStr + &quot; / Fly &quot; + Fly]
-[h, if (Climb != &quot;&quot;): speedStr = speedStr + &quot; / Climb &quot; + Climb]
-[h, if (Swim != &quot;&quot;): speedStr = speedStr + &quot; / Swim &quot; + Swim]
-[h, if (Burrow != &quot;&quot;): speedStr = speedStr + &quot; / Burrow &quot; + Burrow]
-
-[h: speedStr = substring (speedStr, 3)]
-[r: macro.return = speedStr]</command>
-        <label>dnd5e_getMovementStat</label>
-        <group>Token Properties</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>true</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip>Returns the movement value to display on the token stat sheet. Requires the token to have previously been synchronized with DNDBeyond. Will return a blank value if not.
-
-Return
-ex.
-&quot;Walk 40 / Swim 40 / Fly 120&quot;</toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
+      <macro name="dnd5e_getMovementStat"/>
     </entry>
     <entry>
       <int>5</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>4f92c699-053d-4c8f-bd7f-2b4634b7fc18</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>5</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: bonus = getProperty (&quot;Insight&quot;)]
-[h, if (bonus == &quot;&quot;): return (0, &quot;&quot;)]
-[h,if (bonus &gt; -1): value = &quot;+&quot;; value = &quot;&quot;]
-Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
-        <label>dnd5e_getInsightStat</label>
-        <group>Token Properties</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>true</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip>Returns the string to be displayed for the GM&apos;s view of the Insight skill on the statsheet.</toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
+      <macro name="dnd5e_getInsightStat"/>
     </entry>
     <entry>
       <int>6</int>
-      <net.rptools.maptool.model.MacroButtonProperties>
-        <macroUUID>72d137a8-9e47-404c-8041-526a25c11826</macroUUID>
-        <saveLocation>Token</saveLocation>
-        <index>6</index>
-        <colorKey>default</colorKey>
-        <hotKey>None</hotKey>
-        <command>[h: bonus = getProperty (&quot;Perception&quot;)]
-[h, if (bonus == &quot;&quot;): return (0, &quot;&quot;)]
-[h,if (bonus &gt; -1): value = &quot;+&quot;; value = &quot;&quot;]
-Psv: [r: bonus + 10] ( [r: value + bonus])]</command>
-        <label>dnd5e_getPerceptionStat</label>
-        <group>Token Properties</group>
-        <sortby></sortby>
-        <autoExecute>true</autoExecute>
-        <includeLabel>false</includeLabel>
-        <applyToTokens>true</applyToTokens>
-        <fontColorKey>black</fontColorKey>
-        <fontSize>1.00em</fontSize>
-        <minWidth></minWidth>
-        <maxWidth></maxWidth>
-        <allowPlayerEdits>false</allowPlayerEdits>
-        <toolTip>Returns the string to be displayed for the GM&apos;s view of the Perception skill on the statsheet.</toolTip>
-        <displayHotKey>true</displayHotKey>
-        <commonMacro>false</commonMacro>
-        <compareGroup>true</compareGroup>
-        <compareSortPrefix>true</compareSortPrefix>
-        <compareCommand>true</compareCommand>
-        <compareIncludeLabel>true</compareIncludeLabel>
-        <compareAutoExecute>true</compareAutoExecute>
-        <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
-      </net.rptools.maptool.model.MacroButtonProperties>
+      <macro name="dnd5e_getPerceptionStat"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

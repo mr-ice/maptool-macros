@@ -4,12 +4,6 @@
   <index>32</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>&lt;!-- get toon and maybe an item name --&gt;
-[h: toon = arg(0)]
-[h, if (json.length (macro.args) &gt; 1): 
-				results = dndb_getInventory (toon, "Other Gear", arg(1)); 
-				results = dndb_getInventory (toon, "Other Gear")]
-[h: macro.return = results]</command>
   <label>dndb_getItem</label>
   <group>Character</group>
   <sortby/>
