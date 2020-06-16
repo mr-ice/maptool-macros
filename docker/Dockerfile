@@ -7,11 +7,15 @@ RUN python3 -mpip install tabulate
 COPY automagic /usr/local/bin
 COPY macro-assemble /usr/local/bin
 COPY macro-extract /usr/local/bin
+COPY token-assemble /usr/local/bin
+COPY token-extract /usr/local/bin
 COPY zipfile_infolist.py /usr/local/bin
 
 RUN dos2unix /usr/local/bin/automagic \
   && dos2unix /usr/local/bin/macro-assemble \
-  && dos2unix /usr/local/bin/macro-extract
+  && dos2unix /usr/local/bin/macro-extract \
+  && dos2unix /usr/local/bin/token-assemble \
+  && dos2unix /usr/local/bin/token-extract
 
 WORKDIR "/MT"
 
