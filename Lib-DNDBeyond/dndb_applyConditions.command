@@ -1,9 +1,5 @@
-[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
+
+[h: basicToon = dndb_getBasicToon ()]
 
 [h: conditions = json.get (basicToon, "conditions")]
 [h: log.debug (json.indent (conditions))]
@@ -13,10 +9,10 @@
 							"Prone", "Stunned", "Unconscious", "Exhaustion 1", "Exhaustion 2",
 							"Exhaustion 3", "Exhaustion 4", "Exhaustion 5", "Exhaustion 6")]
 [h, foreach (clearState, clearStates): setState (clearState, 0)]
-<!-- note! do NOT use the var condition -->
+
 [h, foreach (cond, conditions), code: {
 	[h: conditionName = json.get (cond, "name")]
-	[h, if (conditionName == "Exhaustion"): conditionName = conditionName + " " + json.get (cond, "level")]
+	[h, if (conditionName == "Exhaustion"): conditionName = conditionName + " " + json.get (cond, "level"); ""]
 
 	[h: setState (conditionName, 0)]
 	[h, switch (conditionName):

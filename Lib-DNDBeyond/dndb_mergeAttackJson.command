@@ -3,7 +3,7 @@
 	[h: errMsg = "Token needs to sync with DnDBeyond first"]
 	[h: abort( input(" junk | | " + errMsg + " | LABEL | TEXT=false"))]
 	[r: return (0, errMsg)]
-}]
+}; {}]
 [h: toonAttackJson = json.get (basicToon, "attacks")]
 [h: existingAttackJson = getProperty ("attackJSON")]
 <!-- Merge the attack JSON, which means overwrite common key names, add new ones, -->
@@ -22,7 +22,7 @@
 		[h: existingAttackJsonName = json.get (existingAttack, "name")]
 		[h, if (toonAttackName == existingAttackJsonName): append = 0]
 	}]
-	[h, if (append > 0): newAttackJSON = json.append (newAttackJSON, existingAttack)]
+	[h, if (append > 0): newAttackJSON = json.append (newAttackJSON, existingAttack); ""]
 }]
 
 [h: setProperty ("attackJSON", newAttackJSON)]
