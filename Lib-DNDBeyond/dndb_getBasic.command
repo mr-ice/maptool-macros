@@ -19,14 +19,19 @@
 						"url", replace (json.path.read (toon, "data.readonlyUrl"),"null", ""),
 						"abilities", abilities)]
 
-<!-- init -->
-[h: log.info ("dndb_getBasic: Initiative")]
-[h: init = json.get (abilities, "dexBonus")]
-[h: basicToon = json.set (basicToon, "init", init)]
 
 <!-- alightment map -->
 [h: log.info ("dndb_getBasic: Alignment")]
-[h: alignmentMap = json.set ("", "3", "CE")]
+[h: alignmentMap = json.set ("", "1", "LG",
+							     "2", "NG",
+							     "3", "CG",
+							     "4", "LN",
+							     "5", "N",
+							     "6", "CN",
+							     "7", "LE",
+							     "8", "NE",
+							     "9", "CE",
+							     "10", "Unaligned")]
 [h: alignmentId =  json.path.read (toon, "data.alignmentId")]
 [h: basicToon = json.set (basicToon, "alignment", json.get (alignmentMap, alignmentId))]
 
@@ -46,6 +51,11 @@
 }]
 [h: log.debug ("classArry: "+ classArry)]
 [h: basicToon = json.set (basicToon, "classes", classArry)]
+
+<!-- Senses -->
+[h: log.info ("dndb_getBasic: Senses")]
+[h: senses = dndb_getSenses (toon)]
+[h: basicToon = json.set (basicToon, "senses", senses)]
 
 <!-- HP -->
 [h: log.info ("dndb_getBasic: Hitpoints")]

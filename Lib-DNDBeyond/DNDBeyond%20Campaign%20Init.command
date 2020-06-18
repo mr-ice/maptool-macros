@@ -1,5 +1,5 @@
 
-[h: setProperty ("libversion", "0.1")]
+[h: setProperty ("libversion", "0.15")]
 
 <!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them -->
 [h: macros = getMacros()]

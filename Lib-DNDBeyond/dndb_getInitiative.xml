@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>12867d2e-bae1-41c3-ba35-51af5a13466b</macroUUID>
+  <macroUUID>7679fcd8-e01f-495d-abfe-96e1f02a83f2</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>57</index>
+  <index>66</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getHitPoints</label>
+  <label>dndb_getInitiative</label>
   <group>Character</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,7 +15,9 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Builds the initiatve for a given toon
+
+toon = arg(0)</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

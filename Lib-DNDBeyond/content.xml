@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>E0FCEcZARXabAAB9n1rkaA==</baGUID>
+    <baGUID>CsY/3/iMRuC8aopb324G/A==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,31 +14,53 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>500</x>
-  <y>300</y>
-  <z>9</z>
+  <x>400</x>
+  <y>600</y>
+  <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>500</lastX>
-  <lastY>300</lastY>
+  <lastX>450</lastX>
+  <lastY>600</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>10</x>
-        <y>6</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>9</x>
+        <y>12</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>8</x>
+        <y>12</y>
+        <g>0.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>10</x>
-        <y>6</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>9</x>
+        <y>12</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>8</x>
+        <y>12</y>
+        <g>0.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -51,15 +73,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.SquareGrid</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -231,7 +253,7 @@
         <string>libversion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>libversion</key>
-          <value class="string">0.1</value>
+          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -412,10 +434,6 @@
   </propertyMapCI>
   <macroPropertiesMap>
     <entry>
-      <int>64</int>
-      <macro name="dndb_applyHealth"/>
-    </entry>
-    <entry>
       <int>3</int>
       <macro name="DNDBeyond%20Campaign%20Init"/>
     </entry>
@@ -582,6 +600,30 @@
     <entry>
       <int>63</int>
       <macro name="dndb_applySpeed"/>
+    </entry>
+    <entry>
+      <int>64</int>
+      <macro name="dndb_applyHealth"/>
+    </entry>
+    <entry>
+      <int>65</int>
+      <macro name="dndb_getNaturalWeapon"/>
+    </entry>
+    <entry>
+      <int>66</int>
+      <macro name="dndb_getInitiative"/>
+    </entry>
+    <entry>
+      <int>67</int>
+      <macro name="dndb_getModValue"/>
+    </entry>
+    <entry>
+      <int>68</int>
+      <macro name="dndb_getSenses"/>
+    </entry>
+    <entry>
+      <int>69</int>
+      <macro name="dndb_applyVision"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

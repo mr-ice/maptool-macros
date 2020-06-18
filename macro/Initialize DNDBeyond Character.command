@@ -24,6 +24,11 @@
 [h: fatToon = toon]
 [h: btoon = json.set (toon, "data", skinnyData)]
 
+
+[h: log.info ("dndb_getBasic: Initiative")]
+[h: initiative = dndb_getInitiative (toon)]
+[h: basicToon = json.set (basicToon, "init", initiative)]
+
 [h: log.info ("Building Armor Class")]
 [h: basicToon = json.set (basicToon, "armorClass", dndb_getAC (toon))]
 

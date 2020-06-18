@@ -18,7 +18,7 @@
 [h: halfMax = round (math.floor( maximum / 2))]
 [h, if (maximum < current): current = maximum]
 [h: setProperty ("HP", current)]
-[h: setProperty ("Temp HP", json.get (hitPoints, "tempHp"))]
+[h: setProperty ("TempHP", json.get (hitPoints, "tempHp"))]
 [h: setProperty ("MaxHP", maximum)]
 [h, if (current < halfMax): setState ("Bloodied", 1); setState ("Bloodied", 0)]
 [h, if (current == 0 && isDead == 0), code: {

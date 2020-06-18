@@ -64,7 +64,8 @@
 	[h, switch (value):
 		case "expertise": tempAbilityValue = 3;
 		case "proficiency": tempAbilityValue = 2;
-		case "half-proficiency": tempAbilityValue = 1]
+		case "half-proficiency": tempAbilityValue = 1;
+		default: tempAbilityValue = 0]
 	[h: abilityValue = math.max (abilityValue, tempAbilityValue)]
 }]
 

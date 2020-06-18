@@ -1,15 +1,15 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>12867d2e-bae1-41c3-ba35-51af5a13466b</macroUUID>
+  <macroUUID>8348d0d8-2264-467a-850f-cc56b00cc77a</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>57</index>
+  <index>65</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getHitPoints</label>
+  <label>dndb_getNaturalWeapon</label>
   <group>Character</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>

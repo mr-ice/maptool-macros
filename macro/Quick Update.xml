@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>69ae8677-ed66-42af-a458-b1576d4d6cb4</macroUUID>
+  <macroUUID>aa5e99b1-c88f-441c-a884-5746c041fd33</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>1</index>
+  <index>6</index>
   <colorKey>orange</colorKey>
   <hotKey>None</hotKey>
   <command>[h: charId = getProperty ("Character ID")]

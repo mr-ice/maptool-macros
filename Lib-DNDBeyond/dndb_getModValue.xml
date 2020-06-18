@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>12867d2e-bae1-41c3-ba35-51af5a13466b</macroUUID>
+  <macroUUID>88a8a7a5-f3d5-4062-8e10-1b1fa8e8fc67</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>57</index>
+  <index>67</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getHitPoints</label>
-  <group>Character</group>
+  <label>dndb_getModValue</label>
+  <group>Utility</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,10 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Given a modifier, determine the numeric value it provides. Returns 0 if value is not numeric (like advantage and disadvantage)
+
+toon = arg (0)
+modifier = arg (1)</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
