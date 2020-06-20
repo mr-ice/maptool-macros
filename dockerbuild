@@ -1,1 +1,2 @@
-docker build docker -t maker 
+docker build docker -t maker
+docker build docker/pytest -t tester
