@@ -43,11 +43,6 @@
 					"sortBy", "120",
 					"command", "[macro('Quick Update@CAMPAIGN'): '']"),
 
-			json.set (basicCfg, "name", "Print Basic Toon",
-					"color", "silver",
-					"sortBy", "9999",
-					"command", "[macro('Print BasicToon@Lib:DnDBeyond'): '']"),
-
 			json.set (basicCfg, "name", "Skill Check",
 					"color", "blue",
 					"fontColor", "white",

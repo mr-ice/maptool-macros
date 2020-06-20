@@ -82,5 +82,4 @@
         [h: newAttackJson = if (inputDeleteAttack == 1 && selectedAttack == json.get(attack, NAME), newAttackJson, json.append(newAttackJson, attack))]
     }]
 }]
-
 [h: setProperty(ATTACK_JSON, newAttackJson)]
