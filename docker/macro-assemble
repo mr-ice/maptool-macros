@@ -77,7 +77,7 @@ AP.add_argument(
     default='.mtmacro')
 
 AP.add_argument(
-    '--list',
+    '--list', '--set',
     help="create a mtmacset (list of macros)")
 
 opts = AP.parse_args(sys.argv[1:])
@@ -105,7 +105,7 @@ class MTMacro():
         self.commandfile = base + '.command'
 
         if opts.verbose:
-            print('I: loading',mac.xmlfile,'for the macro xml file')
+            print('I: loading',self.xmlfile,'for the macro xml file')
         self.origxml = objectify.parse(self.xmlfile)
         self.xml = objectify.parse(self.xmlfile)
         if opts.verbose:
@@ -115,7 +115,7 @@ class MTMacro():
         self.xml.getroot().command = objectify.DataElement(self.command, nsmap='', _ptype='')
         self.label = self.xml.getroot().label
         if opts.verbose:
-            print('I: got label \"',label,'\" from the xml', sep='')
+            print('I: got label \"',self.label,'\" from the xml', sep='')
         self.label = quote(self.label.text)
         if opts.verbose and self.label != self.xml.getroot().label:
             print('I: transformed label to filesystem friendly',self.label)
@@ -137,7 +137,7 @@ class MTMacro():
             # then assemble the zipfile
             zf = ZipFile(mac.outputfile, mode='w', compression=ZIP_DEFLATED)
             try:
-                zf.writestr('content.xml', 
+                zf.writestr('content.xml',
                             etree.tostring(mac.xml, pretty_print=True))
                 zf.writestr('properties.xml', properties_xml)
             finally:
@@ -148,13 +148,13 @@ class MTMacro():
 if opts.list:
     listxml = etree.Element('list')
     opts.output_extension = '.mtmacset'
+
 for target in opts.target:
     mac = MTMacro(target)
     if not opts.list:
         mac.save()
     else:
         listxml.append(mac.xml.getroot())
-
 
 if opts.list:
     output_filename = opts.list + opts.output_extension

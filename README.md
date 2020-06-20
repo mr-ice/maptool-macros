@@ -9,13 +9,23 @@ xml and command (text) files.  They can be reassembled with the tools herein.
 You'll need a working git, docker, and bash.
 
 * ./dockerbuild - make our images
-* ./dockermagic <dir> - build a maptool object from a directory
-* ./dockerrun macro-extract <thing> - extract the thing and its macros 
-* ./dockerrun macro-assemble macro/1 macro/2 macro/3 --list myset
+* ./dockermagic <dir> - build a macro, token, or mtprops
+* ./dockerrun automagic <dir> -- same as ./dockermagic
+* ./dockerrun macro-extract <thing> - extract macros from mtmacro and
+  mtmacset objects
+* ./dockerrun macro-assemble macro/1 -- assemble a mtmacro from
+  macro/1.xml and macro/1.command
+* ./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset --
+  assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]
+* ./dockerrun token-extract <thing> - extract a token and its macros 
+* ./dockerrun token-assemble <dir> - put a token back together
 
-#### These are obsolete
-* bin/xc <dir> - eXtract Commands into individual .command files in directory
-* bin/micro-assemble <macro>.xml <macro>.command <macro>.mtmacro
+---
+**NOTE**
+Note that automagic does not build mtmacsets.  We get rid of the
+container (set) so to re-create them we need the list of macros passed
+to macro-assemble
+---
 
 ## Macros
 * RollSave - Simple roll an attribute save
