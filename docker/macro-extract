@@ -29,6 +29,7 @@ from lxml import objectify
 from lxml.etree import tostring
 import zipfile
 from urllib.parse import quote
+from MacroName import MacroNameQuote as quote
 from textwrap import wrap
 
 AP = argparse.ArgumentParser()
@@ -82,9 +83,7 @@ def macroList(elem):
         return {}
 
 for label, elem in macroList(xml.getroot()).items():
-    label = str(label)
-    if '/' in label:
-        label = quote(label,safe='')
+    label = quote(str(label))
 
     if xml.getroot().tag == tokentag and xml.getroot().name.text.startswith('Lib:'):
         # Lib: tokens' macros stay with them

@@ -457,7 +457,7 @@
   <macroPropertiesMap>
     <entry>
       <int>3</int>
-      <macro name="DNDBeyond%20Campaign%20Init"/>
+      <macro name="DNDBeyond+Campaign+Init"/>
     </entry>
     <entry>
       <int>10</int>
@@ -569,15 +569,15 @@
     </entry>
     <entry>
       <int>49</int>
-      <macro name="Make%20Check"/>
+      <macro name="Make+Check"/>
     </entry>
     <entry>
       <int>50</int>
-      <macro name="Skill%20Check"/>
+      <macro name="Skill+Check"/>
     </entry>
     <entry>
       <int>51</int>
-      <macro name="Saving%20Throw"/>
+      <macro name="Saving+Throw"/>
     </entry>
     <entry>
       <int>53</int>
@@ -589,11 +589,11 @@
     </entry>
     <entry>
       <int>55</int>
-      <macro name="Make%20Attack"/>
+      <macro name="Make+Attack"/>
     </entry>
     <entry>
       <int>56</int>
-      <macro name="Attack%20Config"/>
+      <macro name="Attack+Config"/>
     </entry>
     <entry>
       <int>57</int>
@@ -601,7 +601,7 @@
     </entry>
     <entry>
       <int>58</int>
-      <macro name="Spend%20Hit%20Dice"/>
+      <macro name="Spend+Hit+Dice"/>
     </entry>
     <entry>
       <int>59</int>
@@ -649,7 +649,7 @@
     </entry>
     <entry>
       <int>70</int>
-      <macro name="Print%20BasicToon"/>
+      <macro name="Print+BasicToon"/>
     </entry>
     <entry>
       <int>71</int>
