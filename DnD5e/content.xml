@@ -2011,6 +2011,62 @@
         </assetIds>
       </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
     </entry>
+    <entry>
+      <string>DSPass</string>
+      <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+        <name>DSPass</name>
+        <order>3</order>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <increments>4</increments>
+        <side>TOP</side>
+        <assetIds>
+          <net.rptools.lib.MD5Key>
+            <id>e661631853a431231a2904d4ae29ceeb</id>
+          </net.rptools.lib.MD5Key>
+          <net.rptools.lib.MD5Key>
+            <id>dd2746078aa9c38f71effc92e86958d5</id>
+          </net.rptools.lib.MD5Key>
+          <net.rptools.lib.MD5Key>
+            <id>4aa9a809d18dd91455c03ff5841b7791</id>
+          </net.rptools.lib.MD5Key>
+          <net.rptools.lib.MD5Key>
+            <id>6a1312daaaea72f09520bfb1af1d60a6</id>
+          </net.rptools.lib.MD5Key>
+        </assetIds>
+      </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+    </entry>
+    <entry>
+      <string>DSFail</string>
+      <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+        <name>DSFail</name>
+        <order>4</order>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <increments>4</increments>
+        <side>BOTTOM</side>
+        <assetIds>
+          <net.rptools.lib.MD5Key>
+            <id>e661631853a431231a2904d4ae29ceeb</id>
+          </net.rptools.lib.MD5Key>
+          <net.rptools.lib.MD5Key>
+            <id>64ddc58124a9a8584136868e0e11755a</id>
+          </net.rptools.lib.MD5Key>
+          <net.rptools.lib.MD5Key>
+            <id>5af138a576cc3d2ba341d808799ba096</id>
+          </net.rptools.lib.MD5Key>
+          <net.rptools.lib.MD5Key>
+            <id>51bd50b12b57327d085445ad22ff7401</id>
+          </net.rptools.lib.MD5Key>
+        </assetIds>
+      </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+    </entry>
   </tokenBars>
   <characterSheets>
     <entry>
