@@ -24,8 +24,17 @@
 [h, if (maxHpModifier != "" && isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
 [h, if (overrideMaxHp != "" && isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
 
+[h: deathSaves = json.path.read (toon, "data.deathSaves")]
+[h: dsPass = json.get (deathSaves, "successCount")]
+[h, if (dsPass == "null"): dsPass = 0]
+[h: dsFail = json.get (deathSaves, "failCount")]
+[h, if (dsFail == "null"): dsFail = 0]
+
+
 [h: hitPoints =  json.set ("",
 							"maxHp", maxHp,
 							"currentHp", maxHp - damageTaken,
-							"tempHp", temporaryHitPoints)]
+							"tempHp", temporaryHitPoints,
+							"dsPass", dsPass,
+							"dsFail", dsFail)]
 [h: macro.return = hitPoints]
