@@ -1,4 +1,4 @@
-[h: macroGroup = "D&D Beyond"]
+[h: setBar ("TempHP", ent / maximum][h: macroGroup = "D&D Beyond"]
 
 [h: basicCfg = json.set ("", "group", macroGroup,
 					"color", "default",
