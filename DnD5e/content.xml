@@ -1895,37 +1895,47 @@
   </tokenStates>
   <tokenBars class="linked-hash-map">
     <entry>
-      <string>Health</string>
-      <net.rptools.maptool.client.ui.token.TwoToneBarTokenOverlay>
-        <name>Health</name>
+      <string>HP</string>
+      <net.rptools.maptool.client.ui.token.TwoImageBarTokenOverlay>
+        <name>HP</name>
         <order>0</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
         <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
+        <showOthers>false</showOthers>
         <increments>0</increments>
         <side>TOP</side>
-        <barColor>
-          <red>32</red>
-          <green>180</green>
-          <blue>32</blue>
-          <alpha>255</alpha>
-        </barColor>
-        <thickness>6</thickness>
-        <bgColor>
-          <red>0</red>
-          <green>0</green>
-          <blue>0</blue>
-          <alpha>255</alpha>
-        </bgColor>
-      </net.rptools.maptool.client.ui.token.TwoToneBarTokenOverlay>
+        <bottomAssetId>
+          <id>00c335d81c12bd048b5488bb16724403</id>
+        </bottomAssetId>
+        <topAssetId>
+          <id>15f285b19efbae153bacb1aa014f307e</id>
+        </topAssetId>
+      </net.rptools.maptool.client.ui.token.TwoImageBarTokenOverlay>
+    </entry>
+    <entry>
+      <string>TempHP</string>
+      <net.rptools.maptool.client.ui.token.SingleImageBarTokenOverlay>
+        <name>TempHP</name>
+        <order>1</order>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>false</showOthers>
+        <increments>0</increments>
+        <side>TOP</side>
+        <assetId>
+          <id>db97eff3404bc53df08dcd300b4689f9</id>
+        </assetId>
+      </net.rptools.maptool.client.ui.token.SingleImageBarTokenOverlay>
     </entry>
     <entry>
       <string>ElevationPositive</string>
       <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
         <name>ElevationPositive</name>
-        <order>1</order>
+        <order>2</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2004,7 +2014,7 @@
       <string>ElevationNegative</string>
       <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
         <name>ElevationNegative</name>
-        <order>2</order>
+        <order>3</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2083,7 +2093,7 @@
       <string>DSPass</string>
       <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
         <name>DSPass</name>
-        <order>3</order>
+        <order>4</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2111,7 +2121,7 @@
       <string>DSFail</string>
       <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
         <name>DSFail</name>
-        <order>4</order>
+        <order>5</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
