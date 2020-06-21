@@ -1,4 +1,4 @@
-[h: macroGroup = "D&D Beyond"]
+[h: setBar ("TempHP", ent / maximum][h: macroGroup = "D&D Beyond"]
 
 [h: basicCfg = json.set ("", "group", macroGroup,
 					"color", "default",
@@ -36,6 +36,12 @@
 					"fontColor", "white",
 					"sortBy", "30",
 					"command", "[macro('Spend Hit Dice@Lib:DnDBeyond'): '']"),
+
+			json.set (basicCfg, "name", "Quick Update",
+					"color", "orange",
+					"fontColor", "blaick",
+					"sortBy", "120",
+					"command", "[macro('Quick Update@CAMPAIGN'): '']"),
 
 			json.set (basicCfg, "name", "Print Basic Toon",
 					"color", "silver",
