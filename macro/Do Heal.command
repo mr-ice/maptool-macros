@@ -1,0 +1,5 @@
+[h:Damage = Damage - doHeal]
+[h:Damage=if(Damage < 0, 0, Damage)]
+[h:state.Bloodied=if(Damage > (HP / 2), 1, 0)]
+[h:state.Dead=if(Damage < HP, 0, 1)]
+Total Damage = [Damage]

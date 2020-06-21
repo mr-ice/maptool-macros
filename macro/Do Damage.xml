@@ -1,0 +1,45 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>1</index>
+  <colorKey>default</colorKey>
+  <hotKey>F2</hotKey>
+  <command>[h:hasTempHP = if(getProperty("tempHP") == "", 0, 1)]
+[h,if(hasTempHP), CODE: {
+   &lt;!-- has temp hp --&gt;
+   [h:doDamage = doDamage - tempHP]
+   [h:tempHP = if(doDamage &lt; 0, doDamage * - 1, "")]
+   [h:doDamage = if(doDamage &lt; 0, 0, doDamage)]
+};
+{
+&lt;!-- has no temp hp (no op) --&gt;
+}]
+[h:Damage = Damage + doDamage]
+[h:wasBloodied = getState("Bloodied")]
+[h:Damage=if(Damage &gt; HP, HP, Damage)]
+[h:state.Bloodied=if(Damage &gt; (HP / 2), 1, 0)]
+[h:state.Dead=if(Damage == HP, 1, 0)]
+[r:if((wasBloodied + getState("Bloodied")) == 1, "Bloodied!&lt;br&gt;", "")]
+[h:isDead = getState("Dead")]
+[h:state.Prone = if(isDead, isDead, state.Prone)]
+[r:if(isDead == 1, "DEAD!", "Total Damage = " + Damage)]</command>
+  <label>Do Damage</label>
+  <group>Properties</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
