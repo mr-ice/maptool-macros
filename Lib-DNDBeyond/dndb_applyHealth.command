@@ -15,6 +15,7 @@
 [h: log.debug (hitPoints)]
 [h: current = json.get (hitPoints, "currentHp")]
 [h: maximum = json.get (hitPoints, "maxHp")]
+[h: temporary = json.get (hitPoints, "tempHp")]
 [h: dsPass = json.get (hitPoints, "dsPass")]
 [h: dsFail = json.get (hitPoints, "dsFail")]
 
@@ -23,7 +24,7 @@
 [h: halfMax = round (math.floor( maximum / 2))]
 [h, if (maximum < current): current = maximum; ""]
 [h: setProperty ("HP", current)]
-[h: setProperty ("TempHP", json.get (hitPoints, "tempHp"))]
+[h: setProperty ("TempHP", temporary)]
 [h: setProperty ("MaxHP", maximum)]
 
 <!-- Set the states/bars --> 
@@ -35,3 +36,5 @@
 }; {}]
 [h: setState ("Dead", if ((current == 0 && dsFail >= 3) || isDead, 1, 0))]
 [h: setState ("Stable", if ((current == 0 && dsPass >= 3), 1, 0))]
+[h: setBar ("HP", current / maximum)]
+[h, if (temporary > 0): setBar ("TempHP", temporary / maximum); setBarVisible ("TempHP", 0)]
