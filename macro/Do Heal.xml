@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>2</index>
+  <colorKey>default</colorKey>
+  <hotKey>F3</hotKey>
+  <command>[h:Damage = Damage - doHeal]
+[h:Damage=if(Damage &lt; 0, 0, Damage)]
+[h:state.Bloodied=if(Damage &gt; (HP / 2), 1, 0)]
+[h:state.Dead=if(Damage &lt; HP, 0, 1)]
+Total Damage = [Damage]</command>
+  <label>Do Heal</label>
+  <group>Properties</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
