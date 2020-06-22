@@ -46,7 +46,7 @@ tester.image: maker.image docker/tester/Dockerfile
 
 build: maker.image tester.image
 
-test:
+test: tester.image
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester "$(ARGS)"
 
 
