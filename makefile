@@ -8,6 +8,9 @@ else
     ZIP = zip -r
 endif
 
+project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
+	./dockerrun project-assemble DNDBeyond.project
+
 %.mtmacro:
 	@echo "E: makefile no longer builds macros.  You should use dockerrun macro-assemble instead"
 
