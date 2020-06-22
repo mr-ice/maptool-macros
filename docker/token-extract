@@ -78,10 +78,13 @@ def write_macro_files(macro, tofilebase):
     command_file = tofilebase + '.command'
     xml_file = tofilebase + '.xml'
     with open(command_file, 'w') as f:
-        f.write(macro.command.text)
+        text = ''
+        if macro.command and macro.command.text:
+            text = macro.command.text
+        f.write(text)
         if opts.verbose:
            print('wrote {} bytes to {}'.format(
-               len(macro.command.text),command_file))
+               len(text),command_file))
     # Now that the command is saved to file, we'll remove it
     # from the macro.xml before saving it.  To restore we just read it
     # off disk and add it back (order doesn't matter).
