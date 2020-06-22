@@ -1907,7 +1907,7 @@
         <increments>0</increments>
         <side>TOP</side>
         <bottomAssetId>
-          <id>00c335d81c12bd048b5488bb16724403</id>
+          <id>db97eff3404bc53df08dcd300b4689f9</id>
         </bottomAssetId>
         <topAssetId>
           <id>15f285b19efbae153bacb1aa014f307e</id>
@@ -1915,19 +1915,19 @@
       </net.rptools.maptool.client.ui.token.TwoImageBarTokenOverlay>
     </entry>
     <entry>
-      <string>TempHP</string>
+      <string>Damage</string>
       <net.rptools.maptool.client.ui.token.SingleImageBarTokenOverlay>
-        <name>TempHP</name>
+        <name>Damage</name>
         <order>1</order>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
         <showOwner>true</showOwner>
-        <showOthers>false</showOthers>
+        <showOthers>true</showOthers>
         <increments>0</increments>
         <side>TOP</side>
         <assetId>
-          <id>db97eff3404bc53df08dcd300b4689f9</id>
+          <id>00c335d81c12bd048b5488bb16724403</id>
         </assetId>
       </net.rptools.maptool.client.ui.token.SingleImageBarTokenOverlay>
     </entry>

@@ -7,6 +7,8 @@
 [h: setState ("Stable", 0)]
 [h: setBarVisible ("DSPass", 0)]
 [h: setBarVisible ("DSFail", 0)]
+[h: setBarVisible ("HP", 0)]
+[h: setBarVisible ("Damage", 0)]
 
 <!-- Read the HP state -->
 [h: isHalved = getState ("Exhaustion 4")]
@@ -27,14 +29,21 @@
 [h: setProperty ("TempHP", temporary)]
 [h: setProperty ("MaxHP", maximum)]
 
-<!-- Set the states/bars --> 
+<!-- Set the states & death save bars --> 
 [h, if (current < halfMax && current > 0): setState ("Bloodied", 1); setState ("Bloodied", 0);]
-[h, if (current == 0 && isDead == 0 && dsPass < 3 && dsFail < 4), code: {
+[h: setState ("Dead", if ((current == 0 && dsFail >= 3) || isDead, 1, 0))]
+[h: setState ("Stable", if ((current == 0 && dsPass >= 3), 1, 0))]
+[h, if (current == 0 && dsPass < 3 && dsFail < 4 && !getState ("Dead") && !getState ("Stable")), code: {
 	[h: setState ("Dying", 1)]
 	[h: setBar ("DSPass", 0.25 * dsPass)]
 	[h: setBar ("DSFail", 0.25 * dsFail)]
 }; {}]
-[h: setState ("Dead", if ((current == 0 && dsFail >= 3) || isDead, 1, 0))]
-[h: setState ("Stable", if ((current == 0 && dsPass >= 3), 1, 0))]
-[h: setBar ("HP", current / maximum)]
-[h, if (temporary > 0): setBar ("TempHP", temporary / maximum); setBarVisible ("TempHP", 0)]
+
+<!-- Set the health state bars -->
+[h, if (!getState ("Dying") && !getState ("Dead") && !getState ("Stable")), code: {
+	[h: effectiveHP = current + temporary]
+	[h: effectiveMaxHP = maximum + temporary]
+	[h: effectiveDamage = effectiveMaxHP - effectiveHP]
+	[h: setBar("HP", current / effectiveMaxHP)]
+	[h: setBar("Damage", effectiveDamage / effectiveMaxHP)]
+}; {}]
