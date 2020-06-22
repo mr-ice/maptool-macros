@@ -45,6 +45,7 @@
 	[h: classSpells = json.get (dndb_searchJsonObject (classSpellsSearchArg), 0)]
 	
 	[h: spellCastingAbilityId = json.path.read (class, "definition.spellCastingAbilityId")]
+	[h: log.info ("spellCastingAbilityId = [" + spellCastingAbilityId + "]")]
 	[h: classRequiresPreparation = json.path.read (class, "definition.spellPrepareType")]
 	[h: isRitualCaster = json.path.read (class, "definition.spellRules.isRitualSpellCaster")]
 	[h: spellContainer = json.path.read (class, "definition.spellContainerName", "SUPPRESS_EXCEPTIONS")]
@@ -53,16 +54,16 @@
 
 	[h, foreach (spell, spells), code: {
 		[h: basicSpell = dndb_convertSpell (toon, spell)]
-		[h: spellCastingAbilityIdOverride = json.get (basicSpell, "spellCastingAbilityId")]
-		[h, if (spellCastingAbilityIdOverride != ""): spellCastingAbilityId = spellCastingAbilityIdOverride; ""]
+
 		[h, switch (spellCastingAbilityId):
-			case 1: abilityName = "Strength";
-			case 2: abilityName - "Dexterity";
-			case 3: abilityName = "Constitution";
-			case 4: abilityName = "Intelligence";
-			case 5: abilityName = "Wisdom";
-			case 6: abilityName = "Charisma"]
-		[h: abilityBonus = json.get (abilities, spellCastingAbilityId * 2)]
+			case 1: abilityName = "str";
+			case 2: abilityName - "dex";
+			case 3: abilityName = "con";
+			case 4: abilityName = "int";
+			case 5: abilityName = "wis";
+			case 6: abilityName = "cha"]
+			
+		[h: abilityBonus = json.get (abilities, abilityName + "Bonus")]
 		[h: atkBonus = abilityBonus + proficiency]
 		[h: spellRequiresAttackRoll = json.get (basicSpell, "requiresAttackRoll")]
 		[h, if (spellRequiresAttackRoll == "true"): atkBonus = atkBonus + dndb_getAttackModiferBonusForSpell (toon, spell, spellAttackModifiers)]
@@ -84,6 +85,7 @@
 									"abilityBonus", abilityBonus,
 									"saveDC", saveDC,
 									"attackBonus", atkBonus,
+									"spellCastingAbilityId", spellCastingAbilityId,
 									"mustBePrepared", classRequiresPreparation)]
 		[h: allSpells = json.append (allSpells, basicSpell)]
 	}]
