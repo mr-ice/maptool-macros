@@ -4,7 +4,6 @@
   <index>10</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[r:1d6]</command>
   <label>1d6</label>
   <group>Generic</group>
   <sortby/>

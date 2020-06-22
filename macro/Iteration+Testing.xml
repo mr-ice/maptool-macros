@@ -4,9 +4,6 @@
   <index>14</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: input("selectedWeapon | New Weapon,Scimitard of Speed,Good Sword |Select the weapon | LIST | select=2 value=string")]
-[r: selectedWeapon]
-</command>
   <label>Iteration Testing</label>
   <group>Generic</group>
   <sortby/>

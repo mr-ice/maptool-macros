@@ -4,18 +4,6 @@
   <index>12</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: varry = 12]
-[r, code: {
-	&lt;!-- write code like a sane person --&gt;
-	varry = 0;
-	slonkey = "blarb";
-	obj = json.fromStrProp"a=3; y=donkey; trey=kirk";
-
-	varry;
-	slonkey;
-	obj;
-}]
-[varry]</command>
   <label>Test</label>
   <group>Bode</group>
   <sortby/>

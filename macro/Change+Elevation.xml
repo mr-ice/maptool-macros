@@ -12,10 +12,10 @@
   <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
-  <minWidth></minWidth>
-  <maxWidth></maxWidth>
+  <minWidth/>
+  <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip></toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
