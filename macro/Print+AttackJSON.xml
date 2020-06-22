@@ -4,19 +4,6 @@
   <index>17</index>
   <colorKey>teal</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: ATTACK_JSON = "attackJSON"]
-[h: NAME = "name"]
-[h: ATK_BONUS = "atkBonus"]
-[h: DMG_BONUS = "dmgBonus"]
-[h: DMG_DIE = "dmgDie"]
-[h: DMG_DICE = "dmgDice"]
-[h: CRIT_BONUS_DICE = "critBonusDice"]
-[h: DMG_TYPE = "dmgType"]
-[h: DMG_BONUS_EXPR = "dmgBonusExpr"]
-[h: NEW_ATTACK = "NewAttack"]
-[h: attackJson = getProperty (ATTACK_JSON)]
-[h: formatted = "&lt;pre&gt;" + json.indent(attackJson, 3) + "&lt;/pre&gt;"]
-[s, r: formatted]</command>
   <label>Print AttackJSON</label>
   <group>Attack</group>
   <sortby>3</sortby>

@@ -4,16 +4,6 @@
   <index>3</index>
   <colorKey>green</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: initBonus = getProperty("Initiative")]
-
-[h: roll1 = 1d20 + initBonus]
-[h: roll2 = 1d20 + initBonus]
-
-Initiative: [r:roll1]&lt;br&gt;
-&lt;i&gt;Advantage&lt;/i&gt;: [r:roll2]
-
-[h: realInit = max(roll1, roll2)]
-[h: setInitiative(realInit)]</command>
   <label>Bode Initiative</label>
   <group>Bode</group>
   <sortby>0</sortby>
