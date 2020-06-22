@@ -99,6 +99,7 @@ for label, elem in macroList(xml.getroot()).items():
         if opts.verbose:
            print('wrote {} bytes to {}'.format(
                len(elem.command.text),command_file))
+    elem.remove(elem.command)
     with open(xml_file, 'w') as f:
         f.write(tostring(elem, pretty_print=True).decode())
         if opts.verbose:

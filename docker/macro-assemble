@@ -112,7 +112,7 @@ class MTMacro():
             print('I: loading',self.commandfile,'for the macro command file')
         self.command = open(self.commandfile).read()
         # reassemble the command into the xml
-        self.xml.getroot().command = objectify.DataElement(self.command, nsmap='', _ptype='')
+        self.xml.getroot().command = objectify.DataElement(self.command, nsmap='', _pytype='')
         self.label = self.xml.getroot().label
         if opts.verbose:
             print('I: got label \"',label,'\" from the xml', sep='')
@@ -137,7 +137,7 @@ class MTMacro():
             # then assemble the zipfile
             zf = ZipFile(mac.outputfile, mode='w', compression=ZIP_DEFLATED)
             try:
-                zf.writestr('content.xml', 
+                zf.writestr('content.xml',
                             etree.tostring(mac.xml, pretty_print=True))
                 zf.writestr('properties.xml', properties_xml)
             finally:
