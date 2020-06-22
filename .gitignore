@@ -2,5 +2,7 @@
 *.mtmacro
 *.mtmacset
 *.rptok
+maker.image
+tester.image
 tmp
 __pycache__

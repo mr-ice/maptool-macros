@@ -36,7 +36,18 @@ clean:
 realclean:
 	docker image list | grep maker | cut -f1 -d\ | xargs docker image rm
 
-build:
+maker.image: docker/Dockerfile $(shell echo docker/*)
 	docker build docker -t maker
+	touch $@
 
-.PHONY: build clean
+tester.image: maker.image docker/tester/Dockerfile
+	docker build docker/tester -t tester
+	touch $@
+
+build: maker.image tester.image
+
+test:
+	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester "$(ARGS)"
+
+
+.PHONY: build clean test

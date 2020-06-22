@@ -1,6 +1,6 @@
 FROM maker
 
-RUN python3 -mpip install pytest
+RUN python3 -mpip install pytest pytest-sugar
 
 WORKDIR "/MT"
 
