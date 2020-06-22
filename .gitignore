@@ -1,7 +1,7 @@
-*.mtprops
-*.mtmacro
-*.mtmacset
-*.rptok
+/*.mtprops
+/*.mtmacro
+/*.mtmacset
+/*.rptok
 maker.image
 tester.image
 tmp
