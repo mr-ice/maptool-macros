@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>67827c47-56d1-44c1-af5c-218059f5ce27</macroUUID>
+  <macroUUID>6c8cfca6-1155-4492-ba4f-791c8719565a</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>3</index>
+  <index>77</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_getMovementStat</label>
-  <group>Token Properties</group>
+  <label>Cast Spells</label>
+  <group>Token</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,11 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the movement value to display on the token stat sheet. Requires the token to have previously been synchronized with DNDBeyond. Will return a blank value if not.
-
-Return
-ex.
-"Walk 40 / Swim 40 / Fly 120"</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

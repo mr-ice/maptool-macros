@@ -1,25 +1,25 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>67827c47-56d1-44c1-af5c-218059f5ce27</macroUUID>
+  <macroUUID>32b38d8e-cc12-4dc2-8deb-4b8891eaba64</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>3</index>
+  <index>83</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_getMovementStat</label>
-  <group>Token Properties</group>
+  <label>dndb_getRollExpressionForSpell</label>
+  <group>Dice Roller</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the movement value to display on the token stat sheet. Requires the token to have previously been synchronized with DNDBeyond. Will return a blank value if not.
+  <toolTip>Returns the RollExpression(s) for a given spell. If a spell requires an attack, an attack and damage expression will be returned. Otherwise, just whatever RollExpression dictated by the spell. If a spell doesn't require any roll, an empty list will be returned.
 
-Return
-ex.
-"Walk 40 / Swim 40 / Fly 120"</toolTip>
+arg (0) = BasicSpell
+
+Returns RollExpression[]</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,25 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>67827c47-56d1-44c1-af5c-218059f5ce27</macroUUID>
+  <macroUUID>f46635df-42db-4d1d-a5bd-f87278d01ac4</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>3</index>
+  <index>11</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_getMovementStat</label>
-  <group>Token Properties</group>
+  <label>dnd5e_DiceRoller_luckyRoll</label>
+  <group>Dice Roller</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the movement value to display on the token stat sheet. Requires the token to have previously been synchronized with DNDBeyond. Will return a blank value if not.
-
-Return
-ex.
-"Walk 40 / Swim 40 / Fly 120"</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

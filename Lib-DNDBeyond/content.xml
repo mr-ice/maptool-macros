@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>4T9nuXFEQDiyANbiP71Jlg==</baGUID>
+    <baGUID>y+Qc/ghPSRq6d5VFeSkSZA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -16,7 +16,7 @@
   </imageAssetMap>
   <x>150</x>
   <y>300</y>
-  <z>2</z>
+  <z>12</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -51,15 +51,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -1044,7 +1044,7 @@
     </entry>
     <entry>
       <int>77</int>
-      <macro name="Cast%20Spells"/>
+      <macro name="Cast+Spells"/>
     </entry>
     <entry>
       <int>78</int>
@@ -1057,6 +1057,18 @@
     <entry>
       <int>80</int>
       <macro name="dndb_convertSpell"/>
+    </entry>
+    <entry>
+      <int>81</int>
+      <macro name="dndb_buildSpellRoll"/>
+    </entry>
+    <entry>
+      <int>82</int>
+      <macro name="dndb_DiceRoller_roll"/>
+    </entry>
+    <entry>
+      <int>83</int>
+      <macro name="dndb_getRollExpressionForSpell"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

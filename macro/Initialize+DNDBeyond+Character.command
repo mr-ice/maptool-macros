@@ -7,8 +7,15 @@
 	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0"))]
 [h: abort (confirm)]
 [h: setProperty ("Character ID", charId)]
+[h, if (startsWith (charId, "dndbt_")), code: {
+	<!-- the char ID is a test id that is the target method that returns the char json -->
+	[h: log.warn ("Fetching test toon: " + charId)]
+	[h: macroString = "[r: " + charId + "()]"]
+	[h: toon = evalMacro (macroString)]
+}; {
+	[h: toon = dndb_getCharJSON (charId)]	
+}]
 
-[h: toon = dndb_getCharJSON (charId)]
 [h: name = json.path.read (toon, "data.name")]
 
 
@@ -43,6 +50,10 @@
 
 [h: log.info ("Building Conditions")]
 [h: basicToon = json.set (basicToon, "conditions", dndb_getConditions (toon))]
+
+[h: log.info ("Building Spells")]
+[h: basicToon = json.set (basicToon, "spellSlots", dndb_getSpellSlots (toon))]
+[h: basicToon = json.set (basicToon, "spells", dndb_getSpells (toon))]
 
 [h: setProperty ("dndb_BasicToon", basicToon)]
 
