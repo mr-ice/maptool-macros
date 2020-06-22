@@ -6,25 +6,39 @@ xml and command (text) files.  They can be reassembled with the tools herein.
 
 ## Meta-Tools and Tools
 
-You'll need a working git, docker, and bash.
+You'll need a working git, docker, and bash.   Note the examples here
+assume you are in the top directory of the checkout.
 
-* ./dockerbuild - make our images
-* ./dockermagic <dir> - build a macro, token, or mtprops
-* ./dockerrun automagic <dir> -- same as ./dockermagic
-* ./dockerrun macro-extract <thing> - extract macros from mtmacro and
-  mtmacset objects
-* ./dockerrun macro-assemble macro/1 -- assemble a mtmacro from
-  macro/1.xml and macro/1.command
-* ./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset --
-  assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]
-* ./dockerrun token-extract <thing> - extract a token and its macros 
-* ./dockerrun token-assemble <dir> - put a token back together
+<dl>
+  <dt>`./dockerbuild`
+  <dd>make our docker images using bash
+  <dt>`make build`
+  <dd>make our docker images using make
+  <dt>`./dockermagic <base thing>`
+  <dd>build a macro from its xml file, or a properties or token from its
+  directory
+  <dt>`./dockerrun automagic <base thing>`
+  <dd>same as `./dockermagic`
+  <dt>`./dockerrun macro-extract <thing>`
+  <dd>extract macros from mtmacro and mtmacset objects
+  <dt>`./dockerrun macro-assemble <macro/1>`
+  <dd>assemble a mtmacro from macro/1.xml and macro/1.command
+  <dt>`./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset`
+  <dd>assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]
+  <dt>`./dockerrun token-extract <thing>`
+  <dd>extract a token and its macros from a .rptok file
+  <dt>`./dockerrun token-assemble <dir>`
+  <dd>put a token back together
+  <dt>`./dockerrun project-assemble <thing>`
+  <dd>put together tokens, properties, and macrosets described in a
+  .project xml file
+</dl>
 
 ---
 **NOTE**
 Note that automagic does not build mtmacsets.  We get rid of the
 container (set) so to re-create them we need the list of macros passed
-to macro-assemble
+to macro-assemble.  This can be done via project file.
 ---
 
 ## Macros

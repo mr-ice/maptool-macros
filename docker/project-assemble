@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+"""This takes a project file (xml) and assembles all the things in it.
+
+input:
+  file - an xml file specifically of our "project" type
+
+output:
+    <thing1>[...] -  things as described in the project file (tokens,
+    properties, macros, or macrosets)
+"""
+
+import argparse
+import subprocess
+from lxml import etree
+
+AP = argparse.ArgumentParser()
+
+AP.add_argument('file',
+                help = 'an xml description of your project''s assets')
+
+opts = AP.parse_args()
+
+xml = etree.parse(opts.file)
+
+for elem in xml.getroot():
+    if elem.tag == 'token':
+        subprocess.run(['token-assemble', elem.attrib['name']])
+    elif elem.tag == 'macro':
+        subprocess.run(['macro-assemble', elem.attrib['name']])
+    elif elem.tag == 'macroset':
+        cl = ['macro-assemble', '--set', elem.attrib['name']]
+        for macro in elem:
+            if macro.tag == 'macro':
+                cl.append(macro.attrib['name'])
+        subprocess.run(cl)
+    else:
+        subprocess.run(['automagic', elem.attrib['name']])
