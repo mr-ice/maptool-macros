@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>de13e16f-2cf1-40c0-a434-37340da7284d</macroUUID>
+  <saveLocation>GlobalPanel</saveLocation>
+  <index>32</index>
+  <colorKey>cyan</colorKey>
+  <hotKey>shift F12</hotKey>
+  <label>BasicToon</label>
+  <group>DnD Beyond</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.10em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Allows the developer to investigate and change values on the BasicToon for a selected token. Options are:
+
+edit:
+	Prompts the developer to select a field to overwrite. This will overwrite the entire field (not merge) and only prompts for the top level fields. Sub-object fields are not editable in this manner.
+
+set:
+	Prompts the developer to completely ovewrite the entire BasicToon for the token.
+
+print:
+	Prompts the developer for a field to print, including the option of "all" to print the entire BasicToon. The field value is then printed to a dialog box for easy viewing and copying.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
