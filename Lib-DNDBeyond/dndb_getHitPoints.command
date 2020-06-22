@@ -26,9 +26,9 @@
 
 [h: deathSaves = json.path.read (toon, "data.deathSaves")]
 [h: dsPass = json.get (deathSaves, "successCount")]
-[h, if (dsPass == "null"): dsPass = 0]
+[h: dsPass = if (isNumber(dsPass), dsPass, 0)]
 [h: dsFail = json.get (deathSaves, "failCount")]
-[h, if (dsFail == "null"): dsFail = 0]
+[h: dsFail = if (isNumber(dsFail), dsFail, 0)]
 
 
 [h: hitPoints =  json.set ("",
@@ -37,4 +37,5 @@
 							"tempHp", temporaryHitPoints,
 							"dsPass", dsPass,
 							"dsFail", dsFail)]
+							
 [h: macro.return = hitPoints]
