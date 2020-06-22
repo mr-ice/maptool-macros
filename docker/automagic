@@ -45,12 +45,23 @@ if [[ -z $arg ]]; then
     die "$(usage)"
 fi
 
+test -e "$arg" && echo "$arg exists"
+argxml="${arg%.xml}.xml"
+argcommand="${arg%.xml}.command"
+if [[ -n "$DEBUG" ]]; then
+    test -e "${argxml}" && echo "${argxml} exists"
+    test -e "${argcommand}" && echo "${argcommand} exists"
+fi
+
 if [[ -d $arg && -e $arg/content.xml ]]; then
     content_file="$arg/content.xml"
     content_dir="$(dirname $arg/.)" # strips trailing /
-elif [[ -f $arg && -e $arg && ${arg%%content.xml} != $arg ]]; then
+elif [[ -f $arg && ${arg%%content.xml} != $arg ]]; then
     content_file="$arg"
     content_dir="$(dirname $arg)"
+elif [[ -e "$argxml" && -e "$argcommand" ]]; then
+    content_file="$argxml"
+    content_dir="${arg%.xml}"
 else
     die "did you give me crap? cause I need a content.xml and there ain't one at $arg"
 fi
@@ -65,4 +76,18 @@ TYPE=$(head -1 "$content_file" | tee \
     >(grep -q Macro && echo 'mtmacro') \
     >(grep -q list && echo 'mtmacset') >/dev/null)
 
-make $content_dir.$TYPE
+case "$TYPE" in
+    (mtprops)
+        make $content_dir.$TYPE
+        ;;
+    (rptok)
+        token-assemble $content_dir --verbose
+        ;;
+    (mtmacro)
+        # really a file pattern by this point
+        macro-assemble $content_dir --verbose
+        ;;
+    (*)
+        die "automagic now only builds macros, tokens, and properties, to build a macset requires more arguments, see README.md"
+        ;;
+esac
