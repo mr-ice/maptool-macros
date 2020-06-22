@@ -9,27 +9,29 @@ xml and command (text) files.  They can be reassembled with the tools herein.
 You'll need a working git, docker, and bash.   Note the examples here
 assume you are in the top directory of the checkout.
 
+`test <this>`
+
 <dl>
-  <dt>`./dockerbuild`
+  <dt>./dockerbuild
   <dd>make our docker images using bash
-  <dt>`make build`
+  <dt>make build
   <dd>make our docker images using make
-  <dt>`./dockermagic <base thing>`
+  <dt>./dockermagic <base thing>
   <dd>build a macro from its xml file, or a properties or token from its
   directory
-  <dt>`./dockerrun automagic <base thing>`
-  <dd>same as `./dockermagic`
-  <dt>`./dockerrun macro-extract <thing>`
+  <dt>./dockerrun automagic <base thing>
+  <dd>same as ./dockermagic
+  <dt>./dockerrun macro-extract <thing>
   <dd>extract macros from mtmacro and mtmacset objects
-  <dt>`./dockerrun macro-assemble <macro/1>`
+  <dt>./dockerrun macro-assemble <macro/1>
   <dd>assemble a mtmacro from macro/1.xml and macro/1.command
-  <dt>`./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset`
+  <dt>./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset
   <dd>assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]
-  <dt>`./dockerrun token-extract <thing>`
+  <dt>./dockerrun token-extract <thing>
   <dd>extract a token and its macros from a .rptok file
-  <dt>`./dockerrun token-assemble <dir>`
+  <dt>./dockerrun token-assemble <dir>
   <dd>put a token back together
-  <dt>`./dockerrun project-assemble <thing>`
+  <dt>./dockerrun project-assemble <thing>
   <dd>put together tokens, properties, and macrosets described in a
   .project xml file
 </dl>
