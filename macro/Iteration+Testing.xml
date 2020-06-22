@@ -1,22 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5c47e113-3028-4a14-9e6f-49abcdfc3e68</macroUUID>
+  <macroUUID>1d3c6d9a-c9f5-46dc-9420-dafb76d220c5</macroUUID>
   <saveLocation/>
-  <index>13</index>
+  <index>14</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>&lt;!-- Create an input w/ Tabs. Each tab is a weapon known to the token --&gt;
-&lt;!-- token property has a list of Weapons--&gt;
-
-&lt;!-- Included in the weapon list, always last, is "New Weapon" w/ default values --&gt;
-
-&lt;!-- Each tab is identical in form including a Name field and the same fields as Single Attack has --&gt;
-&lt;!-- The weapon name is the "key" for the property name that stores a json string of the chosen values for that weapon --&gt;
-
-&lt;!-- Those values are used for the attack roll --&gt;
-
-</command>
-  <label>Dynamic example</label>
-  <group>Bode</group>
+  <label>Iteration Testing</label>
+  <group>Generic</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

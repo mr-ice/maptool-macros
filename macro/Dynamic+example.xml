@@ -1,15 +1,15 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d81fe3d7-1038-4ab3-8548-9f69767fa480</macroUUID>
+  <macroUUID>5c47e113-3028-4a14-9e6f-49abcdfc3e68</macroUUID>
   <saveLocation/>
-  <index>8</index>
+  <index>13</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>1d10</label>
-  <group>Generic</group>
+  <label>Dynamic example</label>
+  <group>Bode</group>
   <sortby/>
   <autoExecute>true</autoExecute>
-  <includeLabel>true</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>

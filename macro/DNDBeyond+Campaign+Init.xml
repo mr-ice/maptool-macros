@@ -1,31 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5dd07b6a-8f35-4e26-bc8d-d7d0581c2261</macroUUID>
-  <saveLocation/>
+  <macroUUID>2705752e-3638-4c9e-be11-b2bc05a840b1</macroUUID>
+  <saveLocation>Token</saveLocation>
   <index>3</index>
-  <colorKey>green</colorKey>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: initBonus = getProperty("Initiative")]
-
-[h: roll1 = 1d20 + initBonus]
-[h: roll2 = 1d20 + initBonus]
-
-Initiative: [r:roll1]&lt;br&gt;
-&lt;i&gt;Advantage&lt;/i&gt;: [r:roll2]
-
-[h: realInit = max(roll1, roll2)]
-[h: setInitiative(realInit)]</command>
-  <label>Bode Initiative</label>
-  <group>Bode</group>
-  <sortby>0</sortby>
+  <label>DNDBeyond Campaign Init</label>
+  <group/>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>white</fontColorKey>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>1d20+1 w/ Advantage</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

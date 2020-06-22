@@ -1,35 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>2705752e-3638-4c9e-be11-b2bc05a840b1</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>3</index>
+  <macroUUID>d558dfa3-dd16-4ad1-895b-0773b867e639</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>1</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>
-[h: setProperty ("libversion", "0.1")]
-
-&lt;!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them --&gt;
-[h: macros = getMacros()]
-[h: log.debug ("macros: " + macros)]
-[h, foreach (macroName, macros), code: {
-	[h, if (lastIndexOf (macroName, "dndb_") &gt; -1), code: {
-		[h: log.debug ("Registering " + macroName)]
-		[h: defineFunction (macroName, macroName + "@this")]
-	}]
-}]
-
-&lt;pre&gt;[r: json.indent (getInfo ("client"), 3)]&lt;/pre&gt;</command>
-  <label>DNDBeyond Campaign Init</label>
+  <label>Roll Initiative</label>
   <group/>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Roll Initiative for all Selected Tokens </toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

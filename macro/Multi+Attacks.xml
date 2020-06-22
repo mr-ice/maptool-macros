@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d81fe3d7-1038-4ab3-8548-9f69767fa480</macroUUID>
+  <macroUUID>87b1e33d-712e-4704-b647-ccdf24cc3cf8</macroUUID>
   <saveLocation/>
-  <index>8</index>
-  <colorKey>default</colorKey>
-  <hotKey>None</hotKey>
-  <label>1d10</label>
-  <group>Generic</group>
-  <sortby/>
+  <index>1</index>
+  <colorKey>red</colorKey>
+  <hotKey>F12</hotKey>
+  <label>Multi Attacks</label>
+  <group>Bode</group>
+  <sortby>1</sortby>
   <autoExecute>true</autoExecute>
-  <includeLabel>true</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Requires selected token</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

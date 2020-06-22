@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c0e54922-a509-4b79-8609-2c86af0a3145</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>3</index>
-  <colorKey>default</colorKey>
+  <macroUUID>394bcb42-a3a6-4d80-b11d-e6fb652cc0b8</macroUUID>
+  <saveLocation/>
+  <index>18</index>
+  <colorKey>red</colorKey>
   <hotKey>None</hotKey>
-  <label>Change Elevation</label>
-  <group>Environment</group>
+  <label>Make Attack</label>
+  <group>Attack</group>
   <sortby>1</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
-  <minWidth></minWidth>
-  <maxWidth></maxWidth>
+  <minWidth>50</minWidth>
+  <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip></toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

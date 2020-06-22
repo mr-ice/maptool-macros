@@ -1,15 +1,15 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d81fe3d7-1038-4ab3-8548-9f69767fa480</macroUUID>
+  <macroUUID>bad0448d-8ba9-45f9-a8bc-19fcb9dfd47f</macroUUID>
   <saveLocation/>
-  <index>8</index>
+  <index>5</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>1d10</label>
+  <label>Die Roller</label>
   <group>Generic</group>
   <sortby/>
   <autoExecute>true</autoExecute>
-  <includeLabel>true</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>

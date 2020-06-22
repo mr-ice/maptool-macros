@@ -1,24 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1d3c6d9a-c9f5-46dc-9420-dafb76d220c5</macroUUID>
-  <saveLocation/>
-  <index>14</index>
-  <colorKey>default</colorKey>
+  <macroUUID>191aff96-9fd0-49b4-b45e-68a6dc900706</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>4</index>
+  <colorKey>pink</colorKey>
   <hotKey>None</hotKey>
-  <command>[h: input("selectedWeapon | New Weapon,Scimitard of Speed,Good Sword |Select the weapon | LIST | select=2 value=string")]
-[r: selectedWeapon]
-</command>
-  <label>Iteration Testing</label>
-  <group>Generic</group>
-  <sortby/>
+  <label>Reset Properties</label>
+  <group>DNDBeyond</group>
+  <sortby>1</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
-  <minWidth/>
+  <fontSize>1.05em</fontSize>
+  <minWidth>160</minWidth>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Uses the previously fetched values from DnDBeyond and applies them to the token. This will reset any custom values the Player has previously set.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

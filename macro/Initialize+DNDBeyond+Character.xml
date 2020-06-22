@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d81fe3d7-1038-4ab3-8548-9f69767fa480</macroUUID>
-  <saveLocation/>
-  <index>8</index>
-  <colorKey>default</colorKey>
+  <macroUUID>3f158254-2399-44ff-b7cd-08fdaa725664</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>5</index>
+  <colorKey>red</colorKey>
   <hotKey>None</hotKey>
-  <label>1d10</label>
-  <group>Generic</group>
-  <sortby/>
+  <label>Initialize DNDBeyond Character</label>
+  <group>DNDBeyond</group>
+  <sortby>99</sortby>
   <autoExecute>true</autoExecute>
-  <includeLabel>true</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
-  <minWidth/>
+  <fontSize>1.05em</fontSize>
+  <minWidth>150</minWidth>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Fetches a DNDBeyond character and syncs the attributes with the selected token.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
