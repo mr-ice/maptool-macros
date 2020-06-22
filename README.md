@@ -9,31 +9,29 @@ xml and command (text) files.  They can be reassembled with the tools herein.
 You'll need a working git, docker, and bash.   Note the examples here
 assume you are in the top directory of the checkout.
 
-`test <this>`
-
 <dl>
-  <dt>./dockerbuild
-  <dd>make our docker images using bash
-  <dt>make build
-  <dd>make our docker images using make
-  <dt>./dockermagic <base thing>
+  <dt><code>./dockerbuild</code></dt>
+  <dd>make our docker images using bash</dd>
+  <dt><code>make build</code></dt>
+  <dd>make our docker images using make</dd>
+  <dt><code>./dockermagic &lt;base thing&gt;</code></dt>
   <dd>build a macro from its xml file, or a properties or token from its
-  directory
-  <dt>./dockerrun automagic <base thing>
-  <dd>same as ./dockermagic
-  <dt>./dockerrun macro-extract <thing>
-  <dd>extract macros from mtmacro and mtmacset objects
-  <dt>./dockerrun macro-assemble <macro/1>
-  <dd>assemble a mtmacro from macro/1.xml and macro/1.command
-  <dt>./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset
-  <dd>assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]
-  <dt>./dockerrun token-extract <thing>
-  <dd>extract a token and its macros from a .rptok file
-  <dt>./dockerrun token-assemble <dir>
-  <dd>put a token back together
-  <dt>./dockerrun project-assemble <thing>
+  directory</dd>
+  <dt><code>./dockerrun automagic &lt;base thing&gt;</code></dt>
+  <dd>same as <code>./dockermagic</code></dd>
+  <dt><code>./dockerrun macro-extract &lt;thing&gt;</code></dt>
+  <dd>extract macros from mtmacro and mtmacset objects</dd>
+  <dt><code>./dockerrun macro-assemble &lt;macro/1&gt;</code></dt>
+  <dd>assemble a mtmacro from macro/1.xml and macro/1.command</dd>
+  <dt><code>./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset</code></dt>
+  <dd>assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]</dd>
+  <dt><code>./dockerrun token-extract &lt;thing&gt;</code></dt>
+  <dd>extract a token and its macros from a .rptok file</dd>
+  <dt><code>./dockerrun token-assemble &lt;dir&gt;</code></dt>
+  <dd>put a token back together</dd>
+  <dt><code>./dockerrun project-assemble &lt;thing&gt;</code></dt>
   <dd>put together tokens, properties, and macrosets described in a
-  .project xml file
+    .project xml file</dd>
 </dl>
 
 ---
