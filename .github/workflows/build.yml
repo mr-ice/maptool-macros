@@ -19,10 +19,13 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
+      
+    - name: check that files we need are present
+      run: ls -l docker
       
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
