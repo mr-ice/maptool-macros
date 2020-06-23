@@ -38,23 +38,23 @@
 [h: spellAttackModifiers = dndb_searchGrantedModifiers (searchArg)]
 [h: proficiency = dndb_getProficiencyBonus (toon)]
 [h, foreach (class, mergedClasses), code: {
-	[h: log.debug ("dndb_getSpells, mergedClasses loop: class = " + class)]
 	<!-- find the classSpells object for the class -->
 	[h: classSpellsSearchArg = json.set ("", "object", classSpellsArry,
 									"characterClassId", json.get (class, "id"))]
 	[h: classSpells = json.get (dndb_searchJsonObject (classSpellsSearchArg), 0)]
 	
 	[h: spellCastingAbilityId = json.path.read (class, "definition.spellCastingAbilityId")]
-	[h: log.info ("spellCastingAbilityId = [" + spellCastingAbilityId + "]")]
-	[h: classRequiresPreparation = json.path.read (class, "definition.spellPrepareType")]
-	[h: isRitualCaster = json.path.read (class, "definition.spellRules.isRitualSpellCaster")]
+	[h: classRequiresPreparation = json.path.read (class, "definition.spellPrepareType", "SUPPRESS_EXCEPTIONS")]
+	[h, if (classRequiresPreparation == "null"): classRequiresPreparation = 0]
+	[h: isRitualCaster = json.path.read (class, "definition.spellRules.isRitualSpellCaster", "SUPPRESS_EXCEPTIONS")]
+	[h, if (isRitualCaster == "null"): isRitualCaster = 0]
 	[h: spellContainer = json.path.read (class, "definition.spellContainerName", "SUPPRESS_EXCEPTIONS")]
 	[h: log.debug ("dndb_getSpells: isRitualCaster = " + isRitualCaster + "; spellContainer = " + spellContainer)]
+	[h: casterLevel = json.get (class, "level")]
 	[h: spells = json.get (classSpells, "spells")]
 
 	[h, foreach (spell, spells), code: {
 		[h: basicSpell = dndb_convertSpell (toon, spell)]
-
 		[h, switch (spellCastingAbilityId):
 			case 1: abilityName = "str";
 			case 2: abilityName - "dex";
@@ -84,6 +84,7 @@
 		[h: basicSpell = json.set (basicSpell, "ritual", spellIsRitual,
 									"abilityBonus", abilityBonus,
 									"saveDC", saveDC,
+									"casterLevel", casterLevel,
 									"attackBonus", atkBonus,
 									"spellCastingAbilityId", spellCastingAbilityId,
 									"mustBePrepared", classRequiresPreparation)]

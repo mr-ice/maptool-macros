@@ -1,7 +1,7 @@
 [h: expression = arg(0)]
 [h: findType = arg(1)]
 [h: IMPLIED_TYPES = json.set ("", 
-					"AttackDamage", json.append ("", "critable"),
+					"Damage", json.append ("", "critable"),
 					"Attack", json.append ("", "advantagable"),
 					"Save", json.append ("", "advantagable"),
 					"Ability", json.append ("", "advantagable"))]

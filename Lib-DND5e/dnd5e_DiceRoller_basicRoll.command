@@ -26,9 +26,14 @@
 [h: output = json.get (rollExpression, "output")]
 [h, if (output == ""), code: {
 	[h: description = json.get (rollExpression, "description")]
+	[h, if (description != ""): description = description + "<br>"; ""]
+	[h: damageTypes = json.merge ("[]", json.get (rollExpression, "damageTypes"))]
+	[h: damageTypeStr = ""]
+	[h, foreach (damageType, damageTypes): damageTypeStr = ", " + damageTypeStr + damageType]
+	[h, if (json.length (damageTypes) > 0): damageTypeStr = substring (damageTypeStr, 2); ""]
 	[h: name = json.get (rollExpression, "name")]
-	[h: log.debug ("dnd5e_DiceRoller_basicRoll: description = " + description + "; name = " + name)]
-	[h: output = name + " " + descriptor + ": " + total + " " + description]
+	[h: log.debug ("dnd5e_DiceRoller_basicRoll: damagetTypes = " + damageTypes + "; name = " + name)]
+	[h: output = description + name + " " + descriptor + ": " + total + " " + damageTypeStr]
 }]
 
 [h: rollExpression = json.set (rollExpression, "rolls", rolls,

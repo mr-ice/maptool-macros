@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>321fe28a-00ad-4dab-9656-0c0c9ae5db6a</macroUUID>
+  <macroUUID>01df8f4c-2ffd-4935-9525-db76a07823ca</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>81</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_buildSpellRoll</label>
-  <group>Utility</group>
+  <label>dndb_RollExpression_buildSpellRoll</label>
+  <group>Utility - RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,10 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>builds the roll expressions for the passed in spell and returns a RollExpression</toolTip>
+  <toolTip>builds the roll expressions for the passed in spell and returns a RollExpression
+
+arg(0) = spell
+arg(1) = spellSlot level being spent</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

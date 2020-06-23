@@ -1,4 +1,4 @@
-[h: toon = arg (0)]
+[h: atoon = arg (0)]
 [h: spell = arg (1)]
 
 <!-- to avoid wrastling with json.path.read, get the definition and use json.get -->

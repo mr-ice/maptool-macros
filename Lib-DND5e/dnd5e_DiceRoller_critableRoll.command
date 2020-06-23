@@ -8,7 +8,8 @@
 [h, foreach (candidate, fromCritCandidateExpressions), code: {
 	[h, if (dnd5e_DiceRoller_hasType (candidate, "Attack")): critCandidate = candidate; ""]
 }]
-[h: roll = json.get (critCandidate, "roll")]
+[h, if (json.type (critCandidate) == "OBJECT"): roll = json.get (critCandidate, "roll"); roll = 0]
+
 [h, if (roll == 20), code: {
 	<!-- critical! -->
 	<!-- Sniff onCritAdd property to determine addtional dice. If not found, assume the same amount
@@ -21,8 +22,12 @@
 	<!-- critRoll has the totals ledger, so use that and just add the totals together -->
 	[h: total = 0]
 	[h, foreach (subTotal, json.get (critRoll, "totals")): total = total + subTotal]
-	[h: output = json.get (rollExpression, "output")]
-	[h: output = "<font color='red'><b>CRITICAL </b></font>" + output]
+	<!-- Just replace whats currently on output. We have better information -->
+	[h: damageTypes = json.get (critRoll, "damageTypes")]
+	[h: damageString = json.toList (damageTypes)]
+	[h: name = json.get (critRoll, "name")]
+	[h: description = json.get (critRoll, "description")]
+	[h: output = description + "<br><font color='red'><b>CRITICAL </b></font> " + name + " Roll: " + total + " " + damageString] 
 	[h: rollExpression = json.set (critRoll, "total", total, "output", output)]
 }]
 [h: macro.return = rollExpression]

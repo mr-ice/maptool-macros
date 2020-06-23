@@ -2,6 +2,7 @@
   <properties name="DND5e"/>
   <token name="Lib-DNDBeyond"/>
   <token name="Lib-DND5e"/>
+  <token name="Lib-DNDB-TestLibrary"/>
   <macroset name="DNDBeyond">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>

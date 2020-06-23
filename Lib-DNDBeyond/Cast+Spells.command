@@ -1,12 +1,8 @@
 [h, if (json.length (macro.args) > 0): inputObj = arg (0); inputObj = ""]
-[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=false"))]
-	[h: return (0, error)]
-}]
-
+[h: basicToon = dndb_getBasicToon ()]
 <!-- Display a list of spells to chose -->
+
+[h: MINIMUM_ALLOWED = "Minimum Allowed"]
 
 [h: concentrationSpells = "{}"]
 [h: concentrationSpellsInput = ""]
@@ -29,7 +25,7 @@
 	}]
 }]
 
-[h: spellSlotInput = "Minimum Allowed" + spellSlotInput]
+[h: spellSlotInput = MINIMUM_ALLOWED + spellSlotInput]
 [h: castableRitualSpells = dndb_getCastableSpells(1)]
 [h: spells = dndb_getCastableSpells()]
 [h, foreach (spell, castableRitualSpells), code: {
@@ -93,21 +89,29 @@
 	[h: spellLevel = json.get (selectedSpell, "level")]
 	[h: selectedSpellSlot = ""]
 	[h, if (isNumber (spellSlot)): spellSlotNum = number (spellSlot); spellSlotNum = -1]
-	[h, foreach (candidateSlot, spellSlots), code: {
+	[h: log.debug ("Cast Spells: spellSlotNum = " + spellSlotNum)]
+	<!-- Find the minimum candidate slot -->
+	[h: minimumSpellSlot = ""]
+	[h, foreach (candidateSlot, availableSpellSlots), code: {
 		[h: slotLevel = json.get (candidateSlot, "level")]
-		[h, if (spellSlot == "Minimum Allowed"): minimumSelected = 1; minimumSelected = 0]
-		[h, if (slotLevel >= spellLevel || spellSlotNum >= spelllevel): slotLevelIsValid = 1; slotLevelIsValid = 0]
-		[h: log.debug ("spellSlot: " + spellSlot + "; slotLevel: " + slotLevel + "; spellLevel: " + spellLevel + "; selectedSpellSlot: " + selectedSpellSlot +
-			"; minimumSelected: " + minimumSelected + "; slotLevelIsValid: " + slotLevelIsValid)]
-		[h, if (minimumSelected && slotLevelIsValid && encode (selectedSpellSlot) == ""): selectedSpellSlot = candidateSlot; ""]
-		[h, if (!minimumSelected && slotLevelIsValid && encode (selectedSpellSlot) == ""): selectedSpellSlot = candidateSlot; ""]
+		[h, if (slotLevel >= spellLevel): slotLevelIsValid = 1; slotLevelIsValid = 0]
+		[h, if (encode (minimumSpellSlot) == "" && slotLevelIsValid): minimumSpellSlot = candidateSlot; ""]
 	}]
 
-	[h, if (validChoice == 1 && encode (selectedSpellSlot) == ""), code: {
+	[h: log.debug ("Cast Spells: minimumSpellSlot = " + minimumSpellSlot)]
+	<!-- if minimum was selected, roll with it. If a number was chosen, validate its equal or bigger than the spell and use that -->
+	[h, if (spellSlot == MINIMUM_ALLOWED): selectedSpellSlotLevel = json.get (minimumSpellSlot, "level"); selectedSpellSlotLevel = spellSlotNum]
+	[h: log.debug ("Cast Spells: spellSlot = " + spellSlot + "; selectedSpellSlotLevel = " + selectedSpellSlotLevel)]
+	<!-- validate -->
+	[h: validChoice = 1]
+	[h, if (selectedSpellSlotLevel < spellLevel), code: {
+		[h: abort (input ("junk | Invalid spell slot selected | | Label | span=true"))]
 		[h: validChoice = 0]
-		[h: input ("junk | Invalid spell slot selected | | Label | span=true")]
 	};{""}]
 
 	[h: log.debug ("Selected Spell: " + selectedSpell)]
-	[h: log.debug ("Selected Slot: " + selectedSpellSlot)]
+	[h: log.debug ("Selected Slot: " + selectedSpellSlotLevel)]
+	[h: expressions = dndb_RollExpression_buildSpellRoll (selectedSpell, selectedSpellSlotLevel)]
 }]
+[r: "Casting " + json.get (selectedSpell, "name") + " at spell level " + selectedSpellSlotLevel]
+[h: results = dndb_DiceRoller_roll (expressions)]

@@ -9,22 +9,24 @@
 [h: roll2Val = json.get (roll2, "roll")]
 [h: rolls = json.get (roll2, "rolls")]
 [h: log.debug ("dnd5e_DiceRoller_advantageRoll: roll1 = " + roll1 + "; roll2 = " + roll2)]
-[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
 [h: output = json.get (rollExpression, "output")]
+<!-- Default value is roll1Value -->
+[h: roll = roll1Val]
 [h, if (advantage && !disadvantage), code: {
 	[h: roll = math.max (roll1Val, roll2Val)]
 	[h: output = output + "<br>Advantage: " + rolls]
 	[h: rollExpression = roll2]
+	[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
 }]
 [h, if (!advantage && disadvantage), code: {
 	[h: roll = math.min (roll1Val, roll2Val)]
 	[h: output = output + "<br>Disadvantage: " + rolls]
 	[h: rollExpression = roll2]
+	[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
 }]
 <!-- roll1 has no extra roll attached in rolls, so return it representing no second roll -->
 [h, if (advantage && disadvantage), code: {
 	[h: output = output + "<br> Advantage and Disadvantage cancel"]
-	[h: roll = roll1]
 }]
 
 [h: rollExpression = json.set (rollExpression, "roll", roll, "output", output)]
