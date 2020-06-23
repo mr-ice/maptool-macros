@@ -50,7 +50,7 @@ jobs:
         python3 -mpytest
 
     - name: Build our DNDBeyond Artifacts
-      run: ./docker/project-assemble DNDBeyond.project
+      run: PATH=docker:$PATH ./docker/project-assemble DNDBeyond.project
 
     - name: Show our artifacts, eventually push these to packages
       run: |
