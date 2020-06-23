@@ -23,20 +23,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      
+
     - name: check that files we need are present
       run: ls -l docker
-      
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
         pip install flake8 pytest pytest-sugar
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        
+
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -46,8 +47,8 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest
-      
+        python3 -mpytest
+
     - name: Build our DNDBeyond Artifacts
       run: make package
 
