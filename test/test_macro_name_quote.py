@@ -1,5 +1,6 @@
 from docker.MacroName import MacroNameQuote as quote
 
+
 class TestMacroName():
     def test_macro_name_quote_no_changes(self):
         assert quote('nochangesnecessary') == 'nochangesnecessary'
