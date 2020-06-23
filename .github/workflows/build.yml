@@ -50,7 +50,7 @@ jobs:
         python3 -mpytest
 
     - name: Build our DNDBeyond Artifacts
-      run: make project
+      run: make project-local
 
     - name: Show our artifacts, eventually push these to packages
       run: |
