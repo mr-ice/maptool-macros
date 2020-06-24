@@ -1,17 +1,17 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6c8cfca6-1155-4492-ba4f-791c8719565a</macroUUID>
+  <macroUUID>24109a7a-83b4-4057-9f9c-2038d7d15680</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>77</index>
-  <colorKey>default</colorKey>
+  <colorKey>teal</colorKey>
   <hotKey>None</hotKey>
   <label>Cast Spells</label>
   <group>Token</group>
-  <sortby/>
+  <sortby>2</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>

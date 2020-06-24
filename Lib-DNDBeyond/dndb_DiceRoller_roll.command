@@ -10,8 +10,10 @@
 
 <!-- the dice roller has pretty much built the message. Today, this macro doesnt have much
 	 to do. Later, we can revisit with the preferences object to better display the messages -->
-[h: output = "<br>" + token.name + ":<br>"]
+[h: fullOutput = "<br>" + token.name + ":<br>"]
 [h, foreach (rollExpression, rollExpressions), code: {
-	[h: output = output + "<br>" + json.get (rollExpression, "output")]
+	[h: outputs = json.get (rollExpression, "outputs")]
+	[h, if (json.isEmpty (outputs)): outputs = json.append ("", json.get (rollExpression, "output"));""]
+	[h, foreach (output, outputs): fullOutput = fullOutput + "<br>" + output]
 }]
-[h: broadcast (output + "<br>", target)]
+[h: broadcast (fullOutput + "<br>", target)]

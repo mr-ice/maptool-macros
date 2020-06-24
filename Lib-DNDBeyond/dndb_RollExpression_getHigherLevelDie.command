@@ -19,17 +19,28 @@
 	<!-- spell effect is based on the spell slot level -->
 	<!-- Need to find the differential, so subract the spell level from slot level -->
 	[h: levelDiff = slotLevel - spellLevel]
-	[h: higherLevelDefinition = json.get (higherLevelDefinitions, 0)]
+	[h, if (json.length (higherLevelDefinitions) > 0): 
+			higherLevelDefinition = json.get (higherLevelDefinitions, 0);
+			higherLevelDefinition = "{}"]
 	[h: dice = json.get (higherLevelDefinition, "dice")]
+	[h, if (encode (dice) == ""): dice = "{}"; ""]
 	[h: higherLevelLevel = json.get (higherLevelDefinition, "level")]
+	[h, if (higherLevelLevel == ""): higherLevelLevel = 1; ""]
 	[h: multiplier = round (math.floor(levelDiff / higherLevelLevel))]
-	[h: diceCount = json.get (dice, "diceCount") * multiplier]
+	[h: diceCount = json.get (dice, "diceCount")]
+	[h, if (diceCount == ""): diceCount = 0; ""]
+	[h, if (diceCount == 0): totalRolls = levelDiff; totalRolls = 0]
+	[h: diceCount = diceCount * multiplier]
 	[h: diceValue = json.get (dice, "diceValue")]
 	[h: fixedValue = json.get (dice, "fixedValue")]
 	[h: diceMultiplier = json.get (dice, "diceMultiplier")]
+
+	<!-- For something like Magic Missile, the diceCount will end up being 0 -->
+	<!-- it should be calculated differently anyways, so ok for this macro to return 0-->
 	[h: dice = json.set ("", "diceCount", diceCount,
 						"diceValue", diceValue,
 						"fixedValue", fixedValue,
+						"totalRolls", totalRolls,
 						"diceMultiplier", diceMultiplier)]
 }]
 

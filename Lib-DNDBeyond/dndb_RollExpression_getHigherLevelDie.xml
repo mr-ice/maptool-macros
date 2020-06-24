@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Extracts the atHigherLevel information from the spell and builds the corresponding dice object based on the expended spellslot or the character level.
 
 arg (0) = BasicSpell

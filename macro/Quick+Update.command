@@ -22,8 +22,12 @@
 <!-- Conditions -->
 [h: conditions = dndb_getConditions (toon)]
 
+<!-- Spell Slots -->
+[h: spellSlots = dndb_getSpellSlots (toon)]
+
 [h: basicToon = json.set (basicToon, 
 				"speeds", speeds,
+				"spellSlots", spellSlots,
 				"hitPoints", hitPoints,
 				"armorClass", ac,
 				"conditions", conditions)]

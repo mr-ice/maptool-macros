@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cd7e7353-f33c-432b-a162-f2ce61ab7da1</macroUUID>
+  <macroUUID>ecc3acb6-22e7-4318-a718-cd815261f067</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>10</index>
   <colorKey>default</colorKey>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Returns true (1) if the provided RollExpression is has the type
 
 arg(0) = RollExpressions

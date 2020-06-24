@@ -38,6 +38,7 @@
 
 [h: rollExpression = json.set (rollExpression, "rolls", rolls,
 												"roll", roll,
+												"rollExpression", baseRoll + " + " + bonus,
 												"totals", totals,
 												"total", total,
 												"output", output)]

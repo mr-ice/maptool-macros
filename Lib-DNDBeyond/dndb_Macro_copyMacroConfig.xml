@@ -1,23 +1,23 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>196615d7-2548-4589-9be1-73a4fb0a0552</macroUUID>
+  <macroUUID>2b5dd460-f9dd-4e58-a085-9f6398aefad1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>9</index>
+  <index>87</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_DiceRoller_basicRoll</label>
-  <group>Dice Roller</group>
+  <label>dndb_Macro_copyMacroConfig</label>
+  <group>Utility - Macro</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Takes the provided RollExpression and rolls one time, applying no behaviors to the roll
+  <toolTip>Given a macro label, locate the Macro of the same name on the token and return a MacroConfig based on the macro. If more than one macro is found, use the first.
 
-arg(0) = RollExpression</toolTip>
+arg (0) = Macro name</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

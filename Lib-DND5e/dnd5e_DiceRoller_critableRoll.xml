@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d3775fb2-4e3d-4349-95ab-d49d5583163d</macroUUID>
+  <macroUUID>6c441e8b-e038-4217-a5b4-ec1dde4c9981</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>12</index>
   <colorKey>default</colorKey>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Given an array of rollExpressions and the critable expression, determine if onCritFrom expression was a crit. If it was, roll the RollExpression again and add the result to the total.
 
 arg (0) = RoleExpression w/ Critable tag

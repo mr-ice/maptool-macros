@@ -43,6 +43,12 @@
 					"sortBy", "120",
 					"command", "[macro('Quick Update@CAMPAIGN'): '']"),
 
+			json.set (basicCfg, "name", "Cast Spells",
+					"color", "teal",
+					"fontColor", "white",
+					"sortBy", "2",
+					"command", "[macro('Cast Spells@Lib:DnDBeyond'): '']"),
+
 			json.set (basicCfg, "name", "Skill Check",
 					"color", "blue",
 					"fontColor", "white",

@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8160e443-2588-49d2-8cae-37a959b4d716</macroUUID>
+  <macroUUID>ea24c888-84b0-4ffe-99e6-f6e7b18392d8</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>8</index>
   <colorKey>default</colorKey>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Rolls the incoming RollExpression based on hasAdvantage and hasDisadvantage. It's assumed the incoming RollExpression has been rolled once already by basicRoll
 
 arg (0) = RollExpression</toolTip>

@@ -52,6 +52,10 @@
 	[h: retSpellSlots = json.append (retSpellSlots, spellSlot)]
 	[h: idx = idx + 1]
 }]
+
+<!-- give the toon cantrips via 0-level spellSlot -->
+[h: cantrips = json.append ("", json.set ("", "available", 99, "level", 0, "used", 0))]
+[h: retSpellSlots = json.merge (cantrips, retSpellSlots)]
 [h: log.debug ("dndb_getSpellSlots: selected spell slots = " + retSpellSlots)]
 <!-- done -->
 [h: macro.return = retSpellSlots]

@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>196615d7-2548-4589-9be1-73a4fb0a0552</macroUUID>
+  <macroUUID>b52bba6f-e666-4a68-9aa6-c97d354f41bb</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>9</index>
+  <index>85</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_DiceRoller_basicRoll</label>
-  <group>Dice Roller</group>
+  <label>dndb_findMinimumAvailableSpellSlotForSpell</label>
+  <group>Utility - Spells</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,11 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Takes the provided RollExpression and rolls one time, applying no behaviors to the roll
+  <toolTip>Returns the lowest available SpellSlot on the BasicToon for the given spell
 
-arg(0) = RollExpression</toolTip>
+arg (0) = BasicSpell
+
+returns int</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
