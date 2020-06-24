@@ -11,6 +11,9 @@ endif
 project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
 	./dockerrun project-assemble DNDBeyond.project
 
+project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
+	./docker/project-assemble DNDBeyond.project
+
 %.mtmacro:
 	@echo "E: makefile no longer builds macros.  You should use dockerrun macro-assemble instead"
 

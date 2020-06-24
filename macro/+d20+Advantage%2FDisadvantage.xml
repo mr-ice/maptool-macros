@@ -4,8 +4,6 @@
   <index>4</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <command>Roll 1: [r:1d20]&lt;br&gt;
-Roll 2: [r:1d20]</command>
   <label> d20 Advantage/Disadvantage</label>
   <group>Generic</group>
   <sortby>99</sortby>
