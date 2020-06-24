@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ec304154-5ab6-421e-ab3f-98dbf6f6889e</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>84</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dndb_RollExpression_getHigherLevelDie</label>
+  <group>Utility - RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Extracts the atHigherLevel information from the spell and builds the corresponding dice object based on the expended spellslot or the character level.
+
+arg (0) = BasicSpell
+arg (1) = spellSlot level
+
+returns modified dice object, which includes the scaleType:
+
+{
+	"scaleType": "spellscale",
+  "diceCount": "3",
+  "diceValue": "10",
+  "fixedValue": "0"
+}
+
+For spellscalelevel (like Fireball), the return dice object is the additional dice added to the original roll. For characterlevel (like Fire Bolt), the return object replaces the original.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

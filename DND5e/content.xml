@@ -346,6 +346,23 @@
         </net.rptools.maptool.model.TokenProperty>
       </list>
     </entry>
+    <entry>
+      <string>DNDebug</string>
+      <list>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_dndb_OverrideBasicToon</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_dnd5e_lastRolledExpression</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+      </list>
+    </entry>
   </tokenTypeMap>
   <remoteRepositoryList>
     <string>http://www.rptools.net/image-indexes/gallery.rpax.gz</string>

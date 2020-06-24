@@ -1,4 +1,5 @@
 [h: charId = getProperty ("Character ID")]
+<!-- This script must deal with the raw Basic Toon, avoid dndb_getBasicToon -->
 [h: basicToon = getProperty ("dndb_BasicToon")]
 
 [h, if (charId == "" || encode (basicToon) == ""), code: {
@@ -21,8 +22,12 @@
 <!-- Conditions -->
 [h: conditions = dndb_getConditions (toon)]
 
+<!-- Spell Slots -->
+[h: spellSlots = dndb_getSpellSlots (toon)]
+
 [h: basicToon = json.set (basicToon, 
 				"speeds", speeds,
+				"spellSlots", spellSlots,
 				"hitPoints", hitPoints,
 				"armorClass", ac,
 				"conditions", conditions)]

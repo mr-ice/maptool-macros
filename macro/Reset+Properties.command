@@ -1,11 +1,10 @@
+[h: basicToon = dndb_getBasicToon ()]
+
 [h, if (json.length (macro.args) > 0): noConfirm = arg(0); noConfirm = 0]
 [h: confirm = 1]
 [h, if (!noConfirm): input ("ignored | WARNING! This will reset any custom values. | All properties will be overwritten! | Label | SPAN=TRUE",
-	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0")]
+	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0");""]
 [h: abort (confirm)]
-
-[h: basicToon = getProperty ("dndb_BasicToon")]
-[r, if (json.length (basicToon) < 1): return (0, "No D&D Beyond data was found on the token. You need to sync, first")]
 
 <!-- do this first! -->
 [h: dndb_applyConditions (basicToon)]
