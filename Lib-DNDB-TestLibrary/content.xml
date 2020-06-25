@@ -335,8 +335,8 @@
       <entry>
         <string>senses</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Senses</key>
-          <value class="string"/>
+          <key>senses</key>
+          <value class="string">[{"name":"Darkvision","distance":90},{"name":"Blindsight","distance":0},{"name":"Truesight","distance":0},{"name":"Tremorsense","distance":0}]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -550,8 +550,8 @@
       <entry>
         <string>maxhp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>MaxHP</key>
-          <value class="string"/>
+          <key>maxHp</key>
+          <value class="string">63</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -622,8 +622,8 @@
       <entry>
         <string>initiative</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Initiative</key>
-          <value class="string"/>
+          <key>initiative</key>
+          <value class="string">7</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -813,10 +813,6 @@
     <entry>
       <int>22</int>
       <macro name="Run+Tests"/>
-    </entry>
-    <entry>
-      <int>23</int>
-      <macro name="dndbt_Test_Bob"/>
     </entry>
     <entry>
       <int>25</int>
