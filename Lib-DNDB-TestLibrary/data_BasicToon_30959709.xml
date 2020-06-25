@@ -1,20 +1,20 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ffe1b69b-86ad-40a5-99e5-96cec54edd4b</macroUUID>
+  <macroUUID>fe4534ae-5364-4e98-88df-4aae47827932</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
-  <colorKey>cyan</colorKey>
+  <index>45</index>
+  <colorKey/>
   <hotKey>None</hotKey>
-  <label>Build Test Toon</label>
-  <group>Meta Test</group>
+  <label>data_BasicToon_30959709</label>
+  <group>Data</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.15em</fontSize>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
+  <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

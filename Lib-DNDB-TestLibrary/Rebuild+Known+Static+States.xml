@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ffe1b69b-86ad-40a5-99e5-96cec54edd4b</macroUUID>
+  <macroUUID>a13765ea-a8b6-47c1-8b3e-02d83c196365</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
-  <colorKey>cyan</colorKey>
+  <index>27</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Build Test Toon</label>
+  <label>Rebuild Known Static States</label>
   <group>Meta Test</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.15em</fontSize>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Iterate through our list of test toons and rebuild their known-good data macros. Note: the originals should be manually cleared, first.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

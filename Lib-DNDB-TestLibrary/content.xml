@@ -336,7 +336,7 @@
         <string>senses</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>senses</key>
-          <value class="string">[{"name":"Darkvision","distance":90},{"name":"Blindsight","distance":0},{"name":"Truesight","distance":0},{"name":"Tremorsense","distance":0}]</value>
+          <value class="string">[{"name":"Darkvision","distance":0},{"name":"Blindsight","distance":0},{"name":"Truesight","distance":0},{"name":"Tremorsense","distance":0}]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -551,7 +551,7 @@
         <string>maxhp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>maxHp</key>
-          <value class="string">63</value>
+          <value class="string">156</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -623,7 +623,7 @@
         <string>initiative</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>initiative</key>
-          <value class="string">7</value>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -820,7 +820,7 @@
     </entry>
     <entry>
       <int>27</int>
-      <macro name="Rebuild+Known+States"/>
+      <macro name="Rebuild+Known+Static+States"/>
     </entry>
     <entry>
       <int>28</int>
@@ -869,6 +869,30 @@
     <entry>
       <int>39</int>
       <macro name="data_BasicToon_Zairali"/>
+    </entry>
+    <entry>
+      <int>40</int>
+      <macro name="Rebuild+Known+Live+States"/>
+    </entry>
+    <entry>
+      <int>42</int>
+      <macro name="dndbt_Test_KnownLiveToons"/>
+    </entry>
+    <entry>
+      <int>43</int>
+      <macro name="data_BasicToon_30957877"/>
+    </entry>
+    <entry>
+      <int>44</int>
+      <macro name="data_BasicToon_30957978"/>
+    </entry>
+    <entry>
+      <int>45</int>
+      <macro name="data_BasicToon_30959709"/>
+    </entry>
+    <entry>
+      <int>46</int>
+      <macro name="data_BasicToon_30960137"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
