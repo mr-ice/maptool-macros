@@ -11,7 +11,7 @@ COPY token-assemble /usr/local/bin
 COPY token-extract /usr/local/bin
 COPY zipfile_infolist.py /usr/local/bin
 COPY project-assemble /usr/local/bin
-COPY MacroName.py /usr/local/bin
+COPY MTAssetLibrary.py /usr/local/bin
 
 RUN dos2unix /usr/local/bin/automagic \
   && dos2unix /usr/local/bin/macro-assemble \

@@ -28,6 +28,7 @@ from lxml.etree import tostring
 import zipfile
 from urllib.parse import quote
 from textwrap import wrap
+from MTAssetLibrary import DataElement
 
 AP = argparse.ArgumentParser()
 
@@ -79,9 +80,7 @@ for i, entry in enumerate(root.macroPropertiesMap.entry):
         # read the files and reconstruct the macro object
         macro = objectify.parse(xml_file)
         command = open(command_file,'r').read()
-        macro.getroot().command = objectify.DataElement(command,
-                                                        nsmap='',
-                                                        _pytype='')
+        macro.getroot().command = DataElement(command)
 
         # re-create the entry object
         entry_template = '<entry><int>{}</int>{}</entry>'

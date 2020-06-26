@@ -1,4 +1,4 @@
-from docker.MacroName import MacroNameQuote as quote
+from docker.MTAssetLibrary import MacroNameQuote as quote
 
 
 class TestMacroName():

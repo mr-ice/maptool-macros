@@ -29,7 +29,7 @@ from lxml import objectify
 from lxml.etree import tostring
 import zipfile
 from urllib.parse import quote
-from MacroName import MacroNameQuote as quote
+from MTAssetLibrary import MacroNameQuote as quote
 from textwrap import wrap
 
 AP = argparse.ArgumentParser()

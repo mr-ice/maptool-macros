@@ -50,7 +50,7 @@ from lxml import etree
 from zipfile import ZipFile, ZIP_DEFLATED
 from zipfile_infolist import print_info
 from urllib.parse import quote_plus as quote
-
+from MTAssetLibrary import DataElement
 
 AP = argparse.ArgumentParser()
 
@@ -86,7 +86,7 @@ opts = AP.parse_args(sys.argv[1:])
 properties_xml="""<map>
   <entry>
     <string>version</string>
-    <string>1.6.1</string>
+    <string>1.7.0</string>
   </entry>
 </map>"""
 
@@ -112,7 +112,7 @@ class MTMacro():
             print('I: loading',self.commandfile,'for the macro command file')
         self.command = open(self.commandfile).read()
         # reassemble the command into the xml
-        self.xml.getroot().command = objectify.DataElement(self.command, nsmap='', _pytype='')
+        self.xml.getroot().command = DataElement(self.command)
         self.label = self.xml.getroot().label
         if opts.verbose:
             print('I: got label \"',self.label,'\" from the xml', sep='')
