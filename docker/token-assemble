@@ -23,6 +23,7 @@ import sys
 import argparse
 import pathlib
 import lxml
+import logging as log
 from lxml import objectify
 from lxml.etree import tostring
 import zipfile
@@ -38,17 +39,23 @@ AP.add_argument('--verbose','-v', action='store_true', default=False)
 
 opts = AP.parse_args()
 
+if opts.verbose:
+    log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
+    log.info("Verbose output.")
+else:
+    log.basicConfig(format="%(levelname)s: %(message)s")
+
 if not os.path.isdir(opts.directory):
-    print("\n".join(wrap("{} could not be found, be careful that it is "
-          "in the current working directory when running with docker"
-          "".format(opts.file))), file=sys.stderr)
+    log.error("\n".join(wrap("{} could not be found, be careful that it is "
+                             "in the current working directory when "
+                             "running with docker".format(opts.directory))))
     sys.exit()
 
 content_file = os.path.join(opts.directory, 'content.xml')
 if not os.path.isfile(content_file):
-    print("\n".join(wrap("{}/content.xml does not exist, are you "
-          "sure this is an extracted rptok?".format(opts.directory)
-          )), file=sys.stderr)
+    log.error("\n".join(wrap("{}/content.xml does not exist, are you "
+                             "sure this is an extracted rptok?"
+                             .format(opts.directory))))
     sys.exit()
 
 xml = objectify.parse(content_file)

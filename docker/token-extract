@@ -18,11 +18,12 @@
 import os
 import sys
 import argparse
+import logging as log
 from lxml import objectify
 from lxml.etree import tostring
 import zipfile
 from MTAssetLibrary import MacroNameQuote as quote
-from MTAssetLibrary import DataElement, XML2File
+from MTAssetLibrary import DataElement, XML2File, fixed_version
 from textwrap import wrap
 
 AP = argparse.ArgumentParser()
@@ -31,35 +32,27 @@ AP.add_argument('file', help="Gimme a Token file (.rptok)")
 
 AP.add_argument('--verbose', '-v', action='store_true', default=False)
 
-AP.add_argument('--config', '-f',
-                help="Configuration file to use",
-                default='config.xml')
-
 opts = AP.parse_args()
 
-if not os.path.isfile(opts.config):
-    print("\n".join(wrap("config file % could not be found, careful "
-                         "that it is in the current working directory "
-                         "when running with docker" % opts.config)),
-          file=sys.stderr)
-    sys.exit()
+if opts.verbose:
+    log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
+    log.info("Verbose output.")
+else:
+    log.basicConfig(format="%(levelname)s: %(message)s")
 
 if not os.path.isfile(opts.file):
-    print("\n".join(wrap("{} could not be found, careful that it is "
-                         "in the current working directory when running "
-                         "with docker ".format(opts.file))),
-          file=sys.stderr)
+    log.error("\n".join(wrap("{} could not be found, careful that it is "
+                             "in the current working directory when "
+                             "running with docker".format(opts.file))))
     sys.exit()
 
 if not zipfile.is_zipfile(opts.file):
-    print("\n".join(wrap("This script works on a token file, which is"
-                         "essentially a zipfile.  The first argument "
-                         "needs to be a .rptok file. What I got was "
-                         "{}".format(opts.file))),
-          file=sys.stderr)
+    log.error("\n".join(wrap("This script works on a token file, which is"
+                             "essentially a zipfile.  The first argument "
+                             "needs to be a .rptok file. What I got was "
+                             "{}".format(opts.file))))
     sys.exit()
 
-config = objectify.parse(opts.config).getroot()
 zf = zipfile.ZipFile(opts.file)
 xml = objectify.parse(zf.open('content.xml'))
 macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
@@ -71,7 +64,7 @@ base, ext = os.path.splitext(opts.file)
 def mktokendir(path):
     if not os.path.exists(path):
         if opts.verbose:
-            print("I: creating directory",path)
+            log.info("creating directory %s" % path)
         os.mkdir(path, mode=0o755)
 
 
@@ -81,7 +74,7 @@ def mktokendir(path):
 mktokendir(base)
 zf.extractall(path=base)
 if opts.verbose:
-    print("Extracting to "+base)
+    log.info("Extracting to %s" % base)
     zf.printdir()
 
 # go through content.xml, extracting the macros to .xml and .command to
@@ -99,7 +92,7 @@ def write_macro_files(macro, tofilebase):
             text = macro.command.text
         f.write(text)
         if opts.verbose:
-           print('wrote {} bytes to {}'.format(
+           log.info('wrote {} bytes to {}'.format(
                len(text),command_file))
     # Now that the command is saved to file, we'll remove it
     # from the macro.xml before saving it.  To restore we just read it
@@ -108,7 +101,7 @@ def write_macro_files(macro, tofilebase):
     with open(xml_file, 'w') as f:
         f.write(tostring(macro, pretty_print=True).decode())
         if opts.verbose:
-            print('wrote {} bytes to {}'.format(len(tostring(macro)),xml_file))
+            log.info('wrote {} bytes to {}'.format(len(tostring(macro)),xml_file))
 
 new_entry_template = '<entry><int>{}</int><macro name="{}"/></entry>'
 
@@ -127,16 +120,16 @@ for i, entry in enumerate(root.macroPropertiesMap.entry):
 
 
 # Now save the content.xml that we modified
-XML2File(base, 'content.xml', xml, opts.verbose)
+XML2File(base, 'content.xml', xml)
 
 # Load the properties.xml with the intent of updating the version
 xml = objectify.parse(zf.open('properties.xml'))
 # XXX very hacky, not sure what to do here, the object out of maptool is
 # hacky.
-xml.getroot().entry.string[1] = DataElement(config.version.text)
+xml.getroot().entry.string[1] = DataElement(fixed_version)
 
 # Save the properties.xml
-XML2File(base, 'properties.xml', xml, opts.verbose)
+XML2File(base, 'properties.xml', xml)
 
 sys.exit()
 def macroList(elem):
@@ -169,10 +162,10 @@ for label, elem in macroList(xml.getroot()).items():
     with open(command_file, 'w') as f:
         f.write(str(elem.command))
         if opts.verbose:
-           print('wrote {} bytes to {}'.format(
+           log.info('wrote {} bytes to {}'.format(
                len(elem.command.text),command_file))
     with open(xml_file, 'w') as f:
         f.write(tostring(elem, pretty_print=True).decode())
         if opts.verbose:
-            print('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
+            log.info('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
 

@@ -45,12 +45,13 @@ import io
 import os
 import sys
 import argparse
+import logging as log
 from lxml import objectify
 from lxml import etree
 from zipfile import ZipFile, ZIP_DEFLATED
 from zipfile_infolist import print_info
 from urllib.parse import quote_plus as quote
-from MTAssetLibrary import DataElement
+from MTAssetLibrary import DataElement, properties_xml, MTMacro
 
 AP = argparse.ArgumentParser()
 
@@ -82,75 +83,18 @@ AP.add_argument(
 
 opts = AP.parse_args(sys.argv[1:])
 
-#define a properties.xml body for the final .mtmacro assembly
-properties_xml="""<map>
-  <entry>
-    <string>version</string>
-    <string>1.7.0</string>
-  </entry>
-</map>"""
-
-# find the base path of the opts.target to construct the expected
-# macro_filename and command_filename
-
-class MTMacro():
-    def __init__(self, target):
-        self.target = target
-        self.xml = None
-        self.origxml = None
-        self.command = None
-
-        base,ext = os.path.splitext(target)
-        self.xmlfile  = base + '.xml'
-        self.commandfile = base + '.command'
-
-        if opts.verbose:
-            print('I: loading',self.xmlfile,'for the macro xml file')
-        self.origxml = objectify.parse(self.xmlfile)
-        self.xml = objectify.parse(self.xmlfile)
-        if opts.verbose:
-            print('I: loading',self.commandfile,'for the macro command file')
-        self.command = open(self.commandfile).read()
-        # reassemble the command into the xml
-        self.xml.getroot().command = DataElement(self.command)
-        self.label = self.xml.getroot().label
-        if opts.verbose:
-            print('I: got label \"',self.label,'\" from the xml', sep='')
-        self.label = quote(self.label.text)
-        if opts.verbose and self.label != self.xml.getroot().label:
-            print('I: transformed label to filesystem friendly',self.label)
-
-        self.outputfile = self.label + opts.output_extension
-
-    @property
-    def root(self):
-        if self.xml:
-            return self.xml.getroot()
-        else:
-            return None
-
-    def save(self):
-        if self.xml and self.outputfile:
-            if opts.verbose:
-                print('I: using',self.outputfile,'as the output filename')
-
-            # then assemble the zipfile
-            zf = ZipFile(mac.outputfile, mode='w', compression=ZIP_DEFLATED)
-            try:
-                zf.writestr('content.xml',
-                            etree.tostring(mac.xml, pretty_print=True))
-                zf.writestr('properties.xml', properties_xml)
-            finally:
-                zf.close()
-            if opts.verbose or not opts.quiet:
-                print_info(mac.outputfile)
+if opts.verbose:
+    log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
+    log.info("Verbose output.")
+else:
+    log.basicConfig(format="%(levelname)s: %(message)s")
 
 if opts.list:
     listxml = etree.Element('list')
     opts.output_extension = '.mtmacset'
 
 for target in opts.target:
-    mac = MTMacro(target)
+    mac = MTMacro(target, opts.output_extension)
     if not opts.list:
         mac.save()
     else:
