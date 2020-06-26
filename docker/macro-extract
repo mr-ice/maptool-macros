@@ -25,11 +25,12 @@ placeholder so that we can pick up the pieces from the filesystem.
 import os
 import sys
 import argparse
+import logging as log
 from lxml import objectify
 from lxml.etree import tostring
 import zipfile
 from urllib.parse import quote
-from MTAssetLibrary import MacroNameQuote as quote
+from MTAssetLibrary import MacroNameQuote as quote, fixed_version, DataElement, XML2File
 from textwrap import wrap
 
 AP = argparse.ArgumentParser()
@@ -112,12 +113,23 @@ for label, elem in macroList(xml.getroot()).items():
             print('wrote {} bytes to {}'.format(len(tostring(elem)),xml_file))
 
 
-# Special handling of tokens and properties -- they have more stuff in their
-# content.xml and their properties.xml is usually more than just the version of
-# maptools.  So we'll extract those as well.
+# Special handling of tokens and properties -- they have more stuff in
+# their content.xml and their properties.xml is usually more than just
+# the version of maptools.  So we'll extract those as well.  The
+# properties has a version that needs to be pinned, we'll do that next.
 if xml.getroot().tag == tokentag or xml.getroot().tag == proptag:
     mktokendir(base)
     zf.extractall(path=base)
     if opts.verbose:
         print("Extracting to "+base)
         zf.printdir()
+
+
+# Load the properties.xml with the intent of updating the version
+xml = objectify.parse(zf.open('properties.xml'))
+# XXX very hacky, not sure what to do here, the object out of maptool is
+# hacky.
+xml.getroot().entry.string[1] = DataElement(fixed_version)
+
+# Save the properties.xml
+XML2File(base, 'properties.xml', xml)
