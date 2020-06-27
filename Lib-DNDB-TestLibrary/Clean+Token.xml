@@ -1,8 +1,8 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a49dff89-f3c0-4326-a809-6de073bd630e</macroUUID>
+  <macroUUID>c7f40a6a-3e5a-4cbd-b365-91ff46133dc9</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>29</index>
-  <colorKey>red</colorKey>
+  <colorKey>green</colorKey>
   <hotKey>None</hotKey>
   <label>Clean Token</label>
   <group>Meta Test</group>
@@ -10,7 +10,7 @@
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
-  <fontColorKey>black</fontColorKey>
+  <fontColorKey>white</fontColorKey>
   <fontSize>1.15em</fontSize>
   <minWidth/>
   <maxWidth/>

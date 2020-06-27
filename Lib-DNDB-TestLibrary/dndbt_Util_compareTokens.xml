@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cf9b4ab4-7233-4a8a-9531-a3f1cbf9f92a</macroUUID>
+  <macroUUID>d3858b03-40fe-4517-b815-17d9cb94df63</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>53</index>
-  <colorKey/>
+  <index>52</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>data_BasicToon_30957877</label>
-  <group>Data</group>
+  <label>dndbt_Util_compareTokens</label>
+  <group>Tests Util</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
