@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Ho985muWS1SClYgy0N418Q==</baGUID>
+    <baGUID>wWN0XPrLTyO1wNUBl7dhPQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -16,7 +16,7 @@
   </imageAssetMap>
   <x>550</x>
   <y>400</y>
-  <z>2</z>
+  <z>15</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -355,7 +355,7 @@
         <string>strength</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength</key>
-          <value class="string">18</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -363,6 +363,7 @@
         <string>senses</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Senses</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -378,7 +379,7 @@
         <string>hp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>HP</key>
-          <value class="string">125</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -393,6 +394,7 @@
         <string>strength save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength Save</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -400,7 +402,7 @@
         <string>charisma</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma</key>
-          <value class="string">8</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -408,6 +410,7 @@
         <string>perception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Perception</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -415,6 +418,7 @@
         <string>climb</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Climb</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -422,6 +426,7 @@
         <string>wisdom save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Save</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -429,6 +434,7 @@
         <string>constitution bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Bonus</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -436,6 +442,7 @@
         <string>deception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Deception</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -443,6 +450,7 @@
         <string>dexterity save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Save</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -458,6 +466,7 @@
         <string>stealth</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Stealth</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -465,6 +474,7 @@
         <string>burrow</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Burrow</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -480,7 +490,7 @@
         <string>ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>AC</key>
-          <value class="string">18</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -496,6 +506,7 @@
         <string>survival</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Survival</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -503,6 +514,7 @@
         <string>constitution save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Save</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -510,6 +522,7 @@
         <string>animal handling</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Animal Handling</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -517,6 +530,7 @@
         <string>history</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>History</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -548,7 +562,7 @@
         <string>intelligence</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence</key>
-          <value class="string">12</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -556,6 +570,7 @@
         <string>acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Acrobatics</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -563,6 +578,7 @@
         <string>persuasion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Persuasion</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -570,6 +586,7 @@
         <string>insight</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Insight</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -577,7 +594,7 @@
         <string>condition</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Condition</key>
-          <value class="string">no</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -585,6 +602,7 @@
         <string>strength bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength Bonus</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -608,6 +626,7 @@
         <string>arcana</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Arcana</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -615,6 +634,7 @@
         <string>swim</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Swim</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -622,6 +642,7 @@
         <string>maxhp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>MaxHP</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -629,7 +650,7 @@
         <string>constitution</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution</key>
-          <value class="string">18</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -637,6 +658,7 @@
         <string>charisma bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Bonus</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -644,7 +666,7 @@
         <string>description</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Description</key>
-          <value class="string">The best</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -652,6 +674,7 @@
         <string>sleight of hand</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Sleight of Hand</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -659,6 +682,7 @@
         <string>intelligence save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Save</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -666,6 +690,7 @@
         <string>intelligence bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Bonus</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -673,7 +698,7 @@
         <string>wisdom</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom</key>
-          <value class="string">10</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -697,6 +722,7 @@
         <string>elevation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Elevation</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -704,7 +730,7 @@
         <string>initiative</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Initiative</key>
-          <value class="string">1</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -712,6 +738,7 @@
         <string>nature</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Nature</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -719,6 +746,7 @@
         <string>temphp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>TempHP</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -726,6 +754,7 @@
         <string>medicine</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Medicine</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -733,6 +762,7 @@
         <string>dexterity bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Bonus</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -740,6 +770,7 @@
         <string>religion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Religion</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -747,7 +778,7 @@
         <string>dexterity</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity</key>
-          <value class="string">13</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -755,6 +786,7 @@
         <string>fly</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Fly</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -762,6 +794,7 @@
         <string>performance</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Performance</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -769,7 +802,7 @@
         <string>insight-gm</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Insight-GM</key>
-          <value class="string">no</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -777,7 +810,7 @@
         <string>perception-gm</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Perception-GM</key>
-          <value class="string">no</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -785,6 +818,7 @@
         <string>wisdom bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Bonus</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -792,6 +826,7 @@
         <string>charisma save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Save</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -799,6 +834,7 @@
         <string>investigation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Investigation</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -806,6 +842,7 @@
         <string>athletics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Athletics</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -813,7 +850,7 @@
         <string>movement</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Movement</key>
-          <value class="string">40 Move / 40 Swim</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -821,6 +858,7 @@
         <string>intimidation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intimidation</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -828,6 +866,7 @@
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1081,6 +1120,10 @@
     <entry>
       <int>87</int>
       <macro name="dndb_Macro_copyMacroConfig"/>
+    </entry>
+    <entry>
+      <int>88</int>
+      <macro name="dndb_buildBasicToon"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
