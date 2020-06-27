@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Xde25LqTSd6/O+qOpArDsA==</baGUID>
+    <baGUID>B531rmvlSFqdlWaKtQOGaA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>dWoMOJgFTsmTVAOe52ghHg==</baGUID>
+    <baGUID>hRXyXfqVRk+Zwn/Zq79MRA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -16,29 +16,188 @@
   </imageAssetMap>
   <x>550</x>
   <y>500</y>
-  <z>16</z>
+  <z>27</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>550</lastX>
-  <lastY>500</lastY>
+  <lastX>200</lastX>
+  <lastY>550</lastY>
   <lastPath>
     <cellList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>11</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>11</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>6.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>6</x>
+        <y>11</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>11</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>6.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>5.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>7</x>
+        <y>11</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>6</x>
+          <y>11</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>5.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>4.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>10</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>7</x>
+          <y>11</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+          <h>4.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+        </parent>
+        <h>3.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>9</x>
+        <y>10</y>
+        <g>5.0</g>
+        <distanceTraveled>5.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>8</x>
+          <y>10</y>
+          <g>4.0</g>
+          <distanceTraveled>4.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
+          <h>3.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
+        </parent>
+        <h>2.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>10</x>
+        <y>10</y>
+        <g>6.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>9</x>
+          <y>10</y>
+          <g>5.0</g>
+          <distanceTraveled>5.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/parent"/>
+          <h>2.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/validMoves"/>
+        </parent>
+        <h>1.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
         <x>11</x>
         <y>10</y>
         <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
         <x>11</x>
         <y>10</y>
         <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -77,7 +236,7 @@
   </terrainModifiersIgnored>
   <isFlippedX>false</isFlippedX>
   <isFlippedY>false</isFlippedY>
-  <sightType>Normal</sightType>
+  <sightType>Darkvision</sightType>
   <hasSight>false</hasSight>
   <notes>Test Library for Lib:DnDBeyond</notes>
   <state>
@@ -123,6 +282,10 @@
     </entry>
     <entry>
       <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wild Shape</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -186,6 +349,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Entangled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Restrained</string>
       <boolean>false</boolean>
     </entry>
@@ -246,11 +413,11 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Haste</string>
+      <string>Exhaustion 4</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Exhaustion 4</string>
+      <string>Haste</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -262,7 +429,15 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Fly</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -335,8 +510,16 @@
       <entry>
         <string>senses</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>senses</key>
-          <value class="string">[{"name":"Darkvision","distance":0},{"name":"Blindsight","distance":0},{"name":"Truesight","distance":0},{"name":"Tremorsense","distance":0}]</value>
+          <key>Senses</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>avatarurl</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AvatarUrl</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -353,6 +536,14 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>HP</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution Ability</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -388,10 +579,33 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>attackjson</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackJSON</key>
+          <value class="string">[{"name":"Unarmed Strike","atkBonus":4,"dmgBonus":1,"dmgDie":"1","dmgDice":"1","critBonusDice":0,"dmgType":"Bludgeoning"}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>climb</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Climb</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence Ability</key>
+          <value class="string">2</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_lastrolledexpression</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_lastRolledExpression</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -444,10 +658,26 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>height</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Height</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>AC</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength Ability</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -471,6 +701,14 @@
         <string>animal handling</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Animal Handling</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>weight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weight</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -532,9 +770,25 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>dndb_basictoon</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb_BasicToon</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>arcana</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Arcana</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>alignment</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Alignment</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -550,8 +804,8 @@
       <entry>
         <string>maxhp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>maxHp</key>
-          <value class="string">156</value>
+          <key>MaxHP</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -564,9 +818,41 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>ac armor</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Armor</key>
+          <value class="string">10</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>gender</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Gender</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>charisma bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Bonus</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom Ability</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>skin</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Skin</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -588,6 +874,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>faith</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Faith</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>intelligence save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Save</key>
@@ -604,10 +898,57 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>eyes</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Eyes</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>wisdom</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma Ability</key>
+          <value class="string">4</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>hair</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Hair</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dndb_overridebasictoon</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dndb_OverrideBasicToon</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac shield</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Shield</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity Ability</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -622,7 +963,15 @@
       <entry>
         <string>initiative</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>initiative</key>
+          <key>Initiative</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Dexterity</key>
           <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -716,6 +1065,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>xp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>XP</key>
+          <value class="string">23000</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>charisma save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Save</key>
@@ -759,6 +1116,14 @@
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>age</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Age</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -839,10 +1204,6 @@
       <macro name="data_BasicToon_Blurrier"/>
     </entry>
     <entry>
-      <int>32</int>
-      <macro name="data_BasicToon_Bob"/>
-    </entry>
-    <entry>
       <int>33</int>
       <macro name="data_BasicToon_BodeMikbodephace"/>
     </entry>
@@ -893,6 +1254,26 @@
     <entry>
       <int>46</int>
       <macro name="data_BasicToon_30960137"/>
+    </entry>
+    <entry>
+      <int>47</int>
+      <macro name="data_BasicToon_30957877"/>
+    </entry>
+    <entry>
+      <int>48</int>
+      <macro name="data_BasicToon_30957978"/>
+    </entry>
+    <entry>
+      <int>49</int>
+      <macro name="dndbt_CreateDataMacro"/>
+    </entry>
+    <entry>
+      <int>50</int>
+      <macro name="data_BasicToon_Bob"/>
+    </entry>
+    <entry>
+      <int>51</int>
+      <macro name="dndbt_Test_ApplyTokenProperties"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
