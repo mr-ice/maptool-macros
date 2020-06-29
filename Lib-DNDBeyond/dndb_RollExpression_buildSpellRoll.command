@@ -10,7 +10,7 @@
 [h: spellDescription = json.get (spell, "description")]
 [h, if (requiresAttack == "true"), code: {
 	[h: attackBonus = json.get (spell, "attackBonus")]
-	[h: rollExpression = json.set ("", "name", spellName + " Attack",
+	[h: rollExpression = json.set ("", "name", spellName,
 								"bonus", attackBonus,
 								"diceSize", "20",
 								"diceRolled", "1",
@@ -75,7 +75,7 @@
 [h, if (!isNumber (diceCount)): diceCount = 0; ""]
 [h, if (diceCount > 0), code: {
 	<!-- if the spell has a save, add it to the dice object expression description -->
-	[h: rollExpression = json.set ("", "name", spellName + " " + type,
+	[h: rollExpression = json.set ("", "name", spellName,
 											"diceSize", diceValue,
 											"diceRolled", diceCount,
 											"expressionTypes", type,

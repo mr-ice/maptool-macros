@@ -29,7 +29,7 @@
 		[h: output = json.get (rollExpression, "output")]
 		[h: outputs = json.append (outputs, output)]
 	}]
-	[h, if (json.length (outputs) > 1): rollExpression = json.set (rollExpression, "outputs", outputs)]
+	[h: rollExpression = json.set (rollExpression, "outputs", outputs)]
 	[h, if (dnd5e_DiceRoller_hasType (rollExpression, "Damage")), code: {
 		<!-- For damage rolls only, add the totals together. -->
 		[h: totals = json.get (rollExpression, "totals")]
