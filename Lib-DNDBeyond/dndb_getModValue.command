@@ -26,5 +26,8 @@
 	[h, if (statBonus > 0): bonus = statBonus]
 }]
 
+<!-- Quickdraw  -- uses proficiency but doesnt say proficiency. so its just an edge-case now -->
+[h, if (json.get (modifier, "id") == 2722177): bonus = dndb_getProficiencyBonus (toon); ""]
+
 <!-- return default bonus of 0 -->
 [h: macro.return = bonus]

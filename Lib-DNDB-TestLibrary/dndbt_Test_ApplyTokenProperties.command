@@ -25,4 +25,5 @@
 [h, if (myLabel == "Lib:DNDB-TestLibrary"), code: {
 	[h, macro ("Clean Token@Lib:DNDB-TestLibrary"):""]
 };{""}]
+[h: log.info (report)]
 [h: macro.return = report]
