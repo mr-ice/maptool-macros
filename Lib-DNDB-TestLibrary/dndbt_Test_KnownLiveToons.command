@@ -31,4 +31,5 @@
 	}]
 }]
 [h: reportObj = json.set ("", "dndbt_Test_KnownToons", report)]
+[h: log.info (reportObj)]
 [h: macro.return = reportObj]
