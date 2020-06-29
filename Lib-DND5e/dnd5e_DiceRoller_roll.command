@@ -13,12 +13,12 @@
 [h: rolled = "[]"]
 
 [h, foreach (rollExpression, rollExpressions), code: {
-
 	[h: totalRolls = json.get (rollExpression, "totalRolls")]
 	[h, if (totalRolls == ""): totalRolls = 1; ""]
 	[h: rolls =  "[]"]
-	[h: subtotals = "[]"]
+	[h: totals = "[]"]
 	[h: outputs = "[]"]
+	[h: allTotal = 0]
 	[h, for (i, 0, totalRolls), code: {
 		<!-- clear the output, we capture multiple outputs in an array -->
 		[h: rollExpression = json.set (rollExpression, "output", "")]
@@ -30,13 +30,11 @@
 		[h: outputs = json.append (outputs, output)]
 	}]
 	[h: rollExpression = json.set (rollExpression, "outputs", outputs)]
-	[h, if (dnd5e_DiceRoller_hasType (rollExpression, "Damage")), code: {
-		<!-- For damage rolls only, add the totals together. -->
-		[h: totals = json.get (rollExpression, "totals")]
-		[h: total = 0]
-		[h, foreach (totalVal, totals): total = total + totalVal]
-		[h: rollExpression = json.set (rollExpression, "total", total)]
-	}]
+	[h: totals = json.get (rollExpression, "totals")]
+	[h: allTotal = 0]
+	[h, foreach (totalVal, totals): allTotal = allTotal + totalVal]
+	[h: rollExpression = json.set (rollExpression, "allTotal", allTotal)]
+
 	[h: rolled = json.append (rolled, rollExpression)]
 }]
 [h: tokenId = currentToken()]

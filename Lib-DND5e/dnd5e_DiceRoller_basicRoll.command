@@ -15,11 +15,8 @@
 	[h: roll = staticRoll]
 }]
 
-[h: total = roll + bonus]
 [h: totals = json.get (rollExpression, "totals")]
-[h: allTotal = json.get (rollExpression, "allTotal")]
-[h, if (allTotal == ""): allTotal = 0; ""]
-[h: allTotal = allTotal + total]
+[h: total = roll + bonus]
 [h: totals = json.append (totals, total)]
 [h: rolls = json.get (rollExpression, "rolls")]
 [h: rolls = json.append (rolls, roll)]
@@ -44,9 +41,8 @@
 [h: rollExpression = json.set (rollExpression, "rolls", rolls,
 												"roll", roll,
 												"rollString", rollString,
-												"totals", totals,
 												"total", total,
-												"allTotal", allTotal,
+												"totals", totals,
 												"output", output)]
 [h: log.debug ("dnd5e_DiceRoller_basicRoll: return = " + rollExpression)]
 [h: macro.return = rollExpression]

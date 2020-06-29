@@ -50,9 +50,11 @@
 	[h: rollExpressions = json.append (rollExpressions, rollExpression)]
 }]
 [h: rolls = dnd5e_DiceRoller_roll (rollExpressions)]
+
 [h: output = ""]
+[h: total = 0]
 [h, foreach (roll, rolls), code: {
-	[h: total = json.get (roll, "allTotal")]
+	[h: total = total + json.get (roll, "allTotal")]
 	[h, foreach (rollOutput, json.get (roll, "outputs")): output = output + rollOutput + "<br>"]
 	[h: output = output + "<br>"]
 }]
