@@ -21,8 +21,9 @@
 	[h, if (thisTokenId == testTokenId): report = json.append (report, "Tokens are equal! " + thisTokenId + ":" + testTokenId)]
 	[h: report = json.append (report, dndbt_Util_compareTokens (thisTokenId, testTokenId))]
 }]
-[h: myLabel = getLabel ()]
+[h: myLabel = getName ()]
 [h, if (myLabel == "Lib:DNDB-TestLibrary"), code: {
-	[h, macro ("Clean Token@this"):""]
+	[h, macro ("Clean Token@Lib:DNDB-TestLibrary"):""]
 };{""}]
+[h: log.info (report)]
 [h: macro.return = report]

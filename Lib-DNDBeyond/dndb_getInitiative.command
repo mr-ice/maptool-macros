@@ -13,12 +13,17 @@
 							"subType", "initiative")]
 
 [h: initMods = dndb_searchGrantedModifiers (modSearchArgs)]
-
+[h: proficiency = dndb_getProficiencyBonus (toon)]
 [h, foreach (initMod, initMods), code: {
 	[h: type = json.get (initMod, "type")]
+	[h: modBonus = 0]
 	[h, switch (type):
-		case "bonus": init = init + dndb_getModValue (skinnyToon, initMod);
+		case "bonus": modBonus = dndb_getModValue (skinnyToon, initMod);
+		case "half-proficiency": modBonus = round (math.floor (proficiency / 2));
+		case "proficiency": modBonus = proficiency;
+		case "expertise": modBonus = proficiency * 2; 
 		default: "Don't care right now"]
+	[h: init = init + modBonus]
 }]
 
 [h: macro.return = init]

@@ -1,9 +1,4 @@
-[h: basicToon = getProperty ("dndb_BasicToon")]
-[h, if (encode (basicToon) == ""), code: {
-	[h: error = "You must initialize with DNDBeyond first"]
-	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=fals"))]
-	[h: return (0, error)]
-}]
+[h: basicToon = dndb_getBasicToon ()]
 
 [h: CLASS_VAR_SUFFIX = "_spendHitDice"]
 [h: classes = json.get (basicToon, "classes")]
@@ -36,20 +31,32 @@
 }]
 <!-- prune the leading ## -->
 [h: inputStr = substring (inputStr, 3)]
-[h: input (inputStr)]
+[h: abort (input (inputStr))]
 [h: conBonus = getProperty ("Constitution Bonus")]
 [h: total = 0]
 [h: output = ""]
+[h: rollExpressions = "[]"]
 [h, foreach (classVar, classVars), code: {
-	[h: output = output + "<br>" + json.get (classVar, "className") + ":<br>"]
-	[h: limit = eval (json.get (classVar, "classVar"))]
-	[h: dice = json.get (classVar, "hitDice")]
-	[h, for (i, 0, limit), code: {
-		[h: expression = "1d" + dice + " + " + conBonus]
-		[h: roll = eval (expression)]
-		[h: output = output + "&nbsp;&nbsp;&nbsp;" + expression + " = " + roll + "<br>"]
-		[h: total = total + roll]
-	}]
+	[h: rollName = json.get (classVar, "className")]
+	[h: diceSize = json.get (classVar, "hitDice")]
+	[h: totalRolls = eval (json.get (classVar, "classVar"))]
+	
+	[h: rollExpression = json.set ("", "name", rollName,
+									"diceSize", diceSize,
+									"diceRolled", 1,
+									"totalRolls", totalRolls,
+									"bonus", conBonus,
+									"expressionTypes", "Healing")]
+	[h: rollExpressions = json.append (rollExpressions, rollExpression)]
 }]
-[r: output]
-[r: "<br>Total healed: " + total]
+[h: rolls = dnd5e_DiceRoller_roll (rollExpressions)]
+
+[h: output = ""]
+[h: total = 0]
+[h, foreach (roll, rolls), code: {
+	[h: total = total + json.get (roll, "allTotal")]
+	[h, foreach (rollOutput, json.get (roll, "outputs")): output = output + rollOutput + "<br>"]
+	[h: output = output + "<br>"]
+}]
+[h: output = output + "<br>" + "Total Healing: " + total]
+<pre>[r: output]</pre>

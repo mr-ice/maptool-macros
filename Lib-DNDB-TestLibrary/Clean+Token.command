@@ -1,6 +1,8 @@
 [h: allProperties = getAllPropertyNames ("Basic", "json")]
 [h, foreach (property, allProperties), code: {
-	[h, if (property != "Character ID"): setProperty (property, "");""]
+	[h, if (property != "Character ID"), code: {
+		[h: setProperty (property, getPropertyDefault(property))]
+	};{""}]
 }]
 [h: setProperty ("dndb_BasicToon", "")]
 [h: macroIndexes = getMacroGroup ("D&D Beyond")]

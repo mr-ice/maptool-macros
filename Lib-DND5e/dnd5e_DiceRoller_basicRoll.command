@@ -2,6 +2,7 @@
 [h: diceSize = json.get (rollExpression, "diceSize")]
 [h: diceRolled = json.get (rollExpression, "diceRolled")]
 [h: bonus = json.get (rollExpression, "bonus")]
+[h, if (bonus == ""): bonus = 0; ""]
 [h: baseRoll = diceRolled + "d" + diceSize]
 
 [h: log.debug ("dnd5e_DiceRoller _basicRoll: Rolling " + baseRoll)]
@@ -14,15 +15,16 @@
 	[h: roll = staticRoll]
 }]
 
-[h: total = roll + bonus]
 [h: totals = json.get (rollExpression, "totals")]
+[h: total = roll + bonus]
 [h: totals = json.append (totals, total)]
 [h: rolls = json.get (rollExpression, "rolls")]
 [h: rolls = json.append (rolls, roll)]
+[h: rollString = baseRoll + " + " + bonus]
 
 <!-- Build the output message -->
 <!-- Simple for now -->
-[h: descriptor = "Roll"]
+[h: descriptor = json.get (rollExpression, "expressionTypes") + " Roll"]
 [h: output = json.get (rollExpression, "output")]
 [h, if (output == ""), code: {
 	[h: description = json.get (rollExpression, "description")]
@@ -33,14 +35,14 @@
 	[h, if (json.length (damageTypes) > 0): damageTypeStr = substring (damageTypeStr, 2); ""]
 	[h: name = json.get (rollExpression, "name")]
 	[h: log.debug ("dnd5e_DiceRoller_basicRoll: damagetTypes = " + damageTypes + "; name = " + name)]
-	[h: output = description + name + " " + descriptor + ": " + total + " " + damageTypeStr]
+	[h: output = description + name + " " + descriptor + ": " + rollString + " = " + total + " " + damageTypeStr]
 }]
 
 [h: rollExpression = json.set (rollExpression, "rolls", rolls,
 												"roll", roll,
-												"rollExpression", baseRoll + " + " + bonus,
-												"totals", totals,
+												"rollString", rollString,
 												"total", total,
+												"totals", totals,
 												"output", output)]
 [h: log.debug ("dnd5e_DiceRoller_basicRoll: return = " + rollExpression)]
 [h: macro.return = rollExpression]

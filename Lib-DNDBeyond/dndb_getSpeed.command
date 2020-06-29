@@ -35,6 +35,21 @@
 [h: log.debug ("allBonuses: " + allBonuses)]
 
 [h: allBonus = 0]
+<!-- unarmored-movement -->
+[h: unarmoredBonuses = dndb_searchGrantedModifiers (json.set ("", 
+							"object", toon,
+							"property", "value",
+							"subType", "unarmored-movement",
+							"type", "bonus"))]
+
+[h, if (json.length (unarmoredBonuses) > 0), code: {
+	<!-- determine if they are wearing armor -->
+	[h: armors = dndb_getArmor (toon)]
+	[h: equippedArmors = json.path.read (armors, "[*].[?(@.equipped == true)]")]
+	[h, if (json.length (equippedArmors) == 0), foreach (unarmoredBonus, unarmoredBonuses): 
+					allBonus = allBonus + unarmoredBonus;""]
+}]
+
 [h, foreach (value, allBonuses): allBonus = allBonus + value]
 							
 [h: speedMods = dndb_searchGrantedModifiers (json.set ("", 

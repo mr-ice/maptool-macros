@@ -1,4 +1,4 @@
-[h: SKIP_PROMPT = 1]
+[h: SKIP_PROMPT = 0]
 
 [h: charId = getProperty ("Character ID")]
 

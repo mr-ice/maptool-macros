@@ -4,6 +4,11 @@
 [h: totalLevel = 0]
 [h: classArry = ""]
 
+<!-- Find hit-points-per-level modifiers -->
+[h: hpPerLevelMods = dndb_searchGrantedModifiers (json.set ("", "object", toon,
+													"type", "bonus",
+													"subType", "hit-points-per-level"))]
+[h: totalClassLevelBonus = 0]
 [h, foreach (class, json.path.read (toon, "data.classes")), code: {
 	[h: level = json.get (class, "level")]
 	[h: totalLevel = totalLevel + level]
@@ -11,12 +16,36 @@
 	[h: classObj = json.set ("", "className", className, "level", level)]
 	[h: hitDice = json.path.read (class, "definition.hitDice")]
 	[h: classObj = json.set (classObj, "hitDice", hitDice)]
+
+	<!-- Search in modifiers for one that matches a class feature, add the bonus to class obj -->
+	[h: classBonus = 0]
+	[h, foreach (mod, hpPerLevelMods), code: {
+		[h: results = dndb_searchJsonObject (json.set ("", "object", json.get (class, "classFeatures"),
+														"id", json.get (mod, "componentId")))]
+		[h, if (json.length (results) > 0): classBonus = classBonus + json.get (mod, "value")]
+	}]
+	[h: totalClassLevelBonus = totalClassLevelBonus + classBonus * level]
+	[h: classObj = json.set (classObj, "classBonus", classBonus)]
 	[h: classArry = json.append (classArry, classObj)]
 }]
 
 [h: abilities = dndb_getAbilities (toon)]
 [h: baseHp =  json.path.read (toon, "data.baseHitPoints")]
-[h: maxHp = baseHp + (json.get (abilities, "conBonus") * totalLevel)]
+
+<!-- search in modifiers for one that matches a racial feature, set a raceBonus -->
+[h: raceBonus = 0]
+[h: racialTraits = json.path.read (toon, "data.race.racialTraits")]
+[h, foreach (mod, hpPerLevelMods), code: {
+		[h: results = dndb_searchJsonObject (json.set ("", "object", racialTraits,
+														"definition.id", json.get (mod, "componentId")))]
+		[h, if (json.length (results) > 0): raceBonus = raceBonus + (totalLevel * json.get (mod, "value"))]
+}]
+
+<!-- add the class bonuses -->
+[h: totalBonus = raceBonus + totalClassLevelBonus]
+
+<!-- include race and class bonuses -->
+[h: maxHp = baseHp + totalBonus + (json.get (abilities, "conBonus") * totalLevel)]
 [h: damageTaken = json.path.read (toon, "data.removedHitPoints")]
 [h: temporaryHitPoints = json.path.read (toon, "data.temporaryHitPoints")]
 [h: maxHpModifier = json.path.read (toon, "data.bonusHitPoints")]
