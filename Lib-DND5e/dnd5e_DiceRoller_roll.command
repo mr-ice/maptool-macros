@@ -13,6 +13,12 @@
 [h: rolled = "[]"]
 
 [h, foreach (rollExpression, rollExpressions), code: {
+	<!-- Static roll check, for broadcast only. Basic roll will take care of bidness -->
+	[h, if (dnd5e_DiceRoller_hasType (rollExpression, "staticRoll")), code: {
+		[h: staticRoll = json.get (rollExpression, "staticRoll")]
+		[h: broadcast ("<font color='red'><b>A roll of " + staticRoll + " has been forced!</b></font> <br>")]
+	}]
+
 	[h: totalRolls = json.get (rollExpression, "totalRolls")]
 	[h, if (totalRolls == ""): totalRolls = 1; ""]
 	[h: rolls =  "[]"]
