@@ -344,6 +344,14 @@
           <gmOnly>true</gmOnly>
           <defaultValue>[r: dnd5e_getInsightStat()]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Investigation-GM</name>
+          <shortName>Investigation</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>true</gmOnly>
+          <defaultValue>[r: dnd5e_getInvestigationStat()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
       </list>
     </entry>
     <entry>
@@ -763,6 +771,7 @@
         <name>Normal</name>
         <multiplier>1.0</multiplier>
         <personalLightSource>
+          <lightList class="linked-list"/>
           <lumens>0</lumens>
           <scaleWithToken>false</scaleWithToken>
         </personalLightSource>

@@ -656,6 +656,10 @@
       <macro name="dnd5e_getMovementStat"/>
     </entry>
     <entry>
+      <int>4</int>
+      <macro name="dnd5e_getInvestigationStat"/>
+    </entry>
+    <entry>
       <int>5</int>
       <macro name="dnd5e_getInsightStat"/>
     </entry>
