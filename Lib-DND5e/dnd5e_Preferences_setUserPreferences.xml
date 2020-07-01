@@ -1,24 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8c01a485-b0b7-4359-a4dd-0a559d86d35f</macroUUID>
+  <macroUUID>59919e11-7724-4905-b432-c79e3d8bc281</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>89</index>
+  <index>26</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_RollExpression_buildSpellRoll</label>
-  <group>Utility - RollExpression</group>
+  <label>dnd5e_Preferences_setUserPreferences</label>
+  <group>Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>builds the roll expressions for the passed in spell and returns a RollExpression
-
-arg(0) = spell
-arg(1) = spellSlot level being spent</toolTip>
+  <toolTip>Sets the user proferences object onto the current token</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

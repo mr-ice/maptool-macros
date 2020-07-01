@@ -10,4 +10,5 @@
 	}]
 }]
 
-<pre>[r: json.indent (getInfo ("client"), 3)]</pre>
+[r: "Lib:DND5e loaded"]
+[h: log.debug (json.indent (getInfo ("client"), 3))]

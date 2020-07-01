@@ -1,0 +1,5 @@
+[h: prefKey = arg (0)]
+[h: prefValue = arg (1)]
+[h: userPref = dnd5e_Preferences_getUserPreferences ()]
+[h: userPref = json.set (userPref, prefKey, prefValue)]
+[h: dnd5e_Preferences_setUserPreferences (userPref)]

@@ -1,7 +1,10 @@
+[h: SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
+[h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
 [h: basicToon = dndb_getBasicToon ()]
 
 [h, if (json.length (macro.args) > 0): noConfirm = arg(0); noConfirm = 0]
 [h: confirm = 1]
+[h: noConfirm = noConfirm + SKIP_PROMPT]
 [h, if (!noConfirm): input ("ignored | WARNING! This will reset any custom values. | All properties will be overwritten! | Label | SPAN=TRUE",
 	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0");""]
 [h: abort (confirm)]

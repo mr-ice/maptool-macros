@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8c01a485-b0b7-4359-a4dd-0a559d86d35f</macroUUID>
+  <macroUUID>da8b0d15-d06a-4f09-a4a1-b3d955d4b217</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>89</index>
+  <index>104</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_RollExpression_buildSpellRoll</label>
-  <group>Utility - RollExpression</group>
+  <label>Data_Preference_Registry</label>
+  <group>Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,11 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>builds the roll expressions for the passed in spell and returns a RollExpression
-
-arg(0) = spell
-arg(1) = spellSlot level being spent</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>This is the preferences registry, stored as an executable macro returning an encoded JSON object. Use dndb_Preferences_getRegistry and dndb_Preferences_setRegistry to access.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
