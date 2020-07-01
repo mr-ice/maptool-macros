@@ -831,6 +831,14 @@
     </entry>
     <entry>
       <int>31</int>
+      <macro name="dnd5e_Conditions"/>
+    </entry>
+    <entry>
+      <int>32</int>
+      <macro name="dnd5e_ProcessConditions"/>
+    </entry>
+    <entry>
+      <int>33</int>
       <macro name="dnd5e_ConditionsCSS"/>
     </entry>
   </macroPropertiesMap>
