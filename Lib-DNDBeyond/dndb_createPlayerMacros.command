@@ -39,15 +39,9 @@
 
 			json.set (basicCfg, "name", "Quick Update",
 					"color", "orange",
-					"fontColor", "black",
+					"fontColor", "blaick",
 					"sortBy", "120",
 					"command", "[macro('Quick Update@CAMPAIGN'): '']"),
-
-			json.set (basicCfg, "name", "Change Conditions",
-					"color", "yellow",
-					"fontColor", "black",
-					"sortBy", "130",
-					"command", "[macro('dnd5e_Conditions@Lib:DnD5e'): '']"),
 
 			json.set (basicCfg, "name", "Cast Spells",
 					"color", "teal",
