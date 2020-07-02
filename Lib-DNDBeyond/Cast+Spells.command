@@ -99,10 +99,10 @@
 	<!-- start as valid and invalidate as we go -->
 	[h: validChoice = 1]
 	[h: spellSlot = -1]
-	[h, if (!inputValid): abort (input ("selectedSpellName | "  + concentrationSpellsInput + 
+	[h, if (!inputValid): abort (input ("selectedConcentration | "  + concentrationSpellsInput + 
 		"| Concentration Spells | List | value=string",
-		"selectedSpellName | " + ritualSpellsInput + " | Ritual Spells | List | value=string",
-		"selectedSpellName | " + otherSpellsInput + " | Spells | List | value=string",
+		"selectedRitual | " + ritualSpellsInput + " | Ritual Spells | List | value=string",
+		"selectedOther | " + otherSpellsInput + " | Spells | List | value=string",
 		"spellSlot | " + spellSlotInput + " | Spend Spell Slot | List | value=string",
 		" saveAsMacro | 0 | Save as Macro | check "));""]
 
@@ -110,11 +110,15 @@
 		- One spell selected
 		- and either a default minimum or eligible spell slot selected -->
 	[h: selectedSpell = ""]
+	[h: selectedSpellName = "None"]
+	[h, if (selectedConcentration != "None"): selectedSpellName = selectedConcentration; ""]
+	[h, if (selectedRitual != "None"): selectedSpellName = selectedRitual; ""]
+	[h, if (selectedOther != "None"): selectedSpellName = selectedOther; ""]
 	[h, if (inputValid): selectedSpell = passedSpell; 
 						selectedSpell = json.get (spellMap, selectedSpellName)]
 	
 	[h, if (encode (selectedSpell) == ""), code: {
-		[h: input ("junk | Exactly one spell must be selected. |  | Label | span=true")]
+		[h: abort (input ("junk | Exactly one spell must be selected. |  | Label | span=true"))]
 		<!-- Use a stub spell for the next part so it auto-validates the spell level and
 			doesnt give the user a second complaint -->
 		[h: selectedSpell = json.set ("", "level", 0)]
@@ -138,7 +142,6 @@
 	<!-- if minimum was selected, roll with it. If a number was chosen, validate its equal or bigger than the spell and use that -->
 	[h, if (spellSlot == MINIMUM_ALLOWED): selectedSpellSlotLevel = json.get (minimumSpellSlot, "level"); selectedSpellSlotLevel = spellSlotNum]
 	<!-- validate -->
-	[h: validChoice = 1]
 	[h, if (selectedSpellSlotLevel < spellLevel), code: {
 		[h: abort (input ("junk | Invalid spell slot selected | | Label | span=true"))]
 		[h: validChoice = 0]

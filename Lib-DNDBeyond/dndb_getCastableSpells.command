@@ -40,4 +40,5 @@
 		[h, if (mayCastSpell): castableSpells = json.append (castableSpells, spell); ""]
 	}]
 }]
+[h: log.debug ("dndb_getCastableSpells: castableSpells = " + castableSpells)]
 [h: macro.return = castableSpells]

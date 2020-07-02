@@ -63,7 +63,8 @@
 		<!-- if the higherSpellDice diceCount is 0, then we need to increase our total
 			rolls instead -->
 		[h: higherDiceCount = json.get (higherSpellDice, "diceCount")]
-		[h, if (higherDiceCount == 0): 
+		<!-- on second thought, only do this if its, uh, "darts" (cough magic missle) -->
+		[h, if (higherDiceCount == 0 && restriction == "3 Darts"): 
 					higherTotalRolls = json.get (higherSpellDice, "totalRolls");
 					higherTotalRolls = 0]
 		[h: diceCount = diceCount + higherDiceCount]

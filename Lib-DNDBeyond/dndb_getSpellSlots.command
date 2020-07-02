@@ -29,6 +29,9 @@
 	[h: canCastSpells = json.get (classDefinition, "canCastSpells")]
 	[h: log.debug ("Class level: " + level + "; canCastSpells: " + canCastSpells)]
 	[h, if (canCastSpells != "true"): canCastSpells = json.path.read (class, "subclassDefinition.canCastSpells", "SUPPRESS_EXCEPTIONS"); ""]
+	<!-- fucking monk check -->
+	[h: spellCastingAbilityId = json.path.read (class, "subclassDefinition.spellCastingAbilityId", "SUPPRESS_EXCEPTIONS")]
+	[h, if (canCastSpells != "true" && isNumber (spellCastingAbilityId)): canCastSpells = "true"; ""]
 	[h: log.debug ("dndb_getSpellSlots: canCastSpells = " + canCastSpells)]
 	[h: deMultiplier = number (json.path.read (classDefinition, "spellRules.multiClassSpellSlotDivisor"))]
 	[h: spellSlotTables = json.path.read (classDefinition, "spellRules.levelSpellSlots")]
@@ -37,6 +40,7 @@
 		[h: level = round (math.floor (level / deMultiplier))]
 		[h: spellSlotTables = MULTI_CLASS_SPELL_SLOT_TABLE]
 	}; {""}]
+	
 	[h, if (canCastSpells == "true"): totalLevel = totalLevel + level; ""]
 }]
 <!-- set the spell slot data based on the appropriate level --->
