@@ -118,7 +118,7 @@
 						selectedSpell = json.get (spellMap, selectedSpellName)]
 	
 	[h, if (encode (selectedSpell) == ""), code: {
-		[h: input ("junk | Exactly one spell must be selected. |  | Label | span=true")]
+		[h: abort (input ("junk | Exactly one spell must be selected. |  | Label | span=true"))]
 		<!-- Use a stub spell for the next part so it auto-validates the spell level and
 			doesnt give the user a second complaint -->
 		[h: selectedSpell = json.set ("", "level", 0)]
@@ -142,7 +142,6 @@
 	<!-- if minimum was selected, roll with it. If a number was chosen, validate its equal or bigger than the spell and use that -->
 	[h, if (spellSlot == MINIMUM_ALLOWED): selectedSpellSlotLevel = json.get (minimumSpellSlot, "level"); selectedSpellSlotLevel = spellSlotNum]
 	<!-- validate -->
-	[h: validChoice = 1]
 	[h, if (selectedSpellSlotLevel < spellLevel), code: {
 		[h: abort (input ("junk | Invalid spell slot selected | | Label | span=true"))]
 		[h: validChoice = 0]
