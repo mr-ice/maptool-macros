@@ -173,7 +173,7 @@
 
 <!-- Ye old save as macro bullshit -->
 [h, if (saveAsMacro > 0), code: {
-	[h: macroConfig = dndb_Macro_copyMacroConfig ("Cast Spells")]
+	[h: macroConfig = dnd5e_Macro_copyMacroConfig ("Cast Spells")]
 
 	[h: cmdArg = json.set ("", SELECTED_SPELL, json.get (selectedSpell, "name"), 
 							SELECTED_SPELL_SLOT, spellSlot)]

@@ -36,10 +36,13 @@
 	[h, foreach (damageType, damageTypes): damageTypeStr = ", " + damageTypeStr + damageType]
 	[h, if (json.length (damageTypes) > 0): damageTypeStr = substring (damageTypeStr, 2); ""]
 	[h: name = json.get (rollExpression, "name")]
+	[h: extraText = json.get (rollExpression, "extraText")]
 	[h: log.debug ("dnd5e_DiceRoller_basicRoll: damagetTypes = " + damageTypes + "; name = " + name)]
 	[h: output = description + name + " " + descriptor + ": " + rollString + " = " + total + " " + damageTypeStr]
+	[h, if (extraText != ""): output = output + "<br>" + extraText; ""]
 }]
-
+[h: extra = json.get (rollExpression, "extraOutput")]
+[h, if (extra != ""): output = output + "<br>" + extra]
 [h: rollExpression = json.set (rollExpression, "rolls", rolls,
 												"roll", roll,
 												"rollString", rollString,

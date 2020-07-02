@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6908ce74-10e3-4a1b-b4e5-9726ddc9fbe5</macroUUID>
+  <macroUUID>f56ed367-cda5-4410-9752-7c01c1c24350</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>31</index>
+  <index>38</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Conditions</label>
-  <group>new</group>
+  <label>dnd5e_DiceRoller_createMacro</label>
+  <group>Dice Roller</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

@@ -1,17 +1,17 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6908ce74-10e3-4a1b-b4e5-9726ddc9fbe5</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>31</index>
-  <colorKey>default</colorKey>
+  <macroUUID>9ea2b507-3b23-49ef-914d-4abe23d531e7</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>8</index>
+  <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Conditions</label>
-  <group>new</group>
+  <label>Create Ability Check Roll Macro</label>
+  <group>D&amp;D 5e</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>

@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6908ce74-10e3-4a1b-b4e5-9726ddc9fbe5</macroUUID>
+  <macroUUID>fd9dbfa9-a55a-496c-b788-ef9819ba6e99</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>31</index>
+  <index>37</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Conditions</label>
-  <group>new</group>
+  <label>dnd5e_RollExpression_parseRoll</label>
+  <group>RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,8 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Given a basic roll string, return a RollExpression sans any adornment of types.
+</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

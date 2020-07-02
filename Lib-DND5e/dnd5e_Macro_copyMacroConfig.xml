@@ -1,21 +1,23 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6908ce74-10e3-4a1b-b4e5-9726ddc9fbe5</macroUUID>
+  <macroUUID>69ebad3c-377e-426f-b06a-401013794def</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>31</index>
+  <index>43</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Conditions</label>
-  <group>new</group>
+  <label>dnd5e_Macro_copyMacroConfig</label>
+  <group>Util - Macro</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Given a macro label, locate the Macro of the same name on the token and return a MacroConfig based on the macro. If more than one macro is found, use the first.
+
+arg (0) = Macro name</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

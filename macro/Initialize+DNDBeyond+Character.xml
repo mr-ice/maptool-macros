@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>3f158254-2399-44ff-b7cd-08fdaa725664</macroUUID>
+  <macroUUID>6ed5c63b-5c73-4032-8767-37546f45af63</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>5</index>
+  <index>13</index>
   <colorKey>red</colorKey>
   <hotKey>None</hotKey>
   <label>Initialize DNDBeyond Character</label>
