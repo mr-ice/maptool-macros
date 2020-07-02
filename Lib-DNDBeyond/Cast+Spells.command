@@ -99,10 +99,10 @@
 	<!-- start as valid and invalidate as we go -->
 	[h: validChoice = 1]
 	[h: spellSlot = -1]
-	[h, if (!inputValid): abort (input ("selectedSpellName | "  + concentrationSpellsInput + 
+	[h, if (!inputValid): abort (input ("selectedConcentration | "  + concentrationSpellsInput + 
 		"| Concentration Spells | List | value=string",
-		"selectedSpellName | " + ritualSpellsInput + " | Ritual Spells | List | value=string",
-		"selectedSpellName | " + otherSpellsInput + " | Spells | List | value=string",
+		"selectedRitual | " + ritualSpellsInput + " | Ritual Spells | List | value=string",
+		"selectedOther | " + otherSpellsInput + " | Spells | List | value=string",
 		"spellSlot | " + spellSlotInput + " | Spend Spell Slot | List | value=string",
 		" saveAsMacro | 0 | Save as Macro | check "));""]
 
@@ -110,6 +110,10 @@
 		- One spell selected
 		- and either a default minimum or eligible spell slot selected -->
 	[h: selectedSpell = ""]
+	[h: selectedSpellName = "None"]
+	[h, if (selectedConcentration != "None"): selectedSpellName = selectedConcentration; ""]
+	[h, if (selectedRitual != "None"): selectedSpellName = selectedRitual; ""]
+	[h, if (selectedOther != "None"): selectedSpellName = selectedOther; ""]
 	[h, if (inputValid): selectedSpell = passedSpell; 
 						selectedSpell = json.get (spellMap, selectedSpellName)]
 	

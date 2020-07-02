@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8c01a485-b0b7-4359-a4dd-0a559d86d35f</macroUUID>
+  <macroUUID>11e7a6bb-75d1-4786-b99c-a2e336ce5436</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>89</index>
+  <index>81</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dndb_RollExpression_buildSpellRoll</label>
