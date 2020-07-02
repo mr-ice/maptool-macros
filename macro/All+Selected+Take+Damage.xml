@@ -1,0 +1,30 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f0dd301c-63a5-4387-baec-6c730121b5ce</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>5</index>
+  <colorKey>red</colorKey>
+  <hotKey>None</hotKey>
+  <label>All Selected Take Damage</label>
+  <group>Simple Damage</group>
+  <sortby></sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth></minWidth>
+  <maxWidth></maxWidth>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>All selected creatures take same damage!
+HP &amp; TempHP have the entered damage removed
+The health bar is updated accordingly
+Bloodied and Dead states are applied as needed.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
