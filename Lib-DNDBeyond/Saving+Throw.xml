@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4b6df7f3-947a-4675-b30b-b04c66e10e45</macroUUID>
+  <macroUUID>ba09642a-4291-4464-abdc-91363b56a327</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>51</index>
   <colorKey>black</colorKey>
@@ -15,7 +15,21 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Yer gonna DIE!</toolTip>
+  <toolTip>Yer gonna DIE!
+
+Builds a RollExpression for the selected SavingThrow and rolls it
+
+ex.
+{
+  "name": "Dexterity",
+  "diceSize": 20,
+  "diceRolled": 1,
+  "expressionTypes": "Save",
+  "hasAdvantage": "true",
+  "hasDisadvantage": "false",
+  "bonus": "4",
+  "totalRolls": 1,
+}</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

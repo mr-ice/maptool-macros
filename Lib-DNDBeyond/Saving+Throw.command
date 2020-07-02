@@ -26,6 +26,17 @@
 [h: savingThrowName = json.get (savingThrow, "name") + " Save"]
 [h: bonus = getProperty (savingThrowName)]
 
+[h: rollExpression = json.set ("", "name", json.get (savingThrow, "name"),
+								"diceSize", 20,
+								"diceRolled", 1,
+								"expressionTypes", "Save",
+								"bonus", bonus)]
+
+[h, switch (advDisadv):
+	case 1: rollExpression = json.set (rollExpression, "hasAdvantage", "true");
+	case 2: rollExpression = json.set (rollExpression, "hasDisadvantage", "true");
+	default: ""]
+
 <!-- Determine current state -->
 <!-- Fails str and dex -->
 [h: fuckedStates = json.append ("", "Paralyzed", "Petrified", "Stunned", "Unconscious")]
@@ -45,17 +56,17 @@
 [r, if ( selectedsavingThrowPos <= 1 && isFucked > 0), code: {
 	[r: fuckedMsg]
 	[r: "<b>You automatically <font color='red'><i>FAIL</i></font>!!<b><br>"]
+	[h: rollExpression = json.set (rollExpression, "expressionTypes", "['Save', 'staticRoll']",
+													"staticRoll", 1)]
+
 }; {}]
 
 
 [r, if (selectedsavingThrowPos == 1 && isRestrained > 0), code: {
 	[r: "<font color='red'>Applying Restrained effect (Disadvantage)</font><br>"]
-	[h, if (advDisadv == 1): advDisadv = 0; advDisadv = 2]
+	[h: rollExpression = json.set (rollExpression, "hasDisadvantage", "true")]
 }; {}]
 
-[h: savingThrowCheckObj = json.set ("", "checkLabel", json.get (savingThrow, "name") + " Saving Throw",
-							"bonus", bonus,
-							"advDisadv", advDisadv)]
 
 [h, if (saveAsMacro > 0), code: {
 	[h: cmdArg = json.set ("", "selectedsavingThrowPos", selectedsavingThrowPos, 
@@ -79,5 +90,6 @@
 	[h, if (saveAsMacro > 0): createMacro (macroName, cmd, macroConfig)]
 }]
 
+[h: check = json.get (dnd5e_DiceRoller_roll (rollExpression), 0)]
 
-[r, macro ("Make Check@Lib:DnDBeyond"): savingThrowCheckObj]
+[r: json.get (check, "output")]

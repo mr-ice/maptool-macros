@@ -11,4 +11,5 @@
 	}]
 }]
 
-<pre>[r: json.indent (getInfo ("client"), 3)]</pre>
+
+[h: log.info (json.indent (getInfo ("client"), 3))]

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>wWN0XPrLTyO1wNUBl7dhPQ==</baGUID>
+    <baGUID>baa77XlvTtmWiOyZkG4PWw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>sFjtIMnjRGKUT5WJzPM5jQ==</baGUID>
+    <baGUID>wQGqO/fhQCqvtVS/lF++cA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,34 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>550</x>
-  <y>400</y>
-  <z>15</z>
+  <x>400</x>
+  <y>600</y>
+  <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>550</lastX>
-  <lastY>400</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>11</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>11</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -51,15 +31,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -74,7 +54,7 @@
   <tokenShape>SQUARE</tokenShape>
   <tokenType>NPC</tokenType>
   <layer>TOKEN</layer>
-  <propertyType>Basic</propertyType>
+  <propertyType>DNDebug</propertyType>
   <tokenOpacity>1.0</tokenOpacity>
   <terrainModifier>0.0</terrainModifier>
   <terrainModifierOperation>NONE</terrainModifierOperation>
@@ -130,6 +110,10 @@
     </entry>
     <entry>
       <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wild Shape</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -209,6 +193,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Entangled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Restrained</string>
       <boolean>false</boolean>
     </entry>
@@ -285,7 +273,15 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Fly</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -419,6 +415,13 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Climb</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_lastrolledexpression</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_lastRolledExpression</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -591,17 +594,17 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>condition</string>
+        <string>strength bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Condition</key>
+          <key>Strength Bonus</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>strength bonus</string>
+        <string>condition</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Strength Bonus</key>
+          <key>Condition</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -703,6 +706,21 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_dndb_overridebasictoon</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dndb_OverrideBasicToon</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dndb_preferences_user</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb_Preferences_User</key>
+          <value class="string">{"variableName":"snubb","askeePrompt":"no"}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>defense</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Defense</key>
@@ -763,6 +781,14 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Bonus</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dndb_preferences_system</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb_Preferences_System</key>
+          <value class="string">{"sysPref1":"donkey","format":"sysFormat"}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -831,6 +857,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>dndb_preferences_gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb_Preferences_GM</key>
+          <value class="string">{"gmPref":"blarb","format":"gmFormat"}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>investigation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Investigation</key>
@@ -847,17 +881,17 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>movement</string>
+        <string>intimidation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Movement</key>
+          <key>Intimidation</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>intimidation</string>
+        <string>movement</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intimidation</key>
+          <key>Movement</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -1124,6 +1158,30 @@
     <entry>
       <int>88</int>
       <macro name="dndb_buildBasicToon"/>
+    </entry>
+    <entry>
+      <int>89</int>
+      <macro name="dndb_RollExpression_buildSpellRoll"/>
+    </entry>
+    <entry>
+      <int>97</int>
+      <macro name="Manage+Preference+Registry"/>
+    </entry>
+    <entry>
+      <int>103</int>
+      <macro name="Configure+Preferences"/>
+    </entry>
+    <entry>
+      <int>104</int>
+      <macro name="Data_Preference_Registry"/>
+    </entry>
+    <entry>
+      <int>106</int>
+      <macro name="dndb_Preferences_getRegistry"/>
+    </entry>
+    <entry>
+      <int>107</int>
+      <macro name="dndb_Preferences_setRegistry"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

@@ -13,14 +13,16 @@
 <!-- Default value is roll1Value -->
 [h: roll = roll1Val]
 [h, if (advantage && !disadvantage), code: {
-	[h: roll = math.max (roll1Val, roll2Val)]
-	[h: output = output + "<br>Advantage: " + rolls]
+	[h: roll = round (math.max (roll1Val, roll2Val))]
+	[h, if (roll2Val > roll1Val): output = json.get (roll2, "output"); ""]
+	[h: output = output + "<br>Advantage: " + rolls + ", Actual: " + roll]
 	[h: rollExpression = roll2]
 	[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
 }]
 [h, if (!advantage && disadvantage), code: {
-	[h: roll = math.min (roll1Val, roll2Val)]
-	[h: output = output + "<br>Disadvantage: " + rolls]
+	[h: roll = round (math.min (roll1Val, roll2Val))]
+	[h, if (roll2Val < roll1Val): output = json.get (roll2, "output"); ""]
+	[h: output = output + "<br>Disadvantage: " + rolls + ", Actual: " + roll]
 	[h: rollExpression = roll2]
 	[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
 }]

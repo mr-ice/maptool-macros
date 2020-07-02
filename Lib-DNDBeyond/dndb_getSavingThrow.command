@@ -1,19 +1,21 @@
 [h: toon = arg(0)]
 <!-- todo: some day were gonna get a json package that isnt in english. That -->
 <!-- might affect how this (and many other) macros work -->
+<!-- Note - the Death saving throw is its own beast -->
 [h: savesMap = json.append ("",
 			json.set ("", "name", "Strength", "valueId", "1", "abilityBonus", "strBonus"),
 			json.set ("", "name", "Dexterity", "valueId", "2", "abilityBonus", "dexBonus"),
 			json.set ("", "name", "Constitution", "valueId", "3", "abilityBonus", "conBonus"),
 			json.set ("", "name", "Intelligence", "valueId", "4", "abilityBonus", "intBonus"),
 			json.set ("", "name", "Wisdom", "valueId", "5", "abilityBonus", "wisBonus"),
-			json.set ("", "name", "Charisma", "valueId", "6", "abilityBonus", "chaBonus")
+			json.set ("", "name", "Charisma", "valueId", "6", "abilityBonus", "chaBonus"),
+			json.set ("", "name", "Death", "valueId", "-1", "abilityBonus", "none")
 			)
 ]
 [h, if (json.length (macro.args) > 1): 
 	saveNames = json.append ("", arg(1));
 	saveNames = json.append ("", "Strength", "Dexterity", "Constitution",
-					"Intelligence", "Wisdom", "Charisma")
+					"Intelligence", "Wisdom", "Charisma", "Death")
 ]
 
 <!-- Saving throws are about as stupid as skills, but here we go -->

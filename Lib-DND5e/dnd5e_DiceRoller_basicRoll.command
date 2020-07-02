@@ -10,8 +10,6 @@
 
 [h, if (dnd5e_DiceRoller_hasType (rollExpression, "staticRoll")), code: {
 	[h: staticRoll = json.get (rollExpression, "staticRoll")]
-	[h: broadcast ("<font color='red'><b>A staticRoll has been requested! This is a test feature ONLY.</b></font> <br><pre>" + json.indent(rollExpression) + "</pre>", "all")]
-
 	[h: roll = staticRoll]
 }]
 
@@ -24,8 +22,12 @@
 
 <!-- Build the output message -->
 <!-- Simple for now -->
-[h: descriptor = json.get (rollExpression, "expressionTypes") + " Roll"]
+[h: expressionTypes = json.get (rollExpression, "expressionTypes")]
+[h, if (json.type (expressionTypes) == "ARRAY"): expressionTypes = json.toList (expressionTypes); ""]
+[h: descriptor = expressionTypes + " Roll"]
 [h: output = json.get (rollExpression, "output")]
+<!-- stub this out and lets see how it works if we just write a new output everytime -->
+[h: output = ""]
 [h, if (output == ""), code: {
 	[h: description = json.get (rollExpression, "description")]
 	[h, if (description != ""): description = description + "<br>"; ""]

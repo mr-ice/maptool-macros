@@ -55,6 +55,12 @@
 					"sortBy", "2",
 					"command", "[macro('Cast Spells@Lib:DnDBeyond'): '']"),
 
+			json.set (basicCfg, "name", "Configure Preferences",
+					"color", "green",
+					"fontColor", "black",
+					"sortBy", "150",
+					"command", "[macro('Configure Preferences@Lib:DnDBeyond'): '']"),
+
 			json.set (basicCfg, "name", "Skill Check",
 					"color", "blue",
 					"fontColor", "white",

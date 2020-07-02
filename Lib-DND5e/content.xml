@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>EH9DFy4+TXWy/VH61oNZnQ==</baGUID>
+    <baGUID>RsvONTyJRyqaqPHCRdADow==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,34 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>350</x>
-  <y>300</y>
-  <z>2</z>
+  <x>300</x>
+  <y>700</y>
+  <z>13</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>350</lastX>
-  <lastY>300</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>6</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>6</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -779,14 +759,86 @@
     </entry>
     <entry>
       <int>13</int>
-      <macro name="dnd5e_Conditions"/>
+      <macro name="Manage+Preference+Registry"/>
     </entry>
     <entry>
       <int>14</int>
-      <macro name="dnd5e_ProcessConditions"/>
+      <macro name="Data_Preference_Registry"/>
     </entry>
     <entry>
       <int>15</int>
+      <macro name="dnd5e_Preferences_convertPrefEntryToInput"/>
+    </entry>
+    <entry>
+      <int>16</int>
+      <macro name="dnd5e_Preferences_createPreference"/>
+    </entry>
+    <entry>
+      <int>17</int>
+      <macro name="dnd5e_Preferences_deletePreference"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="dnd5e_Preferences_editPreference"/>
+    </entry>
+    <entry>
+      <int>19</int>
+      <macro name="dnd5e_Preferences_getPreference"/>
+    </entry>
+    <entry>
+      <int>20</int>
+      <macro name="dnd5e_Preferences_getRegistry"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="dnd5e_Preferences_getRegistryInput"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="dnd5e_Preferences_promptMacroInput"/>
+    </entry>
+    <entry>
+      <int>23</int>
+      <macro name="dnd5e_Preferences_setRegistry"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="dnd5e_Util_getMetaInputString"/>
+    </entry>
+    <entry>
+      <int>25</int>
+      <macro name="dnd5e_Preferences_getUserPreferences"/>
+    </entry>
+    <entry>
+      <int>26</int>
+      <macro name="dnd5e_Preferences_setUserPreferences"/>
+    </entry>
+    <entry>
+      <int>27</int>
+      <macro name="Configure+Preferences"/>
+    </entry>
+    <entry>
+      <int>28</int>
+      <macro name="dnd5e_Preferences_setPreference"/>
+    </entry>
+    <entry>
+      <int>29</int>
+      <macro name="dnd5e_Conditions"/>
+    </entry>
+    <entry>
+      <int>30</int>
+      <macro name="dnd5e_ProcessConditions"/>
+    </entry>
+    <entry>
+      <int>31</int>
+      <macro name="dnd5e_Conditions"/>
+    </entry>
+    <entry>
+      <int>32</int>
+      <macro name="dnd5e_ProcessConditions"/>
+    </entry>
+    <entry>
+      <int>33</int>
       <macro name="dnd5e_ConditionsCSS"/>
     </entry>
   </macroPropertiesMap>
