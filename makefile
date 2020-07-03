@@ -27,14 +27,13 @@ project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 	echo "strange slashes in $@, aborting"
 
 %.mtprops: %/content.xml %/properties.xml
-	mkdir .temp-$$$$; \
-	cp  $^ .temp-$$$$; \
-	test -d $*/assets && cp -r $*/assets .temp-$$$$; \
-	test -e $*/thumbnail && cp $*/thumbnail .temp-$$$$; \
-	test -e $*/thumbnail_large && cp $*/thumbnail_large .temp-$$$$; \
-	( cd .temp-$$$$ && \
-	$(ZIP) ../$@ . ); \
-	rm -rf .temp-$$$$
+	mkdir /tmp/.temp-$$$$; \
+	cp  $^ /tmp/.temp-$$$$; \
+	test -d $*/assets && cp -r $*/assets /tmp/.temp-$$$$; \
+	test -e $*/thumbnail && cp $*/thumbnail /tmp/.temp-$$$$; \
+	test -e $*/thumbnail_large && cp $*/thumbnail_large /tmp/.temp-$$$$; \
+	( cd /tmp/.temp-$$$$ && \
+	$(ZIP) $$PWD/$@ . );
 
 clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*
