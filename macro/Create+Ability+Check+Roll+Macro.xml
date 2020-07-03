@@ -14,8 +14,9 @@
   <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Creates a new macro on the selected token(s) to make an ability check. The new macro will not prompt for any input and be hard-coded with the inputs provided when it was constructed.
+</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
