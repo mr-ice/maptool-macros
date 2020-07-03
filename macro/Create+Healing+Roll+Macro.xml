@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1b50d00e-4438-4bca-afc8-564d5ec19400</macroUUID>
+  <macroUUID>1ec0a821-2adc-450c-81dc-d86b75df0625</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>11</index>
+  <index>24</index>
   <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
   <label>Create Healing Roll Macro</label>

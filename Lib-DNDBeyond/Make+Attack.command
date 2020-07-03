@@ -91,45 +91,33 @@
 [h: dmgType = json.get(cfgAttack, DMG_TYPE)]
 [h: dmgBonusExpr = json.get(cfgAttack, DMG_BONUS_EXPR)]
 
-<!-- Roll attack dice (always roll two, determine if advantage or disadvantage applies after -->
-<!-- Unlike dmg rolls that use a full text expression, attack is done in discrete steps to determine criticals -->
-[h: attack = 1d20]
-[h: attack2 = 1d20]
+[h, if (advantageDisadvantage == "Advantage"): hasAdvantage = 1; hasAdvantage = 0]
+[h, if (advantageDisadvantage == "Disadvantage"): hasDisadvantage = 1; hasDisadvantage = 0]
 
-<!-- Calculate the correct attack roll -->
-[h: realAttack = attack]
-[h,if (advantageDisadvantage == "Advantage"): realAttack = max(attack, attack2)]
-[h,if (advantageDisadvantage == "Disadvantage"): realAttack = min(attack, attack2)]
+[h: attackExpression = json.set ("", "name", attackName,
+								"diceSize", 20,
+								"diceRolled", 1,
+								"bonus", attackBonus,
+								"expressionTypes", "Attack",
+								"hasAdvantage", hasAdvantage,
+								"hasDisadvantage", hasDisadvantage)]
+[h: rollExpressions = json.append ("", attackExpression,
+								json.set ("", "name", " ",
+									"diceSize", dmgDie,
+									"diceRolled", dmgNumDice,
+									"bonus", dmgBonus,
+									"expressionTypes", "Damage",
+									"onCritAdd", critBonus,
+									"damageTypes", dmgType))]
+[h, if (dmgBonusExpr != "" && !isNumber (dmgBonusExpr)), code: {
+	[h: bonusDamageExpression = dnd5e_RollExpression_parseRoll (dmgBonusExpr)]
+	[h: bonusDamageExpression = json.set (bonusDamageExpression, "name", "Extra damage")]
+	[h: rollExpressions = json.append (rollExpressions, bonusDamageExpression)]
+}]
 
-<!-- Apply critical -->
-[h,if (realAttack == 20): dmgNumDice = (dmgNumDice * 2) + critBonus]
-
-<!-- Roll damage -->
-[h: dmgExpression = dmgNumDice + "d" + dmgDie + " + " + dmgBonus]
-[h: noDmgExpression = json.equals(dmgBonusExpr, "") + json.equals(dmgBonusExpr, 0)]
-[h: dmgExpression = if (noDmgExpression > 0, dmgExpression, dmgExpression + " + " + dmgBonusExpr)]
-[h: dmg = eval(dmgExpression)]
-
-<!-- Build the message -->
-[h: atkString = "<b>"]
-[h: atk2String = "<b>"]
-[h,if(attack == 20): atkString = atkString + "<font color='red'><i>CRITICAL</i></font> "]
-[h,if(attack2 == 20): atk2String = atk2String + "<font color='red'><i>CRITICAL</i></font> "]
-[h: attack = attack + attackBonus]
-[h: attack2 = attack2 + attackBonus]
-[h: realAttack = realAttack + attackBonus]
-[h,if(advantageDisadvantage != "None"): realAtkString = "<b>" + realAttack + "</b>"]
-[h: atkString = atkString + attack + "</b>"]
-[h: atk2String = atk2String + attack2 + "</b>"]
-
-[h: nameStr = attackName + "<br>(" + dmgType + ")<br><br>"]
-[h: atkStr = "Attack (1d20 + " + attackBonus + "): " + atkString + "<br>"]
-[h,if(advantageDisadvantage != "None"): atkStr = atkStr + advantageDisadvantage + ": " + atk2String + "<br><br>Actual Attack: " + realAtkString + "<br>"]
-[h: dmgStr = "Damage (" + dmgExpression + "): " + dmg]
-
-[r: nameStr]
-[r: atkStr]
-[r: dmgStr]
+[h: rolledExpressions = dnd5e_DiceRoller_roll (rollExpressions)]
+[h: msg = dnd5e_RollExpressions_getCombinedOutput (rolledExpressions)]
+[r: msg]
 
 <!-- Build the macro -->
 [h, if (saveAsMacro > 0), code: {

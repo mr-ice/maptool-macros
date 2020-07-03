@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>3101a7e6-1c32-44da-94b1-685f202b9107</macroUUID>
+  <macroUUID>10955863-0ff2-490c-850d-25c996591bb1</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>9</index>
+  <index>22</index>
   <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
   <label>Create Attack Roll Macro</label>

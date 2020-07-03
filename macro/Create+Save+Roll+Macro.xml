@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>2e149333-51f4-450a-8d8f-ddc4dd4fb782</macroUUID>
+  <macroUUID>3bcef466-db77-43af-9822-47784c602f89</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>12</index>
+  <index>25</index>
   <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
   <label>Create Save Roll Macro</label>

@@ -24,7 +24,7 @@
 	[h: damageString = json.toList (damageTypes)]
 	[h: name = json.get (critRoll, "name")]
 	[h: description = json.get (critRoll, "description")]
-	[h: output = "<br><font color='red'><b>CRITICAL </b></font> " + json.get (critRoll, "output")] 
+	[h: output = "<font color='red'><b><i>CRITICAL </i></b></font> " + json.get (critRoll, "output")] 
 	[h: rollExpression = json.set (critRoll, "output", output)]
 }]
 [h: macro.return = rollExpression]

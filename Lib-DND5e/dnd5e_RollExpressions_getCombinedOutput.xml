@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a1c23377-4654-4d76-84e3-1a0a5dd4e77d</macroUUID>
-  <saveLocation>CampaignPanel</saveLocation>
-  <index>16</index>
-  <colorKey>red</colorKey>
+  <macroUUID>1bbd453f-211f-4928-9a05-6e5493cfe90d</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>44</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Initialize DNDBeyond Character</label>
-  <group>DNDBeyond</group>
-  <sortby>99</sortby>
+  <label>dnd5e_RollExpressions_getCombinedOutput</label>
+  <group>RollExpression</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.05em</fontSize>
-  <minWidth>150</minWidth>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Fetches a DNDBeyond character and syncs the attributes with the selected token.</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>For a given array of roll expressions, create a single String of the combined outputs in serial order.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

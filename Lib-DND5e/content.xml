@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>RsvONTyJRyqaqPHCRdADow==</baGUID>
+    <baGUID>Nyqlvy8zQh2/d5kjjFnKIg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -574,17 +574,17 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>description</string>
+        <string>sleight of hand</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>description</key>
-          <value class="string"/>
+          <key>Sleight of Hand</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>sleight of hand</string>
+        <string>description</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Sleight of Hand</key>
+          <key>description</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -881,6 +881,10 @@
     <entry>
       <int>43</int>
       <macro name="dnd5e_Macro_copyMacroConfig"/>
+    </entry>
+    <entry>
+      <int>44</int>
+      <macro name="dnd5e_RollExpressions_getCombinedOutput"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

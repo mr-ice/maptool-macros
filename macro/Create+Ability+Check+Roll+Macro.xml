@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>9ea2b507-3b23-49ef-914d-4abe23d531e7</macroUUID>
+  <macroUUID>fe382c33-03c1-4f10-a6bf-2acd10d9b272</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>8</index>
+  <index>21</index>
   <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
   <label>Create Ability Check Roll Macro</label>

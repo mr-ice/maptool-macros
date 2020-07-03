@@ -1,19 +1,19 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f0dd301c-63a5-4387-baec-6c730121b5ce</macroUUID>
+  <macroUUID>129ec9ed-c960-482f-a12e-3403790e2ebb</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>5</index>
+  <index>19</index>
   <colorKey>red</colorKey>
   <hotKey>None</hotKey>
   <label>All Selected Take Damage</label>
   <group>Simple Damage</group>
-  <sortby></sortby>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>white</fontColorKey>
   <fontSize>1.05em</fontSize>
-  <minWidth></minWidth>
-  <maxWidth></maxWidth>
+  <minWidth/>
+  <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>All selected creatures take same damage!
 HP &amp; TempHP have the entered damage removed

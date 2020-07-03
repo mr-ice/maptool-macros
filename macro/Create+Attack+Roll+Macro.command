@@ -13,7 +13,7 @@
 									"diceSize", 20,
 									"diceRolled", 1)]
 
-[h, macro ("Create Damage Roll Macro@Lib:DnD5e"): "1"]
+[h, macro ("Create Damage Roll Macro@Campaign"): "1"]
 [h: damageExpressions = macro.return]
 [h: rollExpressions = json.merge (json.append ("", attackExpression), damageExpressions)]
 [h: log.info ("rollExpressions: " + json.indent (rollExpressions))]

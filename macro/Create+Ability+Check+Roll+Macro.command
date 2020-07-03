@@ -11,7 +11,7 @@
 				"hasDisadvantage | 0 | Has Disadvantage | check"))]
 
 [h: checkExpression = json.set ("", "name", name, 
-									"expressionTypes", "Check",
+									"expressionTypes", "Ability",
 									"bonus", bonus,
 									"hasAdvantage", hasAdvantage,
 									"hasDisadvantage", hasDisadvantage,

@@ -33,8 +33,8 @@
 								"bonus", bonus)]
 
 [h, switch (advDisadv):
-	case 1: rollExpression = json.set (rollExpression, "hasAdvantage", "true");
-	case 2: rollExpression = json.set (rollExpression, "hasDisadvantage", "true");
+	case 1: rollExpression = json.set (rollExpression, "hasAdvantage", 1);
+	case 2: rollExpression = json.set (rollExpression, "hasDisadvantage", 1);
 	default: ""]
 
 <!-- Determine current state -->
@@ -64,7 +64,7 @@
 
 [r, if (selectedsavingThrowPos == 1 && isRestrained > 0), code: {
 	[r: "<font color='red'>Applying Restrained effect (Disadvantage)</font><br>"]
-	[h: rollExpression = json.set (rollExpression, "hasDisadvantage", "true")]
+	[h: rollExpression = json.set (rollExpression, "hasDisadvantage", 1)]
 }; {}]
 
 

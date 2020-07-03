@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f59419b3-f7d8-4d2a-9040-52cbf2ac656e</macroUUID>
+  <macroUUID>bfefc19b-8dbc-47ed-9999-ef0475b118d3</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>14</index>
+  <index>17</index>
   <colorKey>orange</colorKey>
   <hotKey>None</hotKey>
   <label>Quick Update</label>
