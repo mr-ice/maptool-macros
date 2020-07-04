@@ -5,7 +5,7 @@
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_ProcessConditions</label>
-  <group>new</group>
+  <group>UI Conditions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;pre&gt;
-[r: json.indent(macro.args,2)]
-&lt;/pre&gt;</toolTip>
+  <toolTip>Process the input gathered from the dnd5e_Conditions form.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

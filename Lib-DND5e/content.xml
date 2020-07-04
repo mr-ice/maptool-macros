@@ -822,14 +822,6 @@
       <macro name="dnd5e_Preferences_setPreference"/>
     </entry>
     <entry>
-      <int>29</int>
-      <macro name="dnd5e_Conditions"/>
-    </entry>
-    <entry>
-      <int>30</int>
-      <macro name="dnd5e_ProcessConditions"/>
-    </entry>
-    <entry>
       <int>31</int>
       <macro name="dnd5e_Conditions"/>
     </entry>
@@ -840,6 +832,22 @@
     <entry>
       <int>33</int>
       <macro name="dnd5e_ConditionsCSS"/>
+    </entry>
+    <entry>
+      <int>34</int>
+      <macro name="dnd5e_applyHealth"/>
+    </entry>
+    <entry>
+      <int>35</int>
+      <macro name="dnd5e_takeDamage"/>
+    </entry>
+    <entry>
+      <int>36</int>
+      <macro name="dnd5e_selectedTakeDamage"/>
+    </entry>
+    <entry>
+      <int>37</int>
+      <macro name="dnd5e_removeDamage"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
