@@ -9,7 +9,8 @@
 					"addAnother | 0 | Add another? | check"))]
 	[h: rollExpression = dnd5e_RollExpression_parseRoll (diceExpression)]
 	[h: rollExpression = json.set (rollExpression, "name", name, "expressionTypes", "Damage")]
-	[h, if (extraText != "" && extraText != 0): rollExpression = json.set (rollExpression, "extraText", extraText); ""]
+	[h, if (extraText != "" && extraText != 0): 
+			rollExpression = dnd5e_RollExpression_setDescription (rollExpression, extraText); ""]
 	[h: damageRolls = json.append (damageRolls, rollExpression)]
 }]
 [h: log.info (json.indent (damageRolls))]

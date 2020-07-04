@@ -14,8 +14,8 @@
 
 [h, foreach (rollExpression, rollExpressions), code: {
 	<!-- Static roll check, for broadcast only. Basic roll will take care of bidness -->
-	[h, if (dnd5e_DiceRoller_hasType (rollExpression, "staticRoll")), code: {
-		[h: staticRoll = json.get (rollExpression, "staticRoll")]
+	[h, if (dnd5e_RollExpression_hasType (rollExpression, "staticRoll")), code: {
+		[h: staticRoll = dnd5e_RollExpression_getStaticRoll (rollExpression)]
 		[h: broadcast ("<font color='red'><b>A roll of " + staticRoll + " has been forced!</b></font> <br>")]
 	}]
 
@@ -29,10 +29,13 @@
 		<!-- clear the output, we capture multiple outputs in an array -->
 		[h: rollExpression = json.set (rollExpression, "output", "")]
 		[h: rollExpression = dnd5e_DiceRoller_basicRoll (rollExpression)]
-		[h, if (dnd5e_DiceRoller_hasType (rollExpression, "advantagable")): rollExpression = dnd5e_DiceRoller_advantageRoll (rollExpression)]
-		[h, if (dnd5e_DiceRoller_hasType (rollExpression, "lucky")): rollExpression = dnd5e_DiceRoller_luckyRoll (rollExpression)]
-		[h, if (dnd5e_DiceRoller_hasType (rollExpression, "critable")): rollExpression = dnd5e_DiceRoller_critableRoll (rollExpression, rolled)]
-		[h: output = json.get (rollExpression, "output")]
+		[h, if (dnd5e_RollExpression_hasType (rollExpression, "advantagable")): 
+				rollExpression = dnd5e_DiceRoller_advantageRoll (rollExpression)]
+		[h, if (dnd5e_RollExpression_hasType (rollExpression, "lucky")): 
+				rollExpression = dnd5e_DiceRoller_luckyRoll (rollExpression)]
+		[h, if (dnd5e_RollExpression_hasType (rollExpression, "critable")): 
+				rollExpression = dnd5e_DiceRoller_critableRoll (rollExpression, rolled)]
+		[h: output = dnd5e_RollExpression_getOutput (rollExpression)]
 		[h: outputs = json.append (outputs, output)]
 	}]
 	[h: rollExpression = json.set (rollExpression, "outputs", outputs)]

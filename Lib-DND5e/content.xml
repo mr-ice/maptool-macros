@@ -776,7 +776,7 @@
     </entry>
     <entry>
       <int>10</int>
-      <macro name="dnd5e_DiceRoller_hasType"/>
+      <macro name="dnd5e_RollExpression_hasType"/>
     </entry>
     <entry>
       <int>11</int>
@@ -884,7 +884,163 @@
     </entry>
     <entry>
       <int>44</int>
-      <macro name="dnd5e_RollExpressions_getCombinedOutput"/>
+      <macro name="dnd5e_RollExpression_getCombinedOutput"/>
+    </entry>
+    <entry>
+      <int>45</int>
+      <macro name="dnd5e_RollExpression_setName"/>
+    </entry>
+    <entry>
+      <int>46</int>
+      <macro name="dnd5e_RollExpression_getName"/>
+    </entry>
+    <entry>
+      <int>47</int>
+      <macro name="dnd5e_RollExpression_setDiceSize"/>
+    </entry>
+    <entry>
+      <int>48</int>
+      <macro name="dnd5e_RollExpression_getDiceSize"/>
+    </entry>
+    <entry>
+      <int>49</int>
+      <macro name="dnd5e_RollExpression_setBonus"/>
+    </entry>
+    <entry>
+      <int>50</int>
+      <macro name="dnd5e_RollExpression_getBonus"/>
+    </entry>
+    <entry>
+      <int>51</int>
+      <macro name="dnd5e_RollExpression_setDiceRolled"/>
+    </entry>
+    <entry>
+      <int>52</int>
+      <macro name="dnd5e_RollExpression_getDiceRolled"/>
+    </entry>
+    <entry>
+      <int>53</int>
+      <macro name="dnd5e_RollExpression_setExpressionType"/>
+    </entry>
+    <entry>
+      <int>54</int>
+      <macro name="dnd5e_RollExpression_getExpressionType"/>
+    </entry>
+    <entry>
+      <int>55</int>
+      <macro name="dnd5e_RollExpression_addType"/>
+    </entry>
+    <entry>
+      <int>56</int>
+      <macro name="dnd5e_RollExpression_setTypes"/>
+    </entry>
+    <entry>
+      <int>57</int>
+      <macro name="dnd5e_RollExpression_addExpression"/>
+    </entry>
+    <entry>
+      <int>58</int>
+      <macro name="dnd5e_RollExpression_setExpressions"/>
+    </entry>
+    <entry>
+      <int>59</int>
+      <macro name="dnd5e_RollExpression_getExpressions"/>
+    </entry>
+    <entry>
+      <int>60</int>
+      <macro name="dnd5e_RollExpression_getRolls"/>
+    </entry>
+    <entry>
+      <int>61</int>
+      <macro name="dnd5e_RollExpression_getRoll"/>
+    </entry>
+    <entry>
+      <int>62</int>
+      <macro name="dnd5e_RollExpression_getRollString"/>
+    </entry>
+    <entry>
+      <int>63</int>
+      <macro name="dnd5e_RollExpression_setTotalRolls"/>
+    </entry>
+    <entry>
+      <int>64</int>
+      <macro name="dnd5e_RollExpression_getTotalRolls"/>
+    </entry>
+    <entry>
+      <int>65</int>
+      <macro name="dnd5e_RollExpression_setDisadvantage"/>
+    </entry>
+    <entry>
+      <int>66</int>
+      <macro name="dnd5e_RollExpression_hasDisadvantage"/>
+    </entry>
+    <entry>
+      <int>67</int>
+      <macro name="dnd5e_RollExpression_setAdvantage"/>
+    </entry>
+    <entry>
+      <int>68</int>
+      <macro name="dnd5e_RollExpression_hasAdvantage"/>
+    </entry>
+    <entry>
+      <int>69</int>
+      <macro name="dnd5e_RollExpression_setOnCritAdd"/>
+    </entry>
+    <entry>
+      <int>70</int>
+      <macro name="dnd5e_RollExpression_getOnCritAdd"/>
+    </entry>
+    <entry>
+      <int>71</int>
+      <macro name="dnd5e_RollExpression_getTotal"/>
+    </entry>
+    <entry>
+      <int>72</int>
+      <macro name="dnd5e_RollExpression_getTotals"/>
+    </entry>
+    <entry>
+      <int>73</int>
+      <macro name="dnd5e_RollExpression_getAllTotal"/>
+    </entry>
+    <entry>
+      <int>74</int>
+      <macro name="dnd5e_RollExpression_getOutput"/>
+    </entry>
+    <entry>
+      <int>75</int>
+      <macro name="dnd5e_RollExpression_getOutputs"/>
+    </entry>
+    <entry>
+      <int>76</int>
+      <macro name="dnd5e_RollExpression_getStaticRoll"/>
+    </entry>
+    <entry>
+      <int>77</int>
+      <macro name="dnd5e_RollExpression_setStaticRoll"/>
+    </entry>
+    <entry>
+      <int>78</int>
+      <macro name="dnd5e_RollExpression_setDescription"/>
+    </entry>
+    <entry>
+      <int>79</int>
+      <macro name="dnd5e_RollExpression_getDescription"/>
+    </entry>
+    <entry>
+      <int>80</int>
+      <macro name="dnd5e_RollExpression_getDamageTypes"/>
+    </entry>
+    <entry>
+      <int>81</int>
+      <macro name="dnd5e_RollExpression_addDamageType"/>
+    </entry>
+    <entry>
+      <int>82</int>
+      <macro name="dnd5e_RollExpression_setDamageTypes"/>
+    </entry>
+    <entry>
+      <int>83</int>
+      <macro name="dnd5e_getInvestigationStat"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

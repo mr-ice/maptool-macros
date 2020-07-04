@@ -58,7 +58,7 @@
 								"hasDisadvantage", hasDisadvantage,
 								"hasAdvantage", hasAdvantage)]
 [h: rolledExpressions = dnd5e_DiceRoller_roll (rollExpression)]
-[h: msg = dnd5e_RollExpressions_getCombinedOutput (rolledExpressions)]
+[h: msg = dnd5e_RollExpression_getCombinedOutput (rolledExpressions)]
 [r: msg]
 
 [h, if (saveAsMacro > 0), code: {

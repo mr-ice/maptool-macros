@@ -6,25 +6,22 @@
 
 [h: critCandidate = ""]
 [h, foreach (candidate, fromCritCandidateExpressions), code: {
-	[h, if (dnd5e_DiceRoller_hasType (candidate, "Attack")): critCandidate = candidate; ""]
+	[h, if (dnd5e_RollExpression_hasType (candidate, "Attack")): critCandidate = candidate; ""]
 }]
-[h, if (json.type (critCandidate) == "OBJECT"): roll = json.get (critCandidate, "roll"); roll = 0]
+[h, if (json.type (critCandidate) == "OBJECT"): roll = dnd5e_RollExpression_getRoll (critCandidate); roll = 0]
 
 [h, if (roll == 20), code: {
 	<!-- critical! -->
 	<!-- Sniff onCritAdd property to determine addtional dice. If not found, assume the same amount
 	     as currently set for diceRolled -->
-	[h: onCritAdd = json.get (rollExpression, "onCritAdd")]
-	[h: originalDiceRolled = json.get (rollExpression, "diceRolled")]
-	[h, if (onCritAdd == ""): onCritAdd = originalDiceRolled; ""]
-	[h: critRoll = json.set (rollExpression, "diceRolled", onCritAdd + originalDiceRolled)]
+	[h: onCritAdd = dnd5e_RollExpression_getOnCritAdd (rollExpression)]
+	[h: originalDiceRolled = dnd5e_RollExpression_getDiceRolled (rollExpression)]
+	[h: critRoll = dnd5e_RollExpression_setDiceRolled (rollExpression, onCritAdd + originalDiceRolled)]
 	[h: critRoll = dnd5e_DiceRoller_basicRoll (critRoll)]
 	<!-- Just replace whats currently on output. We have better information -->
-	[h: damageTypes = json.get (critRoll, "damageTypes")]
-	[h: damageString = json.toList (damageTypes)]
-	[h: name = json.get (critRoll, "name")]
-	[h: description = json.get (critRoll, "description")]
-	[h: output = "<font color='red'><b><i>CRITICAL </i></b></font> " + json.get (critRoll, "output")] 
+	[h: damageString = dnd5e_RollExpression_getDamageTypes (critRoll)]
+	[h: name = dnd5e_RollExpression_getName (critRoll)]
+	[h: output = "<font color='red'><b><i>CRITICAL </i></b></font> " + dnd5e_RollExpression_getOutput (critRoll)] 
 	[h: rollExpression = json.set (critRoll, "output", output)]
 }]
 [h: macro.return = rollExpression]

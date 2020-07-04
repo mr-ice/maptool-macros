@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8477d009-950b-4893-8de7-25a3b75d3917</macroUUID>
+  <macroUUID>0ffd9774-da0c-42c7-8f54-fffa5de92699</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>49</index>
+  <index>79</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Make Check</label>
-  <group>Token</group>
-  <sortby>100</sortby>
+  <label>dnd5e_RollExpression_getDescription</label>
+  <group>RollExpression</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Generic check macro, usually called as a sub-process but works stand-alone</toolTip>
+  <toolTip>Returns the user defined description for the RollExpression</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

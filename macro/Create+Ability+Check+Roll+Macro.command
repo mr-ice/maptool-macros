@@ -17,6 +17,13 @@
 									"hasDisadvantage", hasDisadvantage,
 									"diceSize", 20,
 									"diceRolled", 1)]
+[h: checkExpression = dnd5e_RollExpression_setName ("", name)]
+[h: checkExpression = dnd5e_RollExpression_addExpression (checkExpression, "Ability")]
+[h: checkExpression = dnd5e_RollExpression_setBonus (checkExpression, bonus)]
+[h: checkExpression = dnd5e_RollExpression_setAdvantage (checkExpression, hasAdvantage)]
+[h: checkExpression = dnd5e_RollExpression_setDisadvantage (checkExpression, hasDisadvantage)]
+[h: checkExpression = dnd5e_RollExpression_setDiceSize (checkExpression, 20)]
+[h: checkExpression = dnd5e_RollExpression_setDiceRolled (checkExpression, 1)]
 
 [h: log.info ("checkExpression: " + json.indent (checkExpression))]
 [h, if (calculateBonus): bonusProperty  = name; bonusProperty = ""]

@@ -116,7 +116,7 @@
 }]
 
 [h: rolledExpressions = dnd5e_DiceRoller_roll (rollExpressions)]
-[h: msg = dnd5e_RollExpressions_getCombinedOutput (rolledExpressions)]
+[h: msg = dnd5e_RollExpression_getCombinedOutput (rolledExpressions)]
 [r: msg]
 
 <!-- Build the macro -->
