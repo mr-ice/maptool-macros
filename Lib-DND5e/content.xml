@@ -857,6 +857,14 @@
       <int>40</int>
       <macro name="dnd5e_updateTemp"/>
     </entry>
+    <entry>
+      <int>41</int>
+      <macro name="dnd5e_takeHealing"/>
+    </entry>
+    <entry>
+      <int>42</int>
+      <macro name="dnd5e_takeTemp"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

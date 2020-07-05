@@ -15,6 +15,8 @@
 [h: basicToon = dndb_buildBasicToon (charId)]
 
 [h: setProperty ("dndb_BasicToon", basicToon)]
+[h: setName (json.get(basicToon, "name"))]
+[h: setPC ()]
 
 [h, macro ("Reset Properties@this"): "1"]
 [h: msg = json.get (basicToon, "name") + " has been initialized!"]

@@ -38,23 +38,18 @@
 [h: state = if (state == "fine" && current <= maximum / 2, "bloodied", state)]
 [h, switch(state), code:
 	case "dead": {
-		[h: current = 0]
-		[h: temporary = 0]
 		[h: setState("Dead", 1, id)]
 		[h, if (!isPC(id)): removeFromInitiative(id); ""]
 	};
 	case "stable": {
-		[h: temporary = 0]
 		[h: setState("Stable", 1, id)]
 	};
 	case "dying": {
-		[h: temporary = 0]
 		[h: setState("Dying", 1, id)]
 		[h: setBar("DSPass", 0.25 * dsPass, id)]
 		[h: setBar("DSFail", 0.25 * dsFail, id)]
 	};
 	case "bloodied": {
-		[h: temporary = 0]
 		[h: setState("Bloodied", 1, id)]
 		[h: setBar("HP", current / effectiveMaxHP, id)]
 		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
