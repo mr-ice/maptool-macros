@@ -5,7 +5,7 @@
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_Conditions</label>
-  <group>new</group>
+  <group>UI Conditions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Display all of the conditions and allow the user to select the ones that apply</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

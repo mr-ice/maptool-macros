@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>75dfc40f-af23-488f-a447-4aacbf3f6ed9</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>13</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_applyHealth</label>
+  <group>Health</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Update all of the token states to match the passed health parameters passed as JSON:
+  {
+    "id": Id of the token being modified,
+    "current": Token's current hit points,
+    "temporary": Token's temporary hit points
+    "maximum": Token's maximum hit points
+    "dsPass": Number of passed death saves for the token
+    "dsFail": Number of failed death saves for the token
+    "exhaustionDeath": Is the token at exhaustion level 6
+  }
+  The macro updates the states: Bloodied, Dying, Dead, Stable
+  The macro updates the bars: HP, Damage, DSPass, DSFail
+  The macro updates the properties: HP, TempHP, MaxHP, DSPass, DSFail
+  The macro removes dead NPC tokens from the initiative
+  </toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -4,15 +4,17 @@
 
 ifdef OS
     ZIP = jar -cvfM
+	DOTSLASH := .\\
 else
-    ZIP = zip -r
+    ZIP = zip -qr
+	DOTSLASH := ./
 endif
 
 project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
-	./dockerrun project-assemble DNDBeyond.project
+	$(DOTSLASH)dockerrun project-assemble DNDBeyond.project
 
 project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
-	./docker/project-assemble DNDBeyond.project
+	$(DOTSLASH)docker/project-assemble DNDBeyond.project
 
 %.mtmacro:
 	@echo "E: makefile no longer builds macros.  You should use dockerrun macro-assemble instead"
@@ -27,14 +29,15 @@ project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 	echo "strange slashes in $@, aborting"
 
 %.mtprops: %/content.xml %/properties.xml
-	mkdir .temp-$$$$; \
-	cp  $^ .temp-$$$$; \
-	test -d $*/assets && cp -r $*/assets .temp-$$$$; \
-	test -e $*/thumbnail && cp $*/thumbnail .temp-$$$$; \
-	test -e $*/thumbnail_large && cp $*/thumbnail_large .temp-$$$$; \
-	( cd .temp-$$$$ && \
-	$(ZIP) ../$@ . ); \
-	rm -rf .temp-$$$$
+	mkdir /tmp/.temp-$$$$; \
+	cp  $^ /tmp/.temp-$$$$; \
+	test -d $*/assets && cp -r $*/assets /tmp/.temp-$$$$; \
+	test -e $*/thumbnail && cp $*/thumbnail /tmp/.temp-$$$$; \
+	test -e $*/thumbnail_large && cp $*/thumbnail_large /tmp/.temp-$$$$; \
+	OUTDIR=$$PWD && \
+	( cd /tmp/.temp-$$$$ && \
+	$(ZIP) $$OUTDIR/$@ . );
+
 
 clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*
