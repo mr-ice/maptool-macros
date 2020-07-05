@@ -1,24 +1,25 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>75dfc40f-af23-488f-a447-4aacbf3f6ed9</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>13</index>
-  <colorKey>default</colorKey>
+  <macroUUID>93b582c1-8079-4894-9448-33121b8b049e</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>4</index>
+  <colorKey>red</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_selectedTakeDamage</label>
-  <group>Health</group>
+  <label>Damage Selected</label>
+  <group>DnD5e Health</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>Display a dialog to enter damage taken and apply it to all of the selected tokens
-  These token properties must be set: HP, TempHP
-  After getting the damage from the dialog this macro calls dnd5e_removeDamage on each selected token.
-  </toolTip>
+  <toolTip>All selected creatures take damage
+    HP &amp; TempHP have the entered damage removed
+    The health and damage bars are updated.
+    Bloodied, Dead, Dying and Stable states are applied.
+    Death save bars are updated on PCs</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

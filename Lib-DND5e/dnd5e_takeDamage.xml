@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>75dfc40f-af23-488f-a447-4aacbf3f6ed9</macroUUID>
+  <macroUUID>d8f12a45-4f78-484d-8139-9a8a27e5b436</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>13</index>
+  <index>35</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_takeDamage</label>
@@ -14,11 +14,10 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Display a dialog to enter damage taken and apply it to the current token
-  These token properties must be set: HP, TempHP
-  After getting the damage from the dialog this macro calls dnd5e_removeDamage
-  </toolTip>
+    These token properties must be set: HP, TempHP
+    After getting the damage from the dialog this macro calls dnd5e_removeDamage</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,1 +1,0 @@
-[macro("dnd5e_selectedTakeDamage@Lib:DnD5e"):""]

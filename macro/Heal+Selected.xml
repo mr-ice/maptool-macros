@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>221ca00b-ae09-4289-850f-be4d5e1b1b66</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>6</index>
+  <colorKey>red</colorKey>
+  <hotKey>None</hotKey>
+  <label>Heal Selected</label>
+  <group>DnD5e Health</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>All selected creatures are healed
+    HP has the healing applied up to MaxHP
+    The health and damage bars are updated.
+    Bloodied, Dead, Dying and Stable states are applied.
+    Death save bars are updated on PCs</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -842,12 +842,20 @@
       <macro name="dnd5e_takeDamage"/>
     </entry>
     <entry>
-      <int>36</int>
-      <macro name="dnd5e_selectedTakeDamage"/>
-    </entry>
-    <entry>
       <int>37</int>
       <macro name="dnd5e_removeDamage"/>
+    </entry>
+    <entry>
+      <int>38</int>
+      <macro name="dnd5e_updateSelectedHealth"/>
+    </entry>
+    <entry>
+      <int>39</int>
+      <macro name="dnd5e_healDamage"/>
+    </entry>
+    <entry>
+      <int>40</int>
+      <macro name="dnd5e_updateTemp"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

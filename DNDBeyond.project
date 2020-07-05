@@ -7,7 +7,8 @@
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>
     <macro name="macro/Reset+Properties"/>
-    <macro name="macro/All+Selected+Take+Damage"/>
-    <macro name="macro/Take+Damage"/>
+    <macro name="macro/Damage+Selected"/>
+    <macro name="macro/Heal+Selected"/>
+    <macro name="macro/TempHP+for+Selected"/>
   </macroset>
 </project>
