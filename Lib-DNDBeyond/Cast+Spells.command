@@ -89,6 +89,9 @@
 <!-- validate the input spell by name -->
 [h: spellSlotInput = MINIMUM_ALLOWED + "," + spellSlotInput]
 
+[h: selectedConcentration = ""]
+[h: selectedRitual = ""]
+[h: selectedOther = ""]
 
 
 <!-- if our input spell and spell slot are both available choices, move on to casting -->

@@ -6,23 +6,22 @@
 [h: roll2 = dnd5e_DiceRoller_basicRoll (rollExpression)]
 [h: roll2Val = json.get (roll2, "roll")]
 [h: rolls = json.get (roll2, "rolls")]
-[h: log.debug ("dnd5e_DiceRoller_advantageRoll: roll1 = " + roll1 + "; roll2 = " + roll2)]
 [h: description = ""]
 <!-- Default value is roll1Value -->
 [h: roll = roll1Val]
 [h, if (advantage && !disadvantage), code: {
+	[h, if (roll1Val > roll2Val):total = dnd5e_RollExpression_getTotal (roll1); total = dnd5e_RollExpression_getTotal (roll2)]
 	[h: roll = round (math.max (roll1Val, roll2Val))]
-	[h, if (roll2Val > roll1Val): output = dnd5e_RollExpression_getOutput (roll2); ""]
 	[h: description = "<b>Advantage:</b> " + rolls + ", Actual: " + roll]
 	[h: rollExpression = roll2]
-	[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
+	[h: rollExpression = json.set (rollExpression, "rolls", rolls, "total", total)]
 }]
 [h, if (!advantage && disadvantage), code: {
+	[h, if (roll1Val < roll2Val):total = dnd5e_RollExpression_getTotal (roll1); total = dnd5e_RollExpression_getTotal (roll2)]
 	[h: roll = round (math.min (roll1Val, roll2Val))]
-	[h, if (roll2Val < roll1Val): output = dnd5e_RollExpression_getOutput (roll2); ""]
 	[h: description = "<b>Disadvantage:</b> " + rolls + ", Actual: " + roll]
 	[h: rollExpression = roll2]
-	[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
+	[h: rollExpression = json.set (rollExpression, "rolls", rolls, "total", total)]
 }]
 <!-- roll1 has no extra roll attached in rolls, so return it representing no second roll -->
 [h, if (advantage && disadvantage), code: {

@@ -41,8 +41,6 @@
 				rollExpression = dnd5e_DiceRoller_luckyRoll (rollExpression)]
 		[h, if (dnd5e_RollExpression_hasType (rollExpression, "critable")): 
 				rollExpression = dnd5e_DiceRoller_critableRoll (rollExpression, rolled)]
-TODO: encapsulate output generation into a new function and take it out of basicRoll. Merge child needs
-		to call it
 		[h, if (json.length (children) > 0): rollExpression = dnd5e_RollExpression_mergeChildren (rollExpression); ""]
 		[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 		[h: output = dnd5e_RollExpression_getOutput (rollExpression)]

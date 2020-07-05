@@ -10,7 +10,6 @@
 	<!-- get parents totals array, iterate -->
 	[parentTotals = dnd5e_RollExpression_getTotals (rollExpression)]
 	[newTotals = "[]"]
-	[lastTotal = 0]
 	[foreach (parentTotal, parentTotals), code: {
 		<!-- for each totals element, add childs allTotal; update new totals array -->
 		[lastTotal = parentTotal + childTotals]
@@ -25,8 +24,9 @@
 	<!-- update parents rollString w child rollString -->
 	<!-- replace totals array on parent -->
 	<!-- and replace parent total with the last known new total -->
+	[h: total = dnd5e_RollExpression_getTotal (rollExpression) + dnd5e_RollExpression_getTotal (child)]
 	[rollExpression = json.set (rollExpression, "rollString", rollString,
-												"total", lastTotal,
+												"total", total,
 												"totals", newTotals)]
 <!-- end child foreach -->
 }]

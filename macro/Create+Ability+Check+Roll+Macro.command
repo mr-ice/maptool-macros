@@ -18,7 +18,7 @@
 									"diceSize", 20,
 									"diceRolled", 1)]
 [h: checkExpression = dnd5e_RollExpression_setName ("", name)]
-[h: checkExpression = dnd5e_RollExpression_addExpression (checkExpression, "Ability")]
+[h: checkExpression = dnd5e_RollExpression_setExpressionType (checkExpression, "Ability")]
 [h: checkExpression = dnd5e_RollExpression_setBonus (checkExpression, bonus)]
 [h: checkExpression = dnd5e_RollExpression_setAdvantage (checkExpression, hasAdvantage)]
 [h: checkExpression = dnd5e_RollExpression_setDisadvantage (checkExpression, hasDisadvantage)]
