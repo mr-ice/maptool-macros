@@ -21,7 +21,7 @@
 	<!-- Just replace whats currently on output. We have better information -->
 	[h: damageString = dnd5e_RollExpression_getDamageTypes (critRoll)]
 	[h: name = dnd5e_RollExpression_getName (critRoll)]
-	[h: output = "<font color='red'><b><i>CRITICAL </i></b></font> " + dnd5e_RollExpression_getOutput (critRoll)] 
-	[h: rollExpression = json.set (critRoll, "output", output)]
+	[h: description = "<font color='red'><b><i>CRITICAL </i></b></font> "]
+	[h: rollExpression = dnd5e_RollExpression_addDescription (critRoll, description)] 
 }]
 [h: macro.return = rollExpression]

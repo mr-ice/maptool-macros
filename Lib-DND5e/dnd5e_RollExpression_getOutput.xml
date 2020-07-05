@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>17ab7faf-7097-472e-8131-58649dadb1b3</macroUUID>
+  <macroUUID>a7fc8307-c2d7-4f8a-8109-6983ecfd4714</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>74</index>
   <colorKey>default</colorKey>
@@ -15,7 +15,9 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the output describing the results of the RollExpression. For expressions with multiple totalRolls, the output of the last roll is returned.</toolTip>
+  <toolTip>Returns the output describing the results of the RollExpression. For expressions with multiple totalRolls, the output of the last roll is returned.
+
+arg (0) = RollExpression</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

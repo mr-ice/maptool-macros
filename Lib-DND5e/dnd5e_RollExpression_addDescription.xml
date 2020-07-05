@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4f98eb0e-edb0-4a77-882b-ee312b5371e2</macroUUID>
+  <macroUUID>e0625f9e-1a70-42e5-acad-a232d7f0cd58</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>7</index>
+  <index>92</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_DiceRoller_roll</label>
-  <group>Dice Roller</group>
+  <label>dnd5e_RollExpression_addDescription</label>
+  <group>RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,10 +15,10 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>This is the roller to roll dice from an array of provided RollExpressions. When ran with a token selected, _dnd5e_lastRolledExpression is set to the processed RoleExpression[]
+  <toolTip>Adds a description to the RollExpression, prepending a line-break
 
-arg(0) = RoleExpression[]
-arg(1) = (optional) the amount to multiply the totalRolls property, normally used by DiceRoller when rolling child expressions</toolTip>
+arg (0) = RollExpression
+arg (1) = Description</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

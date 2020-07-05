@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Y4oN/k+kQbyOfcfKWYH83A==</baGUID>
+    <baGUID>Linxi/l2QIeFnKbIeOorEQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>500</x>
-  <y>850</y>
-  <z>19</z>
+  <x>100</x>
+  <y>700</y>
+  <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>500</lastX>
-  <lastY>850</lastY>
+  <lastX>100</lastX>
+  <lastY>700</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
-        <x>10</x>
-        <y>17</y>
+        <x>2</x>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -34,8 +34,8 @@
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
-        <x>10</x>
-        <y>17</y>
+        <x>2</x>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -1041,6 +1041,42 @@
     <entry>
       <int>83</int>
       <macro name="dnd5e_getInvestigationStat"/>
+    </entry>
+    <entry>
+      <int>84</int>
+      <macro name="dnd5e_DiceRoller_applyConditions"/>
+    </entry>
+    <entry>
+      <int>85</int>
+      <macro name="dnd5e_RollExpression_BuildBless"/>
+    </entry>
+    <entry>
+      <int>86</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToAbility"/>
+    </entry>
+    <entry>
+      <int>87</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToSave"/>
+    </entry>
+    <entry>
+      <int>88</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToAttack"/>
+    </entry>
+    <entry>
+      <int>89</int>
+      <macro name="dnd5e_RollExpression_getTypes"/>
+    </entry>
+    <entry>
+      <int>90</int>
+      <macro name="dnd5e_RollExpression_mergeChildren"/>
+    </entry>
+    <entry>
+      <int>91</int>
+      <macro name="dnd5e_RollExpression_buildOutput"/>
+    </entry>
+    <entry>
+      <int>92</int>
+      <macro name="dnd5e_RollExpression_addDescription"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

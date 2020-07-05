@@ -28,13 +28,6 @@
 [h, if (advDisadv == 2): hasDisadvantage = 1; hasDisadvantage = 0]
 [h, if (advDisadv == 1): hasAdvantage = 1; hasAdvantage = 0]
 
-<!-- Check the state for forced adv/disadv from state -->
-[h: isPoisoned = getState ("Poisoned")]
-[r, if (isPoisoned > 0), code: {
-	[r: "You're <font color='red'><b>Poisoned</b></font>! Applying Disadvantage"]
-	[h: hasDisadvantage = 1]
-}; {}]
-
 [h: skill = json.get (skills, selectedSkillPos)]
 [h: skillName = json.get (skill, "name")]
 <!-- if its a 'xxxx Ability' then get the xxxx property instead of the skill -->

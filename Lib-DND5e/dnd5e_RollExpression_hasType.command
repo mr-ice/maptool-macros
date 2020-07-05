@@ -6,7 +6,8 @@
 					"Save", json.append ("", "advantagable"),
 					"Ability", json.append ("", "advantagable"))]
 [h: log.debug ("dnd5e_DiceRoller_hasType: expression = " + expression + "; findType = " + findType)]
-[h: types = dnd5e_RollExpression_getExpressionType (expression)]
+[h: types = json.merge (dnd5e_RollExpression_getExpressionType (expression),
+						dnd5e_RollExpression_getTypes (expression))]
 <!-- add implied types -->
 [h, foreach (type, types), code: {
 	[h: impliedList = json.get (IMPLIED_TYPES, type)]
