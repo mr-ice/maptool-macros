@@ -1,1 +1,1 @@
-[h: macro.return = json.get (arg (0), "name")]
+[h: macro.return = decode (json.get (arg (0), "name"))]

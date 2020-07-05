@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>9318a406-5311-4c57-baf7-24198c210c2d</macroUUID>
+  <macroUUID>205946a0-af9a-46ff-8aba-2875a0dcef69</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>39</index>
+  <index>95</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_healDamage</label>
