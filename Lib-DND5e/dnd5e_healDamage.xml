@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>94a9cd3c-ec52-4226-bd9a-bb93a544fdaa</macroUUID>
+  <macroUUID>9318a406-5311-4c57-baf7-24198c210c2d</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>93</index>
+  <index>39</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_removeDamage</label>
+  <label>dnd5e_healDamage</label>
   <group>Health</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,17 +15,17 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Remove damage from a token with these parameters in JSON:
+  <toolTip>Heal damage on a token with these parameters in JSON:
     {
       "id": Id of the token taking damage,
       "current": Token's current hit points,
-      "temporary": Token's temporary hit points
-      "damage": The amount of damage taken by the token
+      "maximum": Token's maximum hit points
+      "healing": The amount of healing applied to the token
     }
-    Damage is removed from temporary first, then current
-    These token properties must be set: MaxHP, DSPass, DSFail
+    Current hit points are healed up to maximum.
+    These token properties must be set: TempHP, DSPass, DSFail.
     The Exhaustion 6 state should also be set.
-    After applying the damage this macro calls dnd5e_applyHealth</toolTip>
+    After applying the healing this macro calls dnd5e_applyHealth</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

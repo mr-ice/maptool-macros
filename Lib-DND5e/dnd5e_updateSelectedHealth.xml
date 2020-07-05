@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>94a9cd3c-ec52-4226-bd9a-bb93a544fdaa</macroUUID>
+  <macroUUID>4ec4ef8a-5ef2-4470-885c-61048bb05435</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>93</index>
+  <index>38</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_removeDamage</label>
+  <label>dnd5e_updateSelectedHealth</label>
   <group>Health</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,17 +15,9 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Remove damage from a token with these parameters in JSON:
-    {
-      "id": Id of the token taking damage,
-      "current": Token's current hit points,
-      "temporary": Token's temporary hit points
-      "damage": The amount of damage taken by the token
-    }
-    Damage is removed from temporary first, then current
-    These token properties must be set: MaxHP, DSPass, DSFail
-    The Exhaustion 6 state should also be set.
-    After applying the damage this macro calls dnd5e_applyHealth</toolTip>
+  <toolTip>Display a dialog to enter damage taken and apply it to all of the selected tokens
+    These token properties must be set: HP, TempHP
+    After getting the damage from the dialog this macro calls dnd5e_removeDamage on each selected token.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

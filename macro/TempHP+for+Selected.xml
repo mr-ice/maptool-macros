@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>129ec9ed-c960-482f-a12e-3403790e2ebb</macroUUID>
+  <macroUUID>3113b8ce-3f71-4d2a-99e1-7b4a737c3959</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>19</index>
+  <index>7</index>
   <colorKey>red</colorKey>
   <hotKey>None</hotKey>
-  <label>All Selected Take Damage</label>
-  <group>Simple Damage</group>
+  <label>TempHP for Selected</label>
+  <group>DnD5e Health</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,10 +15,11 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>All selected creatures take same damage!
-HP &amp; TempHP have the entered damage removed
-The health bar is updated accordingly
-Bloodied and Dead states are applied as needed.</toolTip>
+  <toolTip>All selected creatures have their temporary hit points updated
+    TempHP becomes the larger of the new or current temporary hit points
+    The health and damage bars are updated.
+    Bloodied, Dead, Dying and Stable states are applied.
+    Death save bars are updated on PCs</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

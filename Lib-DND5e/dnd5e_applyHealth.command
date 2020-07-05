@@ -1,4 +1,5 @@
 <!-- Get the health related values from params -->
+[h: log.info("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
 [h: id = json.get(macro.args, "id")]
 [h: current = json.get(macro.args, "current")]
 [h, if (!isNumber(current)): current = 0; '']
@@ -14,26 +15,33 @@
 [h, if (!isNumber(exhaustionDeath)): exhaustionDeath = 0; '']
 
 <!-- Clear all of the states/bars -->
-[h: setState ("Bloodied", 0)]
-[h: setState ("Dying", 0)]
-[h: setState ("Dead", 0)]
-[h: setState ("Stable", 0)]
-[h: setBarVisible ("DSPass", 0)]
-[h: setBarVisible ("DSFail", 0)]
-[h: setBarVisible ("HP", 0)]
-[h: setBarVisible ("Damage", 0)]
+[h: setState ("Bloodied", 0, id)]
+[h: setState ("Dying", 0, id)]
+[h: setState ("Dead", 0, id)]
+[h: setState ("Stable", 0, id)]
+[h: setBarVisible ("HP", 0, id)]
+[h: setBarVisible ("Damage", 0, id)]
+[h: setBarVisible ("DSPass", 0, id)]
+[h: setBarVisible ("DSFail", 0, id)]
+
+<!-- Calculate the effective health for the bars -->
+[h: effectiveHP = current + temporary]
+[h: effectiveMaxHP = maximum + temporary]
+[h: effectiveDamage = effectiveMaxHP - effectiveHP]
+[h: log.info("effectiveHP=" + effectiveHP + " effectiveMaxHP=" + effectiveMaxHP + " effectiveDamage=" + effectiveDamage)]
 
 <!-- Determine dead/dying+death saves/bloodied -->
-[h: state = if (exhaustionDeath || (current == 0 && !isPC()) || (current == 0 && isPC() && dsFail >= 3), "dead", "fine")]
-[H: state = if (state != "dead" && current == 0 && isPC() && dsPass >= 3, "stable", "fine")]
-[h: state = if (state == "fine" && current == 0, "dying", "fine")]
-[h: state = if (state == "fine" && current > maximum / 2, "bloodied", "fine")]
+[h: state = if (exhaustionDeath || (current == 0 && !isPC(id)) 
+				|| (current == 0 && isPC(id) && dsFail >= 3), "dead", "fine")]
+[h: state = if (state == "fine" && current == 0 && dsPass >= 3, "stable", state)]
+[h: state = if (state == "fine" && current == 0, "dying", state)]
+[h: state = if (state == "fine" && current <= maximum / 2, "bloodied", state)]
 [h, switch(state), code:
 	case "dead": {
 		[h: current = 0]
 		[h: temporary = 0]
 		[h: setState("Dead", 1, id)]
-    [h if (!isPC(id)):removeInitiative(id); ""]
+		[h, if (!isPC(id)): removeFromInitiative(id); ""]
 	};
 	case "stable": {
 		[h: temporary = 0]
@@ -42,24 +50,16 @@
 	case "dying": {
 		[h: temporary = 0]
 		[h: setState("Dying", 1, id)]
-
-		<!-- Is a PC dying? Show death saves --> 
-		[h, if (isPC()), code: {
-			[h: setBar ("DSPass", 0.25 * dsPass)]
-			[h: setBar ("DSFail", 0.25 * dsFail)]
-		}; ""]
+		[h: setBar("DSPass", 0.25 * dsPass, id)]
+		[h: setBar("DSFail", 0.25 * dsFail, id)]
 	};
 	case "bloodied": {
 		[h: temporary = 0]
 		[h: setState("Bloodied", 1, id)]
+		[h: setBar("HP", current / effectiveMaxHP, id)]
+		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
 	};
 	default: {
-
-		<!-- Toon is fine. Fine! Set the health bars -->
-		[h: effectiveHP = current + temporary]
-		[h: effectiveMaxHP = maximum + temporary]
-		[h: effectiveDamage = effectiveMaxHP - effectiveHP]
-		[h: log.info("effectiveHP=" + effectiveHP + " effectiveMaxHP=" + effectiveMaxHP + " effectiveDamage=" + effectiveDamage)]
 		[h: setBar("HP", current / effectiveMaxHP, id)]
 		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
 }]
@@ -68,5 +68,5 @@
 [h: setProperty ("HP", current, id)]
 [h: setProperty ("TempHP", temporary, id)]
 [h: setProperty ("MaxHP", maximum, id)]
-[h: setProperty ("DSPass", dsPass, id)]
-[h: setProperty ("DSFail", dsFail, id)]
+[h: setProperty ("DSPass", if(current == 0, dsPass, 0), id)]
+[h: setProperty ("DSFail", if(current == 0, dsFail, 0), id)]
