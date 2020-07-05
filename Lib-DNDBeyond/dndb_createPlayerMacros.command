@@ -71,6 +71,13 @@
 					"sortBy", "2",
 					"command", "[h, macro('dnd5e_takeHealing@Lib:DnD5e'): '']"),
 					
+			json.set (basicCfg, "name", "Conditions",
+					"group", "D&D 5e Health",
+					"color", "yellow",
+					"fontColor", "black",
+					"sortBy", "4",
+					"command", "[h, macro('dnd5e_Conditions@Lib:DnD5e'): '']"),
+					
 			json.set (basicCfg, "name", "Temp HP",
 					"group", "D&D 5e Health",
 					"color", "red",

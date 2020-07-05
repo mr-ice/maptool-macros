@@ -15,5 +15,6 @@
     <macro name="macro/Damage+Selected"/>
     <macro name="macro/Heal+Selected"/>
     <macro name="macro/TempHP+for+Selected"/>
+    <macro name="macro/Conditions"/>
   </macroset>
 </project>
