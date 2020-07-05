@@ -1,0 +1,5 @@
+[h: rollExpression = arg (0)]
+[h: description = dnd5e_RollExpression_getDescription (rollExpression)]
+[h, if (description != ""): description = description + "<br>"; ""]
+[h: description = description + arg (1)]
+[h: macro.return = dnd5e_RollExpression_setDescription (rollExpression, description)]

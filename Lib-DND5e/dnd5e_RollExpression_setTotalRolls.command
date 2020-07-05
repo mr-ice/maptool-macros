@@ -1,0 +1,1 @@
+[h: macro.return = json.set (arg (0), "totalRolls", arg (1))]

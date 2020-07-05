@@ -1,21 +1,23 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8477d009-950b-4893-8de7-25a3b75d3917</macroUUID>
+  <macroUUID>69ebad3c-377e-426f-b06a-401013794def</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>49</index>
+  <index>43</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Make Check</label>
-  <group>Token</group>
-  <sortby>100</sortby>
+  <label>dnd5e_Macro_copyMacroConfig</label>
+  <group>Util - Macro</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Generic check macro, usually called as a sub-process but works stand-alone</toolTip>
+  <toolTip>Given a macro label, locate the Macro of the same name on the token and return a MacroConfig based on the macro. If more than one macro is found, use the first.
+
+arg (0) = Macro name</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

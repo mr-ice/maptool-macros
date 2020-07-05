@@ -7,6 +7,11 @@
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>
     <macro name="macro/Reset+Properties"/>
+    <macro name="macro/Create+Ability+Check+Roll+Macro"/>
+    <macro name="macro/Create+Attack+Roll+Macro"/>
+    <macro name="macro/Create+Damage+Roll+Macro"/>
+    <macro name="macro/Create+Healing+Roll+Macro"/>
+    <macro name="macro/Create+Save+Roll+Macro"/>
     <macro name="macro/Damage+Selected"/>
     <macro name="macro/Heal+Selected"/>
     <macro name="macro/TempHP+for+Selected"/>
