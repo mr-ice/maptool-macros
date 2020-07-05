@@ -1083,23 +1083,23 @@
       <macro name="dnd5e_removeDamage"/>
     </entry>
     <entry>
-      <int>38</int>
+      <int>94</int>
       <macro name="dnd5e_updateSelectedHealth"/>
     </entry>
     <entry>
-      <int>39</int>
+      <int>95</int>
       <macro name="dnd5e_healDamage"/>
     </entry>
     <entry>
-      <int>40</int>
+      <int>96</int>
       <macro name="dnd5e_updateTemp"/>
     </entry>
     <entry>
-      <int>41</int>
+      <int>97</int>
       <macro name="dnd5e_takeHealing"/>
     </entry>
     <entry>
-      <int>42</int>
+      <int>98</int>
       <macro name="dnd5e_takeTemp"/>
     </entry>
   </macroPropertiesMap>
