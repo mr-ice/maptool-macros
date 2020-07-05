@@ -1,126 +1,34 @@
 #!/usr/bin/env python3
-# vim: textwidth=69 tabstop=4 sofftabstop=4 shiftwidth=4
-"""
-Reassemble a token from parts
+"""Call the Assembler for a Token"""
 
-given a token directory, reassemble the .rptok file
-
-dir
-   content.xml
-     macroPropertiesMap
-       entry
-         net.rptools.maptool.model.MacroButtonProperties
-           label
-   label.command
-   label.xml
-   [...]
-
-This will search the content.xml macroPropertiesMap for 
-"""
-
-import os
-import sys
-import argparse
-import pathlib
-import lxml
+from argparse import ArgumentParser
+from asset import MTAsset
 import logging as log
-from lxml import objectify
-from lxml.etree import tostring
-import zipfile
-from urllib.parse import quote
-from textwrap import wrap
-from MTAssetLibrary import DataElement
 
-AP = argparse.ArgumentParser()
+if __name__ == '__main__':
+    AP = ArgumentParser("MapTool Asset Assembler")
 
-AP.add_argument('directory', help="Gimme an extracted token directory")
+    AP.add_argument(
+            'input',
+            nargs='+',
+            help='Source for creating the asset')
 
-AP.add_argument('--verbose','-v', action='store_true', default=False)
+    AP.add_argument(
+            '--output',
+            help='Output directory')
 
-opts = AP.parse_args()
+    AP.add_argument(
+            '--verbose',
+            action='store_true',
+            help='Turn on verbose output')
 
-if opts.verbose:
-    log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
-    log.info("Verbose output.")
-else:
-    log.basicConfig(format="%(levelname)s: %(message)s")
+    av = AP.parse_args()
 
-if not os.path.isdir(opts.directory):
-    log.error("\n".join(wrap("{} could not be found, be careful that it is "
-                             "in the current working directory when "
-                             "running with docker".format(opts.directory))))
-    sys.exit()
+    if av.verbose:
+        log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
+        log.info("Verbose output.")
+    else:
+        log.basicConfig(format="%(levelname)s: %(message)s")
 
-content_file = os.path.join(opts.directory, 'content.xml')
-if not os.path.isfile(content_file):
-    log.error("\n".join(wrap("{}/content.xml does not exist, are you "
-                             "sure this is an extracted rptok?"
-                             .format(opts.directory))))
-    sys.exit()
-
-xml = objectify.parse(content_file)
-macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
-tokentag = 'net.rptools.maptool.model.Token'
-proptag = 'net.rptools.maptool.model.CampaignProperties'
-
-contentstring = tostring(xml, pretty_print=True).decode()
-if opts.verbose:
-    print("content.xml read from file is {} bytes".format(len(contentstring)))
-# go through content.xml, finding macros labels to pick up the .xml and
-# .command files.  Then open, reassemble, and replace those.
-excludefiles = ['content.xml']
-root = xml.getroot()
-for i, entry in enumerate(root.macroPropertiesMap.entry):
-    # using __dict__ seems like cheating but I'm not confident in all
-    # the other ways objectify/lxml gives me to test if the 'macro' is
-    # present.
-    if 'macro' in entry.__dict__:
-        label = entry.macro.attrib['name']
-        macrobase = os.path.join(opts.directory, label)
-        command_file = macrobase + '.command'
-        xml_file = macrobase + '.xml'
-
-        # identify these files so they aren't later added to the zipfile
-        excludefiles.append(label + '.command')
-        excludefiles.append(label + '.xml')
-
-        # read the files and reconstruct the macro object
-        macro = objectify.parse(xml_file)
-        command = open(command_file,'r').read()
-        macro.getroot().command = DataElement(command)
-
-        # re-create the entry object
-        entry_template = '<entry><int>{}</int>{}</entry>'
-        new_entry = objectify.fromstring(
-            entry_template.format(entry.int.text, tostring(macro).decode()))
-
-        # replace it in the content.xml
-        root.macroPropertiesMap.entry[i] = new_entry
-        #import code
-        #code.interact(local = locals())
-
-# re-create the rptok as a zipfile
-zf = zipfile.ZipFile(os.path.basename(opts.directory + '.rptok'),
-                     mode='w', compression=zipfile.ZIP_DEFLATED)
-
-# add all the elements of the directory that aren't part of the macro
-# extraction.
-
-os.chdir(opts.directory)
-for root, dirs, files in os.walk('.'):
-    for f in files:
-        if not f in excludefiles:
-            if root != '.':
-                zf.write(os.path.join(root, f))
-            else:
-                zf.write(f)
-            if opts.verbose:
-                print('wrote {} ({} bytes) to {}'.format(f,os.path.getsize(os.path.join(root, f)),zf.filename))
-
-# now write the final content.xml
-contentstring = tostring(xml, pretty_print=True).decode()
-zf.writestr('content.xml', contentstring)
-if opts.verbose:
-    print('wrote content.xml to zipfile ({} bytes)'.format(len(contentstring)))
-    zf.printdir()
-
+    asset = MTAsset()
+    asset.assemble(av.input[0], path=av.output)
