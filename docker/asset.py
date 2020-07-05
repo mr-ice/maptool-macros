@@ -26,12 +26,33 @@ from lxml import objectify
 from lxml.etree import tostring
 from textwrap import wrap
 
-from MTAssetLibrary import DataElement
+from MTAssetLibrary import DataElement, tokentag, proptag
 
 
 class MTAsset():
+    def __init__(self, *args, **kwargs):
+        # directory/
+        #           content.xml
+        #               root.tag == tokentag
+        #               root.tag == proptag
+        # directory/
+        #           MacroName
+        #           MacroName.xml
+        #           MacroName.command
+        # [...]
+        #
+        # Name.rptok
+        # Name.mtmacro
+        # Name.mtmacset
+        # Name.mtprops
+        self.directory = next(iter(args), None)  # returns args[0] or None
+        self.path = kwargs.get('path', '.') or '.'
+        self.verbose = kwargs.get('verbose', False)
+        self.rptok = os.path.basename(self.directory + '.rptok')
+        self.content_file = os.path.join(self.directory, 'content.xml')
+        self.output = os.path.join(self.path, self.rptok)
 
-    def assemble(self, *args, **kwargs):
+    def assemble(self):
         """Assemble a maptool asset
 
         inputs:
@@ -44,12 +65,6 @@ class MTAsset():
         outputs:
             asset
         """
-        self.directory = next(iter(args), None)  # returns args[0] or None
-        self.path = kwargs.get('path', '.') or '.'
-        self.verbose = kwargs.get('verbose', False)
-        self.rptok = os.path.basename(self.directory + '.rptok')
-        self.content_file = os.path.join(self.directory, 'content.xml')
-        self.output = os.path.join(self.path, self.rptok)
 
         if not os.path.isdir(self.directory):
             log.error("\n".join(wrap(
@@ -85,34 +100,39 @@ class MTAsset():
         # go through content.xml, finding macros labels to pick up the .xml
         # and .command files.  Then open, reassemble, and replace those.
         root = xml.getroot()
-        for i, entry in enumerate(root.macroPropertiesMap.entry):
-            # using __dict__ seems like cheating but I'm not confident in all
-            # the other ways objectify/lxml gives me to test if the 'macro' is
-            # present.
-            if 'macro' in entry.__dict__:
-                label = entry.macro.attrib['name']
-                macrobase = os.path.join(self.directory, label)
-                command_file = macrobase + '.command'
-                xml_file = macrobase + '.xml'
 
-                # identify files so they aren't later added to the zipfile
-                excludefiles.append(label + '.command')
-                excludefiles.append(label + '.xml')
+        # Tokens will have macro placeholders, but we could be
+        # assembling something else.
+        if xml.find('macroPropertiesMap') is not None:
+            # This is a token, reassemble the macro placeholders
+            for i, entry in enumerate(root.macroPropertiesMap.entry):
+                # using __dict__ seems like cheating but I'm not
+                # confident in all the other ways objectify/lxml gives
+                # me to test if the 'macro' is present.
+                if 'macro' in entry.__dict__:
+                    label = entry.macro.attrib['name']
+                    macrobase = os.path.join(self.directory, label)
+                    command_file = macrobase + '.command'
+                    xml_file = macrobase + '.xml'
 
-                # read the files and reconstruct the macro object
-                macro = objectify.parse(xml_file)
-                command = open(command_file, 'r').read()
-                macro.getroot().command = DataElement(command)
+                    # identify files so they aren't later added to the zipfile
+                    excludefiles.append(label + '.command')
+                    excludefiles.append(label + '.xml')
 
-                # re-create the entry object
-                entry_template = '<entry><int>{}</int>{}</entry>'
-                new_entry = objectify.fromstring(
-                    entry_template.format(
-                            entry.int.text,
-                            tostring(macro).decode()))
+                    # read the files and reconstruct the macro object
+                    macro = objectify.parse(xml_file)
+                    command = open(command_file, 'r').read()
+                    macro.getroot().command = DataElement(command)
 
-                # replace it in the content.xml
-                root.macroPropertiesMap.entry[i] = new_entry
+                    # re-create the entry object
+                    entry_template = '<entry><int>{}</int>{}</entry>'
+                    new_entry = objectify.fromstring(
+                        entry_template.format(
+                                entry.int.text,
+                                tostring(macro).decode()))
+
+                    # replace it in the content.xml
+                    root.macroPropertiesMap.entry[i] = new_entry
 
         # re-create the rptok as a zipfile
         zf = zipfile.ZipFile(self.output,

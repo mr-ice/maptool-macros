@@ -30,5 +30,5 @@ if __name__ == '__main__':
     else:
         log.basicConfig(format="%(levelname)s: %(message)s")
 
-    asset = MTAsset()
-    asset.assemble(av.input[0], path=av.output)
+    asset = MTAsset(av.input[0], path=av.output)
+    asset.assemble()
