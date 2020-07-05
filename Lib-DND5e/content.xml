@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>6rotyvn0RZ+1j2L1yFkbbg==</baGUID>
+    <baGUID>Linxi/l2QIeFnKbIeOorEQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>RsvONTyJRyqaqPHCRdADow==</baGUID>
+    <baGUID>Nyqlvy8zQh2/d5kjjFnKIg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>300</x>
+  <x>100</x>
   <y>700</y>
-  <z>13</z>
+  <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>100</lastX>
+  <lastY>700</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>2</x>
+        <y>14</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>2</x>
+        <y>14</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -390,6 +410,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_dnd5e_lastrolledexpression</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_lastRolledExpression</key>
+          <value class="string">[{"name":"Scimitar","expressionTypes":"Attack","bonus":0,"hasAdvantage":0,"hasDisadvantage":0,"diceSize":20,"diceRolled":1,"output":"Scimitar Attack Roll: 1d20 + 0 = 12 ","rolls":[12],"roll":12,"rollString":"1d20 + 0","total":12,"totals":[12],"outputs":["Scimitar Attack Roll: 1d20 + 0 = 12 "],"allTotal":12},{"diceSize":6,"diceRolled":1,"bonus":1,"expressionTypes":"Damage","output":" Damage Roll: 1d6 + 1 = 4 ","rolls":[3],"roll":3,"rollString":"1d6 + 1","total":4,"totals":[4],"outputs":[" Damage Roll: 1d6 + 1 = 4 "],"allTotal":4}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>wisdom save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Save</key>
@@ -397,16 +425,16 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>deception</string>
+        <string>constitution bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Deception</key>
+          <key>Constitution Bonus</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>constitution bonus</string>
+        <string>deception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Constitution Bonus</key>
+          <key>Deception</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -496,16 +524,16 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>condition</string>
+        <string>strength bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Condition</key>
+          <key>Strength Bonus</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>strength bonus</string>
+        <string>condition</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Strength Bonus</key>
+          <key>Condition</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -546,13 +574,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>description</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Description</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>sleight of hand</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Sleight of Hand</key>
@@ -560,9 +581,10 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>intelligence bonus</string>
+        <string>description</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intelligence Bonus</key>
+          <key>description</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -570,6 +592,13 @@
         <string>intelligence save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence Bonus</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -747,7 +776,7 @@
     </entry>
     <entry>
       <int>10</int>
-      <macro name="dnd5e_DiceRoller_hasType"/>
+      <macro name="dnd5e_RollExpression_hasType"/>
     </entry>
     <entry>
       <int>11</int>
@@ -822,14 +851,6 @@
       <macro name="dnd5e_Preferences_setPreference"/>
     </entry>
     <entry>
-      <int>29</int>
-      <macro name="dnd5e_Conditions"/>
-    </entry>
-    <entry>
-      <int>30</int>
-      <macro name="dnd5e_ProcessConditions"/>
-    </entry>
-    <entry>
       <int>31</int>
       <macro name="dnd5e_Conditions"/>
     </entry>
@@ -840,6 +861,246 @@
     <entry>
       <int>33</int>
       <macro name="dnd5e_ConditionsCSS"/>
+    </entry>
+    <entry>
+      <int>34</int>
+      <macro name="dnd5e_applyHealth"/>
+    </entry>
+    <entry>
+      <int>35</int>
+      <macro name="dnd5e_takeDamage"/>
+    </entry>
+    <entry>
+      <int>37</int>
+      <macro name="dnd5e_RollExpression_parseRoll"/>
+    </entry>
+    <entry>
+      <int>38</int>
+      <macro name="dnd5e_DiceRoller_createMacro"/>
+    </entry>
+    <entry>
+      <int>43</int>
+      <macro name="dnd5e_Macro_copyMacroConfig"/>
+    </entry>
+    <entry>
+      <int>44</int>
+      <macro name="dnd5e_RollExpression_getCombinedOutput"/>
+    </entry>
+    <entry>
+      <int>45</int>
+      <macro name="dnd5e_RollExpression_setName"/>
+    </entry>
+    <entry>
+      <int>46</int>
+      <macro name="dnd5e_RollExpression_getName"/>
+    </entry>
+    <entry>
+      <int>47</int>
+      <macro name="dnd5e_RollExpression_setDiceSize"/>
+    </entry>
+    <entry>
+      <int>48</int>
+      <macro name="dnd5e_RollExpression_getDiceSize"/>
+    </entry>
+    <entry>
+      <int>49</int>
+      <macro name="dnd5e_RollExpression_setBonus"/>
+    </entry>
+    <entry>
+      <int>50</int>
+      <macro name="dnd5e_RollExpression_getBonus"/>
+    </entry>
+    <entry>
+      <int>51</int>
+      <macro name="dnd5e_RollExpression_setDiceRolled"/>
+    </entry>
+    <entry>
+      <int>52</int>
+      <macro name="dnd5e_RollExpression_getDiceRolled"/>
+    </entry>
+    <entry>
+      <int>53</int>
+      <macro name="dnd5e_RollExpression_setExpressionType"/>
+    </entry>
+    <entry>
+      <int>54</int>
+      <macro name="dnd5e_RollExpression_getExpressionType"/>
+    </entry>
+    <entry>
+      <int>55</int>
+      <macro name="dnd5e_RollExpression_addType"/>
+    </entry>
+    <entry>
+      <int>56</int>
+      <macro name="dnd5e_RollExpression_setTypes"/>
+    </entry>
+    <entry>
+      <int>57</int>
+      <macro name="dnd5e_RollExpression_addExpression"/>
+    </entry>
+    <entry>
+      <int>58</int>
+      <macro name="dnd5e_RollExpression_setExpressions"/>
+    </entry>
+    <entry>
+      <int>59</int>
+      <macro name="dnd5e_RollExpression_getExpressions"/>
+    </entry>
+    <entry>
+      <int>60</int>
+      <macro name="dnd5e_RollExpression_getRolls"/>
+    </entry>
+    <entry>
+      <int>61</int>
+      <macro name="dnd5e_RollExpression_getRoll"/>
+    </entry>
+    <entry>
+      <int>62</int>
+      <macro name="dnd5e_RollExpression_getRollString"/>
+    </entry>
+    <entry>
+      <int>63</int>
+      <macro name="dnd5e_RollExpression_setTotalRolls"/>
+    </entry>
+    <entry>
+      <int>64</int>
+      <macro name="dnd5e_RollExpression_getTotalRolls"/>
+    </entry>
+    <entry>
+      <int>65</int>
+      <macro name="dnd5e_RollExpression_setDisadvantage"/>
+    </entry>
+    <entry>
+      <int>66</int>
+      <macro name="dnd5e_RollExpression_hasDisadvantage"/>
+    </entry>
+    <entry>
+      <int>67</int>
+      <macro name="dnd5e_RollExpression_setAdvantage"/>
+    </entry>
+    <entry>
+      <int>68</int>
+      <macro name="dnd5e_RollExpression_hasAdvantage"/>
+    </entry>
+    <entry>
+      <int>69</int>
+      <macro name="dnd5e_RollExpression_setOnCritAdd"/>
+    </entry>
+    <entry>
+      <int>70</int>
+      <macro name="dnd5e_RollExpression_getOnCritAdd"/>
+    </entry>
+    <entry>
+      <int>71</int>
+      <macro name="dnd5e_RollExpression_getTotal"/>
+    </entry>
+    <entry>
+      <int>72</int>
+      <macro name="dnd5e_RollExpression_getTotals"/>
+    </entry>
+    <entry>
+      <int>73</int>
+      <macro name="dnd5e_RollExpression_getAllTotal"/>
+    </entry>
+    <entry>
+      <int>74</int>
+      <macro name="dnd5e_RollExpression_getOutput"/>
+    </entry>
+    <entry>
+      <int>75</int>
+      <macro name="dnd5e_RollExpression_getOutputs"/>
+    </entry>
+    <entry>
+      <int>76</int>
+      <macro name="dnd5e_RollExpression_getStaticRoll"/>
+    </entry>
+    <entry>
+      <int>77</int>
+      <macro name="dnd5e_RollExpression_setStaticRoll"/>
+    </entry>
+    <entry>
+      <int>78</int>
+      <macro name="dnd5e_RollExpression_setDescription"/>
+    </entry>
+    <entry>
+      <int>79</int>
+      <macro name="dnd5e_RollExpression_getDescription"/>
+    </entry>
+    <entry>
+      <int>80</int>
+      <macro name="dnd5e_RollExpression_getDamageTypes"/>
+    </entry>
+    <entry>
+      <int>81</int>
+      <macro name="dnd5e_RollExpression_addDamageType"/>
+    </entry>
+    <entry>
+      <int>82</int>
+      <macro name="dnd5e_RollExpression_setDamageTypes"/>
+    </entry>
+    <entry>
+      <int>83</int>
+      <macro name="dnd5e_getInvestigationStat"/>
+    </entry>
+    <entry>
+      <int>84</int>
+      <macro name="dnd5e_DiceRoller_applyConditions"/>
+    </entry>
+    <entry>
+      <int>85</int>
+      <macro name="dnd5e_RollExpression_BuildBless"/>
+    </entry>
+    <entry>
+      <int>86</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToAbility"/>
+    </entry>
+    <entry>
+      <int>87</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToSave"/>
+    </entry>
+    <entry>
+      <int>88</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToAttack"/>
+    </entry>
+    <entry>
+      <int>89</int>
+      <macro name="dnd5e_RollExpression_getTypes"/>
+    </entry>
+    <entry>
+      <int>90</int>
+      <macro name="dnd5e_RollExpression_mergeChildren"/>
+    </entry>
+    <entry>
+      <int>91</int>
+      <macro name="dnd5e_RollExpression_buildOutput"/>
+    </entry>
+    <entry>
+      <int>92</int>
+      <macro name="dnd5e_RollExpression_addDescription"/>
+    </entry>
+    <entry>
+      <int>93</int>
+      <macro name="dnd5e_removeDamage"/>
+    </entry>
+    <entry>
+      <int>94</int>
+      <macro name="dnd5e_updateSelectedHealth"/>
+    </entry>
+    <entry>
+      <int>95</int>
+      <macro name="dnd5e_healDamage"/>
+    </entry>
+    <entry>
+      <int>96</int>
+      <macro name="dnd5e_updateTemp"/>
+    </entry>
+    <entry>
+      <int>97</int>
+      <macro name="dnd5e_takeHealing"/>
+    </entry>
+    <entry>
+      <int>98</int>
+      <macro name="dnd5e_takeTemp"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

@@ -25,12 +25,8 @@
 	[h: saveAsMacro = 0]
 }]
 
-<!-- Check the state for forced adv/disadv from state -->
-[h: isPoisoned = getState ("Poisoned")]
-[r, if (isPoisoned > 0), code: {
-	[r: "You're <font color='red'><b>Poisoned</b></font>! Applying Disadvantage<br>"]
-	[h, if (advDisadv == 1): advDisadv = 0; advDisadv = 2]
-}; {}]
+[h, if (advDisadv == 2): hasDisadvantage = 1; hasDisadvantage = 0]
+[h, if (advDisadv == 1): hasAdvantage = 1; hasAdvantage = 0]
 
 [h: skill = json.get (skills, selectedSkillPos)]
 [h: skillName = json.get (skill, "name")]
@@ -46,6 +42,17 @@
 [h: skillCheckObj = json.set ("", "checkLabel", json.get (skill, "name") + " Check",
 							"bonus", bonus,
 							"advDisadv", advDisadv)]
+
+[h: rollExpression = json.set ("", "name", skillName,
+								"diceSize", 20,
+								"diceRolled", 1,
+								"expressionTypes", "Ability",
+								"bonus", bonus,
+								"hasDisadvantage", hasDisadvantage,
+								"hasAdvantage", hasAdvantage)]
+[h: rolledExpressions = dnd5e_DiceRoller_roll (rollExpression)]
+[h: msg = dnd5e_RollExpression_getCombinedOutput (rolledExpressions)]
+[r: msg]
 
 [h, if (saveAsMacro > 0), code: {
 	[h: cmdArg = json.set ("", "selectedSkillPos", selectedSkillPos, 
@@ -68,4 +75,3 @@
 								"playerEditable", 1)]
 	[h, if (saveAsMacro > 0): createMacro (macroName, cmd, macroConfig)]
 }]
-[r, macro ("Make Check@Lib:DnDBeyond"): skillCheckObj]

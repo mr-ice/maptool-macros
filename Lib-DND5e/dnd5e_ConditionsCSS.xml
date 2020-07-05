@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>fc7ad492-08bb-494a-9a6a-d771253b0255</macroUUID>
+  <macroUUID>40717162-5ab9-49f0-9e81-97d63249541c</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>15</index>
+  <index>33</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_ConditionsCSS</label>
-  <group>new</group>
+  <group>UI Conditions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>CSS for the dnd5e_Conditions form.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

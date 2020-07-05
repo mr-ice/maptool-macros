@@ -6,7 +6,7 @@ ifdef OS
     ZIP = jar -cvfM
 	DOTSLASH := .\\
 else
-    ZIP = zip -r
+    ZIP = zip -qr
 	DOTSLASH := ./
 endif
 
@@ -34,8 +34,10 @@ project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 	test -d $*/assets && cp -r $*/assets /tmp/.temp-$$$$; \
 	test -e $*/thumbnail && cp $*/thumbnail /tmp/.temp-$$$$; \
 	test -e $*/thumbnail_large && cp $*/thumbnail_large /tmp/.temp-$$$$; \
+	OUTDIR=$$PWD && \
 	( cd /tmp/.temp-$$$$ && \
-	$(ZIP) $$PWD/$@ . );
+	$(ZIP) $$OUTDIR/$@ . );
+
 
 clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*

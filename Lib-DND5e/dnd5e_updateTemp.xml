@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ace62244-387e-4218-aea0-0b88baaf9ef6</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>40</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_updateTemp</label>
+  <group>Health</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Set the temporary hit points on a token with these parameters in JSON:
+    {
+      "id": Id of the token taking damage,
+      "temporary": The token's current temporary hit points
+      "updateTemp": The new amount of temporary hit points
+    }
+    The temporary hit points are set to the larger of current and new values
+    These token properties must be set: HP, MaxHP, DSPass, DSFail
+    The Exhaustion 6 state should also be set.
+    After applying the damage this macro calls dnd5e_applyHealth</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

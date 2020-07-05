@@ -9,10 +9,6 @@
 					"fontSize", "1.05em")]
 
 [h: macroCfgs = json.append ("", 
-			json.set (basicCfg, "name", "Make Check",
-					"sortBy", "100",
-					"command", "[macro('Make Check@Lib:DnDBeyond'): '']"),
-					
 			json.set (basicCfg, "name", "Make Attack",
 					"color", "red",
 					"fontColor", "black",
@@ -59,7 +55,36 @@
 					"color", "blue",
 					"fontColor", "white",
 					"sortBy", "20",
-					"command", "[macro('Skill Check@Lib:DnDBeyond'): '']"))]
+					"command", "[macro('Skill Check@Lib:DnDBeyond'): '']"),
+					
+			json.set (basicCfg, "name", "Damage",
+					"group", "D&D 5e Health",
+					"color", "red",
+					"fontColor", "white",
+					"sortBy", "1",
+					"command", "[h, macro('dnd5e_takeDamage@Lib:DnD5e'): '']"),	
+									
+			json.set (basicCfg, "name", "Heal",
+					"group", "D&D 5e Health",
+					"color", "red",
+					"fontColor", "white",
+					"sortBy", "2",
+					"command", "[h, macro('dnd5e_takeHealing@Lib:DnD5e'): '']"),
+					
+			json.set (basicCfg, "name", "Conditions",
+					"group", "D&D 5e Health",
+					"color", "yellow",
+					"fontColor", "black",
+					"sortBy", "4",
+					"command", "[h, macro('dnd5e_Conditions@Lib:DnD5e'): '']"),
+					
+			json.set (basicCfg, "name", "Temp HP",
+					"group", "D&D 5e Health",
+					"color", "red",
+					"fontColor", "white",
+					"sortBy", "3",
+					"command", "[h, macro('dnd5e_takeTemp@Lib:DnD5e'): '']")
+)]
 					
 [h, foreach (macroCfg, macroCfgs), code: {
 	[h: macroName = json.get (macroCfg, "name")]

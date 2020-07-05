@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>93b582c1-8079-4894-9448-33121b8b049e</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>4</index>
+  <colorKey>red</colorKey>
+  <hotKey>None</hotKey>
+  <label>Damage Selected</label>
+  <group>DnD5e Health</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>All selected creatures take damage
+    HP &amp; TempHP have the entered damage removed
+    The health and damage bars are updated.
+    Bloodied, Dead, Dying and Stable states are applied.
+    Death save bars are updated on PCs</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
