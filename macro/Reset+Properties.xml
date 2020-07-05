@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>191aff96-9fd0-49b4-b45e-68a6dc900706</macroUUID>
+  <macroUUID>987cb65a-aa88-4cab-aff9-8ac26ffb7a3a</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>4</index>
+  <index>18</index>
   <colorKey>pink</colorKey>
   <hotKey>None</hotKey>
   <label>Reset Properties</label>

@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>68439905-3ce9-465c-a495-487b6cb0a4e0</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>56</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_setTypes</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Sets the types on the RollExpression. This is an uncommon function to call as most RollExpressions would only require an ExpressionType. Callers of this method are addressing edge cases.
+
+arg (0) = RollExpression
+arg (1) = JSON Array or StrList of types to set
+
+Returns RollExpression</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

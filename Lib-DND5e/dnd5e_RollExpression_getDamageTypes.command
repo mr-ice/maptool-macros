@@ -1,0 +1,1 @@
+[h: macro.return = json.toList (json.get (arg (0), "damageTypes"))]

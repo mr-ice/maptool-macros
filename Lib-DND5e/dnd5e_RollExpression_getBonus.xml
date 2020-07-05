@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>d4a968f6-2346-4084-8dac-fe7ed7f94231</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>50</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_getBonus</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the bonus of the RollExpression</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

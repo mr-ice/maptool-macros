@@ -89,6 +89,9 @@
 <!-- validate the input spell by name -->
 [h: spellSlotInput = MINIMUM_ALLOWED + "," + spellSlotInput]
 
+[h: selectedConcentration = ""]
+[h: selectedRitual = ""]
+[h: selectedOther = ""]
 
 
 <!-- if our input spell and spell slot are both available choices, move on to casting -->
@@ -173,7 +176,7 @@
 
 <!-- Ye old save as macro bullshit -->
 [h, if (saveAsMacro > 0), code: {
-	[h: macroConfig = dndb_Macro_copyMacroConfig ("Cast Spells")]
+	[h: macroConfig = dnd5e_Macro_copyMacroConfig ("Cast Spells")]
 
 	[h: cmdArg = json.set ("", SELECTED_SPELL, json.get (selectedSpell, "name"), 
 							SELECTED_SPELL_SLOT, spellSlot)]

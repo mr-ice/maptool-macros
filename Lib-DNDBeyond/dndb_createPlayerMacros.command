@@ -9,10 +9,6 @@
 					"fontSize", "1.05em")]
 
 [h: macroCfgs = json.append ("", 
-			json.set (basicCfg, "name", "Make Check",
-					"sortBy", "100",
-					"command", "[macro('Make Check@Lib:DnDBeyond'): '']"),
-					
 			json.set (basicCfg, "name", "Make Attack",
 					"color", "red",
 					"fontColor", "black",

@@ -33,39 +33,10 @@
 								"bonus", bonus)]
 
 [h, switch (advDisadv):
-	case 1: rollExpression = json.set (rollExpression, "hasAdvantage", "true");
-	case 2: rollExpression = json.set (rollExpression, "hasDisadvantage", "true");
+	case 1: rollExpression = json.set (rollExpression, "hasAdvantage", 1);
+	case 2: rollExpression = json.set (rollExpression, "hasDisadvantage", 1);
 	default: ""]
 
-<!-- Determine current state -->
-<!-- Fails str and dex -->
-[h: fuckedStates = json.append ("", "Paralyzed", "Petrified", "Stunned", "Unconscious")]
-[h: isFucked = 0]
-[h: fuckedMsg = ""]
-[h, foreach (fuckedState, fuckedStates), code: {
-	[h: theState = getState (fuckedState)]
-	[h, if (theState > 0), code: {
-		[h: isFucked = isFucked + 1]
-		[h: fuckedMsg = fuckedMsg + "You're <font color='red'><b>" + fuckedState + "</b></font>!<br>"]
-	}]
-}]
-<!-- disadv on dex -->
-[h: isRestrained = getState ("Restrained")]
-
-<!-- Auto fails -->
-[r, if ( selectedsavingThrowPos <= 1 && isFucked > 0), code: {
-	[r: fuckedMsg]
-	[r: "<b>You automatically <font color='red'><i>FAIL</i></font>!!<b><br>"]
-	[h: rollExpression = json.set (rollExpression, "expressionTypes", "['Save', 'staticRoll']",
-													"staticRoll", 1)]
-
-}; {}]
-
-
-[r, if (selectedsavingThrowPos == 1 && isRestrained > 0), code: {
-	[r: "<font color='red'>Applying Restrained effect (Disadvantage)</font><br>"]
-	[h: rollExpression = json.set (rollExpression, "hasDisadvantage", "true")]
-}; {}]
 
 
 [h, if (saveAsMacro > 0), code: {

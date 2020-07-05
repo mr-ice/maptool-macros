@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ae92e6c5-6cf2-4de7-bd5b-02bea3bf85fd</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>78</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_setDescription</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Sets a user defined description for the RollExpression
+
+arg (0) = RollExpression
+arg (1) = description
+
+Returns RollExpression</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
