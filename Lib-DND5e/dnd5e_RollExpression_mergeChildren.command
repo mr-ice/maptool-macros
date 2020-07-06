@@ -2,7 +2,7 @@
 	totals array and for each element, add each childs allTotal to each element. Then append the childs
 	rollString to the end of the parents rollString -->
 [h: rollExpression = arg (0)]
-
+[h: log.debug ("dnd5e_RollExpression_mergeChildren: rollExpression = " + json.indent (rollExpression))]
 <!-- iterate the children expressions -->
 [h: children = dnd5e_RollExpression_getExpressions (rollExpression)]
 [h, foreach (child, children), code: {

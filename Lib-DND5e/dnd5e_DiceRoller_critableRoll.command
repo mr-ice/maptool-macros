@@ -15,13 +15,17 @@
 	<!-- Sniff onCritAdd property to determine addtional dice. If not found, assume the same amount
 	     as currently set for diceRolled -->
 	[h: onCritAdd = dnd5e_RollExpression_getOnCritAdd (rollExpression)]
-	[h: originalDiceRolled = dnd5e_RollExpression_getDiceRolled (rollExpression)]
-	[h: critRoll = dnd5e_RollExpression_setDiceRolled (rollExpression, onCritAdd + originalDiceRolled)]
-	[h: critRoll = dnd5e_DiceRoller_basicRoll (critRoll)]
+	[h, if (onCritAdd == ""): onCritAdd = dnd5e_RollExpression_getDiceRolled (rollExpression)]
+	[h: critRoll = dnd5e_RollExpression_fromRollExpression (rollExpression)]
+	[h: critRoll = dnd5e_RollExpression_setExpressionType (critRoll, "Critical Damage")]
+	[h: critRoll = dnd5e_RollExpression_setBonus (critRoll, 0)]
+	[h: critRoll = dnd5e_RollExpression_setDiceRolled (critRoll, onCritAdd)]
+	[h: critRoll = dnd5e_RollExpression_setName (critRoll, "Critical " + dnd5e_RollExpression_getName (rollExpression))]
+	[h: critRoll = json.get (dnd5e_DiceRoller_roll (critRoll), 0)]
+	[h: rollExpression = dnd5e_RollExpression_addExpression (rollExpression, critRoll)]
+	[h: rollExpression = dnd5e_RollExpression_mergeChildren (rollExpression)]
 	<!-- Just replace whats currently on output. We have better information -->
-	[h: damageString = dnd5e_RollExpression_getDamageTypes (critRoll)]
-	[h: name = dnd5e_RollExpression_getName (critRoll)]
-	[h: description = "<font color='red'><b><i>CRITICAL </i></b></font> "]
-	[h: rollExpression = dnd5e_RollExpression_addDescription (critRoll, description)] 
+
+	[h: rollExpression = dnd5e_RollExpression_addDescription (rollExpression, "<font color='red'><b><i>CRITICAL </i></b></font> ")] 
 }]
 [h: macro.return = rollExpression]

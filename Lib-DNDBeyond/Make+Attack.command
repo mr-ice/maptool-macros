@@ -88,6 +88,7 @@
 [h, if (dmgNumDice == ""): dmgNumDice = 0]
 [h: attackName = json.get(cfgAttack, NAME)]
 [h: critBonus = json.get(cfgAttack, CRIT_BONUS_DICE)]
+[h, if (critBonus == 0): critBonus = dmgNumDice; ""]
 [h: dmgType = json.get(cfgAttack, DMG_TYPE)]
 [h: dmgBonusExpr = json.get(cfgAttack, DMG_BONUS_EXPR)]
 
