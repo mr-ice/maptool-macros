@@ -1196,6 +1196,18 @@
       <int>104</int>
       <macro name="dnd5e_RollExpression_fromRollExpression"/>
     </entry>
+    <entry>
+      <int>105</int>
+      <macro name="dnd5e_deathSavesCSS"/>
+    </entry>
+    <entry>
+      <int>106</int>
+      <macro name="dnd5e_deathSaves"/>
+    </entry>
+    <entry>
+      <int>107</int>
+      <macro name="dnd5e_deathSaveSubmit"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
