@@ -1208,6 +1208,10 @@
       <int>107</int>
       <macro name="dnd5e_deathSaveSubmit"/>
     </entry>
+    <entry>
+      <int>108</int>
+      <macro name="dnd5e_done"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

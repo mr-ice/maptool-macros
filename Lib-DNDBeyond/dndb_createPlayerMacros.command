@@ -57,6 +57,13 @@
 					"sortBy", "20",
 					"command", "[macro('Skill Check@Lib:DnDBeyond'): '']"),
 					
+			json.set (basicCfg, "name", "I'm Done",
+					"group", "",
+					"color", "red",
+					"fontColor", "white",
+					"sortBy", "1",
+					"command", "[h, macro('dnd5e_done@Lib:DnD5e'): '']"),
+
 			json.set (basicCfg, "name", "Damage",
 					"group", "D&D 5e Health",
 					"color", "red",
