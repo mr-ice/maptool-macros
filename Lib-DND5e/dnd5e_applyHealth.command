@@ -40,14 +40,17 @@
 	case "dead": {
 		[h: setState("Dead", 1, id)]
 		[h, if (!isPC(id)): removeFromInitiative(id); ""]
+		[h: setState("Prone", 1)]
 	};
 	case "stable": {
 		[h: setState("Stable", 1, id)]
+		[h: setState("Prone", 1)]
 	};
 	case "dying": {
 		[h: setState("Dying", 1, id)]
 		[h: setBar("DSPass", 0.25 * dsPass, id)]
 		[h: setBar("DSFail", 0.25 * dsFail, id)]
+		[h: setState("Prone", 1)]
 	};
 	case "bloodied": {
 		[h: setState("Bloodied", 1, id)]

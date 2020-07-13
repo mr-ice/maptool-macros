@@ -777,7 +777,6 @@
         <name>Normal</name>
         <multiplier>1.0</multiplier>
         <personalLightSource>
-          <lightList class="linked-list"/>
           <lumens>0</lumens>
           <scaleWithToken>false</scaleWithToken>
         </personalLightSource>
@@ -1052,7 +1051,7 @@
         <showOwner>true</showOwner>
         <showOthers>true</showOthers>
         <assetId>
-          <id>5e37d7fe41b9b5a3339e3d27d0793140</id>
+          <id>972f955388f66da9eeccebf93e500541</id>
         </assetId>
         <grid>2</grid>
       </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
@@ -1939,7 +1938,7 @@
         <increments>0</increments>
         <side>TOP</side>
         <bottomAssetId>
-          <id>db97eff3404bc53df08dcd300b4689f9</id>
+          <id>055479129d944ad4554a004937a35b83</id>
         </bottomAssetId>
         <topAssetId>
           <id>15f285b19efbae153bacb1aa014f307e</id>

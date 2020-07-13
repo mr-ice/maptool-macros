@@ -1130,6 +1130,10 @@
       <int>56</int>
       <macro name="data_BasicToon_30960137"/>
     </entry>
+    <entry>
+      <int>57</int>
+      <macro name="Set+Logging+Level"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

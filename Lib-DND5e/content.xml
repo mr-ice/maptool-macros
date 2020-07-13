@@ -144,6 +144,9 @@
   </terrainModifiersIgnored>
   <isFlippedX>false</isFlippedX>
   <isFlippedY>false</isFlippedY>
+  <charsheetImage>
+    <id>f2cf86e2e8e9f580808cc099e6215379</id>
+  </charsheetImage>
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
   <state>
@@ -1192,6 +1195,22 @@
     <entry>
       <int>104</int>
       <macro name="dnd5e_RollExpression_fromRollExpression"/>
+    </entry>
+    <entry>
+      <int>105</int>
+      <macro name="dnd5e_deathSavesCSS"/>
+    </entry>
+    <entry>
+      <int>106</int>
+      <macro name="dnd5e_deathSaves"/>
+    </entry>
+    <entry>
+      <int>107</int>
+      <macro name="dnd5e_deathSaveSubmit"/>
+    </entry>
+    <entry>
+      <int>108</int>
+      <macro name="dnd5e_done"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
