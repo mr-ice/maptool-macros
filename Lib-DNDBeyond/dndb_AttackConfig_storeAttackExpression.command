@@ -1,0 +1,11 @@
+[h, if (json.type (macro.args) == "ARRAY"): rollExpression = macro.args; rollExpression = json.append ("", macro.args)]
+[h: ATTACK_EXPRESSION_JSON = "attackExpressionJSON"]
+[h: attackJson = getProperty (ATTACK_EXPRESSION_JSON)]
+[h: attackExpression = dnd5e_RollExpression_findExpressionByType (rollExpression, "Attack")]
+[h: log.debug ("attackExpressions: " + attackExpression)]
+[h, if (json.isEmpty (attackExpression)): assert (0, "No attack expression found", 0)]
+
+[h: keyName = dnd5e_RollExpression_getName (attackExpression)]
+[h, if (keyName == ""):assert (0, "Attack RollExpression does not have a name: " + rollExpression, 0)]
+[h: attackJson = json.set (attackJson, keyName, rollExpression)]
+[h: setProperty (ATTACK_EXPRESSION_JSON, attackJson)]

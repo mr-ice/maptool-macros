@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f88c8c33-efc3-40e9-8c37-d8c7a581df77</macroUUID>
+  <macroUUID>6c16e94e-0967-4dd0-97ce-fd69c2d31e78</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>127</index>
+  <index>121</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_deathSaveSubmit</label>
-  <group>UI Death Saves</group>
+  <label>dnd5e_RollExpression_setSaveEffectMultiplier</label>
+  <group>RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,12 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Sets a value, generally between 0 and 1 inclusively, to apply against damage from a Save Damage roll. For the following values, setSaveEffectDescription will also be called with a corresponding description:
+
+0: "No Damage"
+0.5: "Half Damage"
+
+For all other values, call setEffectDescription with an appropriate description.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

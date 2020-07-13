@@ -1,0 +1,50 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>b7fe6463-d900-432c-aeb2-775b69c04d27</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>105</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AttackEditor</label>
+  <group>RollExpression - Editor</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Launches a dialog to build or edit an array of RollExpressions for an Attack roll. The first argument must be the macroTextLink of the handling macro. Otherwise the results of the processor will be lost. The second argument is optional and is an array of RollExpressions to edit.
+
+arg (0) = macroLinkText of the calling macro which will handle the return of the attack object
+arg (1) = The attack object, a map of roll expressions where the key is the attack name and the value is an array of RollExpressions used to roll the attack.
+arg (2) = (Optional) The name of the attack to have selected initially. If not provided, the first attack is selected.
+
+Ex.
+
+[h: scimitarExpression = json.append ("", scimitarAttackExpression, scimitarDamageExpression)]
+[h: maceExpression = json.append ("", maceAttackExpression, maceDamageExpression, maceRadiantDamageExpression, macePoisonDamageExpression)]
+[h: attackObject = json.set ("", "Scimitar Attack", scimitarExpression, "Mace Attack", maceExpression)]
+
+[h: dnd5e_RollExpression_AttackEditor (macroLinkText (
+		getMacroName() + "@" + getMacroLocation(), "all", "", currentToken()), 
+		attackObject, 
+		"Mace Attack")]
+
+
+The associated processor will use the macroLinkText as a callback passing an object with the following keys:
+
+action: "Save" or "Save &amp; Attack"
+selectedAttack: The active attack when submitted
+saveAttack: True (1) or false (0) - indicates to the caller if the attack should be saved as a macro
+attackObj: the map of RollExpressions keyed by each attack name</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

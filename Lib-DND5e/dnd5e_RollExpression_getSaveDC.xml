@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f88c8c33-efc3-40e9-8c37-d8c7a581df77</macroUUID>
+  <macroUUID>5476ff72-9b24-4ba1-b084-e3e3251bc8e1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>127</index>
+  <index>114</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_deathSaveSubmit</label>
-  <group>UI Death Saves</group>
+  <label>dnd5e_RollExpression_getSaveDC</label>
+  <group>RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Returns the DC for a Save Damage expression</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

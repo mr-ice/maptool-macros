@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>08653868-5d2e-4f5b-9705-f89816db95a6</macroUUID>
+  <macroUUID>47c4e45c-9f96-4076-b8ed-51a315759126</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>55</index>
   <colorKey>red</colorKey>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Do the deed</toolTip>
+  <toolTip>This macro is deprecated! Stop using it.</toolTip>
   <displayHotKey>false</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

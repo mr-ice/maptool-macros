@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>89b8005e-0585-4c9e-9598-c6a57761a594</macroUUID>
+  <macroUUID>ddda0823-4d04-4003-a600-76b1b3108eda</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>37</index>
   <colorKey>default</colorKey>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Given a basic roll string, return a RollExpression sans any adornment of types.
+  <toolTip>Given a basic roll string, return a RollExpression sans any adornment of types. If the second optional argument is a RollExpression, the same RollExpression is returned with the parsed roll string configured within.
 </toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

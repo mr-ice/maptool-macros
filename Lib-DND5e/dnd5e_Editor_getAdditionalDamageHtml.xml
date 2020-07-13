@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f88c8c33-efc3-40e9-8c37-d8c7a581df77</macroUUID>
+  <macroUUID>3736284e-7567-4e39-ae0c-880eca515480</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>127</index>
+  <index>111</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_deathSaveSubmit</label>
-  <group>UI Death Saves</group>
+  <label>dnd5e_Editor_getAdditionalDamageHtml</label>
+  <group>RollExpression - Editor</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,8 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Builds the HTML snippit for the additional attack damage. When given an array of RollExpressions containing "damagable" expressions.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

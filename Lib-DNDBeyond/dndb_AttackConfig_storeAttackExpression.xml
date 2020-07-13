@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f88c8c33-efc3-40e9-8c37-d8c7a581df77</macroUUID>
+  <macroUUID>8ae9ff4b-1966-42da-bc4f-2f9bfd3b8f42</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>127</index>
+  <index>109</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_deathSaveSubmit</label>
-  <group>UI Death Saves</group>
+  <label>dndb_AttackConfig_storeAttackExpression</label>
+  <group>Basic Toon</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Saves the provided RollExpression in the attack JSON under the key based on the first RollExpression's name (which is typically the attack roll)</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

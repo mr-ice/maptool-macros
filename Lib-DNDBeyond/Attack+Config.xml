@@ -1,24 +1,22 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>56ed8c56-fd11-40b1-a2ca-80b9b9018577</macroUUID>
+  <macroUUID>27668080-04d7-459f-9279-4fa715de0ce6</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>56</index>
+  <index>108</index>
   <colorKey>green</colorKey>
   <hotKey>None</hotKey>
   <label>Attack Config</label>
   <group>Token</group>
-  <sortby>2</sortby>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Used to configure attacks. Should be executed at least once before Make Attack.
-While this can only configure one attack per execution, bulk configuration is
-made possible via Set AttackJSON.</toolTip>
-  <displayHotKey>false</displayHotKey>
+  <toolTip>New fangled Attack Config</toolTip>
+  <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
   <compareSortPrefix>true</compareSortPrefix>

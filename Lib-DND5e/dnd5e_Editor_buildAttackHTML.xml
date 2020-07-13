@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f88c8c33-efc3-40e9-8c37-d8c7a581df77</macroUUID>
+  <macroUUID>ddf3d638-f1fa-4ab1-9e1c-a2ef14971ed7</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>127</index>
+  <index>122</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_deathSaveSubmit</label>
-  <group>UI Death Saves</group>
+  <label>dnd5e_Editor_buildAttackHTML</label>
+  <group>RollExpression - Editor</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,8 +14,13 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Given a RollExpression[ ], build the HTML to be displayed by an editor. The output is the Div to display the attack, the &lt;input&gt; to add any extra Damage, and when ExtraDamage is present, the &lt;input&gt; to remove it.
+
+arg (0) = RollExpression[]
+
+Ret. 
+&lt;div&gt;...&lt;/div&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
