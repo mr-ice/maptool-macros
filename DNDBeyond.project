@@ -16,5 +16,6 @@
     <macro name="macro/Heal+Selected"/>
     <macro name="macro/TempHP+for+Selected"/>
     <macro name="macro/Conditions"/>
+    <macro name="macro/Distance+Between+Selected"/>
   </macroset>
 </project>

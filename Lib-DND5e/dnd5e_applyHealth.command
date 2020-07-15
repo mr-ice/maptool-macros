@@ -39,29 +39,35 @@
 [h, switch(state), code:
 	case "dead": {
 		[h: setState("Dead", 1, id)]
-		[h, if (!isPC(id)): removeFromInitiative(id); ""]
-		[h: setState("Prone", 1)]
+		[h, if (isPC(id)), code: {
+			[h: setState("Prone", 1, id)]
+		}; {
+			[h: removeFromInitiative(id)]
+			[h: setLayer("OBJECT", id)]
+		}]
 	};
 	case "stable": {
 		[h: setState("Stable", 1, id)]
-		[h: setState("Prone", 1)]
+		[h: setState("Prone", 1, id)]
 	};
 	case "dying": {
 		[h: setState("Dying", 1, id)]
 		[h: setBar("DSPass", 0.25 * dsPass, id)]
 		[h: setBar("DSFail", 0.25 * dsFail, id)]
-		[h: setState("Prone", 1)]
+		[h: setState("Prone", 1, id)]
 	};
 	case "bloodied": {
 		[h: setState("Bloodied", 1, id)]
-		[h: setBar("HP", current / effectiveMaxHP, id)]
-		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
 	};
 	default: {
-		[h: setBar("HP", current / effectiveMaxHP, id)]
-		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
 }]
-	
+
+[h, if(current != 0), code: {
+	[h: setBar("HP", current / effectiveMaxHP, id)]
+	[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
+	[h, if (!isPC(id)): setLayer("TOKEN", id); ""]
+}]
+
 <!-- Save the token properties -->
 [h: setProperty ("HP", current, id)]
 [h: setProperty ("TempHP", temporary, id)]
