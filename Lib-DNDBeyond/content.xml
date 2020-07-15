@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>Fgp5IEF+RoCJ62hl/Fp0iA==</baGUID>
+    <baGUID>AovaTgzwQhmqpIOTTTUxHw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -31,15 +31,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.SquareGrid</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -1168,12 +1168,20 @@
       <macro name="dndb_Preferences_setRegistry"/>
     </entry>
     <entry>
-      <int>108</int>
-      <macro name="Attack+Config"/>
+      <int>110</int>
+      <macro name="dndb_migrateAttackJSON"/>
     </entry>
     <entry>
-      <int>109</int>
-      <macro name="dndb_AttackConfig_storeAttackExpression"/>
+      <int>111</int>
+      <macro name="dndb_RollExpression_getExpressionFromModifier"/>
+    </entry>
+    <entry>
+      <int>112</int>
+      <macro name="dndb_BasicToon_getAttackExpression"/>
+    </entry>
+    <entry>
+      <int>113</int>
+      <macro name="dndb_BasicToon_setAttackExpression"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

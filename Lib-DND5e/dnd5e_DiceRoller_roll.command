@@ -42,6 +42,8 @@
 		[h, if (dnd5e_RollExpression_hasType (rollExpression, "critable")): 
 				rollExpression = dnd5e_DiceRoller_critableRoll (rollExpression, rolled)]
 		[h, if (json.length (children) > 0): rollExpression = dnd5e_RollExpression_mergeChildren (rollExpression); ""]
+		[h: rollExpression = dnd5e_DiceRoller_saveDamageRoll (rollExpression)]
+		[h: rollExpression = dnd5e_DiceRoller_saveEffectRoll (rollExpression)]
 		[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 		[h: output = dnd5e_RollExpression_getOutput (rollExpression)]
 		[h: outputs = json.append (outputs, output)]

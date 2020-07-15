@@ -1,12 +1,7 @@
 [h: charId = getProperty ("Character ID")]
 <!-- This script must deal with the raw Basic Toon, avoid dndb_getBasicToon -->
-[h: basicToon = getProperty ("dndb_BasicToon")]
-
-[h, if (charId == "" || encode (basicToon) == ""), code: {
-	[h: message = "Token needs to be initialized with DNDBeyond first"]
-	[h: abort( input( " junkVar | | " + message + " | LABEL | TEXT=false"))]
-	[h: return (0, message)]
-}]
+[h: basicToon = dndb_getBasicToon ()]
+[h: dndb_migrateAttackJSON ()]
 
 [h: toon = dndb_getCharJSON (charId)]
 

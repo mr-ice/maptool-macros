@@ -10,7 +10,7 @@
 	[h: selectedAttack = json.get (retObj, "selectedAttack")]
 	[h: advDisadvantage = json.get (retObj, "advantageDisadvantage")]
 	[h: saveAttackAsMacro = json.get (retObj, "saveAttackAsMacro")]
-	[h: setProperty (ATTACK_JSON, attackObj)]
+	[h: dndb_BasicToon_setAttackExpression (attackObj)]
 	[h: inputObj = json.set ("", "selectedAttack", selectedAttack, 
 							"advantageDisadvantage", advDisadvantage)]	
 	[h, if (saveAttackAsMacro), code: {
@@ -33,11 +33,11 @@
 
 	}; {""}]
 	[r, if (action == "SaveAttack"), code: {
-		[r: dnd5e_Macro_rollAttack (inputObj)]
+		[r: "<br>" + dnd5e_Macro_rollAttack (inputObj)]
 		[h: setProperty (LAST_ATTACK_SELECTION, selectedAttack)]
 	}; {[r,s:"Attack Configuration saved!"]}]
 }; {
 	<!-- Called fresh, launch the editor -->
-	[h: attackObj = getProperty (ATTACK_JSON)]
+	[h: attackObj = dndb_BasicToon_getAttackExpression()]
 	[h: dnd5e_AttackEditor (macroLinkText (getMacroName() + "@" + getMacroLocation(), "all", "", currentToken()), attackobj, lastAttackSelection)]
 }]

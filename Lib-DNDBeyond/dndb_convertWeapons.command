@@ -46,6 +46,7 @@
 		"properties", json.path.read (weaponRaw, "definition.properties"),
 		"proficient", json.length (proficientArry),
 		"isMonk", json.path.read (weaponRaw, "definition.isMonkWeapon"),
+		"grantedModifiers", grantedModifiers,
 		"equipped", equipped)
 	)]
 

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>TcynGqUeTDu4NuplfGxAOw==</baGUID>
+    <baGUID>IjyWbDDeROSZs4G7r7TT6Q==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>hBNO9SWGQzuFEXbFM1v8dw==</baGUID>
+    <baGUID>Tt3QO8+YQECB72859KUjmg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -16,7 +16,7 @@
   </imageAssetMap>
   <x>350</x>
   <y>750</y>
-  <z>10</z>
+  <z>30</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -130,14 +130,6 @@
         <string>strength save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength Save</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>lookitwegot</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>lookitWeGot</key>
-          <value class="string">{"action":"Save Only","saveAttackAsMacro":0,"selectedAttack":"Rapier","attackObj":{"Sword":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Sword","bonus":8},{"diceSize":8,"diceRolled":1,"bonus":6,"expressionTypes":"Damage","name":"","damageTypes":["Piercing","Magic"],"onCritAdd":3},{"diceSize":8,"diceRolled":1,"bonus":8,"expressionTypes":"Damage","name":"","damageTypes":["Radiant"],"saveDC":"","saveAbility":"None","saveEffectDescription":""},{"diceSize":6,"diceRolled":3,"bonus":0,"expressionTypes":"Save Damage","name":"","damageTypes":["Poison"],"saveDC":16,"saveAbility":"Constitution","saveEffectDescription":""}],"Rapier":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Rapier","bonus":8},{"diceSize":8,"diceRolled":1,"bonus":6,"expressionTypes":"Damage","name":"","damageTypes":["Piercing","Magic"],"onCritAdd":3},{"diceSize":8,"diceRolled":1,"bonus":8,"expressionTypes":"Damage","name":"","damageTypes":["Radiant"],"saveDC":"","saveAbility":"None","saveEffectDescription":""},{"diceSize":6,"diceRolled":3,"bonus":0,"expressionTypes":"Save Damage","name":"","damageTypes":["Poison"],"saveDC":16,"saveAbility":"Constitution","saveEffectDescription":""}],"Longbow":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Longbow","bonus":8},{"diceSize":8,"diceRolled":1,"bonus":6,"expressionTypes":"Damage","name":"","damageTypes":["Piercing","Magic"],"onCritAdd":3},{"diceSize":8,"diceRolled":1,"bonus":8,"expressionTypes":"Damage","name":"","damageTypes":["Radiant"],"saveDC":"","saveAbility":"None","saveEffectDescription":""},{"diceSize":6,"diceRolled":3,"bonus":0,"expressionTypes":"Save Damage","name":"","damageTypes":["Poison"],"saveDC":16,"saveAbility":"Constitution","saveEffectDescription":""}]}}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -975,6 +967,18 @@
     <entry>
       <int>128</int>
       <macro name="dnd5e_done"/>
+    </entry>
+    <entry>
+      <int>129</int>
+      <macro name="dnd5e_DiceRoller_saveDamageRoll"/>
+    </entry>
+    <entry>
+      <int>130</int>
+      <macro name="dnd5e_RollExpression_SaveEffect"/>
+    </entry>
+    <entry>
+      <int>131</int>
+      <macro name="dnd5e_DiceRoller_saveEffectRoll"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

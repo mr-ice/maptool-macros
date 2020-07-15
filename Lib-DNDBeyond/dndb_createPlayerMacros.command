@@ -15,12 +15,6 @@
 					"sortBy", "1",
 					"command", "[macro('Make Attack@Lib:DnDBeyond'): '']"),
 
-			json.set (basicCfg, "name", "Attack Config",
-					"color", "green",
-					"fontColor", "black",
-					"sortBy", "2",
-					"command", "[macro('Attack Config@Lib:DnDBeyond'): '']"),
-
 			json.set (basicCfg, "name", "Saving Throw",
 					"color", "black",
 					"fontColor", "yellow",
@@ -63,7 +57,6 @@
 					"fontColor", "white",
 					"sortBy", "1",
 					"command", "[h, macro('dnd5e_done@Lib:DnD5e'): '']"),
-
 			json.set (basicCfg, "name", "Damage",
 					"group", "D&D 5e Health",
 					"color", "red",
@@ -91,7 +84,6 @@
 					"fontColor", "red",
 					"sortBy", "5",
 					"command", "[h, macro('dnd5e_deathSaves@Lib:DnD5e'): '']"),
-					
 			json.set (basicCfg, "name", "Temp HP",
 					"group", "D&D 5e Health",
 					"color", "red",

@@ -3,6 +3,8 @@
 [h: inputArgs = macro.args]
 [h: actionButton = json.get (inputArgs, "actionButton")]
 [h: saveAttackAsMacro = json.get (inputArgs, "saveAttack")]
+[h: duplicateAttack = json.get (inputArgs, "duplicateAttack")]
+[h, if (duplicateAttack == ""): doDuplicate = 0; doDuplicate = 1]
 [h, if (saveAttackAsMacro == "on"): saveAttackAsMacro = 1; saveAttackAsMacro = 0]
 [h, if (actionButton == "Cancel"), code: {
 	[closeDialog ("Attack Editor")]
@@ -15,6 +17,7 @@
 
 <!-- Build the roll expressions -->
 [h: attackObj = "{}"]
+[h: duplicatedAttack = "{}"]
 
 <!-- Build the attack -->
 <!-- And build the attackObj -->
@@ -55,7 +58,9 @@
 		[extraDamage = dnd5e_RollExpression_setSaveDC (extraDamage, extraDamageSaveDC)]
 		[extraDamage = dnd5e_RollExpression_setSaveAbility (extraDamage, extraDamageSaveAbility)]
 		[extraDamage = dnd5e_RollExpression_setSaveEffect (extraDamage, extraDamageSaveEffect)]
-		[if (isNumber (extraDamageSaveDC)): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Damage"); ""]
+		[diceRolled = dnd5e_RollExpression_getDiceRolled (extraDamage)]
+		[if (isNumber (extraDamageSaveDC) && diceRolled > 0): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Damage"); ""]
+		[if (isNumber (extraDamageSaveDC) && diceRolled == 0): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Effect"); ""]
 		[doDelete = json.get (inputArgs, "deleteExtraDamage-" + attackField + "-" + index)]
 		<!-- if doDelete is blank, add the expression. If it is not, its the selected attack -->
 		[if (doDelete == ""): rollExpressions = json.append (rollExpressions, extraDamage); selectedAttack = attackName]
@@ -69,8 +74,14 @@
 	<!-- notice we are adding the attack by its name, not the original field value -->
 	[h: doDeleteAttack = json.get (inputArgs, "deleteAttack-" + attackField)]
 	[h, if (doDeleteAttack == ""): attackObj = json.set (attackObj, attackName, rollExpressions); ""]
+	[h, if (doDuplicate && attackName == selectedAttack): duplicatedAttack = rollExpressions; ""]
 }]
 
+[h, if (doDuplicate), code: {
+	<!-- give the attack a unique name and tack it on, also make it selected -->
+	[selectedAttack = "Duplicated " + selectedAttack]
+	[attackObj = json.set (attackObj, selectedAttack, duplicatedAttack)]
+}]
 
 
 

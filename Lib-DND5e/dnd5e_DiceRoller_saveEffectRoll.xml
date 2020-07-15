@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>694b6b7b-0fdd-494c-8c62-53e30615488f</macroUUID>
+  <macroUUID>c57f567a-5d91-461e-8c71-7dd31cce350a</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>85</index>
+  <index>131</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_BuildBless</label>
-  <group>RollExpression - Templates</group>
+  <label>dnd5e_DiceRoller_saveEffectRoll</label>
+  <group>Dice Roller</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns a RollExpression applicable for the spell Bless. Such an expression is intended to be added to an Attack or Save expression as a child.</toolTip>
+  <toolTip>"Rolls" saveable rolls. Unlikely to do anything material, just apply relevant information in the descriptions.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

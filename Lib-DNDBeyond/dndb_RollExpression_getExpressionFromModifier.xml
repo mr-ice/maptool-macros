@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>694b6b7b-0fdd-494c-8c62-53e30615488f</macroUUID>
+  <macroUUID>cf9c01ae-dfbc-4289-8d74-bd4567662b12</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>85</index>
+  <index>111</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_BuildBless</label>
-  <group>RollExpression - Templates</group>
+  <label>dndb_RollExpression_getExpressionFromModifier</label>
+  <group>Utility - RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,11 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns a RollExpression applicable for the spell Bless. Such an expression is intended to be added to an Attack or Save expression as a child.</toolTip>
+  <toolTip>Given a grantedModifier, return an appropriate RollExpression
+
+arg (0) = grantedModifier
+
+ret: RollExpression</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

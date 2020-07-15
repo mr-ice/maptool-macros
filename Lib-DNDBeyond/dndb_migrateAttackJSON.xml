@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>694b6b7b-0fdd-494c-8c62-53e30615488f</macroUUID>
+  <macroUUID>3fc31427-63f2-43ff-b964-d828f3630357</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>85</index>
+  <index>110</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_BuildBless</label>
-  <group>RollExpression - Templates</group>
+  <label>dndb_migrateAttackJSON</label>
+  <group>Utility</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns a RollExpression applicable for the spell Bless. Such an expression is intended to be added to an Attack or Save expression as a child.</toolTip>
+  <toolTip>Migrates the data on token propety attackJSON to attackExpressionJSON, applying the appropriate transformation. No argument is required.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

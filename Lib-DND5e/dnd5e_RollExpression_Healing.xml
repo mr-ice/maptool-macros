@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>95410c12-c23c-4874-81e5-791dcc148b16</macroUUID>
+  <macroUUID>fbc118b9-d5a4-4eba-9caa-72a5b47b3cfa</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>103</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_Healing</label>
-  <group>RollExpression</group>
+  <group>RollExpression - Templates</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

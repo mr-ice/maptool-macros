@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>694b6b7b-0fdd-494c-8c62-53e30615488f</macroUUID>
+  <macroUUID>0e0d40e3-a68d-4b32-84e6-c47c022cc984</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>85</index>
+  <index>112</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_BuildBless</label>
-  <group>RollExpression - Templates</group>
+  <label>dndb_BasicToon_getAttackExpression</label>
+  <group>Basic Toon</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns a RollExpression applicable for the spell Bless. Such an expression is intended to be added to an Attack or Save expression as a child.</toolTip>
+  <toolTip>Returns the attack expression associted to the token. Key names are stored encoded and this macro decodes them for convenience. </toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

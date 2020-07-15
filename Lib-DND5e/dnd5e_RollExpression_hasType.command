@@ -1,10 +1,11 @@
 [h: expression = arg(0)]
 [h: findType = arg(1)]
 [h: IMPLIED_TYPES = json.set ("", 
-					"Damage", json.append ("", "critable", "damagable"),
+					"Damage", json.append ("", "critable", "damageable"),
 					"Attack", json.append ("", "advantagable"),
 					"Save", json.append ("", "advantagable"),
-					"Save Damage", json.append ("", "saveable", "damagable"),
+					"Save Damage", json.append ("", "saveable", "damageable"),
+					"Save Effect", json.append ("", "saveable"),
 					"Ability", json.append ("", "advantagable"))]
 
 [h: types = json.merge (json.append ("", dnd5e_RollExpression_getExpressionType (expression)),

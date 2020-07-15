@@ -2,7 +2,9 @@
 [h: attackIndex = arg (1)]
 [h: extraDamages = "[]"]
 [h, foreach (rollExpression, rollExpressions), code: {
-	[if (dnd5e_RollExpression_hasType (rollExpression, "damagable")): extraDamages = json.append (extraDamages, rollExpression); ""]
+	[log.debug ("getAdditionalDamageHtml: rollExpression = " + rollExpression)]
+	[if (dnd5e_RollExpression_hasType (rollExpression, "damageable") || dnd5e_RollExpression_hasType (rollExpression, "saveable")): extraDamages = json.append (extraDamages, rollExpression); ""]
+	[h: log.debug ("extraDamages: " + extraDamages)]
 }]
 [h: totalDmg = json.length (extraDamages)]
 [h: extraDmgIndex = 0]
@@ -51,7 +53,7 @@
         </label>
         </div>
         <div>
-        <label>Save Effect<input class="wide-input" name="extraDamageSaveEffect-[r: attackIndex]-[r:extraDmgIndex]" value="[r: damageSaveEffect]"/></label>
+        <label>Save Effect<input class="wide-input" name="extraDamageSaveEffect-[r: attackIndex]-[r:extraDmgIndex]" value="[r: damageSaveEffect]" title="Describe the effect that occurs based on passing or failing the save"/></label>
         <input name="deleteExtraDamage-[r: attackIndex]-[r:extraDmgIndex]" class="button red-right" value="Delete Damage" type="submit" title="Deletes the extra damage"/>
       </div>
     </div>

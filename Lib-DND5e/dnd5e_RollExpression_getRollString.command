@@ -5,4 +5,7 @@
 [h, if (diceRolled > 0): baseRoll = diceRolled + "d" + diceSize; baseRoll = ""]
 [h, if (bonus > 0): rollString = baseRoll + " + " + bonus; rollString = baseRoll]
 [h, if (bonus < 0): rollString = baseRoll + " - " + (-1 * bonus); ""]
+[h, foreach (child, dnd5e_RollExpression_getExpressions (rollExpression)), code: {
+	[rollString = rollString + " + " + dnd5e_RollExpression_getRollString (child)]
+}]
 [h: macro.return = rollString]

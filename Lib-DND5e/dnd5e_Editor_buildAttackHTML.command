@@ -13,7 +13,7 @@
 		[foundPrimaryDamage = 1]
 		[primaryDamageExpression = rollExpression]
 	}; {""}]
-	[if (dnd5e_RollExpression_hasType (rollExpression, "Save Damage")):
+	[if (dnd5e_RollExpression_hasType (rollExpression, "saveable")):
 			extraDamageExpressions = json.append (extraDamageExpressions, rollExpression); ""]
 }]
 [h: attackName = dnd5e_RollExpression_getName (attackExpression)]

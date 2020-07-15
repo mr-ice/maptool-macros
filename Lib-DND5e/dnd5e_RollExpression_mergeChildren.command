@@ -5,29 +5,38 @@
 [h: log.debug ("dnd5e_RollExpression_mergeChildren: rollExpression = " + json.indent (rollExpression))]
 <!-- iterate the children expressions -->
 [h: children = dnd5e_RollExpression_getExpressions (rollExpression)]
+
+[h: parentRolls = dnd5e_RollExpression_getRolls (rollExpression)]
+[h: parentBonus = dnd5e_RollExpression_getBonus (rollExpression)]
+[h: newTotals = "[]"]
+
+<!-- cheater var -->
+<!-- Rebuild the totals array from scratch -->
+[h, foreach (parentRoll, parentRolls), code: {
+	[newTotals = json.append (newTotals, parentRoll + parentBonus)]
+}]
+<!-- same goes for total -->
+[h: newTotal = dnd5e_RollExpression_getRoll (rollExpression) + parentBonus]
 [h, foreach (child, children), code: {
 	[childTotals = dnd5e_RollExpression_getAllTotal (child)]
-	<!-- get parents totals array, iterate -->
-	[parentTotals = dnd5e_RollExpression_getTotals (rollExpression)]
-	[newTotals = "[]"]
-	[foreach (parentTotal, parentTotals), code: {
-		<!-- for each totals element, add childs allTotal; update new totals array -->
-		[lastTotal = parentTotal + childTotals]
-		[newTotals = json.append (newTotals, lastTotal)]
-		<!-- end totals foreach -->
+
+	[newerTotals = "[]"]
+	<!-- add to totals the child allTotals -->
+	[foreach (toTotal, newTotals), code: {
+		[newerTotals = json.append (newerTotals, toTotal + childTotals)]
 	}]
-	[childRollString = dnd5e_RollExpression_getRollString (child)]
-	[parentRollString = dnd5e_RollExpression_getRollString (rollExpression)]
-	[rollString = parentRollString + " + " + childRollString]
+	[newTotal = newTotal + childTotals]
+	[newTotals = newerTotals]
 	[description = dnd5e_RollExpression_getExpressionType (child) + " (+" + dnd5e_RollExpression_getRoll (child) + ")"]
 	[rollExpression = dnd5e_RollExpression_addDescription (rollExpression, description)]
-	<!-- update parents rollString w child rollString -->
-	<!-- replace totals array on parent -->
-	<!-- and replace parent total with the last known new total -->
-	[h: total = dnd5e_RollExpression_getTotal (rollExpression) + dnd5e_RollExpression_getTotal (child)]
-	[rollExpression = json.set (rollExpression, "rollString", rollString,
-												"total", total,
-												"totals", newTotals)]
 <!-- end child foreach -->
 }]
+[h: allTotal = 0]
+
+[h: rollExpression = json.set (rollExpression,	"total", newTotal,
+											"totals", newTotals)]
+
+<!-- rollString builds on the fly, we just set it on the property -->
+[h: rollString = dnd5e_RollExpression_getRollString (rollExpression)]
+[h: rollExpression = json.set (rollExpression, "rollString", rollString)]
 [h: macro.return = rollExpression]
