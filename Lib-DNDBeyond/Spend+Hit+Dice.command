@@ -59,4 +59,8 @@
 	[h: output = output + "<br>"]
 }]
 [h: output = output + "<br>" + "Total Healing: " + total]
-<pre>[r: output]</pre>
+[r: output]
+
+<!-- Update the toon hitpoints -->
+[h: params = json.set("{}", "id", currentToken(), "current", getProperty("HP"), "maximum", getProperty("MaxHP"), "healing", total)]
+[h, macro("dnd5e_healDamage@Lib:DnD5e"): params]
