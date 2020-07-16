@@ -5,7 +5,7 @@
 					"fontColor", "default",
 					"autoExecute", 1,
 					"applyToSelected", 1,
-					"playerEditable", 0,
+					"playerEditable", 1,
 					"fontSize", "1.05em")]
 
 [h: macroCfgs = json.append ("", 
@@ -51,11 +51,12 @@
 					"sortBy", "20",
 					"command", "[macro('Skill Check@Lib:DnDBeyond'): '']"),
 					
-			json.set (basicCfg, "name", "I'm Done",
+			json.set (basicCfg, "name", "<html><b><u><i>I'm Done</i></u></b></html>",
 					"group", "",
 					"color", "red",
 					"fontColor", "white",
 					"sortBy", "1",
+					"fontSize", "1.50em",
 					"command", "[h, macro('dnd5e_done@Lib:DnD5e'): '']"),
 			json.set (basicCfg, "name", "Damage",
 					"group", "D&D 5e Health",
