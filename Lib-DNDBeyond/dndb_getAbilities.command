@@ -1,58 +1,37 @@
 <!-- Callers must pass in the character json themselves. No getter methods should shoulder the getCharJSON -->
 [h: character = arg(0)]
 
-<!-- Base stats -->
-[h: baseStr = json.path.read (character, "data.stats[0].value")]
-[h: baseDex = json.path.read (character, "data.stats[1].value")]
-[h: baseCon = json.path.read (character, "data.stats[2].value")]
-[h: baseInt = json.path.read (character, "data.stats[3].value")]
-[h: baseWis = json.path.read (character, "data.stats[4].value")]
-[h: baseCha = json.path.read (character, "data.stats[5].value")]
+[h: abilityMap = json.set ("", "strength", 0, "dexterity", 1, "constitution", 2, "intelligence", 3, "wisdom", 4, "charisma", 5)]
 
-<!-- Bonus stats -->
-[h: bonusStr = replace (json.path.read (character, "data.bonusStats[0].value"), "null", 0)]
-[h: bonusDex = replace (json.path.read (character, "data.bonusStats[1].value"), "null", 0)]
-[h: bonusCon = replace (json.path.read (character, "data.bonusStats[2].value"), "null", 0)]
-[h: bonusInt = replace (json.path.read (character, "data.bonusStats[3].value"), "null", 0)]
-[h: bonusWis = replace (json.path.read (character, "data.bonusStats[4].value"), "null", 0)]
-[h: bonusCha = replace (json.path.read (character, "data.bonusStats[5].value"), "null", 0)]
+[h: abilityScoreMap = "{}"]
+[h: modifiers = json.path.read (character, "data.modifiers")]
+[h, foreach (ability, json.fields (abilityMap)), code: {
+	[index = json.get (abilityMap, ability)]
+	[base = json.path.read (character, "data.stats[" + index + "].value")]
+	[bonus = replace (json.path.read (character, "data.bonusStats[" + index + "].value"), "null", 0)]
+	[base = base + bonus]
+	
+	[h: searchObj = json.set ("", "object", modifiers, "property", "value", 
+											"subType", ability + "-score",
+											"type", "bonus")]
+	[h: bonuses = dndb_searchJsonObject (searchObj)]
+	[h, foreach (bonus, bonuses): base = base + bonus]
 
-[h: baseStr = baseStr + bonusStr]
-[h: baseDex = baseDex + bonusDex]
-[h: baseCon = baseCon + bonusCon]
-[h: baseInt = baseInt + bonusInt]
-[h: baseWis = baseWis + bonusWis]
-[h: baseCha = baseCha + bonusCha]
+	[h: searchObj = json.set (searchobj, "type", "set")]									
+	[h: override = dndb_Array_max(dndb_searchJsonObject (searchObj))]
+	[h, if (isNumber (override)): base = override; ""]
 
-<!-- Ability improvements -->
-[h: strBonuses = json.path.read (character, ".[?(@.subType == 'strength-score')]['fixedValue']")]
-[h: dexBonuses = json.path.read (character, ".[?(@.subType == 'dexterity-score')]['fixedValue']")]
-[h: conBonuses = json.path.read (character, ".[?(@.subType == 'constitution-score')]['fixedValue']")]
-[h: intBonuses = json.path.read (character, ".[?(@.subType == 'intelligence-score')]['fixedValue']")]
-[h: wisBonuses = json.path.read (character, ".[?(@.subType == 'wisdom-score')]['fixedValue']")]
-[h: chaBonuses = json.path.read (character, ".[?(@.subType == 'charisma-score')]['fixedValue']")]
+	[h: override = json.path.read (character, "data.overrideStats[" + index + "].value")]
+	[h, if (isNumber (override)): base = override; ""]
+	[h: abilityScoreMap = json.set (abilityScoreMap, ability, base)]
+}]
 
-[h, foreach (strBonus, strBonuses): baseStr = baseStr + strBonus]
-[h, foreach (dexBonus, dexBonuses): baseDex = baseDex + dexBonus]
-[h, foreach (conBonus, conBonuses): baseCon = baseCon + conBonus]
-[h, foreach (intBonus, intBonuses): baseInt = baseInt + intBonus]
-[h, foreach (wisBonus, wisBonuses): baseWis = baseWis + wisBonus]
-[h, foreach (chaBonus, chaBonuses): baseCha = baseCha + chaBonus]
-
-<!-- Get Override stats and replace base w/ those. Apply only non-zero values -->
-[h: overrideStr = json.path.read (character, "data.overrideStats[0].value")]
-[h: overrideDex = json.path.read (character, "data.overrideStats[1].value")]
-[h: overrideCon = json.path.read (character, "data.overrideStats[2].value")]
-[h: overrideInt = json.path.read (character, "data.overrideStats[3].value")]
-[h: overrideWis = json.path.read (character, "data.overrideStats[4].value")]
-[h: overrideCha = json.path.read (character, "data.overrideStats[5].value")]
-
-[h, if (isNumber (overrideStr)): baseStr = overrideStr]
-[h, if (isNumber (overrideDex)): baseDex = overrideDex]
-[h, if (isNumber (overrideCon)): baseCon = overrideCon]
-[h, if (isNumber (overrideInt)): baseInt = overrideInt]
-[h, if (isNumber (overrideWis)): baseWis = overrideWis]
-[h, if (isNumber (overrideCha)): baseCha = overrideCha]
+[h: baseStr = json.get (abilityScoreMap, "strength")]
+[h: baseDex = json.get (abilityScoreMap, "dexterity")]
+[h: baseCon = json.get (abilityScoreMap, "constitution")]
+[h: baseInt = json.get (abilityScoreMap, "intelligence")]
+[h: baseWis = json.get (abilityScoreMap, "wisdom")]
+[h: baseCha = json.get (abilityScoreMap, "charisma")]
 
 [h: attributes = json.set("", "str", baseStr,
 							"strBonus", round (math.floor ((baseStr - 10) / 2)),
@@ -68,5 +47,5 @@
 							"chaBonus", round (math.floor ((baseCha - 10) / 2))
 							)]
 							
-[h: log.debug (attributes)]
+[h: log.debug ("dndb_getAbilities: " + attributes)]
 [h: macro.return = attributes]

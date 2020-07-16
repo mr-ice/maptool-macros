@@ -2,8 +2,8 @@
 <!-- responsibility of calling dndb_getCharJSON -->
 [h: toon = arg(0)]
 
-<!-- AttackJSON constants -->
-[h: ATTACK_JSON = "attackJSON"]
+<!-- attackObj constants -->
+[h: ATTACK_JSON = "attackObj"]
 [h: JSON_NAME = "name"]
 [h: ATK_BONUS = "atkBonus"]
 [h: DMG_BONUS = "dmgBonus"]
@@ -24,7 +24,7 @@
 [h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
 [h: weapons = json.merge (weapons, dndb_getNaturalWeapon (toon))]
 
-[h: attackJson = ""]
+[h: attackObj = "{}"]
 [h, foreach (weapon, weapons), code: {
 	<!-- does not include normal critical dice -->
 	[h: critBonusDice = dndb_getCriticalBonusDice (toon, weapon)]
@@ -34,14 +34,26 @@
 	[h: name = json.get (weapon, "name")]
 	<!-- commas are scary -->
 	[h: name = replace (name, ",", " ")]
-	[h: attackJsonObj = json.set ("", JSON_NAME, name,
-			ATK_BONUS, weaponAtkBonus,
-			DMG_BONUS, weaponDmgBonus,
-			DMG_DIE, json.get (weapon, "dmgDie"),
-			DMG_DICE, json.get (weapon, "dmgDice"),
-			CRIT_BONUS_DICE, critBonus,
-			DMG_TYPE, json.get (weapon, "dmgType"))]
-	[h: attackJson = json.append (attackJson, attackJsonObj)]
+	[h: attackExpression = dnd5e_RollExpression_Attack (name)]
+	[h: attackExpression = dnd5e_RollExpression_setBonus (attackExpression, weaponAtkBonus)]
+	[h: dmgExpression = dnd5e_RollExpression_Damage ()]
+	[h: dmgExpression = dnd5e_RollExpression_setDiceRolled (dmgExpression, json.get (weapon, "dmgDice"))]
+	[h: dmgExpression = dnd5e_RollExpression_setDiceSize (dmgExpression, json.get (weapon, "dmgDie"))]
+	[h: dmgExpression = dnd5e_RollExpression_setBonus (dmgExpression, weaponDmgBonus)]
+	[h: dmgExpression = dnd5e_RollExpression_setOnCritAdd (dmgExpression, critBonus)]
+	[h: dmgExpression = dnd5e_RollExpression_setDamageTypes (dmgExpression, json.get (weapon, "dmgType"))]
+	[h: rollExpressions = json.append ("", attackExpression, dmgExpression)]
+	[h: grantedModifiers = json.get (weapon, "grantedModifiers")]
+	[h, foreach (grantedModifier, grantedModifiers), code: {
+		[h: type = json.get (grantedModifier, "type")]
+		<!-- perform the time-honored, avoid the code nesting limit dance -->
+		[h, if (type == "damage"): 
+				extraDmg = dndb_RollExpression_getExpressionFromModifier (grantedModifier); extraDmg = ""]
+		[h, if (type == "damage"): 
+				rollExpressions = json.append (rollExpressions, extraDmg)]
+	}]
+
+	[h: attackObj = json.set (attackObj, name, rollExpressions)]
 }]
 
-[h: macro.return = attackJson]
+[h: macro.return = attackObj]

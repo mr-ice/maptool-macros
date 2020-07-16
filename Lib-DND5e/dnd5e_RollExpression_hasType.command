@@ -1,13 +1,16 @@
 [h: expression = arg(0)]
 [h: findType = arg(1)]
 [h: IMPLIED_TYPES = json.set ("", 
-					"Damage", json.append ("", "critable"),
+					"Damage", json.append ("", "critable", "damageable"),
 					"Attack", json.append ("", "advantagable"),
 					"Save", json.append ("", "advantagable"),
+					"Save Damage", json.append ("", "saveable", "damageable"),
+					"Save Effect", json.append ("", "saveable"),
 					"Ability", json.append ("", "advantagable"))]
-[h: log.debug ("dnd5e_DiceRoller_hasType: expression = " + expression + "; findType = " + findType)]
-[h: types = json.merge (dnd5e_RollExpression_getExpressionType (expression),
+
+[h: types = json.merge (json.append ("", dnd5e_RollExpression_getExpressionType (expression)),
 						dnd5e_RollExpression_getTypes (expression))]
+
 <!-- add implied types -->
 [h, foreach (type, types), code: {
 	[h: impliedList = json.get (IMPLIED_TYPES, type)]
@@ -18,5 +21,5 @@
 [h, foreach (type, types), code: {
 	[h, if (type == findType): hasType = 1; ""]
 }]
-[h: log.debug ("dnd5e_RollExpression_hasType: hasType = " + hasType)]
+
 [h: macro.return = hasType]

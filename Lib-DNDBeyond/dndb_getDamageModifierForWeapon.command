@@ -37,8 +37,8 @@
 <!-- no qualification checks on Race, yet -->
 [h: raceDamageModifiers = json.path.read (toon, "data.modifiers.race..[?(@.type == '" + bonusType + "')]")]
 [h, foreach (raceDamageModifier, raceDamageModifiers), code: {
-	[h: bonus = json.get (raceDamageModifier, "value"]
-	[h: totalDamageBonus = totalDamageBonus + bonus]
+	[h: bonus = json.get (raceDamageModifier, "value")]
+	[h: totalBonus = totalBonus + bonus]
 }]
 
 <!-- apply item bonuses only if equipped -->

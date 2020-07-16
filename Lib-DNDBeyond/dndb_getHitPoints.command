@@ -43,13 +43,22 @@
 
 <!-- add the class bonuses -->
 [h: totalBonus = raceBonus + totalClassLevelBonus]
-
-<!-- include race and class bonuses -->
 [h: maxHp = baseHp + totalBonus + (json.get (abilities, "conBonus") * totalLevel)]
+[h: log.info ("dndb_getHitPoints: classArry = " + classArry + "
+		baseHp = " + baseHp + "
+		raceBonus = " + raceBonus + "
+		totalBonus = " + totalBonus + "
+		maxHp = " + maxHp)]
+<!-- include race and class bonuses -->
+
 [h: damageTaken = json.path.read (toon, "data.removedHitPoints")]
 [h: temporaryHitPoints = json.path.read (toon, "data.temporaryHitPoints")]
 [h: maxHpModifier = json.path.read (toon, "data.bonusHitPoints")]
 [h: overrideMaxHp = json.path.read (toon, "data.overrideHitPoints")]
+[h: log.info ("dndb_getHitPoints: damageTaken = " + damageTaken + "
+		temporaryHitPoints = " + temporaryHitPoints + "
+		maxHpModifier = " + maxHpModifier + "
+		overrideMaxHp = " + overrideMaxHp)]
 [h, if (maxHpModifier != "" && isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
 [h, if (overrideMaxHp != "" && isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
 

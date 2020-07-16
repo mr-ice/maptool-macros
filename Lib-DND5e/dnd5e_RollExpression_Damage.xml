@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>04e29c41-4744-4dfa-97ed-7e44e5d2e527</macroUUID>
+  <macroUUID>ecce1d5c-15e8-4163-b39e-fe658e62d320</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>101</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_Damage</label>
-  <group>RollExpression</group>
+  <group>RollExpression - Templates</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,10 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns a RollExpression applicable for the a Damage roll, defaulting to 1d6.
+  <toolTip>Returns a RollExpression applicable for the a Damage roll.
 
-(optional) arg (0) = name</toolTip>
+(optional) arg (0) = name
+(optional) arg (1) = rollString</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

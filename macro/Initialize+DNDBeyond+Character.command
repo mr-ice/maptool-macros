@@ -10,6 +10,9 @@
 	"updatePref | 0 | Don't prompt again? | CHECK"));""]
 [h, if (!SKIP_PROMPT): abort (confirm); ""]
 [h, if (updatePref): dnd5e_Preferences_setPreference ("suppressInitPrompt", 1); ""]
+
+[h: dndb_migrateAttackJSON ()]
+
 [h: setProperty ("Character ID", charId)]
 
 [h: basicToon = dndb_buildBasicToon (charId)]

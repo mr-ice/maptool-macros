@@ -18,8 +18,7 @@
 [h: totals = json.append (totals, total)]
 [h: rolls = dnd5e_RollExpression_getRolls (rollExpression)]
 [h: rolls = json.append (rolls, roll)]
-[h, if (bonus > 0): rollString = baseRoll + " + " + bonus; rollString = baseRoll]
-[h, if (bonus < 0): rollString = baseRoll + " - " + (-1 * bonus); ""]
+[h: rollString = dnd5e_RollExpression_getRollString (rollExpression)]
 
 [h: rollExpression = json.set (rollExpression, "rolls", rolls,
 												"roll", roll,

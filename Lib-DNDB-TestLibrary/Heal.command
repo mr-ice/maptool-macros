@@ -1,0 +1,1 @@
+[h, macro('dnd5e_takeHealing@Lib:DnD5e'): '']

@@ -1,0 +1,31 @@
+[h: attackObj = getProperty ("attackJSON")]
+[h, if (encode (attackObj) == ""): return (0, ""); ""]
+<!-- attackJSON is an array of map data. iterate through each map and build an array of
+	RollExpressions for each one -->
+
+[h: attackJsonObjs = getProperty ("attackJSON")]
+[h: attackExpressionJsonObj = "{}"]
+[h, foreach (attackJsonObj, attackJsonObjs), code: {
+	[log.debug ("attackJsonObj: " + attackJsonObj)]
+	[name = json.get (attackJsonObj, "name")]
+	[atkBonus = json.get (attackJsonObj, "atkBonus")]
+	[dmgBonus = json.get (attackJsonObj, "dmgBonus")]
+	[dmgDie = json.get (attackJsonObj, "dmgDie")]
+	[dmgDice = json.get (attackJsonObj, "dmgDice")]
+	[critBonusDice = json.get (attackJsonObj, "critBonusDice")]
+	[dmgType = json.get (attackJsonObj, "dmgType")]
+
+	[attackExpression = dnd5e_RollExpression_Attack (name, atkBonus)]
+	[log.debug ("attackExpression: " + attackExpression)]
+	[damageExpression = dnd5e_RollExpression_Damage ("")]
+	[damageExpression = dnd5e_RollExpression_setDiceRolled (damageExpression, dmgDice)]
+	[damageExpression = dnd5e_RollExpression_setDiceSize (damageExpression, dmgDie)]
+	[damageExpression = dnd5e_RollExpression_setBonus (damageExpression, dmgBonus)]
+	[damageExpression = dnd5e_RollExpression_setOnCritAdd (damageExpression, critBonusDice)]
+	[damageExpression = dnd5e_RollExpression_setDamageTypes (damageExpression, dmgType)]
+	[log.debug ("damageExpression: " + damageExpression)]
+	[rollExpressions = json.append ("", attackExpression, damageExpression)]
+	[attackExpressionJsonObj = json.set (attackExpressionJsonObj, name, rollExpressions)]
+}]
+[h: setProperty ("attackExpressionJSON", attackExpressionJsonObj)]
+[h: setProperty ("attackJSON", "")]

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>TcynGqUeTDu4NuplfGxAOw==</baGUID>
+    <baGUID>HW0/qmw7RDiNQvMYR4ze6A==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>Nyqlvy8zQh2/d5kjjFnKIg==</baGUID>
+    <baGUID>Tt3QO8+YQECB72859KUjmg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>350</x>
-  <y>750</y>
-  <z>10</z>
+  <x>400</x>
+  <y>350</y>
+  <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>200</lastX>
-  <lastY>750</lastY>
+  <lastX>400</lastX>
+  <lastY>500</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>4</x>
-        <y>15</y>
+        <x>8</x>
+        <y>10</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -36,14 +36,14 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>5</x>
-        <y>15</y>
+        <x>8</x>
+        <y>9</y>
         <g>1.0</g>
         <distanceTraveled>1.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>4</x>
-          <y>15</y>
+          <x>8</x>
+          <y>10</y>
           <g>0.0</g>
           <distanceTraveled>0.0</distanceTraveled>
           <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -58,14 +58,14 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>6</x>
-        <y>15</y>
+        <x>8</x>
+        <y>8</y>
         <g>2.0</g>
         <distanceTraveled>2.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>5</x>
-          <y>15</y>
+          <x>8</x>
+          <y>9</y>
           <g>1.0</g>
           <distanceTraveled>1.0</distanceTraveled>
           <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
@@ -81,8 +81,8 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>15</y>
+        <x>8</x>
+        <y>7</y>
         <g>0.0</g>
         <distanceTraveled>3.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
@@ -90,8 +90,8 @@
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>4</x>
-        <y>15</y>
+        <x>8</x>
+        <y>10</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -101,8 +101,8 @@
         <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>15</y>
+        <x>8</x>
+        <y>7</y>
         <g>0.0</g>
         <distanceTraveled>3.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
@@ -151,263 +151,7 @@
   <hasSight>false</hasSight>
   <state>
     <entry>
-      <string>Paralyzed</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Longstrider</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Cross - Blue</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Cross - Red</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Frightened</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Yellow</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Cross - Green</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Petrified</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>Unconcious</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Turquoise</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Prone</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hidden</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wild Shape</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Invisible</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Unconscious</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Green</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Poisoned</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Dead</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Blue</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Helpless</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Freedom of Movement</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Turquoise</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Diseased</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Expeditious Retreat</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Red</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Incapacitated</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Cross - Turquoise</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Blinded</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Entangled</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Restrained</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Orange</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Green</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Turquoise</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Red</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Yellow</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Stunned</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Exhaustion 6</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Confused</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Grappled</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Rage</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Exhaustion 3</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Bloodied</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Exhaustion 2</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Exhaustion 5</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Exhaustion 4</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Haste</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Blessed</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Exhaustion 1</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Fly</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Charmed</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Bardic Inspiration</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Cross - Yellow</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Green</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Faerie Fire</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Yellow</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Stable</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Concentration</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Orange</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Blue</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Red</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Cross - Orange</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Orange</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Deafened</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Blue</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Dying</string>
       <boolean>false</boolean>
     </entry>
   </state>
@@ -483,7 +227,7 @@
         <string>_dnd5e_lastrolledexpression</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"name":"Scimitar","expressionTypes":"Attack","bonus":0,"hasAdvantage":0,"hasDisadvantage":0,"diceSize":20,"diceRolled":1,"output":"Scimitar Attack Roll: 1d20 + 0 = 12 ","rolls":[12],"roll":12,"rollString":"1d20 + 0","total":12,"totals":[12],"outputs":["Scimitar Attack Roll: 1d20 + 0 = 12 "],"allTotal":12},{"diceSize":6,"diceRolled":1,"bonus":1,"expressionTypes":"Damage","output":" Damage Roll: 1d6 + 1 = 4 ","rolls":[3],"roll":3,"rollString":"1d6 + 1","total":4,"totals":[4],"outputs":[" Damage Roll: 1d6 + 1 = 4 "],"allTotal":4}]</value>
+          <value class="string">[{"name":"Rapier Attack","diceSize":"20","diceRolled":"1","hasAdvantage":1,"hasDisadvantage":0,"staticRoll":20,"expressionTypes":"Attack","types":["staticRoll"],"expressions":[{"name":"Bless","diceSize":4,"diceRolled":1,"expressionTypes":"Blessed","output":"Rolled: 4&lt;br&gt;Bless Blessed Roll: 1d4 = 4 ","rolls":[4],"roll":4,"rollString":"1d4","total":4,"totals":[4],"outputs":["Rolled: 4&lt;br&gt;Bless Blessed Roll: 1d4 = 4 "],"allTotal":4}],"description":"&lt;b&gt;Advantage:&lt;/b&gt; [20,20], Actual: 20&lt;br&gt;Blessed (+4)","output":"&lt;b&gt;Advantage:&lt;/b&gt; [20,20], Actual: 20&lt;br&gt;Blessed (+4)&lt;br&gt;Rolled: 20&lt;br&gt;Rapier Attack Attack Roll: 1d20 + 1d4 = 24 ","rolls":[20,20],"roll":20,"rollString":"1d20 + 1d4","total":24,"totals":[24,24],"outputs":["&lt;b&gt;Advantage:&lt;/b&gt; [20,20], Actual: 20&lt;br&gt;Blessed (+4)&lt;br&gt;Rolled: 20&lt;br&gt;Rapier Attack Attack Roll: 1d20 + 1d4 = 24 "],"allTotal":48},{"name":"Damage","diceSize":"8","diceRolled":"1","onCritAdd":3,"damageTypes":["Piercing","Magic"],"expressionTypes":["Damage"],"bonus":6,"output":"Critical Damage (+14)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Rolled: 4&lt;br&gt;Damage Damage Roll: 1d8 + 6 + 3d8 = 24 Piercing,Magic","rolls":[4],"roll":4,"rollString":"1d8 + 6 + 3d8","total":24,"totals":[24],"expressions":[{"name":"Critical+Damage","diceSize":"8","diceRolled":3,"onCritAdd":3,"damageTypes":["Piercing","Magic"],"expressionTypes":"Critical Damage","bonus":0,"rollString":"3d8","expressions":[],"output":"Rolled: 14&lt;br&gt;Critical Damage Critical Damage Roll: 3d8 = 14 Piercing,Magic","rolls":[14],"roll":14,"total":14,"totals":[14],"outputs":["Rolled: 14&lt;br&gt;Critical Damage Critical Damage Roll: 3d8 = 14 Piercing,Magic"],"allTotal":14}],"description":"Critical Damage (+14)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;","outputs":["Critical Damage (+14)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Rolled: 4&lt;br&gt;Damage Damage Roll: 1d8 + 6 + 3d8 = 24 Piercing,Magic"],"allTotal":24}]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -561,6 +305,13 @@
         <string>history</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>History</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>investigation-gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Investigation-GM</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -644,17 +395,17 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>sleight of hand</string>
+        <string>description</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Sleight of Hand</key>
+          <key>description</key>
+          <value class="string">Critical Damage (+14)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>description</string>
+        <string>sleight of hand</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>description</key>
-          <value class="string"/>
+          <key>Sleight of Hand</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1198,19 +949,99 @@
     </entry>
     <entry>
       <int>105</int>
-      <macro name="dnd5e_deathSavesCSS"/>
+      <macro name="dnd5e_AttackEditor"/>
     </entry>
     <entry>
       <int>106</int>
-      <macro name="dnd5e_deathSaves"/>
-    </entry>
-    <entry>
-      <int>107</int>
-      <macro name="dnd5e_deathSaveSubmit"/>
+      <macro name="dnd5e_Editor_CSS"/>
     </entry>
     <entry>
       <int>108</int>
+      <macro name="dnd5e_Editor_getAttackDamageHtml"/>
+    </entry>
+    <entry>
+      <int>109</int>
+      <macro name="dnd5e_RollExpression_findExpressionByType"/>
+    </entry>
+    <entry>
+      <int>111</int>
+      <macro name="dnd5e_Editor_getAdditionalDamageHtml"/>
+    </entry>
+    <entry>
+      <int>112</int>
+      <macro name="dnd5e_AttackEditor_processor"/>
+    </entry>
+    <entry>
+      <int>113</int>
+      <macro name="dnd5e_RollExpression_SaveDamage"/>
+    </entry>
+    <entry>
+      <int>114</int>
+      <macro name="dnd5e_RollExpression_getSaveDC"/>
+    </entry>
+    <entry>
+      <int>115</int>
+      <macro name="dnd5e_RollExpression_setSaveDC"/>
+    </entry>
+    <entry>
+      <int>116</int>
+      <macro name="dnd5e_RollExpression_getSaveAbility"/>
+    </entry>
+    <entry>
+      <int>117</int>
+      <macro name="dnd5e_RollExpression_setSaveAbility"/>
+    </entry>
+    <entry>
+      <int>118</int>
+      <macro name="dnd5e_RollExpression_getSaveEffect"/>
+    </entry>
+    <entry>
+      <int>119</int>
+      <macro name="dnd5e_RollExpression_setSaveEffect"/>
+    </entry>
+    <entry>
+      <int>120</int>
+      <macro name="dnd5e_RollExpression_getSaveEffectMultiplier"/>
+    </entry>
+    <entry>
+      <int>121</int>
+      <macro name="dnd5e_RollExpression_setSaveEffectMultiplier"/>
+    </entry>
+    <entry>
+      <int>122</int>
+      <macro name="dnd5e_Editor_buildAttackHTML"/>
+    </entry>
+    <entry>
+      <int>123</int>
+      <macro name="dnd5e_Macro_rollAttack"/>
+    </entry>
+    <entry>
+      <int>125</int>
+      <macro name="dnd5e_deathSavesCSS"/>
+    </entry>
+    <entry>
+      <int>126</int>
+      <macro name="dnd5e_deathSaves"/>
+    </entry>
+    <entry>
+      <int>127</int>
+      <macro name="dnd5e_deathSaveSubmit"/>
+    </entry>
+    <entry>
+      <int>128</int>
       <macro name="dnd5e_done"/>
+    </entry>
+    <entry>
+      <int>129</int>
+      <macro name="dnd5e_DiceRoller_saveDamageRoll"/>
+    </entry>
+    <entry>
+      <int>130</int>
+      <macro name="dnd5e_RollExpression_SaveEffect"/>
+    </entry>
+    <entry>
+      <int>131</int>
+      <macro name="dnd5e_DiceRoller_saveEffectRoll"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

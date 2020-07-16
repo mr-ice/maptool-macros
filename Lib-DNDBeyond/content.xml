@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>DkNZ0VwBRMebytG29rbKyQ==</baGUID>
+    <baGUID>92DgOl8ISV6v2Eaocw18Uw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>jHEbviwZRjyk0yu63OAeWg==</baGUID>
+    <baGUID>AovaTgzwQhmqpIOTTTUxHw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>500</x>
-  <y>750</y>
-  <z>17</z>
+  <x>400</x>
+  <y>500</y>
+  <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>400</lastX>
+  <lastY>500</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>8</x>
+        <y>10</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>8</x>
+        <y>10</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -1040,10 +1060,6 @@
       <macro name="Make+Attack"/>
     </entry>
     <entry>
-      <int>56</int>
-      <macro name="Attack+Config"/>
-    </entry>
-    <entry>
       <int>57</int>
       <macro name="dndb_getHitPoints"/>
     </entry>
@@ -1170,6 +1186,30 @@
     <entry>
       <int>107</int>
       <macro name="dndb_Preferences_setRegistry"/>
+    </entry>
+    <entry>
+      <int>110</int>
+      <macro name="dndb_migrateAttackJSON"/>
+    </entry>
+    <entry>
+      <int>111</int>
+      <macro name="dndb_RollExpression_getExpressionFromModifier"/>
+    </entry>
+    <entry>
+      <int>112</int>
+      <macro name="dndb_BasicToon_getAttackExpression"/>
+    </entry>
+    <entry>
+      <int>113</int>
+      <macro name="dndb_BasicToon_setAttackExpression"/>
+    </entry>
+    <entry>
+      <int>114</int>
+      <macro name="Attack+Editor"/>
+    </entry>
+    <entry>
+      <int>115</int>
+      <macro name="dndb_Array_max"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
