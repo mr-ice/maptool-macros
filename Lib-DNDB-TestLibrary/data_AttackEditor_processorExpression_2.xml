@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6e5ecf43-82d7-4cf9-94d0-f1f1bd61dbec</macroUUID>
+  <macroUUID>c58b193f-9e4a-4563-85ac-585338a52601</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>25</index>
+  <index>66</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndbt_Test_KnownToons</label>
-  <group>Tests - BasicToon</group>
+  <label>data_AttackEditor_processorExpression_2</label>
+  <group>Data</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Returns the JSON object that should be built by the processor for test #1</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,15 +1,15 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6e5ecf43-82d7-4cf9-94d0-f1f1bd61dbec</macroUUID>
+  <macroUUID>312dd315-2754-4429-a822-18c364f443a5</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>25</index>
+  <index>63</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndbt_Test_KnownToons</label>
-  <group>Tests - BasicToon</group>
+  <label>dndbt_Test_AttackEditorProcessor_testRollBuild_2</label>
+  <group>Tests - Attack Editor</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>

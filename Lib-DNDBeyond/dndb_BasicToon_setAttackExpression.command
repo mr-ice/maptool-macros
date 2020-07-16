@@ -2,6 +2,7 @@
 [h, if (json.type (attackObj) != "OBJECT"), code: {
 	[log.error ("dndb_BasicToon_setAttackExpression: invalid attack expression provided; aborting")]
 	[log.error ("id: " + currentToken()]
+	[log.error ("attackObj: " + json.indent (attackObj))]
 	[macro.return = attackObj]
 	[return (0)]
 }]

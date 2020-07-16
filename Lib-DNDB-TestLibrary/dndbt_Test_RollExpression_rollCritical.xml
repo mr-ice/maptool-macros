@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6e5ecf43-82d7-4cf9-94d0-f1f1bd61dbec</macroUUID>
+  <macroUUID>a6641176-8593-4f63-ab23-64e8ba96afeb</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>25</index>
+  <index>82</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndbt_Test_KnownToons</label>
-  <group>Tests - BasicToon</group>
+  <label>dndbt_Test_RollExpression_rollCritical</label>
+  <group>Tests - RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Asserts upon critical, only Damage is critted and not Save Damage</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

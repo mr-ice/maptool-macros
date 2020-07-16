@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6e5ecf43-82d7-4cf9-94d0-f1f1bd61dbec</macroUUID>
+  <macroUUID>1f5b9e0a-a531-45fd-acc3-aa3df004bb84</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>25</index>
+  <index>65</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndbt_Test_KnownToons</label>
-  <group>Tests - BasicToon</group>
+  <label>data_AttackEditor_processorParams_2</label>
+  <group>Data</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>arg (0) = callback macro</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

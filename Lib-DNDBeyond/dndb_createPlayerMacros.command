@@ -13,7 +13,7 @@
 					"color", "red",
 					"fontColor", "black",
 					"sortBy", "1",
-					"command", "[macro('Attack Editor@Lib:DnD5e'): '']"),
+					"command", "[macro('Attack Editor@Lib:DnDBeyond'): '']"),
 
 			json.set (basicCfg, "name", "Saving Throw",
 					"color", "black",
