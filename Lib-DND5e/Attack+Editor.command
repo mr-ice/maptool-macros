@@ -1,5 +1,4 @@
 [h: log.debug ("Attack Editor: args = " + json.indent (macro.args))]
-[h: ATTACK_JSON = "attackExpressionJSON"]
 [h: LAST_ATTACK_SELECTION = "lastAttackSelection"]
 [h: lastAttackSelection = getProperty (LAST_ATTACK_SELECTION)]
 [r, if (json.length (macro.args) > 0), code: {

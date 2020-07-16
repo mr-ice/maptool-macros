@@ -1,4 +1,3 @@
-[h: ATTACK_JSON = "attackExpressionJSON"]
 [h: inputObj = arg (0)]
 [h: selectedAttack = json.get (inputObj, "selectedAttack")]
 [h: advDisadv = json.get (inputObj, "advantageDisadvantage")]
