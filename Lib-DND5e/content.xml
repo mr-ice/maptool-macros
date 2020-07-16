@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>IjyWbDDeROSZs4G7r7TT6Q==</baGUID>
+    <baGUID>HW0/qmw7RDiNQvMYR4ze6A==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,31 +14,98 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>350</x>
-  <y>750</y>
-  <z>30</z>
+  <x>400</x>
+  <y>350</y>
+  <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>350</lastX>
-  <lastY>750</lastY>
+  <lastX>400</lastX>
+  <lastY>500</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>15</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>10</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>9</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>8</x>
+          <y>10</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>2.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>8</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>8</x>
+          <y>9</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>2.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>1.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>8</x>
+        <y>7</y>
+        <g>0.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>7</x>
-        <y>15</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>10</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>8</x>
+        <y>7</y>
+        <g>0.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -947,10 +1014,6 @@
     <entry>
       <int>123</int>
       <macro name="dnd5e_Macro_rollAttack"/>
-    </entry>
-    <entry>
-      <int>124</int>
-      <macro name="Attack+Editor"/>
     </entry>
     <entry>
       <int>125</int>
