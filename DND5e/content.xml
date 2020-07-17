@@ -748,15 +748,93 @@
       </net.rptools.maptool.model.SightType>
     </entry>
     <entry>
-      <string>Darkvision</string>
+      <string>Darkvision 150</string>
       <net.rptools.maptool.model.SightType>
-        <name>Darkvision</name>
+        <name>Darkvision 150</name>
+        <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lightList class="linked-list">
+            <net.rptools.maptool.model.Light>
+              <facingOffset>0.0</facingOffset>
+              <radius>150.0</radius>
+              <arcAngle>90.0</arcAngle>
+              <shape>CIRCLE</shape>
+              <isGM>false</isGM>
+              <ownerOnly>false</ownerOnly>
+            </net.rptools.maptool.model.Light>
+          </lightList>
+          <lumens>0</lumens>
+          <scaleWithToken>true</scaleWithToken>
+        </personalLightSource>
+        <shape>CIRCLE</shape>
+        <arc>90</arc>
+        <distance>0.0</distance>
+        <offset>0</offset>
+        <scaleWithToken>true</scaleWithToken>
+      </net.rptools.maptool.model.SightType>
+    </entry>
+    <entry>
+      <string>Darkvision 120</string>
+      <net.rptools.maptool.model.SightType>
+        <name>Darkvision 120</name>
+        <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lightList class="linked-list">
+            <net.rptools.maptool.model.Light>
+              <facingOffset>0.0</facingOffset>
+              <radius>120.0</radius>
+              <arcAngle>90.0</arcAngle>
+              <shape>CIRCLE</shape>
+              <isGM>false</isGM>
+              <ownerOnly>false</ownerOnly>
+            </net.rptools.maptool.model.Light>
+          </lightList>
+          <lumens>0</lumens>
+          <scaleWithToken>true</scaleWithToken>
+        </personalLightSource>
+        <shape>CIRCLE</shape>
+        <arc>90</arc>
+        <distance>0.0</distance>
+        <offset>0</offset>
+        <scaleWithToken>true</scaleWithToken>
+      </net.rptools.maptool.model.SightType>
+    </entry>
+    <entry>
+      <string>Darkvision 60</string>
+      <net.rptools.maptool.model.SightType>
+        <name>Darkvision 60</name>
         <multiplier>1.0</multiplier>
         <personalLightSource>
           <lightList class="linked-list">
             <net.rptools.maptool.model.Light>
               <facingOffset>0.0</facingOffset>
               <radius>60.0</radius>
+              <arcAngle>90.0</arcAngle>
+              <shape>CIRCLE</shape>
+              <isGM>false</isGM>
+              <ownerOnly>false</ownerOnly>
+            </net.rptools.maptool.model.Light>
+          </lightList>
+          <lumens>0</lumens>
+          <scaleWithToken>true</scaleWithToken>
+        </personalLightSource>
+        <shape>CIRCLE</shape>
+        <arc>90</arc>
+        <distance>0.0</distance>
+        <offset>0</offset>
+        <scaleWithToken>true</scaleWithToken>
+      </net.rptools.maptool.model.SightType>
+    </entry>
+    <entry>
+      <string>Darkvision 30</string>
+      <net.rptools.maptool.model.SightType>
+        <name>Darkvision 30</name>
+        <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lightList class="linked-list">
+            <net.rptools.maptool.model.Light>
+              <facingOffset>0.0</facingOffset>
+              <radius>30.0</radius>
               <arcAngle>90.0</arcAngle>
               <shape>CIRCLE</shape>
               <isGM>false</isGM>
@@ -785,6 +863,32 @@
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>10.0</distance>
+        <offset>0</offset>
+        <scaleWithToken>true</scaleWithToken>
+      </net.rptools.maptool.model.SightType>
+    </entry>
+    <entry>
+      <string>Darkvision 90</string>
+      <net.rptools.maptool.model.SightType>
+        <name>Darkvision 90</name>
+        <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lightList class="linked-list">
+            <net.rptools.maptool.model.Light>
+              <facingOffset>0.0</facingOffset>
+              <radius>90.0</radius>
+              <arcAngle>90.0</arcAngle>
+              <shape>CIRCLE</shape>
+              <isGM>false</isGM>
+              <ownerOnly>false</ownerOnly>
+            </net.rptools.maptool.model.Light>
+          </lightList>
+          <lumens>0</lumens>
+          <scaleWithToken>true</scaleWithToken>
+        </personalLightSource>
+        <shape>CIRCLE</shape>
+        <arc>90</arc>
+        <distance>0.0</distance>
         <offset>0</offset>
         <scaleWithToken>true</scaleWithToken>
       </net.rptools.maptool.model.SightType>
