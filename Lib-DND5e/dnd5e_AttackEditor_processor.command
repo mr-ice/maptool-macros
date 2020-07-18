@@ -10,8 +10,6 @@
 	[closeDialog ("Attack Editor")]
 	[abort (0)]
 }; {""}]
-
-[h: advDisadv = json.get (inputArgs, "advDisadvantage")]
 <!-- Well capture the currently selected attack based off of the action selected. For now, none -->
 [h: selectedAttack = json.get (inputArgs, "activeAttack")]
 
@@ -108,7 +106,7 @@
 	<!-- ampersand gets clobbered on transmission, avoid -->
 	[h, if (actionButton == "Save & Attack"): actionButton = "SaveAttack"; ""]
 	[h: retObj = json.set ("", "action", actionButton, 
-							   "advantageDisadvantage", advDisadv,
+							   "advantageDisadvantage", "Normal",
 							   "saveAttackAsMacro", saveAttackAsMacro,
 							   "selectedAttack", selectedAttack,
 							   "attackObj", attackObj)]

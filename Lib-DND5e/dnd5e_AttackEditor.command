@@ -78,11 +78,6 @@ function openAttack(evt, attackName) {
 
 </div>
 }]
-<div>
-  <label>Normal<input type="radio" name="advDisadvantage" value="Normal" checked="true"></label>
-  <label>Advantage<input type="radio" name="advDisadvantage" value="Advantage"></label>
-  <label>Disadvantage<input type="radio" name="advDisadvantage" value="Disadvantage"></label>
-</div>
 <input name="actionButton" class="button" value="Save & Attack" type="submit" />
 <input name="actionButton" class="button" value="Save Only" type="submit" />
 <input name="actionButton" class="button" value="Cancel" type="submit" />
