@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8a57b300-b5d8-4cda-b32b-9078a7cf7c0f</macroUUID>
-  <saveLocation>CampaignPanel</saveLocation>
-  <index>2</index>
-  <colorKey>orange</colorKey>
+  <macroUUID>00ad71c6-d870-4c21-b347-24e4f36667ad</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>118</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Quick Update</label>
-  <group>DNDBeyond</group>
+  <label>dndb_getResistances</label>
+  <group>Character</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Refreshes AC, Hitpoints, and Speed</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

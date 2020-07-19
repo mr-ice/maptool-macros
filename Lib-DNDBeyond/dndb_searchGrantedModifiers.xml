@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d5713908-6e87-45a9-a9ce-6b835b968a77</macroUUID>
+  <macroUUID>8c23c716-3283-4c21-a883-edf2a2eb8195</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>38</index>
   <colorKey>default</colorKey>
@@ -15,21 +15,21 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Searches the data.modifier object for all modifiers granted by classes, backgrounds, feats, conditions, race, and equipped items.
-
-arg(0) = 
-{
-  "object": "toon",
-  "property": "fixedValue",
-  "subType": "ability-checks",
-  "type": "expertise"
-}
-
-Within the JSON, the "object" parameter is required. It must be a full character JSON.
-
-"property" is a reserved parameter that indicates the values to return. If "property" is not provided, the full entity is returned for each match.
-
-All other key-value pairs are used as search terms.</toolTip>
+  <toolTip>&lt;html&gt;Searches the data.modifier object for all modifiers granted by classes, backgrounds, feats, conditions, race, and equipped items.&lt;br&gt;
+&lt;br&gt;
+arg(0) =&lt;br&gt; 
+{&lt;br&gt;
+  "object": "toon",&lt;br&gt;
+  "property": "fixedValue",&lt;br&gt;
+  "subType": "ability-checks",&lt;br&gt;
+  "type": "expertise"&lt;br&gt;
+}&lt;br&gt;
+&lt;br&gt;
+Within the JSON, the "object" parameter is required. It must be a full character JSON.&lt;br&gt;
+&lt;br&gt;
+"property" is a reserved parameter that indicates the values to return. If "property" is not provided, the full entity is returned for each match.&lt;br&gt;
+&lt;br&gt;
+All other key-value pairs are used as search terms.&lt;br&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

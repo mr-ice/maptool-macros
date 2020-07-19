@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>92DgOl8ISV6v2Eaocw18Uw==</baGUID>
+    <baGUID>vz1JYHpDQpK0re1kaDS29A==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,34 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>400</x>
-  <y>500</y>
+  <x>500</x>
+  <y>700</y>
   <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
   <lastX>400</lastX>
   <lastY>500</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>10</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>10</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -1210,6 +1190,22 @@
     <entry>
       <int>115</int>
       <macro name="dndb_Array_max"/>
+    </entry>
+    <entry>
+      <int>116</int>
+      <macro name="dndb_BasicToon_getClasses"/>
+    </entry>
+    <entry>
+      <int>117</int>
+      <macro name="dndb_getLanguage"/>
+    </entry>
+    <entry>
+      <int>118</int>
+      <macro name="dndb_getResistances"/>
+    </entry>
+    <entry>
+      <int>119</int>
+      <macro name="dndb_getImmunities"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

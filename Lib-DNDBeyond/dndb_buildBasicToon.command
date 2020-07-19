@@ -27,6 +27,10 @@
 [h: initiative = dndb_getInitiative (toon)]
 [h: basicToon = json.set (basicToon, "init", initiative)]
 
+[h: log.info ("dndb_getBasic: Language")]
+[h: languageArray = dndb_getLanguage (toon)]
+[h: basicToon = json.set (basicToon, "language", languageArray)]
+
 [h: log.info ("Building Armor Class")]
 [h: basicToon = json.set (basicToon, "armorClass", dndb_getAC (toon))]
 
