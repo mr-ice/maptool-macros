@@ -1,7 +1,7 @@
 [h: inputObj = arg (0)]
 [h: selectedAttack = json.get (inputObj, "selectedAttack")]
 [h: advDisadv = json.get (inputObj, "advantageDisadvantage")]
-[h: attackObj = dndb_BasicToon_getAttackExpression ()]
+[h: attackObj = dnd5e_AttackEditor_getAttackExpression ()]
 [h: log.debug ("rollAttack: attackObj = " + attackObj)]
 [h: rollExpressions = json.get (attackObj, selectedAttack)]
 [h, if (advDisadv == "Advantage"): hasAdvantage = 1; hasAdvantage = 0]

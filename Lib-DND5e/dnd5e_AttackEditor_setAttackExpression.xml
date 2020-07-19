@@ -1,21 +1,24 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>bb3fbbc9-a927-4f4b-8dbc-6aa3b5f0b916</macroUUID>
-  <saveLocation>CampaignPanel</saveLocation>
-  <index>5</index>
-  <colorKey>navy</colorKey>
+  <macroUUID>d48ffde7-bf9a-4171-b3b9-be58f1480254</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>141</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Create Attack Roll Macro</label>
-  <group>D&amp;D 5e</group>
+  <label>dnd5e_AttackEditor_setAttackExpression</label>
+  <group>RollExpression - Editor</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
-  <fontColorKey>white</fontColorKey>
-  <fontSize>1.10em</fontSize>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Deprecated. Use Attack Editor instead.</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Persists the attack expression associted to the token. Key names are stored encoded and this macro encodes them for convenience. Returns the object with encoded keys.
+
+arg (0) =  attackObj with decoded keys
+returns attackObj with encoded keys</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

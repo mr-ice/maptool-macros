@@ -12,7 +12,6 @@
 					"incapacitated", "Can't move or speak",
 					"failsStrDex", "Fails Strength and Dex saves",
 					"autoCrit", "Attackers within 5ft score critical",
-					"_poisonImmunity", "Immune to poison, disease",
 					"abilityDis", "Ability checks have disadvantage",
 					"crawlOnly", "Can only crawl",
 					"dexDis", "Disadvantage on Dex save")]

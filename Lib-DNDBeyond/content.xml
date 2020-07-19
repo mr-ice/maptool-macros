@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>AovaTgzwQhmqpIOTTTUxHw==</baGUID>
+    <baGUID>/KogFz32SECvnt7RJx1tXQ==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -20,8 +20,8 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>400</lastX>
-  <lastY>500</lastY>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -1036,10 +1036,6 @@
       <macro name="dndb_mergeAttackJson"/>
     </entry>
     <entry>
-      <int>55</int>
-      <macro name="Make+Attack"/>
-    </entry>
-    <entry>
       <int>57</int>
       <macro name="dndb_getHitPoints"/>
     </entry>
@@ -1176,18 +1172,6 @@
       <macro name="dndb_RollExpression_getExpressionFromModifier"/>
     </entry>
     <entry>
-      <int>112</int>
-      <macro name="dndb_BasicToon_getAttackExpression"/>
-    </entry>
-    <entry>
-      <int>113</int>
-      <macro name="dndb_BasicToon_setAttackExpression"/>
-    </entry>
-    <entry>
-      <int>114</int>
-      <macro name="Attack+Editor"/>
-    </entry>
-    <entry>
       <int>115</int>
       <macro name="dndb_Array_max"/>
     </entry>
@@ -1206,6 +1190,10 @@
     <entry>
       <int>119</int>
       <macro name="dndb_getImmunities"/>
+    </entry>
+    <entry>
+      <int>120</int>
+      <macro name="Make+Attack"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
