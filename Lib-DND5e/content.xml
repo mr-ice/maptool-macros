@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>HW0/qmw7RDiNQvMYR4ze6A==</baGUID>
+    <baGUID>VtL5uhEBRQqdL1UactzXDQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>Tt3QO8+YQECB72859KUjmg==</baGUID>
+    <baGUID>Xi/EpsqSTimEkzeeAUdGLg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>400</x>
-  <y>350</y>
+  <x>650</x>
+  <y>700</y>
   <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>400</lastX>
-  <lastY>500</lastY>
+  <lastX>500</lastX>
+  <lastY>700</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>8</x>
-        <y>10</y>
+        <x>10</x>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -36,14 +36,14 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>8</x>
-        <y>9</y>
+        <x>11</x>
+        <y>14</y>
         <g>1.0</g>
         <distanceTraveled>1.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>8</x>
-          <y>10</y>
+          <x>10</x>
+          <y>14</y>
           <g>0.0</g>
           <distanceTraveled>0.0</distanceTraveled>
           <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -58,14 +58,14 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>8</x>
-        <y>8</y>
+        <x>12</x>
+        <y>14</y>
         <g>2.0</g>
         <distanceTraveled>2.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>8</x>
-          <y>9</y>
+          <x>11</x>
+          <y>14</y>
           <g>1.0</g>
           <distanceTraveled>1.0</distanceTraveled>
           <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
@@ -81,8 +81,8 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>7</y>
+        <x>13</x>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>3.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
@@ -90,8 +90,8 @@
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>8</x>
-        <y>10</y>
+        <x>10</x>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -101,8 +101,8 @@
         <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>7</y>
+        <x>13</x>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>3.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
@@ -1042,6 +1042,34 @@
     <entry>
       <int>131</int>
       <macro name="dnd5e_DiceRoller_saveEffectRoll"/>
+    </entry>
+    <entry>
+      <int>132</int>
+      <macro name="dnd5e_Property_wrapText"/>
+    </entry>
+    <entry>
+      <int>133</int>
+      <macro name="dnd5e_Property_getConditionsStat"/>
+    </entry>
+    <entry>
+      <int>134</int>
+      <macro name="dnd5e_getDMSkills"/>
+    </entry>
+    <entry>
+      <int>135</int>
+      <macro name="dnd5e_Property_getConditionEffects"/>
+    </entry>
+    <entry>
+      <int>136</int>
+      <macro name="dnd5e_Property_getLanguages"/>
+    </entry>
+    <entry>
+      <int>137</int>
+      <macro name="dnd5e_Property_getRaceClass"/>
+    </entry>
+    <entry>
+      <int>138</int>
+      <macro name="dnd5e_Property_getDefenses"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

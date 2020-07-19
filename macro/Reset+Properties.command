@@ -1,3 +1,6 @@
+[h: tokenId = getSelected()]
+[h: log.debug ("tokenId: " + tokenId)]
+[h: switchToken (tokenId)]
 [h: SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
 [h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
 [h: basicToon = dndb_getBasicToon ()]
@@ -39,8 +42,14 @@
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
 [h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
 
+[h: setProperty ("Resistances", json.toList (json.get (basicToon, "resistances")))]
+[h: setProperty ("Immunities", json.toList (json.get (basicToon, "immunities")))]
+
 <!-- Senses -->
 [h: dndb_applyVision (basicToon)]
+
+<!-- Languages -->
+[h: setProperty ("Languages", json.toList (json.get (basicToon, "language")))]
 
 <!-- Health -->
 [h: dndb_applyHealth ()]
@@ -64,7 +73,11 @@
 [h: skills = json.get (basicToon, "skills")]
 [h, foreach (skill, skills): setProperty (json.get (skill, "name"), json.get (skill, "totalBonus"))]
 
+[h: alignment = json.get (basicToon, "alignment")]
+[h: setProperty ("Alignment", alignment)]
 
+[h: setProperty ("Race", json.get (basicToon, "race"))]
+[h: setProperty ("Classes", dndb_BasicToon_getClasses ())]
 
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]

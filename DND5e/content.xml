@@ -1,6 +1,10 @@
 <net.rptools.maptool.model.CampaignProperties>
   <tokenTypeMap>
     <entry>
+      <string></string>
+      <list/>
+    </entry>
+    <entry>
       <string>Basic</string>
       <list>
         <net.rptools.maptool.model.TokenProperty>
@@ -9,6 +13,40 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Race</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Classes</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_raceClass</name>
+          <shortName>Race/Class</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getRaceClass()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Languages</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_languages</name>
+          <shortName>Languages</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getLanguages ()]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Strength</name>
@@ -90,34 +128,62 @@
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>HP</name>
-          <highPriority>true</highPriority>
-          <ownerOnly>true</ownerOnly>
-          <gmOnly>true</gmOnly>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>MaxHP</name>
-          <highPriority>true</highPriority>
-          <ownerOnly>true</ownerOnly>
-          <gmOnly>true</gmOnly>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>TempHP</name>
-          <highPriority>true</highPriority>
-          <ownerOnly>true</ownerOnly>
-          <gmOnly>true</gmOnly>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>AC</name>
+          <name>_health</name>
+          <shortName>HP</shortName>
           <highPriority>true</highPriority>
           <ownerOnly>true</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>Hp: {HP}; Mx: {MaxHP}; Tmp: {TempHP}</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>AC</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Resistances</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Immunities</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_defenses</name>
+          <shortName>Defenses</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>true</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getDefenses()]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Initiative</name>
           <shortName>Init</shortName>
-          <highPriority>true</highPriority>
+          <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
-          <gmOnly>true</gmOnly>
+          <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Strength Save</name>
@@ -212,7 +278,14 @@
           <highPriority>true</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[h:theList = getTokenStates()] [r, foreach (item, theList, &quot;&quot;):if(getState(item), item + &quot;, &quot;, &quot;&quot;)]</defaultValue>
+          <defaultValue>[r: dnd5e_Property_getConditionsStat()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Effects</name>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getConditionEffects()]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Acrobatics</name>
@@ -329,28 +402,12 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Perception-GM</name>
-          <shortName>Perception</shortName>
+          <name>_DM-Skills</name>
+          <shortName>Skills</shortName>
           <highPriority>true</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>true</gmOnly>
-          <defaultValue>[r: dnd5e_getPerceptionStat()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Insight-GM</name>
-          <shortName>Insight</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>true</gmOnly>
-          <defaultValue>[r: dnd5e_getInsightStat()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Investigation-GM</name>
-          <shortName>Investigation</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>true</gmOnly>
-          <defaultValue>[r: dnd5e_getInvestigationStat()]</defaultValue>
+          <defaultValue>[r: dnd5e_getDMSkills()]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
       </list>
     </entry>
