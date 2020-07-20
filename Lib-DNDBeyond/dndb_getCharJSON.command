@@ -9,5 +9,6 @@
 [h, if (charAt > -1): charId = substring (charId, charAt + 1)]
 
 [h: url = BASE_URL + charId]
+[h: log.info (getMacroName() + ": url = " + url)]
 [h: character = REST.get(url)]
 [h: macro.return = character]

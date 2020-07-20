@@ -20,7 +20,7 @@
 [h: basicToon = dndb_buildBasicToon (charId)]
 
 [h, token (tokenId): setProperty ("dndb_BasicToon", basicToon)]
-[h, token (tokenId): setName (json.get(basicToon, "name"))]
+[h, token (tokenId): dndb_BasicToon_setTokenName ()]
 [h, token (tokenId): setPC ()]
 
 [h, macro ("Reset Properties@this"): "1"]

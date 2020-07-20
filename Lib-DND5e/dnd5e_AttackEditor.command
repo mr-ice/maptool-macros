@@ -73,10 +73,9 @@ function openAttack(evt, attackName) {
   <input name="duplicateAttack" class="button" value="Duplicate Attack" type="submit"/>
 </div>
 
-[r: dnd5e_AttackEditor_getMacroHtml ()]
-
 </div>
 }]
+[r: dnd5e_AttackEditor_getMacroHtml ()]
 <div>
   <label>Normal<input type="radio" name="advDisadvantage" value="Normal" checked="true"></label>
   <label>Advantage<input type="radio" name="advDisadvantage" value="Advantage"></label>
