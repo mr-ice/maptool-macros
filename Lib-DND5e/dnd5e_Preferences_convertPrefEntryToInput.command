@@ -4,8 +4,8 @@
 [h: log.debug ("dnd5e_Preferences_convertPrefEntryToInput: prefEntry = " + prefEntry + "; prefObj = " + prefObj)]
 [h: key = json.get (prefEntry, "key")]
 [h: prefValue = json.get (prefObj, key)]
-[h: inputValue = prefValue]
 [h: entryValue = json.get (prefEntry, "value")]
+[h, if (encode (prefValue) == ""): inputValue = entryValue ; inputValue = prefValue]
 [h: entryType = json.get (prefEntry, "type")]
 [h: opts = json.get (prefEntry, "opts")]
 
@@ -18,4 +18,5 @@
 <!-- heres the rub... if its a text or a check, just insert the value. If its a list, sigh... -->
 [h: inputString = key + " | " + inputValue + " | " + json.get (prefEntry, "prompt") + " | " + 
 				json.get (prefEntry, "type") + " | " + opts]
+[h: log.debug (getMacroName() + ": inputString = " + inputString)]
 [h: macro.return = inputString]

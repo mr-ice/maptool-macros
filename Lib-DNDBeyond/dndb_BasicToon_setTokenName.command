@@ -1,0 +1,18 @@
+[h: basicToon = dndb_getBasicToon()]
+[h: format = dnd5e_Preferences_getPreference ("tokenNameFormat")]
+[h: other = dnd5e_Preferences_getPreference ("tokenNameOther")]
+[h: fullName = json.get (basicToon, "name")]
+[h: tokenName = fullName]
+[h, if (format == "Other"): tokenName = other; ""]
+[h: words = json.fromList (fullName, " ")]
+[h: maxIndex = json.length (words) - 1]
+[h: index = -1]
+[h, if (format == "First"): index = 0; ""]
+[h, if (format == "Second"): index = 1; ""]
+[h, if (format == "Third"): index = 2; ""]
+[h, if (index > -1), code: {
+	[if (index > maxIndex): index = maxIndex; ""]
+	[tokenName = json.get (words, index)]
+}]
+
+[h: setName (tokenName)]
