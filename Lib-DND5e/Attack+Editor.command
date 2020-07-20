@@ -16,11 +16,13 @@
 	[h: currentMacros = getMacros()]
 	[h, foreach (currentMacro, currentMacros), if (currentMacro == selectedAttack): saveAttackAsMacro = 0]
 	[h, if (saveAttackAsMacro), code: {
+		[h: fontColor = dnd5e_Preferences_getPreference ("attackEditor_macroFontColor")]
+		[h: buttonColor = dnd5e_Preferences_getPreference ("attackEditor_macroButtonColor")]
 		[h: macroConfig = json.set ("", "applyToSelected", 1,
 								"autoExecute", 1,
-								"color", "red",
+								"color", buttonColor,
 								"fontSize", "1.05em",
-								"fontColor", "white",
+								"fontColor", fontColor,
 								"group", "D&D Beyond - Attacks",
 								"playerEditable", 1,
 								"minWidth", 170,
@@ -32,13 +34,14 @@
 		[h: macroCmd = "[r: dnd5e_Macro_rollAttack ('" + macroInputs + "')]"]
 		[h: createMacro (selectedAttack, macroCmd, macroConfig)]
 		<!-- Advantage Attack -->
-		[h: macroConfig = json.set(macroConfig, "minWidth", "",
+		[h: macroConfig = json.set(macroConfig, "minWidth", "12",
 						"tooltip", "Make the " + selectedAttack + " attack with advantage",
 						"sortBy", listCount(currentMacros) + 1)]
 		[h: macroInputs = json.set ("", "selectedAttack", selectedAttack, 
 									"advantageDisadvantage", "Advantage")]	
 		[h: macroCmd = "[r: dnd5e_Macro_rollAttack ('" + macroInputs + "')]"]
-		[h: createMacro ("<html>&#x23eb;</html>", macroCmd, macroConfig)]
+		[h: advLabel = dnd5e_Macro_getModLabel ("advantage")]
+		[h: createMacro (advLabel, macroCmd, macroConfig)]
 		<!-- Disadvantage Attack -->
 		[h: macroConfig = json.set(macroConfig,
 						"tooltip", "Make the " + selectedAttack + " attack with disadvantage",
@@ -46,7 +49,8 @@
 		[h: macroInputs = json.set ("", "selectedAttack", selectedAttack, 
 									"advantageDisadvantage", "Disadvantage")]	
 		[h: macroCmd = "[r: dnd5e_Macro_rollAttack ('" + macroInputs + "')]"]
-		[h: createMacro ("<html>&#x23ec;</html>", macroCmd, macroConfig)]
+		[h: disAdvLabel = dnd5e_Macro_getModLabel ("disadvantage")]
+		[h: createMacro (disAdvLabel, macroCmd, macroConfig)]
 		<!-- Edit -->
 		[h: macroConfig = json.set(macroConfig,
 						"tooltip", "Edit the " + selectedAttack + " attack",

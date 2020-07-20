@@ -67,14 +67,13 @@ function openAttack(evt, attackName) {
 
 	[h: attackExpressions = json.get (attackObj, field)]
 	[r: dnd5e_Editor_buildAttackHTML (attackExpressions, field)]
-<div class="roll-container">
-  <label><input class="big-checkbox" name="saveAttack" type="checkbox" />Create New Macro of Selected Attack</label>
-</div>
+
 <div class="roll-container">
   <input name="addAttack" class="button" value="Add Attack" type="submit"/>
   <input name="duplicateAttack" class="button" value="Duplicate Attack" type="submit"/>
 </div>
 
+[r: dnd5e_AttackEditor_getMacroHtml ()]
 
 </div>
 }]

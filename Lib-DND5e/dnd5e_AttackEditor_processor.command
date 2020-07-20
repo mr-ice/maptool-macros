@@ -11,6 +11,12 @@
 	[abort (0)]
 }; {""}]
 
+<!-- Macro button color - Trying to keep the macro color choices transient until save is a real PITA since
+     the payload back to the editor is the attack object JSON. So instead, just take whatever they have
+     selected and save it as the preference. -->
+[h: dnd5e_Preferences_setPreference ("attackEditor_macroFontColor", json.get (inputArgs, "attackEditorMacroFontColor"))]
+[h: dnd5e_Preferences_setPreference ("attackEditor_macroButtonColor", json.get (inputArgs,"attackEditorMacroButtonColor"))]
+
 [h: advDisadv = json.get (inputArgs, "advDisadvantage")]
 <!-- Well capture the currently selected attack based off of the action selected. For now, none -->
 [h: selectedAttack = json.get (inputArgs, "activeAttack")]
