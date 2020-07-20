@@ -195,6 +195,6 @@
 								"fontSize", json.get (macroConfig, "fontSize"),
 								"fontColor", json.get (macroConfig, "fontColor"),
 								"group", "D&D Beyond - Spells",
-								"playerEditable", 0)]
+								"playerEditable", 1)]
 	[h, if (saveAsMacro > 0): createMacro (macroName, cmd, macroConfig)]
 }]
