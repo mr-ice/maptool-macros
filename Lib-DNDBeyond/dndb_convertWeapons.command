@@ -40,6 +40,7 @@
 		"dmgDice", dmgDice,
 		"dmgType", dmgType,
 		"bonus", bonus,
+		"id", json.get (weaponRaw, "id"),
 		"range", json.path.read (weaponRaw, "definition.range"),
 		"longRange", json.path.read (weaponRaw, "definition.longRange"),
 		"type", json.path.read (weaponRaw, "definition.type"),
