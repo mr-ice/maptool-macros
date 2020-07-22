@@ -10,12 +10,11 @@
 [h: spellDescription = json.get (spell, "description")]
 [h, if (requiresAttack == "true"), code: {
 	[h: attackBonus = json.get (spell, "attackBonus")]
-	[h: rollExpression = json.set ("", "name", spellName,
+	[h: attackExpression = json.set ("", "name", spellName,
 								"bonus", attackBonus,
 								"diceSize", "20",
 								"diceRolled", "1",
 								"expressionTypes", "Attack")]
-	[h: rollExpressions = json.append (rollExpressions, rollExpression)]
 }; {""}]
 
 <!-- if the spell has a dice object, build that, whatever that is -->
@@ -37,11 +36,11 @@
 	[h: diceValue = json.get (die, "diceValue")]
 	[h: fixedValue = json.get (die, "fixedValue")]
 }; {""}]
-
+[h: log.debug (getMacroName() + ": die = " + die)]
 <!-- Magic Missle bug: is there a restriction of 'n Darts' -->
 [h: restriction = json.get (modifier, "restriction")]
 <!-- Cheat: just look for 3 Darts -->
-[h, if (restriction == "3 Darts"): totalRolls = 3; ""]
+[h, if (restriction == "3 Darts" || restriction == "3 Rays"): totalRolls = 3; ""]
 
 <!-- Do we need to add the ability bonus -->
 [h: usePrimaryStat = json.get (modifier, "usePrimaryStat")]
@@ -55,16 +54,20 @@
 [h, if (!json.isEmpty (higherSpellDice)), code: {
 	[h: scaleType = json.get (higherSpellDice, "scaleType")]
 	[h, if (scaleType == "characterlevel"), code: {
-		[h: diceCount = json.get (higherSpellDice, "diceCount")]
-		[h: diceValue = json.get (higherSpellDice, "diceValue")]
-		[h: fixedValue = json.get (higherSpellDice, "fixedValue")]			
+		[h: higherDiceCount = json.get (higherSpellDice, "diceCount")]
+		[h: higherDiceValue = json.get (higherSpellDice, "diceValue")]
+		[h: higherFixedValue = json.get (higherSpellDice, "fixedValue")]
+		<!-- nested code limit reached. Do this the dumb way -->
+		[h, if (number (higherDiceCount) > 0): diceCount = higherDiceCount; ""]
+		[h, if (number (higherDiceCount) > 0): diceValue = higherDiceValue; ""]
+		[h, if (number (higherDiceCount) > 0): fixedValue = higherFixedValue; ""]
 	}; {""}]
 	[h, if (scaleType == "spellscale"), code: {
 		<!-- if the higherSpellDice diceCount is 0, then we need to increase our total
 			rolls instead -->
 		[h: higherDiceCount = json.get (higherSpellDice, "diceCount")]
 		<!-- on second thought, only do this if its, uh, "darts" (cough magic missle) -->
-		[h, if (higherDiceCount == 0 && restriction == "3 Darts"): 
+		[h, if (higherDiceCount == 0 && (restriction == "3 Darts" || restriction == "3 Rays")): 
 					higherTotalRolls = json.get (higherSpellDice, "totalRolls");
 					higherTotalRolls = 0]
 		[h: diceCount = diceCount + higherDiceCount]
@@ -72,18 +75,20 @@
 	};{""}]
 }]
 
-[h: log.debug ("dndb_RollExpression_buildSpellRoll: after getHigherLevelDie: diceCount = " + diceCount + "; diceValue = " + diceValue + "; fixedValue = " + fixedValue)]
-[h, if (!isNumber (diceCount)): diceCount = 0; ""]
-[h, if (diceCount > 0), code: {
-	<!-- if the spell has a save, add it to the dice object expression description -->
-	[h: rollExpression = json.set ("", "name", spellName,
+[h, for ( i, 0, totalRolls), code: {
+	[if (requiresAttack == "true"): rollExpressions = json.append (rollExpressions, attackExpression); ""]
+	[h, if (!isNumber (diceCount)): diceCount = 0; ""]
+	[h, if (diceCount > 0), code: {
+		<!-- if the spell has a save, add it to the dice object expression description -->
+		[h: rollExpression = json.set ("", "name", spellName,
 											"diceSize", diceValue,
 											"diceRolled", diceCount,
 											"expressionTypes", type,
 											"bonus", abilityBonus + fixedValue,
-											"totalRolls", totalRolls,
-											"damageTypes", subType)]
-	[h: rollExpressions = json.append (rollExpressions, rollExpression)]
-}; {""}]
 
+											"damageTypes", subType)]
+		[h: rollExpressions = json.append (rollExpressions, rollExpression)]
+	}; {""}]
+}]
+[h: log.debug (getMacroName() + ": rollExpressions = " + rollExpressions)]
 [h: macro.return = rollExpressions]

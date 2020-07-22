@@ -1,4 +1,5 @@
-[h: tokenId = getSelected()]
+[h: tokenIds = getSelected()]
+[h, foreach (tokenId, tokenIds), code: {
 [h: log.debug ("tokenId: " + tokenId)]
 [h, token (tokenId): SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
 [h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
@@ -20,10 +21,13 @@
 [h: basicToon = dndb_buildBasicToon (charId)]
 
 [h, token (tokenId): setProperty ("dndb_BasicToon", basicToon)]
-[h, token (tokenId): setName (json.get(basicToon, "name"))]
+[h, token (tokenId): dndb_BasicToon_setTokenName ()]
 [h, token (tokenId): setPC ()]
-
-[h, macro ("Reset Properties@this"): "1"]
 [h: msg = json.get (basicToon, "name") + " has been initialized!"]
 [h: log.info (msg)]
-[r,s: msg]
+[h: broadcast (msg)]
+}]
+
+[h, macro ("Reset Properties@this"): "1"]
+
+

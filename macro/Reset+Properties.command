@@ -1,6 +1,9 @@
-[h: tokenId = getSelected()]
-[h: log.debug ("tokenId: " + tokenId)]
+[h: log.warn ("Entering Reset Properties")]
+[h: tokenIds = getSelected()]
+[h: log.debug ("tokenId: " + tokenIds)]
+[h, foreach (tokenId, tokenIds), code: {
 [h: switchToken (tokenId)]
+
 [h: SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
 [h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
 [h: basicToon = dndb_getBasicToon ()]
@@ -81,3 +84,4 @@
 
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]
+}]

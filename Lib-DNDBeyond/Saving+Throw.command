@@ -41,15 +41,11 @@
 
 [h, if (saveAsMacro > 0), code: {
 	[h: cmdArg = json.set ("", "selectedsavingThrowPos", selectedsavingThrowPos, 
-							"advDisadv", advDisadv)]
-	[h, if (advDisadv == 0): advLabel = ""]
-	[h, if (advDisadv == 1): advLabel = " (+)"]
-	[h, if (advDisadv == 2): advLabel = " (-)"]
-	[h: macroName = savingThrowName + advLabel]
+							"advDisadv", 0)]
+
+	[h: macroName = savingThrowName]
 	[h: currentMacros = getMacros()]
 	[h: cmd = "[macro ('Saving Throw@Lib:DnDBeyond'): '" + cmdArg + "']"]
-	<!-- dont create duplicates -->
-	[h, foreach (currentMacro, currentMacros), if (currentMacro == macroName): saveAsMacro = 0]
 	[h: macroConfig = json.set ("", "applyToSelected", 1,
 								"autoExecute", 1,
 								"color", "black",
@@ -57,8 +53,26 @@
 								"fontSize", "1.05em",
 								"fontColor", "yellow",
 								"group", "D&D Beyond - Saves",
+								"minWidth", 170,
 								"playerEditable", 1)]
-	[h, if (saveAsMacro > 0): createMacro (macroName, cmd, macroConfig)]
+	<!-- dont create duplicates -->
+	[h, foreach (currentMacro, currentMacros), if (currentMacro == macroName): saveAsMacro = 0]
+	
+	[h, if (saveAsMacro > 0), code: {
+		[createMacro (macroName, cmd, macroConfig)]
+		[macroConfig = json.set (macroConfig, 
+						"sortBy", selectedsavingThrowPos + "-1",
+						"minWidth", 12)]
+		[cmdArg = json.set (cmdArg, "advDisadv", 1)]
+		[cmd = "[macro ('Saving Throw@Lib:DnDBeyond'): '" + cmdArg + "']"]
+		[label = dnd5e_Macro_getModLabel ("advantage")]
+		[createMacro (label, cmd, macroConfig)]
+		[macroConfig = json.set (macroConfig, "sortyBy", selectedsavingThrowPos + "-2")]
+		[cmdArg = json.set (cmdArg, "advDisadv", 2)]
+		[cmd = "[macro ('Saving Throw@Lib:DnDBeyond'): '" + cmdArg + "']"]
+		[label = dnd5e_Macro_getModLabel ("disadvantage")]
+		[createMacro (label, cmd, macroConfig)]
+	}; {""}]
 }]
 
 [h: check = json.get (dnd5e_DiceRoller_roll (rollExpression), 0)]

@@ -24,12 +24,20 @@
 [h: weapons = json.append (weapons, dndb_getUnarmedStrike (toon))]
 [h: weapons = json.merge (weapons, dndb_getNaturalWeapon (toon))]
 
+<!-- search for character values w/ valueTypeId = 1439493548. Creates
+     a smaller set of objects to search from when the time comes -->
+[h: characterValueSearchObj = json.set ("", 
+							"object", json.path.read (toon, "data.characterValues"),
+							"valueTypeId", "1439493548")]
+[h: characterValues = dndb_searchJsonObject (characterValueSearchObj)]	
+				
+
 [h: attackObj = "{}"]
 [h, foreach (weapon, weapons), code: {
 	<!-- does not include normal critical dice -->
 	[h: critBonusDice = dndb_getCriticalBonusDice (toon, weapon)]
-	[h: weaponDmgBonus = dndb_getDamageModifierForWeapon (toon, weapon)]
-	[h: weaponAtkBonus = dndb_getAttackModifierForWeapon (toon, weapon)]
+	[h: weaponDmgBonus = dndb_getDamageModifierForWeapon (toon, weapon, characterValues)]
+	[h: weaponAtkBonus = dndb_getAttackModifierForWeapon (toon, weapon, characterValues)]
 	[h: critBonus = dndb_getCriticalBonusDice (toon, weapon)]
 	[h: name = json.get (weapon, "name")]
 	<!-- commas are scary -->

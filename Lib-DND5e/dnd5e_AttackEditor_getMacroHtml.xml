@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cb2dc4f1-bbdc-4dcc-b11a-9f8ee3dd515b</macroUUID>
+  <macroUUID>466fab5c-737a-47f8-a0f6-4107c8c3e10b</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>135</index>
+  <index>143</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Property_getConditionEffects</label>
-  <group>Token Properties</group>
+  <label>dnd5e_AttackEditor_getMacroHtml</label>
+  <group>RollExpression - Editor</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

@@ -3,6 +3,7 @@
 <!-- Requires two parameters: toon json and weapon object -->
 [h: toon = arg(0)]
 [h: weapon = arg (1)]
+[h, if (json.length (macro.args) > 2): characterValues = arg (2); characterValues = "[]"]
 
 [h: bonusType = "damage"]
 
@@ -62,5 +63,10 @@
 <!-- finally, bonuses on the weapon itself -->
 [h: bonus = json.get (weapon, "bonus")]
 [h: totalBonus = totalBonus + bonus]
+
+<!-- Real finally, did the user override -->
+[h: charValueSearchObj =  json.set ("", "object", characterValues, "valueId", json.get (weapon, "id"), "typeId", 10)]
+[h: overrideResults = dndb_searchJsonObject (charValueSearchObj)]
+[h, if (json.length (overrideResults) > 0): totalBonus = totalBonus + json.get (json.get (overrideResults, 0), "value"); ""]
 
 [h: macro.return = totalBonus]
