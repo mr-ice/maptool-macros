@@ -10,6 +10,8 @@
 <!-- Create a bonus class spells array thats included in each iteration of spellcasting classes because 
 	dumb monks are dumb -->
 [h: bonusClassSpells = json.path.read (toon, "data.spells.class")]
+[h: featSpells = json.path.read (toon, "data.spells.feat")]
+[h, if (json.length (featSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, featSpells); ""]
 [h: log.debug ("dndb_getSpells: classSpellsArry = " + classSpellsArry)]
 [h: classes = json.path.read (toon, "data.classes")]
 <!-- Merge the spell casting sub-class with the class, only when sub-class is spell casting -->

@@ -169,6 +169,8 @@
 		case 6: saveAbility = "Charisma"]
 	[h: saveDescription = saveAbility + " save DC " + saveDC]
 }]
+<!-- Read the modifiers to see if theres a 3 Dart or 3 Ray restriction. Use that to create
+     totally separate rolls -->
 [h: results = dnd5e_DiceRoller_roll (expressions)]
 [r: spellDescription]
 [r, if (saveDescription == ""): ""; "<br><br><b>" + saveDescription + "</b>"]
