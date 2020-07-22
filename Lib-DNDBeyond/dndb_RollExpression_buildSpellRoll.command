@@ -36,7 +36,7 @@
 	[h: diceValue = json.get (die, "diceValue")]
 	[h: fixedValue = json.get (die, "fixedValue")]
 }; {""}]
-
+[h: log.debug (getMacroName() + ": die = " + die)]
 <!-- Magic Missle bug: is there a restriction of 'n Darts' -->
 [h: restriction = json.get (modifier, "restriction")]
 <!-- Cheat: just look for 3 Darts -->
@@ -54,9 +54,13 @@
 [h, if (!json.isEmpty (higherSpellDice)), code: {
 	[h: scaleType = json.get (higherSpellDice, "scaleType")]
 	[h, if (scaleType == "characterlevel"), code: {
-		[h: diceCount = json.get (higherSpellDice, "diceCount")]
-		[h: diceValue = json.get (higherSpellDice, "diceValue")]
-		[h: fixedValue = json.get (higherSpellDice, "fixedValue")]			
+		[h: higherDiceCount = json.get (higherSpellDice, "diceCount")]
+		[h: higherDiceValue = json.get (higherSpellDice, "diceValue")]
+		[h: higherFixedValue = json.get (higherSpellDice, "fixedValue")]
+		<!-- nested code limit reached. Do this the dumb way -->
+		[h, if (number (higherDiceCount) > 0): diceCount = higherDiceCount; ""]
+		[h, if (number (higherDiceCount) > 0): diceValue = higherDiceValue; ""]
+		[h, if (number (higherDiceCount) > 0): fixedValue = higherFixedValue; ""]
 	}; {""}]
 	[h, if (scaleType == "spellscale"), code: {
 		<!-- if the higherSpellDice diceCount is 0, then we need to increase our total

@@ -42,8 +42,8 @@
 }]
 [h: effectDescription = ""]
 [h, foreach (effect, effectsArry), code: {
-	[description = json.get (effectsMap, effect)]
-	[if (description != ""): effectDescription = effectDescription + description + decode ("%0A")]
+	[conditionEffect = json.get (effectsMap, effect)]
+	[if (conditionEffect != ""): effectDescription = effectDescription + conditionEffect + decode ("%0A")]
 }]
 [r: effectDescription]				
 					
