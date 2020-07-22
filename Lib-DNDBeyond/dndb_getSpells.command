@@ -49,8 +49,9 @@
 	[h, if (canCastSpells == "true"): mergedClasses = json.append (mergedClasses, class); ""]
 }]
 [h: searchArg = json.set ("", "object", toon,
-							"subType", "spell-attack")]
+							"subType", "spell-attacks")]
 [h: spellAttackModifiers = dndb_searchGrantedModifiers (searchArg)]
+[h: log.debug (getMacroName() + ": spellAttackModifiers = " + spellAttackModifiers)]
 [h: proficiency = dndb_getProficiencyBonus (toon)]
 [h, foreach (class, mergedClasses), code: {
 	<!-- find the classSpells object for the class -->
