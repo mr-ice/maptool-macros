@@ -18,4 +18,8 @@
     <macro name="macro/Distance+Between+Selected"/>
     <macro name="Lib-DND5e/Attack+Editor"/>
   </macroset>
+  <macroset name="GM-Panel">
+    <macro name="macro/Configure+GM+Preferences"/>
+    <macro name="macro/Setup+Campaign+Preferences"/>
+  </macroset>
 </project>
