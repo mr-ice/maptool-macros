@@ -1,8 +1,10 @@
 [h, if (json.length (macro.args) > 0): secondary = arg (0); secondary = "{}"]
 
-[h, macro ("getCampaignPreferences@Lib:CampaignPreferences"): ""]
-[h: gmPref = macro.return]
+[h: gmPref = getLibProperty ("_dnd5e_campaignPreferences", "Lib:CampaignPreferences")]
+[h: log.info (getMacroName() + ": gmPref = " + gmPref)]
+
 [h, if (encode (gmPref) == ""): gmPref = "{}"; ""]
+
 [h: selectedValues = dnd5e_Preferences_promptMacroInput (gmPref, secondary, 1)]
 [h: log.debug ("selectedvalues: " + json.indent (selectedValues))]
 <!-- so the magic here is to take the variables specied by the inputString and apply

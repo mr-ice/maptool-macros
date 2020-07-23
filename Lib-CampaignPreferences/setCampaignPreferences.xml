@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>dbbd6376-a3b4-4122-b94d-032934cc552a</macroUUID>
-  <saveLocation>GmPanel</saveLocation>
-  <index>1</index>
-  <colorKey>green</colorKey>
+  <macroUUID>9cb1fdb7-9f2c-4f23-a707-6825e17c221a</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>2</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Configure GM Preferences</label>
-  <group>D&amp;D 5e - Preferences</group>
-  <sortby>100</sortby>
+  <label>setCampaignPreferences</label>
+  <group/>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.10em</fontSize>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Configures the user's Preferences</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

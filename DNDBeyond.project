@@ -3,6 +3,7 @@
   <token name="Lib-DNDBeyond"/>
   <token name="Lib-DND5e"/>
   <token name="Lib-DNDB-TestLibrary"/>
+  <token name="Lib-CampaignPreferences"/>
   <macroset name="DNDBeyond">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>
@@ -20,6 +21,5 @@
   </macroset>
   <macroset name="GM-Panel">
     <macro name="macro/Configure+GM+Preferences"/>
-    <macro name="macro/Setup+Campaign+Preferences"/>
   </macroset>
 </project>
