@@ -1,2367 +1,1481 @@
-<net.rptools.maptool.model.CampaignProperties>
-  <tokenTypeMap>
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>tVxL+MeCQwu/hIEeFPCVzQ==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>W5w21SVeRL6LP766TXTLpg==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
     <entry>
-      <string></string>
-      <list/>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>a1dddd11fee78806f354fbe198cf3671</id>
+      </net.rptools.lib.MD5Key>
     </entry>
+  </imageAssetMap>
+  <x>300</x>
+  <y>600</y>
+  <z>2</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>650</lastX>
+  <lastY>400</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>13</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>12</x>
+        <y>9</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>13</x>
+          <y>8</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>6.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>11</x>
+        <y>9</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>12</x>
+          <y>9</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>6.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>5.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>10</x>
+        <y>10</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>11</x>
+          <y>9</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>5.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>4.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>9</x>
+        <y>10</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>10</x>
+          <y>10</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+          <h>4.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+        </parent>
+        <h>3.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>8</x>
+        <y>11</y>
+        <g>5.0</g>
+        <distanceTraveled>5.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>9</x>
+          <y>10</y>
+          <g>4.0</g>
+          <distanceTraveled>4.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
+          <h>3.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
+        </parent>
+        <h>2.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>7</x>
+        <y>11</y>
+        <g>6.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>8</x>
+          <y>11</y>
+          <g>5.0</g>
+          <distanceTraveled>5.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/parent"/>
+          <h>2.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/validMoves"/>
+        </parent>
+        <h>1.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>6</x>
+        <y>12</y>
+        <g>0.0</g>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>13</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>6</x>
+        <y>12</y>
+        <g>0.0</g>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
+  <snapToScale>true</snapToScale>
+  <width>304</width>
+  <height>291</height>
+  <isoWidth>304</isoWidth>
+  <isoHeight>291</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
     <entry>
-      <string>Basic</string>
-      <list>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Character ID</name>
-          <shortName>CharID</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Race</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Classes</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_raceClass</name>
-          <shortName>Race/Class</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_Property_getRaceClass()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Languages</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_languages</name>
-          <shortName>Languages</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_Property_getLanguages ()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Strength</name>
-          <shortName>Str</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Dexterity</name>
-          <shortName>Dex</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Constitution</name>
-          <shortName>Con</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Intelligence</name>
-          <shortName>Int</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Wisdom</name>
-          <shortName>Wis</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Charisma</name>
-          <shortName>Char</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Strength Bonus</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Dexterity Bonus</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Constitution Bonus</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Intelligence Bonus</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Wisdom Bonus</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Charisma Bonus</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>HP</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>MaxHP</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>TempHP</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_health</name>
-          <shortName>HP</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>true</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>Hp: {HP}; Mx: {MaxHP}; Tmp: {TempHP}</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>AC</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Resistances</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Immunities</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_defenses</name>
-          <shortName>Defenses</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>true</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_Property_getDefenses()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Initiative</name>
-          <shortName>Init</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Strength Save</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Dexterity Save</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Constitution Save</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Intelligence Save</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Wisdom Save</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Charisma Save</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Movement</name>
-          <shortName>Move</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_getMovementStat()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Walk</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Swim</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Burrow</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Climb</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Fly</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Elevation</name>
-          <shortName>Elv</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Description</name>
-          <shortName>Des</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Condition</name>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_Property_getConditionsStat()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Effects</name>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_Property_getConditionEffects()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Acrobatics</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Animal Handling</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Arcana</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Athletics</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Deception</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>History</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Insight</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Intimidation</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Investigation</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Medicine</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Nature</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Perception</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Performance</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Persuasion</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Religion</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Sleight of Hand</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Stealth</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Survival</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Senses</name>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_DM-Skills</name>
-          <shortName>Skills</shortName>
-          <highPriority>true</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>true</gmOnly>
-          <defaultValue>[r: dnd5e_getDMSkills()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-      </list>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
     </entry>
-    <entry>
-      <string>DNDebug</string>
-      <list>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>Character ID</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_dndb_OverrideBasicToon</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_dnd5e_lastRolledExpression</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>_dnd5e_Preferences_User</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>attackExpressionJSON</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>attackJson</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-        </net.rptools.maptool.model.TokenProperty>
-      </list>
-    </entry>
-  </tokenTypeMap>
-  <remoteRepositoryList>
-    <string>http://www.rptools.net/image-indexes/gallery.rpax.gz</string>
-  </remoteRepositoryList>
-  <lightSourcesMap class="tree-map">
-    <entry>
-      <string>D20</string>
-      <map>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY3PCvh0CAAAAAKgCYw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>15.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-              <net.rptools.maptool.model.Light>
-                <paint class="net.rptools.maptool.model.drawing.DrawableColorPaint">
-                  <color>-16777216</color>
-                </paint>
-                <facingOffset>0.0</facingOffset>
-                <radius>30.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>Lamp - 15</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCYyXCvh0BAAAAAKgCIQ==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>5.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-              <net.rptools.maptool.model.Light>
-                <paint class="net.rptools.maptool.model.drawing.DrawableColorPaint">
-                  <color>-16777216</color>
-                </paint>
-                <facingOffset>0.0</facingOffset>
-                <radius>10.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>Candle - 5</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY3PCvh0FAAAAAKgCYw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>30.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-              <net.rptools.maptool.model.Light>
-                <paint class="net.rptools.maptool.model.drawing.DrawableColorPaint">
-                  <color>-16777216</color>
-                </paint>
-                <facingOffset>0.0</facingOffset>
-                <radius>60.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>Lantern, Hooded - 30</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY3PCvh0DAAAAAKgCYw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>20.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-              <net.rptools.maptool.model.Light>
-                <paint class="net.rptools.maptool.model.drawing.DrawableColorPaint">
-                  <color>-16777216</color>
-                </paint>
-                <facingOffset>0.0</facingOffset>
-                <radius>40.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>Torch - 20</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY3PCvh0EAAAAAKgCYw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>20.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-              <net.rptools.maptool.model.Light>
-                <paint class="net.rptools.maptool.model.drawing.DrawableColorPaint">
-                  <color>-16777216</color>
-                </paint>
-                <facingOffset>0.0</facingOffset>
-                <radius>40.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>Everburning - 20</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY3PCvh0GAAAAAKgCYw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>30.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-              <net.rptools.maptool.model.Light>
-                <paint class="net.rptools.maptool.model.drawing.DrawableColorPaint">
-                  <color>-16777216</color>
-                </paint>
-                <facingOffset>0.0</facingOffset>
-                <radius>60.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>Sunrod - 30</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-      </map>
-    </entry>
-    <entry>
-      <string>Generic</string>
-      <map>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY4PCvh0HAAAAAKgCAw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>5.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>5</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY4PCvh0IAAAAAKgCAw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>15.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>15</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY4PCvh0MAAAAAKgCAw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>60.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>60</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY4PCvh0LAAAAAKgCAw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>40.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>40</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY4PCvh0JAAAAAKgCAw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>20.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>20</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-        <entry>
-          <net.rptools.maptool.model.GUID>
-            <baGUID>wKgCY4PCvh0KAAAAAKgCAw==</baGUID>
-          </net.rptools.maptool.model.GUID>
-          <net.rptools.maptool.model.LightSource>
-            <lightList class="linked-list">
-              <net.rptools.maptool.model.Light>
-                <facingOffset>0.0</facingOffset>
-                <radius>30.0</radius>
-                <arcAngle>90.0</arcAngle>
-                <shape>CIRCLE</shape>
-                <isGM>false</isGM>
-                <ownerOnly>false</ownerOnly>
-              </net.rptools.maptool.model.Light>
-            </lightList>
-            <name>30</name>
-            <id reference="../../net.rptools.maptool.model.GUID"/>
-            <lumens>0</lumens>
-            <scaleWithToken>false</scaleWithToken>
-          </net.rptools.maptool.model.LightSource>
-        </entry>
-      </map>
-    </entry>
-  </lightSourcesMap>
-  <lookupTableMap/>
-  <sightTypeMap>
-    <entry>
-      <string>Lowlight</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Lowlight</name>
-        <multiplier>2.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>false</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Darkvision 150</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Darkvision 150</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lightList class="linked-list">
-            <net.rptools.maptool.model.Light>
-              <facingOffset>0.0</facingOffset>
-              <radius>150.0</radius>
-              <arcAngle>90.0</arcAngle>
-              <shape>CIRCLE</shape>
-              <isGM>false</isGM>
-              <ownerOnly>false</ownerOnly>
-            </net.rptools.maptool.model.Light>
-          </lightList>
-          <lumens>0</lumens>
-          <scaleWithToken>true</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Darkvision 120</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Darkvision 120</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lightList class="linked-list">
-            <net.rptools.maptool.model.Light>
-              <facingOffset>0.0</facingOffset>
-              <radius>120.0</radius>
-              <arcAngle>90.0</arcAngle>
-              <shape>CIRCLE</shape>
-              <isGM>false</isGM>
-              <ownerOnly>false</ownerOnly>
-            </net.rptools.maptool.model.Light>
-          </lightList>
-          <lumens>0</lumens>
-          <scaleWithToken>true</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Darkvision 60</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Darkvision 60</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lightList class="linked-list">
-            <net.rptools.maptool.model.Light>
-              <facingOffset>0.0</facingOffset>
-              <radius>60.0</radius>
-              <arcAngle>90.0</arcAngle>
-              <shape>CIRCLE</shape>
-              <isGM>false</isGM>
-              <ownerOnly>false</ownerOnly>
-            </net.rptools.maptool.model.Light>
-          </lightList>
-          <lumens>0</lumens>
-          <scaleWithToken>true</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Darkvision 30</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Darkvision 30</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lightList class="linked-list">
-            <net.rptools.maptool.model.Light>
-              <facingOffset>0.0</facingOffset>
-              <radius>30.0</radius>
-              <arcAngle>90.0</arcAngle>
-              <shape>CIRCLE</shape>
-              <isGM>false</isGM>
-              <ownerOnly>false</ownerOnly>
-            </net.rptools.maptool.model.Light>
-          </lightList>
-          <lumens>0</lumens>
-          <scaleWithToken>true</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Normal Vision - Short Range</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Normal Vision - Short Range</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>10.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Darkvision 90</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Darkvision 90</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lightList class="linked-list">
-            <net.rptools.maptool.model.Light>
-              <facingOffset>0.0</facingOffset>
-              <radius>90.0</radius>
-              <arcAngle>90.0</arcAngle>
-              <shape>CIRCLE</shape>
-              <isGM>false</isGM>
-              <ownerOnly>false</ownerOnly>
-            </net.rptools.maptool.model.Light>
-          </lightList>
-          <lumens>0</lumens>
-          <scaleWithToken>true</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Normal</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Normal</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
-        <shape>CIRCLE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>false</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Grid Vision</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Grid Vision</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
-        <shape>GRID</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>true</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Conic Vision</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Conic Vision</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
-        <shape>CONE</shape>
-        <arc>120</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>false</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-    <entry>
-      <string>Square Vision</string>
-      <net.rptools.maptool.model.SightType>
-        <name>Square Vision</name>
-        <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
-        <shape>SQUARE</shape>
-        <arc>90</arc>
-        <distance>0.0</distance>
-        <offset>0</offset>
-        <scaleWithToken>false</scaleWithToken>
-      </net.rptools.maptool.model.SightType>
-    </entry>
-  </sightTypeMap>
-  <defaultSightType>Normal</defaultSightType>
-  <tokenStates class="linked-hash-map">
-    <entry>
-      <string>Blinded</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Blinded</name>
-        <order>0</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>88bd0bda291744ad75ff12ca0ab73c9e</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Charmed</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Charmed</name>
-        <order>1</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>2c90c6771b55c9beb7d42c50d563f3b1</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Deafened</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Deafened</name>
-        <order>2</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>9207efc0e3f980dc8f04ca007ac21c85</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Frightened</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Frightened</name>
-        <order>3</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>57d81e37e17a6e0860c98fda9166747e</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Grappled</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Grappled</name>
-        <order>4</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>2633c88983fd0d2077757319c66649fc</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Incapacitated</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Incapacitated</name>
-        <order>5</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>7117d83aede5c58953f56ea1e8264aac</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Invisible</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Invisible</name>
-        <order>6</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>31ca813f01826f5c36b5db0d44c02a6f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:DnD5e</name>
+  <ownerType>0</ownerType>
+  <tokenShape>SQUARE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>DNDebug</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <charsheetImage>
+    <id>f2cf86e2e8e9f580808cc099e6215379</id>
+  </charsheetImage>
+  <sightType>Normal</sightType>
+  <hasSight>false</hasSight>
+  <state>
     <entry>
       <string>Paralyzed</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Paralyzed</name>
-        <order>7</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>d6d0408dd8d640219d79a958bb49866d</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Petrified</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Petrified</name>
-        <order>8</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>972f955388f66da9eeccebf93e500541</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Poisoned</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Poisoned</name>
-        <order>9</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>3585324a36e6c6178949edd7a8b53170</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Prone</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Prone</name>
-        <order>10</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>a9fd677869b63ea0a143e1e4d47ef0ba</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Restrained</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Restrained</name>
-        <order>11</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>c683886ac4f503e83845872f076344f5</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Stunned</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Stunned</name>
-        <order>12</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>5d6c3d7c68e84a6d17f173a780b252d0</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Unconscious</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Unconscious</name>
-        <order>13</order>
-        <group>2. Conditions</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>5637f330ca548f389e92171c95cc652b</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Exhaustion 1</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Exhaustion 1</name>
-        <order>14</order>
-        <group>4. Fatigued</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>f1cd2eeb195034aa132c0e42b36b17b3</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Exhaustion 2</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Exhaustion 2</name>
-        <order>15</order>
-        <group>4. Fatigued</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>a80f5840558ee67c219a9a0e47b442a8</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Exhaustion 3</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Exhaustion 3</name>
-        <order>16</order>
-        <group>4. Fatigued</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>74da9f578e21723812ac3e279504e30f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Exhaustion 4</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Exhaustion 4</name>
-        <order>17</order>
-        <group>4. Fatigued</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>5f197f755418cf344c56f7251454f1d6</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Exhaustion 5</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Exhaustion 5</name>
-        <order>18</order>
-        <group>4. Fatigued</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>621ae64d7f0015fe372569cf5eb957e7</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Exhaustion 6</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Exhaustion 6</name>
-        <order>19</order>
-        <group>4. Fatigued</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>4796dc4ef9efb88ea77c07165514ba90</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Bardic Inspiration</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Bardic Inspiration</name>
-        <order>20</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>345724d7d1206361cc58332e5db17701</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Blessed</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Blessed</name>
-        <order>21</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>8b61a3dfcd23bb279b69d055242b4fc9</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Concentration</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Concentration</name>
-        <order>22</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>88efd1d7c3761b2a29bfbbeafc31b4c8</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Confused</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Confused</name>
-        <order>23</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>fabe1caa4be3d037cd20d3a1b31371e8</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Diseased</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Diseased</name>
-        <order>24</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>264d78c2d74c06d4642914fbf7fa1d00</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Entangled</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Entangled</name>
-        <order>25</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>9eea5bdf7794dcfd91b46a898b6f90f6</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Expeditious Retreat</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Expeditious Retreat</name>
-        <order>26</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>eda3b494fbef37bf1562f95b5962b934</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Faerie Fire</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Faerie Fire</name>
-        <order>27</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>03fe452ce13d903d678955ca035a700f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Fly</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Fly</name>
-        <order>28</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>4cb2e38105b3e9a94fb50af3c6a3259f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Freedom of Movement</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Freedom of Movement</name>
-        <order>29</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>8fa60d1aadac557f9e3e5d976f9d87c3</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Haste</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Haste</name>
-        <order>30</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>3d605675d4337d04bbe46c9a99ebc4a1</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Helpless</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Helpless</name>
-        <order>31</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>a68d93eee39bfd74d515c07dcca24f1c</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hidden</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hidden</name>
-        <order>32</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>6bcb5f01fa8e7829fd1bf810e6aaa80f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>Longstrider</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Longstrider</name>
-        <order>33</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>10f8f9e9dc1fa6332d99cf9e0c595cd9</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Rage</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Rage</name>
-        <order>34</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>9cb883e148d62ab23afdfff5fd1fb021</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>Cross - Blue</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Cross - Blue</name>
-        <order>35</order>
-        <group>5. Crosses</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>bfa0613dd41d0fad5ab91650f820032e</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Wild Shape</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wild Shape</name>
-        <order>36</order>
-        <group>3. Game States</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>75c1dbc46734bef3660ff461c1b840ab</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Cross - Green</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Cross - Green</name>
-        <order>37</order>
-        <group>5. Crosses</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>4a79e9460300400cbba569ac35d5635a</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Cross - Orange</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Cross - Orange</name>
-        <order>38</order>
-        <group>5. Crosses</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>b3cce752588f785ca62ddd55dd354e97</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>Cross - Red</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Cross - Red</name>
-        <order>39</order>
-        <group>5. Crosses</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>a1899d4c5acb4c6dbb5c33d19640890c</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Cross - Turquoise</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Cross - Turquoise</name>
-        <order>40</order>
-        <group>5. Crosses</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>255d7466ea19a125d36eb8ff27735886</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Cross - Yellow</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Cross - Yellow</name>
-        <order>41</order>
-        <group>5. Crosses</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>a2a67bf543902519b6af7637375b94a1</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hex - Blue</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hex - Blue</name>
-        <order>42</order>
-        <group>6. Hexes</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>7f55ace385dbc390c289d21e9abff116</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hex - Green</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hex - Green</name>
-        <order>43</order>
-        <group>6. Hexes</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>24d227148e605eb822c0c49fc0f1e441</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hex - Orange</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hex - Orange</name>
-        <order>44</order>
-        <group>6. Hexes</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>5c2043e19b8082b092156dc93f857ebf</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hex - Red</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hex - Red</name>
-        <order>45</order>
-        <group>6. Hexes</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>add4aacf777e96267505928698c8d4d9</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hex - Turquoise</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hex - Turquoise</name>
-        <order>46</order>
-        <group>6. Hexes</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>6db656b526df64a68196785539002d8f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Hex - Yellow</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Hex - Yellow</name>
-        <order>47</order>
-        <group>6. Hexes</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>9951d58f3cf9076a4aa7b478c57802c6</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Target - Blue</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Target - Blue</name>
-        <order>48</order>
-        <group>7. Targets</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>c981d85a55d1e82f8fbafb3ed53383e7</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Target - Green</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Target - Green</name>
-        <order>49</order>
-        <group>7. Targets</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>85027c58e5728e903328fde859a1a658</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Target - Orange</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Target - Orange</name>
-        <order>50</order>
-        <group>7. Targets</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>0e93b03f91219f98832cce36afdda5d1</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Target - Red</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Target - Red</name>
-        <order>51</order>
-        <group>7. Targets</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>65b392368ad990a24cfa7aba4a17825a</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-    </entry>
-    <entry>
-      <string>Target - Turquoise</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Target - Turquoise</name>
-        <order>52</order>
-        <group>7. Targets</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>dff2369345f3fedcbb0a5cc7396e4b8f</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Frightened</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>Target - Yellow</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Target - Yellow</name>
-        <order>53</order>
-        <group>7. Targets</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>4e1b1f469c8ac6cb4a1c8df489d8face</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wheel - Blue</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wheel - Blue</name>
-        <order>54</order>
-        <group>8. Wheels</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>0b316321d3d74eae593023eb164d8c78</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Cross - Green</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wheel - Green</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wheel - Green</name>
-        <order>55</order>
-        <group>8. Wheels</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>c6556e9559768e48b6cec55f03f91e92</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Petrified</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wheel - Orange</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wheel - Orange</name>
-        <order>56</order>
-        <group>8. Wheels</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>7c7169103e01c0003aa5542c44bc7b63</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Unconcious</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wheel - Red</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wheel - Red</name>
-        <order>57</order>
-        <group>8. Wheels</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>6cacac3486daa74c438a8e9b0b561318</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Target - Turquoise</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wheel - Turquoise</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wheel - Turquoise</name>
-        <order>58</order>
-        <group>8. Wheels</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>1bab4f6a2306c9427761577701d8e5ab</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Prone</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wheel - Yellow</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Wheel - Yellow</name>
-        <order>59</order>
-        <group>8. Wheels</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>d7087b90adcc0de33f99fa380bc4732a</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Hidden</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Bloodied</string>
-      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
-        <name>Bloodied</name>
-        <order>60</order>
-        <group>1. Health</group>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>5c6bc8b5ec0f5ea9b423d02ced7435d5</id>
-        </assetId>
-        <grid>2</grid>
-      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+      <string>Wild Shape</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Stable</string>
-      <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
-        <name>Stable</name>
-        <order>61</order>
-        <group>1. Health</group>
-        <mouseover>false</mouseover>
-        <opacity>50</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>36a224b032378dee8fe22b9906ffa2cc</id>
-        </assetId>
-      </net.rptools.maptool.client.ui.token.ImageTokenOverlay>
+      <string>Invisible</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Dying</string>
-      <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
-        <name>Dying</name>
-        <order>62</order>
-        <group>1. Health</group>
-        <mouseover>false</mouseover>
-        <opacity>50</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>32e7d9596bda541eb962b7e188f8f20f</id>
-        </assetId>
-      </net.rptools.maptool.client.ui.token.ImageTokenOverlay>
+      <string>Unconscious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Poisoned</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
       <string>Dead</string>
-      <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
-        <name>Dead</name>
-        <order>63</order>
-        <group>1. Health</group>
-        <mouseover>false</mouseover>
-        <opacity>50</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <assetId>
-          <id>70bca92c7929cd14e1df42802e0bc713</id>
-        </assetId>
-      </net.rptools.maptool.client.ui.token.ImageTokenOverlay>
-    </entry>
-  </tokenStates>
-  <tokenBars class="linked-hash-map">
-    <entry>
-      <string>HP</string>
-      <net.rptools.maptool.client.ui.token.TwoImageBarTokenOverlay>
-        <name>HP</name>
-        <order>0</order>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>false</showOthers>
-        <increments>0</increments>
-        <side>TOP</side>
-        <bottomAssetId>
-          <id>055479129d944ad4554a004937a35b83</id>
-        </bottomAssetId>
-        <topAssetId>
-          <id>15f285b19efbae153bacb1aa014f307e</id>
-        </topAssetId>
-      </net.rptools.maptool.client.ui.token.TwoImageBarTokenOverlay>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Damage</string>
-      <net.rptools.maptool.client.ui.token.SingleImageBarTokenOverlay>
-        <name>Damage</name>
-        <order>1</order>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>false</showOthers>
-        <increments>0</increments>
-        <side>TOP</side>
-        <assetId>
-          <id>00c335d81c12bd048b5488bb16724403</id>
-        </assetId>
-      </net.rptools.maptool.client.ui.token.SingleImageBarTokenOverlay>
+      <string>Wheel - Blue</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>ElevationPositive</string>
-      <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
-        <name>ElevationPositive</name>
-        <order>2</order>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <increments>21</increments>
-        <side>LEFT</side>
-        <assetIds>
-          <net.rptools.lib.MD5Key>
-            <id>b48a168f7cc24a18a31385060a69d17c</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>c4157d757934a9d1e7368ffc1b07b5c9</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>8ee27cb387e9b1edd212f3e657fad426</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>e99d791bdeba37772596bfcccace5d7f</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>775e93bd4b4f95b10142139bf10c79a1</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>824dec5d5b86ddc233a9a52beffd8d81</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>6d8933d97e184d0c1825dd29abaa7b11</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>391ef10c319e17577096a59683988211</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>2173911b208ebaef99338295ea345ec6</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>dcc2d95fa73ba769ac1447343b616fab</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>be9e8a9bff45c3b422c9434a9e75fdc7</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>741da5b4fb37d116a75dedfeb1f45a9c</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>2905f401df97106372355d545c202f70</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>8bf0adfe52dca434dec142900c2d8ffd</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>64bd1ce05d08f0ae74fecbbb6c1c1131</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>ce29c2f32677d384216ee4399b6ff1fd</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>c49eef94ba4b7deab8dc760170a21ac4</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>3f1bc23a9981aa30007b7ed7bf26230a</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>6c1162aa549e35eb5b9f08faf9706726</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>af3353fb53f456687674d3f30230f3fe</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>a00eedf5276c173a69fb1157870371e0</id>
-          </net.rptools.lib.MD5Key>
-        </assetIds>
-      </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+      <string>Helpless</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>ElevationNegative</string>
-      <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
-        <name>ElevationNegative</name>
-        <order>3</order>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <increments>21</increments>
-        <side>RIGHT</side>
-        <assetIds>
-          <net.rptools.lib.MD5Key>
-            <id>b48a168f7cc24a18a31385060a69d17c</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>d9c5a000b0a8299604ed84b60d728888</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>a1f110461fa1d4c69f6a6a8335a59472</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>68fe498a13caeb3f6b10bcdeabc71606</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>7f2f15d161ec1e4a299c217b60934c68</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>fcee5f75a16fed5756b40c89fd797a9b</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>7e7aa0ff7c04739068c85ae41f168b3c</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>0606e29d3162d86ccd4526203103f670</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>dbb9d420c2f959648adeee10d5d0e03a</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>8bcf0d6176e1413f11bd6d0ae3323edb</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>7766ec74a470626550812acff5f8e711</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>1f9f2e610d31b335fc95bf8f88f5acb8</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>ded32ae13859ed54f6fe832371dd1d76</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>2b5221e2570ba645509b7485e464a9a0</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>89b1d6c6b8c33df8ec4d80fe6eb57e2f</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>fefd38e1a2cf9550fe377a91662195e4</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>91080f7fa1aecba665d4ac83695187e6</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>1cf74f56d4acc34777e39e1fde247a0f</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>97151823f0a632de29f4cbd1011fe607</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>5f64fc75f32925d00dd93b5ae12bbc02</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>f295ca4ca449beb1983784ef417a32f6</id>
-          </net.rptools.lib.MD5Key>
-        </assetIds>
-      </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+      <string>Freedom of Movement</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>DSPass</string>
-      <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
-        <name>DSPass</name>
-        <order>4</order>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <increments>4</increments>
-        <side>TOP</side>
-        <assetIds>
-          <net.rptools.lib.MD5Key>
-            <id>e661631853a431231a2904d4ae29ceeb</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>dd2746078aa9c38f71effc92e86958d5</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>4aa9a809d18dd91455c03ff5841b7791</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>6a1312daaaea72f09520bfb1af1d60a6</id>
-          </net.rptools.lib.MD5Key>
-        </assetIds>
-      </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+      <string>Wheel - Turquoise</string>
+      <boolean>false</boolean>
     </entry>
     <entry>
-      <string>DSFail</string>
-      <net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
-        <name>DSFail</name>
-        <order>5</order>
-        <mouseover>false</mouseover>
-        <opacity>100</opacity>
-        <showGM>true</showGM>
-        <showOwner>true</showOwner>
-        <showOthers>true</showOthers>
-        <increments>4</increments>
-        <side>BOTTOM</side>
-        <assetIds>
-          <net.rptools.lib.MD5Key>
-            <id>e661631853a431231a2904d4ae29ceeb</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>64ddc58124a9a8584136868e0e11755a</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>5af138a576cc3d2ba341d808799ba096</id>
-          </net.rptools.lib.MD5Key>
-          <net.rptools.lib.MD5Key>
-            <id>51bd50b12b57327d085445ad22ff7401</id>
-          </net.rptools.lib.MD5Key>
-        </assetIds>
-      </net.rptools.maptool.client.ui.token.MultipleImageBarTokenOverlay>
+      <string>Diseased</string>
+      <boolean>false</boolean>
     </entry>
-  </tokenBars>
-  <characterSheets>
     <entry>
-      <string>Basic</string>
-      <string>net/rptools/maptool/client/ui/forms/basicCharacterSheet.xml</string>
+      <string>Expeditious Retreat</string>
+      <boolean>false</boolean>
     </entry>
-  </characterSheets>
-  <initiativeOwnerPermissions>false</initiativeOwnerPermissions>
-  <initiativeMovementLock>false</initiativeMovementLock>
-</net.rptools.maptool.model.CampaignProperties>
+    <entry>
+      <string>Target - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blinded</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Entangled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Restrained</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stunned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 6</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Confused</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Grappled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Rage</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 5</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Haste</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blessed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Fly</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 1</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Faerie Fire</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stable</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Concentration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Deafened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <propertyMapCI>
+    <store>
+      <entry>
+        <string>strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>senses</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Senses</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>libversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>libversion</key>
+          <value class="string">0.1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>character id</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Character ID</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception</key>
+          <value class="string">4</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>attackjson</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackJson</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>climb</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Climb</key>
+          <value class="string">20</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_preferences_user</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_Preferences_User</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_lastrolledexpression</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_lastRolledExpression</key>
+          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"jh","bonus":0,"hasAdvantage":0,"hasDisadvantage":0,"description":"","output":"Rolled: 20&lt;br&gt;jh Attack Roll: 1d20 = 20 ","rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"outputs":["Rolled: 20&lt;br&gt;jh Attack Roll: 1d20 = 20 "],"allTotal":20},{"diceSize":45,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","damageTypes":[],"onCritAdd":"","output":"Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Rolled: 20&lt;br&gt; Damage Roll: 1d45 + 1d45 = 46 ","rolls":[20],"roll":20,"rollString":"1d45 + 1d45","total":46,"totals":[46],"expressions":[{"diceSize":45,"diceRolled":1,"bonus":0,"expressionTypes":"Critical Damage","name":"Critical+","damageTypes":[],"onCritAdd":"","rollString":"1d45","expressions":[],"output":"Rolled: 26&lt;br&gt;Critical  Critical Damage Roll: 1d45 = 26 ","rolls":[26],"roll":26,"total":26,"totals":[26],"outputs":["Rolled: 26&lt;br&gt;Critical  Critical Damage Roll: 1d45 = 26 "],"allTotal":26}],"description":"Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Rolled: 20&lt;br&gt; Damage Roll: 1d45 + 1d45 = 46 "],"allTotal":46}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>deception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Deception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>burrow</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Burrow</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>survival</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Survival</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>animal handling</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Animal Handling</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>History</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>investigation-gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Investigation-GM</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>acrobatics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Acrobatics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>persuasion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Persuasion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight</key>
+          <value class="string">7</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>condition</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>swim</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Swim</key>
+          <value class="string">23</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>maxhp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>MaxHP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>attackexpressionjson</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackExpressionJSON</key>
+          <value class="string">{"jh":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"jh","bonus":0},{"diceSize":45,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","damageTypes":[],"onCritAdd":""}]}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>description</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>description</key>
+          <value class="string">Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>sleight of hand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Sleight of Hand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lastattackselection</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>lastAttackSelection</key>
+          <value class="string">jh</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dndb_overridebasictoon</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dndb_OverrideBasicToon</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>elevation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Elevation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>initiative</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Initiative</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>temphp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>TempHP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Medicine</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Religion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>fly</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Fly</key>
+          <value class="string">24</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>performance</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Performance</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight-gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight-GM</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception-gm</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception-GM</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>investigation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Investigation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intimidation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intimidation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>movement</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Movement</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>walk</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Walk</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+    </store>
+  </propertyMapCI>
+  <macroPropertiesMap>
+    <entry>
+      <int>1</int>
+      <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>3</int>
+      <macro name="dnd5e_getMovementStat"/>
+    </entry>
+    <entry>
+      <int>5</int>
+      <macro name="dnd5e_getInsightStat"/>
+    </entry>
+    <entry>
+      <int>6</int>
+      <macro name="dnd5e_getPerceptionStat"/>
+    </entry>
+    <entry>
+      <int>7</int>
+      <macro name="dnd5e_DiceRoller_roll"/>
+    </entry>
+    <entry>
+      <int>8</int>
+      <macro name="dnd5e_DiceRoller_advantageRoll"/>
+    </entry>
+    <entry>
+      <int>9</int>
+      <macro name="dnd5e_DiceRoller_basicRoll"/>
+    </entry>
+    <entry>
+      <int>10</int>
+      <macro name="dnd5e_RollExpression_hasType"/>
+    </entry>
+    <entry>
+      <int>11</int>
+      <macro name="dnd5e_DiceRoller_luckyRoll"/>
+    </entry>
+    <entry>
+      <int>12</int>
+      <macro name="dnd5e_DiceRoller_critableRoll"/>
+    </entry>
+    <entry>
+      <int>13</int>
+      <macro name="Manage+Preference+Registry"/>
+    </entry>
+    <entry>
+      <int>14</int>
+      <macro name="Data_Preference_Registry"/>
+    </entry>
+    <entry>
+      <int>15</int>
+      <macro name="dnd5e_Preferences_convertPrefEntryToInput"/>
+    </entry>
+    <entry>
+      <int>16</int>
+      <macro name="dnd5e_Preferences_createPreference"/>
+    </entry>
+    <entry>
+      <int>17</int>
+      <macro name="dnd5e_Preferences_deletePreference"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="dnd5e_Preferences_editPreference"/>
+    </entry>
+    <entry>
+      <int>19</int>
+      <macro name="dnd5e_Preferences_getPreference"/>
+    </entry>
+    <entry>
+      <int>20</int>
+      <macro name="dnd5e_Preferences_getRegistry"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="dnd5e_Preferences_getRegistryInput"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="dnd5e_Preferences_promptMacroInput"/>
+    </entry>
+    <entry>
+      <int>23</int>
+      <macro name="dnd5e_Preferences_setRegistry"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="dnd5e_Util_getMetaInputString"/>
+    </entry>
+    <entry>
+      <int>25</int>
+      <macro name="dnd5e_Preferences_getUserPreferences"/>
+    </entry>
+    <entry>
+      <int>26</int>
+      <macro name="dnd5e_Preferences_setUserPreferences"/>
+    </entry>
+    <entry>
+      <int>27</int>
+      <macro name="Configure+Preferences"/>
+    </entry>
+    <entry>
+      <int>28</int>
+      <macro name="dnd5e_Preferences_setPreference"/>
+    </entry>
+    <entry>
+      <int>31</int>
+      <macro name="dnd5e_Conditions"/>
+    </entry>
+    <entry>
+      <int>32</int>
+      <macro name="dnd5e_ProcessConditions"/>
+    </entry>
+    <entry>
+      <int>33</int>
+      <macro name="dnd5e_ConditionsCSS"/>
+    </entry>
+    <entry>
+      <int>34</int>
+      <macro name="dnd5e_applyHealth"/>
+    </entry>
+    <entry>
+      <int>35</int>
+      <macro name="dnd5e_takeDamage"/>
+    </entry>
+    <entry>
+      <int>37</int>
+      <macro name="dnd5e_RollExpression_parseRoll"/>
+    </entry>
+    <entry>
+      <int>38</int>
+      <macro name="dnd5e_DiceRoller_createMacro"/>
+    </entry>
+    <entry>
+      <int>43</int>
+      <macro name="dnd5e_Macro_copyMacroConfig"/>
+    </entry>
+    <entry>
+      <int>44</int>
+      <macro name="dnd5e_RollExpression_getCombinedOutput"/>
+    </entry>
+    <entry>
+      <int>45</int>
+      <macro name="dnd5e_RollExpression_setName"/>
+    </entry>
+    <entry>
+      <int>46</int>
+      <macro name="dnd5e_RollExpression_getName"/>
+    </entry>
+    <entry>
+      <int>47</int>
+      <macro name="dnd5e_RollExpression_setDiceSize"/>
+    </entry>
+    <entry>
+      <int>48</int>
+      <macro name="dnd5e_RollExpression_getDiceSize"/>
+    </entry>
+    <entry>
+      <int>49</int>
+      <macro name="dnd5e_RollExpression_setBonus"/>
+    </entry>
+    <entry>
+      <int>50</int>
+      <macro name="dnd5e_RollExpression_getBonus"/>
+    </entry>
+    <entry>
+      <int>51</int>
+      <macro name="dnd5e_RollExpression_setDiceRolled"/>
+    </entry>
+    <entry>
+      <int>52</int>
+      <macro name="dnd5e_RollExpression_getDiceRolled"/>
+    </entry>
+    <entry>
+      <int>53</int>
+      <macro name="dnd5e_RollExpression_setExpressionType"/>
+    </entry>
+    <entry>
+      <int>54</int>
+      <macro name="dnd5e_RollExpression_getExpressionType"/>
+    </entry>
+    <entry>
+      <int>55</int>
+      <macro name="dnd5e_RollExpression_addType"/>
+    </entry>
+    <entry>
+      <int>56</int>
+      <macro name="dnd5e_RollExpression_setTypes"/>
+    </entry>
+    <entry>
+      <int>57</int>
+      <macro name="dnd5e_RollExpression_addExpression"/>
+    </entry>
+    <entry>
+      <int>58</int>
+      <macro name="dnd5e_RollExpression_setExpressions"/>
+    </entry>
+    <entry>
+      <int>59</int>
+      <macro name="dnd5e_RollExpression_getExpressions"/>
+    </entry>
+    <entry>
+      <int>60</int>
+      <macro name="dnd5e_RollExpression_getRolls"/>
+    </entry>
+    <entry>
+      <int>61</int>
+      <macro name="dnd5e_RollExpression_getRoll"/>
+    </entry>
+    <entry>
+      <int>62</int>
+      <macro name="dnd5e_RollExpression_getRollString"/>
+    </entry>
+    <entry>
+      <int>63</int>
+      <macro name="dnd5e_RollExpression_setTotalRolls"/>
+    </entry>
+    <entry>
+      <int>64</int>
+      <macro name="dnd5e_RollExpression_getTotalRolls"/>
+    </entry>
+    <entry>
+      <int>65</int>
+      <macro name="dnd5e_RollExpression_setDisadvantage"/>
+    </entry>
+    <entry>
+      <int>66</int>
+      <macro name="dnd5e_RollExpression_hasDisadvantage"/>
+    </entry>
+    <entry>
+      <int>67</int>
+      <macro name="dnd5e_RollExpression_setAdvantage"/>
+    </entry>
+    <entry>
+      <int>68</int>
+      <macro name="dnd5e_RollExpression_hasAdvantage"/>
+    </entry>
+    <entry>
+      <int>69</int>
+      <macro name="dnd5e_RollExpression_setOnCritAdd"/>
+    </entry>
+    <entry>
+      <int>70</int>
+      <macro name="dnd5e_RollExpression_getOnCritAdd"/>
+    </entry>
+    <entry>
+      <int>71</int>
+      <macro name="dnd5e_RollExpression_getTotal"/>
+    </entry>
+    <entry>
+      <int>72</int>
+      <macro name="dnd5e_RollExpression_getTotals"/>
+    </entry>
+    <entry>
+      <int>73</int>
+      <macro name="dnd5e_RollExpression_getAllTotal"/>
+    </entry>
+    <entry>
+      <int>74</int>
+      <macro name="dnd5e_RollExpression_getOutput"/>
+    </entry>
+    <entry>
+      <int>75</int>
+      <macro name="dnd5e_RollExpression_getOutputs"/>
+    </entry>
+    <entry>
+      <int>76</int>
+      <macro name="dnd5e_RollExpression_getStaticRoll"/>
+    </entry>
+    <entry>
+      <int>77</int>
+      <macro name="dnd5e_RollExpression_setStaticRoll"/>
+    </entry>
+    <entry>
+      <int>78</int>
+      <macro name="dnd5e_RollExpression_setDescription"/>
+    </entry>
+    <entry>
+      <int>79</int>
+      <macro name="dnd5e_RollExpression_getDescription"/>
+    </entry>
+    <entry>
+      <int>80</int>
+      <macro name="dnd5e_RollExpression_getDamageTypes"/>
+    </entry>
+    <entry>
+      <int>81</int>
+      <macro name="dnd5e_RollExpression_addDamageType"/>
+    </entry>
+    <entry>
+      <int>82</int>
+      <macro name="dnd5e_RollExpression_setDamageTypes"/>
+    </entry>
+    <entry>
+      <int>83</int>
+      <macro name="dnd5e_getInvestigationStat"/>
+    </entry>
+    <entry>
+      <int>84</int>
+      <macro name="dnd5e_DiceRoller_applyConditions"/>
+    </entry>
+    <entry>
+      <int>85</int>
+      <macro name="dnd5e_RollExpression_BuildBless"/>
+    </entry>
+    <entry>
+      <int>86</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToAbility"/>
+    </entry>
+    <entry>
+      <int>87</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToSave"/>
+    </entry>
+    <entry>
+      <int>88</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToAttack"/>
+    </entry>
+    <entry>
+      <int>89</int>
+      <macro name="dnd5e_RollExpression_getTypes"/>
+    </entry>
+    <entry>
+      <int>90</int>
+      <macro name="dnd5e_RollExpression_mergeChildren"/>
+    </entry>
+    <entry>
+      <int>91</int>
+      <macro name="dnd5e_RollExpression_buildOutput"/>
+    </entry>
+    <entry>
+      <int>92</int>
+      <macro name="dnd5e_RollExpression_addDescription"/>
+    </entry>
+    <entry>
+      <int>93</int>
+      <macro name="dnd5e_removeDamage"/>
+    </entry>
+    <entry>
+      <int>94</int>
+      <macro name="dnd5e_updateSelectedHealth"/>
+    </entry>
+    <entry>
+      <int>95</int>
+      <macro name="dnd5e_healDamage"/>
+    </entry>
+    <entry>
+      <int>96</int>
+      <macro name="dnd5e_updateTemp"/>
+    </entry>
+    <entry>
+      <int>97</int>
+      <macro name="dnd5e_takeHealing"/>
+    </entry>
+    <entry>
+      <int>98</int>
+      <macro name="dnd5e_takeTemp"/>
+    </entry>
+    <entry>
+      <int>99</int>
+      <macro name="dnd5e_RollExpression_Attack"/>
+    </entry>
+    <entry>
+      <int>100</int>
+      <macro name="dnd5e_RollExpression_Ability"/>
+    </entry>
+    <entry>
+      <int>101</int>
+      <macro name="dnd5e_RollExpression_Damage"/>
+    </entry>
+    <entry>
+      <int>102</int>
+      <macro name="dnd5e_RollExpression_Save"/>
+    </entry>
+    <entry>
+      <int>103</int>
+      <macro name="dnd5e_RollExpression_Healing"/>
+    </entry>
+    <entry>
+      <int>104</int>
+      <macro name="dnd5e_RollExpression_fromRollExpression"/>
+    </entry>
+    <entry>
+      <int>105</int>
+      <macro name="dnd5e_AttackEditor"/>
+    </entry>
+    <entry>
+      <int>106</int>
+      <macro name="dnd5e_Editor_CSS"/>
+    </entry>
+    <entry>
+      <int>108</int>
+      <macro name="dnd5e_Editor_getAttackDamageHtml"/>
+    </entry>
+    <entry>
+      <int>109</int>
+      <macro name="dnd5e_RollExpression_findExpressionByType"/>
+    </entry>
+    <entry>
+      <int>111</int>
+      <macro name="dnd5e_Editor_getAdditionalDamageHtml"/>
+    </entry>
+    <entry>
+      <int>112</int>
+      <macro name="dnd5e_AttackEditor_processor"/>
+    </entry>
+    <entry>
+      <int>113</int>
+      <macro name="dnd5e_RollExpression_SaveDamage"/>
+    </entry>
+    <entry>
+      <int>114</int>
+      <macro name="dnd5e_RollExpression_getSaveDC"/>
+    </entry>
+    <entry>
+      <int>115</int>
+      <macro name="dnd5e_RollExpression_setSaveDC"/>
+    </entry>
+    <entry>
+      <int>116</int>
+      <macro name="dnd5e_RollExpression_getSaveAbility"/>
+    </entry>
+    <entry>
+      <int>117</int>
+      <macro name="dnd5e_RollExpression_setSaveAbility"/>
+    </entry>
+    <entry>
+      <int>118</int>
+      <macro name="dnd5e_RollExpression_getSaveEffect"/>
+    </entry>
+    <entry>
+      <int>119</int>
+      <macro name="dnd5e_RollExpression_setSaveEffect"/>
+    </entry>
+    <entry>
+      <int>120</int>
+      <macro name="dnd5e_RollExpression_getSaveEffectMultiplier"/>
+    </entry>
+    <entry>
+      <int>121</int>
+      <macro name="dnd5e_RollExpression_setSaveEffectMultiplier"/>
+    </entry>
+    <entry>
+      <int>122</int>
+      <macro name="dnd5e_Editor_buildAttackHTML"/>
+    </entry>
+    <entry>
+      <int>123</int>
+      <macro name="dnd5e_Macro_rollAttack"/>
+    </entry>
+    <entry>
+      <int>125</int>
+      <macro name="dnd5e_deathSavesCSS"/>
+    </entry>
+    <entry>
+      <int>126</int>
+      <macro name="dnd5e_deathSaves"/>
+    </entry>
+    <entry>
+      <int>127</int>
+      <macro name="dnd5e_deathSaveSubmit"/>
+    </entry>
+    <entry>
+      <int>128</int>
+      <macro name="dnd5e_done"/>
+    </entry>
+    <entry>
+      <int>129</int>
+      <macro name="dnd5e_DiceRoller_saveDamageRoll"/>
+    </entry>
+    <entry>
+      <int>130</int>
+      <macro name="dnd5e_RollExpression_SaveEffect"/>
+    </entry>
+    <entry>
+      <int>131</int>
+      <macro name="dnd5e_DiceRoller_saveEffectRoll"/>
+    </entry>
+    <entry>
+      <int>132</int>
+      <macro name="dnd5e_Property_wrapText"/>
+    </entry>
+    <entry>
+      <int>133</int>
+      <macro name="dnd5e_Property_getConditionsStat"/>
+    </entry>
+    <entry>
+      <int>134</int>
+      <macro name="dnd5e_getDMSkills"/>
+    </entry>
+    <entry>
+      <int>135</int>
+      <macro name="dnd5e_Property_getConditionEffects"/>
+    </entry>
+    <entry>
+      <int>136</int>
+      <macro name="dnd5e_Property_getLanguages"/>
+    </entry>
+    <entry>
+      <int>137</int>
+      <macro name="dnd5e_Property_getRaceClass"/>
+    </entry>
+    <entry>
+      <int>138</int>
+      <macro name="dnd5e_Property_getDefenses"/>
+    </entry>
+    <entry>
+      <int>139</int>
+      <macro name="dnd5e_AttackEditor_getAttackExpression"/>
+    </entry>
+    <entry>
+      <int>140</int>
+      <macro name="Attack+Editor"/>
+    </entry>
+    <entry>
+      <int>141</int>
+      <macro name="dnd5e_AttackEditor_setAttackExpression"/>
+    </entry>
+    <entry>
+      <int>142</int>
+      <macro name="dnd5e_Macro_getModLabel"/>
+    </entry>
+    <entry>
+      <int>143</int>
+      <macro name="dnd5e_AttackEditor_getMacroHtml"/>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>
