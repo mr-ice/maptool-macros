@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>578acf11-3131-4247-8a95-4c048b78f50c</macroUUID>
+  <macroUUID>0757851a-10c9-4163-8b39-fd6ddcf8aafc</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>24</index>
+  <index>147</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_getMetaInputString</label>
-  <group>Util</group>
+  <label>dnd5e_Preferences_getRegistryPromptedKeys</label>
+  <group>Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,19 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Given a JSON object of:&lt;br&gt;
-&lt;br&gt;
-{&lt;br&gt;
-	"key", "someVariableName",&lt;br&gt;
-	"value", "someValue",&lt;br&gt;
-	"prompt", "prompt",&lt;br&gt;
-	"type", "TEXT|LIST|CHECK",&lt;br&gt;
-	"opts", "options"&lt;br&gt;
-}&lt;br&gt;
-&lt;br&gt;
-Return a string representing an entry for the 'input()' function&lt;br&gt;
-&lt;/html&gt;</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the list of keys that should be prompted for.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

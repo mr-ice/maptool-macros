@@ -1,32 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>578acf11-3131-4247-8a95-4c048b78f50c</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>24</index>
-  <colorKey>default</colorKey>
+  <macroUUID>00da04ad-9616-49d9-9eff-eb8104ff6569</macroUUID>
+  <saveLocation>GmPanel</saveLocation>
+  <index>1</index>
+  <colorKey>yellow</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_getMetaInputString</label>
-  <group>Util</group>
+  <label>Setup Campaign Preferences</label>
+  <group>D&amp;D 5e - Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Given a JSON object of:&lt;br&gt;
-&lt;br&gt;
-{&lt;br&gt;
-	"key", "someVariableName",&lt;br&gt;
-	"value", "someValue",&lt;br&gt;
-	"prompt", "prompt",&lt;br&gt;
-	"type", "TEXT|LIST|CHECK",&lt;br&gt;
-	"opts", "options"&lt;br&gt;
-}&lt;br&gt;
-&lt;br&gt;
-Return a string representing an entry for the 'input()' function&lt;br&gt;
-&lt;/html&gt;</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Configures a new library token to serve as the campaign preferences.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
