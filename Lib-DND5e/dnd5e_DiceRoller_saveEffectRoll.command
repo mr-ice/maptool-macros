@@ -6,5 +6,7 @@
 	<!-- Use setDescription to overwrite anything previously set -->
 	[h: damageExpression = dnd5e_RollExpression_setDescription (damageExpression, "Target must make a " + saveAbility + " DC " + saveDC + " save. " + saveEffect)]
 	[h: damageExpression = json.set (damageExpression, "roll", "", "tototal", "")]
+	[h: save = "DC " + saveDC + " " + saveAbility + " save for " + saveEffect]
+	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", "DC " + saveDC + " " + saveAbility + " save or " + saveEffect)]
 }]
 [h: macro.return = damageExpression]

@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>55d5109c-9bac-4cf3-9182-80f9a137cb6e</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>133</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_addTypedDescriptor</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip><html>This will add a descriptor object to a roll expression. <br>A descriptor is an object which has a type and some text that <br>can be used in the output. There are a list of these objects <br>stored on a roll expression <br>arg(0) = roll expression <br>arg(1) = descriptor type; That valid types are below <dl style='margin-left: 20;'> <dt><b>condition</b></dt> <dd>Text was added by checking for a condition when rolling an attack</dd> <dt><b>tooltipRoll</b></dt> <dd>The roll expression used in a tooltip</dd> <dt><b>tooltipDetail</b></dt> <dd>The individual die rolls and bonus for the tool tip roll.</dd> <dt><b>advantageable</b></dt> <dd>Details on advantage/disadvantage snd the cancelling of both</dd> <dt><b>lucky</b></dt> <dd>A die was rerolled for a lucky halfling</dd> <dt><b>critable</b></dt> <dd>There was a critical roll</dd> <dt><b>saveable</b></dt> <dd>There is damge that can be saved</dd> </dl> arg(2) = descriptor text</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

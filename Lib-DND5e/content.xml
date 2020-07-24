@@ -1305,6 +1305,26 @@
       <int>147</int>
       <macro name="dnd5e_Preferences_getRegistryPromptedKeys"/>
     </entry>
+    <entry>
+      <int>148</int>
+      <macro name="dnd5e_RollExpression_addTypedDescriptor"/>
+    </entry>
+    <entry>
+      <int>149</int>
+      <macro name="dnd5e_RollExpression_getFormattedOutput"/>
+    </entry>
+    <entry>
+      <int>150</int>
+      <macro name="dnd5e_RollExpression_getTypedDescriptor"/>
+    </entry>
+    <entry>
+      <int>151</int>
+      <macro name="dnd5e_RollExpression_getTypedDescriptors"/>
+    </entry>
+    <entry>
+      <int>152</int>
+      <macro name="dnd5e_RollExpression_setTypedDescriptors"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

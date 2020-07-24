@@ -15,4 +15,5 @@
 	[updatedRollExpressions = json.append (updatedRollExpressions, rollExpression)]
 }]
 [h: rolledExpression = dnd5e_DiceRoller_roll (updatedRollExpressions)]
-[r: dnd5e_RollExpression_getCombinedOutput (rolledExpression)]
+[h: log.debug("Final attack roll expression: " + json.indent(rolledExpression))]
+[r: dnd5e_RollExpression_getFormattedOutput(rolledExpression)]
