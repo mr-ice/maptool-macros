@@ -16,9 +16,9 @@
 
 <!-- Process each selected token -->
 [h: sIds = getSelected()]
-[h: log.info("IDs:'" + sIds + "' Names:" + sNames)]
+[h: log.debug("IDs:'" + sIds + "' Names:" + sNames)]
 [h, foreach(id, sIds), code: {
-	[h: log.info("ID: " + id + " " + task +"=" + value)]
+	[h: log.debug("ID: " + id + " " + task +"=" + value)]
 	[h: params = json.set("{}", "id", id, "current", getProperty("HP", id), "maximum", getProperty("MaxHP", id), 
 		"temporary", getProperty("TempHP", id), task, value)]
 	[h, macro(apply): params]

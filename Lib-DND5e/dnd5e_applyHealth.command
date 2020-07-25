@@ -1,5 +1,5 @@
 <!-- Get the health related values from params -->
-[h: log.info("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
+[h: log.debug("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
 [h: id = json.get(macro.args, "id")]
 [h: current = json.get(macro.args, "current")]
 [h, if (!isNumber(current)): current = 0; '']
@@ -13,6 +13,11 @@
 [h, if (!isNumber(dsFail)): dsFail = 0; '']
 [h: exhaustionDeath = json.get(macro.args, "exhaustion6")]
 [h, if (!isNumber(exhaustionDeath)): exhaustionDeath = 0; '']
+
+<!-- An audit log of sorts -->
+[h: log.info("AUDIT TOKEN HEALTH: " + getName(id) + " HP:" + getProperty("HP", id) + "/" + current
+			+ " TempHP:" + getProperty("TempHP", id) + "/" + temporary
+			+ " MaxHP:" + getProperty("MaxHP", id) + "/" + maximum)]
 
 <!-- Clear all of the states/bars -->
 [h: setState ("Bloodied", 0, id)]
@@ -28,7 +33,7 @@
 [h: effectiveHP = current + temporary]
 [h: effectiveMaxHP = maximum + temporary]
 [h: effectiveDamage = effectiveMaxHP - effectiveHP]
-[h: log.info("effectiveHP=" + effectiveHP + " effectiveMaxHP=" + effectiveMaxHP + " effectiveDamage=" + effectiveDamage)]
+[h: log.debug("effectiveHP=" + effectiveHP + " effectiveMaxHP=" + effectiveMaxHP + " effectiveDamage=" + effectiveDamage)]
 
 <!-- Determine dead/dying+death saves/bloodied -->
 [h: state = if (exhaustionDeath || (current == 0 && !isPC(id)) 
