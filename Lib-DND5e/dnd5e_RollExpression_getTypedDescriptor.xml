@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip><html>Returns a single typed descriptor <br> <br>arg(0) = Read the descritpors from this roll expression <br>arg(1) = Return the value of this descriptor <br> <br>Returns the requested typed descriptor if set or an empty string </html></toolTip>
+  <toolTip>&lt;html&gt;Returns a single typed descriptor &lt;br&gt; &lt;br&gt;arg(0) = Read the descritpors from this roll expression &lt;br&gt;arg(1) = Return the value of this descriptor &lt;br&gt; &lt;br&gt;Returns the requested typed descriptor if set or an empty string &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

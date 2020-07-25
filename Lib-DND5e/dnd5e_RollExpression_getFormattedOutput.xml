@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip><html>Looks at the highlevel rolls and generates output <br> <br>arg(0) = The rolled expression <br> <br>Formatted text is sent to chat for the selected token </html></toolTip>
+  <toolTip>&lt;html&gt;Looks at the highlevel rolls and generates output &lt;br&gt; &lt;br&gt;arg(0) = The rolled expression &lt;br&gt; &lt;br&gt;Formatted text is sent to chat for the selected token &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

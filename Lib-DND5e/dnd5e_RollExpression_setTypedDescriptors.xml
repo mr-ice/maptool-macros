@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip><html>Sets the list of typed descriptors for the RollExpression <br> <br>arg (0) = RollExpression <br>arg (1) = list of typed descriptors <br> <br>Returns RollExpression </html></toolTip>
+  <toolTip>&lt;html&gt;Sets the list of typed descriptors for the RollExpression &lt;br&gt; &lt;br&gt;arg (0) = RollExpression &lt;br&gt;arg (1) = list of typed descriptors &lt;br&gt; &lt;br&gt;Returns RollExpression &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

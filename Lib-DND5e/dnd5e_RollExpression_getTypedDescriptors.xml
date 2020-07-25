@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip><html>Returns the list of typed descriptors attached to the RollExpression <br> <br>arg(0) = Read the descritpors from this roll expression <br> <br>Returns the typed descriptors attached to the the passed RollExpression </html></toolTip>
+  <toolTip>&lt;html&gt;Returns the list of typed descriptors attached to the RollExpression &lt;br&gt; &lt;br&gt;arg(0) = Read the descritpors from this roll expression &lt;br&gt; &lt;br&gt;Returns the typed descriptors attached to the the passed RollExpression &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
