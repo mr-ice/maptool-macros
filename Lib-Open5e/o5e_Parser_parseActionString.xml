@@ -1,21 +1,26 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>743833db-3a34-4d43-8466-db8a85f77f57</macroUUID>
+  <macroUUID>c2333484-609b-4dc8-b733-c591612ebdf3</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>51</index>
-  <colorKey>black</colorKey>
+  <index>2</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Saving Throw</label>
-  <group>Token</group>
-  <sortby>10</sortby>
+  <label>o5e_Parser_parseActionString</label>
+  <group>Open 5e - Parser</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>yellow</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Deprecated - Use Saving Throw@Lib:DnD5e</toolTip>
+  <toolTip>&lt;html&gt;Parses the action string for an entry and returns a corresponding json object&lt;br&gt;
+&lt;br&gt;
+arg (0) = Action string&lt;br&gt;
+&lt;br&gt;
+returns json&lt;br&gt;
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

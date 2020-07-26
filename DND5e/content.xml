@@ -27,6 +27,12 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>CR</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>_raceClass</name>
           <shortName>Race/Class</shortName>
           <highPriority>true</highPriority>
@@ -91,40 +97,52 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Strength Bonus</name>
+          <name>StrengthBonus</name>
+          <shortName>Strength Bonus</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>{floor((Strength - 10) / 2)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Dexterity Bonus</name>
+          <name>DexterityBonus</name>
+          <shortName>Dexterity Bonus</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>{floor((Dexterity - 10) / 2)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Constitution Bonus</name>
+          <name>ConstitutionBonus</name>
+          <shortName>Constitution Bonus</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>{floor((Constitution - 10) / 2)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Intelligence Bonus</name>
+          <name>IntelligenceBonus</name>
+          <shortName>Intelligence Bonus</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>{floor((Intelligence - 10) / 2)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Wisdom Bonus</name>
+          <name>WisdomBonus</name>
+          <shortName>Wisdom Bonus</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>{floor((Wisdom - 10) / 2)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Charisma Bonus</name>
+          <name>CharismaBonus</name>
+          <shortName>Charisma Bonus</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>{floor((Charisma - 10) / 2)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>HP</name>
@@ -186,37 +204,43 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Strength Save</name>
+          <name>StrengthSave</name>
+          <shortName>Strength Save</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Dexterity Save</name>
+          <name>DexteritySave</name>
+          <shortName>Dexterity Save</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Constitution Save</name>
+          <name>ConstitutionSave</name>
+          <shortName>Constitution Save</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Intelligence Save</name>
+          <name>IntelligenceSave</name>
+          <shortName>Intelligence Save</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Wisdom Save</name>
+          <name>WisdomSave</name>
+          <shortName>Wisdom Save</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Charisma Save</name>
+          <name>CharismaSave</name>
+          <shortName>Charisma Save</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
@@ -446,6 +470,12 @@
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>attackJson</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_o5e_MonsterActions</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>

@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>743833db-3a34-4d43-8466-db8a85f77f57</macroUUID>
+  <macroUUID>e9b7bbe7-7935-435d-bd84-353849c9d6d1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>51</index>
-  <colorKey>black</colorKey>
+  <index>12</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Saving Throw</label>
-  <group>Token</group>
-  <sortby>10</sortby>
+  <label>o5e_Token_getMonsterActions</label>
+  <group>Open 5e - Token</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
-  <fontColorKey>yellow</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Deprecated - Use Saving Throw@Lib:DnD5e</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

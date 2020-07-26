@@ -23,7 +23,7 @@
 								"color", buttonColor,
 								"fontSize", "1.05em",
 								"fontColor", fontColor,
-								"group", "D&D Beyond - Attacks",
+								"group", "D&D 5e - Attacks",
 								"playerEditable", 1,
 								"minWidth", 170,
 								"tooltip", "Make the " + selectedAttack + " attack",

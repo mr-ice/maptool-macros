@@ -1,21 +1,23 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>743833db-3a34-4d43-8466-db8a85f77f57</macroUUID>
+  <macroUUID>b0263ca6-f23a-41db-bda6-ddbeb2bf32a1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>51</index>
-  <colorKey>black</colorKey>
+  <index>9</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Saving Throw</label>
-  <group>Token</group>
-  <sortby>10</sortby>
+  <label>o5e_Open5e_searchInput</label>
+  <group>Open 5e - Net</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>yellow</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Deprecated - Use Saving Throw@Lib:DnD5e</toolTip>
+  <toolTip>&lt;html&gt;Prompts the user for a monster to search for. Will confirm with results (either none, one, or more)&lt;Br&gt;
+that allows the user to refine the search or select the intended monster&lt;br&gt;
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

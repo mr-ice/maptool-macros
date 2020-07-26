@@ -1,21 +1,25 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>743833db-3a34-4d43-8466-db8a85f77f57</macroUUID>
+  <macroUUID>7ed17868-7439-4880-aea7-f31e785f937c</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>51</index>
-  <colorKey>black</colorKey>
+  <index>4</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Saving Throw</label>
-  <group>Token</group>
-  <sortby>10</sortby>
+  <label>o5e_Parser_parseRollString</label>
+  <group>Open 5e - Parser</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>yellow</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Deprecated - Use Saving Throw@Lib:DnD5e</toolTip>
+  <toolTip>&lt;html&gt;Given a string ala 1d6+8, return a JSON object&lt;br&gt;
+ret: &lt;br&gt;
+{ "diceRolled" : 1,&lt;br&gt;
+  "diceSize" : 6,&lt;br&gt;
+  "bonus" : 8}&lt;/br&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

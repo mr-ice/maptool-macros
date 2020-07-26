@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>4d01455c-fb7e-4074-ad71-445688bcc116</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>151</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Macro_createAdvDisadvMacroFamily</label>
+  <group>Util - Macro</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Given a macro config for a macro allowing advantage and disadvantage (Saves, Ability Checks, Attacks),&lt;br&gt;
+this macro will create the "family" of macros.&lt;br&gt;
+&lt;br&gt;
+arg (0) = macro name ("Strength Save", "Scimitar Attack", etc)&lt;br&gt;
+arg (1) = command&lt;br&gt;
+arg (2) = command object (JSON)&lt;br&gt;
+arg (3) = macroConfig&lt;br&gt;
+
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

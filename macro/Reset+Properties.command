@@ -33,17 +33,12 @@
 
 [h: abilities = json.get (basicToon, "abilities")]
 [h: setProperty ("Strength", json.get (abilities, "str"))]
-[h: setProperty ("Strength Bonus", json.get (abilities, "strBonus"))]
 [h: setProperty ("Dexterity", json.get (abilities, "dex"))]
-[h: setProperty ("Dexterity Bonus", json.get (abilities, "dexBonus"))]
 [h: setProperty ("Constitution", json.get (abilities, "con"))]
-[h: setProperty ("Constitution Bonus", json.get (abilities, "conBonus"))]
 [h: setProperty ("Intelligence", json.get (abilities, "int"))]
-[h: setProperty ("Intelligence Bonus", json.get (abilities, "intBonus"))]
 [h: setProperty ("Wisdom", json.get (abilities, "wis"))]
-[h: setProperty ("Wisdom Bonus", json.get (abilities, "wisBonus"))]
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
-[h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
+
 
 [h: setProperty ("Resistances", json.toList (json.get (basicToon, "resistances")))]
 [h: setProperty ("Immunities", json.toList (json.get (basicToon, "immunities")))]
@@ -68,7 +63,7 @@
 
 [h: saves = json.get (basicToon, "savingThrows")]
 [h, foreach (save, saves), code: {
-	[h: saveName = json.get (save, "name") + " Save"]
+	[h: saveName = json.get (save, "name") + "Save"]
 	[h: saveBonus = json.get (save, "totalBonus")]
 	[h: setProperty (saveName, saveBonus)]
 }]
