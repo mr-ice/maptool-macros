@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>2c6c445c-4074-468e-944c-89e124e66cf2</macroUUID>
+  <macroUUID>ccca3fe6-5050-4621-b394-055c05d809f5</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>137</index>
+  <index>156</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_getFormattedOutput</label>
