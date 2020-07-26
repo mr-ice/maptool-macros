@@ -17,6 +17,8 @@
 }]
 <!-- same goes for total -->
 [h: newTotal = dnd5e_RollExpression_getRoll (rollExpression) + parentBonus]
+[h: tooltipRoll = dnd5e_RollExpression_getTypedDescriptor(rollExpression, "tooltipRoll")]
+[h: tooltipDetail = dnd5e_RollExpression_getTypedDescriptor(rollExpression, "tooltipDetail")]
 [h, foreach (child, children), code: {
 	[childTotals = dnd5e_RollExpression_getAllTotal (child)]
 
@@ -29,12 +31,17 @@
 	[newTotals = newerTotals]
 	[description = dnd5e_RollExpression_getExpressionType (child) + " (+" + dnd5e_RollExpression_getRoll (child) + ")"]
 	[rollExpression = dnd5e_RollExpression_addDescription (rollExpression, description)]
+	[childTip = dnd5e_RollExpression_getTypedDescriptor(child, "tooltipRoll")]
+	[rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipRoll", tooltipRoll + " + " + childTip)] 
+	[childTip = dnd5e_RollExpression_getTypedDescriptor(child, "tooltipDetail")]
+	[name = dnd5e_RollExpression_getName(child)]
+	[if (name != ""): childTip = name + childTip; ""]
+	[rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", tooltipDetail + " + " + childTip)]
 <!-- end child foreach -->
 }]
 [h: allTotal = 0]
 
-[h: rollExpression = json.set (rollExpression,	"total", newTotal,
-											"totals", newTotals)]
+[h: rollExpression = json.set (rollExpression,	"total", newTotal, "totals", newTotals)]
 
 <!-- rollString builds on the fly, we just set it on the property -->
 [h: rollString = dnd5e_RollExpression_getRollString (rollExpression)]

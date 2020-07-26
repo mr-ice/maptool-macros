@@ -1353,6 +1353,26 @@
       <int>154</int>
       <macro name="dnd5e_Macro_createPlayerMacros"/>
     </entry>
+    <entry>
+      <int>155</int>
+      <macro name="dnd5e_RollExpression_addTypedDescriptor"/>
+    </entry>
+    <entry>
+      <int>156</int>
+      <macro name="dnd5e_RollExpression_getFormattedOutput"/>
+    </entry>
+    <entry>
+      <int>157</int>
+      <macro name="dnd5e_RollExpression_getTypedDescriptor"/>
+    </entry>
+    <entry>
+      <int>158</int>
+      <macro name="dnd5e_RollExpression_getTypedDescriptors"/>
+    </entry>
+    <entry>
+      <int>159</int>
+      <macro name="dnd5e_RollExpression_setTypedDescriptors"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
