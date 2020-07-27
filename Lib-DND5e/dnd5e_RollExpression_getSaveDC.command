@@ -1,1 +1,5 @@
-[h: macro.return = json.get (arg (0), "saveDC")]
+[h: rollExpression = arg (0)]
+[h, if (json.length (macro.args) > 1): forceReturn = arg (1); forceReturn = 0]
+[h: suppressReturn = dnd5e_Preferences_getPreference ("disableNPCSaveDCReport")]
+[h, if (forceReturn || !suppressReturn): saveDC = json.get (rollExpression, "saveDC"); saveDC = "?"]
+[h: macro.return = saveDC]
