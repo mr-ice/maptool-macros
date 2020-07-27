@@ -1,6 +1,6 @@
 [h: rollString = arg (0)]
+[h: log.debug (getMacroName() + ": rollString = " + rollString)]
 [h: rollString = replace (rollString, "\\s", "")]
-[h: log.debug ("rollString: " + rollString)]
 <!-- 1d6+8, 4d8 + 9, 67d20, 8d9-12 -->
 [h: rollStringRegEx = "(\\d+)d(\\d+)\\+?(-?\\d*)"]
 [h: findId = strfind (rollString, rollStringRegEx)]

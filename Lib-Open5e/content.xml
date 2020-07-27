@@ -14,18 +14,18 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>800</x>
-  <y>300</y>
+  <x>850</x>
+  <y>250</y>
   <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>650</lastX>
+  <lastX>750</lastX>
   <lastY>250</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>13</x>
+        <x>15</x>
         <y>5</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
@@ -36,13 +36,13 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>14</x>
+        <x>16</x>
         <y>5</y>
         <g>1.0</g>
         <distanceTraveled>1.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>13</x>
+          <x>15</x>
           <y>5</y>
           <g>0.0</g>
           <distanceTraveled>0.0</distanceTraveled>
@@ -52,45 +52,22 @@
           <terrainModifier>0.0</terrainModifier>
           <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
         </parent>
-        <h>2.001</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>15</x>
-        <y>6</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>14</x>
-          <y>5</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>2.001</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>1.001</h>
+        <h>1.0</h>
         <f>0.0</f>
         <terrainModifier>0.0</terrainModifier>
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>16</x>
-        <y>6</y>
+        <x>17</x>
+        <y>5</y>
         <g>0.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>13</x>
+        <x>15</x>
         <y>5</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
@@ -101,11 +78,11 @@
         <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>16</x>
-        <y>6</y>
+        <x>17</x>
+        <y>5</y>
         <g>0.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -992,6 +969,22 @@
     <entry>
       <int>13</int>
       <macro name="o5e_RollExpression_forAttackAction"/>
+    </entry>
+    <entry>
+      <int>14</int>
+      <macro name="o5e_Parser_parseAttackString"/>
+    </entry>
+    <entry>
+      <int>15</int>
+      <macro name="o5e_RollExpression_forDamageAction"/>
+    </entry>
+    <entry>
+      <int>16</int>
+      <macro name="o5e_Parser_parseSaveString"/>
+    </entry>
+    <entry>
+      <int>17</int>
+      <macro name="o5e_RollExpression_forSaveAction"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

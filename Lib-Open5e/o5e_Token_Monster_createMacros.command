@@ -1,4 +1,5 @@
 <!-- copy the 5e macros, first -->
+[h: dnd5e_Macro_clearTokenMacros()]
 [h: dnd5e_Macro_createPlayerMacros ()]
 [h: abilityList = "[Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma]"]
 
@@ -9,7 +10,7 @@
 [h: cmd = "Saving Throw@Lib:DnD5e"]
 [h, foreach (ability, abilityList), code: {
 	[macroName = ability + " Save"]
-	[dnd5e_Macro_clearMacroFamilyFromGroup (macroName, macroGroup)]
+
 	[sortBy = json.indexOf (abilityList, ability)]
 	[cmdArg = json.set ("", "savingThrowAbility", ability, 
 							"advDisadv", "None")]
@@ -29,7 +30,7 @@
 							"Constitution", 20, "Intelligence", 21, "Wisdom", 22, "Charisma", 23)]
 [h, foreach (field, json.fields (abilitySortMap)), code: {
 	[macroName = field]
-	[dnd5e_Macro_clearMacroFamilyFromGroup (macroName, macroGroup)]
+
 	[sortBy = json.get (abilitySortMap, field)]
 	[cmdArg = json.set ("", "skillCheckName", field, 
 							"advDisadv", "none")]
@@ -50,7 +51,7 @@
 [h, foreach (actionName, fields), code: {
 	<!-- Create the macros that call the really cool macro. So make the really cool macro, first -->
 	[sortBy = json.indexOf (fields, actionName)]
-	[dnd5e_Macro_clearMacroFamilyFromGroup (actionName, macroGroup)]
+
 	[cmdArg = json.set ("", "actionName", actionName, "advDisadv", "none")]
 	[attackConfig = json.set (attackConfig, "sortBy", sortBy)]
 	[dnd5e_Macro_createAdvDisadvMacroFamily (actionName, cmd, cmdArg, attackConfig)]

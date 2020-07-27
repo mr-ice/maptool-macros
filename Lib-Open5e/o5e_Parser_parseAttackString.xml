@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1c634860-8d20-430f-8a28-a414c3054b77</macroUUID>
+  <macroUUID>997568fa-edf8-424f-9149-5541ed5960a1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>13</index>
+  <index>14</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>o5e_RollExpression_forAttackAction</label>
-  <group>Open 5e - RollExpression</group>
+  <label>o5e_Parser_parseAttackString</label>
+  <group>Open 5e - Parser</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,10 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>arg (0) = the action name
-arg (1) = action object as parsed from Parser_parseActionString
-arg (2) = (optional) "advantage|disadvantage|both|none"</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Given a string, return a JSON object representing the attack object, or the string if none is found.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

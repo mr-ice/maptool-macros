@@ -24,7 +24,19 @@
 	[h: return (0, output)]
 }; {""}]
 
-[h: attackExpressions = o5e_RollExpression_forAttackAction (actionName, actionObj, advDisadv)]
+[h: attackType = json.get (actionObj, "attackType")]
+[h: attackExpressions = "[]"]
+[h, if (attackType != ""), code: {
+	[attackExpressions = o5e_RollExpression_forAttackAction (actionName, actionObj, advDisadv)]
+}; {
+	[extraObjs = json.get (actionObj, "extraDamage")]
+	[foreach (extraObj, extraObjs), code: {
+		[extDamageExpression = o5e_RollExpression_forDamageAction (extraObj)]
+		[if (encode(extDamageExpression) == ""): extDamageExpression = o5e_RollExpression_forSaveAction (extraObj); ""]
+		[log.debug (getMacroName() + ": extDamageExpression = " + extDamageExpression)]
+		[if (encode (extDamageExpression) != ""): attackExpressions = json.append (attackExpressions, extDamageExpression); ""]
+	}]
+}]
 [h: rolledExpressions = dnd5e_DiceRoller_roll (attackExpressions)]
-[h: output = dnd5e_RollExpression_getCombinedOutput (rolledExpressions)]
+[h: output = dnd5e_RollExpression_getFormattedOutput (rolledExpressions)]
 [r: output]

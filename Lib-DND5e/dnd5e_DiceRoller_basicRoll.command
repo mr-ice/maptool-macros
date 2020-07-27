@@ -8,6 +8,7 @@
 
 [h: log.debug ("dnd5e_DiceRoller _basicRoll: Rolling " + baseRoll)]
 [h: individualRolls = json.rolls("1d" + diceSize, diceRolled)]
+[h, if (json.length (individualRolls) == 0): individualRolls = "[0]"; ""]
 [h: roll = math.arraySum(individualRolls)]
 [h: tooltipDetail = "(" + json.toList(individualRolls, "+") + ")" + bonusOutput]
 
