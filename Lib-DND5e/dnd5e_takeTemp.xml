@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6931cb52-ed11-47fb-a915-a4f195fa312b</macroUUID>
+  <macroUUID>f54e17e8-1043-4e46-bef2-1ec78d017c1b</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>42</index>
+  <index>98</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_takeTemp</label>

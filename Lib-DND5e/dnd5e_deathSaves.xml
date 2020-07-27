@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+<macroUUID>528eb5a1-4f79-4b23-a418-768f85bfe213</macroUUID>
+<saveLocation>Token</saveLocation>
+<index>106</index>
+<colorKey>default</colorKey>
+<hotKey>None</hotKey>
+<label>dnd5e_deathSaves</label>
+<group>UI Death Saves</group>
+<autoExecute>true</autoExecute>
+<sortby/>
+<includeLabel>false</includeLabel>
+<applyToTokens>true</applyToTokens>
+<fontColorKey>black</fontColorKey>
+<fontSize>1.00em</fontSize>
+<minWidth/>
+<maxWidth/>
+<allowPlayerEdits>false</allowPlayerEdits>
+<toolTip>Death Save dialog. Needs the following properties passed:
+  {
+    "id": Make the death saves for this token, 
+    "current": The token's current hit points.
+    "dsPass": The token's DSPass property value,
+    "dsFail", The token's DSFail property value, 
+    "stable", Is the token Stable?, 
+    "dead", Is the token Dead?
+  }
+Requires that the MaxHP and TempHP properties are set
+Requires that the Exhaustion 6 state is set.
+When finished call dnd5e_applyHealth macro to update properties and states
+Roll submit button makes a death save and then update DSPass or DSFail properties
+Set submit button sets DSPass and DSFail values to match the check boxes on the dialog
+</toolTip>
+<displayHotKey>true</displayHotKey>
+<commonMacro>false</commonMacro>
+<compareGroup>true</compareGroup>
+<compareSortPrefix>true</compareSortPrefix>
+<compareCommand>true</compareCommand>
+<compareIncludeLabel>true</compareIncludeLabel>
+<compareAutoExecute>true</compareAutoExecute>
+<compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,18 @@
+[h: rollExpression = arg (0)]
+[h: log.debug ("dnd5e_RollExpression_fromRollExpression: rollExpression = " + json.indent (rollExpression))]
+[h: rollExpression = json.remove (rollExpression, "roll")]
+[h: rollExpression = json.remove (rollExpression, "rolls")]
+[h: rollExpression = json.remove (rollExpression, "total")]
+[h: rollExpression = json.remove (rollExpression, "totals")]
+[h: rollExpression = json.remove (rollExpression, "allTotals")]
+[h: rollExpression = json.remove (rollExpression, "output")]
+
+[h: children = dnd5e_RollExpression_getExpressions (rollExpression)]
+[h: newExpressions = "[]"]
+[h, foreach (child, children), code: {
+	[child = dnd5e_RollExpression_fromRollExpression (child)]
+	[newExpressions = json.append (newExpressions, child)]
+}]
+[h: rollExpression = json.set (rollExpression, "expressions", newExpressions)]
+[h: log.debug ("dnd5e_RollExpression_fromRollExpression: ret = " + json.indent (rollExpression))]
+[h: macro.return = rollExpression]

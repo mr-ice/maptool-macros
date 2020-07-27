@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>11d4ac3e-adb9-4268-a1cd-fb7af09a3769</macroUUID>
+  <macroUUID>9d4e21e3-5b52-4640-a0fc-c9b611841b17</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>97</index>
+  <index>105</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_takeHealing</label>
-  <group>Health</group>
+  <label>dnd5e_deathSavesCSS</label>
+  <group>UI Death Saves</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Display a dialog to enter the amount healed and apply it to the current token
-    These token properties must be set: HP, MaxHP
-    After getting the amount healed from the dialog this macro calls dnd5e_healDamage</toolTip>
+  <toolTip>CSS for showing the death save dialog</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

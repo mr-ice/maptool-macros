@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>11d4ac3e-adb9-4268-a1cd-fb7af09a3769</macroUUID>
+  <macroUUID>f24c7afa-5e1b-495e-b7b5-9e2ba5218457</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>97</index>
+  <index>104</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_takeHealing</label>
-  <group>Health</group>
+  <label>dnd5e_RollExpression_fromRollExpression</label>
+  <group>RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,10 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Display a dialog to enter the amount healed and apply it to the current token
-    These token properties must be set: HP, MaxHP
-    After getting the amount healed from the dialog this macro calls dnd5e_healDamage</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Returns a RollExpression identical to the one provided but as it would be before having been rolled. Specifically, roll, rolls, total, totals, and allTotals are removed.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

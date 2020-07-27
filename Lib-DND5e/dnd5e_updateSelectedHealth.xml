@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4ec4ef8a-5ef2-4470-885c-61048bb05435</macroUUID>
+  <macroUUID>34e2d3bb-0ec9-417d-9334-19c066c1c133</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>38</index>
+  <index>94</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_updateSelectedHealth</label>

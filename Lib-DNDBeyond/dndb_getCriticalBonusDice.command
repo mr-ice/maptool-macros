@@ -2,10 +2,10 @@
 [h: weapon = arg(1)]
 [h: log.debug ("dndb_getCriticalBonusDice: weapon = " + weapon)]
 <!-- only way we know how to do this is by looking for known features -->
-[h: bonusCritDice = 0]
+[h: bonusCritDice = json.get (weapon, "dmgDice")]
 
 <!-- Savage Attacks -->
-[h: savageAttackFeatureArry = json.path.read (toon, "data.race.[?(@.definition.name == 'Savage Attacks')]")]
+[h: savageAttackFeatureArry = json.path.read (toon, "data.race.racialTraits[*].[?(@.definition.name == 'Savage Attacks')]")]
 
 [h, if (json.length (savageAttackFeatureArry) > 0 && json.get(weapon, "attackType") == "Melee"): bonusCritDice = bonusCritDice + 1]
 
