@@ -13,7 +13,7 @@
 }; {""}]
 [h: actionObjType = json.type (actionObj)]
 [h: log.debug ("actionObjType = " + actionObjType)]
-[h: output = "FAKE ROLL!"]
+[h: output = "Something <i>HAPPENS</i>"]
 [h, if (actionObjType == "UNKNOWN"), code: {
 	[h: rollExpression = dnd5e_RollExpression_SaveEffect (actionName)]
 	[h: rollExpression = dnd5e_RollExpression_setSaveEffect (rollExpression, actionObj)]
@@ -38,5 +38,6 @@
 	}]
 }]
 [h: rolledExpressions = dnd5e_DiceRoller_roll (attackExpressions)]
-[h: output = dnd5e_RollExpression_getFormattedOutput (rolledExpressions)]
+[h: log.debug (getMacroName() + ": rolledExpressions = " + rolledExpressions)]
+[h, if (json.length (rolledExpressions) > 0): output = dnd5e_RollExpression_getFormattedOutput (rolledExpressions); ""]
 [r: output]

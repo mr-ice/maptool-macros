@@ -2,7 +2,7 @@
 
 [h: REG_DMG_ROLL_STRING = "\\((\\d+d\\d+\\s*[+-]?\\s*\\d*)\\)"]
 [h: REG_SAVING_THROW = "DC\\s*(\\d+)\\s*(\\S+)\\s+saving throw"]
-[h: REG_TAKE_DAMAGE = "(taking|and)\\s*(\\d+)\\s*" + REG_DMG_ROLL_STRING + "\\s*(\\S+)\\s*(damage)"]
+[h: REG_TAKE_DAMAGE = "(takes|taking|and)\\s*(\\d+)\\s*" + REG_DMG_ROLL_STRING + "\\s*(\\S+)\\s*(damage)"]
 [h: REG_TAKE_EFFECT = "or\\s+be.*"]
 
 [h: saveFindId = strfind (saveString, REG_SAVING_THROW)]

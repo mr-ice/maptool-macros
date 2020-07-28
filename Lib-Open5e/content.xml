@@ -14,75 +14,31 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>850</x>
-  <y>250</y>
+  <x>1700</x>
+  <y>50</y>
   <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>750</lastX>
-  <lastY>250</lastY>
+  <lastX>1700</lastX>
+  <lastY>50</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>15</x>
-        <y>5</y>
+      <net.rptools.maptool.model.CellPoint>
+        <x>34</x>
+        <y>1</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>16</x>
-        <y>5</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>15</x>
-          <y>5</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>1.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>17</x>
-        <y>5</y>
-        <g>0.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>15</x>
-        <y>5</y>
+      <net.rptools.maptool.model.CellPoint>
+        <x>34</x>
+        <y>1</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>17</x>
-        <y>5</y>
-        <g>0.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -985,6 +941,10 @@
     <entry>
       <int>17</int>
       <macro name="o5e_RollExpression_forSaveAction"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="o5e_Parser_parseSubActionStrings"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

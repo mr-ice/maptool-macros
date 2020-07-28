@@ -36,7 +36,9 @@
 		[extraDamageArry = json.append (extraDamageArry, extraDmgObj)]
 		[extraDamageStr = getGroup (extDmgFindId, 1, 4)]
 	}; {
-		[unused_extraDamageArry = json.append (extraDamageArry, json.set ("", "saveEffect", extraDamageStr))]
+		<!-- only set extraDamageStr to the leftovers if we never found anything else -->
+		<!-- otherwise, it should already be included -->
+		[h, if (json.length (extraDamageArry) == 0): unused_extraDamageArry = json.append (extraDamageArry, json.set ("", "saveEffect", extraDamageStr)); ""]
 		[extraDamageStr = ""]
 	}]
 	[log.debug (getMacroName () + ": extraDamageStr = " + extraDamageStr)]

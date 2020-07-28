@@ -8,9 +8,9 @@
 [h: attackBonus = json.get (actionObj, "attackBonus") + abilityBonus]
 [h: attackExpression = dnd5e_RollExpression_Attack (actionName, attackBonus)]
 [h: attackExpression = dnd5e_RollExpression_setAdvantageDisadvantage (attackExpression, advDisadv)]
-
-[h: damageExpression = o5e_RollExpression_forDamageFromAttackAction (actionObj, abilityBonus)]
-[h, if (encode (damageExpression) != ""): rollExpressions = json.append ("", attackExpression, damageExpression); ""]
+[h: rollExpressions = json.append ("", attackExpression)]
+[h: damageExpression = o5e_RollExpression_forDamageAction (actionObj, abilityBonus)]
+[h, if (encode (damageExpression) != ""): rollExpressions = json.append (rollExpressions, damageExpression); ""]
 [h: extraObjs = json.get (actionObj, "extraDamage")]
 [h, foreach (extraObj, extraObjs), code: {
 	[extDamageExpression = o5e_RollExpression_forDamageAction (extraObj)]
