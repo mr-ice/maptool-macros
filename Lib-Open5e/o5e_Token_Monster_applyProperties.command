@@ -24,7 +24,7 @@
 [h: Resistances = json.get (monsterJson, "damage_resistances")]
 [h: Immunities = json.get (monsterJson, "damage_immunities")]
 [h: ConditionImmunities = json.get (monsterJson, "condition_immunities")]
-[h: Senses = json.get (monsterJson, "senses")]
+[h: o5e_Token_applySenses (json.get (monsterJson, "senses"))]
 [h: Languages = json.get (monsterJson, "languages")]
 [h: CR = json.get (monsterJson, "challenge_rating")]
 

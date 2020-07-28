@@ -946,6 +946,10 @@
       <int>18</int>
       <macro name="o5e_Parser_parseSubActionStrings"/>
     </entry>
+    <entry>
+      <int>19</int>
+      <macro name="o5e_Token_applySenses"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
