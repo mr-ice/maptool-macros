@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Call the Assembler for a Token"""
+"""Call the Assembler for a Token or Macro"""
 
 from argparse import ArgumentParser
 from asset import MTAsset
 import logging as log
 
 if __name__ == '__main__':
-    AP = ArgumentParser("MapTool Asset Assembler")
+    AP = ArgumentParser(description = "MapTool Asset Assembler")
 
     AP.add_argument(
             'input',

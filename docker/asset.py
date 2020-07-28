@@ -267,8 +267,10 @@ class MTAsset():
                     # confident in all the other ways objectify/lxml gives
                     # me to test if the 'macro' is present.
                     if 'macro' in entry.__dict__:
-                        label = entry.macro.attrib['name']
-                        macrobase = os.path.join(self.input, label)
+                        fn = self.xml_file
+                        mn = entry.macro.attrib['name']
+
+                        macrobase = os.path.join(os.path.dirname(fn), mn)
                         command_file = macrobase + '.command'
                         xml_file = macrobase + '.xml'
 

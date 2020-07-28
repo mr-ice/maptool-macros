@@ -1,112 +1,34 @@
 #!/usr/bin/env python3
-"""Reassemble a macro from parts
+"""Call the Assembler for a Token or Macro"""
 
-
-input:
-   target -
-
-       given macro/Single.xml and macro/Single.command exist
-
-       target can be
-
-       macro/Single
-       macro/Single.xml
-       macro/Single.command
-
-       the path given needs to be relative to the current working directory
-
-       Single.command belongs to
-       Single.xml by virtue of the shared filename base and sharing the same
-       directory
-
-       Single.xml belongs to MyMacro.mtmacro by virtue of having a label
-       attribute set to 'MyMacro'.  This can be overridden with the --output
-       argument, below.
-
-output:
-   --output
-       override output filename.  Default is to use the label from Single.xml
-       plus the .mtmacro extension.
-
-       Note: if the label has posix filesystem unfriendly characters they will
-       be urlencoded.
-
-   --verbose
-   --quiet
-
-       be more or less verbose
-
-   --list <name>
-       Instead of exporting the macros listed in target one at a time, create a
-       single output file, by default called .mtmacset
-"""
-
-import io
-import os
-import sys
-import argparse
+from argparse import ArgumentParser
+from asset import MTAsset
 import logging as log
-from lxml import objectify
-from lxml import etree
-from zipfile import ZipFile, ZIP_DEFLATED
-from zipfile_infolist import print_info
-from urllib.parse import quote_plus as quote
-from MTAssetLibrary import DataElement, properties_xml, MTMacro
 
-AP = argparse.ArgumentParser()
+if __name__ == '__main__':
+    AP = ArgumentParser(description = "MapTool Asset Assembler")
 
-AP.add_argument(
-    'target',
-    nargs='+',
-    help="The path to the target xml.  If missing '.xml' we'll add it")
+    AP.add_argument(
+            'input',
+            nargs='+',
+            help='Source for creating the asset')
 
-AP.add_argument(
-    '--verbose',
-    '-v',
-    action='store_true',
-    help="Print more verbose output")
+    AP.add_argument(
+            '--output',
+            help='Output directory')
 
-AP.add_argument(
-    '--quiet',
-    '-q',
-    action='store_true',
-    help="Print less verbose output")
+    AP.add_argument(
+            '--verbose',
+            action='store_true',
+            help='Turn on verbose output')
 
-AP.add_argument(
-    '--output-extension',
-    help="override the output file extension, default='.mtmacro'",
-    default='.mtmacro')
+    av = AP.parse_args()
 
-AP.add_argument(
-    '--list', '--set',
-    help="create a mtmacset (list of macros)")
-
-opts = AP.parse_args(sys.argv[1:])
-
-if opts.verbose:
-    log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
-    log.info("Verbose output.")
-else:
-    log.basicConfig(format="%(levelname)s: %(message)s")
-
-if opts.list:
-    listxml = etree.Element('list')
-    opts.output_extension = '.mtmacset'
-
-for target in opts.target:
-    mac = MTMacro(target, opts.output_extension)
-    if not opts.list:
-        mac.save()
+    if av.verbose:
+        log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
+        log.info("Verbose output.")
     else:
-        listxml.append(mac.xml.getroot())
+        log.basicConfig(format="%(levelname)s: %(message)s")
 
-if opts.list:
-    output_filename = opts.list + opts.output_extension
-    try:
-        zf = ZipFile(output_filename, mode='w', compression=ZIP_DEFLATED)
-        zf.writestr('content.xml', etree.tostring(listxml, pretty_print=True))
-        zf.writestr('properties.xml', properties_xml)
-    finally:
-        zf.close()
-        if opts.verbose or not opts.quiet:
-            print_info(output_filename)
+    asset = MTAsset(av.input[0], path=av.output)
+    asset.assemble()
