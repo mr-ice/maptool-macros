@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>P7utN2faR9yFXKuliLpgeQ==</baGUID>
+    <baGUID>JryKZDqXTM+0puttKETtxA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,14 +14,170 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>200</x>
-  <y>450</y>
-  <z>3</z>
+  <x>850</x>
+  <y>550</y>
+  <z>16</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>550</lastX>
+  <lastY>650</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>11</x>
+        <y>13</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>12</x>
+        <y>13</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>11</x>
+          <y>13</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>5.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>13</x>
+        <y>12</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>12</x>
+          <y>13</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>5.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>4.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>14</x>
+        <y>12</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>13</x>
+          <y>12</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>4.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>3.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>15</x>
+        <y>12</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>14</x>
+          <y>12</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+          <h>3.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+        </parent>
+        <h>2.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>16</x>
+        <y>11</y>
+        <g>5.0</g>
+        <distanceTraveled>5.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>15</x>
+          <y>12</y>
+          <g>4.0</g>
+          <distanceTraveled>4.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
+          <h>2.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
+        </parent>
+        <h>1.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>11</x>
+        <y>13</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -410,7 +566,7 @@
         <string>_dnd5e_lastrolledexpression</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"jh","bonus":0,"hasAdvantage":0,"hasDisadvantage":0,"description":"","output":"Rolled: 20&lt;br&gt;jh Attack Roll: 1d20 = 20 ","rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"outputs":["Rolled: 20&lt;br&gt;jh Attack Roll: 1d20 = 20 "],"allTotal":20},{"diceSize":45,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","damageTypes":[],"onCritAdd":"","output":"Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Rolled: 20&lt;br&gt; Damage Roll: 1d45 + 1d45 = 46 ","rolls":[20],"roll":20,"rollString":"1d45 + 1d45","total":46,"totals":[46],"expressions":[{"diceSize":45,"diceRolled":1,"bonus":0,"expressionTypes":"Critical Damage","name":"Critical+","damageTypes":[],"onCritAdd":"","rollString":"1d45","expressions":[],"output":"Rolled: 26&lt;br&gt;Critical  Critical Damage Roll: 1d45 = 26 ","rolls":[26],"roll":26,"total":26,"totals":[26],"outputs":["Rolled: 26&lt;br&gt;Critical  Critical Damage Roll: 1d45 = 26 "],"allTotal":26}],"description":"Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Rolled: 20&lt;br&gt; Damage Roll: 1d45 + 1d45 = 46 "],"allTotal":46}]</value>
+          <value class="string">[{"diceSize":8,"diceRolled":6,"bonus":0,"expressionTypes":"Save Damage","name":"Poison+Punch","saveDC":18,"saveAbility":"Constitution","saveEffectDescription":"Half as much on a successful save","output":"Target must make a Constitution DC ? or take 25 &lt;br&gt;Half as much on a successful save&lt;br&gt;Rolled: 25&lt;br&gt;Poison Punch Save Damage Roll: 6d8 = 25 ","rolls":[25],"roll":25,"rollString":"6d8","total":25,"totals":[25],"typedDescriptors":{"tooltipRoll":"6d8","tooltipDetail":"(7+3+6+2+4+3)","saveable":"DC ? Constitution save for Half as much on a successful save"},"description":"Target must make a Constitution DC ? or take 25 &lt;br&gt;Half as much on a successful save","outputs":["Target must make a Constitution DC ? or take 25 &lt;br&gt;Half as much on a successful save&lt;br&gt;Rolled: 25&lt;br&gt;Poison Punch Save Damage Roll: 6d8 = 25 "],"allTotal":25}]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1307,54 +1463,86 @@
     </entry>
     <entry>
       <int>148</int>
-      <macro name="dnd5e_RollExpression_addTypedDescriptor"/>
+      <macro name="Saving+Throw"/>
     </entry>
     <entry>
       <int>149</int>
-      <macro name="dnd5e_RollExpression_getFormattedOutput"/>
+      <macro name="Skill+Check"/>
     </entry>
     <entry>
       <int>150</int>
-      <macro name="dnd5e_RollExpression_getTypedDescriptor"/>
+      <macro name="dnd5e_RollExpression_setAdvantageDisadvantage"/>
     </entry>
     <entry>
       <int>151</int>
-      <macro name="dnd5e_RollExpression_getTypedDescriptors"/>
+      <macro name="dnd5e_Macro_createAdvDisadvMacroFamily"/>
     </entry>
     <entry>
       <int>152</int>
-      <macro name="dnd5e_RollExpression_setTypedDescriptors"/>
+      <macro name="dnd5e_Macro_clearMacroFamilyFromGroup"/>
     </entry>
     <entry>
       <int>153</int>
-      <macro name="dnd5e_SavedAttacks_apply"/>
+      <macro name="dnd5e_Macro_getIndexForGroup"/>
     </entry>
     <entry>
       <int>154</int>
-      <macro name="dnd5e_SavedAttacks_applyRolledExpression"/>
+      <macro name="dnd5e_Macro_createPlayerMacros"/>
     </entry>
     <entry>
       <int>155</int>
-      <macro name="dnd5e_SavedAttacks_calculateDamage"/>
+      <macro name="dnd5e_RollExpression_addTypedDescriptor"/>
     </entry>
     <entry>
       <int>156</int>
-      <macro name="dnd5e_SavedAttacks_fetch"/>
+      <macro name="dnd5e_RollExpression_getFormattedOutput"/>
     </entry>
     <entry>
       <int>157</int>
-      <macro name="dnd5e_SavedAttacks_get"/>
-    </entry>
-    <entry>
-      <int>157</int>
-      <macro name="dnd5e_SavedAttacks_makeSave"/>
+      <macro name="dnd5e_RollExpression_getTypedDescriptor"/>
     </entry>
     <entry>
       <int>158</int>
-      <macro name="dnd5e_SavedAttacks_push"/>
+      <macro name="dnd5e_RollExpression_getTypedDescriptors"/>
     </entry>
     <entry>
       <int>159</int>
+      <macro name="dnd5e_RollExpression_setTypedDescriptors"/>
+    </entry>
+    <entry>
+      <int>160</int>
+      <macro name="dnd5e_Macro_clearTokenMacros"/>
+    </entry>
+    <entry>
+      <int>161</int>
+      <macro name="dnd5e_SavedAttacks_apply"/>
+    </entry>
+    <entry>
+      <int>162</int>
+      <macro name="dnd5e_SavedAttacks_applyRolledExpression"/>
+    </entry>
+    <entry>
+      <int>163</int>
+      <macro name="dnd5e_SavedAttacks_calculateDamage"/>
+    </entry>
+    <entry>
+      <int>164</int>
+      <macro name="dnd5e_SavedAttacks_fetch"/>
+    </entry>
+    <entry>
+      <int>165</int>
+      <macro name="dnd5e_SavedAttacks_get"/>
+    </entry>
+    <entry>
+      <int>166</int>
+      <macro name="dnd5e_SavedAttacks_makeSave"/>
+    </entry>
+    <entry>
+      <int>167</int>
+      <macro name="dnd5e_SavedAttacks_push"/>
+    </entry>
+    <entry>
+      <int>168</int>
       <macro name="dnd5e_SavedAttacks_updateState"/>
     </entry>
   </macroPropertiesMap>

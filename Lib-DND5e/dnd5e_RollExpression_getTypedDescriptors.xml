@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>728adb99-8138-4eff-976c-691ae14a9442</macroUUID>
+  <macroUUID>68bb77ea-c92a-4d68-b55f-cd6abecc21da</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>134</index>
+  <index>158</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_getTypedDescriptors</label>

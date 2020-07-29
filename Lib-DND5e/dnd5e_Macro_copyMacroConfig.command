@@ -7,5 +7,8 @@
 	[h: macroConfig = getMacroProps (index, "json")]
 }]
 
+[h: macroConfig = json.remove (macroConfig, "index")]
+[h: macroConfig = json.remove (macroConfig, "metadata")]
+[h: macroConfig = json.remove (macroConfig, "compare")]
 [h: log.debug ("dnd5e_Macro_copyMacroConfig: macroConfig = " + json.indent (macroConfig))]
 [h: macro.return = macroConfig]

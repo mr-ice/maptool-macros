@@ -1,0 +1,12 @@
+[h: rollString = arg (0)]
+[h: log.debug (getMacroName() + ": rollString = " + rollString)]
+[h: rollString = replace (rollString, "\\s", "")]
+<!-- 1d6+8, 4d8 + 9, 67d20, 8d9-12 -->
+[h: rollStringRegEx = "(\\d+)d(\\d+)\\+?(-?\\d*)"]
+[h: findId = strfind (rollString, rollStringRegEx)]
+[h: findCount = getFindCount (findId)]
+[h: diceRolled = getGroup (findId, 1, 1)]
+[h: diceSize = getGroup (findId, 1, 2)]
+[h: bonus = getGroup (findId, 1, 3)]
+[h: retObj = json.set ("", "diceRolled", diceRolled, "diceSize", diceSize, "bonus", bonus)]
+[h: macro.return = retObj]

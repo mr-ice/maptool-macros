@@ -1,5 +1,5 @@
 [h: text = arg (0)]
-[h: wrapLength = 30]
+[h: wrapLength = 40]
 [h, if (wrapLength < 1), code: {
 	[return (0, text)]
 }; {""}]

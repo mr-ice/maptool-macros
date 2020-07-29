@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5476ff72-9b24-4ba1-b084-e3e3251bc8e1</macroUUID>
+  <macroUUID>7106fe5a-f715-4132-ace2-49807b86eb46</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>114</index>
   <colorKey>default</colorKey>
@@ -15,7 +15,9 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the DC for a Save Damage expression</toolTip>
+  <toolTip>Returns the DC for a Save Damage expression.
+arg (0) = (optional) true|false: When true, always return the save DC regardless of 
+																 preferences to supress it.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
