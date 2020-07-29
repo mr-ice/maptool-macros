@@ -5,26 +5,26 @@
 [h: line4 = ""]
 
 [h: idx = 1]
-[h, if (AC != ""), code: {
-	[acString = dnd5e_Property_wrapText ("AC: " + AC)]
+[h, if (getProperty ("AC") != ""), code: {
+	[acString = dnd5e_Property_wrapText ("AC: " + getProperty ("AC"))]
 	[line1 = acString]
 	[idx = idx + 1]
 }; {""}]
 
-[h, if (Vulnerabilities != ""), code: {
-	[vulnString = dnd5e_Property_wrapText ("Vulnerabilities: " + Vulnerabilities)]
+[h, if (getProperty ("Vulnerabilities") != ""), code: {
+	[vulnString = dnd5e_Property_wrapText ("Vulnerabilities: " + getProperty ("Vulnerabilities"))]
 	[evalMacro ("[line" + idx + " = vulnString]")]
 	[idx = idx + 1]
 }; {""}]
 
-[h, if (Resistances != ""), code: {
-	[resString = dnd5e_Property_wrapText ("Resist: " + Resistances)]
+[h, if (getProperty ("Resistances") != ""), code: {
+	[resString = dnd5e_Property_wrapText ("Resist: " + getProperty ("Resistances"))]
 	[evalMacro ("[line" + idx + " = resString]")]
 	[idx = idx + 1]
 };{""}]
 
-[h, if (Immunities != ""), code: {
-	[immString = dnd5e_Property_wrapText ("Immune: " + Immunities)]
+[h, if (getProperty ("Immunities") != ""), code: {
+	[immString = dnd5e_Property_wrapText ("Immune: " + getProperty ("Immunities"))]
 	[evalMacro ("[line" + idx + " = immString]")]
 }]
 
