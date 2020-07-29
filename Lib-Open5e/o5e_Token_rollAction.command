@@ -14,6 +14,7 @@
 [h: actionObjType = json.type (actionObj)]
 [h: log.debug ("actionObjType = " + actionObjType)]
 [h: output = "Something <i>HAPPENS</i>"]
+
 [h, if (actionObjType == "UNKNOWN"), code: {
 	[h: rollExpression = dnd5e_RollExpression_SaveEffect (actionName)]
 	[h: rollExpression = dnd5e_RollExpression_setSaveEffect (rollExpression, actionObj)]
@@ -21,6 +22,7 @@
 	[h: rollExpression = dnd5e_RollExpression_setSaveDC (rollExpression, 0)]
 	[h: rolled = json.get (dnd5e_DiceRoller_roll (rollExpression), 0)]
 	[h: output = dnd5e_RollExpression_getOutput (rolled)]
+	[h: log.info ("Weird code block reached: actionObj = " + actionObj)]
 	[h: return (0, output)]
 }; {""}]
 

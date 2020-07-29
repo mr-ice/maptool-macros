@@ -8,9 +8,18 @@
 [h: damageDiceSize = json.get (damageRollObj, "diceSize")]
 [h: damageType = json.get (actionObj, "damageType")]
 
-[h: damageExpression = dnd5e_RollExpression_Damage ()]
+
+[h: saveDC = json.get (actionObj, "saveDC")]
+[h, if (!isNumber (saveDC)): saveDC = 0; ""]
+[h, if (saveDC > 0): damageExpression = dnd5e_RollExpression_SaveDamage (); damageExpression = dnd5e_RollExpression_Damage ()]
+[h: saveEffect = json.get (actionObj, "saveEffect")]
+[h: saveAbility = json.get (actionObj, "saveAbility")]
+[h: damageExpression = dnd5e_RollExpression_setSaveDC (damageExpression, saveDC)]
+[h: damageExpression = dnd5e_RollExpression_setSaveEffect (damageExpression, saveEffect)]
+[h: damageExpression = dnd5e_RollExpression_setSaveAbility (damageExpression, saveAbility)]
 [h: damageExpression = dnd5e_RollExpression_setDiceRolled (damageExpression, damageDiceRolled)]
 [h: damageExpression = dnd5e_RollExpression_setDiceSize (damageExpression, damageDiceSize)]
 [h: damageExpression = dnd5e_RollExpression_setBonus (damageExpression, damageBonus)]
 [h: damageExpression = dnd5e_RollExpression_addDamageType (damageExpression, damageType)]
+
 [h: macro.return = damageExpression]

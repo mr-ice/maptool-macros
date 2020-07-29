@@ -17,7 +17,7 @@
 	[saveDmgArray = o5e_Parser_parseSaveString (extraDamageStr)]
 	[if (json.type (saveDmgArray) == "ARRAY"): extraDamageArry = json.merge (extraDamageArry, saveDmgArray); ""]
 	       <!-- ex plus 7 (2d6) fire damage -->
-	[extDmgReg = "^plus\\s?(\\d+)\\s?\\((\\d+d\\d+)\\)\\s(\\S+)\\sdamage[\\s.]?(.*)"]
+	[extDmgReg = "^plus\\s?(\\d+)\\s?\\((\\d+d\\d+)\\)\\s((\\w+\\s*)+)\\s+(damage)[\\s.]?(.*)"]
 	[extDmgFindId = strfind (extraDamageStr, extDmgReg)]
 	[findMatches = getFindCount (extDmgFindId)]
 	[if (findMatches > 0), code: {

@@ -81,7 +81,7 @@
 					"color", "green",
 					"fontColor", "black",
 					"sortBy", "150",
-					"command", "[macro('Configure Preferences@Lib:DnDBeyond'): '']")
+					"command", "[macro('Configure Preferences@Lib:DnD5e'): '']")
 )]
 					
 [h, foreach (macroCfg, macroCfgs), code: {

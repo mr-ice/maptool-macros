@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>b0263ca6-f23a-41db-bda6-ddbeb2bf32a1</macroUUID>
+  <macroUUID>8b6fd133-9b9f-4f57-bfd1-0d5d97c32d13</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>9</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>o5e_Open5e_searchInput</label>
+  <label>o5e_Open5e_searchMonsterInput</label>
   <group>Open 5e - Net</group>
   <sortby/>
   <autoExecute>true</autoExecute>
