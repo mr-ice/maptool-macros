@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a8495502-3c86-42c9-9ee4-965c3fb1a325</macroUUID>
+  <macroUUID>8463dbc0-db6c-4cc0-9a12-25a7f9d37a94</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>102</index>
+  <index>156</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_Save</label>
-  <group>RollExpression - Templates</group>
+  <label>dnd5e_SavedAttacks_apply</label>
+  <group>Saved Attacks</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,12 +14,14 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Returns a RollExpression applicable for the a Saving throw.
-&lt;br&gt;
-&lt;br&gt;(optional) arg (0) = name
-&lt;br&gt;(optional) arg (1) = bonus
-&lt;/html&gt;</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Apply a saved rolled RollExpression to the set of selected tokens
+    &lt;br&gt;
+    &lt;br&gt;arg(0) = The index of the saved attack to be applied
+    &lt;br&gt;getSelected() = Apply the saved attack to these Token IDs
+    &lt;br&gt;
+    &lt;br&gt;Updates the selected token&apos;s damage, health states and bars.
+    &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

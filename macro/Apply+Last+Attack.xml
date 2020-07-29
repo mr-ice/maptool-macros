@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>8273279c-c5b0-4948-8b50-6aaabbfbdee0</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>14</index>
+  <colorKey>red</colorKey>
+  <hotKey>None</hotKey>
+  <label>Apply Last Attack</label>
+  <group>DnD5e Health</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>yellow</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Reads the last attack made from the Attack Editor or its macros
+    &lt;br&gt;and then applies its damage and saves to all of the selected tokens.
+    &lt;br&gt;This handles immunities, resistances, and vulnerabilities.
+    &lt;br&gt;This also makes any saves associated with the attack and applies the effect
+    &lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

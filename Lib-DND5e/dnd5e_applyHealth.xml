@@ -15,20 +15,24 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Update all of the token states to match the passed health parameters passed as JSON:
-{
-  "id": Id of the token being modified,
-  "current": Token's current hit points,
-  "temporary": Token's temporary hit points
-  "maximum": Token's maximum hit points
-  "dsPass": Number of passed death saves for the token
-  "dsFail": Number of failed death saves for the token
-  "exhaustionDeath": Is the token at exhaustion level 6
-}
-The macro updates the states: Bloodied, Dying, Dead, Stable
-The macro updates the bars: HP, Damage, DSPass, DSFail
-The macro updates the properties: HP, TempHP, MaxHP, DSPass, DSFail
-The macro removes dead NPC tokens from the initiative</toolTip>
+  <toolTip>&lt;html&gt;Update all of the token states to match the passed health parameters passed as JSON:
+&lt;br&gt;
+&lt;br&gt;Input object: 
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;id&quot;: Id of the token being modified,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;current&quot;: Token&apos;s current hit points,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;temporary&quot;: Token&apos;s temporary hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;maximum&quot;: Token&apos;s maximum hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;dsPass&quot;: Number of passed death saves for the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;dsFail&quot;: Number of failed death saves for the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;exhaustionDeath&quot;: Is the token at exhaustion level 6
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;
+&lt;br&gt;The macro updates the states: Bloodied, Dying, Dead, Stable
+&lt;br&gt;The macro updates the bars: HP, Damage, DSPass, DSFail
+&lt;br&gt;The macro updates the properties: HP, TempHP, MaxHP, DSPass, DSFail
+&lt;br&gt;The macro removes dead NPC tokens from the initiative
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

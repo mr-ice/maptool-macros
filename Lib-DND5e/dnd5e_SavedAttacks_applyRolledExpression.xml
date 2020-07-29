@@ -1,0 +1,42 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>7c9d0923-cec7-4a66-9447-26e8f085b630</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>160</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_applyRolledExpression</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Determine what a single rolled RollExpression should do by type:
+    &lt;dl&gt;
+    &lt;dt&gt;&lt;b&gt;Attack&lt;/b&lt;/dt&gt;
+    &lt;dd&gt;Determine it the attack hit&lt;/dd&gt;
+    &lt;dt&gt;&lt;b&gt;Damage&lt;/b&lt;/dt&gt;
+    &lt;dd&gt;If no attack or on hit apply damage&lt;/dd&gt;
+    &lt;dt&gt;&lt;b&gt;Save Damage&lt;/b&lt;/dt&gt;
+    &lt;dd&gt;If no attack or on hit make save then apply damage&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;br&gt;arg(0) = id of token being modified
+    &lt;br&gt;arg(1) = The single expression being applied
+    &lt;br&gt;arg(2) = The current state for all rolled RollExpressions previously applied
+    &lt;br&gt;
+    &lt;br&gt;Returns the updated state object.
+    &lt;br&gt;See &lt;font face=&quot;monospace&quot;&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
+    &lt;html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
