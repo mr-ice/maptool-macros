@@ -15,17 +15,22 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Remove damage from a token with these parameters in JSON:
-    {
-      "id": Id of the token taking damage,
-      "current": Token's current hit points,
-      "temporary": Token's temporary hit points
-      "damage": The amount of damage taken by the token
-    }
-    Damage is removed from temporary first, then current
-    These token properties must be set: MaxHP, DSPass, DSFail
-    The Exhaustion 6 state should also be set.
-    After applying the damage this macro calls dnd5e_applyHealth</toolTip>
+  <toolTip>&lt;html&gt;Remove damage from a token with these parameters in JSON:
+&lt;br&gt;
+&lt;br&gt;arg(0) = An object with enough information to damage a toon
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;id&quot;: Id of the token taking damage,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;current&quot;: Token&apos;s current hit points,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;temporary&quot;: Token&apos;s temporary hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;damage&quot;: The amount of damage taken by the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;Damage is removed from temporary first, then current
+&lt;br&gt;These token properties must be set: MaxHP, DSPass, DSFail
+&lt;br&gt;The Exhaustion 6 state should also be set.
+&lt;br&gt;After applying the damage this macro calls dnd5e_applyHealth which sets
+&lt;br&gt;the health states Dead/Dying/Stable/Bloodied and the health bars
+&lt;br&gt;HP/Damage/DSPass/DSFail/
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

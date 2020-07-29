@@ -1513,6 +1513,38 @@
       <int>160</int>
       <macro name="dnd5e_Macro_clearTokenMacros"/>
     </entry>
+    <entry>
+      <int>161</int>
+      <macro name="dnd5e_SavedAttacks_apply"/>
+    </entry>
+    <entry>
+      <int>162</int>
+      <macro name="dnd5e_SavedAttacks_applyRolledExpression"/>
+    </entry>
+    <entry>
+      <int>163</int>
+      <macro name="dnd5e_SavedAttacks_calculateDamage"/>
+    </entry>
+    <entry>
+      <int>164</int>
+      <macro name="dnd5e_SavedAttacks_fetch"/>
+    </entry>
+    <entry>
+      <int>165</int>
+      <macro name="dnd5e_SavedAttacks_get"/>
+    </entry>
+    <entry>
+      <int>166</int>
+      <macro name="dnd5e_SavedAttacks_makeSave"/>
+    </entry>
+    <entry>
+      <int>167</int>
+      <macro name="dnd5e_SavedAttacks_push"/>
+    </entry>
+    <entry>
+      <int>168</int>
+      <macro name="dnd5e_SavedAttacks_updateState"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

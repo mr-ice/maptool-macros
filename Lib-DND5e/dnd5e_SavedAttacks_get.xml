@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+<macroUUID>898cc891-dc5f-4f59-aa36-87d6e646594d</macroUUID>
+<saveLocation>Token</saveLocation>
+<index>155</index>
+<colorKey>default</colorKey>
+<hotKey>None</hotKey>
+<label>dnd5e_SavedAttacks_get</label>
+<group>Saved Attacks</group>
+<sortby/>
+<autoExecute>true</autoExecute>
+<includeLabel>false</includeLabel>
+<applyToTokens>false</applyToTokens>
+<fontColorKey>black</fontColorKey>
+<fontSize>1.00em</fontSize>
+<minWidth/>
+<maxWidth/>
+<allowPlayerEdits>true</allowPlayerEdits>
+<toolTip>&lt;html&gt;Remove the last attack from the stack
+&lt;br&gt;
+&lt;br&gt;arg(0) = The attack to retrieve; 0 is oldest. By default the last attack is returned
+&lt;br&gt;
+&lt;br&gt;Returns the the requested RolledExpression attack
+&lt;/html&gt;</toolTip>
+<displayHotKey>true</displayHotKey>
+<commonMacro>false</commonMacro>
+<compareGroup>true</compareGroup>
+<compareSortPrefix>true</compareSortPrefix>
+<compareCommand>true</compareCommand>
+<compareIncludeLabel>true</compareIncludeLabel>
+<compareAutoExecute>true</compareAutoExecute>
+<compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

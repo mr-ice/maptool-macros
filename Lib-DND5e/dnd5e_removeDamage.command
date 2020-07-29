@@ -1,5 +1,6 @@
-<!-- Read the parameters -->
-[h: log.debug("dnd5e_removeDamage: " + json.indent(macro.args, 2))]
+<!-- If called as a function get the object from the first parameter, then read the object -->
+[h: log.debug("dnd5e_removeDamage: " + json.indent(macro.args))]
+[h, if(json.type(macro.args) == "ARRAY"): macro.args = json.get(macro.args, 0)]
 [h: id = json.get(macro.args, "id")]
 [h: current = json.get(macro.args, "current")]
 [h, if (!isNumber(current)): current = 0; '']

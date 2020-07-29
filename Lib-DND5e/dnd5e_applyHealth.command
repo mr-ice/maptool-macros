@@ -1,6 +1,11 @@
 <!-- Get the health related values from params -->
 [h: log.debug("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
 [h: id = json.get(macro.args, "id")]
+[h: libToken = startsWith(getName(id), "Lib:")]
+[h, if(libToken), code: {
+	[h: broadcast("Not applying health to library token: " + getName(id))]
+	[h: return(0, "")]
+}; {""}]
 [h: current = json.get(macro.args, "current")]
 [h, if (!isNumber(current)): current = 0; '']
 [h: maximum = json.get(macro.args, "maximum")]
