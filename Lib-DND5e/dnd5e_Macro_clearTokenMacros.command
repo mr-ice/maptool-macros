@@ -4,8 +4,9 @@
 	[abort(0)]
 }; {""}]
 
-[h: names = getMacros()]
+[h: names = getMacros("json")]
 [h, foreach (name, names), code: {
+	[log.debug ("Macro: " + name)]
 	[indexes = getMacroIndexes (name)]
 	[foreach (index, indexes), code: {
 		[removeMacro (index)]
