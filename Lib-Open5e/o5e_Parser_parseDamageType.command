@@ -1,5 +1,5 @@
 [h: damageString = arg(0)]
-[h: damageTypeRegEx = "^(\\S+)\\sdamage[. ]?(.*)"]
+[h: damageTypeRegEx = "^((\\w+\\s*)+)\\sdamage[. ]?(.*)"]
 
 [h: findId = strfind (damageString, damageTypeRegEx)]
 [h: findCount = getFindCount (findId)]

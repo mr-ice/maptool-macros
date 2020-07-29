@@ -1,7 +1,7 @@
 [h: actionString = arg (0)]
 [h: REG_MELEE_RANGE = "(.*)"]
 [h: REG_WEAPON_SPELL = "(Weapon|Spell)"]
-[h: REG_ATK_TO_HIT = "Attack: *([+-]\\s*\\d+) *to hit,"]
+[h: REG_ATK_TO_HIT = "Attack[:.] *([+-]\\s*\\d+) *to hit,"]
 [h: REG_RANGE_REACH = "(range|reach)"]
 [h: REG_RANGE_DIST = "(\\d+\\/?\\d*) ft\\.?,?"]
 [h: REG_JUNK_TARGET = ".*\\s\\S*\\.?"]

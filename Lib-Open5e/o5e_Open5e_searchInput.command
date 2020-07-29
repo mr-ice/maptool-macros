@@ -8,15 +8,21 @@
 	[abort (input ("searchString | " + searchString + " | Monster name to search for | text"))]
 	[searchResult = o5e_Open5e_searchMonster (searchString)]
 	[resultCount = json.get (searchResult, "count")]
-	[resultMsg = "Found " + resultCount + " results"]
+	[resultMsg = "Found " + resultCount + " results."]
 	[resultArray = json.get (searchResult, "results")]
 	[nameArray = "[]"]
+	[records = 0]
 	[foreach (resultObj, resultArray), code: {
 		[monsterName = json.get (resultObj, "name")]
+		<!-- Remove commas from monster names -->
+		[monsterName = replace (monsterName, ",", "")]
 		[nameArray = json.append (nameArray, monsterName)]
+		[records = records + 1]
 	}]
 <!-- prompt for confirmation or search refinement; retstart w/ refinement -->
-	[inputString = "nameSelection | " + json.toList(nameArray) + " | Select Name or Cancel to refine search | List "]
+    [if (records < resultCount): resultMsg = resultMsg + " Showing " + records + " entries."; ""]
+    [inputString = "junk | " + resultMsg + " | | LABEL | span=true"]
+	[inputString = inputString + "## nameSelection | " + json.toList(nameArray) + " | Select Name or Cancel to refine search | List "]
 	[if (resultCount): found = input (inputString); 
 		input ("junk|No results found for " + searchString + "| | Label | span=true")]
 	[if (found): monsterJson = json.get (resultArray, nameSelection); ""]
