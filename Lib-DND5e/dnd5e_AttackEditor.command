@@ -77,9 +77,8 @@ function openAttack(evt, attackName) {
 }]
 [r: dnd5e_AttackEditor_getMacroHtml ()]
 <div>
-  <label>Normal<input type="radio" name="advDisadvantage" value="Normal" checked="true"></label>
-  <label>Advantage<input type="radio" name="advDisadvantage" value="Advantage"></label>
-  <label>Disadvantage<input type="radio" name="advDisadvantage" value="Disadvantage"></label>
+  <label>Advantage<input class="big-checkbox" type="checkbox" name="advantage" value="Advantage"></label>
+  <label>Disadvantage<input class="big-checkbox" type="checkbox" name="disadvantage" value="Disadvantage"></label>
 </div>
 <input name="actionButton" class="button" value="Save & Attack" type="submit" />
 <input name="actionButton" class="button" value="Save Only" type="submit" />

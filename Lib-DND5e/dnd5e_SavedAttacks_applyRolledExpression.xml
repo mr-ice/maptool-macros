@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>7c9d0923-cec7-4a66-9447-26e8f085b630</macroUUID>
+  <macroUUID>5e08e90d-dbe5-4597-a033-7492c7cef115</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>160</index>
+  <index>162</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_SavedAttacks_applyRolledExpression</label>
@@ -29,7 +29,7 @@
     &lt;br&gt;arg(2) = The current state for all rolled RollExpressions previously applied
     &lt;br&gt;
     &lt;br&gt;Returns the updated state object.
-    &lt;br&gt;See &lt;font face=&quot;monospace&quot;&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
+    &lt;br&gt;See &lt;font face="monospace"&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
     &lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4d01455c-fb7e-4074-ad71-445688bcc116</macroUUID>
+  <macroUUID>0d0a35c9-2cc1-4221-bd08-09b74faa410f</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>151</index>
   <colorKey>default</colorKey>
@@ -22,7 +22,8 @@ arg (0) = macro name ("Strength Save", "Scimitar Attack", etc)&lt;br&gt;
 arg (1) = command&lt;br&gt;
 arg (2) = command object (JSON)&lt;br&gt;
 arg (3) = macroConfig&lt;br&gt;
-
+&lt;br&gt;
+Returns the last sort by increment&lt;br&gt;
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

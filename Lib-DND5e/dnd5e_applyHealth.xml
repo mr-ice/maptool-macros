@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>afc5cdd3-bf91-40d8-8797-99bb0d03bc5b</macroUUID>
+  <macroUUID>4b1bdbf0-d58f-4a5f-8032-c8dae3a50750</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>34</index>
   <colorKey>default</colorKey>
@@ -19,13 +19,13 @@
 &lt;br&gt;
 &lt;br&gt;Input object: 
 &lt;br&gt;&amp;nbsp;&amp;nbsp;{
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;id&quot;: Id of the token being modified,
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;current&quot;: Token&apos;s current hit points,
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;temporary&quot;: Token&apos;s temporary hit points
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;maximum&quot;: Token&apos;s maximum hit points
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;dsPass&quot;: Number of passed death saves for the token
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;dsFail&quot;: Number of failed death saves for the token
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;exhaustionDeath&quot;: Is the token at exhaustion level 6
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"id": Id of the token being modified,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"current": Token's current hit points,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"temporary": Token's temporary hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"maximum": Token's maximum hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"dsPass": Number of passed death saves for the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"dsFail": Number of failed death saves for the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"exhaustionDeath": Is the token at exhaustion level 6
 &lt;br&gt;&amp;nbsp;&amp;nbsp;}
 &lt;br&gt;
 &lt;br&gt;The macro updates the states: Bloodied, Dying, Dead, Stable

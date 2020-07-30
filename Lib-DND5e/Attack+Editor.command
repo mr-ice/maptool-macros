@@ -18,6 +18,7 @@
 	[h, if (saveAttackAsMacro), code: {
 		[h: fontColor = dnd5e_Preferences_getPreference ("attackEditor_macroFontColor")]
 		[h: buttonColor = dnd5e_Preferences_getPreference ("attackEditor_macroButtonColor")]
+		[h: sortByBase = listCount(currentMacros)]
 		[h: macroConfig = json.set ("", "applyToSelected", 1,
 								"autoExecute", 1,
 								"color", buttonColor,
@@ -27,37 +28,20 @@
 								"playerEditable", 1,
 								"minWidth", 170,
 								"tooltip", "Make the " + selectedAttack + " attack",
-								"sortBy", listCount(currentMacros))]
+								"sortBy", sortByBase)]
 		<!-- Normal Attack -->
-		[h: macroInputs = json.set ("", "selectedAttack", selectedAttack, 
-									"advantageDisadvantage", "Normal")]	
-		[h: macroCmd = "[r: dnd5e_Macro_rollAttack ('" + macroInputs + "')]"]
-		[h: createMacro (selectedAttack, macroCmd, macroConfig)]
-		<!-- Advantage Attack -->
-		[h: macroConfig = json.set(macroConfig, "minWidth", "12",
-						"tooltip", "Make the " + selectedAttack + " attack with advantage",
-						"sortBy", listCount(currentMacros) + 1)]
-		[h: macroInputs = json.set ("", "selectedAttack", selectedAttack, 
-									"advantageDisadvantage", "Advantage")]	
-		[h: macroCmd = "[r: dnd5e_Macro_rollAttack ('" + macroInputs + "')]"]
-		[h: advLabel = dnd5e_Macro_getModLabel ("advantage")]
-		[h: createMacro (advLabel, macroCmd, macroConfig)]
-		<!-- Disadvantage Attack -->
-		[h: macroConfig = json.set(macroConfig,
-						"tooltip", "Make the " + selectedAttack + " attack with disadvantage",
-						"sortBy", listCount(currentMacros) + 2)]
-		[h: macroInputs = json.set ("", "selectedAttack", selectedAttack, 
-									"advantageDisadvantage", "Disadvantage")]	
-		[h: macroCmd = "[r: dnd5e_Macro_rollAttack ('" + macroInputs + "')]"]
-		[h: disAdvLabel = dnd5e_Macro_getModLabel ("disadvantage")]
-		[h: createMacro (disAdvLabel, macroCmd, macroConfig)]
-		<!-- Edit -->
-		[h: macroConfig = json.set(macroConfig,
+		[h: macroInputs = json.set ("", "selectedAttack", selectedAttack)]	
+		[h: lastSortBy = dnd5e_Macro_createAdvDisadvMacroFamily (selectedAttack, "dnd5e_Macro_rollAttack@Lib:DnD5e", macroInputs, macroConfig)]
+		[h: lastSortBy = lastSortBy + 1]
+				<!-- Edit -->
+		[h: macroConfig = json.set(macroConfig, "minWidth", 12,
 						"tooltip", "Edit the " + selectedAttack + " attack",
-						"sortBy", listCount(currentMacros) + 3)]
+						"sortBy", sortByBase + "-" + lastSortBy)]
 		[h: macroCmd = "[h: setProperty('" + LAST_ATTACK_SELECTION + "', '" + selectedAttack + "')]"]
 		[h: macroCmd = macroCmd + "[r, macro('" + getMacroName() + "@" + getMacroLocation() + "'):'']"]
 		[h: createMacro ("<html>&#x270e;</html>", macroCmd, macroConfig)]
+
+
 	}; {""}]
 	[r, if (action == "SaveAttack"), code: {
 		[r: "<br>" + dnd5e_Macro_rollAttack (inputObj)]

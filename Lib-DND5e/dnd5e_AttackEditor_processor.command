@@ -16,8 +16,13 @@
      selected and save it as the preference. -->
 [h: dnd5e_Preferences_setPreference ("attackEditor_macroFontColor", json.get (inputArgs, "attackEditorMacroFontColor"))]
 [h: dnd5e_Preferences_setPreference ("attackEditor_macroButtonColor", json.get (inputArgs,"attackEditorMacroButtonColor"))]
-
-[h: advDisadv = json.get (inputArgs, "advDisadvantage")]
+[h: advantage = json.get (inputArgs, "advantage")]
+[h: disadvantage = json.get (inputArgs, "disadvantage")]
+[h: advDisadv = "Normal"]
+[h, if (advantage == "Advantage"), code: {
+	[if (disadvantage == "Disadvantage"): advDisadv = "Both"; advDisadv = "Advantage"]
+}; {""}]
+[h, if (disadvantage == "Disadvantage" && advantage != "Advantage"): advDisadv = "Disadvantage"; ""]
 <!-- Well capture the currently selected attack based off of the action selected. For now, none -->
 [h: selectedAttack = json.get (inputArgs, "activeAttack")]
 

@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8463dbc0-db6c-4cc0-9a12-25a7f9d37a94</macroUUID>
+  <macroUUID>1eb1bd22-9ca1-4d53-8da9-f9b2e5b46d3b</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>156</index>
+  <index>161</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_SavedAttacks_apply</label>
@@ -20,7 +20,7 @@
     &lt;br&gt;arg(0) = The index of the saved attack to be applied
     &lt;br&gt;getSelected() = Apply the saved attack to these Token IDs
     &lt;br&gt;
-    &lt;br&gt;Updates the selected token&apos;s damage, health states and bars.
+    &lt;br&gt;Updates the selected token's damage, health states and bars.
     &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

@@ -1,11 +1,13 @@
 [h: inputObj = arg (0)]
 [h: selectedAttack = json.get (inputObj, "selectedAttack")]
-[h: advDisadv = json.get (inputObj, "advantageDisadvantage")]
+[h: advDisadv = json.get (inputObj, "advDisadv")]
+[h, if (advDisadv == ""): advDisadv = json.get (inputObj, "advantageDisadvantage"); ""]
 [h: attackObj = dnd5e_AttackEditor_getAttackExpression ()]
 [h: log.debug ("rollAttack: attackObj = " + attackObj)]
 [h: rollExpressions = json.get (attackObj, selectedAttack)]
-[h, if (advDisadv == "Advantage"): hasAdvantage = 1; hasAdvantage = 0]
-[h, if (advDisadv == "Disadvantage"): hasDisadvantage = 1; hasDisadvantage = 0]
+[h, if (advDisadv == "Advantage" || advDisadv == "Both"): hasAdvantage = 1; hasAdvantage = 0]
+[h, if (advDisadv == "Disadvantage" || advDisadv == "Both"): hasDisadvantage = 1; hasDisadvantage = 0]
+
 [h: updatedRollExpressions = "[]"]
 [h, foreach (rollExpression, rollExpressions), code: {
 	[if (dnd5e_RollExpression_hasType (rollExpression, "Attack")), code: {
