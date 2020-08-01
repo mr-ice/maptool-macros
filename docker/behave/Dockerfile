@@ -1,6 +1,6 @@
 FROM maker
 
-RUN python3 -mpip install behave
+RUN python3 -mpip install wheel behave
 
 ENV PYTHONPATH /MT/docker
 

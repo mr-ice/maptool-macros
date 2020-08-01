@@ -1,5 +1,6 @@
 @fixture.base_token
-@fixture.base_macro
+@fixture.base_macro1
+@fixture.base_macro2
 Feature: Assemble
 
     As a builder, I want to be able to build Maptool Assets

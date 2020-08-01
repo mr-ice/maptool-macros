@@ -4,6 +4,7 @@ sys.path.append('docker')
 import os
 import pytest
 import zipfile
+import logging as log
 from docker.asset import MTAsset
 from lxml.etree import XMLSyntaxError
 
@@ -147,3 +148,31 @@ class Test_MTAsset():
         assert m.is_token is True
         m.assemble()
         assert os.path.exists('Test-MTToken.rptok')
+
+    def test_asset_with_macroset(self, tmpdir):
+        macro1 = 'macro/MVMacro1'
+        macro2 = 'macro/MVMacro2'
+        basename = 'Test-MTSet'
+
+        assert os.path.exists(macro1 + '.xml')
+        assert os.path.exists(macro1 + '.command')
+        assert os.path.exists(macro2 + '.xml')
+        assert os.path.exists(macro2 + '.command')
+        #os.makedirs('macro', exist_ok=True)
+        #with open(macro1 + '.xml', 'w') as f:
+        #    f.write('<' + macrotag + '>')
+        #    f.write('<label>' + os.path.basename(macro1) + '</label>')
+        #    f.write('</' + macrotag + '>')
+        #with open(macro1 + '.command', 'w') as f:
+        #    f.write(macro1)
+        #with open(macro2 + '.xml', 'w') as f:
+        #    f.write('<' + macrotag + '>')
+        #    f.write('<label>' + os.path.basename(macro2) + '</label>')
+        #    f.write('</' + macrotag + '>')
+        #with open(macro2 + '.command', 'w') as f:
+        #    f.write(macro2)
+
+        log.info('test_asset_with_macroset os.getcwd = ' + os.getcwd())
+        m = MTAsset(macro1, macro2, name=basename)
+        m.assemble()
+        assert os.path.exists(basename + '.mtmacset')

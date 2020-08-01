@@ -7,7 +7,6 @@ import logging as log
 
 log.debug("In environment.py")
 
-
 @fixture
 def base_rptok(context):
     """This defines a few variables to use in our BDD tests"""
@@ -41,7 +40,7 @@ def base_token(context):
 
 
 @fixture
-def base_macro(context):
+def base_macro1(context):
     """This extracts a minimum viable macro for testing"""
     log.debug("In environment.base_macro")
     context.macropath = 'macro/MVMacro1'
@@ -50,15 +49,35 @@ def base_macro(context):
     zf = ZipFile(context.macrosrc)
     zf.extractall()
     yield context.macropath
-    os.remove(context.macropath + '.xml')
-    os.remove(context.macropath + '.command')
+    if os.path.exists(context.macropath + '.xml'):
+        os.remove(context.macropath + '.xml')
+    if os.path.exists(context.macropath + '.command'):
+        os.remove(context.macropath + '.command')
+
+
+@fixture
+def base_macro2(context):
+    """This extracts a minimum viable macro for testing"""
+    log.debug("In environment.base_macro")
+    context.macropath = 'macro/MVMacro2'
+    context.macroname = 'MVMacro2'
+    context.macrosrc = 'test/data/MinViable/MVMacro2.zip'
+    zf = ZipFile(context.macrosrc)
+    zf.extractall()
+    yield context.macropath
+    if os.path.exists(context.macropath + '.xml'):
+        os.remove(context.macropath + '.xml')
+    if os.path.exists(context.macropath + '.command'):
+        os.remove(context.macropath + '.command')
+
 
 # Why is this so stupid in behave?  fixture should automatically
 # register these so we don't have to.
 FixtureRegistry = {
     "fixture.base_token": base_token,
     "fixture.base_rptok": base_rptok,
-    "fixture.base_macro": base_macro,
+    "fixture.base_macro1": base_macro1,
+    "fixture.base_macro2": base_macro2,
 }
 
 
