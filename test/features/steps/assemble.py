@@ -134,18 +134,6 @@ def step_impl(context):
     context.asset.assemble()
 
 
-@then(u'I should get a mtmacro asset')
-def step_impl(context):
-    assert os.path.exists('Test.mtmacro')
-
-
-@then(u'that asset should contain a content.xml')
-def step_impl(context):
-    zf = zipfile.ZipFile('Test.mtmacro')
-    log.debug('zf.filename = ' + zf.filename)
-    # This raises KeyError if content.xml is not there
-    context.content = zf.open('content.xml')
-
 @when(u'I call assemble with a Macro XML FileName')
 def step_impl(context):
     context.asset = MTAsset('macro/Test.xml')
@@ -156,3 +144,35 @@ def step_impl(context):
 def step_impl(context):
     context.asset = MTAsset('macro/Test.command')
     context.asset.assemble()
+
+
+@then(u'I should get a mtmacro asset')
+def step_impl(context):
+    assert os.path.exists('Test.mtmacro')
+
+
+@then(u'that Macro should contain a content.xml')
+def step_impl(context):
+    zf = zipfile.ZipFile('Test.mtmacro')
+    log.info('zf.filename = ' + zf.filename)
+    # This raises KeyError if content.xml is not there
+    context.content = zf.open('content.xml')
+
+
+@when(u'I call assemble with a Properties directory name')
+def step_impl(context):
+    context.asset = MTAsset('MVProps')
+    context.asset.assemble()
+
+
+@then(u'I should get a mtprops asset')
+def step_impl(context):
+    assert os.path.exists('MVProps.mtprops')
+
+
+@then(u'that mtprops should contain a content.xml')
+def step_impl(context):
+    zf = zipfile.ZipFile('MVProps.mtprops')
+    log.info('zf.filename = ' + zf.filename)
+    # This raises KeyError if content.xml is not there
+    context.content = zf.open('content.xml')

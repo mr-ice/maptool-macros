@@ -1,6 +1,7 @@
 @fixture.base_token
 @fixture.base_macro1
 @fixture.base_macro2
+@fixture.base_properties
 Feature: Assemble
 
     As a builder, I want to be able to build Maptool Assets
@@ -38,17 +39,23 @@ Feature: Assemble
     Scenario: I should be able to assemble a Macro by Name
         When I call assemble with a Macro name
         Then I should get a mtmacro asset
-         And that asset should contain a content.xml
+         And that Macro should contain a content.xml
          And the Asset content.xml will be a net.rptools.maptool.model.MacroButtonProperties
 
     Scenario: I should be able to assemble a Macro by XML File
         When I call assemble with a Macro XML FileName
         Then I should get a mtmacro asset
-         And that asset should contain a content.xml
+         And that Macro should contain a content.xml
          And the Asset content.xml will be a net.rptools.maptool.model.MacroButtonProperties
 
     Scenario: I should be able to assemble a Macro by Command File
         When I call assemble with a Macro Command File Name
         Then I should get a mtmacro asset
-         And that asset should contain a content.xml
+         And that Macro should contain a content.xml
          And the Asset content.xml will be a net.rptools.maptool.model.MacroButtonProperties
+
+    Scenario: I should be able to assemble a Properties by name
+        When I call assemble with a Properties directory name
+        Then I should get a mtprops asset
+         And that mtprops should contain a content.xml
+         And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties

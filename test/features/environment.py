@@ -1,4 +1,5 @@
 import os
+import shutil
 from behave import fixture, use_fixture
 from behave.fixture import use_fixture_by_tag
 from zipfile import ZipFile
@@ -70,14 +71,36 @@ def base_macro2(context):
     if os.path.exists(context.macropath + '.command'):
         os.remove(context.macropath + '.command')
 
+@fixture
+def base_properties(context):
+    """This unpacks the MVProperties"""
+    log.debug("In environment.base_properties")
+    context.proppath = 'MVProps'
+    context.propname = 'MVProps'
+    context.propsrc = 'test/data/MinViable/MVProps.zip'
+    zf = ZipFile(context.propsrc)
+    zf.extractall()
+    yield context.proppath
+    if os.path.exists(context.proppath):
+        shutil.rmtree(context.proppath)
+
+
+@fixture
+def base_project(context):
+    """This creates a project file for testing"""
+    use_fixture(base_token, context)
+    use_fixture(base_macro1, context)
+    use_fixture(base_macro2, context)
+
 
 # Why is this so stupid in behave?  fixture should automatically
-# register these so we don't have to.
+# register these so we don't have to.   I tried with fixture(name=)
 FixtureRegistry = {
     "fixture.base_token": base_token,
     "fixture.base_rptok": base_rptok,
     "fixture.base_macro1": base_macro1,
     "fixture.base_macro2": base_macro2,
+    "fixture.base_properties": base_properties,
 }
 
 
