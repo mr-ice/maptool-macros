@@ -62,6 +62,8 @@ def step_impl(context):
 
 @then('the Asset content.xml will be a {tag}')  # noqa: F811
 def step_impl(context, tag):
+    log.debug('context.content = ' + str(context.content.read()))
+    context.content.seek(0,0)
     context.xml = lxml.objectify.parse(context.content)
     assert context.xml.getroot().tag == tag
 
@@ -154,7 +156,7 @@ def step_impl(context):
 @then(u'that Macro should contain a content.xml')
 def step_impl(context):
     zf = zipfile.ZipFile('Test.mtmacro')
-    log.info('zf.filename = ' + zf.filename)
+    log.debug('zf.filename = ' + zf.filename)
     # This raises KeyError if content.xml is not there
     context.content = zf.open('content.xml')
 
@@ -173,6 +175,89 @@ def step_impl(context):
 @then(u'that mtprops should contain a content.xml')
 def step_impl(context):
     zf = zipfile.ZipFile('MVProps.mtprops')
-    log.info('zf.filename = ' + zf.filename)
+    log.debug('zf.filename = ' + zf.filename)
     # This raises KeyError if content.xml is not there
     context.content = zf.open('content.xml')
+
+
+@when(u'I call assemble with a Project file name')
+def step_impl(context):
+    log.debug('os.getcwd() = ' + os.getcwd())
+    context.asset = MTAsset('MVProject.project')
+    context.asset.assemble()
+    context.project_contents = open(context.projpath, 'r').read()
+
+
+@when(u'that Project contains a macroset')
+def step_impl(context):
+    #determine that context.projpath contains a macroset
+    assert 'macroset' in context.project_contents
+
+
+@when(u'that Project contains a token')
+def step_impl(context):
+    assert 'token' in context.project_contents
+
+
+@when(u'that Project contains a Properties')
+def step_impl(context):
+    assert 'properties' in context.project_contents
+
+
+@then(u'I should get a macroset file')
+def step_impl(context):
+    assert os.path.exists('MVMacroSet.mtmacset')
+
+
+@then(u'that macroset should contain a content.xml')
+def step_impl(context):
+    zf = zipfile.ZipFile('MVMacroSet.mtmacset')
+    context.content = zf.open('content.xml')
+
+
+@then(u'I should get a token file')
+def step_impl(context):
+    log.info('context.tokenfilename = ' + context.tokenfilename)
+    assert os.path.exists(context.tokenfilename + '.rptok')
+
+
+@then(u'that token should contain a content.xml')
+def step_impl(context):
+    zf = zipfile.ZipFile(context.tokenfilename + '.rptok')
+    context.content = zf.open('content.xml')
+
+
+@then(u'I should get a properties file')
+def step_impl(context):
+    assert os.path.exists(context.propname + '.mtprops')
+
+
+@then(u'that properties file should contain a content.xml')
+def step_impl(context):
+    zf = zipfile.ZipFile(context.propname + '.mtprops')
+    context.content = zf.open('content.xml')
+
+
+@when(u'I call assemble with a Project file name and output directory')
+def step_impl(context):
+    log.debug('os.getcwd() = ' + os.getcwd())
+    context.outputdir = 'test-output-dir'
+    context.asset = MTAsset('MVProject.project', path=context.outputdir)
+    context.asset.assemble()
+    context.project_contents = open(context.projpath, 'r').read()
+
+
+@then(u'I should get a macroset file in the output directory')
+def step_impl(context):
+    assert os.path.exists(os.path.join(context.outputdir, 'MVMacroSet.mtmacset'))
+
+
+@then(u'I should get a token file in the output directory')
+def step_impl(context):
+    assert os.path.exists(os.path.join(context.outputdir, context.tokenfilename + '.rptok'))
+
+
+@then(u'I should get a properties file in the output directory')
+def step_impl(context):
+    assert os.path.exists(os.path.join(context.outputdir, context.propname + '.mtprops'))
+

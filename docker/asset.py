@@ -210,6 +210,7 @@ class MTAsset():
         return os.path.join(self.path, quote(self.name) + '.' + self.ext)
 
     def assemble(self):
+        os.makedirs(self.path, exist_ok=True)
         if self.is_macro:
             return self.assemble_macro()
         elif self.is_macroset:
@@ -250,7 +251,19 @@ class MTAsset():
         if not self.is_project:
             raise TypeError('MTAsset is not a project, why did you call '
                             'assemble_project')
-        raise NotImplementedError('assemble_project is not implemented')
+        root = self.xml.getroot()
+        for elem in root.iterchildren():
+            if elem.tag == 'token' or elem.tag == 'properties' or elem.tag == 'macro':
+                asset = MTAsset(elem.attrib['name'], path=self.path)
+                asset.assemble()
+            elif elem.tag == 'macroset':
+                macrolist = [x.attrib['name'] for x in elem.iterchildren() if x.tag == 'macro']
+                asset = MTAsset(*macrolist, name=elem.attrib['name'], path=self.path)
+                asset.assemble()
+            elif elem.tag == 'project':
+                pass
+            else:
+                log.error('Found unknown tag {} in project file, skipping'.format(elem.tag))
 
     def assemble_properties(self):
         if not self.is_properties:

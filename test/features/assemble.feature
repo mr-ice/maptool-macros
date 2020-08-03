@@ -2,6 +2,7 @@
 @fixture.base_macro1
 @fixture.base_macro2
 @fixture.base_properties
+@fixture.base_project
 Feature: Assemble
 
     As a builder, I want to be able to build Maptool Assets
@@ -58,4 +59,35 @@ Feature: Assemble
         When I call assemble with a Properties directory name
         Then I should get a mtprops asset
          And that mtprops should contain a content.xml
+         And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties
+
+    Scenario: I should be able to assemble a Project
+        When I call assemble with a Project file name
+         And that Project contains a macroset
+         And that Project contains a token
+         And that Project contains a Properties
+        Then I should get a macroset file
+         And that macroset should contain a content.xml
+         And the Asset content.xml will be a list
+         And I should get a token file
+         And that token should contain a content.xml
+         And the Asset content.xml will be a net.rptools.maptool.model.Token
+         And I should get a properties file
+         And that properties file should contain a content.xml
+         And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties
+
+    @wip
+    Scenario: Assembling a project with an output directory should result in all assets created in the output directory
+         When I call assemble with a Project file name and output directory
+         And that Project contains a macroset
+         And that Project contains a token
+         And that Project contains a Properties
+        Then I should get a macroset file in the output directory
+         And that macroset should contain a content.xml
+         And the Asset content.xml will be a list
+         And I should get a token file in the output directory
+         And that token should contain a content.xml
+         And the Asset content.xml will be a net.rptools.maptool.model.Token
+         And I should get a properties file in the output directory
+         And that properties file should contain a content.xml
          And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties

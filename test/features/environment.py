@@ -37,7 +37,10 @@ def base_token(context):
     zf = ZipFile(context.tokensrc)
     zf.extractall()
     yield context.tokenpath
-    rmtree(context.tokenpath)
+    try:
+        rmtree(context.tokenpath)
+    except Exception as e:
+        pass
 
 
 @fixture
@@ -91,6 +94,14 @@ def base_project(context):
     use_fixture(base_token, context)
     use_fixture(base_macro1, context)
     use_fixture(base_macro2, context)
+    context.projpath = 'MVProject.project'
+    context.projname = 'MVProject'
+    context.projsrc = 'test/data/MinViable/MVProject.zip'
+    zf = ZipFile(context.projsrc)
+    zf.extractall()
+    yield context.projsrc
+    if os.path.exists(context.projpath):
+        os.remove(context.projpath)
 
 
 # Why is this so stupid in behave?  fixture should automatically
@@ -101,6 +112,7 @@ FixtureRegistry = {
     "fixture.base_macro1": base_macro1,
     "fixture.base_macro2": base_macro2,
     "fixture.base_properties": base_properties,
+    "fixture.base_project": base_project,
 }
 
 
