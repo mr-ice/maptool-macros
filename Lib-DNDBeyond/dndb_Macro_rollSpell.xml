@@ -1,21 +1,25 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>393fe5e8-c32b-49fb-8174-f6b59884d86f</macroUUID>
+  <macroUUID>619c65c9-3d3c-4ae5-ac65-1324d8956851</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>79</index>
+  <index>122</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_getCastableSpells</label>
-  <group>Basic Toon</group>
+  <label>dndb_Macro_rollSpell</label>
+  <group>Utility - Spells</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the castable spells from the BasicToon.</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Given two arguments, roll a spell. If the provided spell slot is below the level of the spell, the spell is cast as the minimum spell level.
+
+arg(0) = Input object with fields:
+spellName: name of the spell
+spellSlot: slot to cast with</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

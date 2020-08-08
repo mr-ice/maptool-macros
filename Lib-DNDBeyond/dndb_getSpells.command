@@ -3,7 +3,7 @@
 <!-- inspect data.classSpells array, for each object, read characterClassId. Find the class with that id and 
      determine the related spell ability. If there are overlaps, I dunno, dupes? -->
 
-[h: allSpells = "[]"]
+[h: allSpells = "{}"]
 [h: abilities = dndb_getAbilities (toon)]
 [h: classSpellsArry = json.path.read (toon, "data.classSpells")]
 <!-- Some dumb classes, like Monk, add spells dumbly, like Monk, and are dumb, like Monk -->
@@ -104,7 +104,7 @@
 									"attackBonus", atkBonus,
 									"spellCastingAbilityId", spellCastingAbilityId,
 									"mustBePrepared", classRequiresPreparation)]
-		[h: allSpells = json.append (allSpells, basicSpell)]
+		[h: allSpells = json.set (allSpells, encode (json.get (basicSpell, "name")), basicSpell)]
 	}]
 }]
 [h: macro.return = allSpells]

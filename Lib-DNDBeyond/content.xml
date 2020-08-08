@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>P5DdWq4fTWK5fGshM8H3cA==</baGUID>
+    <baGUID>KJ7V25qCRLmEWt+MKE8Uzw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,101 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>150</x>
+  <x>300</x>
   <y>600</y>
-  <z>3</z>
+  <z>5</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>300</lastX>
+  <lastX>150</lastX>
   <lastY>600</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>6</x>
-        <y>12</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>5</x>
-        <y>12</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>6</x>
-          <y>12</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>2.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>4</x>
-        <y>12</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>5</x>
-          <y>12</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>2.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>1.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>3</x>
-        <y>12</y>
-        <g>0.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>6</x>
-        <y>12</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>3</x>
-        <y>12</y>
-        <g>0.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -1285,6 +1198,10 @@
     <entry>
       <int>121</int>
       <macro name="dndb_BasicToon_setTokenName"/>
+    </entry>
+    <entry>
+      <int>122</int>
+      <macro name="dndb_Macro_rollSpell"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
