@@ -7,6 +7,7 @@ from behave import given, when, then
 from docker.asset import MTAsset
 import zipfile
 from subprocess import Popen, PIPE
+from MTAssetLibrary import MacroNameQuote as quote
 
 # the noqa: F811 turns off complaining that the function is redefined.
 # In behave, common usage is to use step_impl as the function in each
@@ -130,49 +131,54 @@ def step_impl(context):
         'RPTok file at {} was not created'.format(context.tokenfilename)
 
 
-@when(u'I call assemble with a Macro name')
+@when(u'I call assemble with a Macro name')  # noqa: F811
 def step_impl(context):
-    context.asset = MTAsset('macro/Test')
+    log.info('Creating MTAsset with %s' % context.macro1['path'])
+    context.asset = MTAsset(context.macro1['path'])
+    log.info('Calling assemble on MTAsset(%s)' % context.macro1['path'])
     context.asset.assemble()
 
 
-@when(u'I call assemble with a Macro XML FileName')
+@when(u'I call assemble with a Macro XML FileName')  # noqa: F811
 def step_impl(context):
-    context.asset = MTAsset('macro/Test.xml')
+    context.asset = MTAsset(context.macro1['xml'])
     context.asset.assemble()
 
 
-@when(u'I call assemble with a Macro Command File Name')
+@when(u'I call assemble with a Macro Command File Name')  # noqa: F811
 def step_impl(context):
-    context.asset = MTAsset('macro/Test.command')
+    context.asset = MTAsset(context.macro2['path'] + '.command')
     context.asset.assemble()
 
 
-@then(u'I should get a mtmacro asset')
+@then(u'I should get a mtmacro asset')  # noqa: F811
 def step_impl(context):
-    assert os.path.exists('Test.mtmacro')
+    ql = quote(context.macro1['label'])
+    context.macrofilename = ql + '.mtmacro'
+    assert os.path.exists(context.macrofilename), \
+	'Macro file expected %s.mtmacro does not exist' % ql
 
 
-@then(u'that Macro should contain a content.xml')
+@then(u'that Macro should contain a content.xml')  # noqa: F811
 def step_impl(context):
-    zf = zipfile.ZipFile('Test.mtmacro')
+    zf = zipfile.ZipFile(context.macrofilename)
     log.debug('zf.filename = ' + zf.filename)
     # This raises KeyError if content.xml is not there
     context.content = zf.open('content.xml')
 
 
-@when(u'I call assemble with a Properties directory name')
+@when(u'I call assemble with a Properties directory name')  # noqa: F811
 def step_impl(context):
-    context.asset = MTAsset('MVProps')
+    context.asset = MTAsset(context.propname)
     context.asset.assemble()
 
 
-@then(u'I should get a mtprops asset')
+@then(u'I should get a mtprops asset')  # noqa: F811
 def step_impl(context):
     assert os.path.exists('MVProps.mtprops')
 
 
-@then(u'that mtprops should contain a content.xml')
+@then(u'that mtprops should contain a content.xml')  # noqa: F811
 def step_impl(context):
     zf = zipfile.ZipFile('MVProps.mtprops')
     log.debug('zf.filename = ' + zf.filename)
@@ -180,7 +186,7 @@ def step_impl(context):
     context.content = zf.open('content.xml')
 
 
-@when(u'I call assemble with a Project file name')
+@when(u'I call assemble with a Project file name')  # noqa: F811
 def step_impl(context):
     log.debug('os.getcwd() = ' + os.getcwd())
     context.asset = MTAsset('MVProject.project')
@@ -188,57 +194,57 @@ def step_impl(context):
     context.project_contents = open(context.projpath, 'r').read()
 
 
-@when(u'that Project contains a macroset')
+@when(u'that Project contains a macroset')  # noqa: F811
 def step_impl(context):
     #determine that context.projpath contains a macroset
     assert 'macroset' in context.project_contents
 
 
-@when(u'that Project contains a token')
+@when(u'that Project contains a token')  # noqa: F811
 def step_impl(context):
     assert 'token' in context.project_contents
 
 
-@when(u'that Project contains a Properties')
+@when(u'that Project contains a Properties')  # noqa: F811
 def step_impl(context):
     assert 'properties' in context.project_contents
 
 
-@then(u'I should get a macroset file')
+@then(u'I should get a macroset file')  # noqa: F811
 def step_impl(context):
     assert os.path.exists('MVMacroSet.mtmacset')
 
 
-@then(u'that macroset should contain a content.xml')
+@then(u'that macroset should contain a content.xml')  # noqa: F811
 def step_impl(context):
     zf = zipfile.ZipFile('MVMacroSet.mtmacset')
     context.content = zf.open('content.xml')
 
 
-@then(u'I should get a token file')
+@then(u'I should get a token file')  # noqa: F811
 def step_impl(context):
     log.info('context.tokenfilename = ' + context.tokenfilename)
     assert os.path.exists(context.tokenfilename + '.rptok')
 
 
-@then(u'that token should contain a content.xml')
+@then(u'that token should contain a content.xml')  # noqa: F811
 def step_impl(context):
     zf = zipfile.ZipFile(context.tokenfilename + '.rptok')
     context.content = zf.open('content.xml')
 
 
-@then(u'I should get a properties file')
+@then(u'I should get a properties file')  # noqa: F811
 def step_impl(context):
     assert os.path.exists(context.propname + '.mtprops')
 
 
-@then(u'that properties file should contain a content.xml')
+@then(u'that properties file should contain a content.xml')  # noqa: F811
 def step_impl(context):
     zf = zipfile.ZipFile(context.propname + '.mtprops')
     context.content = zf.open('content.xml')
 
 
-@when(u'I call assemble with a Project file name and output directory')
+@when(u'I call assemble with a Project file name and output directory')  # noqa: F811
 def step_impl(context):
     log.debug('os.getcwd() = ' + os.getcwd())
     context.outputdir = 'test-output-dir'
@@ -247,17 +253,43 @@ def step_impl(context):
     context.project_contents = open(context.projpath, 'r').read()
 
 
-@then(u'I should get a macroset file in the output directory')
+@then(u'I should get a macroset file in the output directory')  # noqa: F811
 def step_impl(context):
     assert os.path.exists(os.path.join(context.outputdir, 'MVMacroSet.mtmacset'))
 
 
-@then(u'I should get a token file in the output directory')
+@then(u'I should get a token file in the output directory')  # noqa: F811
 def step_impl(context):
     assert os.path.exists(os.path.join(context.outputdir, context.tokenfilename + '.rptok'))
 
 
-@then(u'I should get a properties file in the output directory')
+@then(u'I should get a properties file in the output directory')  # noqa: F811
 def step_impl(context):
     assert os.path.exists(os.path.join(context.outputdir, context.propname + '.mtprops'))
 
+
+@given(u'I am using the assemble command')  # noqa: F811
+def step_impl(context):
+    assert os.path.exists('docker/assemble')
+
+
+@when(u'I call the assemble command with two or more macros as input and an output directory')  # noqa: F811
+def step_impl(context):
+    p = Popen(['./docker/assemble', context.macro1['path'], context.macro2['path'], '--name',
+        context.macrosetRandomName, '--output', context.temp_directory],
+        stderr=PIPE, stdout=PIPE, close_fds=True)
+    context.stdout, context.stderr = p.communicate()
+
+
+@then(u'I should get an output directory')  # noqa: F811
+def step_impl(context):
+    assert os.path.exists(context.temp_directory)
+    assert os.path.isdir(context.temp_directory)
+
+
+@then(u'a named macroset')  # noqa: F811
+def step_impl(context):
+    ptf = os.path.join(context.temp_directory, context.macrosetRandomName)
+    ptf = ptf + '.mtmacset'
+    assert os.path.exists(ptf), 'Expected macroset %s does not exist' % ptf
+    assert os.path.isfile(ptf), 'Expected macroset %s is not a file' % ptf

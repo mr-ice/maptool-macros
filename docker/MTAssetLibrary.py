@@ -27,7 +27,7 @@ def DataElement(content):
 
 
 def MacroNameQuote(name):
-    return quote_plus(name, safe='')
+    return quote_plus(name, safe=':')
 
 
 def XML2File(to_dir, to_file, xml):

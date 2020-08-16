@@ -3,6 +3,7 @@
 @fixture.base_macro2
 @fixture.base_properties
 @fixture.base_project
+@fixture.temp_directory
 Feature: Assemble
 
     As a builder, I want to be able to build Maptool Assets
@@ -76,7 +77,6 @@ Feature: Assemble
          And that properties file should contain a content.xml
          And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties
 
-    @wip
     Scenario: Assembling a project with an output directory should result in all assets created in the output directory
          When I call assemble with a Project file name and output directory
          And that Project contains a macroset
@@ -91,3 +91,13 @@ Feature: Assemble
          And I should get a properties file in the output directory
          And that properties file should contain a content.xml
          And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties
+
+
+    @wip
+    Scenario: I should be able to assemble a macro set from the commandline
+       Given I am using the assemble command
+        When I call the assemble command with two or more macros as input and an output directory
+        Then I should get an output directory
+         And a named macroset
+         And that macroset should contain a content.xml
+         And the Asset content.xml will be a list

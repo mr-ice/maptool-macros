@@ -14,6 +14,11 @@ if __name__ == '__main__':
             help='Source for creating the asset')
 
     AP.add_argument(
+            '--list', '--name',
+            help='Give a name to a list of macros.  Usually only useful '
+                 'if you provide more than one input')
+
+    AP.add_argument(
             '--output',
             help='Output directory')
 
@@ -30,5 +35,5 @@ if __name__ == '__main__':
     else:
         log.basicConfig(format="%(levelname)s: %(message)s")
 
-    asset = MTAsset(av.input[0], path=av.output)
+    asset = MTAsset(*av.input, name=av.list, path=av.output)
     asset.assemble()
