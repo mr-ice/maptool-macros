@@ -54,8 +54,15 @@
 		[h, if (isPC(id)), code: {
 			[h: setState("Prone", 1, id)]
 		}; {
+			[h: init = getInitiative(id)]
+			[h, if (id == getInitiativeToken()): nextInitiative(); ""]
 			[h: removeFromInitiative(id)]
 			[h: setLayer("OBJECT", id)]
+			[h: list = getLibProperty("_deadTokens", "Lib:DnD5e")]
+			[h: deadToken = json.set("{}", "id", id, "initiative", init)]
+			[h: list = json.append(list, deadToken)]
+			[h, while(json.length(list) > 10): list = json.remove(list, 0)]
+			[h: setLibProperty("_deadTokens", list, "Lib:DnD5e")]
 		}]
 	};
 	case "stable": {

@@ -1545,6 +1545,10 @@
       <int>168</int>
       <macro name="dnd5e_SavedAttacks_updateState"/>
     </entry>
+    <entry>
+      <int>169</int>
+      <macro name="dnd5e_Health_restoreDeadNPC"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

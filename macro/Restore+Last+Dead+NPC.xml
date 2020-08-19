@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>7b349225-26c0-4830-8303-36ade1c9f841</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>15</index>
+  <colorKey>black</colorKey>
+  <hotKey>None</hotKey>
+  <label>Restore Last Dead NPC</label>
+  <group>DnD5e Health</group>
+  <sortby>200</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>fuchsia</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth></minWidth>
+  <maxWidth></maxWidth>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Cause the last dead NPC to be:
+&lt;ul&gt;
+&lt;li&gt;Healed 1 hit point
+&lt;li&gt;Moved from the Object layer to the Token layer
+&lt;li&gt;Added back into the inititive
+&lt;li&gt;Their initiative value restored to its value at death
+&lt;/ul&gt; 
+The initiative list is then resorted.
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
