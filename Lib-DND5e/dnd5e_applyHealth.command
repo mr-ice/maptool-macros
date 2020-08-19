@@ -47,7 +47,7 @@
 [h: state = if (state == "fine" && current == 0 && dsPass >= 3, "stable", state)]
 [h: state = if (state == "fine" && current == 0, "dying", state)]
 [h: state = if (state == "fine" && current <= maximum / 2, "bloodied", state)]
-[h: state = if (state == "fine" && current <= maximum, "damaged", state)]
+[h: state = if (state == "fine" && current < maximum, "damaged", state)]
 [h, switch(state), code:
 	case "dead": {
 		[h: setState("Dead", 1, id)]
