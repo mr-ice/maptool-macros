@@ -2068,10 +2068,27 @@
       </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
     </entry>
     <entry>
+      <string>Damaged</string>
+      <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+        <name>Damaged</name>
+        <order>60</order>
+        <group>1. Health</group>
+        <mouseover>false</mouseover>
+        <opacity>100</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>5b03ee62c6b25f84ef3a57c3ac060e92</id>
+        </assetId>
+        <grid>2</grid>
+      </net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
+    </entry>
+    <entry>
       <string>Bloodied</string>
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Bloodied</name>
-        <order>60</order>
+        <order>61</order>
         <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
@@ -2088,7 +2105,7 @@
       <string>Stable</string>
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Stable</name>
-        <order>61</order>
+        <order>62</order>
         <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
@@ -2104,7 +2121,7 @@
       <string>Dying</string>
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Dying</name>
-        <order>62</order>
+        <order>63</order>
         <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
@@ -2120,7 +2137,7 @@
       <string>Dead</string>
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Dead</name>
-        <order>63</order>
+        <order>64</order>
         <group>1. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
