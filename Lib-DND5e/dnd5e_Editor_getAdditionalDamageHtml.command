@@ -29,7 +29,7 @@
 	]
 	[h: damageRollString = dnd5e_RollExpression_getRollString (extraDamage)]
 	[h: damageTypes = dnd5e_RollExpression_getDamageTypes (extraDamage)]
-	[h: damageSaveDC = dnd5e_RollExpression_getSaveDC (extraDamage)]
+	[h: damageSaveDC = dnd5e_RollExpression_getSaveDC (extraDamage, 1)]
 	[h: damageSaveEffect = dnd5e_RollExpression_getSaveEffect (extraDamage)]
   <div class="roll-container">
   	<input name="extraDamage-[r: attackIndex]" value="[r: totalDmg]" hidden="true" />
