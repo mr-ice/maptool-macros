@@ -4,8 +4,17 @@
 from argparse import ArgumentParser
 from asset import MTAsset
 import logging as log
+import configparser
 
 if __name__ == '__main__':
+
+    c = configparser.ConfigParser()
+    c.read('config.ini')
+    if 'default' not in c:
+        c['default'] = {}
+    if 'outputdirectory' not in c['default']:
+        c['default']['outputdirectory'] = '.'
+
     AP = ArgumentParser(description = "MapTool Asset Assembler")
 
     AP.add_argument(
@@ -20,6 +29,7 @@ if __name__ == '__main__':
 
     AP.add_argument(
             '--output',
+            default=c['default']['outputdirectory'],
             help='Output directory')
 
     AP.add_argument(
@@ -35,5 +45,8 @@ if __name__ == '__main__':
     else:
         log.basicConfig(format="%(levelname)s: %(message)s")
 
+    log.debug('input = %s' % ','.join(av.input))
+    log.debug('name = %s' % av.list)
+    log.debug('path = %s' % av.output)
     asset = MTAsset(*av.input, name=av.list, path=av.output)
     asset.assemble()

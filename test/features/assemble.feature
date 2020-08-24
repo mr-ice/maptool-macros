@@ -93,7 +93,6 @@ Feature: Assemble
          And the Asset content.xml will be a net.rptools.maptool.model.CampaignProperties
 
 
-    @wip
     Scenario: I should be able to assemble a macro set from the commandline
        Given I am using the assemble command
         When I call the assemble command with two or more macros as input and an output directory

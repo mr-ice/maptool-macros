@@ -30,12 +30,14 @@ def step_impl(context):
 
 @given('I have the assemble command')  # noqa: F811
 def step_impl(context):
-    assert os.path.exists('docker/token-assemble')
-    assert os.access('docker/token-assemble', os.X_OK)
+    assert os.path.exists('docker/assemble')
+    assert os.access('docker/assemble', os.X_OK)
 
 
 @when('I assemble that Token')  # noqa: F811
 def step_impl(context):
+    ## TODO we really want to call the assemble command instead of the
+    ## object method.
     context.asset.assemble()
 
 
