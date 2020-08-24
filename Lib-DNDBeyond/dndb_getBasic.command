@@ -16,6 +16,7 @@
 						"xp", replace (json.path.read (toon, "data.currentXp"),"null", ""),
 						"gender", replace (json.path.read (toon, "data.gender"),"null", ""),
 						"avatarUrl", replace (json.path.read (toon, "data.avatarUrl"),"null", ""),
+						"race", replace (json.path.read (toon, "data.race.fullName"),"null", ""),
 						"url", replace (json.path.read (toon, "data.readonlyUrl"),"null", ""),
 						"abilities", abilities)]
 
@@ -39,18 +40,24 @@
 [h: log.info ("dndb_getBasic: Character level")]
 [h: totalLevel = 0]
 [h: classArry = ""]
-[h, foreach (class, json.path.read (toon, "data.classes")), code: {
-	[h: level = json.get (class, "level")]
+[h, foreach (classEl, json.path.read (toon, "data.classes")), code: {
+	[h: level = json.get (classEl, "level")]
 	[h: totalLevel = totalLevel + level]
-	[h: className = json.path.read (class, "definition.name")]
+	[h: className = json.path.read (classEl, "definition.name")]
 	[h: classObj = json.set ("", "className", className, "level", level)]
-	[h: hitDice = json.path.read (class, "definition.hitDice")]
-	[h: hitDiceUsed = json.get (class, "hitDiceUsed")]
+	[h: hitDice = json.path.read (classEl, "definition.hitDice")]
+	[h: hitDiceUsed = json.get (classEl, "hitDiceUsed")]
 	[h: classObj = json.set (classObj, "hitDice", hitDice, "hitDiceUsed", hitDiceUsed)]
 	[h: classArry = json.append (classArry, classObj)]
 }]
 [h: log.debug ("classArry: "+ classArry)]
 [h: basicToon = json.set (basicToon, "classes", classArry)]
+
+<!-- Resistances / Immunities -->
+[h: resistances = dndb_getResistances (toon)]
+[h: basicToon = json.set (basicToon, "resistances", resistances)]
+[h: immunities = dndb_getImmunities (toon)]
+[h: basicToon = json.set (basicToon, "immunities", immunities)]
 
 <!-- Senses -->
 [h: log.info ("dndb_getBasic: Senses")]

@@ -14,7 +14,9 @@
 [h: total = dnd5e_RollExpression_getTotal (rollExpression)]
 [h: roll = dnd5e_RollExpression_getRoll (rollExpression)]
 [h: log.debug ("dnd5e_DiceRoller_basicRoll: damagetTypes = " + damageTypes + "; name = " + name)]
-[h: output = description + "Rolled: " + roll  + "<br>" +  name + " " + descriptor + ": " + rollString + " = " + total + " " + damageTypeStr]
+[h: output = description]
+[h, if (isNumber (roll)): output = output + "Rolled: " + roll  + "<br>"; ""]
+[h: output = output +  name + " " + descriptor + ": " + rollString + " = " + total + " " + damageTypeStr]
 
 [h: macro.return = json.set (rollExpression, "output", output)]
 

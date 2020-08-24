@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>7139881b-8f4a-429a-958e-a000f7d4433e</macroUUID>
+  <macroUUID>27c6adff-464b-4aa5-9889-081fbf3f020c</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>108</index>
+  <index>128</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_done</label>

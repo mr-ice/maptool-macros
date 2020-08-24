@@ -5,11 +5,15 @@
 <!-- Null protect -->
 [h, if (encode (userPreferences) == ""): userPreferences = "{}"; ""]
 
+<!-- get campaign preference -->
+[h, macro ("getCampaignPreferences@Lib:CampaignPreferences"): ""]
+[h: campaignPref = macro.return]
+[h: log.debug ("campaignPref: " + campaignPref)]
 [h: preference = ""]
 
 <!-- iterate through the three preferences in order of least significant to most. Set the value only when
 	it's non-null -->
-[h: prefList = json.append ("", userPreferences)]
+[h: prefList = json.append ("", userPreferences, campaignPref)]
 [h, foreach (prefObj, prefList), code: {
 	[h: log.debug ("prefObj: " + prefObj)]
 	[h: tempValue = json.get (prefObj, prefKey)]

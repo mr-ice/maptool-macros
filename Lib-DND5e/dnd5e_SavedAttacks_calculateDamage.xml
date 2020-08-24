@@ -1,0 +1,40 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3fec02a8-3c44-4bd1-8c3e-07815603c409</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>163</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_calculateDamage</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Calculate the damage that should be applied
+    &lt;br&gt;
+    &lt;br&gt;arg(0) = Token ID receiving damage
+    &lt;br&gt;arg(1) = The total damage recieved
+    &lt;br&gt;arg(2) = damage type. Everything up to the first comma is used as the type
+    &lt;br&gt;arg(3) = optional save reduction. Only 'half', 'none' &amp;amp; a multiplier are supported
+    &lt;br&gt;
+    &lt;br&gt;Returns an object
+    &lt;br&gt;&amp;nbsp;&amp;nbsp;{
+    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"damage": The amount of damage actually taken
+    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"applied": The string list of modifications applied to the total damage
+    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"type": The type of damage recieved
+    &lt;br&gt;&amp;nbsp;&amp;nbsp;}
+    &lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

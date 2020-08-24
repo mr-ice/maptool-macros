@@ -1,0 +1,6 @@
+[h: saved = getLibProperty("savedAttackRolledExpressions", "Lib:DnD5e")]
+[h, if (json.isEmpty(saved)): saved = "[]"; ""]
+[h: saved = json.append(saved, arg(0))]
+[h, while(json.length(saved) > 5): saved = json.remove(saved, 0)]
+[h: setLibProperty("savedAttackRolledExpressions", saved, "Lib:DnD5e")]
+[h: macro.return = saved]

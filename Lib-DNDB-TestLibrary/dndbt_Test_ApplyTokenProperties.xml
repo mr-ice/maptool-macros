@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8d52e6ab-fbc1-4064-90d8-51d4df595e86</macroUUID>
+  <macroUUID>7b561fc6-caa4-411b-ae06-c90de979f9ea</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>51</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dndbt_Test_ApplyTokenProperties</label>
-  <group>Tests</group>
+  <group>Tests - BasicToon</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

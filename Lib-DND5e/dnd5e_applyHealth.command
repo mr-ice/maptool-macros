@@ -1,6 +1,11 @@
 <!-- Get the health related values from params -->
-[h: log.info("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
+[h: log.debug("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
 [h: id = json.get(macro.args, "id")]
+[h: libToken = startsWith(getName(id), "Lib:")]
+[h, if(libToken), code: {
+	[h: broadcast("Not applying health to library token: " + getName(id))]
+	[h: return(0, "")]
+}; {""}]
 [h: current = json.get(macro.args, "current")]
 [h, if (!isNumber(current)): current = 0; '']
 [h: maximum = json.get(macro.args, "maximum")]
@@ -14,11 +19,17 @@
 [h: exhaustionDeath = json.get(macro.args, "exhaustion6")]
 [h, if (!isNumber(exhaustionDeath)): exhaustionDeath = 0; '']
 
+<!-- An audit log of sorts -->
+[h: log.info("AUDIT TOKEN HEALTH: " + getName(id) + " HP:" + getProperty("HP", id) + "/" + current
+			+ " TempHP:" + getProperty("TempHP", id) + "/" + temporary
+			+ " MaxHP:" + getProperty("MaxHP", id) + "/" + maximum)]
+
 <!-- Clear all of the states/bars -->
 [h: setState ("Bloodied", 0, id)]
 [h: setState ("Dying", 0, id)]
 [h: setState ("Dead", 0, id)]
 [h: setState ("Stable", 0, id)]
+[h: setState ("Damaged", 0, id)]
 [h: setBarVisible ("HP", 0, id)]
 [h: setBarVisible ("Damage", 0, id)]
 [h: setBarVisible ("DSPass", 0, id)]
@@ -28,7 +39,7 @@
 [h: effectiveHP = current + temporary]
 [h: effectiveMaxHP = maximum + temporary]
 [h: effectiveDamage = effectiveMaxHP - effectiveHP]
-[h: log.info("effectiveHP=" + effectiveHP + " effectiveMaxHP=" + effectiveMaxHP + " effectiveDamage=" + effectiveDamage)]
+[h: log.debug("effectiveHP=" + effectiveHP + " effectiveMaxHP=" + effectiveMaxHP + " effectiveDamage=" + effectiveDamage)]
 
 <!-- Determine dead/dying+death saves/bloodied -->
 [h: state = if (exhaustionDeath || (current == 0 && !isPC(id)) 
@@ -36,32 +47,49 @@
 [h: state = if (state == "fine" && current == 0 && dsPass >= 3, "stable", state)]
 [h: state = if (state == "fine" && current == 0, "dying", state)]
 [h: state = if (state == "fine" && current <= maximum / 2, "bloodied", state)]
+[h: state = if (state == "fine" && current < maximum, "damaged", state)]
 [h, switch(state), code:
 	case "dead": {
 		[h: setState("Dead", 1, id)]
-		[h, if (!isPC(id)): removeFromInitiative(id); ""]
-		[h: setState("Prone", 1)]
+		[h, if (isPC(id)), code: {
+			[h: setState("Prone", 1, id)]
+		}; {
+			[h: init = getInitiative(id)]
+			[h, if (id == getInitiativeToken()): nextInitiative(); ""]
+			[h: removeFromInitiative(id)]
+			[h: setLayer("OBJECT", id)]
+			[h: list = getLibProperty("_deadTokens", "Lib:DnD5e")]
+			[h: deadToken = json.set("{}", "id", id, "initiative", init)]
+			[h: list = json.append(list, deadToken)]
+			[h, while(json.length(list) > 10): list = json.remove(list, 0)]
+			[h: setLibProperty("_deadTokens", list, "Lib:DnD5e")]
+		}]
 	};
 	case "stable": {
 		[h: setState("Stable", 1, id)]
-		[h: setState("Prone", 1)]
+		[h: setState("Prone", 1, id)]
 	};
 	case "dying": {
 		[h: setState("Dying", 1, id)]
 		[h: setBar("DSPass", 0.25 * dsPass, id)]
 		[h: setBar("DSFail", 0.25 * dsFail, id)]
-		[h: setState("Prone", 1)]
+		[h: setState("Prone", 1, id)]
 	};
 	case "bloodied": {
 		[h: setState("Bloodied", 1, id)]
-		[h: setBar("HP", current / effectiveMaxHP, id)]
-		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
+	};
+	case "damaged": {
+		[h: setState("Damaged", 1, id)]
 	};
 	default: {
-		[h: setBar("HP", current / effectiveMaxHP, id)]
-		[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
 }]
-	
+
+[h, if(current != 0), code: {
+	[h: setBar("HP", current / effectiveMaxHP, id)]
+	[h: setBar("Damage", effectiveDamage / effectiveMaxHP, id)]
+	[h, if (!isPC(id)): setLayer("TOKEN", id); ""]
+}]
+
 <!-- Save the token properties -->
 [h: setProperty ("HP", current, id)]
 [h: setProperty ("TempHP", temporary, id)]

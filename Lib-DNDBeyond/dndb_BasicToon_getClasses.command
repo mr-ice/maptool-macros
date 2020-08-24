@@ -1,0 +1,10 @@
+[h: basicToon = dndb_getBasicToon ()]
+[h: classArry = json.get (basicToon, "classes")]
+[h: classStr = ""]
+[h, foreach (classObj, classArry), code: {
+	[className = json.get (classObj, "className")]
+	[classLvl = json.get (classObj, "level")]
+	[classStr = classStr + " / " + className + " " + classLvl]
+}]
+[h: classStr = substring (classStr, 3)]
+[h: macro.return = classStr]

@@ -1,3 +1,9 @@
+[h: log.warn ("Entering Reset Properties")]
+[h: tokenIds = getSelected()]
+[h: log.debug ("tokenId: " + tokenIds)]
+[h, foreach (tokenId, tokenIds), code: {
+[h: switchToken (tokenId)]
+
 [h: SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
 [h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
 [h: basicToon = dndb_getBasicToon ()]
@@ -27,20 +33,21 @@
 
 [h: abilities = json.get (basicToon, "abilities")]
 [h: setProperty ("Strength", json.get (abilities, "str"))]
-[h: setProperty ("Strength Bonus", json.get (abilities, "strBonus"))]
 [h: setProperty ("Dexterity", json.get (abilities, "dex"))]
-[h: setProperty ("Dexterity Bonus", json.get (abilities, "dexBonus"))]
 [h: setProperty ("Constitution", json.get (abilities, "con"))]
-[h: setProperty ("Constitution Bonus", json.get (abilities, "conBonus"))]
 [h: setProperty ("Intelligence", json.get (abilities, "int"))]
-[h: setProperty ("Intelligence Bonus", json.get (abilities, "intBonus"))]
 [h: setProperty ("Wisdom", json.get (abilities, "wis"))]
-[h: setProperty ("Wisdom Bonus", json.get (abilities, "wisBonus"))]
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
-[h: setProperty ("Charisma Bonus", json.get (abilities, "chaBonus"))]
+
+
+[h: setProperty ("Resistances", json.toList (json.get (basicToon, "resistances")))]
+[h: setProperty ("Immunities", json.toList (json.get (basicToon, "immunities")))]
 
 <!-- Senses -->
 [h: dndb_applyVision (basicToon)]
+
+<!-- Languages -->
+[h: setProperty ("Languages", json.toList (json.get (basicToon, "language")))]
 
 <!-- Health -->
 [h: dndb_applyHealth ()]
@@ -56,7 +63,7 @@
 
 [h: saves = json.get (basicToon, "savingThrows")]
 [h, foreach (save, saves), code: {
-	[h: saveName = json.get (save, "name") + " Save"]
+	[h: saveName = json.get (save, "name") + "Save"]
 	[h: saveBonus = json.get (save, "totalBonus")]
 	[h: setProperty (saveName, saveBonus)]
 }]
@@ -64,7 +71,12 @@
 [h: skills = json.get (basicToon, "skills")]
 [h, foreach (skill, skills): setProperty (json.get (skill, "name"), json.get (skill, "totalBonus"))]
 
+[h: alignment = json.get (basicToon, "alignment")]
+[h: setProperty ("Alignment", alignment)]
 
+[h: setProperty ("Race", json.get (basicToon, "race"))]
+[h: setProperty ("Classes", dndb_BasicToon_getClasses ())]
 
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]
+}]

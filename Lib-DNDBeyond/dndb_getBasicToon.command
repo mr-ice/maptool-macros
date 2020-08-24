@@ -2,7 +2,7 @@
 [h, if (encode (basicToon) == ""), code: {
 	[h: error = "You must initialize with DNDBeyond first"]
 	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=false"))]
-	[h: return (0, error)]
+	[h: abort (0)]
 }; {}]
 
 [h: overrideSubObj = getProperty ("_dndb_OverrideBasicToon")]

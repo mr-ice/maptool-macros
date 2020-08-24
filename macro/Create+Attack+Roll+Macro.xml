@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>10955863-0ff2-490c-850d-25c996591bb1</macroUUID>
+  <macroUUID>bb3fbbc9-a927-4f4b-8dbc-6aa3b5f0b916</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>22</index>
+  <index>5</index>
   <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
   <label>Create Attack Roll Macro</label>
@@ -9,14 +9,13 @@
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>white</fontColorKey>
   <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Creates a new macro on the selected token(s) to make an attack roll with damage. The new macro will not prompt for any input and be hard-coded with the inputs provided when it was constructed.
-</toolTip>
+  <toolTip>Deprecated. Use Attack Editor instead.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

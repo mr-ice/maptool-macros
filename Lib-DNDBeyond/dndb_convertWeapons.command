@@ -40,12 +40,14 @@
 		"dmgDice", dmgDice,
 		"dmgType", dmgType,
 		"bonus", bonus,
+		"id", json.get (weaponRaw, "id"),
 		"range", json.path.read (weaponRaw, "definition.range"),
 		"longRange", json.path.read (weaponRaw, "definition.longRange"),
 		"type", json.path.read (weaponRaw, "definition.type"),
 		"properties", json.path.read (weaponRaw, "definition.properties"),
 		"proficient", json.length (proficientArry),
 		"isMonk", json.path.read (weaponRaw, "definition.isMonkWeapon"),
+		"grantedModifiers", grantedModifiers,
 		"equipped", equipped)
 	)]
 

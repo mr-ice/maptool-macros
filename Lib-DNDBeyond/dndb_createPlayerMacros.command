@@ -5,28 +5,12 @@
 					"fontColor", "default",
 					"autoExecute", 1,
 					"applyToSelected", 1,
-					"playerEditable", 0,
+					"playerEditable", 1,
 					"fontSize", "1.05em")]
 
 [h: macroCfgs = json.append ("", 
-			json.set (basicCfg, "name", "Make Attack",
-					"color", "red",
-					"fontColor", "black",
-					"sortBy", "1",
-					"command", "[macro('Make Attack@Lib:DnDBeyond'): '']"),
 
-			json.set (basicCfg, "name", "Attack Config",
-					"color", "green",
-					"fontColor", "black",
-					"sortBy", "2",
-					"command", "[macro('Attack Config@Lib:DnDBeyond'): '']"),
-
-			json.set (basicCfg, "name", "Saving Throw",
-					"color", "black",
-					"fontColor", "yellow",
-					"sortBy", "10",
-					"command", "[macro('Saving Throw@Lib:DnDBeyond'): '']"),
-
+					
 			json.set (basicCfg, "name", "Spend Hit Dice",
 					"color", "purple",
 					"fontColor", "white",
@@ -49,55 +33,7 @@
 					"color", "green",
 					"fontColor", "black",
 					"sortBy", "150",
-					"command", "[macro('Configure Preferences@Lib:DnDBeyond'): '']"),
-
-			json.set (basicCfg, "name", "Skill Check",
-					"color", "blue",
-					"fontColor", "white",
-					"sortBy", "20",
-					"command", "[macro('Skill Check@Lib:DnDBeyond'): '']"),
-					
-			json.set (basicCfg, "name", "I'm Done",
-					"group", "",
-					"color", "red",
-					"fontColor", "white",
-					"sortBy", "1",
-					"command", "[h, macro('dnd5e_done@Lib:DnD5e'): '']"),
-
-			json.set (basicCfg, "name", "Damage",
-					"group", "D&D 5e Health",
-					"color", "red",
-					"fontColor", "white",
-					"sortBy", "1",
-					"command", "[h, macro('dnd5e_takeDamage@Lib:DnD5e'): '']"),	
-									
-			json.set (basicCfg, "name", "Heal",
-					"group", "D&D 5e Health",
-					"color", "red",
-					"fontColor", "white",
-					"sortBy", "2",
-					"command", "[h, macro('dnd5e_takeHealing@Lib:DnD5e'): '']"),
-					
-			json.set (basicCfg, "name", "Conditions",
-					"group", "D&D 5e Health",
-					"color", "yellow",
-					"fontColor", "black",
-					"sortBy", "4",
-					"command", "[h, macro('dnd5e_Conditions@Lib:DnD5e'): '']"),
-					
-			json.set (basicCfg, "name", "Death Save",
-					"group", "D&D 5e Health",
-					"color", "black",
-					"fontColor", "red",
-					"sortBy", "5",
-					"command", "[h, macro('dnd5e_deathSaves@Lib:DnD5e'): '']"),
-					
-			json.set (basicCfg, "name", "Temp HP",
-					"group", "D&D 5e Health",
-					"color", "red",
-					"fontColor", "white",
-					"sortBy", "3",
-					"command", "[h, macro('dnd5e_takeTemp@Lib:DnD5e'): '']")
+					"command", "[macro('Configure Preferences@Lib:DnDBeyond'): '']")
 )]
 					
 [h, foreach (macroCfg, macroCfgs), code: {
@@ -107,3 +43,5 @@
 		[h: createMacro (macroName, json.get (macroCfg, "command"), macroCfg)]
 	}; {}]
 }]
+
+[h: dnd5e_Macro_createPlayerMacros (1)]

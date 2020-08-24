@@ -34,6 +34,6 @@
 ]
 <!-- Update the toon  -->
 [h: params = json.set("{}", "id", id, "current", 0, "temporary", getProperty("TempHP", id), 
-	"maximum", getProperty("TempHP", id), "dsPass", dsPass, "dsFail", dsFail, 
+	"maximum", getProperty("MaxHP", id), "dsPass", dsPass, "dsFail", dsFail, 
 	"exhaustion6", getState("Exhaustion 6", id))]
 [h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]

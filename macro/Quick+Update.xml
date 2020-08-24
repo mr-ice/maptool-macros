@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>bfefc19b-8dbc-47ed-9999-ef0475b118d3</macroUUID>
+  <macroUUID>8a57b300-b5d8-4cda-b32b-9078a7cf7c0f</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>17</index>
+  <index>2</index>
   <colorKey>orange</colorKey>
   <hotKey>None</hotKey>
   <label>Quick Update</label>
@@ -9,7 +9,7 @@
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.05em</fontSize>
   <minWidth/>

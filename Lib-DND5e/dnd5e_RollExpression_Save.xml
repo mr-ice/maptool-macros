@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>eeda0f95-7b6c-405e-a3de-9a9183f0d777</macroUUID>
+  <macroUUID>a8495502-3c86-42c9-9ee4-965c3fb1a325</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>102</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_Save</label>
-  <group>RollExpression</group>
+  <group>RollExpression - Templates</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,11 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns a RollExpression applicable for the an Saving throw.
-
-(optional) arg (0) = name</toolTip>
+  <toolTip>&lt;html&gt;Returns a RollExpression applicable for the a Saving throw.
+&lt;br&gt;
+&lt;br&gt;(optional) arg (0) = name
+&lt;br&gt;(optional) arg (1) = bonus
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

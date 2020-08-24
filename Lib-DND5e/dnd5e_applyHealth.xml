@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>afc5cdd3-bf91-40d8-8797-99bb0d03bc5b</macroUUID>
+  <macroUUID>4b1bdbf0-d58f-4a5f-8032-c8dae3a50750</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>34</index>
   <colorKey>default</colorKey>
@@ -15,20 +15,24 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Update all of the token states to match the passed health parameters passed as JSON:
-{
-  "id": Id of the token being modified,
-  "current": Token's current hit points,
-  "temporary": Token's temporary hit points
-  "maximum": Token's maximum hit points
-  "dsPass": Number of passed death saves for the token
-  "dsFail": Number of failed death saves for the token
-  "exhaustionDeath": Is the token at exhaustion level 6
-}
-The macro updates the states: Bloodied, Dying, Dead, Stable
-The macro updates the bars: HP, Damage, DSPass, DSFail
-The macro updates the properties: HP, TempHP, MaxHP, DSPass, DSFail
-The macro removes dead NPC tokens from the initiative</toolTip>
+  <toolTip>&lt;html&gt;Update all of the token states to match the passed health parameters passed as JSON:
+&lt;br&gt;
+&lt;br&gt;Input object: 
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"id": Id of the token being modified,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"current": Token's current hit points,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"temporary": Token's temporary hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"maximum": Token's maximum hit points
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"dsPass": Number of passed death saves for the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"dsFail": Number of failed death saves for the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"exhaustionDeath": Is the token at exhaustion level 6
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;
+&lt;br&gt;The macro updates the states: Bloodied, Dying, Dead, Stable
+&lt;br&gt;The macro updates the bars: HP, Damage, DSPass, DSFail
+&lt;br&gt;The macro updates the properties: HP, TempHP, MaxHP, DSPass, DSFail
+&lt;br&gt;The macro removes dead NPC tokens from the initiative
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

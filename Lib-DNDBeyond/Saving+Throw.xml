@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ba09642a-4291-4464-abdc-91363b56a327</macroUUID>
+  <macroUUID>743833db-3a34-4d43-8466-db8a85f77f57</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>51</index>
   <colorKey>black</colorKey>
@@ -15,21 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Yer gonna DIE!
-
-Builds a RollExpression for the selected SavingThrow and rolls it
-
-ex.
-{
-  "name": "Dexterity",
-  "diceSize": 20,
-  "diceRolled": 1,
-  "expressionTypes": "Save",
-  "hasAdvantage": "true",
-  "hasDisadvantage": "false",
-  "bonus": "4",
-  "totalRolls": 1,
-}</toolTip>
+  <toolTip>Deprecated - Use Saving Throw@Lib:DnD5e</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

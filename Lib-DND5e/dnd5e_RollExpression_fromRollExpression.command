@@ -6,6 +6,7 @@
 [h: rollExpression = json.remove (rollExpression, "totals")]
 [h: rollExpression = json.remove (rollExpression, "allTotals")]
 [h: rollExpression = json.remove (rollExpression, "output")]
+[h: rollExpression = json.remove (rollExpression, "typedDescriptors")]
 
 [h: children = dnd5e_RollExpression_getExpressions (rollExpression)]
 [h: newExpressions = "[]"]

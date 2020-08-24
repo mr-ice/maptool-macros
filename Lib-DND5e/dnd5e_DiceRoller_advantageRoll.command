@@ -7,14 +7,17 @@
 [h: roll2Val = json.get (roll2, "roll")]
 [h: rolls = json.get (roll2, "rolls")]
 [h: description = ""]
+[h: descriptor = ""]
 <!-- Default value is roll1Value -->
 [h: roll = roll1Val]
+
 [h, if (advantage && !disadvantage), code: {
 	[h, if (roll1Val > roll2Val):total = dnd5e_RollExpression_getTotal (roll1); total = dnd5e_RollExpression_getTotal (roll2)]
 	[h: roll = round (math.max (roll1Val, roll2Val))]
 	[h: description = "<b>Advantage:</b> " + rolls + ", Actual: " + roll]
 	[h: rollExpression = roll2]
 	[h: rollExpression = json.set (rollExpression, "rolls", rolls, "total", total)]
+	[h: descriptor = "Advantage"]
 }]
 [h, if (!advantage && disadvantage), code: {
 	[h, if (roll1Val < roll2Val):total = dnd5e_RollExpression_getTotal (roll1); total = dnd5e_RollExpression_getTotal (roll2)]
@@ -22,14 +25,26 @@
 	[h: description = "<b>Disadvantage:</b> " + rolls + ", Actual: " + roll]
 	[h: rollExpression = roll2]
 	[h: rollExpression = json.set (rollExpression, "rolls", rolls, "total", total)]
+	[h: descriptor = "Disadvantage"]
 }]
 <!-- roll1 has no extra roll attached in rolls, so return it representing no second roll -->
 [h, if (advantage && disadvantage), code: {
 	[h: description = "Advantage and Disadvantage cancel"]
+	[h: descriptor = "advantage and disadvantage cancelling"]
 }]
 
 [h, if (description != ""): rollExpression = dnd5e_RollExpression_addDescription (rollExpression, description); ""]
 [h: rollExpression = json.set (rollExpression, "roll", roll)]
+
+<!-- Update the tool tip detail if needed -->
+[h, if((advantage && !disadvantage) || (!advantage && disadvantage)), code: {
+	[h: bonus = dnd5e_RollExpression_getBonus (rollExpression)]
+	[h, if (!isNumber(bonus)): bonus = 0; ""]
+	[h, if(bonus != 0): bonusOutput = if(bonus > 0, " + " + bonus, " - " + (bonus * -1)); bonusOutput = ""]
+	[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", 
+			descriptor + "(" + json.toList(rolls) + ") " + bonusOutput)]
+}; {""}]
+[h, if (descriptor != ""): rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "advantageable", "with " + lower(descriptor))]
 
 <!-- roll is set correctly, but total may not overwrite it -->
 [h: roll = dnd5e_RollExpression_getRoll (rollExpression)]

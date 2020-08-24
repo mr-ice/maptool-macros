@@ -1,0 +1,40 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>616278aa-a801-4824-a083-0d514cee1cb4</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>18</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>o5e_Parser_parseSubActionStrings</label>
+  <group>Open 5e - Parser</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;
+Given an action string, look for patters of mark-down to indicate sub actions. Return an array of objects&lt;br&gt; identifying the name within the markdown and the related action string.&lt;br&gt;
+If the markdown isn't matched, return the original string.&lt;br&gt;
+&lt;br&gt;
+arg (0) = action string with **action1** text1 **action2** text2&lt;br&gt;
+&lt;br&gt;
+Return:&lt;br&gt;
+{&lt;br&gt;
+	"actions": [&lt;br&gt;
+		{"name": "action1", "desc", "action1"},&lt;br.
+		{"name": "action2", "desc", "action2"}&lt;br&gt;
+		]&lt;br&gt;
+}&lt;br&gt;
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

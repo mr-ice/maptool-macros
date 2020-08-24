@@ -15,7 +15,9 @@
 	<!-- Static roll check, for broadcast only. Basic roll will take care of bidness -->
 	[h, if (dnd5e_RollExpression_hasType (rollExpression, "staticRoll")), code: {
 		[h: staticRoll = dnd5e_RollExpression_getStaticRoll (rollExpression)]
-		[h: broadcast ("<font color='red'><b>A roll of " + staticRoll + " has been forced!</b></font> <br>")]
+		[h: staticRollText = "<font color='red'><b>A roll of " + staticRoll + " has been forced!</b></font>")]
+		[h: broadcast (staticRollText + "<br>")]
+		[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "staticRoll", staticRollText)]
 	}]
 
 	[h: totalRolls = json.get (rollExpression, "totalRolls")]
@@ -42,6 +44,8 @@
 		[h, if (dnd5e_RollExpression_hasType (rollExpression, "critable")): 
 				rollExpression = dnd5e_DiceRoller_critableRoll (rollExpression, rolled)]
 		[h, if (json.length (children) > 0): rollExpression = dnd5e_RollExpression_mergeChildren (rollExpression); ""]
+		[h: rollExpression = dnd5e_DiceRoller_saveDamageRoll (rollExpression)]
+		[h: rollExpression = dnd5e_DiceRoller_saveEffectRoll (rollExpression)]
 		[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 		[h: output = dnd5e_RollExpression_getOutput (rollExpression)]
 		[h: outputs = json.append (outputs, output)]

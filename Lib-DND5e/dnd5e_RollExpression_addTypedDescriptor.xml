@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>308a5798-f146-4f85-a58c-270da8f5ba06</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>155</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_addTypedDescriptor</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;This will add a descriptor object to a roll expression. &lt;br&gt;A descriptor is an object which has a type and some text that &lt;br&gt;can be used in the output. There are a list of these objects &lt;br&gt;stored on a roll expression &lt;br&gt;arg(0) = roll expression &lt;br&gt;arg(1) = descriptor type; That valid field names are below &lt;dl style='margin-left: 20;'&gt; &lt;dt&gt;&lt;b&gt;condition&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;Text was added by checking for a condition when rolling an attack&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;tooltipRoll&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;The roll expression used in a tooltip&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;tooltipDetail&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;The individual die rolls and bonus for the tool tip roll.&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;advantageable&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;Details on advantage/disadvantage snd the cancelling of both&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;lucky&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;A die was rerolled for a lucky halfling&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;critable&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;There was a critical roll&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;saveable&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;There is damge that can be saved&lt;/dd&gt; &lt;/dl&gt; arg(2) = descriptor text&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

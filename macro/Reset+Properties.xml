@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>987cb65a-aa88-4cab-aff9-8ac26ffb7a3a</macroUUID>
+  <macroUUID>e6b6fe82-1c0f-4c5d-9179-d4dd4d949875</macroUUID>
   <saveLocation>CampaignPanel</saveLocation>
-  <index>18</index>
+  <index>3</index>
   <colorKey>pink</colorKey>
   <hotKey>None</hotKey>
   <label>Reset Properties</label>
@@ -9,7 +9,7 @@
   <sortby>1</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.05em</fontSize>
   <minWidth>160</minWidth>

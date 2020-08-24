@@ -56,15 +56,7 @@
 
 [h, if (saveAsMacro > 0), code: {
 	[h: cmdArg = json.set ("", "selectedSkillPos", selectedSkillPos, 
-							"advDisadv", advDisadv)]
-	[h, if (advDisadv == 0): advLabel = ""]
-	[h, if (advDisadv == 1): advLabel = " (+)"]
-	[h, if (advDisadv == 2): advLabel = " (-)"]
-	[h: macroName = skillName + advLabel + " Check"]
-	[h: currentMacros = getMacros()]
-	[h: cmd = "[macro ('Skill Check@Lib:DnDBeyond'): '" + cmdArg + "']"]
-	<!-- dont create duplicates -->
-	[h, foreach (currentMacro, currentMacros), if (currentMacro == macroName): saveAsMacro = 0]
+							"advDisadv", 0)]
 	[h: macroConfig = json.set ("", "applyToSelected", 1,
 								"autoExecute", 1,
 								"color", "blue",
@@ -72,6 +64,27 @@
 								"sortBy", selectedSkillPos,
 								"fontColor", "white",
 								"group", "D&D Beyond - Skills",
+								"minWidth", 170,
 								"playerEditable", 1)]
-	[h, if (saveAsMacro > 0): createMacro (macroName, cmd, macroConfig)]
+
+	[h: macroName = skillName + " Check"]
+	[h: currentMacros = getMacros()]
+	[h: cmd = "[macro ('Skill Check@Lib:DnDBeyond'): '" + cmdArg + "']"]
+	<!-- dont create duplicates -->
+	[h, foreach (currentMacro, currentMacros), if (currentMacro == macroName): saveAsMacro = 0]
+	[h, if (saveAsMacro > 0), code: {
+		[createMacro (macroName, cmd, macroConfig)]
+		[macroConfig = json.set (macroConfig, 
+						"sortBy", selectedSkillPos + "-1",
+						"minWidth", 12)]
+		[cmdArg = json.set (cmdArg, "advDisadv", 1)]
+		[cmd = "[macro ('Skill Check@Lib:DnDBeyond'): '" + cmdArg + "']"]
+		[label = dnd5e_Macro_getModLabel ("advantage")]
+		[createMacro (label, cmd, macroConfig)]
+		[macroConfig = json.set (macroConfig, "sortyBy", selectedSkillPos + "-2")]
+		[cmdArg = json.set (cmdArg, "advDisadv", 2)]
+		[cmd = "[macro ('Skill Check@Lib:DnDBeyond'): '" + cmdArg + "']"]
+		[label = dnd5e_Macro_getModLabel ("disadvantage")]
+		[createMacro (label, cmd, macroConfig)]
+	}; {""}]
 }]

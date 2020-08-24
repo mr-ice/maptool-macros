@@ -169,10 +169,12 @@
 		case 6: saveAbility = "Charisma"]
 	[h: saveDescription = saveAbility + " save DC " + saveDC]
 }]
-[h: results = dndb_DiceRoller_roll (expressions)]
-<pre>[r: json.indent (results)]</pre>
+<!-- Read the modifiers to see if theres a 3 Dart or 3 Ray restriction. Use that to create
+     totally separate rolls -->
+[h: results = dnd5e_DiceRoller_roll (expressions)]
 [r: spellDescription]
 [r, if (saveDescription == ""): ""; "<br><br><b>" + saveDescription + "</b>"]
+[r: dnd5e_RollExpression_getCombinedOutput (results)]
 
 <!-- Ye old save as macro bullshit -->
 [h, if (saveAsMacro > 0), code: {
@@ -195,6 +197,6 @@
 								"fontSize", json.get (macroConfig, "fontSize"),
 								"fontColor", json.get (macroConfig, "fontColor"),
 								"group", "D&D Beyond - Spells",
-								"playerEditable", 0)]
+								"playerEditable", 1)]
 	[h, if (saveAsMacro > 0): createMacro (macroName, cmd, macroConfig)]
 }]

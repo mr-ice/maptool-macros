@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>08653868-5d2e-4f5b-9705-f89816db95a6</macroUUID>
+  <macroUUID>beab3b41-ee98-4c3c-a496-df12cc7385c2</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>55</index>
+  <index>120</index>
   <colorKey>red</colorKey>
   <hotKey>None</hotKey>
   <label>Make Attack</label>
@@ -15,8 +15,8 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Do the deed</toolTip>
-  <displayHotKey>false</displayHotKey>
+  <toolTip>This macro is deprecated! Stop using it.</toolTip>
+  <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
   <compareSortPrefix>true</compareSortPrefix>

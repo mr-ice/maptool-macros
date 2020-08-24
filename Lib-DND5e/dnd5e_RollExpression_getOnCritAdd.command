@@ -1,4 +1,5 @@
 [h: rollExpression = arg (0)]
 [h: onCritAdd = json.get (rollExpression, "onCritAdd")]
-[h, if (onCritAdd == ""): onCritAdd = json.get (rollExpression, "diceRolled"); ""]
+[h: diceRolled = dnd5e_RollExpression_getDiceRolled (rollExpression)]
+[h, if (onCritAdd == "" && diceRolled > 0): onCritAdd = diceRolled; ""]
 [h: macro.return = onCritAdd]
