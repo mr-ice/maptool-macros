@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6e7ed2d7-14bd-404e-8d58-b996f0cf47fd</macroUUID>
+  <macroUUID>1a234a31-9954-4fbd-b9fb-dbf99f563510</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
+  <index>171</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Preferences_setPreference</label>
+  <label>dnd5e_Preferences_setGMPreferences</label>
   <group>Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,13 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>&lt;html&gt;
-Sets a user preference on the token&lt;br&gt;
-&lt;br&gt;
-arg (0) = Preference Key&lt;br&gt;
-arg (1) = Preference value&lt;br&gt;
-arg (2)(Optional; boolean) = GM Preference&lt;br&gt;
-&lt;/html&gt;</toolTip>
+  <toolTip>Sets the GM/Campaign proferences object onto the Library Token</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

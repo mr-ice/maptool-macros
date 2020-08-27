@@ -1,27 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6e7ed2d7-14bd-404e-8d58-b996f0cf47fd</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>28</index>
-  <colorKey>default</colorKey>
+  <macroUUID>902e2acf-a25b-429d-89f1-7b18f8421bbd</macroUUID>
+  <saveLocation>GmPanel</saveLocation>
+  <index>3</index>
+  <colorKey>teal</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Preferences_setPreference</label>
-  <group>Preferences</group>
+  <label>Set Landing Map</label>
+  <group>D&amp;D 5e - Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>&lt;html&gt;
-Sets a user preference on the token&lt;br&gt;
-&lt;br&gt;
-arg (0) = Preference Key&lt;br&gt;
-arg (1) = Preference value&lt;br&gt;
-arg (2)(Optional; boolean) = GM Preference&lt;br&gt;
-&lt;/html&gt;</toolTip>
+  <toolTip>Specifies the landing map for the players when they connect to the server.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

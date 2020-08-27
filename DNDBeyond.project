@@ -22,6 +22,7 @@
     <macro name="macro/Restore+Last+Dead+NPC"/>
   </macroset>
   <macroset name="GM-Panel">
+    <macro name="macro/Set+Landing+Map"/>
     <macro name="macro/Configure+GM+Preferences"/>
   </macroset>
 </project>
