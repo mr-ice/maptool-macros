@@ -27,10 +27,14 @@ def DataElement(content):
 
 
 def MacroNameQuote(name):
-    return quote_plus(name, safe=':')
+    """Quote characters in files that aren't safe for filesystems, there
+    is an overlap here with characters that aren't safe for URLs, so
+    we're using an URL quoter"""
+    return quote_plus(name, safe='')
 
 
 def XML2File(to_dir, to_file, xml):
+    """using lxml.etree.tostring, write xml to to_dir/to_file"""
     content = tostring(xml, pretty_print=True).decode()
     with open(os.path.join(to_dir, to_file), 'w') as f:
         f.write(content)
