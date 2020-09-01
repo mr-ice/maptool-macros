@@ -83,6 +83,7 @@
 					"color", "white",
 					"fontColor", "navy",
 					"sortBy", "0",
+					"minWidth", 170,
 					"command", "[h, macro('dnd5e_AE2_attackEditor@Lib:DnD5e'): '']"),
 
 			json.set (basicCfg, "name", "Configure Preferences",

@@ -1,12 +1,13 @@
-[h: inputObj = macro.args]
+[h: inputObj = arg(0)]
 [h: log.debug("dnd5e_Macro_rollAction: inputObj=" + json.indent(inputObj))]
 [h: selectedAttack = json.get (inputObj, "actionName")]
-[h: advDisadv = json.get (inputObj, "advantageDisadvantage")]
+[h: advDisadv = json.get (inputObj, "advDisadv")]
 [h: attackObj = getProperty("_AE2_Actions")]
 [h: rollExpressions = json.get (attackObj, selectedAttack)]
 [h: log.debug("dnd5e_Macro_rollAction: selectedAttack=" + selectedAttack + " advDisadv=" + advDisadv + " action=" + json.indent(rollExpressions))]
 [h, if (advDisadv == "Advantage" || advDisadv == "Both"): hasAdvantage = 1; hasAdvantage = 0]
 [h, if (advDisadv == "Disadvantage" || advDisadv == "Both"): hasDisadvantage = 1; hasDisadvantage = 0]
+
 [h: updatedRollExpressions = "[]"]
 [h, foreach (rollExpression, rollExpressions), code: {
 	[if (dnd5e_RollExpression_hasType (rollExpression, "Attack")), code: {

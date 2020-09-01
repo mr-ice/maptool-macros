@@ -77,7 +77,7 @@
 		[h: setProperty("_AE2_Metadata", metaData)]
 		[h: closeDialog("Attack Editor 2")]
 		[h: detail = listGet(control, 1, "-")]
-		[h: args = json.set("{}", "actionName", currentActionName, "advantageDisadvantage", detail)]
+		[h: args = json.set("{}", "actionName", currentActionName, "advDisadv", detail)]
 		[h: link = macroLinkText("dnd5e_Macro_rollAction@Lib:DnD5e", "all", args, id)]
 		[h: log.debug("dnd5e_AE2_processor: link=" + json.indent(link))]
 		[h: execLink(link)]
@@ -107,7 +107,33 @@
 	}]
 
 	<!-- Macro Action? -->
-	[h, if (control == "macro"), code: {
+	[h: saveAttackAsMacro = if(control == "macro", 1, 0)]
+	[h: currentMacros = getMacros()]
+	[h, foreach (currentMacro, currentMacros), if (currentMacro == currentActionName): saveAttackAsMacro = 0]
+	[h, if (saveAttackAsMacro), code: {
+		[h: fontColor = json.get(metaData, "macroFontColor")]
+		[h: buttonColor = json.get(metaData, "macroBgColor")]
+		[h: sortByBase = listCount(currentMacros)]
+		[h: macroConfig = json.set ("", "applyToSelected", 1,
+								"autoExecute", 1,
+								"color", buttonColor,
+								"fontSize", "1.05em",
+								"fontColor", fontColor,
+								"group", "D&D 5e - Actions",
+								"playerEditable", 1,
+								"minWidth", 170,
+								"tooltip", "Execute the " + currentActionName + " action.",
+								"sortBy", sortByBase)]
+		<!-- Normal Attack -->
+		[h: macroInputs = json.set ("", "selectedAttack", currentActionName)]	
+		[h: lastSortBy = dnd5e_Macro_createAdvDisadvMacroFamily(currentActionName, "dnd5e_Macro_rollAction@Lib:DnD5e", macroInputs, macroConfig)]
+		[h: lastSortBy = lastSortBy + 1]
+		<!-- Edit -->
+		[h: macroConfig = json.set(macroConfig, "minWidth", 12,
+						"tooltip", "Edit the " + currentActionName + " attack",
+						"sortBy", sortByBase + "-" + lastSortBy)]
+		[h: macroCmd = "[macro('dnd5e_AE2_attackEditor@Lib:DnD5e'):'" + currentActionName + "']"]
+		[h: createMacro ("<html>&#x270e;</html>", macroCmd, macroConfig)]
 	}]
 }]
 

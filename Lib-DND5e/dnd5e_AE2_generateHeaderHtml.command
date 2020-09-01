@@ -15,7 +15,6 @@
 [h, if(json.isEmpty(attacks)): disabled = json.append(disabled, DNDB_ATTACK_TYPE); ""]
 [h, if(json.isEmpty(toon)): spells = ""; spells = json.get(toon, "spells")]
 [h, if(json.isEmpty(spells)): disabled = json.append(disabled, DNDB_SPELL_TYPE); ""]
-[h: log.debug("dnd5e_AE2_generateHeaderHtml: attacks=" + attacks + " spells=" + spells)]
 
 <!-- Action name textfield -->
 [h, if(actionName == ""): ""; actionName = " value='" + decode(actionName) + "'"]

@@ -6,7 +6,8 @@
 [h, if (json.length(macro.args) > 3): oldActionType = arg(3); oldActionType = ""]
 [h: json.toVars(dnd5e_AE2_getConstants())]
 [h, if (json.length(macro.args) > 4): newActionType = arg(4); newActionType = ATTACK_TYPE]
-[h: log.debug("dnd5e_AE2_attackEditor: id=" + id + " newActionType = " + newActionType + " oldActionType = " + oldActionType + " exps = " + json.indent(exps))]
+[h: log.debug("dnd5e_AE2_attackEditor: id=" + id + " newActionType = " + newActionType + " oldActionType = " + oldActionType 
+			+ " activeName=" + activeName + " exps = " + json.indent(exps))]
 
 <!-- Read editor related data -->
 [h, if (json.length(macro.args) > 5): workingCopy = arg(5); workingCopy = getProperty("_AE2_Actions")]
@@ -15,15 +16,21 @@
 	[h: workingCopy = json.set("{}", "New Action", "[]")]
 	[h: activeName = "New Action"]
 }; {
-	<!-- Retrieve a value from the working copy -->
+	<!-- Retrieve a value from the working copy, check for valid name, assign one if not valid -->
 	[h, if (json.isEmpty(activeName)): activeName = json.get(json.fields(workingCopy, "json"), 0)]
-	[h, if (json.isEmpty(exps)): json.toVars(dnd5e_AE2_extractAction(workingCopy, activeName))]
+	[h: actionData = dnd5e_AE2_extractAction(workingCopy, activeName)]
+	[h, if (json.isEmpty(actionData	)), code: {
+		[h: input("Error|The action named '" + activeName + "' does not exist. If an edit macro was used it has an old macro name.| |LABEL")]
+		[h: activeName = json.get(json.fields(workingCopy, "json"), 0)]
+		[h: actionData = dnd5e_AE2_extractAction(workingCopy, activeName)]
+	}]
+	[h, if (json.isEmpty(exps)): json.toVars(actionData)]
 }]
 [h, if (json.length(macro.args) > 6): metaData = arg(6); metaData = getProperty("_AE2_Metadata")]
 [h, if (json.isEmpty(metaData)): macroFontColor = "red"; macroFontColor = json.get(metaData, "macroFontColor")]
 [h, if (json.isEmpty(metaData)): macroBgColor = "white"; macroBgColor = json.get(metaData, "macroBgColor")]
 [h, if (json.isEmpty(metaData)): metaData = json.set("{}", "macroBgColor", macroBgColor, "macroFontColor", macroFontColor)]
-[h: log.debug("dnd5e_AE2_attackEditor: activeName=" + activeName + " workingCopy=" + json.fields(workingCopy) + " metaData=" + json.indent(metaData))]
+[h: log.debug("dnd5e_AE2_attackEditor: workingCopy=" + json.fields(workingCopy) + " metaData=" + json.indent(metaData))]
 
 <!-- Handle a type change by deleting the old and adding the new, append old non action type steps -->
 [h, if (newActionType == DNDB_ATTACK_TYPE): exps = dnd5e_AE2_typeDndbWeapon(oldActionType, exps); ""]
@@ -47,6 +54,11 @@
 [h, foreach(exp, exps, ""): hasSave = hasSave + if(dnd5e_RollExpression_getExpressionType(exp) == SAVE_STEP_TYPE, 1, 0)]
 [h: saveDamageDisabled = if(hasSave, "", "disabled")]
 [h: saveConditionDisabled = if(hasSave, "", "disabled")]
+
+<!-- No advantage/disadvantage runs allowed if no attack -->
+[h: hasAttack = 0]
+[h, foreach(exp, exps, ""): hasAttack = hasAttack + if(dnd5e_RollExpression_getExpressionType(exp) == ATTACK_STEP_TYPE, 1, 0)]
+[h: runAdvDisadvDisabled = if(hasAttack, "", "disabled")]
 
 <!-- The expression returned to from the type functions is returned to the editor --><!-- Start the form html with bootstrap and hidden fields -->
 [h: state = json.set("{}", "attack", 0, "save", 0)]
@@ -112,11 +124,11 @@
 	      	data-toggle="tooltip" title="Make a new action from a copy of this action">Duplicate</button>
       <button type="submit" class="btn btn-success" name="control", value="run-Normal"
       		data-toggle="tooltip" title="Run the action after saving all changes.">Run</button>
-      <button type="submit" class="btn btn-success" name="control", value="run-Advantage"
+      <button type="submit" class="btn btn-success" name="control", value="run-Advantage" [r:runAdvDisadvDisabled]
     	  	data-toggle="tooltip" title="Run the action with advantage after saving all changes.">&#x23eb;</button>
-      <button type="submit" class="btn btn-success" name="control", value="run-Disadvantage"
+      <button type="submit" class="btn btn-success" name="control", value="run-Disadvantage" [r:runAdvDisadvDisabled]
 	      	data-toggle="tooltip" title="Run the action with disadvantage after saving all changes.">&#x23ec;</button>
-      <button type="submit" class="btn btn-success" name="control", value="run-Both"
+      <button type="submit" class="btn btn-success" name="control", value="run-Both" [r:runAdvDisadvDisabled]
       		data-toggle="tooltip" title="Run the action ignoring advantage & disadvantage after saving all changes.">&#x23eb;&#x23ec;</button>
       <button type="submit" class="btn btn-danger" name="control", value="delete"
     	  	data-toggle="tooltip" title="Selete this action step.">Delete</button>
