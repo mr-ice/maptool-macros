@@ -69,9 +69,13 @@
 		[h: name = dnd5e_RollExpression_getName(exp)]
 		[r, if (name != ""): " from " + name]
 		if target save fails.
+		
+		<!-- Actions apply the save effect here w/o DC & Ability, the attack editor uses those 2 fields -->
 		[h: saveEffect = dnd5e_RollExpression_getSaveEffect(exp)]
 		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, "save-effect-damage")]
 		[r, if (actionExecution): saveEffect = " If target save passes the target takes " + saveEffect + " damage of " + saveEffectDamage]
+		[h: saveable = dnd5e_RollExpression_getTypedDescriptor(exp, "saveable")]
+		[r, if (!actionExecution): saveable = "<span title='" + tt + "' style='font: italic;'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + saveable]
 		</span><br>
 	};{[h:""]}]
 	[r, if (expressionType == SAVE_STEP_TYPE), code: {

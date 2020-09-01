@@ -27,7 +27,6 @@
 [h: newActionType = json.get(ret, "newActionType")]
 [h: metaData = json.get(ret, "metaData")]
 [h: log.debug("dnd5e_AE2_processor: ret=" + json.indent(ret))]
-[h: input("Bob|1|processor|TEXT")]
 
 <!-- Handle a name change -->
 [h: firstExp = json.get(exps, 0)]
@@ -164,7 +163,6 @@
 	[h: exps = json.set(exps, index, exp)]
 	[h: log.debug("dnd5e_AE2_processor: extendedStep exps=" + json.indent(exps))]
 }; {""}]
-[h: input("Bob|2|processor|TEXT")]
 
 <!-- Redraw the editor with the new info -->
 [h: dnd5e_AE2_attackEditor(currentActionName, id, exps, oldActionType, newActionType, workingCopy, metaData)]

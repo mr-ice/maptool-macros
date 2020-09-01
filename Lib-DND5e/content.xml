@@ -571,6 +571,28 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_ae2_javascript</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_JavaScript</key>
+          <value class="string">$.fn.selectpicker.Constructor.BootstrapVersion = '4';
+$.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
+$.fn.selectpicker.Constructor.DEFAULTS.styleBase = 'form-control';
+$.fn.selectpicker.Constructor.DEFAULTS.style = 'form-control';
+$.fn.selectpicker.Constructor.DEFAULTS.width = 'auto';
+$.fn.selectpicker.Constructor.DEFAULTS.maxOptions = '4';
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+function changeType() {
+   document.getElementById("submit").click();
+}
+          </value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>wisdom save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Save</key>

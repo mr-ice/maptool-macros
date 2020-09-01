@@ -24,7 +24,6 @@
 [h, if (json.isEmpty(metaData)): macroBgColor = "white"; macroBgColor = json.get(metaData, "macroBgColor")]
 [h, if (json.isEmpty(metaData)): metaData = json.set("{}", "macroBgColor", macroBgColor, "macroFontColor", macroFontColor)]
 [h: log.debug("dnd5e_AE2_attackEditor: activeName=" + activeName + " workingCopy=" + json.fields(workingCopy) + " metaData=" + json.indent(metaData))]
-[h: input("Bob|0|attackEditor|TEXT")]
 
 <!-- Handle a type change by deleting the old and adding the new, append old non action type steps -->
 [h, if (newActionType == DNDB_ATTACK_TYPE): exps = dnd5e_AE2_typeDndbWeapon(oldActionType, exps); ""]
@@ -36,7 +35,6 @@
 [h, if (newActionType == COND_TYPE): exps = dnd5e_AE2_typeCondition(oldActionType, exps); ""]
 [h, if (newActionType == FREE_FORM_TYPE): exps = dnd5e_AE2_typeFreeForm(oldActionType, exps); ""]
 [h: log.debug("dnd5e_AE2_attackEditor fixed exps = " + json.indent(exps))]
-[h: input("Bob|1|attackEditor|TEXT")]
 
 <!-- don't allow 2 attacks or 2 saves in a row -->
 [h: lastExp = json.get(exps, json.length(exps) - 1)]
@@ -156,6 +154,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-  <script type="text/javascript">[r:getLibProperty("attackJson", "Lib:DnD5e")]</script>
+  <script type="text/javascript">[r:getLibProperty("_AE2_JavaScript", "Lib:DnD5e")]</script>
 </body></html>
 }]
