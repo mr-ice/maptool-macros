@@ -1549,6 +1549,14 @@
       <int>169</int>
       <macro name="dnd5e_Health_restoreDeadNPC"/>
     </entry>
+    <entry>
+      <int>170</int>
+      <macro name="dnd5e_Preferences_getGMPreferences"/>
+    </entry>
+    <entry>
+      <int>171</int>
+      <macro name="dnd5e_Preferences_setGMPreferences"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
