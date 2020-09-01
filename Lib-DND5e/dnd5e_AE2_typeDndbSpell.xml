@@ -1,0 +1,37 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>8de825a0-42cf-4358-bfac-91b62012e198</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>166</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_typeDndbSpell</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Updates the roll expression to be a DnD Beyond spell cast
+&lt;br&gt;The user selects the spell and the spell attack bonus and damage expressions
+&lt;br&gt;are generated from the stored DnD Beyond spell information
+&lt;br&gt;
+&lt;br&gt;arg(0) = old action type
+&lt;br&gt;arg(1) = Working roll expression witn new action type
+&lt;br&gt;arg(2) = latest form input
+&lt;br&gt;
+&lt;br&gt;Outputs html content for all of the action steps currently defined
+&lt;br&gt;Returns the updated roll expression
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

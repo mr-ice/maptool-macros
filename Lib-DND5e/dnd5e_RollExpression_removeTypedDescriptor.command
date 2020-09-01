@@ -1,0 +1,6 @@
+[h: rollExpression = arg (0)]
+[h: descriptorType = arg (1)]
+[h: currentDescriptors = dnd5e_RollExpression_getTypedDescriptors(rollExpression)]
+[h: return(json.contains(currentDescriptors, descriptorType), rollExpression)]
+[h: currentDescriptors = json.remove(currentDescriptors, descriptorType))]
+[h: macro.return = dnd5e_RollExpression_setTypedDescriptors(rollExpression, currentDescriptors)]

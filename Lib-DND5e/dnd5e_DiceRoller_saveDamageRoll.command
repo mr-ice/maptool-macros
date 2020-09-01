@@ -8,10 +8,13 @@
 
 	<!-- Build the save and apply effect to damage text -->
 	[h: save = "DC " + saveDC + " " + saveAbility + " save for " + saveEffect]
-	[switch(lower(saveEffect)):
-	case "half": save = save + " (" + floor(dnd5e_RollExpression_getTotal(damageExpression)/2) + ")";
-	case "none": save = save + " (0)");
-	default: ""]
-	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save)] 
+	[h: saveDamage = dnd5e_RollExpression_getTotal(damageExpression)]
+	[h, switch(lower(saveEffect)):
+	case "half": saveDamage = floor(saveDamage/2);
+	case "none": saveDamage = "0";
+	default: saveDamage = if(isNumber(saveEffect), floor(saveDamage/saveEffect), "Unknown");
+	]
+	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save + " (" + saveDamage + ")")] 
+	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "save-effect-damage", saveDamage)] 
 }]
 [h: macro.return = damageExpression]

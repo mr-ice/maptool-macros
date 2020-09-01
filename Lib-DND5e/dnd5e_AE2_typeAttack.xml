@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>0cdddaa7-f124-4085-b636-efe26219067d</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>167</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_typeAttack</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Updates the roll expression to be a generic attack
+&lt;br&gt;The user enters the damage bonus and the attack damage
+&lt;br&gt;
+&lt;br&gt;arg(0) = old action type
+&lt;br&gt;arg(1) = Working roll expression witn new action type
+&lt;br&gt;arg(2) = latest form input
+&lt;br&gt;
+&lt;br&gt;Outputs html content for all of the action steps currently defined
+&lt;br&gt;Returns the updated roll expression
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

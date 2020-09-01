@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>61f15b47-f2a0-47af-aaf1-6ea3066d6630</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>201</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_DnDBeyondSpell</label>
+  <group>RollExpression - Templates</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Creates a DnDBeyond Spell RollExpression with an optional provided name. 
+&lt;br&gt;There is no roll for a DnDBeyond Spell. just the selected spell that it applies
+&lt;br&gt;
+&lt;br&gt;arg(0) = optional name of the DnDBeyond generated spell
+&lt;br&gt;
+&lt;br&gt;A roll expression that can be used to indicate this expression came from spells found in DnDBeyond</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

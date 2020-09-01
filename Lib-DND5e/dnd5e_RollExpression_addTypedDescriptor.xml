@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>308a5798-f146-4f85-a58c-270da8f5ba06</macroUUID>
+  <macroUUID>5330a9ee-4539-4d1e-bb10-c207299473e6</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>155</index>
+  <index>148</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_addTypedDescriptor</label>
@@ -15,7 +15,40 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>&lt;html&gt;This will add a descriptor object to a roll expression. &lt;br&gt;A descriptor is an object which has a type and some text that &lt;br&gt;can be used in the output. There are a list of these objects &lt;br&gt;stored on a roll expression &lt;br&gt;arg(0) = roll expression &lt;br&gt;arg(1) = descriptor type; That valid field names are below &lt;dl style='margin-left: 20;'&gt; &lt;dt&gt;&lt;b&gt;condition&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;Text was added by checking for a condition when rolling an attack&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;tooltipRoll&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;The roll expression used in a tooltip&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;tooltipDetail&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;The individual die rolls and bonus for the tool tip roll.&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;advantageable&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;Details on advantage/disadvantage snd the cancelling of both&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;lucky&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;A die was rerolled for a lucky halfling&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;critable&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;There was a critical roll&lt;/dd&gt; &lt;dt&gt;&lt;b&gt;saveable&lt;/b&gt;&lt;/dt&gt; &lt;dd&gt;There is damge that can be saved&lt;/dd&gt; &lt;/dl&gt; arg(2) = descriptor text&lt;/html&gt;</toolTip>
+  <toolTip>&lt;html&gt;This will add a descriptor to a roll expression. A descriptor has a key and a text value that 
+&lt;br&gt;can be used in the output. All of the descriptors stored on the roll expression as an object 
+&lt;br&gt;
+&lt;br&gt;arg(0) = roll expression 
+&lt;br&gt;arg(1) = descriptor type; The valid types are: 
+&lt;dl style='margin-left: 20;'&gt; 
+  &lt;dt&gt;&lt;b&gt;condition&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;Text was added by checking for a condition when rolling an attack&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;tooltipRoll&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;The roll expression used in a tooltip&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;tooltipDetail&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;The individual die rolls and bonus for the tool tip roll.&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;advantageable&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;Details on advantage/disadvantage and the cancelling of both&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;lucky&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;A die was rerolled for a lucky halfling&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;critable&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;There was a critical roll&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;saveable&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;There is damge or condition that can be saved&lt;/dd&gt; &lt;
+  &lt;dt&gt;&lt;b&gt;actionName&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;The name of the action in buttons and macros. Only attached to first expression.&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;actionDesc&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;Detail information that is added to the header as a tool tip, Only attached to first expression.&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;actionType&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;Indicates that the roll expression is for a specific type of action&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;rowId&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;The identifier used to match a roll expression with its associated form fields&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;extendedValues&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;Should extended values be shown for the step? The values are '+' if no extended values are shown, '-' means they are being shown. 
+      The value "" means the extended values are not set.&lt;/dd&gt; 
+&lt;/dl&gt; 
+arg(2) = descriptor text
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

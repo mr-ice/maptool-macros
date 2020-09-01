@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>51bbcb50-6d74-48bf-b960-c5de92f2d485</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>183</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_generateDamageRollStringFieldHtml</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Generate the HTML for the damage roll string field of a roll expression
+&lt;br&gt;
+&lt;br&gt;arg(0) = Identifier for the row
+&lt;br&gt;arg(1) = Field name
+&lt;br&gt;arg(2) = The value to be displayed in the field
+&lt;br&gt;arg(3) = The class that is attached to fields for type steps created by type
+&lt;br&gt;
+&lt;br&gt;The html for the damage roll string field is sent to chat
+&lt;html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
