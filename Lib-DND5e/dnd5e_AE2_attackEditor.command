@@ -19,7 +19,8 @@
 	<!-- Retrieve a value from the working copy, check for valid name, assign one if not valid -->
 	[h, if (json.isEmpty(activeName)): activeName = json.get(json.fields(workingCopy, "json"), 0)]
 	[h: actionData = dnd5e_AE2_extractAction(workingCopy, activeName)]
-	[h, if (json.isEmpty(actionData	)), code: {
+	[h: log.debug("dnd5e_AE2_attackEditor: activeName=" + activeName + " workingCopy=" + json.fields(workingCopy) + " actionData = " + json.indent(actionData))]
+	[h, if (!json.contains(workingCopy, activeName)), code: {
 		[h: input("Error|The action named '" + activeName + "' does not exist. If an edit macro was used it has an old macro name.| |LABEL")]
 		[h: activeName = json.get(json.fields(workingCopy, "json"), 0)]
 		[h: actionData = dnd5e_AE2_extractAction(workingCopy, activeName)]
@@ -61,7 +62,7 @@
 [h: runAdvDisadvDisabled = if(hasAttack, "", "disabled")]
 
 <!-- The expression returned to from the type functions is returned to the editor --><!-- Start the form html with bootstrap and hidden fields -->
-[h: state = json.set("{}", "attack", 0, "save", 0)]
+[h: state = json.set("{}", "attack", 0, "save", 0, "check", 0)]
 [h: processorLink = macroLinkText ("dnd5e_AE2_processor@Lib:DnD5e", "all", "", id)]
 [dialog5 ("Attack Editor 2", "title=Action Editor; input=0; width=1200; height=800; closebutton=0"): {
 <!doctype html>
@@ -89,6 +90,7 @@
 		[h: indicators = json.get(json.get(NAMES_OF_STEP_TYPES, dnd5e_RollExpression_getExpressionType(workingExp)), "indicators")]
 		[h, if(json.contains(indicators, "attack")): state = json.set(state, "attack", json.get(state, "attack") + 1)]
 		[h, if(json.contains(indicators, "save")): state = json.set(state, "save", json.get(state, "save") + 1)]
+		[h, if(json.contains(indicators, "check")): state = json.set(state, "check", json.get(state, "save") + 1)]
     	[r: dnd5e_AE2_generateStepHtml(workingExp, index, state)]
     }]
 
@@ -113,6 +115,8 @@
       		data-toggle="tooltip" title="Add a condition step that is modified by the target's saving throw">Save Condition</button>
       <button type="submit" class="btn btn-secondary" name="addStep", value="[r:CONDITION_STEP_TYPE]"
       		data-toggle="tooltip" title="Add a condition step">Condition</button>
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:TARGET_CHECK_STEP_TYPE]"
+      		data-toggle="tooltip" title="Add a target check step.">Target Check</button>
     </div>
     
     <div class="btn-group offset-2 col-8">

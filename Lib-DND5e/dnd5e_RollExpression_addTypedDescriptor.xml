@@ -46,6 +46,8 @@
   &lt;dt&gt;&lt;b&gt;extendedValues&lt;/b&gt;&lt;/dt&gt; 
   &lt;dd&gt;Should extended values be shown for the step? The values are '+' if no extended values are shown, '-' means they are being shown. 
       The value "" means the extended values are not set.&lt;/dd&gt; 
+  &lt;dt&gt;&lt;b&gt;save-effect-damage&lt;/b&gt;&lt;/dt&gt; 
+  &lt;dd&gt;The damage done on a Save Damage expression after the save effect has been applied&lt;/dd&gt; 
 &lt;/dl&gt; 
 arg(2) = descriptor text
 &lt;/html&gt;</toolTip>

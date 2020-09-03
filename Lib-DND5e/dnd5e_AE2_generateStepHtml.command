@@ -36,8 +36,14 @@
 	[h, if(json.get(state, "save") > 1): text = "on #" + json.get(state, "save") + " save"; text = "on save"]
 	[h: indicatorOut = indicatorOut + '<span style="margin-left:2;" class="badge badge-primary">' + text + '</span>']
 }]
+[h: checkNeeded = if(json.contains(indicators, "onCheck") && json.get(state, "check") > 0, 1, 0)]
+[h, if(checkNeeded), code: {
+	[h, if(json.get(state, "check") > 1): text = "on #" + json.get(state, "check") + " check"; text = "on check"]
+	[h: indicatorOut = indicatorOut + '<span style="margin-left:2;" class="badge badge-warning">' + text + '</span>']
+}]
 [h: log.debug("dnd5e_AE2_generateStepHtml: indicators=" + indicators + " hit=" + json.contains(indicators, "hit") 
-				+ " save=" + json.contains(indicators, "onSave") + " indicatorOut=" + indicatorOut + " state=" + json.indent(state))]
+				+ " save=" + json.contains(indicators, "onSave") + " check=" + json.contains(indicators, "check")
+				+ " indicatorOut=" + indicatorOut + " state=" + json.indent(state))]
 
 <!-- Build the row -->
 <div class="form-row form-inline step-row [r:rowClass]">
@@ -78,6 +84,9 @@
 }; {[h:""]}]
 [r, if(type == CONDITION_STEP_TYPE), code: {
 	[r: dnd5e_AE2_generateConditionFieldHtml(rowId, SAVE_CONDITION_FIELD, json.get(exp, SAVE_CONDITION_FIELD), stepClass, STATE_GROUPS)]
+}; {[h:""]}]
+[r, if(type == TARGET_CHECK_STEP_TYPE), code: {
+	[r: dnd5e_AE2_generateTargetCheckFieldHtml(rowId, TARGET_CHECK_FIELD, dnd5e_RollExpression_getTargetCheck(exp), stepClass)]
 }; {[h:""]}]
 
   <!-- Place the delete & extended buttons at the end of the row -->

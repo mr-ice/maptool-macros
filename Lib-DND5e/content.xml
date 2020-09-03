@@ -1743,6 +1743,26 @@ function changeType() {
       <int>217</int>
       <macro name="dnd5e_AE2_typeDamage"/>
     </entry>
+    <entry>
+      <int>218</int>
+      <macro name="dnd5e_RollExpression_TargetCheck"/>
+    </entry>
+    <entry>
+      <int>219</int>
+      <macro name="dnd5e_AE2_generateTargetCheckFieldHtml"/>
+    </entry>
+    <entry>
+      <int>220</int>
+      <macro name="dnd5e_RollExpression_getTargetCheck"/>
+    </entry>
+    <entry>
+      <int>221</int>
+      <macro name="dnd5e_RollExpression_setTargetCheck"/>
+    </entry>
+    <entry>
+      <int>222</int>
+      <macro name="dnd5e_Util_encodeHtml"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

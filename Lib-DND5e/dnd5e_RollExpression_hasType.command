@@ -9,6 +9,7 @@
 					"Condition", json.append ("", "unrollable"),
 					"DnDBeyond Spell", json.append ("", "unrollable"),
 					"DnDBeyond Attack", json.append ("", "unrollable"),
+					"Target Check", json.append ("", "unrollable"),
 					"Ability", json.append ("", "advantagable")
 )]
 

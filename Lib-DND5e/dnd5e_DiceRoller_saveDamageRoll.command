@@ -12,7 +12,7 @@
 	[h, switch(lower(saveEffect)):
 	case "half": saveDamage = floor(saveDamage/2);
 	case "none": saveDamage = "0";
-	default: saveDamage = if(isNumber(saveEffect), floor(saveDamage/saveEffect), "Unknown");
+	default: saveDamage = if(isNumber(saveEffect), floor(saveDamage * saveEffect), "Unknown");
 	]
 	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save + " (" + saveDamage + ")")] 
 	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "save-effect-damage", saveDamage)] 

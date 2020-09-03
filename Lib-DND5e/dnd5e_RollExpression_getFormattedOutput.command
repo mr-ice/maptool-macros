@@ -73,7 +73,9 @@
 		<!-- Actions apply the save effect here w/o DC & Ability, the attack editor uses those 2 fields -->
 		[h: saveEffect = dnd5e_RollExpression_getSaveEffect(exp)]
 		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, "save-effect-damage")]
-		[r, if (actionExecution): saveEffect = " If target save passes the target takes " + saveEffect + " damage of " + saveEffectDamage]
+		[h, if (isNumber(saveEffect)): saveEffect = "(" + total + " * " + saveEffect + ")"]
+		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage of " + saveEffectDamage; saveEffect = saveEffectDamage + " damage"]
+		[r, if (actionExecution): saveEffect = " If target save passes the target takes " + saveEffect]
 		[h: saveable = dnd5e_RollExpression_getTypedDescriptor(exp, "saveable")]
 		[r, if (!actionExecution): saveable = "<span title='" + tt + "' style='font: italic;'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + saveable]
 		</span><br>
@@ -109,6 +111,15 @@
 		<span style='font: italic;'>&nbsp;&nbsp;Apply these states on the target:<b>[r:saveConditions]</b>
 		[h: name = dnd5e_RollExpression_getName(exp)]
 		[r, if (name != ""): " for " + name]
+		</span><br>	
+	};{[h:""]}]
+	[r, if (expressionType == TARGET_CHECK_STEP_TYPE), code: {
+
+		<!-- Actions can apply states to the token --->
+		[h: expression = json.toList(json.get(exp, TARGET_CHECK_FIELD))]
+		[h: name = dnd5e_RollExpression_getName(exp)]
+		[r, if (name != ""): name = " " + name]
+		<span style='font: italic;'>&nbsp;&nbsp;Check the target for[r:name]:<b>[r:expression]</b>
 		</span><br>	
 	};{[h:""]}]
 	[h: log.debug("-----------------------------------------------------------------------")]

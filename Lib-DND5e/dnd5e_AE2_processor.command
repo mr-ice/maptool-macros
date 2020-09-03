@@ -64,7 +64,6 @@
 	[h, if (control == "new"), code: {
 		[h: currentActionName = dnd5e_Util_createUniqueName("New Action", json.fields(workingCopy, "json"))]
 		[h: workingCopy = json.set(workingCopy, currentActionName, "[]")]
-		[h: exps = dnd5e_AE2_typeAttack("", "[]")]
 		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), "actionName", currentActionName)]
 		[h: exps = json.set(exps, 0, firstExp)]
 		[h: oldActionType = ATTACK_TYPE]
@@ -125,7 +124,7 @@
 								"tooltip", "Execute the " + currentActionName + " action.",
 								"sortBy", sortByBase)]
 		<!-- Normal Attack -->
-		[h: macroInputs = json.set ("", "selectedAttack", currentActionName)]	
+		[h: macroInputs = json.set ("", "actionName", currentActionName)]	
 		[h: lastSortBy = dnd5e_Macro_createAdvDisadvMacroFamily(currentActionName, "dnd5e_Macro_rollAction@Lib:DnD5e", macroInputs, macroConfig)]
 		[h: lastSortBy = lastSortBy + 1]
 		<!-- Edit -->
@@ -149,6 +148,7 @@
 	[h, if (newStep == SAVE_DAMAGE_STEP_TYPE): addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_SaveDamage(), json.length(exps)); ""]
 	[h, if (newStep == SAVE_CONDITION_STEP_TYPE): addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_SaveEffect(), json.length(exps)); ""]
 	[h, if (newStep == CONDITION_STEP_TYPE):  addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_Condition(), json.length(exps)); ""]
+	[h, if (newStep == TARGET_CHECK_STEP_TYPE):  addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_TargetCheck(), json.length(exps)); ""]
 	[h: exps = json.append(exps, addExp)]
 	[h: log.debug("dnd5e_AE2_processor: addStep=" + json.indent(addExp))]
 }; {""}]
