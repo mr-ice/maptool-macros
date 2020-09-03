@@ -3,7 +3,7 @@
 					"atkAtkDis", "Attacks have disadvantage",
 					"charmed", "Can't harm charmer",
 					"srcAbilityAdv", "Attacker ability checks have advantage vs target",
-					"srcSeeAbilityDis", "Ability checks have disadvantage while attacker is in sight",
+					"srcSeeAbilityAtkDis", "Attacks and ability checks have disadvantage while attacker is in sight",
 					"cannotClose", "Target cannot move closer to attacker",
 					"zeroSpeed", "Speed becomes 0",
 					"noActions", "Cannot take actions, reactions",
@@ -27,7 +27,7 @@
 				"Invisible", json.append ("", "invisible", "atkAtkAdv", "atkDefDis"),
 				"Incapacitated", json.append ("", "incapacitated"),
 				"Grappled", json.append ("", "zeroSpeed"),
-				"Frightened", json.append ("", "srcSeeAbilityDis", "cannotClose"),
+				"Frightened", json.append ("", "srcSeeAbilityAtkDis", "cannotClose"),
 				"Deafened", json.append ("", "deaf"),
 				"Charmed", json.append ("", "charmed", "srcAbilityAdv"),
 				"Blinded", json.append ("", "blind", "atkDefAdv", "atkAtkDis"))]
