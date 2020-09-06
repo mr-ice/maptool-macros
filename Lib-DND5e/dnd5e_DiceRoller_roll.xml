@@ -20,7 +20,7 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = RollExpression[]
 &lt;br&gt;arg(1) = (optional) the amount to multiply the totalRolls property, normally used by DiceRoller when rolling child expressions
-&lt;br&gt;arg(2) = (otional) Are we making rolls for the action or target? 0 for action and 1 for target
+&lt;br&gt;arg(2) = (oPtional) Are we making rolls for the action or target? 0 for action and 1 for target
 &lt;br&gt;
 &lt;br&gt;Returns: The RollExpression array with all of the results
 &lt;/html&gt;</toolTip>

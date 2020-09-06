@@ -6,8 +6,7 @@
 [h: LAST_ROLLED_PROPERTY = "_dnd5e_lastRolledExpression"]
 
 [h: type = json.type (rollExpressions)]
-[h, if (type == "OBJECT"): rollExpressions = json.append ("", rollExpressions);""]
-[h: log.debug ("rollExpressions: " + json.indent (rollExpressions))]
+[h, if (type == "OBJECT"): rollExpressions = json.append ("", rollExpressions)]
 [h: rolled = "[]"]
 [h, foreach (rollExpression, rollExpressions), code: {
 	[h: unrollable = dnd5e_RollExpression_hasType(rollExpression, "unrollable")]
@@ -17,5 +16,5 @@
 }]
 [h, if (dnd5e_Preferences_getPreference ("showRollExpressions")): broadcast ("<pre>" + json.indent (rolled) + "</pre>", "self"); ""]
 [h: tokenId = currentToken()]
-[h, if (tokenId != ""): setProperty (LAST_ROLLED_PROPERTY, rolled); ""]
+[h, if (tokenId != ""): setProperty (LAST_ROLLED_PROPERTY, rolled)]
 [h: macro.return = rolled]

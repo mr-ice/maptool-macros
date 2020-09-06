@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>0cdddaa7-f124-4085-b636-efe26219067d</macroUUID>
+  <macroUUID>ec118f17-c877-48b9-ab45-40d0fd91bd12</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>167</index>
+  <index>205</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_AE2_typeAttack</label>
-  <group>RollExpression - Action Editor 2.0</group>
+  <label>dnd5e_Util_createUniqueName</label>
+  <group>Util</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,14 +15,15 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Updates the roll expression to be a generic attack
-&lt;br&gt;The user enters the damage bonus and the attack damage
+  <toolTip>&lt;html&gt;Updates the passed string so that it is a &quot;title&quot; attribute for any HTML tag.
+&lt;br&gt;This allows the text to be formatted as HTML. This only works if the tooltip is being 
+&lt;br&gt;displayed in MapTool&apos;s chat, as it uses the underlying swing tooltips which allow HTML.
 &lt;br&gt;
-&lt;br&gt;arg(0) = old action type
-&lt;br&gt;arg(1) = Working roll expression
+&lt;br&gt;arg(0) = String to be formatted
+&lt;br&gt;arg(1) = Optional; The width of the tooltip box
 &lt;br&gt;
-&lt;br&gt;Outputs html content for all of the action steps currently defined
-&lt;br&gt;Returns the updated roll expression
+&lt;br&gt;Returns the string properly encoded to display in a Java Swing tooltip as a &quot;title&quot; attribute.
+&lt;br&gt;If an empty string is passed an empty string is returned.
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

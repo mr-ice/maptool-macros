@@ -1,0 +1,6 @@
+[h: text = trim(arg(0))]
+[h: text = replace(text, "'", "&#39;")]
+[h, if (argCount() > 1): width = arg(2); width="400"]
+[h: textStart = '<html><div style="width:' + width + ';">']
+[h, if (text != ""): text = "title='" + textStart + dnd5e_Util_encodeHtml(text) + "</div></html>'"]
+[h: macro.return = text]

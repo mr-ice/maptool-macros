@@ -1,9 +1,12 @@
 [h: id = arg(0)]
 [h: totalDamage = arg(1)]
 [h, if(json.length(macro.args) > 3): saveRoll = arg(3); saveRoll = ""]
+[h, if(json.length(macro.args) > 4): saveEffect = arg(4); saveEffect = ""]
 
 <!-- Only keep the first type of damage -->
 [h: damageType = lower(trim(listGet(arg(2), 0)))]
+[h: log.debug(getMacroName() + ": id=" + id + " totalDamage=" + totalDamage + " damageType=" + damageType + " saveEffect=" + saveEffect 
+				+ " saveRoll=" + json.indent(saveRoll))]
 
 <!-- Check damage type against immunities/resistances/vulnerablilities -->
 [h: applied = ""]
@@ -30,12 +33,13 @@
 [h: return(!json.isEmpty(saveRoll), macro.return)]
 
 <!-- if a save was made for partial damage hanlde that here -->
-[h: log.info("saveRoll=" + json.indent(saveRoll))]
+[h: log.debug(getMacroName() + ": saveRoll=" + json.indent(saveRoll))]
 [h: tt = "DC " + dnd5e_RollExpression_getSaveDC(saveRoll) + " " + dnd5e_RollExpression_getSaveAbility(saveRoll) + ": "]
 [h: tt = tt + dnd5e_RollExpression_getTypedDescriptor(saveRoll, "tooltipRoll") + " = " 
 		+ dnd5e_RollExpression_getTypedDescriptor(saveRoll, "tooltipDetail") + " = " + dnd5e_RollExpression_getTotal(saveRoll)]
-[h: saveResult = lower(json.get(saveRoll, "saveResult"))]
-[h: log.info("saveResult=" + saveResult + " tt=" + tt)]
+[h: saveResult = json.get(saveRoll, "saveResult")]
+[h, if (saveResult == "passed"): saveResult = trim(lower(saveEffect))]
+[h: log.debug(getMacroName() + ": saveResult=" + saveResult + " tt=" + tt)]
 [h, switch(saveResult), code:
 case "half": {
 	[h: totalDamage = floor(totalDamage / 2)]

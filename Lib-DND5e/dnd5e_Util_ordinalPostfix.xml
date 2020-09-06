@@ -18,8 +18,8 @@
   <toolTip>&lt;html&gt;Add the 'st', 'nd', 'rd', 'th' postfix to a number
 &lt;br&gt;
 &lt;br&gt;arg(0)=Add the postfix to this number
-&lt;br&gt;arg(1)=Optional value to be returned if the number is zero. If not specified '0' is used
-&lt;br&gt;arg(2)=Optional string format to apply. If specified it must contain the string '%{value}' to work.
+&lt;br&gt;arg(1)=Optional, Value to be returned if the number is zero. If not specified '0' is used
+&lt;br&gt;arg(2)=Optional, String format to apply. If specified it must contain the string '%{value}' to work.
 &lt;br&gt;
 &lt;br&gt;Returns the ordinal with the postfix formatted as requested
 &lt;/html&gt;</toolTip>

@@ -4,7 +4,7 @@
   <index>163</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_SavedAttacks_calculateDamage</label>
+  <label>dnd5e_SavedAttacks_evaluateCheckExpression</label>
   <group>Saved Attacks</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,20 +15,13 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Calculate the damage that should be applied
+  <toolTip>&lt;html&gt;Evaluate the expression on a Target Check against this token
 &lt;br&gt;
-&lt;br&gt;arg(0) = Token ID receiving damage
-&lt;br&gt;arg(1) = The total damage recieved
-&lt;br&gt;arg(2) = damage type. Everything up to the first comma is used as the type
-&lt;br&gt;arg(3) = optional Save Roll Expression. 
-&lt;br&gt;arg(4) = optional Save Effect. Only &apos;half&apos;, &apos;none&apos; &amp; a multiplier are supported
+&lt;br&gt;arg(0) = Id of the target token
+&lt;br&gt;arg(1) = Target Check to be evaluated
+&lt;br&gt;arg(2) = State of the current roll
 &lt;br&gt;
-&lt;br&gt;Returns an object
-&lt;br&gt;&amp;nbsp;&amp;nbsp;{
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;damage&quot;: The amount of damage actually taken
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;applied&quot;: The string list of modifications applied to the total damage
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;type&quot;: The type of damage recieved
-&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;Returns the updated state
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

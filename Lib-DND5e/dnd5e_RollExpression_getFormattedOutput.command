@@ -5,10 +5,10 @@
 [h: aTitle = dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionName")]
 [h: actionExecution = if(aTitle == "", 0, 1)]
 [h, if (aTitle == ""): aTitle = dnd5e_RollExpression_getName(firstExp)]
+[h: aTitle = dnd5e_Util_encodeHtml(aTitle)]
 
 <!-- If there is a description, attach it to the title as a tool tip -->
-[h: tooltip = trim(dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionDesc"))]
-[h, if (tooltip != ""): tooltip = "title='" + encode(tooltip) + "'"]
+[h: tooltip = dnd5e_Util_formatTooltip(dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionDesc"))]
 <div>
   <span style='font: bold 14px;' [r:tooltip]>[r:aTitle]</span>
   <div style='left-margin: 15px;'>
@@ -24,6 +24,7 @@
 	[h: total = dnd5e_RollExpression_getTotal(exp)]
 	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipRoll") + " = " 
 			+ dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipDetail") + " = " + total]
+	[h: tt = dnd5e_Util_encodeHtml(tt)]
 
 	<!-- Handle top level expressions only by type -->
 	[h: expressionType = dnd5e_RollExpression_getExpressionType(exp)]
@@ -39,7 +40,7 @@
 		<span title='[r:tt]'><span style='font: bold 12px;' title='[r:tt]'>[r:total]</span> to hit
 		[r: dnd5e_RollExpression_getTypedDescriptor(exp, "advantageable")]
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): " for " + name]
+		[r, if (name != ""): " for " + dnd5e_Util_encodeHtml(name)]
 		[h: critable = json.path.read(arg(0), ".typedDescriptors.critable", "ALWAYS_RETURN_LIST")]
 		[r, if (!json.isEmpty(critable)): " <span style='color: red; font: bold italic 12px;' title='" 
 			+ tt + "'>Critical</span>"; ""]
@@ -56,7 +57,7 @@
 		<span title='[r:tt]'><span style='font: bold 12px;' title='[r:tt]'>&nbsp;&nbsp;[r:total]</span>
 		[r: json.toList(dnd5e_RollExpression_getDamageTypes(exp), ", ")] Damage
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): " from " + name]
+		[r, if (name != ""): " from " + dnd5e_Util_encodeHtml(name)]
 		</span><br>
 	};{[h:""]}]	
 	[r, if (expressionType == SAVE_DAMAGE_STEP_TYPE), code: {
@@ -67,14 +68,16 @@
 		<span title='[r:tt]'><span style='font: bold 12px;' title='[r:tt]'>&nbsp;&nbsp;[r:total]</span>
 		[r: json.toList(dnd5e_RollExpression_getDamageTypes(exp), ", ")] Damage
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): " from " + name]
+		[r, if (name != ""): " from " + dnd5e_Util_encodeHtml(name)]
 		if target save fails.
 		
 		<!-- Actions apply the save effect here w/o DC & Ability, the attack editor uses those 2 fields -->
 		[h: saveEffect = dnd5e_RollExpression_getSaveEffect(exp)]
 		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, "save-effect-damage")]
+		[h, if (lower(saveEffect) == "none"): saveEffect = "no"]
 		[h, if (isNumber(saveEffect)): saveEffect = "(" + total + " * " + saveEffect + ")"]
-		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage of " + saveEffectDamage; saveEffect = saveEffectDamage + " damage"]
+		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage" + if(saveEffectDamage == 0, "", " of " + saveEffectDamage); 
+					saveEffect = saveEffectDamage + " damage"]
 		[r, if (actionExecution): saveEffect = " If target save passes the target takes " + saveEffect]
 		[h: saveable = dnd5e_RollExpression_getTypedDescriptor(exp, "saveable")]
 		[r, if (!actionExecution): saveable = "<span title='" + tt + "' style='font: italic;'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + saveable]
@@ -85,12 +88,12 @@
 		<!-- Actions create a separate target save object -->
 		[h: saveDC = dnd5e_RollExpression_getSaveDC (exp)]
 		[h: saveAgainst = json.get(exp, SAVE_AGAINST_FIELD)]
-		[h, if (saveAgainst != ""): saveAgainst = " against " + saveAgainst]
+		[h, if (saveAgainst != ""): saveAgainst = " against " + dnd5e_Util_encodeHtml(saveAgainst)]
 		[h: saveAbility = dnd5e_RollExpression_getSaveAbility (exp)]
 		[h: save = "Target must make a DC " + saveDC + " " + saveAbility + " save" + saveAgainst]
 		<span style='font: italic;'>&nbsp;&nbsp;[r:save]
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): " for " + name]
+		[r, if (name != ""): " for " + dnd5e_Util_encodeHtml(name)]
 		</span><br>
 	};{[h:""]}]
 	[r, if (expressionType == SAVE_CONDITION_STEP_TYPE), code: {
@@ -101,7 +104,7 @@
 		[h: condition = "If target save " + saveResult + " then apply these states on the target: "]
 		<span style='font: italic;'>&nbsp;&nbsp;[r:condition]<b>[r:saveConditions]</b>
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): " for " + name]
+		[r, if (name != ""): " for " + dnd5e_Util_encodeHtml(name)]
 		</span><br>
 	};{[h:""]}]
 	[r, if (expressionType == CONDITION_STEP_TYPE), code: {
@@ -110,15 +113,15 @@
 		[h: saveConditions = json.toList(json.get(exp, SAVE_CONDITION_FIELD))]
 		<span style='font: italic;'>&nbsp;&nbsp;Apply these states on the target:<b>[r:saveConditions]</b>
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): " for " + name]
+		[r, if (name != ""): " for " + dnd5e_Util_encodeHtml(name)]
 		</span><br>	
 	};{[h:""]}]
 	[r, if (expressionType == TARGET_CHECK_STEP_TYPE), code: {
 
 		<!-- Actions can apply states to the token --->
-		[h: expression = json.toList(json.get(exp, TARGET_CHECK_FIELD))]
+		[h: expression = dnd5e_Util_encodeHtml(dnd5e_RollExpression_getTargetCheck(exp))]
 		[h: name = dnd5e_RollExpression_getName(exp)]
-		[r, if (name != ""): name = " " + name]
+		[r, if (name != ""): name = " " + dnd5e_Util_encodeHtml(name)]
 		<span style='font: italic;'>&nbsp;&nbsp;Check the target for[r:name]:<b>[r:expression]</b>
 		</span><br>	
 	};{[h:""]}]

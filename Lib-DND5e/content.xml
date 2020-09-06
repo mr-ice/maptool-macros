@@ -1763,6 +1763,18 @@ function changeType() {
       <int>222</int>
       <macro name="dnd5e_Util_encodeHtml"/>
     </entry>
+    <entry>
+      <int>223</int>
+      <macro name="dnd5e_SavedAttacks_evaluateCheckExpression"/>
+    </entry>
+    <entry>
+      <int>224</int>
+      <macro name="dnd5e_SavedAttacks_enforceConditions"/>
+    </entry>
+    <entry>
+      <int>225</int>
+      <macro name="dnd5e_Util_formatTooltip"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

@@ -90,7 +90,7 @@
 		[h: indicators = json.get(json.get(NAMES_OF_STEP_TYPES, dnd5e_RollExpression_getExpressionType(workingExp)), "indicators")]
 		[h, if(json.contains(indicators, "attack")): state = json.set(state, "attack", json.get(state, "attack") + 1)]
 		[h, if(json.contains(indicators, "save")): state = json.set(state, "save", json.get(state, "save") + 1)]
-		[h, if(json.contains(indicators, "check")): state = json.set(state, "check", json.get(state, "save") + 1)]
+		[h, if(json.contains(indicators, "check")): state = json.set(state, "check", json.get(state, "check") + 1)]
     	[r: dnd5e_AE2_generateStepHtml(workingExp, index, state)]
     }]
 

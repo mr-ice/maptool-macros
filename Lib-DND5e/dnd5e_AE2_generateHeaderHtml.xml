@@ -20,7 +20,8 @@
 &lt;br&gt;arg(0) = Optional expression 
 &lt;br&gt;arg(1) = Optional form data
 &lt;br&gt;
-&lt;br&gt;Returns the expression updated with new header data</toolTip>
+&lt;br&gt;Returns the expression updated with new header data
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

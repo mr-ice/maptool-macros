@@ -4,8 +4,8 @@
 [h: json.toVars(dnd5e_AE2_getConstants())]
 
 <!-- Read the action name, type & desc from the first expression in the list -->
-[h: actionName = dnd5e_RollExpression_getTypedDescriptor(exp, "actionName")]
-[h: actionDesc = dnd5e_RollExpression_getTypedDescriptor(exp, "actionDesc"))]
+[h: actionName = dnd5e_Util_encodeHtml(dnd5e_RollExpression_getTypedDescriptor(exp, "actionName"))]
+[h: actionDesc = dnd5e_Util_encodeHtml(dnd5e_RollExpression_getTypedDescriptor(exp, "actionDesc"))]
 [h: newActionType = dnd5e_RollExpression_getTypedDescriptor(exp, "actionType"))]
 
 <!-- Check for attacks -->
@@ -17,7 +17,7 @@
 [h, if(json.isEmpty(spells)): disabled = json.append(disabled, DNDB_SPELL_TYPE); ""]
 
 <!-- Action name textfield -->
-[h, if(actionName == ""): ""; actionName = " value='" + decode(actionName) + "'"]
+[h, if(actionName == ""): ""; actionName = " value='" + actionName + "'"]
 <div class="form-row">
   <div class="col-9 form-group" data-toggle="tooltip" title="Title of the action and macro name">
     <label for="actionNameId">Action Name</label>

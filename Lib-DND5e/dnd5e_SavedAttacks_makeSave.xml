@@ -18,12 +18,10 @@
   <toolTip>&lt;html&gt;Conduct a saving throw
 &lt;br&gt;
 &lt;br&gt;arg(0) = Id of character making save
-&lt;br&gt;arg(1) = save ability
-&lt;br&gt;arg(2) = save DC
-&lt;br&gt;arg(3) = save Effect
+&lt;br&gt;arg(1) = save roll expression
 &lt;br&gt;
-&lt;br&gt;The rolled RollExpression used to make the save. The &lt;font face='monospace'&gt;saveResult&lt;/font&gt; 
-field contains the save effect if the save passes, otherwise returns "failed"
+&lt;br&gt;The updated rolled RollExpression used to make the save. The &lt;font face=&apos;monospace&apos;&gt;saveResult&lt;/font&gt; 
+field contains the result &quot;passed&quot; or &quot;failed&quot;
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

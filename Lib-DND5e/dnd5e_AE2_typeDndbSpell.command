@@ -50,12 +50,9 @@
 <!-- Create roll header -->
 [h: dndb = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_DnDBeyondSpell(newSpell), 0, DNDB_SPELL_TYPE)]
 [h: dndb = json.set(dndb, "spellLevel", newSpellLevel)]
-[h: if (oldActionType != DNDB_SPELL_TYPE || oldSpell != newSpell), code: {
+[h, if (oldActionType != DNDB_SPELL_TYPE || oldSpell != newSpell), code: {
 	[h: dndb = dnd5e_RollExpression_addTypedDescriptor(dndb, "actionName", json.get(selectedSpell, "name"))]
-	[h: spellDesc = json.get(selectedSpell, "description")]
-	[h: spellDesc = replace(spellDesc, "<p>", "")]
-	[h: spellDesc = replace(spellDesc, "</p>", "")]
-	[h: dndb = dnd5e_RollExpression_addTypedDescriptor(dndb, "actionDesc", spellDesc)]
+	[h: dndb = dnd5e_RollExpression_addTypedDescriptor(dndb, "actionDesc", json.get(selectedSpell, "description"))]
 }]
 [h: newExps = json.append("[]", dndb)]
 
@@ -79,5 +76,4 @@
 
 [h: exps = dnd5e_AE2_removeOldTypes(oldActionType, exps, DNDB_SPELL_TYPE, newExps)]
 [h: log.debug("dnd5e_AE2_typeDndbSpell: fixed expressions = " + json.indent(exps))]
-[h: input("Bob|3|typeDndbSpell|TEXT")]
 [h: return(0, exps)]

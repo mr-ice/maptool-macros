@@ -64,6 +64,8 @@
 	[h, if (control == "new"), code: {
 		[h: currentActionName = dnd5e_Util_createUniqueName("New Action", json.fields(workingCopy, "json"))]
 		[h: workingCopy = json.set(workingCopy, currentActionName, "[]")]
+		[h: exps = dnd5e_AE2_typeAttack("", "[]")]
+		[h: firstExp = json.get(exps, 0)]
 		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), "actionName", currentActionName)]
 		[h: exps = json.set(exps, 0, firstExp)]
 		[h: oldActionType = ATTACK_TYPE]
@@ -155,19 +157,24 @@
 
 <!-- Should we delete a step? -->
 [h, if (json.contains(form, "deleteStep")), code: {
-	[h: index = json.get(Form, "deleteStep")]
+	[h: index = json.get(form, "deleteStep")]
 	[h: deletedExp = json.get(exps, index)]
-	[h: deletedActionType = dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionType")]
-	[h, if (deletedActionType != ""), code: {
-		<!-- Deleted a specific action step, change type to free form -->
-		[h: json.toVars(dnd5e_AE2_getConstants())]
-		[h: newActionType = FREE_FORM_TYPE]
-		[h: oldActionType = ""]
-	}; {""}]
-	[h: log.debug("dnd5e_AE2_processor: deleteStep=" + json.indent(deletedExp))]
+	[h: deletedActionType = dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionType")]	
+	[h, if (deletedActionType != ""): newActionType = FREE_FORM_TYPE]
+	[h: log.debug("dnd5e_AE2_processor: deleteStep=" + json.indent(deletedExp))]	
+
+	<!-- Copy the name and description if the first step is deleted -->
+	[h: exps = json.remove(exps, index)]
+	[h, if (index == 0), code: {
+		[h: firstExp = json.get(exps, 0)]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionName", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionName"))]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionDesc", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionDesc"))]
+		[h, if (oldActionType == FREE_FORM_TYPE): firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionType", FREE_FORM_TYPE)]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionDesc", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionDesc"))]
+		[h: exps = json.set(exps, 0, firstExp)]
+	}]
 
 	<!-- Remove the step and set the new row IDs on each expression -->
-	[h: exps = json.remove(exps, index)]
 	[h: newExps = "[]"]
 	[h, for(index, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_addTypedDescriptor(json.get(exps, index), "rowId", "row-" + index))]
 	[h: exps = newExps]
