@@ -4,7 +4,7 @@
   <index>205</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_createUniqueName</label>
+  <label>dnd5e_Util_formatTooltip</label>
   <group>Util</group>
   <sortby/>
   <autoExecute>true</autoExecute>
