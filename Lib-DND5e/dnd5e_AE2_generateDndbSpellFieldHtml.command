@@ -11,9 +11,10 @@
 	[h: spellsShown = json.append(spellsShown, json.set("{}", "name", json.get(spell, "name"), "level", level))]	
 }]
 [h: log.debug("dnd5e_AE2_generateDndbSpellFieldHtml: fieldId=" + fieldId + " value=" + value + " stepClass=" + stepClass + " spells=" + json.indent(spellsShown))]
-<div class="col-4 form-group action-detail[r:stepClass]">
+<div class="col-4 form-group action-detail[r:stepClass]" data-toggle="tooltip" title="Select an attack from those listed by DnD Beyond">
   <label for="[r:fieldId]-id">Spell:&nbsp;</label>
-  <select id="[r:fieldId]-id" name="[r:fieldId]" class="selectpicker [r:stepClass]" data-show-subtext="true" title="Choose spell&hellip;">
+  <select id="[r:fieldId]-id" name="[r:fieldId]" class="selectpicker [r:stepClass]" data-show-subtext="true" title="Choose spell&hellip;" 
+  		  required onchange="changeType(this.value)">
     [r, foreach(spell, spellsShown, "</option>"): "<option" 
     	+ if(replace(value, " ", "") == replace(json.get(spell, "name"), " ", ""), " selected", "") 
     	+ " data-subtext='" + json.get(spell, "level") + "'>" + json.get(spell, "name")]

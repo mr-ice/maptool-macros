@@ -41,7 +41,7 @@
 									 json.get(stepTypes, 3), stepSave, json.get(stepTypes, 4), stepSaveDamage, json.get(stepTypes, 5), stepSaveEffect,
 									 json.get(stepTypes, 6), stepCondition, json.get(stepTypes, 7), stepDnDbSpell, json.get(stepTypes, 8), stepTargetCheck
 )]
-[h: actionTypes = json.append("[]", "DnD Beyond Weapon Attack", "DnD Beyond Spell", "Generic Attack", "Damage with save", "Damage only",
+[h: actionTypes = json.append("[]", "DnD Beyond Weapon", "DnD Beyond Spell", "Generic Attack", "Damage with save", "Damage only",
 							"Condition with save", "Condition only", "Free Form"
 )]
 [h: abilities = json.append("[]", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma")]

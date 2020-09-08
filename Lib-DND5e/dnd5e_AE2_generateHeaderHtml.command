@@ -19,13 +19,15 @@
 <!-- Action name textfield -->
 [h, if(actionName == ""): ""; actionName = " value='" + actionName + "'"]
 <div class="form-row">
-  <div class="col-9 form-group" data-toggle="tooltip" title="Title of the action and macro name">
+  <div class="col-9 form-group">
     <label for="actionNameId">Action Name</label>
-    <input type="text" name="actionName" class="form-control" id="actionNameId" ${actionName}>
+    <input type="text" name="actionName" class="form-control" id="actionNameId" ${actionName} required
+			data-toggle="tooltip" title="The name of the action used in chat and for macros. If it is not unique the editor will add numbers until it is.">
+	<div class="invalid-tooltip">An action name is required.</div>
   </div>
 
   <!-- Action type menu select -->
-  <div class="col-3 form-group" data-toggle="tooltip" title="Action type determines starting steps." data-placement="top">
+  <div class="col-2 form-group" data-toggle="tooltip" title="The type determines starting steps in your action. Those steps have a blue step name">
     <label for="actionTypeId">Action Type</label>
     <select id="actionTypeId" name="actionType" class="selectpicker" required, onchange="changeType(this.value)">
       [r, foreach(actionType, ACTION_TYPES, "</option>"): "<option" + if(newActionType == actionType, " selected", "") 
@@ -36,9 +38,10 @@
 
 <!-- Description row -->
 <div class="form-row">
-  <div class="col form-group" data-toggle="tooltip" title="An optional description. Will be attached to the action name as a tool tip if provided.">
+  <div class="col form-group">
     <label for="actionDescId">Description</label>
-    <textarea name="actionDesc" class="form-control" id="actionDescId">[r:actionDesc]</textarea>
+    <textarea name="actionDesc" class="form-control" id="actionDescId"  data-toggle="tooltip" 
+       title="An optional description for the action. It is shown as a tooltip on the action name in chat when the action is executed.">[r:actionDesc]</textarea>
   </div>
 </div>
 

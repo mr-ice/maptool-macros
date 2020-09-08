@@ -1,12 +1,13 @@
 [h: exp = arg(0)]
 [h: index = arg(1)]
 [h: state = arg(2)]
+[h: count = arg(3)]
 [h: json.toVars(dnd5e_AE2_getConstants())]
 [h: rowId = "row-" + index]
 
 <!-- Create a type name from the type and the subtypes -->
 [h: type = dnd5e_RollExpression_getExpressionType(exp)]
-[h: log.debug("dnd5e_AE2_generateStepHtml: index = " + index + " type=" + type + " rowId=" + rowId + " exp = " + json.indent(exp))]
+[h: log.debug("dnd5e_AE2_generateStepHtml: index = " + index + " type=" + type + " rowId=" + rowId + " count=" + count + " exp = " + json.indent(exp))]
 
 <!-- Get the classes asscociated actionType expressions -->
 [h: actionType = dnd5e_RollExpression_getTypedDescriptor(exp, "actionType")]
@@ -91,13 +92,14 @@
 
   <!-- Place the delete & extended buttons at the end of the row -->
   <div class="flex-grow-1"> 
-    <button type="submit" class="float-right btn btn-outline-danger" name="deleteStep" value="[r:index]" style="margin-top:2px;width:40;" 
-    	data-toggle="tooltip" title="Delete this step">X</button>
+    [h: disableDelete = if(count == 1, "disabled", "")]
+    <button type="submit" class="float-right btn btn-outline-danger" name="deleteStep" value="[r:index]" style="margin-top:2px;width:40;" formnovalidate
+    	data-toggle="tooltip" title="Delete this step" [r:disableDelete]>X</button>
     [h: extended = dnd5e_RollExpression_getTypedDescriptor(exp, "extendedValues")]
 	[h, if (extended == ""): extended = "+"]
 	[h, if (extended == "+"): title = "Show extended fields."; title = "Hide extended fields and erase them."]
     [r, if (type != DNDB_ATTACK_STEP_TYPE && type != DNDB_SPELL_STEP_TYPE), code: { 
-      <button type="submit" class="float-right btn btn-outline-info" name="extendStep" value="[r:index]-[r:extended]" 
+      <button type="submit" class="float-right btn btn-outline-info" name="extendStep" value="[r:index]-[r:extended]" formnovalidate
               style="margin-top:2px;margin-right:2px;width:40;" data-toggle="tooltip" title="[r:title]">[r:extended]</button>
     }]
   </div>

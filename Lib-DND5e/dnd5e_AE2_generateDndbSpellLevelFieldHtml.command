@@ -30,9 +30,9 @@
 	[h, if (math.mod(index, levelBump) == 0): levels = json.append(levels, json.get(allLevels, index))]
 }]
 [h: return(if(json.length(levels) > 1, 1, 0), "")]
-<div class="col-4 form-group action-detail[r:stepClass]">
+<div class="col-4 form-group action-detail[r:stepClass]" data-toggle="tooltip" title="Choose the level of the spell slot used to cast the spell">
   <label for="[r:fieldId]-id">Cast at Level:&nbsp;</label>
-  <select id="[r:fieldId]-id" name="[r:fieldId]" class="selectpicker [r:stepClass]" title="Choose level&hellip;">
+  <select id="[r:fieldId]-id" name="[r:fieldId]" class="selectpicker [r:stepClass]" title="Choose level&hellip;" required onchange="changeType(this.value)">
     [r, foreach(level, levels, "</option>"): "<option" + if(value == level, " selected", "") + ">" + level]
   </select>
 </div> 

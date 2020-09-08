@@ -28,8 +28,8 @@
 	[h, if (json.isEmpty(exps)): json.toVars(actionData)]
 }]
 [h, if (json.length(macro.args) > 6): metaData = arg(6); metaData = getProperty("_AE2_Metadata")]
-[h, if (json.isEmpty(metaData)): macroFontColor = "red"; macroFontColor = json.get(metaData, "macroFontColor")]
-[h, if (json.isEmpty(metaData)): macroBgColor = "white"; macroBgColor = json.get(metaData, "macroBgColor")]
+[h, if (json.isEmpty(metaData)): macroFontColor = "white"; macroFontColor = json.get(metaData, "macroFontColor")]
+[h, if (json.isEmpty(metaData)): macroBgColor = "red"; macroBgColor = json.get(metaData, "macroBgColor")]
 [h, if (json.isEmpty(metaData)): metaData = json.set("{}", "macroBgColor", macroBgColor, "macroFontColor", macroFontColor)]
 [h: log.debug("dnd5e_AE2_attackEditor: workingCopy=" + json.fields(workingCopy) + " metaData=" + json.indent(metaData))]
 
@@ -77,7 +77,8 @@
 <form action="[r:processorLink]" method="json" id="editor">
   <ul class="nav nav-tabs">
     [r, foreach(action, json.fields(workingCopy), ""): "<li class='nav-item'><button type='submit' class='nav-link " 
-    		+ if(activeName == action, "active", "") + "' name='chooseAction' value='"	+ action + "'>" + action + "</button></li>"]
+    		+ if(activeName == action, "active", "") + "' name='chooseAction' value='"	+ action + "'
+    		>" + action + "</button></li>"]
   </ul>  
   <div class="form-container">
 
@@ -91,7 +92,7 @@
 		[h, if(json.contains(indicators, "attack")): state = json.set(state, "attack", json.get(state, "attack") + 1)]
 		[h, if(json.contains(indicators, "save")): state = json.set(state, "save", json.get(state, "save") + 1)]
 		[h, if(json.contains(indicators, "check")): state = json.set(state, "check", json.get(state, "check") + 1)]
-    	[r: dnd5e_AE2_generateStepHtml(workingExp, index, state)]
+    	[r: dnd5e_AE2_generateStepHtml(workingExp, index, state, json.length(exps))]
     }]
 
   	<!-- Hidden fields -->
@@ -103,19 +104,19 @@
 
     <!-- Group of buttons to add more steps -->
     <div class="btn-group form-row col-12">
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:ATTACK_STEP_TYPE]" [r:attackDisabled] 
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:ATTACK_STEP_TYPE]" [r:attackDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a new attack step to the action">Attack</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:DAMAGE_STEP_TYPE]"
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:DAMAGE_STEP_TYPE]" formnovalidate
       		data-toggle="tooltip" title="Add a damage step to the action">Damage</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_STEP_TYPE]" [r:saveDisabled]
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_STEP_TYPE]" [r:saveDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a target save step to the action">Save</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_DAMAGE_STEP_TYPE]" [r:saveDamageDisabled]
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_DAMAGE_STEP_TYPE]" [r:saveDamageDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a damage step that is modified by the target's saving throw">Save Damage</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_CONDITION_STEP_TYPE]" [r:saveConditionDisabled]
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_CONDITION_STEP_TYPE]" [r:saveConditionDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a condition step that is modified by the target's saving throw">Save Condition</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:CONDITION_STEP_TYPE]"
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:CONDITION_STEP_TYPE]" formnovalidate
       		data-toggle="tooltip" title="Add a condition step">Condition</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:TARGET_CHECK_STEP_TYPE]"
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:TARGET_CHECK_STEP_TYPE]" formnovalidate
       		data-toggle="tooltip" title="Add a target check step.">Target Check</button>
     </div>
     
@@ -134,9 +135,9 @@
 	      	data-toggle="tooltip" title="Run the action with disadvantage after saving all changes.">&#x23ec;</button>
       <button type="submit" class="btn btn-success" name="control", value="run-Both" [r:runAdvDisadvDisabled]
       		data-toggle="tooltip" title="Run the action ignoring advantage & disadvantage after saving all changes.">&#x23eb;&#x23ec;</button>
-      <button type="submit" class="btn btn-danger" name="control", value="delete"
+      <button type="submit" class="btn btn-danger" name="control", value="delete" formnovalidate
     	  	data-toggle="tooltip" title="Selete this action step.">Delete</button>
-      <button type="submit" class="btn btn-danger" name="control", value="exit"
+      <button type="submit" class="btn btn-danger" name="control", value="exit" formnovalidate
     	  	data-toggle="tooltip" title="Exit the editor ignoring all changes.">Exit</button>
     </div>
     <div class="form-row form-inline">
@@ -158,7 +159,7 @@
       </div> 
     </div>
 <!--  Fix this button as we go along -->
-<button id="submit" type="submit" class="float-left btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;">Submit</button>
+<button id="submit" type="submit" class="float-left btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;" formnovalidate>Submit</button>
   </div>
 
 
@@ -171,5 +172,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   <script type="text/javascript">[r:getLibProperty("_AE2_JavaScript", "Lib:DnD5e")]</script>
+  <script type="text/javascript">[r:getLibProperty("attackJson", "Lib:DnD5e")]</script>
 </body></html>
 }]
