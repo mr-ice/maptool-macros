@@ -111,6 +111,8 @@
 	[h: saveAttackAsMacro = if(control == "macro", 1, 0)]
 	[h: currentMacros = getMacros()]
 	[h, foreach (currentMacro, currentMacros), if (currentMacro == currentActionName): saveAttackAsMacro = 0]
+	[h: doNotNeedAdvantage = 1]
+	[h, foreach (exp, exps), if (dnd5e_RollExpression_getExpressionType(exp) == "Attack"): doNotNeedAdvantage = 0]
 	[h, if (saveAttackAsMacro), code: {
 		[h: fontColor = json.get(metaData, "macroFontColor")]
 		[h: buttonColor = json.get(metaData, "macroBgColor")]
@@ -127,7 +129,7 @@
 								"sortBy", sortByBase)]
 		<!-- Normal Attack -->
 		[h: macroInputs = json.set ("", "actionName", currentActionName)]	
-		[h: lastSortBy = dnd5e_Macro_createAdvDisadvMacroFamily(currentActionName, "dnd5e_Macro_rollAction@Lib:DnD5e", macroInputs, macroConfig)]
+		[h: lastSortBy = dnd5e_Macro_createAdvDisadvMacroFamily(currentActionName, "dnd5e_Macro_rollAction@Lib:DnD5e", macroInputs, macroConfig, doNotNeedAdvantage)]
 		[h: lastSortBy = lastSortBy + 1]
 		<!-- Edit -->
 		[h: macroConfig = json.set(macroConfig, "minWidth", 12,
