@@ -101,7 +101,7 @@
     [r, if (type != DNDB_ATTACK_STEP_TYPE && type != DNDB_SPELL_STEP_TYPE), code: { 
       <button type="submit" class="float-right btn btn-outline-info" name="extendStep" value="[r:index]-[r:extended]" formnovalidate
               style="margin-top:2px;margin-right:2px;width:40;" data-toggle="tooltip" title="[r:title]">[r:extended]</button>
-    }]
+    };{[h:""]}]
   </div>
 
 </div>

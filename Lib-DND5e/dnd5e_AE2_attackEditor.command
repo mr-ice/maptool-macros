@@ -136,7 +136,8 @@
       <button type="submit" class="btn btn-success" name="control", value="run-Both" [r:runAdvDisadvDisabled]
       		data-toggle="tooltip" title="Run the action ignoring advantage & disadvantage after saving all changes.">&#x23eb;&#x23ec;</button>
       <button type="submit" class="btn btn-danger" name="control", value="delete" formnovalidate
-    	  	data-toggle="tooltip" title="Selete this action step.">Delete</button>
+            data-toggle="tooltip" title = "Delete this action. When the last action is deleted a new one is created to replace it.">
+    	  	Delete</button>
       <button type="submit" class="btn btn-danger" name="control", value="exit" formnovalidate
     	  	data-toggle="tooltip" title="Exit the editor ignoring all changes.">Exit</button>
     </div>
@@ -172,6 +173,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   <script type="text/javascript">[r:getLibProperty("_AE2_JavaScript", "Lib:DnD5e")]</script>
-  <script type="text/javascript">[r:getLibProperty("attackJson", "Lib:DnD5e")]</script>
 </body></html>
 }]

@@ -13,7 +13,7 @@
 [h, if (oldActionType == DNDB_SPELL_TYPE && !json.isEmpty(exps)), code: {
 	[h: firstExp = json.get(exps, 0)]
 	[h: newSpell = dnd5e_RollExpression_getName(firstExp)]
-	[h: newSpellLevel = json.get(firstExp, "spellLevel")]
+	[h, if(newSpell == oldSpell): newSpellLevel = json.get(firstExp, "spellLevel"); newSpellLevel = ""]
 };{
 	[h: newSpell = ""]
 	[h: newSpellLevel = ""]

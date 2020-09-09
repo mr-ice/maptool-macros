@@ -27,7 +27,8 @@
   </div>
 
   <!-- Action type menu select -->
-  <div class="col-2 form-group" data-toggle="tooltip" title="The type determines starting steps in your action. Those steps have a blue step name">
+  <div class="col-2 form-group" data-toggle="tooltip"  data-placement="left"
+       title="The type determines starting steps in your action. Those steps have a blue step name">
     <label for="actionTypeId">Action Type</label>
     <select id="actionTypeId" name="actionType" class="selectpicker" required, onchange="changeType(this.value)">
       [r, foreach(actionType, ACTION_TYPES, "</option>"): "<option" + if(newActionType == actionType, " selected", "") 
