@@ -9,11 +9,12 @@
 [h, if (json.type(spell) == "ARRAY"): spell = json.get(spell, 0); ""]
 [h: log.debug("dnd5e_AE2_generateDndbSpellLevelFieldHtml: fieldId=" + fieldId + " value=" + value + " stepClass=" + stepClass 
 				+ " spellName=" + spellName + " spell=" + json.indent(spell))]
+[h: return(!json.isEmpty(spell), "")]
 
 <!-- Cast at higher levels? If not then done -->
 [h: spellLevel = json.get(spell, "level")]
 [h: scaleType = json.path.read(spell, ".modifiers[0].atHigherLevels.scaleType")]
-[h, if (json.type(scaleType) == "ARRAY"): scaleType = json.get(scaleType, 0); ""]
+[h, if (json.type(scaleType) == "ARRAY" && !json.isEmpty(scaleType)): scaleType = json.get(scaleType, 0); scaleType = ""]
 [h: spellCastHigher = json.get(spell, "castAtHigherLevels")]
 [h: log.debug("dnd5e_AE2_generateDndbSpellLevelFieldHtml: spellLevel=" + spellLevel + " scaleType=" + scaleType + " spellCastHigher=" + spellCastHigher)]
 [h: return(if(spellCastHigher == "true" && scaleType == "spellscale", 1, 0), "")]
