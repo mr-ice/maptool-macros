@@ -161,18 +161,45 @@
 [h, if (json.contains(form, "deleteStep")), code: {
 	[h: index = json.get(form, "deleteStep")]
 	[h: deletedExp = json.get(exps, index)]
-	[h: deletedActionType = dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionType")]	
-	[h, if (deletedActionType != ""): newActionType = FREE_FORM_TYPE]
-	[h: log.debug("dnd5e_AE2_processor: deleteStep=" + json.indent(deletedExp))]	
+	[h: exps = json.remove(exps, index)]
+	[h: log.debug(getMacroName() + ": index=" + index + " deleteStep=" + json.indent(json.append("[]", deletedExp, exps)))]	
+
+	<!-- Did we delete a save? fix its children -->
+	[h, if (dnd5e_RollExpression_getExpressionType(deletedExp) == "Save"), for(i, index, json.length(exps)), code: {
+		[h: exp = json.get(exps, i)]
+		[h: type = dnd5e_RollExpression_getExpressionType(exp)]
+		[h, if (type == SAVE_DAMAGE_STEP_TYPE): exp = dnd5e_RollExpression_setExpressionType(exp, DAMAGE_STEP_TYPE)]
+		[h, if (type == SAVE_DAMAGE_STEP_TYPE): exp = json.remove(exp, SAVE_EFFECT_FIELD)]
+		[h, if (type == SAVE_CONDITION_STEP_TYPE): exp = dnd5e_RollExpression_setExpressionType(exp, CONDITION_STEP_TYPE)]
+		[h, if (type == SAVE_CONDITION_STEP_TYPE): exp = json.remove(exp, SAVE_RESULT_FIELD)]
+		[h, if (type == SAVE_STEP_TYPE): i = json.length(exps)]
+		[h: exps = json.set(exps, i, exp)]
+	}]
+
+	<!-- When DndBeyond Weapons or Spell types are being changed to free form, the first step should be deleted too, if not already -->
+	[h: deletedActionType = dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionType")]
+	[h: dndbType = if (deletedActionType == DNDB_ATTACK_TYPE || deletedActionType == DNDB_SPELL_TYPE, 1, 0)]
+	[h, if (dndbType && index != 0), code: {
+		[h: index = 0]
+		[h: deletedExp = json.get(exps, index)]
+		[h: exps = json.remove(exps, index)]
+	}]
+	
+	<!-- We need to change the type to free form when an old action type is removed -->
+	[h, if (deletedActionType != ""), code: {
+		[h: newActionType = FREE_FORM_TYPE]
+		[h: oldActionType = FREE_FORM_TYPE]
+		[h: newExps = "[]"]
+		[h, for(i, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_removeTypedDescriptor(json.get(exps, i), "actionType"))]
+		[h: exps = newExps]
+	}]
 
 	<!-- Copy the name and description if the first step is deleted -->
-	[h: exps = json.remove(exps, index)]
 	[h, if (index == 0), code: {
 		[h: firstExp = json.get(exps, 0)]
 		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionName", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionName"))]
 		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionDesc", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionDesc"))]
-		[h, if (oldActionType == FREE_FORM_TYPE): firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionType", FREE_FORM_TYPE)]
-		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionDesc", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionDesc"))]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionType", FREE_FORM_TYPE)]
 		[h: exps = json.set(exps, 0, firstExp)]
 	}]
 
@@ -180,8 +207,8 @@
 	[h: newExps = "[]"]
 	[h, for(index, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_addTypedDescriptor(json.get(exps, index), "rowId", "row-" + index))]
 	[h: exps = newExps]
-	[h: log.debug("dnd5e_AE2_processor: deleteStep exps=" + json.indent(exps))]
-}; {""}]
+	[h: log.debug(getMacroName() + ": deleteStep Done=" + json.indent(exps))]	
+}]
 
 <!-- Should we add/remove extended fields -->
 [h, if (json.contains(form, "extendStep")), code: {
