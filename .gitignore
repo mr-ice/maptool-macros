@@ -6,3 +6,4 @@ maker.image
 tester.image
 tmp
 __pycache__
+.DS_Store
