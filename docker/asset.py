@@ -210,7 +210,10 @@ class MTAsset():
         return os.path.join(self.path, quote(self.name) + '.' + self.ext)
 
     def assemble(self):
-        os.makedirs(self.path, exist_ok=True)
+        try:
+            os.makedirs(self.path, exist_ok=True)
+        except FileExistsError:
+            pass
         if self.is_macro:
             return self.assemble_macro()
         elif self.is_macroset:

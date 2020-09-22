@@ -8,5 +8,7 @@
   </macroset>
   <macroset name="Open5e-GM">
     <macro name="macro/Setup+Monster+Token"/>
+    <macro name="macro/Set+Landing+Map"/>
+    <macro name="macro/Configure+GM+Preferences"/>
   </macroset>
 </project>
