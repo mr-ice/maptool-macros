@@ -7,8 +7,6 @@
     <macro name="Lib-DND5e/Attack+Editor"/>
   </macroset>
   <macroset name="Open5e-GM">
-    <macro name="macro/Set+Landing+Map"/>
-    <macro name="macro/Configure+GM+Preferences"/>
     <macro name="macro/Setup+Monster+Token"/>
   </macroset>
 </project>

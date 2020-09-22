@@ -37,13 +37,21 @@ if __name__ == '__main__':
             action='store_true',
             help='Turn on verbose output')
 
+    AP.add_argument(
+            '--info',
+            action='store_true',
+            help='Turn on informative output')
+
     av = AP.parse_args()
 
+    logformat="%(levelname)s: %(message)s"
     if av.verbose:
-        log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
+        log.basicConfig(format=logformat, level=log.DEBUG)
         log.info("Verbose output.")
+    elif av.info:
+        log.basicConfig(format=logformat, level=log.INFO)
     else:
-        log.basicConfig(format="%(levelname)s: %(message)s")
+        log.basicConfig(format=logformat)
 
     log.debug('input = %s' % ','.join(av.input))
     log.debug('name = %s' % av.list)
