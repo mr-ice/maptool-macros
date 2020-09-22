@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>619c65c9-3d3c-4ae5-ac65-1324d8956851</macroUUID>
+  <macroUUID>28dd68ea-b386-4bf2-90f7-432eec19b804</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>122</index>
+  <index>127</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dndb_Macro_rollSpell</label>
@@ -9,17 +9,13 @@
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>Given two arguments, roll a spell. If the provided spell slot is below the level of the spell, the spell is cast as the minimum spell level.
-
-arg(0) = Input object with fields:
-spellName: name of the spell
-spellSlot: slot to cast with</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Deprecated personal macro utility to roll spell casting. Now passes the incoming parameter to dndb_CastSpell_Editor</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

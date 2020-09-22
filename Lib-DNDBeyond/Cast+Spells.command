@@ -10,9 +10,11 @@
 
 [h: spellInputMap = "{}"]
 [h: spellFields = json.fields (spells)]
+[h: maxSpellLevel = 0]
 [h, foreach (spellField, spellFields), code: {
 	[spell = json.get (spells, spellField)]
 	[spellLevel = json.get (spell, "level")]
+	[if (spellLevel > maxSpellLevel): maxSpellLevel = spellLevel; ""]
 	[spellName = json.get (spell, "name")]
 	[spellIsConcentration = json.get (spell, "concentration")]
 	[spellLevelList = json.get (spellInputMap, spellLevel)]
@@ -25,7 +27,7 @@
 
 [h: validChoice = 0]
 [h, while (!validChoice), code: {
-[h: allSpellInputString = ""]
+	[allSpellInputString = ""]
 	[spellLevels = json.fields (spellInputMap)]
 	[foreach (spellLevel, spellLevels), code: {
 		[prompt = "Sell Level " + spellLevel]
@@ -38,8 +40,8 @@
 		[allSpellInputString = allSpellInputString + "## level" + spellLevel + " | " + 
 			spellNameCSV + " | Level " + spellLevel + " | LIST | value=string"]
 	}]
-	[allSpellInputString = allSpellInputString + "##spellSlot | " + json.toList (spellLevels) + "| Spell slot | LIST"]
-	[allSpellInputString = "junk | Select one spell and the spell slot | | LABEL | span=true" + allSpellInputString + "## junk | The selected spell slot will be increased to the minimum spell level | | LABEL | span=true" +
+	
+	[allSpellInputString = "junk | Select one spell | | LABEL | span=true" + allSpellInputString +
 	"## saveAsMacro | | Save as personal macro | check "]
 	[abort (input ( allSpellInputString))]
 
@@ -55,7 +57,7 @@
 
 [h: log.debug ("selectedSpell: " + selectedSpell)]
 [h: log.debug ("selectedSpellLevel: " + selectedSpellLevel)]
-[h: log.info ("spellSlot: " + spellSlot)]
+
 
 [h: inputMaps = json.get (spellInputMap, selectedSpellLevel)]
 [h: selectedSpellName = ""]
@@ -64,20 +66,18 @@
 	[if (displayName == selectedSpell): selectedSpellName = json.get (inputMap, "name")]
 }]
 
-
 [h: log.debug ("selectedSpell: " + selectedSpell)]
-[h: inputObj = json.set ("", "spellName", selectedSpellName, "spellSlot", spellSlot)]
-[r: dndb_Macro_rollSpell (inputObj)]
-
+[h: inputObj = json.set ("", "spellName", selectedSpellName,
+					"maxSpellSlot", maxSpellLevel)]
+[h: dndb_CastSpell_Editor (inputObj)]
 
 <!-- Ye old save as macro bullshit -->
 [h, if (saveAsMacro > 0), code: {
 	[h: macroConfig = dnd5e_Macro_copyMacroConfig ("Cast Spells")]
 
 	[h: macroName = "Cast " + selectedSpell]
-	[h: macroName = macroName + " (" + spellSlot + ")"]
 	[h: currentMacros = getMacros()]
-	[h: cmd = "[macro ('dndb_Macro_rollSpell@Lib:DnDBeyond'): '" + inputObj + "']"]
+	[h: cmd = "[macro ('dndb_CastSpell_Editor@Lib:DnDBeyond'): '" + inputObj + "']"]
 	<!-- dont create duplicates -->
 	[h, foreach (currentMacro, currentMacros), if (currentMacro == macroName): saveAsMacro = 0]
 	[h: macroConfig = json.set ("", "applyToSelected", 1,
