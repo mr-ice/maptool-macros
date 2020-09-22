@@ -1,6 +1,6 @@
 <!-- Fetch the last attack and make sure one is set -->
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
-[h: index = if(argCount() > 0, arg(0), "")]
+[h, if (argCount() > 0): index = arg(0); index = ""]
 [h: rolledExpressions = dnd5e_SavedAttacks_get(index)]
 [h, if(json.isEmpty(rolledExpressions)), code: {
 	[h: broadcast("Apply Attack; No Saved Attack found", "gm")]
@@ -8,7 +8,8 @@
 }; {""}]
 
 <!-- Get the selected tokens -->
-[h: selected = if(argCount() > 1, arg(1), "")]
+[h, if (argCount() > 0): selected = arg(1); selected = ""]
+[h: selectedById = "{}"]
 [h, if (json.isEmpty(selected)), code: {
 
 	<!-- No options, use the selected IDs -->
@@ -16,7 +17,6 @@
 };{
 	[h: sIds = "[]"]
 	[h, foreach(selection, selected), if (json.get(selection, "apply") == 1): sIds = json.append(sIds, json.get(selection, "id"))]
-	[h: selectedById = "{}"]
 	[h, foreach(selection, selected): selectedById = json.set(selectedById, json.get(selection, "id"), selection)]
 }]
 [h: log.debug(getMacroName() + ": IDs=" + sIds)]

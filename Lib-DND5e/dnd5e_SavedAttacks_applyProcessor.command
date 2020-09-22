@@ -23,7 +23,8 @@
 <!-- Apply the attack? -->
 [h, if (json.contains(form, "run")), code: {
 	[h: closeDialog("Saved Attacks")]
-	[h: args = json.append("[]", abs(activeIndex - 4), selected)]
+	[h: adjust = json.length(dnd5e_SavedAttacks_fetch()) - 1]
+	[h: args = json.append("[]", abs(activeIndex - adjust), selected)]
 	[h: link = macroLinkText("dnd5e_SavedAttacks_apply@Lib:DnD5e", "all", args)]
 	[h: log.debug(getMacroName() + ": link=" + json.indent(link))]
 	[h: execLink(link)]

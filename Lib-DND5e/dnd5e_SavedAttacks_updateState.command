@@ -7,9 +7,9 @@
 [h: output = json.get(state, "output")]
 [h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipRoll") + " = " 
 		+ dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipDetail") + " = " + dnd5e_RollExpression_getTotal(exp)]
-[h, if (damage != dnd5e_RollExpression_getTotal(exp)): tt = tt + ", Adjusted: " + damage]
-[h: output = output + " <span title='" + tt + "'>Damage: " + damage + " " + capitalize(json.get(damageOutput, "type"))]
 [h: applied = json.get(damageOutput, "applied")]
-[h, if (applied != ""): output = output + " (" + applied + ")"; ""]
+[h, if (applied != ""): applied = " for " + applied]
+[h, if (damage != dnd5e_RollExpression_getTotal(exp)): tt = tt + ", Adjusted" + applied + ": " + damage]
+[h: output = output + " <span title='" + tt + "'>Damage: " + damage + " " + capitalize(json.get(damageOutput, "type"))]
 [h: output = output + "</span>"]
 [h: macro.return = json.set(state, "output", output + ",")]

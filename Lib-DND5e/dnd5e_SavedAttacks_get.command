@@ -1,5 +1,5 @@
-[h: saved = getLibProperty("savedAttackRolledExpressions", "Lib:DnD5e")]
+[h: saved = dnd5e_SavedAttacks_fetch()]
 [h: return(!json.isEmpty(saved), "")]
-[h: index = if(json.length(macro.args) > 0, arg(0), "")]
+[h, if (argCount() > 0): index = arg(0); index = ""]
 [h, if (!isNumber(index)): index = json.length(saved) - 1]
 [h: macro.return = json.get(saved, index)]

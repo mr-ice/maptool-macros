@@ -16,17 +16,17 @@
 	[h: immunities = lower(getProperty("Immunities", id))]
 	[h, if (listContains(immunities, damageType) || optValue == "immunity"), code: {
 		[h: totalDamage = 0]
-		[h: applied = listAppend(applied, if(optValue == "immunity", "GM(Immunity)", "Immunity"))]
+		[h: applied = listAppend(applied, "Immunity")]
 	}; {""}]
 	[h: resistances = lower(getProperty("Resistances", id))]
 	[h, if (listContains(resistances, damageType) || optValue == "resistance"), code: {
 		[h: totalDamage = floor(totalDamage / 2)]
-		[h: applied = listAppend(applied, if(optValue == "resistance", "GM(Resistance)", "Resistance"))]
+		[h: applied = listAppend(applied, "Resistance")]
 	}; {""}]
 	[h: vulnerabilities = lower(getProperty("Vulnerabilities", id))]
 	[h, if (listContains(vulnerabilities, damageType) || optValue == "vulnerability"), code: {
 		[h: totalDamage = totalDamage * 2]
-		[h: applied = listAppend(applied, if(optValue == "vulnerability", "GM(Vulnerability)", "Vulnerability"))]
+		[h: applied = listAppend(applied, "Vulnerability")]
 	}; {""}]
 }; {""}]
 

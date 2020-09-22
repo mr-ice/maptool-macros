@@ -39,7 +39,6 @@
 	[h: tt = tt + if(hit, " >=", " <") + " AC(" + ac + ")" + if(cover > 0, " + Cover(" + cover + ") ", "") + " = " + if (hit, "HIT", "MISS")]
 	[h: output = json.get(state, "output") + " <span title='" + tt + "'>Attack " + hitText + ";</span>"]
 	[h: state = json.set(state, "hit", hit, "output", output)]
-	[h: dndbt_breakpoint(getMacroName(), "state", state, hitText, "crtiable", dnd5e_RollExpression_getTypedDescriptor(exp, "critable"))]
 }]
 
 <!-- On a hit/check apply calculated damage -->

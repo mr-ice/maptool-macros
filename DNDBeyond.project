@@ -19,6 +19,7 @@
     <macro name="macro/Distance+Between+Selected"/>
     <macro name="Lib-DND5e/Attack+Editor"/>
     <macro name="macro/Apply+Last+Attack"/>
+    <macro name="macro/Apply+Last+Attack+Options"/>
     <macro name="macro/Restore+Last+Dead+NPC"/>
   </macroset>
   <macroset name="GM-Panel">
