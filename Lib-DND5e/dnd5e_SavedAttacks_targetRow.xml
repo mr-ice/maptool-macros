@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>80c5a000-fc0b-4d2e-a9ad-d84f1194e49c</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>165</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_targetRow</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Generate the HTML for a target row
+&lt;br&gt;
+&lt;br&gt;arg(0) = ID of the target token
+&lt;br&gt;arg(1) = Array of the rolled expressions
+&lt;br&gt;arg(2) = Row number
+&lt;br&gt;arg(3) = Optional: Previously selected values
+&lt;br&gt;
+&lt;br&gt;Output the generated html to chat
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

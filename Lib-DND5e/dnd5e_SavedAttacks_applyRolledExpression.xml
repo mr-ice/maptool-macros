@@ -15,22 +15,46 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Determine what a single rolled RollExpression should do by type:
-    &lt;dl&gt;
-    &lt;dt&gt;&lt;b&gt;Attack&lt;/b&lt;/dt&gt;
-    &lt;dd&gt;Determine it the attack hit&lt;/dd&gt;
-    &lt;dt&gt;&lt;b&gt;Damage&lt;/b&lt;/dt&gt;
-    &lt;dd&gt;If no attack or on hit apply damage&lt;/dd&gt;
-    &lt;dt&gt;&lt;b&gt;Save Damage&lt;/b&lt;/dt&gt;
-    &lt;dd&gt;If no attack or on hit make save then apply damage&lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;br&gt;arg(0) = id of token being modified
-    &lt;br&gt;arg(1) = The single expression being applied
-    &lt;br&gt;arg(2) = The current state for all rolled RollExpressions previously applied
-    &lt;br&gt;
-    &lt;br&gt;Returns the updated state object.
-    &lt;br&gt;See &lt;font face="monospace"&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
-    &lt;html&gt;</toolTip>
+  <toolTip>&lt;html&gt;Determine what a single rolled RollExpression step should do by type. 
+&lt;br&gt;Each step is executed against the target token.
+&lt;dl&gt;
+&lt;dt&gt;&lt;b&gt;Attack&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Determine if the attack roll is larger than the AC of the target. 
+&lt;br&gt;Steps after this check are skipped if the attack missed until the next attack. 
+&lt;br&gt;This step is ignored if a previous Target Check has failed.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Damage&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Apply damage to the target. This step is ignored if a previous Attack missed or
+&lt;br&gt;a previous Target Check has failed.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Save Damage&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Apply damage to the target. An earlier Save is checked to see if the damage should
+&lt;br&gt;be modified by the save effect. The value &apos;none&apos;, &apos;half&apos; and a multiplier are supported.
+&lt;br&gt;This step is ignored if a previous Attack missed or a previous Target Check has failed.
+&lt;br&gt;If created by the attack editor the save is included with this step. A save roll is
+&lt;br&gt;created and rolled against the target before determining the damage applied. See the Save step.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Save&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Roll a save against the target. The roll result is compared to the save DC to determine if the save
+&lt;br&gt;passed or failed. This result can then be used by later Save Damage and Save Condition steps.
+&lt;br&gt;This step is ignored if a previous Attack missed or a previous Target Check has failed.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Condition&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Apply these conditions to the target. This step is ignored if a prvious Attack missed or a previous 
+&lt;br&gt;Target Check has failed.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Save Condition&lt;/b&lt;/dt&gt;
+&lt;dd&gt;Apply these conditions to the target after checking the result of a previous Save step. Conditions can
+&lt;br&gt;be applied either when the save pass or when it fails, but not both. This step is ignored if a previous 
+&lt;br&gt;Attack missed or a previous Target Check has failed.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Target Check&lt;/b&lt;/dt&gt;
+&lt;dd&gt;Execute a check agasint the target token. The result is either pass or fail. On a fail steps after this
+are skipped until the next target check. This step is ignored if a previous Attack missed.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;br&gt;arg(0) = id of target token 
+&lt;br&gt;arg(1) = The single roll expression step being applied
+&lt;br&gt;arg(2) = The current state for all rolled RollExpressions previously applied
+&lt;br&gt;arg(3) = Any selected options for this step, may be empty
+&lt;br&gt;arg(4) = Index of this step
+&lt;br&gt;
+&lt;br&gt;Returns the updated state object.
+&lt;br&gt;See &lt;font face=&quot;monospace&quot;&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
+&lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

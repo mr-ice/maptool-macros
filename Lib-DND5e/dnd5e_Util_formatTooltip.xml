@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ec118f17-c877-48b9-ab45-40d0fd91bd12</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>205</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_formatTooltip</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Updates the passed string so that it is a &quot;title&quot; attribute for any HTML tag.
+&lt;br&gt;This allows the text to be formatted as HTML. This only works if the tooltip is being 
+&lt;br&gt;displayed in MapTool&apos;s chat, as it uses the underlying swing tooltips which allow HTML.
+&lt;br&gt;
+&lt;br&gt;arg(0) = String to be formatted
+&lt;br&gt;arg(1) = Optional; The width of the tooltip box
+&lt;br&gt;
+&lt;br&gt;Returns the string properly encoded to display in a Java Swing tooltip as a &quot;title&quot; attribute.
+&lt;br&gt;If an empty string is passed an empty string is returned.
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

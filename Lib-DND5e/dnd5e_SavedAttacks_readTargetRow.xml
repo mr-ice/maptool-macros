@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>5202ca11-0a27-401c-897c-7cb3d70f2ab5</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>168</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_readTargetRow</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Generate the HTML for a target row
+&lt;br&gt;
+&lt;br&gt;arg(0) = Form content
+&lt;br&gt;arg(1) = ID of the target token
+&lt;br&gt;arg(2) = Array of the rolled expressions
+&lt;br&gt;arg(3) = Row number
+&lt;br&gt;arg(4) = Optional: Previously selected values
+&lt;br&gt;
+&lt;br&gt;Return the updated selected values
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

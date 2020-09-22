@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4f98eb0e-edb0-4a77-882b-ee312b5371e2</macroUUID>
+  <macroUUID>1b0a24cf-a7ff-4702-b32a-7efa2a9e00b8</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>7</index>
   <colorKey>default</colorKey>
@@ -15,10 +15,15 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>This is the roller to roll dice from an array of provided RollExpressions. When ran with a token selected, _dnd5e_lastRolledExpression is set to the processed RoleExpression[]
-
-arg(0) = RoleExpression[]
-arg(1) = (optional) the amount to multiply the totalRolls property, normally used by DiceRoller when rolling child expressions</toolTip>
+  <toolTip>&lt;html&gt;This is the roller to roll dice from an array of provided RollExpressions. 
+&lt;br&gt;When ran with a token selected, _dnd5e_lastRolledExpression is set to the processed RoleExpression[]
+&lt;br&gt;
+&lt;br&gt;arg(0) = RollExpression[]
+&lt;br&gt;arg(1) = (optional) the amount to multiply the totalRolls property, normally used by DiceRoller when rolling child expressions
+&lt;br&gt;arg(2) = (oPtional) Are we making rolls for the action or target? 0 for action and 1 for target
+&lt;br&gt;
+&lt;br&gt;Returns: The RollExpression array with all of the results
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

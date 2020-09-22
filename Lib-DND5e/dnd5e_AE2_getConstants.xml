@@ -1,0 +1,40 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>982803cd-2e55-4690-befc-fd1940952980</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>179</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_getConstants</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Constants that can be turned into variables for use by the macros
+&lt;br&gt;
+&lt;br&gt;Returns an object with the following structure
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"STEP_TYPES": A list of the supported step types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"xxx_STEP_TYPE": An individual step type from the STEP_TYPES list.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"FIELDS_BY_STEP_TYPE": An object with step type keys and list of fields for that step as values
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"ACTION_TYPES": A list of all of the supported action types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"xxx_TYPE": An individual action type from the ACTION_TYPES list.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"NAMES_OF_STEP_TYPES": The text to be displayed in the step type column
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"DAMAGE_TYPES": A list of all of the supported damage types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"HTML_FOR_FIELDS": HTML to be used for a form field placed into a single column
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

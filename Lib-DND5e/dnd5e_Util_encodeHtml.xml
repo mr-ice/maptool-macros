@@ -1,0 +1,33 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>578acf11-3131-4247-8a95-4c048b78f50c</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>24</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_encodeHtml</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Encodes certain characters so that they can be placed into html
+&lt;br&gt;Different from encode which does a http encode
+&lt;br&gt;
+&lt;br&gt;arg(0) = Encode this value
+&lt;br&gt;
+&lt;br&gt;The value with the characters &apos;, &quot;, &lt;, &gt;, &amp; encoded as character entities.
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -16,12 +16,12 @@
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Apply a saved rolled RollExpression to the set of selected tokens
-    &lt;br&gt;
-    &lt;br&gt;arg(0) = The index of the saved attack to be applied
-    &lt;br&gt;getSelected() = Apply the saved attack to these Token IDs
-    &lt;br&gt;
-    &lt;br&gt;Updates the selected token's damage, health states and bars.
-    &lt;/html&gt;</toolTip>
+&lt;br&gt;
+&lt;br&gt;arg(0) = Optional: The index of the saved attack to be applied
+&lt;br&gt;arg(1) = Optional: Options to be applied for each target
+&lt;br&gt;
+&lt;br&gt;Updates the selected token&apos;s damage, conditions, health states and bars.
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

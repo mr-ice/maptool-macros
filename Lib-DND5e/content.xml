@@ -571,6 +571,28 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_ae2_javascript</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_JavaScript</key>
+          <value class="string">$.fn.selectpicker.Constructor.BootstrapVersion = '4';
+$.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
+$.fn.selectpicker.Constructor.DEFAULTS.styleBase = 'form-control';
+$.fn.selectpicker.Constructor.DEFAULTS.style = 'form-control';
+$.fn.selectpicker.Constructor.DEFAULTS.width = 'auto';
+$.fn.selectpicker.Constructor.DEFAULTS.maxOptions = '4';
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+function changeType() {
+   document.getElementById("submit").click();
+}
+          </value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>wisdom save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Save</key>
@@ -1544,6 +1566,234 @@
     <entry>
       <int>168</int>
       <macro name="dnd5e_SavedAttacks_updateState"/>
+    </entry>
+    <entry>
+      <int>169</int>
+      <macro name="dnd5e_Health_restoreDeadNPC"/>
+    </entry>
+    <entry>
+      <int>170</int>
+      <macro name="dnd5e_Preferences_getGMPreferences"/>
+    </entry>
+    <entry>
+      <int>171</int>
+      <macro name="dnd5e_Preferences_setGMPreferences"/>
+    </entry>
+    <entry>
+      <int>172</int>
+      <macro name="dnd5e_AE2_typeSaveCondition"/>
+    </entry>
+    <entry>
+      <int>173</int>
+      <macro name="dnd5e_AE2_typeCondition"/>
+    </entry>
+    <entry>
+      <int>174</int>
+      <macro name="dnd5e_AE2_typeFreeForm"/>
+    </entry>
+    <entry>
+      <int>175</int>
+      <macro name="dnd5e_RollExpression_removeTypedDescriptor"/>
+    </entry>
+    <entry>
+      <int>176</int>
+      <macro name="dnd5e_AE2_removeOldTypes"/>
+    </entry>
+    <entry>
+      <int>177</int>
+      <macro name="dnd5e_AE2_readForm"/>
+    </entry>
+    <entry>
+      <int>178</int>
+      <macro name="dnd5e_AE2_readFormValue"/>
+    </entry>
+    <entry>
+      <int>179</int>
+      <macro name="dnd5e_AE2_getConstants"/>
+    </entry>
+    <entry>
+      <int>180</int>
+      <macro name="dnd5e_AE2_generateStepHtml"/>
+    </entry>
+    <entry>
+      <int>182</int>
+      <macro name="dnd5e_AE2_generateBonusFieldHtml"/>
+    </entry>
+    <entry>
+      <int>183</int>
+      <macro name="dnd5e_AE2_generateDamageRollStringFieldHtml"/>
+    </entry>
+    <entry>
+      <int>184</int>
+      <macro name="dnd5e_AE2_generateDamageTypeFieldHtml"/>
+    </entry>
+    <entry>
+      <int>189</int>
+      <macro name="dnd5e_AE2_generateDndbAttackFieldHtml"/>
+    </entry>
+    <entry>
+      <int>190</int>
+      <macro name="dnd5e_AE2_decorateNewStep"/>
+    </entry>
+    <entry>
+      <int>191</int>
+      <macro name="dnd5e_AE2_generateSaveDCFieldHtml"/>
+    </entry>
+    <entry>
+      <int>192</int>
+      <macro name="dnd5e_AE2_generateSaveAbilityFieldHtml"/>
+    </entry>
+    <entry>
+      <int>193</int>
+      <macro name="dnd5e_AE2_generateSaveAgainstFieldHtml"/>
+    </entry>
+    <entry>
+      <int>194</int>
+      <macro name="dnd5e_AE2_generateSaveEffectFieldHtml"/>
+    </entry>
+    <entry>
+      <int>195</int>
+      <macro name="dnd5e_AE2_generateSaveResultFieldHtml"/>
+    </entry>
+    <entry>
+      <int>196</int>
+      <macro name="dnd5e_AE2_generateConditionFieldHtml"/>
+    </entry>
+    <entry>
+      <int>197</int>
+      <macro name="dnd5e_RollExpression_Condition"/>
+    </entry>
+    <entry>
+      <int>198</int>
+      <macro name="dnd5e_AE2_generateExtendedNameFieldHtml"/>
+    </entry>
+    <entry>
+      <int>199</int>
+      <macro name="dnd5e_AE2_generateExtendedCritFieldHtml"/>
+    </entry>
+    <entry>
+      <int>200</int>
+      <macro name="dnd5e_RollExpression_DnDBeyondAttack"/>
+    </entry>
+    <entry>
+      <int>201</int>
+      <macro name="dnd5e_RollExpression_DnDBeyondSpell"/>
+    </entry>
+    <entry>
+      <int>202</int>
+      <macro name="dnd5e_AE2_generateDndbSpellLevelFieldHtml"/>
+    </entry>
+    <entry>
+      <int>203</int>
+      <macro name="dnd5e_AE2_generateDndbSpellFieldHtml"/>
+    </entry>
+    <entry>
+      <int>204</int>
+      <macro name="dnd5e_Util_ordinalPostfix"/>
+    </entry>
+    <entry>
+      <int>205</int>
+      <macro name="dnd5e_Util_createUniqueName"/>
+    </entry>
+    <entry>
+      <int>206</int>
+      <macro name="dnd5e_AE2_extractAction"/>
+    </entry>
+    <entry>
+      <int>207</int>
+      <macro name="dnd5e_DiceRoller_rollOneExpression"/>
+    </entry>
+    <entry>
+      <int>208</int>
+      <macro name="dnd5e_Macro_rollAction"/>
+    </entry>
+    <entry>
+      <int>209</int>
+      <macro name="dnd5e_AE2_attackEditor"/>
+    </entry>
+    <entry>
+      <int>210</int>
+      <macro name="dnd5e_AE2_CSS"/>
+    </entry>
+    <entry>
+      <int>211</int>
+      <macro name="dnd5e_AE2_processor"/>
+    </entry>
+    <entry>
+      <int>212</int>
+      <macro name="dnd5e_AE2_generateHeaderHtml"/>
+    </entry>
+    <entry>
+      <int>213</int>
+      <macro name="dnd5e_AE2_typeDndbWeapon"/>
+    </entry>
+    <entry>
+      <int>214</int>
+      <macro name="dnd5e_AE2_typeDndbSpell"/>
+    </entry>
+    <entry>
+      <int>215</int>
+      <macro name="dnd5e_AE2_typeAttack"/>
+    </entry>
+    <entry>
+      <int>216</int>
+      <macro name="dnd5e_AE2_typeSaveDamage"/>
+    </entry>
+    <entry>
+      <int>217</int>
+      <macro name="dnd5e_AE2_typeDamage"/>
+    </entry>
+    <entry>
+      <int>218</int>
+      <macro name="dnd5e_RollExpression_TargetCheck"/>
+    </entry>
+    <entry>
+      <int>219</int>
+      <macro name="dnd5e_AE2_generateTargetCheckFieldHtml"/>
+    </entry>
+    <entry>
+      <int>220</int>
+      <macro name="dnd5e_RollExpression_getTargetCheck"/>
+    </entry>
+    <entry>
+      <int>221</int>
+      <macro name="dnd5e_RollExpression_setTargetCheck"/>
+    </entry>
+    <entry>
+      <int>222</int>
+      <macro name="dnd5e_Util_encodeHtml"/>
+    </entry>
+    <entry>
+      <int>223</int>
+      <macro name="dnd5e_SavedAttacks_evaluateCheckExpression"/>
+    </entry>
+    <entry>
+      <int>224</int>
+      <macro name="dnd5e_SavedAttacks_enforceConditions"/>
+    </entry>
+    <entry>
+      <int>225</int>
+      <macro name="dnd5e_Util_formatTooltip"/>
+    </entry>
+    <entry>
+      <int>226</int>
+      <macro name="dnd5e_SavedAttacks_applyCSS"/>
+    </entry>
+    <entry>
+      <int>227</int>
+      <macro name="dnd5e_SavedAttacks_readTargetRow"/>
+    </entry>
+    <entry>
+      <int>228</int>
+      <macro name="dnd5e_SavedAttacks_targetRow"/>
+    </entry>
+    <entry>
+      <int>229</int>
+      <macro name="dnd5e_SavedAttacks_applyProcessor"/>
+    </entry>
+    <entry>
+      <int>230</int>
+      <macro name="dnd5e_SavedAttacks_applyUI"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

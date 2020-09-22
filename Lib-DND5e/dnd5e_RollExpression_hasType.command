@@ -6,7 +6,12 @@
 					"Save", json.append ("", "advantagable"),
 					"Save Damage", json.append ("", "saveable", "damageable"),
 					"Save Effect", json.append ("", "saveable"),
-					"Ability", json.append ("", "advantagable"))]
+					"Condition", json.append ("", "unrollable"),
+					"DnDBeyond Spell", json.append ("", "unrollable"),
+					"DnDBeyond Attack", json.append ("", "unrollable"),
+					"Target Check", json.append ("", "unrollable"),
+					"Ability", json.append ("", "advantagable")
+)]
 
 [h: types = json.merge (json.append ("", dnd5e_RollExpression_getExpressionType (expression)),
 						dnd5e_RollExpression_getTypes (expression))]

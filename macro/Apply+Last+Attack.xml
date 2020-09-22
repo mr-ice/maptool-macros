@@ -15,11 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Reads the last attack made from the Attack Editor or its macros
-    &lt;br&gt;and then applies its damage and saves to all of the selected tokens.
-    &lt;br&gt;This handles immunities, resistances, and vulnerabilities.
-    &lt;br&gt;This also makes any saves associated with the attack and applies the effect
-    &lt;/html&gt;</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

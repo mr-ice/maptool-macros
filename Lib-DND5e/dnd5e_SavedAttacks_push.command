@@ -1,4 +1,4 @@
-[h: saved = getLibProperty("savedAttackRolledExpressions", "Lib:DnD5e")]
+[h: saved = dnd5e_SavedAttacks_fetch()]
 [h, if (json.isEmpty(saved)): saved = "[]"; ""]
 [h: saved = json.append(saved, arg(0))]
 [h, while(json.length(saved) > 5): saved = json.remove(saved, 0)]

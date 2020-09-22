@@ -1,0 +1,37 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>dbace854-c3b8-4e2d-9287-6f33f58e5c60</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>177</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_readForm</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Update all of the expressions with the form data
+&lt;br&gt;
+&lt;br&gt;arg(0) = The single Roll Expression being updated
+&lt;br&gt;arg(1) = Update the expressions with these values
+&lt;br&gt;
+&lt;br&gt;An object with the format:
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"newActionType": The selected action type on submit
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"exps": The updated expressions
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,33 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>066ac5e7-203f-4548-a330-460c5b8c848f</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>197</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_Condition</label>
+  <group>RollExpression - Templates</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Creates a Condition RollExpression with an optional provided name. 
+&lt;br&gt;There is no roll for a condition. just the condtions that it applies
+&lt;br&gt;
+&lt;br&gt;arg(0) = optional name
+&lt;br&gt;arg(1) = JSON list of state names
+&lt;br&gt;
+&lt;br&gt;A roll expression that can be used to apply conditions</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

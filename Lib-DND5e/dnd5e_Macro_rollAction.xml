@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>980e2446-19cf-4706-84ab-a65d7390c693</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>208</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Macro_rollAction</label>
+  <group>Util - Macro</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Rolls the action with the given name. Supports advantage and disadvantage.
+&lt;br&gt;
+&lt;br&gt;arg(0) = Object describing what needs to be rolled
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"actionName": The name of the action to be rolled
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"advantageDisadvantage": Should none, advantage, disadvantage or both be applied
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;
+&lt;br&gt;Outputs the results to chat and saves them for later application to targets</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

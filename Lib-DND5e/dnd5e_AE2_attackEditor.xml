@@ -1,0 +1,37 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3fdabb07-20fc-4d08-b320-b31493e0c707</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>161</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_attackEditor</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Start the attack editor
+&lt;br&gt;
+&lt;br&gt;arg(0) = Optional ID of token being updated
+&lt;br&gt;arg(1) = Optional Updated expressions from submit
+&lt;br&gt;arg(2) = Optional old action type from before the submit, also contains DnDBeyond Weapon &amp; Spell data sepoarated by "-"
+&lt;br&gt;arg(3) = Optional New action type from after the submit
+&lt;br&gt;arg(4) = Optional Working copy being edited. Saved in  
+&lt;br&gt;arg(5) = Optional Metadata used to save player options for the editor 
+&lt;br&gt;
+&lt;br&gt;Returns the editor ready to change the values for the current type of action
+&lt;html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

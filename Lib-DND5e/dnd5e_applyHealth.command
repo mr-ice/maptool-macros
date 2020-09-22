@@ -29,6 +29,7 @@
 [h: setState ("Dying", 0, id)]
 [h: setState ("Dead", 0, id)]
 [h: setState ("Stable", 0, id)]
+[h: setState ("Damaged", 0, id)]
 [h: setBarVisible ("HP", 0, id)]
 [h: setBarVisible ("Damage", 0, id)]
 [h: setBarVisible ("DSPass", 0, id)]
@@ -46,14 +47,22 @@
 [h: state = if (state == "fine" && current == 0 && dsPass >= 3, "stable", state)]
 [h: state = if (state == "fine" && current == 0, "dying", state)]
 [h: state = if (state == "fine" && current <= maximum / 2, "bloodied", state)]
+[h: state = if (state == "fine" && current < maximum, "damaged", state)]
 [h, switch(state), code:
 	case "dead": {
 		[h: setState("Dead", 1, id)]
 		[h, if (isPC(id)), code: {
 			[h: setState("Prone", 1, id)]
 		}; {
+			[h: init = getInitiative(id)]
+			[h, if (id == getInitiativeToken()): nextInitiative(); ""]
 			[h: removeFromInitiative(id)]
 			[h: setLayer("OBJECT", id)]
+			[h: list = getLibProperty("_deadTokens", "Lib:DnD5e")]
+			[h: deadToken = json.set("{}", "id", id, "initiative", init)]
+			[h: list = json.append(list, deadToken)]
+			[h, while(json.length(list) > 10): list = json.remove(list, 0)]
+			[h: setLibProperty("_deadTokens", list, "Lib:DnD5e")]
 		}]
 	};
 	case "stable": {
@@ -68,6 +77,9 @@
 	};
 	case "bloodied": {
 		[h: setState("Bloodied", 1, id)]
+	};
+	case "damaged": {
+		[h: setState("Damaged", 1, id)]
 	};
 	default: {
 }]

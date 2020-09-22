@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>10bfe4a2-d159-48a8-81cb-433c8f0cc486</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>100</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_TargetCheck</label>
+  <group>RollExpression - Templates</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Creates a Check Target RollExpression with an optional provided name. 
+&lt;br&gt;There is no roll for a check target. Just a boolean expression based on the token
+&lt;br&gt;
+&lt;br&gt;arg(0) = optional name
+&lt;br&gt;arg(1) = optional boolean expression
+&lt;br&gt;
+&lt;br&gt;A roll expression that can be used to check the target state. 
+&lt;br&gt;If the expression returns false, no more steps are executed
+&lt;html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,40 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>eca3f837-867f-432f-a116-e97a4b5fe13a</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>206</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_extractAction</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Extract an action from the working copy to display to the user
+&lt;br&gt;This sets the values for new and old action types in a JSON object suitable for json.toVars()
+&lt;br&gt;
+&lt;br&gt;arg(0) = Working copy of actions in use by the action editor
+&lt;br&gt;arg(1) = The name of the action to extract
+&lt;br&gt;
+&lt;br&gt;Returns a json object with data needed to edit that action
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;exps&quot; : The array of roll expresions that define the action
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;newActionType&quot;: The action type of the action
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;oldActionType&quot;: The action type of the action with DnD Beyond action type data appended for the action
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;If the action name passed is not contained in the working copy and empty object is returned
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

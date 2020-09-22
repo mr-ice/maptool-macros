@@ -1,0 +1,1 @@
+[h: macro.return = json.set (arg (0), "targetCheck", encode (arg (1)))]

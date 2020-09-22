@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3fec02a8-3c44-4bd1-8c3e-07815603c409</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>163</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_applyUI</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Presents a panel to choose what attack is applied and any modifiers to the attack
+&lt;br&gt;
+&lt;br&gt;arg(0) = Optional: Currently active Rolled Expression index.
+&lt;br&gt;arg(1) = Optional: A copy of the rolled expressions so that changes don&apos;t mess up the UI
+&lt;br&gt;arg(2) = Optional: The set of selected IDs
+&lt;br&gt;arg(3) = Optional: Options previously selected by the user
+&lt;br&gt;
+&lt;br&gt;Calls the dnd5e_SavedAttacks_apply macro with the chosen options.
+&lt;html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

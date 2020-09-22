@@ -19,11 +19,15 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = the state object
 &lt;br&gt;&amp;nbsp;&amp;nbsp;{
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"hit": Has a hit occurred, 1=hit, 0=miss, -1 = no attack
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"totalDamage": The total amount of damage take from the roll
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"output": The output text 
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;hit&quot;: Has a hit occurred?, 1=hit, 0=miss, -1 = no attack
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;check&quot;: Has a check occurred?, 1=check passed, 0=check failed, -1 = no check
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;save&quot;: The last Save rollExpression rolled or &quot;&quot;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;action&quot;: Flag indicating that this is for an Action as opposed to an attack
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;totalDamage&quot;: The total amount of damage take from the roll
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;output&quot;: The output text 
 &lt;br&gt;&amp;nbsp;&amp;nbsp;}
 &lt;br&gt;arg(1) = The object returned by dnd5e_SavedAttacks_CalculateDamage
+&lt;br&gt;arg(2) = The damage expression with the die roll tooltips in it.
 &lt;br&gt;
 &lt;br&gt;Returns the updated state
 &lt;/html&gt;</toolTip>

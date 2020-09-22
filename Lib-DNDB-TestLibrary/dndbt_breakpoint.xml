@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>d3858b03-40fe-4517-b815-17d9cb94df63</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>52</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dndbt_breakpoint</label>
+  <group>Tests Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Do some logging and then call input for a breakpoint
+&lt;br&gt;
+&lt;br&gt;arg(0) = macro name
+&lt;br&gt;arg(1) = indicator showing where the breakpoint is
+&lt;br&gt;arg(...) = The rest of the parameters are logged 
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

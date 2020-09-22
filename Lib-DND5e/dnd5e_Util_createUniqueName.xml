@@ -1,0 +1,33 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ec118f17-c877-48b9-ab45-40d0fd91bd12</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>205</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_createUniqueName</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Create a unique name from a base name by adding numbers to it
+&lt;br&gt;
+&lt;br&gt;arg(0) = The base name
+&lt;br&gt;arg(1) = The JSON array of names already in use
+&lt;br&gt;
+&lt;br&gt;Return the passed name if not in the array, otherwise add a number to the name to make it unique
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

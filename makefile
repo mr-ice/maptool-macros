@@ -11,7 +11,10 @@ else
 endif
 
 project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
-	$(DOTSLASH)dockerrun project-assemble DNDBeyond.project
+	$(DOTSLASH)dockerrun assemble DNDBeyond.project
+
+all: DNDBeyond+Open5e.project $(shell echo Lib-DNDBeyond/*) $(shell echo Lib-Open5e/*)
+	$(DOTSLASH)dockerrun assemble DNDBeyond+Open5e.project
 
 project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 	$(DOTSLASH)docker/project-assemble DNDBeyond.project
@@ -43,7 +46,8 @@ clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-*
 
 realclean:
-	docker image list | grep maker | cut -f1 -d\ | xargs docker image rm
+	docker image list | awk '/^(maker|tester|behave)[ \t]/{print $$1}' | xargs docker image rm
+	rm -f {maker,tester,behave}.image
 
 maker.image: docker/Dockerfile $(shell echo docker/*)
 	docker build docker -t maker
@@ -53,10 +57,16 @@ tester.image: maker.image docker/tester/Dockerfile
 	docker build docker/tester -t tester
 	touch $@
 
-build: maker.image tester.image
+behave.image: maker.image docker/behave/Dockerfile
+	docker build docker/behave -t behave
+	touch $@
+
+build: tester.image behave.image
 
 test: tester.image
-	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester "$(ARGS)"
+	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester $(ARGS)
 
+behave: behave.image
+	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT behave $(ARGS)
 
 .PHONY: build clean test

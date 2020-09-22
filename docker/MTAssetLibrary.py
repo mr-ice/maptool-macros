@@ -9,8 +9,12 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 fixed_version = '1.6.1'
 
-#define a properties.xml body for the final .mtmacro assembly
-properties_xml="""<map>
+macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
+tokentag = 'net.rptools.maptool.model.Token'
+proptag = 'net.rptools.maptool.model.CampaignProperties'
+
+# define a properties.xml body for the final .mtmacro assembly
+properties_xml = """<map>
   <entry>
     <string>version</string>
     <string>{}</string>
@@ -23,15 +27,19 @@ def DataElement(content):
 
 
 def MacroNameQuote(name):
+    """Quote characters in files that aren't safe for filesystems, there
+    is an overlap here with characters that aren't safe for URLs, so
+    we're using an URL quoter"""
     return quote_plus(name, safe='')
 
 
 def XML2File(to_dir, to_file, xml):
+    """using lxml.etree.tostring, write xml to to_dir/to_file"""
     content = tostring(xml, pretty_print=True).decode()
-    with open(os.path.join(to_dir,to_file), 'w') as f:
+    with open(os.path.join(to_dir, to_file), 'w') as f:
         f.write(content)
         log.info('wrote {} bytes to modified {}'.
-                 format(len(content),to_file))
+                 format(len(content), to_file))
 
 
 class MTMacro():
@@ -42,8 +50,8 @@ class MTMacro():
         self.origxml = None
         self.command = None
 
-        base,ext = os.path.splitext(target)
-        self.xmlfile  = base + '.xml'
+        base, ext = os.path.splitext(target)
+        self.xmlfile = base + '.xml'
         self.commandfile = base + '.command'
 
         log.info('loading %s for the macro xml file' % self.xmlfile)
@@ -54,12 +62,11 @@ class MTMacro():
         # reassemble the command into the xml
         self.xml.getroot().command = DataElement(self.command)
         self.label = self.xml.getroot().label
-        #import pdb
-        #pdb.set_trace()
-        log.info('got label \"%s\" from the xml'%self.label.text)
+        log.info('got label \"%s\" from the xml' % self.label.text)
         self.label = MacroNameQuote(self.label.text)
         if self.label != self.xml.getroot().label:
-            log.info('transformed label to filesystem friendly %s' % self.label)
+            log.info('transformed label to filesystem friendly %s'
+                     % self.label)
 
         self.outputfile = self.label + self.extension
 

@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>a1273e00-d0ea-495b-b800-e8e5d0bb060f</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>207</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_DiceRoller_rollOneExpression</label>
+  <group>Dice Roller</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;This performs all the rolls of a single RollExpression and saves the results
+&lt;br&gt;
+&lt;br&gt;arg(0) = The RollExpression being rolled
+&lt;br&gt;arg(1) = The total multiplier for the roll
+&lt;br&gt;arg(2) = The array of previously rolled expressions
+&lt;br&gt;
+&lt;br&gt;Returns the RollExpression with all of the results
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

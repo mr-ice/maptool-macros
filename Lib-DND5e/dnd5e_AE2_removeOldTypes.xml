@@ -1,0 +1,33 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ad66d403-ae9b-4696-bed2-6c4be1a6df68</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>176</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_removeOldTypes</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Remove all of the roll expressions that match the passed type
+&lt;br&gt;
+&lt;br&gt;arg(0) = Type to be removed
+&lt;br&gt;arg(1) = Remove old action expresions from this list
+&lt;br&gt;
+&lt;br&gt;Returns the list of expressions still remaining
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

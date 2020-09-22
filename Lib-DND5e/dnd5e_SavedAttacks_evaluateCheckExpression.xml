@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3fec02a8-3c44-4bd1-8c3e-07815603c409</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>163</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_evaluateCheckExpression</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Evaluate the expression on a Target Check against this token
+&lt;br&gt;
+&lt;br&gt;arg(0) = Id of the target token
+&lt;br&gt;arg(1) = Target Check to be evaluated
+&lt;br&gt;arg(2) = State of the current roll
+&lt;br&gt;
+&lt;br&gt;Returns the updated state
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

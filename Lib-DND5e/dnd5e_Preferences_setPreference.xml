@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5c3ddca1-8ce1-46a9-a930-ed3d410cc40c</macroUUID>
+  <macroUUID>6e7ed2d7-14bd-404e-8d58-b996f0cf47fd</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>28</index>
   <colorKey>default</colorKey>
@@ -15,7 +15,13 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Sets a user preference on the token</toolTip>
+  <toolTip>&lt;html&gt;
+Sets a user preference on the token&lt;br&gt;
+&lt;br&gt;
+arg (0) = Preference Key&lt;br&gt;
+arg (1) = Preference value&lt;br&gt;
+arg (2)(Optional; boolean) = GM Preference&lt;br&gt;
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

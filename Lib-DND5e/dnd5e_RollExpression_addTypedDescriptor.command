@@ -2,5 +2,5 @@
 [h: descriptorType = arg (1)]
 [h: descriptorValue = arg (2)]
 [h: currentDescriptors = dnd5e_RollExpression_getTypedDescriptors(rollExpression)]
-[h: currentDescriptors = json.set(currentDescriptors, descriptorType, descriptorValue))]
+[h: currentDescriptors = json.set(currentDescriptors, descriptorType, encode(descriptorValue)))]
 [h: macro.return = dnd5e_RollExpression_setTypedDescriptors(rollExpression, currentDescriptors)]

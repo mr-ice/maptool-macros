@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>8110d7a8-6a70-4fa8-80c4-5d3d9a1a4263</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>71</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_setTargetCheck</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Sets the target check property on the provided RollExpression. 
+&lt;br&gt;If an empty object is provided, a new object will be returned.
+&lt;br&gt;
+&lt;br&gt;arg (0) = RollExpression
+&lt;br&gt;arg (1) = name
+&lt;br&gt;
+&lt;br&gt;Return: RollExpression
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>4ffd92be-7669-42f4-a228-b083b708eb2f</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>204</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_ordinalPostfix</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Add the 'st', 'nd', 'rd', 'th' postfix to a number
+&lt;br&gt;
+&lt;br&gt;arg(0)=Add the postfix to this number
+&lt;br&gt;arg(1)=Optional, Value to be returned if the number is zero. If not specified '0' is used
+&lt;br&gt;arg(2)=Optional, String format to apply. If specified it must contain the string '%{value}' to work.
+&lt;br&gt;
+&lt;br&gt;Returns the ordinal with the postfix formatted as requested
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

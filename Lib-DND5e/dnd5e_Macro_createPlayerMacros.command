@@ -70,12 +70,21 @@
 					"fontColor", "red",
 					"sortBy", "5",
 					"command", "[h, macro('dnd5e_deathSaves@Lib:DnD5e'): '']"),
+					
 			json.set (basicCfg, "name", "Temp HP",
 					"group",  macroGroup + " - Health",
 					"color", "red",
 					"fontColor", "white",
 					"sortBy", "3",
 					"command", "[h, macro('dnd5e_takeTemp@Lib:DnD5e'): '']"),
+
+			json.set (basicCfg, "name", "Action Editor",
+					"group",  macroGroup + " - Actions",
+					"color", "white",
+					"fontColor", "navy",
+					"sortBy", "0",
+					"minWidth", 170,
+					"command", "[h, macro('dnd5e_AE2_attackEditor@Lib:DnD5e'): '']"),
 
 			json.set (basicCfg, "name", "Configure Preferences",
 					"color", "green",

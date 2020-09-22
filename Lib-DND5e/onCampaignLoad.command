@@ -10,5 +10,9 @@
 	}]
 }]
 
-[r: "Lib:DND5e loaded"]
+[h, if (!isGM ()), code: {
+	[landingMapName = dnd5e_Preferences_getPreference("landingMapName")]
+	[mapNames = getAllMapNames ("json")]
+	[if (json.contains (mapNames, landingMapName)): setCurrentMap (landingMapName); ""]
+}; {}]
 [h: log.debug (json.indent (getInfo ("client"), 3))]
