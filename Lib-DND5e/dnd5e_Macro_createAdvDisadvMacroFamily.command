@@ -29,5 +29,5 @@
 [h: cmdArg = json.set (cmdArg, "advDisadv", "Both")]
 [h: cmd = "[macro ('" + command + "'): '" + cmdArg + "']"]
 [h: label = dnd5e_Macro_getModLabel ("both")]
-[h: createdMacros = json.append (createdMacros, encode (label))]
+[h: createMacro (label, cmd, macroConfig)]
 [h: macro.return = 3]

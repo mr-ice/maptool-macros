@@ -13,5 +13,5 @@
     case "3": level = "rd";
     default: level = "th"]
 [h: value = if (ordinal == 0, zero, ordinal + level)]
-[h, if(json.length(macro.args) > 2): ret = strformat(arg(2), value)]
-[h: macro.return = ret]
+[h, if(json.length(macro.args) > 2): value = strformat(arg(2), value)]
+[h: macro.return = value]

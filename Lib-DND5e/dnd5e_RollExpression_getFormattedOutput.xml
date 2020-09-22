@@ -16,11 +16,13 @@
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Looks at the highlevel rolls and generates output 
-  &lt;br&gt; 
-  &lt;br&gt;arg(0) = The rolled expression 
-  &lt;br&gt; 
-  &lt;br&gt;Formatted text is sent to chat for the selected token 
-  &lt;/html&gt;</toolTip>
+&lt;br&gt; 
+&lt;br&gt;arg(0) = The rolled expression
+&lt;br&gt;arg(1) = Optional: Flag indicating that the ouput is to be returned 
+&lt;br&gt; 
+&lt;br&gt;Formatted text is sent to chat if arg(1) is not set or false for the selected token 
+&lt;br&gt;Otherwise the text is returned to the calling function
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

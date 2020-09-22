@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1eb1bd22-9ca1-4d53-8da9-f9b2e5b46d3b</macroUUID>
+  <macroUUID>3fec02a8-3c44-4bd1-8c3e-07815603c409</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>161</index>
+  <index>163</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_SavedAttacks_apply</label>
+  <label>dnd5e_SavedAttacks_applyUI</label>
   <group>Saved Attacks</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,13 +15,15 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Apply a saved rolled RollExpression to the set of selected tokens
+  <toolTip>&lt;html&gt;Presents a panel to choose what attack is applied and any modifiers to the attack
 &lt;br&gt;
-&lt;br&gt;arg(0) = Optional: The index of the saved attack to be applied
-&lt;br&gt;arg(1) = Optional: Options to be applied for each target
+&lt;br&gt;arg(0) = Optional: Currently active Rolled Expression index.
+&lt;br&gt;arg(1) = Optional: A copy of the rolled expressions so that changes don&apos;t mess up the UI
+&lt;br&gt;arg(2) = Optional: The set of selected IDs
+&lt;br&gt;arg(3) = Optional: Options previously selected by the user
 &lt;br&gt;
-&lt;br&gt;Updates the selected token&apos;s damage, conditions, health states and bars.
-&lt;/html&gt;</toolTip>
+&lt;br&gt;Calls the dnd5e_SavedAttacks_apply macro with the chosen options.
+&lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

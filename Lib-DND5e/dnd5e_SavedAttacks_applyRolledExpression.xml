@@ -49,6 +49,8 @@ are skipped until the next target check. This step is ignored if a previous Atta
 &lt;br&gt;arg(0) = id of target token 
 &lt;br&gt;arg(1) = The single roll expression step being applied
 &lt;br&gt;arg(2) = The current state for all rolled RollExpressions previously applied
+&lt;br&gt;arg(3) = Any selected options for this step, may be empty
+&lt;br&gt;arg(4) = Index of this step
 &lt;br&gt;
 &lt;br&gt;Returns the updated state object.
 &lt;br&gt;See &lt;font face=&quot;monospace&quot;&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format

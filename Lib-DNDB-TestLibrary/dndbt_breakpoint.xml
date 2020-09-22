@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1eb1bd22-9ca1-4d53-8da9-f9b2e5b46d3b</macroUUID>
+  <macroUUID>d3858b03-40fe-4517-b815-17d9cb94df63</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>161</index>
+  <index>52</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_SavedAttacks_apply</label>
-  <group>Saved Attacks</group>
+  <label>dndbt_breakpoint</label>
+  <group>Tests Util</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,13 +14,12 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Apply a saved rolled RollExpression to the set of selected tokens
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Do some logging and then call input for a breakpoint
 &lt;br&gt;
-&lt;br&gt;arg(0) = Optional: The index of the saved attack to be applied
-&lt;br&gt;arg(1) = Optional: Options to be applied for each target
-&lt;br&gt;
-&lt;br&gt;Updates the selected token&apos;s damage, conditions, health states and bars.
+&lt;br&gt;arg(0) = macro name
+&lt;br&gt;arg(1) = indicator showing where the breakpoint is
+&lt;br&gt;arg(...) = The rest of the parameters are logged 
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

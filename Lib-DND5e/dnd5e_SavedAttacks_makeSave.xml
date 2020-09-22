@@ -19,6 +19,7 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = Id of character making save
 &lt;br&gt;arg(1) = save roll expression
+&lt;br&gt;arg(3) = Advantage options from the user, may be empty
 &lt;br&gt;
 &lt;br&gt;The updated rolled RollExpression used to make the save. The &lt;font face=&apos;monospace&apos;&gt;saveResult&lt;/font&gt; 
 field contains the result &quot;passed&quot; or &quot;failed&quot;

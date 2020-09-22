@@ -1,20 +1,23 @@
 [h: forMod = arg (0)]
+[h, if (argCount() > 1): wrap = arg(1); wrap = 1]
 [h: modPreference = dnd5e_Preferences_getPreference ("privateMacroModLabel")]
-[h: defaultMap = json.set ("", "advantage", "<html>&#x23eb;</html>", "disadvantage", "<html>&#x23ec;</html>", "both", "<html>&#x23eb;&#x23ec;</html>")]
 [h: modMap = json.set ("",
 	"Double-Triangle", 
-		json.set ("", "advantage", "<html>&#x23eb;</html>", "disadvantage", "<html>&#x23ec;</html>", "both", "<html>&#x23eb;&#x23ec;</html>"),
+		json.set ("", "advantage", "&#x23eb;", "disadvantage", "&#x23ec;", "both", "&#x23eb;&#x23ec;", "normal", "&#x23e9;"),
 	"Single-Triangle",
-		json.set ("", "advantage", "<html>&#x25B2;</html>", "disadvantage", "<html>&#x25BC;</html>", "both", "<html>&#x25B2;&#x25BC;</html>"),
+		json.set ("", "advantage", "&#x25B2;", "disadvantage", "&#x25BC;", "both", "&#x25B2;&#x25BC;", "normal", "&#x25B6;"),
 	"Small-Triangle",
-		json.set ("", "advantage", "<html>&#9652;</html>", "disadvantage", "<html>&#9662;</html>", "both", "<html>&#9652;&#9662;</html>"),
+		json.set ("", "advantage", "&#9652;", "disadvantage", "&#9662;", "both", "&#9652;&#9662;", "normal", "&#x25B8;"),
 	"Chevron",
-		json.set ("", "advantage", "<html><b>&and;</b></html>", "disadvantage", "<html><b>&or;</b></html>", "both", "<html>&and;&or;</html>"),
+		json.set ("", "advantage", "<b>&and;</b>", "disadvantage", "<b>&or;</b>", "both", "&and;&or;", "normal", "<b>&lg;</b>"),
 	"Arithmetic",
-		json.set ("", "advantage", "<html><b>+</b></html>", "disadvantage", "<html><b>-</b></html>", "both", "<html><b>+</b><b>-</b></html>")
+		json.set ("", "advantage", "<b>+</b>", "disadvantage", "<b>-</b>", "both", "<b>+</b><b>-</b>", "normal", "<b>=<b>"),
+	"Letters",
+		json.set ("", "advantage", "<b>A</b>", "disadvantage", "<b>D</b>", "both", "<b>B</b>", "normal", "<b>N<b>")
 )]
 [h: modObject = json.get (modMap, modPreference)]
-[h, if (encode (modObject) == ""): modObject = defaultMap; ""]
+[h, if (encode (modObject) == ""): modObject = json.get (modMap, "Double-Triangle")]
 [h: label = json.get (modObject, forMod)]
-[h, if (label == ""): label = json.get (defaultMap, forMod); ""]
-[h: macro.return = label]	
+[h, if (label == ""): label = forMod]
+[h, if (wrap): label = strformat("<html>%s<html>", label)]
+[h: macro.return = label]

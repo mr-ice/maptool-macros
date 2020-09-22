@@ -1290,6 +1290,10 @@
       <int>82</int>
       <macro name="dndbt_Test_RollExpression_rollCritical"/>
     </entry>
+    <entry>
+      <int>83</int>
+      <macro name="dndbt_breakpoint"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

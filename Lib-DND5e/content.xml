@@ -1775,6 +1775,26 @@ function changeType() {
       <int>225</int>
       <macro name="dnd5e_Util_formatTooltip"/>
     </entry>
+    <entry>
+      <int>226</int>
+      <macro name="dnd5e_SavedAttacks_applyCSS"/>
+    </entry>
+    <entry>
+      <int>227</int>
+      <macro name="dnd5e_SavedAttacks_readTargetRow"/>
+    </entry>
+    <entry>
+      <int>228</int>
+      <macro name="dnd5e_SavedAttacks_targetRow"/>
+    </entry>
+    <entry>
+      <int>229</int>
+      <macro name="dnd5e_SavedAttacks_applyProcessor"/>
+    </entry>
+    <entry>
+      <int>230</int>
+      <macro name="dnd5e_SavedAttacks_applyUI"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

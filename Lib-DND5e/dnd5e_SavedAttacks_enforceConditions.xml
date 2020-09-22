@@ -20,7 +20,8 @@
 &lt;br&gt;arg(0) = Id of the target token
 &lt;br&gt;arg(1) = Condition expression
 &lt;br&gt;arg(2) = Roll application state
-&lt;br&gt;arg(3) = Optional Save RollExpression
+&lt;br&gt;arg(3) = Condition options from the user, may be empty
+&lt;br&gt;arg(4) = Optional Save RollExpression
 &lt;br&gt;
 &lt;br&gt;Updated roll application state object
 &lt;/html&gt;</toolTip>

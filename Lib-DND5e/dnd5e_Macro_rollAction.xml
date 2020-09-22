@@ -23,7 +23,7 @@
 &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"advantageDisadvantage": Should none, advantage, disadvantage or both be applied
 &lt;br&gt;&amp;nbsp;&amp;nbsp;}
 &lt;br&gt;
-&lt;br&gt;Outputs the results to chat</toolTip>
+&lt;br&gt;Outputs the results to chat and saves them for later application to targets</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

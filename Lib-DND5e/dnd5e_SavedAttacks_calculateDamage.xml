@@ -17,11 +17,12 @@
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Calculate the damage that should be applied
 &lt;br&gt;
-&lt;br&gt;arg(0) = Token ID receiving damage
 &lt;br&gt;arg(1) = The total damage recieved
+&lt;br&gt;arg(0) = Token ID receiving damage
 &lt;br&gt;arg(2) = damage type. Everything up to the first comma is used as the type
-&lt;br&gt;arg(3) = optional Save Roll Expression. 
-&lt;br&gt;arg(4) = optional Save Effect. Only &apos;half&apos;, &apos;none&apos; &amp; a multiplier are supported
+&lt;br&gt;arg(3) = User option for this step
+&lt;br&gt;arg(4) = optional Save Roll Expression. 
+&lt;br&gt;arg(5) = optional Save Effect. Only &apos;half&apos;, &apos;none&apos; &amp; a multiplier are supported
 &lt;br&gt;
 &lt;br&gt;Returns an object
 &lt;br&gt;&amp;nbsp;&amp;nbsp;{

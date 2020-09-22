@@ -1,13 +1,14 @@
 [h: id = arg(0)]
 [h: condExp = arg(1)]
 [h: state = arg(2)]
-[h, if (json.length(macro.args) > 3): saveExp = arg(3); saveExp = "{}"]
+[h: optValue = arg(3)]
+[h, if (json.length(macro.args) > 4): saveExp = arg(4); saveExp = "{}"]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
 
 <!-- No save needed? -->
-[h, if (json.isEmpty(saveExp)), code: {
-	[h: tt = "Setting State"]
-	[h: addStates = 1]
+[h, if (json.isEmpty(saveExp) || optValue == "immunity"), code: {
+	[h: tt = if(optValue == "immunity", "Immune to State", "Setting State")]
+	[h: addStates = if(optValue != "Immunity", 1, 0)]
 }; {
 
 	<!-- Handle the save -->
@@ -21,7 +22,6 @@
 	[h: tt = tt + ": " + if(addStates, "Setting", "Ignoring") + " State"]
 }]
 [h: log.debug(getMacroName() + ": addStates=" + addStates + " tt=" + tt + " conditions=" + json.indent(json.get(condExp, "conditions")))]
-[h: input("bob|1|" + getMacroName() + "|TEXT")]
 
 <!-- Apply the states -->
 [h: output = json.get(state, "output") + "<i>"]

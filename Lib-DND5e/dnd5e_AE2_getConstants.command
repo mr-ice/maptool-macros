@@ -1,7 +1,7 @@
 [h: damageTypes = json.append("[]", "Acid", "Bludgeoning", "Magical Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", 
 								"Magical Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Magical Slashing", "Thunder")]
 [h: fieldNames = json.append("[]", "bonus", "damageType", "rollString", "DC", "saveAbility", "saveAgainst", "saveEffect", "conditions", "saveResult",
-								   "dndbAttack", "name", "onCritical", "dndbSpell", "dndbSpellLevel", "targetCheck")]
+								   "dndbAttack", "name", "o	nCritical", "dndbSpell", "dndbSpellLevel", "targetCheck")]
 [h: stepTypes = json.append("[]", "Attack", "Damage", "DnDBeyond Attack", "Save", "Save Damage", "Save Effect", "Condition", "DnDBeyond Spell", "Target Check")]
 [h: fieldsByType = json.set("{}", json.get(stepTypes, 0), json.append("[]", json.get(fieldNames, 0)),
 								  json.get(stepTypes, 1), json.append("[]", json.get(fieldNames, 2), json.get(fieldNames, 1)),
@@ -14,24 +14,30 @@
 								  json.get(stepTypes, 8), json.append("[]", json.get(fieldNames, 14))
 )]
 [h: stepAttack = json.set("{}", "name", "Attack", "indicators", json.append("[]", "attack", "onCheck"),
-					"tooltip", "Roll 1d20 + Bonus compared against target AC. Steps after this attack only apply to target on hit")]
+					"tooltip", "Roll 1d20 + Bonus compared against target AC. Steps after this attack only apply to target on hit",
+					"applyHeader", "Cover for %s Attack")]
 [h: stepDamage = json.set("{}", "name", "Damage", "indicators", json.append("[]", "hit", "onCheck"),
 					"tooltip", "Roll for damage to be applied to the target.",
-					"tooltip-hit", "Roll for damage to be applied to the target on a hit from an attack.")]
+					"tooltip-hit", "Roll for damage to be applied to the target on a hit from an attack.",
+					"applyHeader", "Modify %s Damage")]
 [h: stepDnDbAttack = json.set("{}", "name", "DnDBeyond Attack", "indicators", "[]",
 						"tooltip", "Select a weapon attack from those found in DnD Beyond.")]
 [h: stepSave = json.set("{}", "name", "Target Save", "indicators", json.append("[]", "save", "hit", "onCheck"),
 					"tooltip", "A save that must be made by the target. Save damage and save conditions applied accordingly.",
-					"tooltip-hit", "A save that must be made by the target. Save damage and save conditions applied accordingly on a hit from an attack.")]
+					"tooltip-hit", "A save that must be made by the target. Save damage and save conditions applied accordingly on a hit from an attack.",
+					"applyHeader", "Advantage on %s Save")]
 [h: stepSaveDamage = json.set("{}", "name", "Damage", "indicators", json.append("[]", "hit", "onSave", "onCheck"),
 						"tooltip", "Apply this damage to the target after they make a save. Damage altered by success or failure",
-						"tooltip-hit", "Apply this damage to the target when hit and after they make a save. Damage altered by save's success or failure")]
+						"tooltip-hit", "Apply this damage to the target when hit and after they make a save. Damage altered by save's success or failure",
+						"applyHeader", "Modify %s Save Damage")]
 [h: stepSaveEffect = json.set("{}", "name", "Condition", "indicators", json.append("[]", "hit", "onSave", "onCheck"),
 						"tooltip", "Apply conditions to the target depending on earlier Save result.",
-						"tooltip-hit", "Apply conditions to target when hit depending on earlier Save result.")]
+						"tooltip-hit", "Apply conditions to target when hit depending on earlier Save result.",
+						"applyHeader", "Apply %s Save Conditions")]
 [h: stepCondition = json.set("{}", "name", "Condition", "indicators", json.append("[]", "hit", "onCheck"),
 						"tooltip", "Apply these states to the target.",
-						"tooltip-hit", "Apply these states to the target when they are hit.")]
+						"tooltip-hit", "Apply these states to the target when they are hit.",
+						"applyHeader", "Apply %s Conditions")]
 [h: stepDnDbSpell = json.set("{}", "name", "DnDBeyond Spell", "indicators", "[]",
 						"tooltip", "Select an attack spell from those found in DnD Beyond to use against the target")]
 [h: stepTargetCheck = json.set("{}", "name", "Target Check", "indicators", json.append("[]", "hit", "check"),
@@ -50,9 +56,8 @@
 					"gray", "Gray", "gray25", "25% Gray", "gray50", "50% Gray", "gray75", "75% Gray", "green", "Green", "lightgray", "Light Gray",
 					"lime", "Lime", "magenta", "Magenta", "maroon", "Maroon", "navy", "Navy", "olive", "Olive", "orange", "Orange", "pink", "Pink",
 					"purple", "Purple", "red", "Red", "silver", "Silver", "teal", "Teal", "white", "White", "yellow", "Yellow")]
-[h: c = json.set("{}", "FIELDS_BY_STEP_TYPE", fieldsByType, "NAMES_OF_STEP_TYPES", stepNamesByType, "DAMAGE_TYPES", damageTypes, 
-					   "CHAR_ABILITIES", abilities, "STATE_GROUPS", stateGroups, "MACRO_COLORS", macroColors,
-		"TARGET_ROLL_TYPE", "target", "UNROLLABLE_ROLL_TYPE", "unrollable",
+[h: c = json.set("{}", "FIELDS_BY_STEP_TYPE", fieldsByType, "NAMES_OF_STEP_TYPES", stepNamesByType, "DAMAGE_TYPES", damageTypes, "CHAR_ABILITIES", abilities,
+		"STATE_GROUPS", stateGroups, "MACRO_COLORS", macroColors, "TARGET_ROLL_TYPE", "target", "UNROLLABLE_ROLL_TYPE", "unrollable",
 	"ACTION_TYPES", actionTypes, "STATE_GROUPS", stateGroups,
 		"DNDB_ATTACK_TYPE", json.get(actionTypes, 0), "DNDB_SPELL_TYPE", json.get(actionTypes, 1), "ATTACK_TYPE", json.get(actionTypes, 2),
 		"SAVE_DAMAGE_TYPE", json.get(actionTypes, 3), "DAMAGE_TYPE", json.get(actionTypes, 4), "SAVE_COND_TYPE", json.get(actionTypes, 5), 

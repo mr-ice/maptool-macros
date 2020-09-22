@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1eb1bd22-9ca1-4d53-8da9-f9b2e5b46d3b</macroUUID>
+  <macroUUID>5202ca11-0a27-401c-897c-7cb3d70f2ab5</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>161</index>
+  <index>168</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_SavedAttacks_apply</label>
+  <label>dnd5e_SavedAttacks_readTargetRow</label>
   <group>Saved Attacks</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,12 +15,15 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Apply a saved rolled RollExpression to the set of selected tokens
+  <toolTip>&lt;html&gt;Generate the HTML for a target row
 &lt;br&gt;
-&lt;br&gt;arg(0) = Optional: The index of the saved attack to be applied
-&lt;br&gt;arg(1) = Optional: Options to be applied for each target
+&lt;br&gt;arg(0) = Form content
+&lt;br&gt;arg(1) = ID of the target token
+&lt;br&gt;arg(2) = Array of the rolled expressions
+&lt;br&gt;arg(3) = Row number
+&lt;br&gt;arg(4) = Optional: Previously selected values
 &lt;br&gt;
-&lt;br&gt;Updates the selected token&apos;s damage, conditions, health states and bars.
+&lt;br&gt;Return the updated selected values
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
