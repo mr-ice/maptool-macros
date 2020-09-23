@@ -1,5 +1,5 @@
 
-<!-- Present the user with the cast spell dialogue, set dndb_Macro_rollSpell as the processor -->
+<!-- Present the user with the cast spell dialogue -->
 
 [h: inputObj = arg (0)]
 [h: encodedSpellName = json.get (inputObj, "spellName")]
@@ -29,8 +29,6 @@
 }]
 
 <!-- Build HTML -->
-<!-- We should only prompt the user if there is an open question
-	aka, a reason to adjust the spell casting -->
 [h: attackHtml = dndb_CastSpell_getAttackHtml (selectedSpell)]
 [h, if (encode (attackHtml) == ""): hasAttackHtml = 0; hasAttackHtml = 1]
 [h: modHtml = dndb_CastSpell_getModHtml (selectedSpell)]

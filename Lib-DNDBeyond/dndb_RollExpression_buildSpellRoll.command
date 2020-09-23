@@ -2,6 +2,7 @@
 [h: spell = arg (0)]
 [h: spellSlot = arg (1)]
 [h, if (json.length (macro.args) > 2): advDisadvObj = arg (2); advDisadvObj = "{}"]
+[h, if (json.length (macro.args) > 3): modRestriction = arg (3); modRestriction = ""]
 
 
 [h: rollExpressions = "[]"]
@@ -25,9 +26,8 @@
 }; {""}]
 
 <!-- if the spell has a dice object, build that, whatever that is -->
-[h: modifiers = json.get (spell, "modifiers")]
-[h, if (json.type (modifiers) == "ARRAY" && json.length (modifiers) > 0): 
-			modifier = json.get (modifiers, 0); modifier = "{}"]
+[h: modifier = dndb_Util_selectSpellModifier (spell, modRestriction)]
+
 [h: log.debug ("dndb_RollExpression_buildSpellRoll: modifier = " + modifier)]
 [h: die = json.get (modifier, "die")]
 [h: diceCount = 0]
@@ -56,7 +56,7 @@
 
 <!-- read "castAtHigherLevels": "true" first -->
 
-[h, if (!json.isEmpty (modifiers)): higherSpellDice = dndb_RollExpression_getHigherLevelDie (spell, spellSlot); higherSpellDice = "{}"]
+[h: higherSpellDice = dndb_RollExpression_getHigherLevelDie (spell, spellSlot, modifier)]
 [h: log.debug ("dndb_RollExpression_buildSpellRoll: higherSpellDice = " + higherSpellDice)]
 [h, if (!json.isEmpty (higherSpellDice)), code: {
 	[h: scaleType = json.get (higherSpellDice, "scaleType")]

@@ -8,7 +8,6 @@
 [h: log.warn ("maxSpellLevel: " + maxSpellLevel)]
 
 [h, if (spellLevel > 0 && castAtHigherLevel == "true" && spellLevel < maxSpellLevel), code: {
-	[log.warn ("Peek-a-boo")]
 	[optionHtml = ""]
 	[for (level, spellLevel, maxSpellLevel + 1), code: {
 		[optionHtml = optionHtml + '<option value="' + level + '">' + level + '</option>']

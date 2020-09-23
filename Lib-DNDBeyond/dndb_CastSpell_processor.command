@@ -5,7 +5,8 @@
 [h: castSpellAdvantage = json.get (macro.args, "castSpell-advantage")]
 [h: castSpellDisadvantage = json.get (macro.args, "castSpell-disadvatage")]
 [h: castSpellBoth = json.get (macro.args, "castSpell-both")]
-[h: spellName = json.get (macro.args, "spellName")]
+[h: encodedSpellName = json.get (macro.args, "spellName")]
+[h: spellRestriction = json.get (macro.args, "spell-restriction")]
 [h: noShowSpellDescription = json.get (macro.args, "noShowSpellDescription")]
 [h, if (noShowSpellDescription == ""): noShowSpellDescription = 0]
 
@@ -19,7 +20,7 @@
                              "both", castSpellBoth)]
 
 [h: spells = dndb_getCastableSpells()]
-[h: selectedSpell = json.get (spells, spellName)]
+[h: selectedSpell = json.get (spells, encodedSpellName)]
 [h: spellLevel = json.get (selectedSpell, "level")]
 [h, if (spellLevel > spellSlot): spellSlot = spellLevel; ""]
 
@@ -43,9 +44,14 @@
 	[h: saveDescription = saveAbility + " save DC " + saveDC]
 }]
 
-[h: expressions = dndb_RollExpression_buildSpellRoll (selectedSpell, spellSlot, advDisadvObj)]
+[h: expressions = dndb_RollExpression_buildSpellRoll (selectedSpell, spellSlot, advDisadvObj, spellRestriction)]
 [h: log.debug (getMacroName() + ": expressions = " + json.indent (expressions))]
 [h: results = dnd5e_DiceRoller_roll (expressions)]
 [r, if (!noShowSpellDescription): spellDescription]
 [r, if (saveDescription == ""): ""; "<br><br><b>" + saveDescription + "</b>"]
-[r: dnd5e_RollExpression_getCombinedOutput (results)]
+[h: output = ""]
+[h, if (!json.isEmpty (results)), code: {
+	[dnd5e_SavedAttacks_push (results)]
+	[output = dnd5e_RollExpression_getFormattedOutput (results, 1)]
+}; {}]
+[r: output]

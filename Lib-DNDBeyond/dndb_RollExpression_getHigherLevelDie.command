@@ -1,9 +1,12 @@
 [h: spell = arg (0)]
 [h: slotLevel = arg (1)]
+[h, if (argCount() > 2): modifier = arg (2); modifier = ""]
 [h: spellLevel = json.get (spell, "level")]
-[h: atHigherLevel = json.path.read (spell, "modifiers[*].atHigherLevels")]
+[h, if (encode (modifier) == ""): atHigherLevel = json.path.read (spell, "modifiers[*].atHigherLevels"); atHigherLevel = json.get (modifier, "atHigherLevels")]
+
 [h: log.debug ("dndb_RollExpression_getHigherLevelDie: atHigherLevel = " + atHigherLevel)]
 [h, if (json.type (atHigherLevel) == "ARRAY"): atHigherLevel = json.get (atHigherLevel, 0); ""]
+[h, if (json.isEmpty (atHigherLevel)): return (0, "{}"); ""]
 [h: higherLevelDefinitions = json.get (atHigherLevel, "higherLevelDefinitions")]
 [h: scaleType = json.get (atHigherLevel, "scaleType")]
 [h: dice = ""]

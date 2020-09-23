@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>28dd68ea-b386-4bf2-90f7-432eec19b804</macroUUID>
+  <macroUUID>1f5a868d-5b34-47e6-9a5d-a729fd2c9e5d</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>127</index>
+  <index>128</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_Macro_rollSpell</label>
+  <label>dndb_Util_selectSpellModifier</label>
   <group>Utility - Spells</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,7 +15,10 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Deprecated personal macro utility to roll spell casting. Now passes the incoming parameter to dndb_CastSpell_Editor</toolTip>
+  <toolTip>Returns the selected spell modifier. If no restriction is provided, the first unrestricted modifier is returned.
+
+arg (0) = BasicSpell
+arg (1) (optional) = encoded restriction value</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

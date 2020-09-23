@@ -1,1 +1,0 @@
-[h, macro ("dndb_CastSpell_Editor@this"): macro.args]

@@ -19,7 +19,8 @@
 
 arg(0) = spell
 arg(1) = spellSlot level being spent
-arg(2) = advantage / disadvantage object</toolTip>
+arg(2) = advantage / disadvantage object
+arg(3) = modifier restriction</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

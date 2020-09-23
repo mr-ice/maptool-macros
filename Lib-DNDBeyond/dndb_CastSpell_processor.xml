@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>98c03e95-7d5b-45b1-a3f6-e8a2916a50b0</macroUUID>
+  <macroUUID>cb7fe898-62b1-480e-b9a5-63e9a25781d9</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>122</index>
   <colorKey>default</colorKey>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>This is the processor for CastSpell Editor. The editor prompts for details when casting a single spell. Those details are sent to this processor to build the RollExpression and roll it.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
