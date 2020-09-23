@@ -21,6 +21,7 @@
     <macro name="Lib-DND5e/Attack+Editor"/>
     <macro name="macro/Apply+Last+Attack"/>
     <macro name="macro/Restore+Last+Dead+NPC"/>
+    <macro name="macro/Change+Elevation"/>
   </macroset>
   <macroset name="GM-Panel">
     <macro name="macro/Setup+Monster+Token"/>
