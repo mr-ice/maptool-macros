@@ -32,7 +32,7 @@
 <!-- prune the leading ## -->
 [h: inputStr = substring (inputStr, 3)]
 [h: abort (input (inputStr))]
-[h: conBonus = getProperty ("Constitution Bonus")]
+[h: conBonus = getProperty ("ConstitutionBonus")]
 [h: total = 0]
 [h: output = ""]
 [h: rollExpressions = "[]"]
