@@ -82,20 +82,26 @@
 	};{""}]
 }]
 
-[h, for ( i, 0, totalRolls), code: {
-	[if (requiresAttack == "true"): rollExpressions = json.append (rollExpressions, attackExpression); ""]
-	[h, if (!isNumber (diceCount)): diceCount = 0; ""]
-	[h, if (diceCount > 0), code: {
-		<!-- if the spell has a save, add it to the dice object expression description -->
-		[h: rollExpression = json.set ("", "name", spellName,
-											"diceSize", diceValue,
-											"diceRolled", diceCount,
-											"expressionTypes", type,
-											"bonus", abilityBonus + fixedValue,
+[h, if (!isNumber (diceCount)): diceCount = 0; ""]
+<!-- if there is an attack roll, split out each roll separately. Otherwise just set totalRolls -->
+[h: rollExpression = json.set ("", "name", spellName,
+									"diceSize", diceValue,
+									"diceRolled", diceCount,
+									"expressionTypes", type,
+									"bonus", abilityBonus + fixedValue,
+									"damageTypes", subType)]
 
-											"damageTypes", subType)]
-		[h: rollExpressions = json.append (rollExpressions, rollExpression)]
-	}; {""}]
+[h, if (requiresAttack == "true"), code: {
+	<!-- build array of attac/dmg roll expressions -->
+	[for (i, 0, totalRolls), code: {
+		[rollExpressions = json.append (rollExpressions, attackExpression)]
+		[if (diceCount > 0): rollExpressions = json.append (rollExpressions, rollExpression); ""]
+	}]
+}; {
+	<!-- build just the one roll expression w/ totalRolls set -->
+	[if (totalRolls > 1): rollExpression = dnd5e_RollExpression_setTotalRolls (rollExpression, totalRolls); ""]
+	[if (diceCount > 0): rollExpressions = json.append (rollExpressions, rollExpression); ""]
 }]
+
 [h: log.debug (getMacroName() + ": rollExpressions = " + rollExpressions)]
 [h: macro.return = rollExpressions]

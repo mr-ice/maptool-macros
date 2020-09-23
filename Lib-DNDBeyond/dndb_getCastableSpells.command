@@ -6,6 +6,6 @@
 [h, if (targetSpellName == ""), code: {
 	[macro.return = spells]
 }; {
-	[spellObj = json.get (spells, targetSpellName)]
+	[spellObj = json.get (spells, encode (targetSpellName))]
 	[macro.return = spellObj]
 }]
