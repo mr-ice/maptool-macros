@@ -3,7 +3,7 @@
 [h: command = arg (1)]
 [h: cmdArg = arg (2)]
 [h: macroConfig = arg (3)]
-[h: noAdvDisadvMacros = if(argCount() > 4, arg(4), 0)]
+[h, if (argCount() > 4): noAdvDisadvMacros = arg (4); noAdvDisadvMacros = 0]
 [h: createdMacros = "[]"]
 [h: sortByBase = json.get (macroConfig, "sortBy")]
 

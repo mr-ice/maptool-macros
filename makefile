@@ -11,7 +11,10 @@ else
 endif
 
 project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
-	$(DOTSLASH)dockerrun project-assemble DNDBeyond.project
+	$(DOTSLASH)dockerrun assemble DNDBeyond.project
+
+all: DNDBeyond+Open5e.project $(shell echo Lib-DNDBeyond/*) $(shell echo Lib-Open5e/*)
+	$(DOTSLASH)dockerrun assemble DNDBeyond+Open5e.project
 
 project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 	$(DOTSLASH)docker/project-assemble DNDBeyond.project
