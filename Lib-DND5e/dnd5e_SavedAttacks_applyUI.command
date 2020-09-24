@@ -2,16 +2,16 @@
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
 [h: activeIndex = if(argCount() > 0, arg(0), 0)] 
 [h, if (argCount() > 1): workingCopy = arg(1); workingCopy = json.reverse(dnd5e_SavedAttacks_fetch())]
+[h, if (json.isEmpty(workingCopy)), code: {
+	[h: broadcast("Apply Attack Options; No Saved Attacks found", "gm")]
+	[h: return(0, "")]	
+}]
 [h: active = json.get(workingCopy, activeIndex)]
 [h, if (argCount() > 2): sIds = arg(2); sIds = getSelected("json")]
 [h, if (argCount() > 3): selected = arg(3); selected = "[]"]
 [h, if (json.isEmpty(selected)), code: {
 	[h, for(i, 0, json.length(sIds)): selected = json.append(selected, "{}")]
 }]
-[h, if(json.isEmpty(workingCopy)), code: {
-	[h: broadcast("Apply Attack; No Saved Attacks found", "gm")]
-	[h: return(0, "")]
-}; {""}]
 [h, if(json.isEmpty(sIds)), code: { 
 	[h: broadcast("Apply Attack Options; No selected IDs", "gm")]
 	[h: return(0, "")]
