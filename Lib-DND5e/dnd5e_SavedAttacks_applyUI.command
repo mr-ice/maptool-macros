@@ -77,10 +77,17 @@
       [r, for(i, 0, json.length(sIds), 1, ""): dnd5e_SavedAttacks_targetRow(json.get(sIds, i), active, i, json.get(selected, i))]
 	</table>
 
-	<button id="run" type="submit" class="float-center btn btn-primary" name="run" value="run">Run</button>
-
+    <div class="btn-group offset-4 col-4">
+      <button id="run" type="submit" class="btn btn-primary" name="control" value="run"
+   	        data-toggle="tooltip" title="Apply the attack with the selected objects.">Apply</button>
+      <button type="submit" class="btn btn-danger" name="control", value="exit" formnovalidate
+    	  	data-toggle="tooltip" title="Exit without applying the attack.">Exit</button>
+      <button type="submit" class="btn btn-warning" name="control", value="clear" formnovalidate
+    	  	data-toggle="tooltip" title="Clear all of the saved attacks.">Clear</button>
+    </div>
+    
 <!--  Fix this button as we go along -->
-<button id="submit" type="submit" class="float-left btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;">Submit</button>
+<br><button id="submit" type="submit" class="invisible btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;">Submit</button>
   </div>
 </form>
 

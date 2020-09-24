@@ -160,7 +160,7 @@
       </div> 
     </div>
 <!--  Fix this button as we go along -->
-<button id="submit" type="submit" class="float-left btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;" formnovalidate>Submit</button>
+<button id="submit" type="submit" class="invisible btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;" formnovalidate>Submit</button>
   </div>
 
 

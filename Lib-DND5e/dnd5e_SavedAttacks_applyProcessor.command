@@ -21,7 +21,7 @@
 }]
 
 <!-- Apply the attack? -->
-[h, if (json.contains(form, "run")), code: {
+[h, if (json.contains(form, "control") && json.get(form, "control") == "run"), code: {
 	[h: closeDialog("Saved Attacks")]
 	[h: adjust = json.length(dnd5e_SavedAttacks_fetch()) - 1]
 	[h: args = json.append("[]", abs(activeIndex - adjust), selected)]
@@ -31,6 +31,18 @@
 	[h: abort(0)]
 }]
 
+<!-- Exit the dialog? -->
+[h, if (json.contains(form, "control") && json.get(form, "control") == "exit"), code: {
+	[h: closeDialog("Saved Attacks")]
+	[h: return(0, "")]	
+}]
+
+<!-- Clear the attacks and exit? -->
+[h, if (json.contains(form, "control") && json.get(form, "control") == "clear"), code: {
+	[h: setLibProperty("savedAttackRolledExpressions", "[]", "Lib:DnD5e")]	
+	[h: closeDialog("Saved Attacks")]
+	[h: return(0, "")]	
+}]
+
 <!-- Next loop -->
-[h: dndbt_breakpoint(getMacroName(), 0, "activeIndex", activeIndex, "sIds", sIds, "selected", selected)]
 [h: dnd5e_SavedAttacks_applyUI(activeIndex, workingCopy, sIds, selected)]
