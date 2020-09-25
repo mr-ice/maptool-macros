@@ -25,8 +25,9 @@
 [h: return(if(oldActionType == DNDB_SPELL_TYPE && oldSpell == newSpell && oldSpellLevel == newSpellLevel && !json.isEmpty(exps), 0, 1), exps)]
 
 <!-- Find the new spell definition -->
-<!-- [h: spells = json.get(dndb_getBasicToon(), "spells")] -->
-[h: spells = json.path.read(dndb_getBasicToon(), ".spells[?(@.modifiers[0].friendlyTypeName=='Damage')]")]
+
+[h: spells = json.path.read(dndb_getBasicToon(), ".spells..[?(@.modifiers[0].friendlyTypeName=='Damage')]")]
+[h: log.debug (getMacroName() + ": spells = " + spells)]
 [h: spellNames = "[]"]
 [h, foreach(spell, spells, ""): spellNames = json.append(spellNames, json.get(spell, "name"))]
 [h, if (newSpell == ""): newSpell = json.get(spellNames, 0); ""]

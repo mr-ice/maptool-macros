@@ -114,3 +114,54 @@ div {
   border-left-color: #c23300; 
   border-radius: 4px
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 80px auto;
+  grid-gap: 5px;
+
+  padding: 10px;
+}
+
+.grid-header {
+  grid-column: 1 / span 3;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-footer {
+  grid-column: 1 / span 3;
+  font-size: 15px;
+  text-align: center;
+}
+
+.grid-item1 {
+  grid-column: 1;
+  text-align: right;
+}
+
+.grid-item2 {
+  grid-column: 2;
+  text-align: center;
+}
+
+.grid-item3 {
+  grid-column: 3;
+  text-align: left;
+}
+
+.grid-item12 {
+  grid-column: 1 / span 2;
+ 
+  text-align: right;
+}
+
+.grid-item23 {
+  grid-column: 2 / span 2;
+  text-align: left;
+}
+
+.grid-item1, .grid-item2, .grid-item3, .grid-item12, .grid-item23 {
+  font-size: 20px;
+  
+}

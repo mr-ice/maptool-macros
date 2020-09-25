@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ec304154-5ab6-421e-ab3f-98dbf6f6889e</macroUUID>
+  <macroUUID>571989b4-624f-4561-a3b0-7b112432f395</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>84</index>
   <colorKey>default</colorKey>
@@ -19,6 +19,7 @@
 
 arg (0) = BasicSpell
 arg (1) = spellSlot level
+arg (2) = (Optional) The modifier to search in. If not provided, the first one found in the the modifiers array will be used.
 
 returns modified dice object, which includes the scaleType:
 
