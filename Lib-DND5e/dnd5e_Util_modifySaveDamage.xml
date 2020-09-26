@@ -1,0 +1,47 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>4ffd92be-7669-42f4-a228-b083b708eb2f</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>204</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_modifySaveDamage</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Calculate the amount of damage for a specific save result
+&lt;br&gt;
+&lt;br&gt;arg(1) = Damage applied if save fails
+&lt;br&gt;arg(0) = Save result with one of these values
+&lt;dl&gt;
+&lt;dt&gt;&lt;b&gt;half&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Divide the total in half, minimum of one&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;none&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Damage returned is 0&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;&lt;i&gt;number&lt;i&gt;&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Multiply the damage by the passed number, minimum of one&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;failed&lt;/b&gt;&lt;/dt&gt;
+&lt;dd&gt;Return the damage passed without change&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;br&gt;
+&lt;br&gt;Return an object with the modified damage and a string showing the effect applied
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;damage&quot;: Modified damage
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;saveText&quot;: String describing what was done
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

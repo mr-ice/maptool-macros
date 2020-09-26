@@ -57,6 +57,13 @@
 					"sortBy", "2",
 					"command", "[h, macro('dnd5e_takeHealing@Lib:DnD5e'): '']"),
 					
+			json.set (basicCfg, "name", "Temp HP",
+					"group",  macroGroup + " - Health",
+					"color", "red",
+					"fontColor", "white",
+					"sortBy", "3",
+					"command", "[h, macro('dnd5e_takeTemp@Lib:DnD5e'): '']"),
+
 			json.set (basicCfg, "name", "Conditions",
 					"group",  macroGroup + " - Health",
 					"color", "yellow",
@@ -71,12 +78,12 @@
 					"sortBy", "5",
 					"command", "[h, macro('dnd5e_deathSaves@Lib:DnD5e'): '']"),
 					
-			json.set (basicCfg, "name", "Temp HP",
+			json.set (basicCfg, "name", "Drain/Restore Ability",
 					"group",  macroGroup + " - Health",
 					"color", "red",
 					"fontColor", "white",
-					"sortBy", "3",
-					"command", "[h, macro('dnd5e_takeTemp@Lib:DnD5e'): '']"),
+					"sortBy", "6",
+					"command", "[h, macro('dnd5e_takeAbilityDamage@Lib:DnD5e'): '']"),
 
 			json.set (basicCfg, "name", "Action Editor",
 					"group",  macroGroup + " - Actions",

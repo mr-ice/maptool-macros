@@ -10,7 +10,7 @@
 [h: log.debug("dnd5e_AE2_generateStepHtml: index = " + index + " type=" + type + " rowId=" + rowId + " count=" + count + " exp = " + json.indent(exp))]
 
 <!-- Get the classes asscociated actionType expressions -->
-[h: actionType = dnd5e_RollExpression_getTypedDescriptor(exp, "actionType")]
+[h: actionType = dnd5e_RollExpression_getTypedDescriptor(exp, ACTION_TYPE_TD)]
 [h, if (actionType != "" && actionType != FREE_FORM_TYPE), code: {
 	[h: rowClass = " row-actionType"]
 	[h: stepNameClass = " step-name list-group-item-primary action-type"]
@@ -89,13 +89,22 @@
 [r, if(type == TARGET_CHECK_STEP_TYPE), code: {
 	[r: dnd5e_AE2_generateTargetCheckFieldHtml(rowId, TARGET_CHECK_FIELD, dnd5e_RollExpression_getTargetCheck(exp), stepClass)]
 }; {[h:""]}]
+[r, if(type == DRAIN_STEP_TYPE), code: {
+	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(rowId, ROLL_STRING_FIELD, dnd5e_RollExpression_getRollString(exp), stepClass)]
+	[r: dnd5e_AE2_generateSaveAbilityFieldHtml(rowId, DRAIN_ABILITY_FIELD, dnd5e_RollExpression_getDrainAbility(exp), stepClass, CHAR_ABILITIES)]
+}; {[h:""]}]
+[r, if(type == SAVE_DRAIN_STEP_TYPE), code: {
+	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(rowId, ROLL_STRING_FIELD, dnd5e_RollExpression_getRollString(exp), stepClass)]
+	[r: dnd5e_AE2_generateSaveAbilityFieldHtml(rowId, DRAIN_ABILITY_FIELD, dnd5e_RollExpression_getDrainAbility(exp), stepClass, CHAR_ABILITIES)]
+	[r: dnd5e_AE2_generateSaveEffectFieldHtml(rowId, SAVE_EFFECT_FIELD, dnd5e_RollExpression_getSaveEffect(exp), stepClass)]
+}; {[h:""]}]
 
   <!-- Place the delete & extended buttons at the end of the row -->
   <div class="flex-grow-1"> 
     [h: disableDelete = if(count == 1, "disabled", "")]
     <button type="submit" class="float-right btn btn-outline-danger" name="deleteStep" value="[r:index]" style="margin-top:2px;width:40;" formnovalidate
     	data-toggle="tooltip" title="Delete this step" [r:disableDelete]>X</button>
-    [h: extended = dnd5e_RollExpression_getTypedDescriptor(exp, "extendedValues")]
+    [h: extended = dnd5e_RollExpression_getTypedDescriptor(exp, EXTENDED_VALUES_TD)]
 	[h, if (extended == ""): extended = "+"]
 	[h, if (extended == "+"): title = "Show extended fields."; title = "Hide extended fields and erase them."]
     [r, if (type != DNDB_ATTACK_STEP_TYPE && type != DNDB_SPELL_STEP_TYPE), code: { 

@@ -10,6 +10,8 @@
 					"DnDBeyond Spell", json.append ("", "unrollable"),
 					"DnDBeyond Attack", json.append ("", "unrollable"),
 					"Target Check", json.append ("", "unrollable"),
+					"Drain", json.append ("", "damageable"),
+					"Save Drain", json.append ("", "damageable", "saveable"),
 					"Ability", json.append ("", "advantagable")
 )]
 

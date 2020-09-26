@@ -34,9 +34,9 @@
 		[h: hit = 0]
 		[h: hitText = "<font color='red' size='4'><b><i>MISS</i></b></font>"]
 	}]
-	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipRoll") + " = " 
-			+ dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipDetail") + " = " + dnd5e_RollExpression_getTotal(exp)]
-	[h: tt = tt + if(hit, " >=", " <") + " AC(" + ac + ")" + if(cover > 0, " + Cover(" + cover + ") ", "") + " = " + if (hit, "HIT", "MISS")]
+	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_ROLL_TD) + " = " 
+			+ dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_DETAIL_TD) + " = " + dnd5e_RollExpression_getTotal(exp)]
+	[h: tt = tt + if(hit, " >=", " <") + " AC(" + ac + ")" + if(cover > 0, " + Cover(" + cover + ")", "") + " = " + if (hit, "HIT", "MISS")]
 	[h: output = json.get(state, "output") + " <span title='" + tt + "'>Attack " + hitText + ";</span>"]
 	[h: state = json.set(state, "hit", hit, "output", output)]
 }]
@@ -91,6 +91,16 @@
 <!-- Make a check against the target values -->
 [h, if(type == TARGET_CHECK_STEP_TYPE && hit), code: {
 	[h: state = dnd5e_SavedAttacks_evaluateCheckExpression(id, exp, state)]
+}]
+
+<!-- Drain the target of an ability score -->
+[h, if(type == DRAIN_STEP_TYPE && hit), code: {
+	[h: state = dnd5e_SavedAttacks_enforceDrain(id, exp, state)]
+}]
+
+<!-- Drain the target of an ability score after applying a save -->
+[h, if(type == SAVE_DRAIN_STEP_TYPE && hit), code: {
+	[h: state = dnd5e_SavedAttacks_enforceDrain(id, exp, state, save)]
 }]
 [h: log.debug(getMacroName() + ": done: " + json.indent(state))]
 [h: macro.return = state]

@@ -4,13 +4,13 @@
 
 <!-- Get a title from the first expression's actionName descriptor or its name -->
 [h: firstExp = json.get(arg(0), 0)]
-[h: aTitle = dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionName")]
+[h: aTitle = dnd5e_RollExpression_getTypedDescriptor(firstExp, ACTION_NAME_TD)]
 [h: actionExecution = if(aTitle == "", 0, 1)]
 [h, if (aTitle == ""): aTitle = dnd5e_RollExpression_getName(firstExp)]
 [h: aTitle = dnd5e_Util_encodeHtml(aTitle)]
 
 <!-- If there is a description, attach it to the title as a tool tip -->
-[h: tooltip = if(returnString, "data-toggle='tooltip' ", "") + dnd5e_Util_formatTooltip(dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionDesc")) + "'"]
+[h: tooltip = if(returnString, "data-toggle='tooltip' ", "") + dnd5e_Util_formatTooltip(dnd5e_RollExpression_getTypedDescriptor(firstExp, ACTION_DESC_TD)) + "'"]
 [h: out = ""]
 [h: out = out + "<div>"]
 [h: out = out + "  <span " + tooltip + "><font size='5'><b>" + aTitle + "</b></font></span>"]
@@ -26,8 +26,8 @@
 
 	<!-- Generate the tool tip -->
 	[h: total = dnd5e_RollExpression_getTotal(exp)]
-	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipRoll") + " = " 
-			+ dnd5e_RollExpression_getTypedDescriptor(exp, "tooltipDetail") + " = " + total]
+	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_ROLL_TD) + " = " 
+			+ dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_DETAIL_TD) + " = " + total]
 	[h: tt = dnd5e_Util_encodeHtml(tt)]
 	[h: tt = "<span " + if(returnString, "data-toggle='tooltip' ", "") + "title='" + tt + "'>"]
 
@@ -36,18 +36,18 @@
 	[h, if (expressionType == ATTACK_STEP_TYPE), code: {
 
 		<!-- Get all of the condition output -->
-		[h: conditions = dnd5e_RollExpression_getTypedDescriptor(exp, "condition")]
+		[h: conditions = dnd5e_RollExpression_getTypedDescriptor(exp, CONDITION_TD)]
 		[h, if (!json.isEmpty(conditions) && showConditions): out = out + json.toList(conditions, "<br>") + "<br>"]
 		[h: showConditions = 0]
 
 		<!-- Attack roll ouput with tool tip, advantage, critical, auto miss & lucky -->
 		[h: out = out + tt + "<b><font size='4'>"+total+"</font></b> to hit"]
-		[h: out = out + dnd5e_RollExpression_getTypedDescriptor(exp, "advantageable")]
+		[h: out = out + dnd5e_RollExpression_getTypedDescriptor(exp, ADVANTAGEABLE_TD)]
 		[h: name = dnd5e_RollExpression_getName(exp)]
 		[h, if (name != ""): out = out + " for " + dnd5e_Util_encodeHtml(name)]
 		[h, if (dnd5e_RollExpression_getRoll(exp) == 20): out = out + " <font color='red' size='4'><b><i>Critical</i></b></font></span>"]
 		[h, if (dnd5e_RollExpression_getRoll(exp) == 1): out = out + " <font size='4' color='red'><b><i>Automatic Miss</i></b></font></span>"]
-		[h: out = out + dnd5e_RollExpression_getTypedDescriptor(exp, "lucky")]
+		[h: out = out + dnd5e_RollExpression_getTypedDescriptor(exp, LUCKY_TD)]
 		[h: out = out + "</span><br>"]
 	}]
 	[h, if (expressionType == DAMAGE_STEP_TYPE), code: {
@@ -74,13 +74,13 @@
 		
 		<!-- Actions apply the save effect here w/o DC & Ability, the attack editor uses those 2 fields -->
 		[h: saveEffect = dnd5e_RollExpression_getSaveEffect(exp)]
-		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, "save-effect-damage")]
+		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, SAVE_EFFECT_DAMAGE_TD)]
 		[h, if (lower(saveEffect) == "none"): saveEffect = "no"]
 		[h, if (isNumber(saveEffect)): saveEffect = floor(saveEffect * 100) + "%"]
 		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage" + if(saveEffectDamage == 0, "", " of " + saveEffectDamage); 
 					saveEffect = saveEffectDamage + " damage"]
 		[h, if (actionExecution): out = out + " If target save passes the target takes " + saveEffect]
-		[h: saveable = dnd5e_RollExpression_getTypedDescriptor(exp, "saveable")]
+		[h: saveable = dnd5e_RollExpression_getTypedDescriptor(exp, SAVEABLE_TD)]
 		[h, if (!actionExecution): out = out + "<i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + saveable]
 		[h: out = out + "</span></div>"]
 	}]
@@ -119,12 +119,40 @@
 	}]
 	[h, if (expressionType == TARGET_CHECK_STEP_TYPE), code: {
 
-		<!-- Actions can apply states to the token --->
+		<!-- Check the target for abilities --->
 		[h: expression = dnd5e_Util_encodeHtml(dnd5e_RollExpression_getTargetCheck(exp))]
 		[h: name = dnd5e_RollExpression_getName(exp)]
 		[h, if (name != ""): name = " " + dnd5e_Util_encodeHtml(name)]
 		[h: out = out + "<i>Check the target for"+name+": <b>"+expression+"</b>"]
 		[h: out = out + "</i><br>"]
+	}]
+	[h, if (expressionType == DRAIN_STEP_TYPE), code: {
+
+		<!-- Actions can drain abilities on the token --->
+		[h: out = out + indent + tt + "<b><font size='4'>"+total+"</font></b>"]
+		[h: out = out + " " + dnd5e_RollExpression_getDrainAbility(exp) + " Drain "]
+		[h: name = dnd5e_RollExpression_getName(exp)]
+		[h, if (name != ""): out = out + " from " + dnd5e_Util_encodeHtml(name)]
+		[h: out = out + "</span></div>"]
+	}]
+	[h, if (expressionType == SAVE_DRAIN_STEP_TYPE), code: {
+
+		<!-- Actions can drain abilities on the token on a save --->
+		[h: out = out + indent + tt + "<b><font size='4'>"+total+"</font></b>"]
+		[h: out = out + " " + dnd5e_RollExpression_getDrainAbility(exp) + " Drain "]
+		[h: name = dnd5e_RollExpression_getName(exp)]
+		[h, if (name != ""): out = out + " from " + dnd5e_Util_encodeHtml(name)]
+		[h: out = out + " if target save fails."]
+
+		<!-- Actions apply the save effect here w/o DC & Ability, the attack editor uses those 2 fields -->
+		[h: saveEffect = dnd5e_RollExpression_getSaveEffect(exp)]
+		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, SAVE_EFFECT_DAMAGE_TD)]
+		[h, if (lower(saveEffect) == "none"): saveEffect = "no"]
+		[h, if (isNumber(saveEffect)): saveEffect = floor(saveEffect * 100) + "%"]
+		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage" + if(saveEffectDamage == 0, "", " of " + saveEffectDamage); 
+					saveEffect = saveEffectDamage + " damage"]
+		[h: out = out + " If target save passes the target takes " + saveEffect + " " + dnd5e_RollExpression_getDrainAbility(exp) + " Drain"]
+		[h: out = out + "</span></div>"]
 	}]
 	[h: log.debug("-----------------------------------------------------------------------")]
 }]

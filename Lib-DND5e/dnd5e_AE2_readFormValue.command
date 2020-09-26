@@ -24,6 +24,7 @@
     case "dndbSpell": exp = dnd5e_RollExpression_setName(exp, value);
     case "dndbSpellLevel": exp = json.set(exp, "spellLevel", value);
     case "targetCheck": exp = dnd5e_RollExpression_setTargetCheck(exp, value);
+    case "drainAbility": exp = dnd5e_RollExpression_setDrainAbility(exp, value);
     default: exp = dnd5e_RollExpression_addTypedDescriptor(exp, fieldName, value);
 ]
 [h: log.debug("dnd5e_AE2_readFormValue: fieldId=" + fieldId + " fieldName=" + fieldName + " value=" + value + " exp=" + json.indent(exp))]

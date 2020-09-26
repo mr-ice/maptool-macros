@@ -14,7 +14,7 @@
 	[h: oldActionType = ""]
 }; {
 	[h: firstExp = json.get(exps, 0)]
-	[h: type = dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionType")]
+	[h: type = dnd5e_RollExpression_getTypedDescriptor(firstExp, ACTION_TYPE_TD)]
 	[h: oldActionType = type]
 	[h, if (type == DNDB_ATTACK_TYPE || type == DNDB_SPELL_TYPE): oldActionType = oldActionType + "-" + dnd5e_RollExpression_getName(firstExp); ""]
 	[h, if (type == DNDB_SPELL_TYPE): oldActionType = oldActionType + "-" + json.get(firstExp, "spellLevel"); ""]
@@ -30,12 +30,12 @@
 
 <!-- Handle a name change -->
 [h: firstExp = json.get(exps, 0)]
-[h: currentActionName = dnd5e_RollExpression_getTypedDescriptor(firstExp, "actionName")]
+[h: currentActionName = dnd5e_RollExpression_getTypedDescriptor(firstExp, ACTION_NAME_TD)]
 [h, if (oldActionName != currentActionName), code: {
 	[h: currentActionName = dnd5e_Util_createUniqueName(currentActionName, json.fields(workingCopy, "json"))]
 	[h: workingCopy = json.remove(workingCopy, oldActionName)]
 	[h: workingCopy = json.set(workingCopy, currentActionName, "{}")]
-	[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionName", currentActionName)]
+	[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, ACTION_NAME_TD, currentActionName)]
 	[h: exps = json.set(exps, 0, firstExp)]
 }]
 
@@ -66,7 +66,7 @@
 		[h: workingCopy = json.set(workingCopy, currentActionName, "[]")]
 		[h: exps = dnd5e_AE2_typeAttack("", "[]")]
 		[h: firstExp = json.get(exps, 0)]
-		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), "actionName", currentActionName)]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), ACTION_NAME_TD, currentActionName)]
 		[h: exps = json.set(exps, 0, firstExp)]
 		[h: oldActionType = ATTACK_TYPE]
 		[h: newActionType = ATTACK_TYPE]
@@ -97,7 +97,7 @@
 	[h, if (control == "duplicate"), code: {
 		[h: currentActionName = dnd5e_Util_createUniqueName(" Copy of " + currentActionName, json.fields(workingCopy, "json"))]
 		[h: workingCopy = json.set(workingCopy, currentActionName, "[]")]
-		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), "actionName", currentActionName)]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), ACTION_NAME_TD, currentActionName)]
 		[h: exps = json.set(exps, 0, firstExp)]
 	}]
 
@@ -153,6 +153,8 @@
 	[h, if (newStep == SAVE_CONDITION_STEP_TYPE): addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_SaveEffect(), json.length(exps)); ""]
 	[h, if (newStep == CONDITION_STEP_TYPE):  addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_Condition(), json.length(exps)); ""]
 	[h, if (newStep == TARGET_CHECK_STEP_TYPE):  addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_TargetCheck(), json.length(exps)); ""]
+	[h, if (newStep == DRAIN_STEP_TYPE):  addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_Drain(), json.length(exps)); ""]
+	[h, if (newStep == SAVE_DRAIN_STEP_TYPE):  addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_SaveDrain(), json.length(exps)); ""]
 	[h: exps = json.append(exps, addExp)]
 	[h: log.debug("dnd5e_AE2_processor: addStep=" + json.indent(addExp))]
 }; {""}]
@@ -172,12 +174,14 @@
 		[h, if (type == SAVE_DAMAGE_STEP_TYPE): exp = json.remove(exp, SAVE_EFFECT_FIELD)]
 		[h, if (type == SAVE_CONDITION_STEP_TYPE): exp = dnd5e_RollExpression_setExpressionType(exp, CONDITION_STEP_TYPE)]
 		[h, if (type == SAVE_CONDITION_STEP_TYPE): exp = json.remove(exp, SAVE_RESULT_FIELD)]
+		[h, if (type == SAVE_DRAIN_STEP_TYPE): exp = dnd5e_RollExpression_setExpressionType(exp, DRAIN_STEP_TYPE)]
+		[h, if (type == SAVE_DRAIN_STEP_TYPE): exp = json.remove(exp, SAVE_EFFECT_FIELD)]
 		[h, if (type == SAVE_STEP_TYPE): i = json.length(exps)]
 		[h: exps = json.set(exps, i, exp)]
 	}]
 
 	<!-- When DndBeyond Weapons or Spell types are being changed to free form, the first step should be deleted too, if not already -->
-	[h: deletedActionType = dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionType")]
+	[h: deletedActionType = dnd5e_RollExpression_getTypedDescriptor(deletedExp, ACTION_TYPE_TD)]
 	[h: dndbType = if (deletedActionType == DNDB_ATTACK_TYPE || deletedActionType == DNDB_SPELL_TYPE, 1, 0)]
 	[h, if (dndbType && index != 0), code: {
 		[h: index = 0]
@@ -190,22 +194,22 @@
 		[h: newActionType = FREE_FORM_TYPE]
 		[h: oldActionType = FREE_FORM_TYPE]
 		[h: newExps = "[]"]
-		[h, for(i, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_removeTypedDescriptor(json.get(exps, i), "actionType"))]
+		[h, for(i, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_removeTypedDescriptor(json.get(exps, i), ACTION_TYPE_TD))]
 		[h: exps = newExps]
 	}]
 
 	<!-- Copy the name and description if the first step is deleted -->
 	[h, if (index == 0), code: {
 		[h: firstExp = json.get(exps, 0)]
-		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionName", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionName"))]
-		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionDesc", dnd5e_RollExpression_getTypedDescriptor(deletedExp, "actionDesc"))]
-		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, "actionType", FREE_FORM_TYPE)]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, ACTION_NAME_TD, dnd5e_RollExpression_getTypedDescriptor(deletedExp, ACTION_NAME_TD))]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, ACTION_DESC_TD, dnd5e_RollExpression_getTypedDescriptor(deletedExp, ACTION_DESC_TD))]
+		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(firstExp, ACTION_TYPE_TD, FREE_FORM_TYPE)]
 		[h: exps = json.set(exps, 0, firstExp)]
 	}]
 
 	<!-- Remove the step and set the new row IDs on each expression -->
 	[h: newExps = "[]"]
-	[h, for(index, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_addTypedDescriptor(json.get(exps, index), "rowId", "row-" + index))]
+	[h, for(index, 0, json.length(exps)): newExps = json.append(newExps, dnd5e_RollExpression_addTypedDescriptor(json.get(exps, index), ROW_ID_TD, "row-" + index))]
 	[h: exps = newExps]
 	[h: log.debug(getMacroName() + ": deleteStep Done=" + json.indent(exps))]	
 }]
@@ -216,9 +220,9 @@
 	[h: index = number(listGet(list, 0))]
 	[h: exp = json.get(exps, index)]
 	[h, if(listGet(list, 1) == "+"), code: {
-		[h: exp = dnd5e_RollExpression_addTypedDescriptor(exp, "extendedValues", "-")]
+		[h: exp = dnd5e_RollExpression_addTypedDescriptor(exp, EXTENDED_VALUES_TD, "-")]
 	}; {
-		[h: exp = dnd5e_RollExpression_removeTypedDescriptor(exp, "extendedValues")]
+		[h: exp = dnd5e_RollExpression_removeTypedDescriptor(exp, EXTENDED_VALUES_TD)]
 		[h: exp = json.remove(exp, "name")]
 		[h: exp = json.remove(exp, "onCritAdd")]
 	}]

@@ -1795,6 +1795,46 @@ function changeType() {
       <int>230</int>
       <macro name="dnd5e_SavedAttacks_applyUI"/>
     </entry>
+    <entry>
+      <int>231</int>
+      <macro name="dnd5e_RollExpression_SaveDrain"/>
+    </entry>
+    <entry>
+      <int>232</int>
+      <macro name="dnd5e_RollExpression_Drain"/>
+    </entry>
+    <entry>
+      <int>233</int>
+      <macro name="dnd5e_RollExpression_getDrainAbility"/>
+    </entry>
+    <entry>
+      <int>234</int>
+      <macro name="dnd5e_RollExpression_setDrainAbility"/>
+    </entry>
+    <entry>
+      <int>235</int>
+      <macro name="Action+Editor"/>
+    </entry>
+    <entry>
+      <int>236</int>
+      <macro name="dnd5e_Health_applyAbilityChange"/>
+    </entry>
+    <entry>
+      <int>237</int>
+      <macro name="dnd5e_takeAbilityDamage"/>
+    </entry>
+    <entry>
+      <int>238</int>
+      <macro name="dnd5e_Util_modifySaveDamage"/>
+    </entry>
+    <entry>
+      <int>239</int>
+      <macro name="dnd5e_SavedAttacks_processSave"/>
+    </entry>
+    <entry>
+      <int>240</int>
+      <macro name="dnd5e_SavedAttacks_enforceDrain"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

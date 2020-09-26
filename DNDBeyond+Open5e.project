@@ -16,10 +16,13 @@
     <macro name="macro/Damage+Selected"/>
     <macro name="macro/Heal+Selected"/>
     <macro name="macro/TempHP+for+Selected"/>
+    <macro name="macro/Drain+or+Restore+Selected"/>    
     <macro name="macro/Conditions"/>
     <macro name="macro/Distance+Between+Selected"/>
     <macro name="Lib-DND5e/Attack+Editor"/>
+    <macro name="Lib-DND5e/Action+Editor"/>
     <macro name="macro/Apply+Last+Attack"/>
+    <macro name="macro/Apply+Last+Attack+Options"/>
     <macro name="macro/Restore+Last+Dead+NPC"/>
     <macro name="macro/Change+Elevation"/>
   </macroset>

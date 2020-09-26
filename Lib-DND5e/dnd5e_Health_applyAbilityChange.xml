@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+<macroUUID>5f1ba83e-a1eb-4030-ada6-c75ed5666080</macroUUID>
+<saveLocation>Token</saveLocation>
+<index>169</index>
+<colorKey>default</colorKey>
+<hotKey>None</hotKey>
+<label>dnd5e_Health_applyAbilityChange</label>
+<group>Health</group>
+<sortby/>
+<autoExecute>true</autoExecute>
+<includeLabel>false</includeLabel>
+<applyToTokens>false</applyToTokens>
+<fontColorKey>black</fontColorKey>
+<fontSize>1.00em</fontSize>
+<minWidth/>
+<maxWidth/>
+<allowPlayerEdits>false</allowPlayerEdits>
+<toolTip>&lt;html&gt;Apply a change to an ability score and update saves and skills accordingly
+&lt;br&gt;
+&lt;br&gt;arg(0) = Ability modified
+&lt;br&gt;arg(1) = Modify the ability by this amount, positive and negative values are supported
+&lt;br&gt;arg(2) = Optiona: Apply to this ID, if not passed the current token is used
+&lt;br&gt;
+&lt;br&gt;Updates the toon&apos;s properties to reflect the change in the ability.
+&lt;/html&gt;</toolTip>
+<displayHotKey>true</displayHotKey>
+<commonMacro>false</commonMacro>
+<compareGroup>true</compareGroup>
+<compareSortPrefix>true</compareSortPrefix>
+<compareCommand>true</compareCommand>
+<compareIncludeLabel>true</compareIncludeLabel>
+<compareAutoExecute>true</compareAutoExecute>
+<compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c0e54922-a509-4b79-8609-2c86af0a3145</macroUUID>
+  <macroUUID>116ae06e-c1d5-421e-8e99-6de08c4aa013</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>3</index>
-  <colorKey>green</colorKey>
+  <index>140</index>
+  <colorKey>white</colorKey>
   <hotKey>None</hotKey>
-  <label>Change Elevation</label>
-  <group>D&amp;D 5e Helper</group>
-  <sortby>1</sortby>
+  <label>Action Editor</label>
+  <group>Token</group>
+  <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>true</applyToTokens>
-  <fontColorKey>white</fontColorKey>
-  <fontSize>1.05em</fontSize>
+  <fontColorKey>navy</fontColorKey>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>Set a new elevation and update the property and elevation bars</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Edit actions on the selected token</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

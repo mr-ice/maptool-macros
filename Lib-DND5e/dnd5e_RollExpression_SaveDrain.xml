@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ecce1d5c-15e8-4163-b39e-fe658e62d320</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>101</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_SaveDrain</label>
+  <group>RollExpression - Templates</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Creates a Save Drain RollExpression with an optional provided name. 
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;arg(0) = optional name
+&lt;br&gt;arg(1) = optional roll string expression
+&lt;br&gt;
+&lt;br&gt;A roll expression that can be used to drain an ability on a save
+&lt;html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

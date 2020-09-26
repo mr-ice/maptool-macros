@@ -29,40 +29,15 @@
 		[h: applied = listAppend(applied, "Vulnerability")]
 	}; {""}]
 }; {""}]
+[h, if (totalDamage == 0): totalDamage = 1]
 
 <!-- If there is no save roll we are done -->
 [h: macro.return = json.set("{}", "damage", totalDamage, "applied", applied, "type", damageType)]
 [h: return(!json.isEmpty(saveRoll), macro.return)]
 
 <!-- if a save was made for partial damage hanlde that here -->
-[h: log.debug(getMacroName() + ": saveRoll=" + json.indent(saveRoll))]
-[h: tt = "DC " + dnd5e_RollExpression_getSaveDC(saveRoll) + " " + dnd5e_RollExpression_getSaveAbility(saveRoll) + ": "]
-[h: tt = tt + dnd5e_RollExpression_getTypedDescriptor(saveRoll, "tooltipRoll") + " = " 
-		+ dnd5e_RollExpression_getTypedDescriptor(saveRoll, "tooltipDetail") + " = " + dnd5e_RollExpression_getTotal(saveRoll)]
-[h: saveResult = json.get(saveRoll, "saveResult")]
-[h, if (saveResult == "passed"): saveResult = trim(lower(saveEffect))]
-[h: log.debug(getMacroName() + ": saveResult=" + saveResult + " tt=" + tt)]
-[h, switch(saveResult), code:
-	case "half": {
-		[h: totalDamage = floor(totalDamage / 2)]
-		[h: saveEffect = "Save for Half"]
-	};
-	case "none": {
-		[h: totalDamage = 0]
-		[h: saveEffect = "Save for None"]
-	};
-	case "failed": {
-		[h: saveEffect = "Save Failed"]
-	};
-	default: {
-		[h, if (isNumber(saveResult)), code: {
-			[h: totalDamage = floor(totalDamage * saveResult)]
-			[h: saveEffect = "Save for " + round(saveResult * 100) + "%"]
-		}; {
-			[h: saveEffect = "Save for unknown effect: " + saveResult]
-		}]
-	}]
-[h: applied = listAppend(applied, "<span title='" + tt + "'>" + saveEffect + "</span>")]
+[h: save = dnd5e_SavedAttacks_processSave(saveRoll, totalDamage, saveEffect)]
+[h: applied = listAppend(applied, json.get(save, "saveText"))]
 
 <!-- Return modified damage and what was done to it -->
-[h: macro.return = json.set("{}", "damage", totalDamage, "applied", applied, "type", damageType)]
+[h: macro.return = json.set("{}", "damage", json.get(save, "damage"), "applied", applied, "type", damageType, "saveOutput", json.get(save, "saveOutput"))]

@@ -1,0 +1,38 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>dbf4bef0-038f-425f-93f3-e9fa8e628f2b</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>166</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_SavedAttacks_processSave</label>
+  <group>Saved Attacks</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Update a damage value based on the save results
+&lt;br&gt;
+&lt;br&gt;arg(0) = Save RollExpression
+&lt;br&gt;arg(1) = Starting damage
+&lt;br&gt;arg(2) = Save effect
+&lt;br&gt;
+&lt;br&gt;Return information on how the save was applied
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;damage&quot;: Modified damage
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;saveOutput&quot;: String describing the save with tool tip
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

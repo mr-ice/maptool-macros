@@ -45,6 +45,10 @@
 &lt;dt&gt;&lt;b&gt;Target Check&lt;/b&lt;/dt&gt;
 &lt;dd&gt;Execute a check agasint the target token. The result is either pass or fail. On a fail steps after this
 are skipped until the next target check. This step is ignored if a previous Attack missed.&lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Drain&lt;/b&lt;/dt&gt;
+&lt;dd&gt;Drain an ability score on the target. &lt;/dd&gt;
+&lt;dt&gt;&lt;b&gt;Save Drain&lt;/b&lt;/dt&gt;
+&lt;dd&gt;Appy an ability drain on the target depending on the results of an earlier save.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;br&gt;arg(0) = id of target token 
 &lt;br&gt;arg(1) = The single roll expression step being applied

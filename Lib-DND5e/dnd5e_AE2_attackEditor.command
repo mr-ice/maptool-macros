@@ -53,8 +53,7 @@
 <!-- Need a save before you can add a save damage or save condition -->
 [h: hasSave = 0]
 [h, foreach(exp, exps, ""): hasSave = hasSave + if(dnd5e_RollExpression_getExpressionType(exp) == SAVE_STEP_TYPE, 1, 0)]
-[h: saveDamageDisabled = if(hasSave, "", "disabled")]
-[h: saveConditionDisabled = if(hasSave, "", "disabled")]
+[h: saveNeededDisabled = if(hasSave, "", "disabled")]
 
 <!-- No advantage/disadvantage runs allowed if no attack -->
 [h: hasAttack = 0]
@@ -108,12 +107,16 @@
       		data-toggle="tooltip" title="Add a new attack step to the action">Attack</button>
       <button type="submit" class="btn btn-secondary" name="addStep", value="[r:DAMAGE_STEP_TYPE]" formnovalidate
       		data-toggle="tooltip" title="Add a damage step to the action">Damage</button>
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:DRAIN_STEP_TYPE]" formnovalidate
+      		data-toggle="tooltip" title="Add an ability drain step to the action">Drain</button>
       <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_STEP_TYPE]" [r:saveDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a target save step to the action">Save</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_DAMAGE_STEP_TYPE]" [r:saveDamageDisabled] formnovalidate
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_DAMAGE_STEP_TYPE]" [r:saveNeededDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a damage step that is modified by the target's saving throw">Save Damage</button>
-      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_CONDITION_STEP_TYPE]" [r:saveConditionDisabled] formnovalidate
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_CONDITION_STEP_TYPE]" [r:saveNeededDisabled] formnovalidate
       		data-toggle="tooltip" title="Add a condition step that is modified by the target's saving throw">Save Condition</button>
+      <button type="submit" class="btn btn-secondary" name="addStep", value="[r:SAVE_DRAIN_STEP_TYPE]" [r:saveNeededDisabled] formnovalidate
+      		data-toggle="tooltip" title="Add a drain step that is eliminated by the target's saving throw">Save Drain</button>
       <button type="submit" class="btn btn-secondary" name="addStep", value="[r:CONDITION_STEP_TYPE]" formnovalidate
       		data-toggle="tooltip" title="Add a condition step">Condition</button>
       <button type="submit" class="btn btn-secondary" name="addStep", value="[r:TARGET_CHECK_STEP_TYPE]" formnovalidate
@@ -159,11 +162,10 @@
         </select>
       </div> 
     </div>
-<!--  Fix this button as we go along -->
-<button id="submit" type="submit" class="invisible btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;" formnovalidate>Submit</button>
+    
+	<!--  This button is hidden and used to submit the autmatic process somponents -->
+	<button id="submit" type="submit" class="invisible btn btn-outline-primary" name="submit" value="1" style="margin-top:2px;" formnovalidate>Submit</button>
   </div>
-
-
 </form>
 </div>
 
