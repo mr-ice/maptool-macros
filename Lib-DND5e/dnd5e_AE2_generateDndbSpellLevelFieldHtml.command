@@ -5,7 +5,7 @@
 <!-- Find the spell -->
 [h: toon = dndb_getBasicToon()]
 [h: spellName = arg(4)]
-[h: spell = json.path.read(toon, ".spells[?(@.name=='" + spellName + "')]")]
+[h: spell = dndb_getCastableSpells (spellName)]
 [h, if (json.type(spell) == "ARRAY"): spell = json.get(spell, 0); ""]
 [h: log.debug("dnd5e_AE2_generateDndbSpellLevelFieldHtml: fieldId=" + fieldId + " value=" + value + " stepClass=" + stepClass 
 				+ " spellName=" + spellName + " spell=" + json.indent(spell))]

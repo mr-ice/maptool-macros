@@ -1,5 +1,9 @@
+[h: log.debug (getMacroName() + ": args = " + json.indent (macro.args))]
 [h: spell = arg (0)]
 [h: spellSlot = arg (1)]
+[h, if (json.length (macro.args) > 2): advDisadvObj = arg (2); advDisadvObj = "{}"]
+[h, if (json.length (macro.args) > 3): modRestriction = arg (3); modRestriction = ""]
+
 
 [h: rollExpressions = "[]"]
 
@@ -9,18 +13,21 @@
 [h: spellLevel = json.get (spell, "level")]
 [h: spellDescription = json.get (spell, "description")]
 [h, if (requiresAttack == "true"), code: {
+	[if (json.get (advDisadvObj, "advantage") == "true" || json.get (advDisadvObj, "both") == "true"): hasAdvantage = 1; hasAdvantage = 0]
+	[if (json.get (advDisadvObj, "disadvantage") == "true" || json.get (advDisadvObj, "both") == "true"): hasDisadvantage = 1; hasDisadvantage = 0]
+	[if (json.get (advDisadvObj, "both") == "true"), code: {
+		[hasAdvantage = 1]
+		[hasDisadvantage = 1]
+	}; {}]
 	[h: attackBonus = json.get (spell, "attackBonus")]
-	[h: attackExpression = json.set ("", "name", spellName,
-								"bonus", attackBonus,
-								"diceSize", "20",
-								"diceRolled", "1",
-								"expressionTypes", "Attack")]
+	[attackExpression = dnd5e_RollExpression_Attack (spellName, attackBonus)]
+	[attackExpression = dnd5e_RollExpression_setAdvantage (attackExpression, hasAdvantage)]
+	[attackExpression = dnd5e_RollExpression_setDisadvantage (attackExpression, hasDisadvantage)]
 }; {""}]
 
 <!-- if the spell has a dice object, build that, whatever that is -->
-[h: modifiers = json.get (spell, "modifiers")]
-[h, if (json.type (modifiers) == "ARRAY" && json.length (modifiers) > 0): 
-			modifier = json.get (modifiers, 0); modifier = "{}"]
+[h: modifier = dndb_Util_selectSpellModifier (spell, modRestriction)]
+
 [h: log.debug ("dndb_RollExpression_buildSpellRoll: modifier = " + modifier)]
 [h: die = json.get (modifier, "die")]
 [h: diceCount = 0]
@@ -49,7 +56,7 @@
 
 <!-- read "castAtHigherLevels": "true" first -->
 
-[h, if (!json.isEmpty (modifiers)): higherSpellDice = dndb_RollExpression_getHigherLevelDie (spell, spellSlot); higherSpellDice = "{}"]
+[h: higherSpellDice = dndb_RollExpression_getHigherLevelDie (spell, spellSlot, modifier)]
 [h: log.debug ("dndb_RollExpression_buildSpellRoll: higherSpellDice = " + higherSpellDice)]
 [h, if (!json.isEmpty (higherSpellDice)), code: {
 	[h: scaleType = json.get (higherSpellDice, "scaleType")]

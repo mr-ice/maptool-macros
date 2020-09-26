@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a04a8b76-ff0d-4c36-880a-d4b747d1022c</macroUUID>
+  <macroUUID>6bbab684-9c61-4162-8f12-d6811d06d379</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>79</index>
   <colorKey>default</colorKey>
@@ -15,9 +15,8 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Returns the castable spells from the BasicToon. May provide one optional argument to request ritual spells.
-
-arg (0) = asRitual - Boolean when true, returns all available spells that may be cast as a ritual.</toolTip>
+  <toolTip>Returns the castable spells from the BasicToon.
+arg (0): Spell name to return a specific spell</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,7 +1,7 @@
 [h: fieldId = arg(0) + "-" + arg(1)]
 [h: value = arg(2)]
 [h: stepClass = arg(3)]
-[h: spells = json.path.read(dndb_getBasicToon(), ".spells[?(@.modifiers[0].friendlyTypeName=='Damage')]")]
+[h: spells = json.path.read(dndb_getBasicToon(), ".spells..[?(@.modifiers[0].friendlyTypeName=='Damage')]")]
 [h: spellNames = "[]"]
 [h, foreach(spell, spells, ""): spellNames = json.append(spellNames, json.set("{}", "name", json.get(spell, "name"), "level", json.get(spell, "level")))]
 [h: spellNames = json.sort(spellNames, "ascending", "level", "name")]
