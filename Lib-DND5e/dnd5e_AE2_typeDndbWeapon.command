@@ -34,7 +34,7 @@
 		[h: save = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_Save(), index, DNDB_ATTACK_TYPE)]
 		[h: save = dnd5e_RollExpression_addType(save, TARGET_ROLL_TYPE)]
 		[h: save = dnd5e_RollExpression_setSaveAbility(save, dnd5e_RollExpression_getSaveAbility(exp))]
-		[h: save = dnd5e_RollExpression_setSaveDC(save, dnd5e_RollExpression_getSaveDC(exp))]
+		[h: save = dnd5e_RollExpression_setSaveDC(save, dnd5e_RollExpression_getSaveDC(exp, 1))]
 		[h: save = dnd5e_RollExpression_setSaveEffect(save, dnd5e_RollExpression_getSaveEffect(exp))]
 		[h: exp = json.remove(exp, "saveAbility")]
 		[h: exp = json.remove(exp, "saveDC")]

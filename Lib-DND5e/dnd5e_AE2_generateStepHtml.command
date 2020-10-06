@@ -70,7 +70,7 @@
 	[r: dnd5e_AE2_generateDndbSpellLevelFieldHtml(rowId, DNDB_SPELL_LEVEL_FIELD, json.get(exp, "spellLevel"), stepClass, dnd5e_RollExpression_getName(exp))]
 }; {[h:""]}]
 [r, if(type == SAVE_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateSaveDCFieldHtml(rowId, DC_FIELD, dnd5e_RollExpression_getSaveDC(exp), stepClass)]
+	[r: dnd5e_AE2_generateSaveDCFieldHtml(rowId, DC_FIELD, dnd5e_RollExpression_getSaveDC(exp, 1), stepClass)]
 	[r: dnd5e_AE2_generateSaveAbilityFieldHtml(rowId, SAVE_ABILITY_FIELD, dnd5e_RollExpression_getSaveAbility(exp), stepClass, CHAR_ABILITIES)]
 	[r: dnd5e_AE2_generateSaveAgainstFieldHtml(rowId, SAVE_AGAINST_FIELD, json.get(exp, SAVE_AGAINST_FIELD), stepClass)]
 }; {[h:""]}]
