@@ -11,4 +11,6 @@
 [h: url = BASE_URL + charId]
 [h: log.info (getMacroName() + ": url = " + url)]
 [h: character = REST.get(url)]
+[h: alwaysPreparedSpells = dndb_getAlwaysPreparedSpellsJSON (character)]
+[h: character = json.path.put (character, "data", "lib_dndb-AlwaysPreparedSpells", alwaysPreparedSpells)]
 [h: macro.return = character]
