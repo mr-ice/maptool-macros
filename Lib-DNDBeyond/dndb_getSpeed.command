@@ -52,20 +52,24 @@
 
 [h, foreach (value, allBonuses): allBonus = allBonus + value]
 							
-[h: speedMods = dndb_searchGrantedModifiers (json.set ("", 
+[h: innateMods = dndb_searchGrantedModifiers (json.set ("", 
 							"object", toon,
 							"type", "set"))]
+[h: bonusMods = dndb_searchGrantedModifiers (json.set ("", 
+							"object", toon,
+							"type", "bonus"))]
 
 <!-- Foreach speed type, find all the granted bonuses -->
 [h, foreach (speedName, speedNames), code: {
 	<!-- I may have to revisit this after some testing, but so far Ive only found -->
 	<!-- granted bonuses as setting speeds to innate-speed-swimming, for example. -->
 	<!-- So look for those for each speed and well add the allBonus values after -->
+	<!-- ...and hello Issue 117. Time to look for bonuses -->
 	[h: templateSpeed = json.get (dndb_searchJsonObject (json.set ("", "object", speedsMap, "name", speedName)), 0)]
 	[h: verbSpeed = json.get (templateSpeed, "verb")]
 	[h: innateSpeed = "innate-speed-" + verbSpeed]
 
-	[h: searchArg = json.set ("", "object", speedMods,
+	[h: searchArg = json.set ("", "object", innateMods,
 							"property", "value",
 							"subType", innateSpeed)]
 	[h: grantedSpeeds = dndb_searchJsonObject (searchArg)]
@@ -76,14 +80,24 @@
 		<!-- get the biggest one -->
 		[h: grantedSpeeds = json.sort (grantedSpeeds, "descending")]
 		[h: setSpeed = json.get (grantedSpeeds, 0)]
+	}; {}]
+
+	<!-- Bonuses -->
+	[h: searchArg = json.set (searchArg, "object", bonusMods,
+	                          "subType", "speed-" + verbSpeed)]
+	[h: bonusSpeeds = dndb_searchJsonObject (searchArg)]
+	[h: bonuses = 0]
+	[h: log.debug ("bonusSpeeds: " + json.indent (bonusSpeeds))]
+	[h, foreach (bonusSpeed, bonusSpeeds), code: {
+		[bonuses = bonuses + bonusSpeed]
 	}]
 
 	<!-- Find custom speeds and use as overrides -->
 	[h: lowerName = lower (speedName)]
 	[h: baseSpeed = json.get (baseSpeeds, lowerName)]
 	[h: actualSpeed = math.max (baseSpeed, setSpeed)]
-	<!-- if actualSpeed is 0, dont apply the allBonus to it -->
-	[h, if (actualSpeed > 0): actualSpeed = actualSpeed + allBonus]
+	<!-- if actualSpeed is 0, dont apply bonuses to it -->
+	[h, if (actualSpeed > 0): actualSpeed = actualSpeed + allBonus + bonuses]
 
 	<!-- Finally, look in data.customSpeeds. Treat these values as overrides -->
 	[h: id = json.get (templateSpeed, "id")]
