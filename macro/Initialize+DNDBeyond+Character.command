@@ -25,7 +25,7 @@
 [h, token (tokenId): setPC ()]
 [h: msg = json.get (basicToon, "name") + " has been initialized!"]
 [h: log.info (msg)]
-[h: broadcast (msg)]
+[h: broadcast (msg, "self")]
 }]
 
 [h, macro ("Reset Properties@this"): "1"]
