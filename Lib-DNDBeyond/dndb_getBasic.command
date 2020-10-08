@@ -61,8 +61,8 @@
 
 <!-- Senses -->
 [h: log.info ("dndb_getBasic: Senses")]
-[h: senses = dndb_getSenses (toon)]
-[h: basicToon = json.set (basicToon, "senses", senses)]
+[h: sensesObj = dndb_getSenses (toon)]
+[h: basicToon = json.set (basicToon, "senses", sensesObj)]
 
 <!-- HP -->
 [h: log.info ("dndb_getBasic: Hitpoints")]

@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>dfc124a9-6136-4d02-bc07-780e0c8dd56a</macroUUID>
+  <macroUUID>568ce8e9-ec00-401c-9f12-c4587893812e</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>105</index>
-  <colorKey/>
+  <index>82</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>data_BasicToon_Bob</label>
-  <group>Data</group>
+  <label>dndbt_Test_RollExpression_diceRoller</label>
+  <group>Tests - RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,8 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Rolls different expressions and tests expected outputs</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

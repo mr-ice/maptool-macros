@@ -10,3 +10,5 @@
 		[h: defineFunction (macroName, macroName + "@this")]
 	}]
 }]
+[h: defineFunction ("dndbt_CleanToken", "Clean Token@this")]
+[h: defineFunction ("dndbt_ResetProperties", "Reset Properties@Campaign")]

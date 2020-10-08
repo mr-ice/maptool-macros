@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d3858b03-40fe-4517-b815-17d9cb94df63</macroUUID>
+  <macroUUID>2c591c5e-f5bd-4fd4-9d36-9ca3fe9f6fae</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>52</index>
+  <index>83</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dndbt_breakpoint</label>

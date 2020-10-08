@@ -1,6 +1,6 @@
 [h: toonNames = "BhelduhrBallrotterThrahak,Blurrier,Bob,BodeMikbodephace," + 
-				"GeeWiz,KazRedrum,KetdelleDankil,Nibbles,RexRedrum,Zairali"]
-
+				"GeeWiz,KazRedrum,KetdelleDankil,Nibbles,RexRedrum,Zairali,Yaichi"]
+[h: nope_toonNames = "Yaichi"]
 [h, foreach (toonName, toonNames), code: {
 	[h: functionName = "[h: builtToon = dndb_buildBasicToon ('dndbt_" + toonName + "')]"]
 	[h: evalMacro (functionName)]

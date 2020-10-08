@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6184fdd9-adb5-4d28-a4f8-a69a2dc99266</macroUUID>
+  <macroUUID>2524e717-4231-4cee-9517-ee4715c93a95</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>18</index>
+  <index>93</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_Blurrier</label>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>29699178</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

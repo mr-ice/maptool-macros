@@ -1,8 +1,8 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>9010420e-d75e-4f07-95c4-d328798f6a4a</macroUUID>
+  <macroUUID>86c7c8d2-bb1e-4391-beaf-734962b4e545</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>14</index>
-  <colorKey>default</colorKey>
+  <index>100</index>
+  <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_RexRedrum</label>
   <group>Toon</group>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>20170550</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

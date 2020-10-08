@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>dfc124a9-6136-4d02-bc07-780e0c8dd56a</macroUUID>
+  <macroUUID>026f406a-1083-45fe-9133-b96f27bb62b4</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>105</index>
+  <index>101</index>
   <colorKey/>
   <hotKey>None</hotKey>
-  <label>data_BasicToon_Bob</label>
-  <group>Data</group>
+  <label>dndbt_Yaichi</label>
+  <group>Toon</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>27752286</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

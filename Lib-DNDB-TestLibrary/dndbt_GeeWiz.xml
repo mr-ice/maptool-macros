@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>2bc55b93-4b8f-4624-bda4-cd608c5ec8d1</macroUUID>
+  <macroUUID>696c404e-7960-4fc9-ad1b-a3c352afd9b1</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>20</index>
+  <index>96</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_GeeWiz</label>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>30729915</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

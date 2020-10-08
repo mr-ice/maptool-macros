@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>beb84834-60c6-4e0d-9534-c17d66784883</macroUUID>
+  <macroUUID>78b90975-f65b-4c86-b174-6891d6ca25e8</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>17</index>
+  <index>97</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_KazRedrum</label>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>27986972</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

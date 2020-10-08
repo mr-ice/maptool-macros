@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>97eac9cf-33e6-4aad-9fb8-e7b11a5535d6</macroUUID>
+  <macroUUID>6421c3ae-31a9-4b9f-be25-30fc3144c15c</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>11</index>
+  <index>95</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_BodeMikbodephace</label>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>9471826</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

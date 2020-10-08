@@ -18,10 +18,10 @@
 [h, if (json.length (alwaysPreparedSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, alwaysPreparedSpells); ""]
 
 [h: log.debug ("dndb_getSpells: classSpellsArry = " + classSpellsArry)]
-[h: classes = json.path.read (toon, "data.classes")]
+[h: classesArry = json.path.read (toon, "data.classes")]
 <!-- Merge the spell casting sub-classObj with the classObj only when sub-classObj is spell casting -->
 [h: mergedClasses = "[]"]
-[h, foreach (classObj, classes), code: {
+[h, foreach (classObj, classesArry), code: {
 	<!-- The expected result is a subclassObj will add the ability to cast spells to the parent classObj but never the other way around.
 		So only when the subclassObj has canCastSpells as true will we override the parents definition. But only for a few key
 		attributes! For some reason, a subclassObj wont have spellRules when it does enable spell casting...-->

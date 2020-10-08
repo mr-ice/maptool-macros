@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>0be072f3-64d5-4f40-9a03-29dc18c25974</macroUUID>
+  <macroUUID>a1bf61d4-e3b2-4d01-a7f4-c330654a4074</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>13</index>
+  <index>92</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_BhelduhrBallrotterThrahak</label>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>7995967</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
