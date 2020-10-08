@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>aNNYuQFeSje7DkBjVZLpjg==</baGUID>
+    <baGUID>trnkSkNOSZ61S2jMFek+cQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>hRXyXfqVRk+Zwn/Zq79MRA==</baGUID>
+    <baGUID>TxH1lhakQeq5BYNoVub4LA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,98 +14,31 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>250</x>
-  <y>500</y>
-  <z>2</z>
+  <x>400</x>
+  <y>700</y>
+  <z>8</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
   <lastX>400</lastX>
-  <lastY>500</lastY>
+  <lastY>700</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
         <x>8</x>
-        <y>10</y>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>7</x>
-        <y>10</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>8</x>
-          <y>10</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>2.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>6</x>
-        <y>10</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>7</x>
-          <y>10</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>2.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>1.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>5</x>
-        <y>10</y>
-        <g>0.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
         <x>8</x>
-        <y>10</y>
+        <y>14</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>5</x>
-        <y>10</y>
-        <g>0.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -135,7 +68,7 @@
   <tokenShape>SQUARE</tokenShape>
   <tokenType>NPC</tokenType>
   <layer>TOKEN</layer>
-  <propertyType>DNDebug</propertyType>
+  <propertyType>Basic</propertyType>
   <tokenOpacity>1.0</tokenOpacity>
   <terrainModifier>0.0</terrainModifier>
   <terrainModifierOperation>NONE</terrainModifierOperation>
@@ -144,7 +77,7 @@
   </terrainModifiersIgnored>
   <isFlippedX>false</isFlippedX>
   <isFlippedY>false</isFlippedY>
-  <sightType>Darkvision</sightType>
+  <sightType>Normal</sightType>
   <hasSight>false</hasSight>
   <notes>Test Library for Lib:DnDBeyond</notes>
   <state>
@@ -377,6 +310,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Blue</string>
       <boolean>false</boolean>
     </entry>
@@ -408,14 +345,6 @@
   <propertyMapCI>
     <store>
       <entry>
-        <string>strength</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Strength</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>dsfail</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>DSFail</key>
@@ -424,9 +353,9 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>senses</string>
+        <string>dexteritysave</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Senses</key>
+          <key>DexteritySave</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -436,14 +365,6 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>AvatarUrl</key>
           <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>libversion</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>libversion</key>
-          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -459,14 +380,7 @@
         <string>constitution ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Ability</key>
-          <value class="string">2</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>character id</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Character ID</key>
+          <value class="string">5</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -495,14 +409,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>perception</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Perception</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>attackjson</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>attackJson</key>
@@ -521,30 +427,7 @@
         <string>intelligence ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Ability</key>
-          <value class="string">1</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>_dnd5e_lastrolledexpression</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Test+Attack","types":["staticRoll"],"staticRoll":20,"description":"","output":"Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 ","rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"outputs":["Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 "],"allTotal":20},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","output":"Critical Damage (+2)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 1d6 = 7 ","rolls":[5],"roll":5,"rollString":"1d6 + 1d6","total":7,"totals":[7],"expressions":[{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Critical Damage","name":"Critical+","rollString":"1d6","expressions":[],"output":"Rolled: 2&lt;br&gt;Critical  Critical Damage Roll: 1d6 = 2 ","rolls":[2],"roll":2,"total":2,"totals":[2],"outputs":["Rolled: 2&lt;br&gt;Critical  Critical Damage Roll: 1d6 = 2 "],"allTotal":2}],"description":"Critical Damage (+2)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+2)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 1d6 = 7 "],"allTotal":7},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Save Damage","name":"","output":"Target must make a  DC  or take 3 &lt;br&gt;&lt;br&gt;Rolled: 3&lt;br&gt; Save Damage Roll: 1d6 = 3 ","rolls":[3],"roll":3,"rollString":"1d6","total":3,"totals":[3],"description":"Target must make a  DC  or take 3 &lt;br&gt;","outputs":["Target must make a  DC  or take 3 &lt;br&gt;&lt;br&gt;Rolled: 3&lt;br&gt; Save Damage Roll: 1d6 = 3 "],"allTotal":3}]</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>_dnd5e_preferences_user</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dnd5e_Preferences_User</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>wisdom save</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Wisdom Save</key>
-          <value class="string"/>
+          <value class="string">0</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -552,22 +435,6 @@
         <string>constitution bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Bonus</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>deception</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Deception</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>dexterity save</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Dexterity Save</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -597,6 +464,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_dm-skills</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_DM-Skills</key>
+          <value class="string">[r: dnd5e_getDMSkills()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>AC</key>
@@ -605,10 +480,382 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_ae2_javascript</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_JavaScript</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>strength ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength Ability</key>
+          <value class="string">-1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charismasave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CharismaSave</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>acrobatics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Acrobatics</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dndb_basictoon</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb_BasicToon</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>maxhp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>maxHp</key>
+          <value class="string">156</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac armor</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Armor</key>
+          <value class="string">10</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>gender</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Gender</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>attackexpressionjson</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackExpressionJSON</key>
+          <value class="string">{"Glaive":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Glaive","bonus":5},{"expressionTypes":"Damage","diceRolled":1,"diceSize":10,"bonus":-1,"onCritAdd":1,"damageTypes":["Slashing"]}],"Unarmed+Strike":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Unarmed+Strike","bonus":5},{"expressionTypes":"Damage","diceRolled":1,"diceSize":1,"bonus":-1,"onCritAdd":1,"damageTypes":["Bludgeoning"]}]}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom Ability</key>
           <value class="string">2</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>skin</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Skin</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>sleight of hand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Sleight of Hand</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitutionsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ConstitutionSave</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>eyes</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Eyes</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligencebonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>IntelligenceBonus</key>
+          <value class="string">{floor((Intelligence - 10) / 2)}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdomsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>WisdomSave</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strengthsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>StrengthSave</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_languages</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_languages</key>
+          <value class="string">[r: dnd5e_Property_getLanguages ()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>deathsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>DeathSave</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>languages</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Languages</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Dexterity</key>
+          <value class="string">4</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligencesave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>IntelligenceSave</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>temphp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>TempHP</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Medicine</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>death save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Death Save</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Religion</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>cr</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CR</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdombonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>WisdomBonus</key>
+          <value class="string">{floor((Wisdom - 10) / 2)}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>fly</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Fly</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma Save</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>movement</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Movement</key>
+          <value class="string">[r: dnd5e_getMovementStat()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_o5e_monsteractions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_o5e_MonsterActions</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>senses</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Senses</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>libversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>libversion</key>
+          <value class="string">0.15</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>resistances</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>resistances</key>
+          <value class="string">["Cold"]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>character id</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Character ID</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_metadata</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Metadata</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_lastrolledexpression</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_lastRolledExpression</key>
+          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Test+Attack","types":["staticRoll"],"staticRoll":20,"typedDescriptors":{"condition":"","staticRoll":"%3Cfont+color%3D%27red%27%3E%3Cb%3EA+roll+of+20+has+been+forced%21%3C%2Fb%3E%3C%2Ffont%3E","tooltipRoll":"20","tooltipDetail":"Fixed%2820%29"},"output":"Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 ","rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"outputs":["Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 "],"allTotal":20},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","output":"Critical Damage (+6)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 1d6 = 12 ","rolls":[6],"roll":6,"rollString":"1d6 + 1d6","total":12,"totals":[12],"typedDescriptors":{"tooltipRoll":"1d6+%2B+1d6","tooltipDetail":"%286%29+%2B+Critical%286%29","critable":"1"},"expressions":[{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Critical Damage","name":"Critical","rollString":"1d6","expressions":[],"output":"Rolled: 6&lt;br&gt;Critical Critical Damage Roll: 1d6 = 6 ","rolls":[6],"roll":6,"total":6,"totals":[6],"typedDescriptors":{"tooltipRoll":"1d6","tooltipDetail":"%286%29"},"outputs":["Rolled: 6&lt;br&gt;Critical Critical Damage Roll: 1d6 = 6 "],"allTotal":6}],"description":"Critical Damage (+6)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+6)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 1d6 = 12 "],"allTotal":12},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Save Damage","name":"","saveEffectMultiplier":0.5,"saveEffectDescription":"half","output":"Target must make a  DC  or take 4 &lt;br&gt;half&lt;br&gt;Rolled: 4&lt;br&gt; Save Damage Roll: 1d6 = 4 ","rolls":[4],"roll":4,"rollString":"1d6","total":4,"totals":[4],"typedDescriptors":{"tooltipRoll":"1d6","tooltipDetail":"%284%29","saveable":"%7B%22damage%22%3A2%2C%22saveText%22%3A%22Save+for+Half%22%7D+%282%29","save-effect-damage":"2"},"description":"Target must make a  DC  or take 4 &lt;br&gt;half","outputs":["Target must make a  DC  or take 4 &lt;br&gt;half&lt;br&gt;Rolled: 4&lt;br&gt; Save Damage Roll: 1d6 = 4 "],"allTotal":4}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_preferences_user</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_Preferences_User</key>
+          <value class="string">{"attackEditor_macroFontColor":"","attackEditor_macroButtonColor":""}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom Save</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_defenses</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_defenses</key>
+          <value class="string">[r: dnd5e_Property_getDefenses()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>deception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Deception</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity Save</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charismabonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CharismaBonus</key>
+          <value class="string">{floor((Charisma - 10) / 2)}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -661,22 +908,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>intelligence</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intelligence</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>acrobatics</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Acrobatics</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>persuasion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Persuasion</key>
@@ -685,10 +916,10 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>insight</string>
+        <string>effects</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Insight</key>
-          <value class="string"/>
+          <key>Effects</key>
+          <value class="string">[r: dnd5e_Property_getConditionEffects()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -704,15 +935,22 @@
         <string>condition</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Condition</key>
-          <value class="string"/>
+          <value class="string">[r: dnd5e_Property_getConditionsStat()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>dndb_basictoon</string>
+        <string>dexteritybonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>dndb_BasicToon</key>
-          <value class="string"/>
+          <key>DexterityBonus</key>
+          <value class="string">{floor((Dexterity - 10) / 2)}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_actions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Actions</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -728,7 +966,7 @@
         <string>alignment</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Alignment</key>
-          <value class="string">LG</value>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -741,10 +979,10 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>maxhp</string>
+        <string>constitutionbonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>MaxHP</key>
-          <value class="string"/>
+          <key>ConstitutionBonus</key>
+          <value class="string">{floor((Constitution - 10) / 2)}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -757,26 +995,10 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>ac armor</string>
+        <string>classes</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>AC Armor</key>
-          <value class="string">10</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>gender</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Gender</key>
+          <key>Classes</key>
           <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>attackexpressionjson</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>attackExpressionJSON</key>
-          <value class="string">{"Glaive":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Glaive","bonus":5},{"expressionTypes":"Damage","diceRolled":1,"diceSize":10,"bonus":-1,"onCritAdd":1,"damageTypes":["Slashing"]}],"Unarmed+Strike":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Unarmed+Strike","bonus":8},{"expressionTypes":"Damage","diceRolled":1,"diceSize":1,"bonus":2,"onCritAdd":1,"damageTypes":["Bludgeoning"]}]}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -789,33 +1011,9 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>wisdom ability</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Wisdom Ability</key>
-          <value class="string">0</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>skin</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Skin</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>description</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Description</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>sleight of hand</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Sleight of Hand</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -845,14 +1043,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>eyes</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Eyes</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>wisdom</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom</key>
@@ -864,7 +1054,7 @@
         <string>charisma ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Ability</key>
-          <value class="string">2</value>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -887,7 +1077,23 @@
         <string>ac shield</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>AC Shield</key>
-          <value class="string">0</value>
+          <value class="string">2</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_raceclass</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_raceClass</key>
+          <value class="string">[r: dnd5e_Property_getRaceClass()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_health</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_health</key>
+          <value class="string">Hp: {HP}; Mx: {MaxHP}; Tmp: {TempHP}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -895,7 +1101,7 @@
         <string>dexterity ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Ability</key>
-          <value class="string">1</value>
+          <value class="string">4</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -910,16 +1116,24 @@
       <entry>
         <string>initiative</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Initiative</key>
-          <value class="string"/>
+          <key>initiative</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>ac dexterity</string>
+        <string>immunities</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>AC Dexterity</key>
-          <value class="string">1</value>
+          <key>immunities</key>
+          <value class="string">[]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>race</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Race</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -927,22 +1141,6 @@
         <string>nature</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Nature</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>temphp</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>TempHP</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>medicine</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Medicine</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -956,18 +1154,10 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>death save</string>
+        <string>strengthbonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Death Save</key>
-          <value class="string">0</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>religion</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Religion</key>
-          <value class="string"/>
+          <key>StrengthBonus</key>
+          <value class="string">{floor((Strength - 10) / 2)}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -975,14 +1165,6 @@
         <string>dexterity</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>fly</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Fly</key>
           <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
@@ -1020,18 +1202,10 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>charisma save</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Charisma Save</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>xp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>XP</key>
-          <value class="string">195000</value>
+          <value class="string">265000</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1060,14 +1234,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>movement</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Movement</key>
-          <value class="string"/>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
@@ -1091,116 +1257,164 @@
       <macro name="onCampaignLoad"/>
     </entry>
     <entry>
-      <int>11</int>
-      <macro name="dndbt_BodeMikbodephace"/>
+      <int>65</int>
+      <macro name="data_AttackEditor_processorParams_2"/>
     </entry>
     <entry>
-      <int>13</int>
-      <macro name="dndbt_BhelduhrBallrotterThrahak"/>
+      <int>66</int>
+      <macro name="data_AttackEditor_processorExpression_2"/>
     </entry>
     <entry>
-      <int>14</int>
-      <macro name="dndbt_RexRedrum"/>
+      <int>80</int>
+      <macro name="Override+Run+Tests"/>
     </entry>
     <entry>
-      <int>15</int>
-      <macro name="dndbt_KetdelleDankil"/>
+      <int>81</int>
+      <macro name="dndbt_Test_AttackEditor_launchEditor"/>
     </entry>
     <entry>
-      <int>16</int>
-      <macro name="dndbt_Zairali"/>
+      <int>82</int>
+      <macro name="dndbt_Test_RollExpression_diceRoller"/>
     </entry>
     <entry>
-      <int>17</int>
-      <macro name="dndbt_KazRedrum"/>
-    </entry>
-    <entry>
-      <int>18</int>
-      <macro name="dndbt_Blurrier"/>
-    </entry>
-    <entry>
-      <int>19</int>
-      <macro name="dndbt_Bob"/>
-    </entry>
-    <entry>
-      <int>20</int>
-      <macro name="dndbt_GeeWiz"/>
-    </entry>
-    <entry>
-      <int>21</int>
-      <macro name="dndbt_Nibbles"/>
+      <int>83</int>
+      <macro name="dndbt_breakpoint"/>
     </entry>
     <entry>
       <int>22</int>
       <macro name="Run+Tests"/>
     </entry>
     <entry>
+      <int>88</int>
+      <macro name="data_BasicToon_30957877"/>
+    </entry>
+    <entry>
       <int>25</int>
       <macro name="dndbt_Test_KnownToons"/>
+    </entry>
+    <entry>
+      <int>89</int>
+      <macro name="data_BasicToon_30957978"/>
+    </entry>
+    <entry>
+      <int>90</int>
+      <macro name="data_BasicToon_30959709"/>
     </entry>
     <entry>
       <int>27</int>
       <macro name="Rebuild+Known+Static+States"/>
     </entry>
     <entry>
+      <int>91</int>
+      <macro name="data_BasicToon_30960137"/>
+    </entry>
+    <entry>
       <int>28</int>
       <macro name="Build+Test+Toon"/>
+    </entry>
+    <entry>
+      <int>92</int>
+      <macro name="dndbt_BhelduhrBallrotterThrahak"/>
     </entry>
     <entry>
       <int>29</int>
       <macro name="Clean+Token"/>
     </entry>
     <entry>
-      <int>30</int>
+      <int>93</int>
+      <macro name="dndbt_Blurrier"/>
+    </entry>
+    <entry>
+      <int>94</int>
+      <macro name="dndbt_Bob"/>
+    </entry>
+    <entry>
+      <int>95</int>
+      <macro name="dndbt_BodeMikbodephace"/>
+    </entry>
+    <entry>
+      <int>96</int>
+      <macro name="dndbt_GeeWiz"/>
+    </entry>
+    <entry>
+      <int>97</int>
+      <macro name="dndbt_KazRedrum"/>
+    </entry>
+    <entry>
+      <int>98</int>
+      <macro name="dndbt_KetdelleDankil"/>
+    </entry>
+    <entry>
+      <int>99</int>
+      <macro name="dndbt_Nibbles"/>
+    </entry>
+    <entry>
+      <int>100</int>
+      <macro name="dndbt_RexRedrum"/>
+    </entry>
+    <entry>
+      <int>101</int>
+      <macro name="dndbt_Yaichi"/>
+    </entry>
+    <entry>
+      <int>102</int>
+      <macro name="dndbt_Zairali"/>
+    </entry>
+    <entry>
+      <int>103</int>
       <macro name="data_BasicToon_BhelduhrBallrotterThrahak"/>
-    </entry>
-    <entry>
-      <int>31</int>
-      <macro name="data_BasicToon_Blurrier"/>
-    </entry>
-    <entry>
-      <int>33</int>
-      <macro name="data_BasicToon_BodeMikbodephace"/>
-    </entry>
-    <entry>
-      <int>34</int>
-      <macro name="data_BasicToon_GeeWiz"/>
-    </entry>
-    <entry>
-      <int>35</int>
-      <macro name="data_BasicToon_KazRedrum"/>
-    </entry>
-    <entry>
-      <int>36</int>
-      <macro name="data_BasicToon_KetdelleDankil"/>
-    </entry>
-    <entry>
-      <int>37</int>
-      <macro name="data_BasicToon_Nibbles"/>
-    </entry>
-    <entry>
-      <int>38</int>
-      <macro name="data_BasicToon_RexRedrum"/>
-    </entry>
-    <entry>
-      <int>39</int>
-      <macro name="data_BasicToon_Zairali"/>
     </entry>
     <entry>
       <int>40</int>
       <macro name="Rebuild+Known+Live+States"/>
     </entry>
     <entry>
+      <int>104</int>
+      <macro name="data_BasicToon_Blurrier"/>
+    </entry>
+    <entry>
+      <int>105</int>
+      <macro name="data_BasicToon_Bob"/>
+    </entry>
+    <entry>
       <int>42</int>
       <macro name="dndbt_Test_KnownLiveToons"/>
+    </entry>
+    <entry>
+      <int>106</int>
+      <macro name="data_BasicToon_BodeMikbodephace"/>
+    </entry>
+    <entry>
+      <int>107</int>
+      <macro name="data_BasicToon_GeeWiz"/>
+    </entry>
+    <entry>
+      <int>108</int>
+      <macro name="data_BasicToon_KazRedrum"/>
+    </entry>
+    <entry>
+      <int>109</int>
+      <macro name="data_BasicToon_KetdelleDankil"/>
+    </entry>
+    <entry>
+      <int>110</int>
+      <macro name="data_BasicToon_Nibbles"/>
+    </entry>
+    <entry>
+      <int>111</int>
+      <macro name="data_BasicToon_RexRedrum"/>
+    </entry>
+    <entry>
+      <int>112</int>
+      <macro name="data_BasicToon_Zairali"/>
     </entry>
     <entry>
       <int>49</int>
       <macro name="dndbt_CreateDataMacro"/>
     </entry>
     <entry>
-      <int>50</int>
-      <macro name="data_BasicToon_Bob"/>
+      <int>113</int>
+      <macro name="data_BasicToon_Yaichi"/>
     </entry>
     <entry>
       <int>51</int>
@@ -1209,26 +1423,6 @@
     <entry>
       <int>52</int>
       <macro name="dndbt_Util_compareTokens"/>
-    </entry>
-    <entry>
-      <int>53</int>
-      <macro name="data_BasicToon_30957877"/>
-    </entry>
-    <entry>
-      <int>54</int>
-      <macro name="data_BasicToon_30957978"/>
-    </entry>
-    <entry>
-      <int>55</int>
-      <macro name="data_BasicToon_30959709"/>
-    </entry>
-    <entry>
-      <int>56</int>
-      <macro name="data_BasicToon_30960137"/>
-    </entry>
-    <entry>
-      <int>57</int>
-      <macro name="Set+Logging+Level"/>
     </entry>
     <entry>
       <int>58</int>
@@ -1245,54 +1439,6 @@
     <entry>
       <int>63</int>
       <macro name="dndbt_Test_AttackEditorProcessor_testRollBuild_2"/>
-    </entry>
-    <entry>
-      <int>65</int>
-      <macro name="data_AttackEditor_processorParams_2"/>
-    </entry>
-    <entry>
-      <int>66</int>
-      <macro name="data_AttackEditor_processorExpression_2"/>
-    </entry>
-    <entry>
-      <int>74</int>
-      <macro name="I%27m+Done"/>
-    </entry>
-    <entry>
-      <int>75</int>
-      <macro name="Damage"/>
-    </entry>
-    <entry>
-      <int>76</int>
-      <macro name="Heal"/>
-    </entry>
-    <entry>
-      <int>77</int>
-      <macro name="Conditions"/>
-    </entry>
-    <entry>
-      <int>78</int>
-      <macro name="Death+Save"/>
-    </entry>
-    <entry>
-      <int>79</int>
-      <macro name="Temp+HP"/>
-    </entry>
-    <entry>
-      <int>80</int>
-      <macro name="Override+Run+Tests"/>
-    </entry>
-    <entry>
-      <int>81</int>
-      <macro name="dndbt_Test_AttackEditor_launchEditor"/>
-    </entry>
-    <entry>
-      <int>82</int>
-      <macro name="dndbt_Test_RollExpression_rollCritical"/>
-    </entry>
-    <entry>
-      <int>83</int>
-      <macro name="dndbt_breakpoint"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

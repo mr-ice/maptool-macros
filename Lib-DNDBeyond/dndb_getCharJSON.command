@@ -1,5 +1,5 @@
 
-[h: BASE_URL = "https://character-service.dndbeyond.com/character/v3/character/"]
+[h: BASE_URL = "https://character-service.dndbeyond.com/character/v4/character/"]
 [h: charId = json.get( macro.args, 0 )]
 
 

@@ -1,7 +1,7 @@
 [h: attackObj = getProperty ("attackExpressionJSON")]
 [h, if (json.type (attackObj) != "OBJECT"), code: {
 	[log.error (getMacroName() + ": invalid attack expression found; resetting")]
-	[log.error ("id: " + currentToken()]
+	[log.error ("id: " + currentToken() + " (" + getName() + ")")]
 	[attackObj = "{}"]
 }]
 [h: decodedAttackObj = "{}"]

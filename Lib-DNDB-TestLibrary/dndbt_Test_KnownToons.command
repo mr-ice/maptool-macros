@@ -1,5 +1,5 @@
 [h: toonNames = "BhelduhrBallrotterThrahak,Blurrier,Bob,BodeMikbodephace," + 
-				"GeeWiz,KazRedrum,KetdelleDankil,Nibbles,RexRedrum,Zairali"]
+				"GeeWiz,KazRedrum,KetdelleDankil,Nibbles,RexRedrum,Zairali,Yaichi"]
 
 [h: report = json.append ("", "dndbt_Test_KnownToons Report:")]
 [h, foreach (toonName, json.fromList (toonNames)), code: {

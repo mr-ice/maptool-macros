@@ -25,6 +25,8 @@
 
 [h: macroCommand = macroCommand + "[h: macro.return = decode (encoded)]"]
 
-[h: macroConfig = json.set (macroConfig, "command", macroCommand, "label", macroName)]
-
+[h: macroConfig = json.set (macroConfig, "command", macroCommand, "label", macroName, "tooltip", charId)]
+[h: macroIndexes = getMacroIndexes (macroName)]
+[h, foreach (macroIndex, macroIndexes): removeMacro (macroIndex)]
+[h: log.info ("Creating macro " + macroName)]
 [h: createMacro (macroName, macroCommand, macroConfig)]

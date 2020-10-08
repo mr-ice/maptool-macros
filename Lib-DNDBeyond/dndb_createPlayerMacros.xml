@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>b0621b76-ada6-47ad-9342-a4ae158657d4</macroUUID>
+  <macroUUID>71f7e913-7139-4dbd-a27e-430452c781f5</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>53</index>
   <colorKey>default</colorKey>
@@ -9,7 +9,7 @@
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>

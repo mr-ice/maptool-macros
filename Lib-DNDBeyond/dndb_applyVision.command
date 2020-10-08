@@ -1,9 +1,9 @@
 [h: basicToon = dndb_getBasicToon ()]
 
-[h: senses = json.get (basicToon, "senses")]
+[h: sensesArry = json.get (basicToon, "senses")]
 [h: senseStr = ""]
 [h: setSightType ("Normal")]
-[h, foreach (sense, senses), code: {
+[h, foreach (sense, sensesArry), code: {
 	[h: senseName = json.get (sense, "name")]
 	[h: distance = json.get (sense, "distance")]
 	[h, if (distance > 0): senseStr = senseStr + ", " + senseName +

@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>7073cdd0-2b13-4e49-84eb-90b377548a68</macroUUID>
+  <macroUUID>2c84fda7-f6f6-4f30-83f4-f88fa20bccae</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>21</index>
+  <index>99</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>dndbt_Nibbles</label>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>2673527</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
