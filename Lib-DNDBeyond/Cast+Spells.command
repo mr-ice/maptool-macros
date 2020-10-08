@@ -29,6 +29,8 @@
 [h, while (!validChoice), code: {
 	[allSpellInputString = ""]
 	[spellLevels = json.fields (spellInputMap)]
+	[spellLevels = listSort (spellLevels, "N")]
+	[log.debug (getMacroName() + ": spellLevels = " + spellLevels)]
 	[foreach (spellLevel, spellLevels), code: {
 		[prompt = "Sell Level " + spellLevel]
 		[spellNameCSV = ""]

@@ -1,71 +1,76 @@
 [h: toon = arg (0)]
 
-<!-- inspect data.classSpells array, for each object, read characterClassId. Find the class with that id and 
+<!-- inspect data.classSpells array, for each object, read characterClassId. Find the classObj with that id and 
      determine the related spell ability. If there are overlaps, I dunno, dupes? -->
 
 [h: allSpells = "{}"]
 [h: abilities = dndb_getAbilities (toon)]
 [h: classSpellsArry = json.path.read (toon, "data.classSpells")]
+
 <!-- Some dumb classes, like Monk, add spells dumbly, like Monk, and are dumb, like Monk -->
-<!-- Create a bonus class spells array thats included in each iteration of spellcasting classes because 
+<!-- Create a bonus classObj spells array thats included in each iteration of spellcasting classes because 
 	dumb monks are dumb -->
 [h: bonusClassSpells = json.path.read (toon, "data.spells.class")]
 [h: featSpells = json.path.read (toon, "data.spells.feat")]
 [h, if (json.length (featSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, featSpells); ""]
+<!-- to the bonusClassSpells, append any always prepared spells -->
+[h: alwaysPreparedSpells = json.path.read (toon, "data.lib_dndb-AlwaysPreparedSpells")]
+[h, if (json.length (alwaysPreparedSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, alwaysPreparedSpells); ""]
+
 [h: log.debug ("dndb_getSpells: classSpellsArry = " + classSpellsArry)]
 [h: classes = json.path.read (toon, "data.classes")]
-<!-- Merge the spell casting sub-class with the class, only when sub-class is spell casting -->
+<!-- Merge the spell casting sub-classObj with the classObj only when sub-classObj is spell casting -->
 [h: mergedClasses = "[]"]
-[h, foreach (class, classes), code: {
-	<!-- The expected result is a subClass will add the ability to cast spells to the parent class, but never the other way around.
-		So only when the subClass has canCastSpells as true will we override the parents definition. But only for a few key
-		attributes! For some reason, a subclass wont have spellRules when it does enable spell casting...-->
-	[h: subClass = json.get (class, "subclassDefinition")]
-	[h, if (json.isEmpty (subClass)), code: {
+[h, foreach (classObj, classes), code: {
+	<!-- The expected result is a subclassObj will add the ability to cast spells to the parent classObj but never the other way around.
+		So only when the subclassObj has canCastSpells as true will we override the parents definition. But only for a few key
+		attributes! For some reason, a subclassObj wont have spellRules when it does enable spell casting...-->
+	[h: subclassObj = json.get (classObj, "subclassDefinition")]
+	[h, if (json.isEmpty (subClassObj)), code: {
 		[h: subCanCastSpells = "false"]
-		[h: subClass = "{}"]
+		[h: subclassObj = "{}"]
 	}; {
-		[h: subCanCastSpells = json.get (subClass, "canCastSpells")]
+		[h: subCanCastSpells = json.get (subclassObj, "canCastSpells")]
 	}]
-	<!-- edge case - Monk Way of the Shadow has both class and subClass as cant cast spells, but sub has a
+	<!-- edge case - Monk Way of the Shadow has both classObj and subclassObj as cant cast spells, but sub has a
 		spellCastingAbilityId. Use that as a backup flag -->
-	[h: subSpellCastingAbilityId = json.get (subClass, "spellCastingAbilityId")]
+	[h: subSpellCastingAbilityId = json.get (subclassObj, "spellCastingAbilityId")]
 	[h, if (subCanCastSpells == "true" || isNumber (subSpellCastingAbilityId)), code: {
 		[h: log.debug ("Overriding with subclass")]
-		[h: spellCastingAbilityId = json.get (subClass, "spellCastingAbilityId")]
-		[h: spellPrepareType = json.get (subClass, "spellParepareType")]
-		[h: isRitualSpellCaster = json.get (subClass, "isRitualSpellCaster")]
-		[h: spellContainerName = json.get (subClass, "spellContainerName")]
-		[h: classDefinition = json.get (class, "definition")]
+		[h: spellCastingAbilityId = json.get (subclassObj, "spellCastingAbilityId")]
+		[h: spellPrepareType = json.get (subclassObj, "spellParepareType")]
+		[h: isRitualSpellCaster = json.get (subclassObj, "isRitualSpellCaster")]
+		[h: spellContainerName = json.get (subclassObj, "spellContainerName")]
+		[h: classDefinition = json.get (classObj, "definition")]
 		[h: classDefinition = json.set (classDefinition, "canCastSpells", "true",
 											"spellCastingAbilityId", spellCastingAbilityId,
 											"spellPrepareType", spellPrepareType,
 											"isRitualSpellCaster", isRitualSpellCaster,
 											"spellContainerName", spellContainerName)]
-		[h: class = json.set (class, "definition", classDefinition)]
+		[h: classObj = json.set (classObj, "definition", classDefinition)]
 	}]
-	[h: canCastSpells = json.path.read (class, "definition.canCastSpells")]
+	[h: canCastSpells = json.path.read (classObj, "definition.canCastSpells")]
 	<!-- only add to mergedClasses if canCastSpells is true -->
-	[h, if (canCastSpells == "true"): mergedClasses = json.append (mergedClasses, class); ""]
+	[h, if (canCastSpells == "true"): mergedClasses = json.append (mergedClasses, classObj); ""]
 }]
 [h: searchArg = json.set ("", "object", toon,
 							"subType", "spell-attacks")]
 [h: spellAttackModifiers = dndb_searchGrantedModifiers (searchArg)]
 [h: log.debug (getMacroName() + ": spellAttackModifiers = " + spellAttackModifiers)]
 [h: proficiency = dndb_getProficiencyBonus (toon)]
-[h, foreach (class, mergedClasses), code: {
-	<!-- find the classSpells object for the class -->
+[h, foreach (classObj, mergedClasses), code: {
+	<!-- find the classSpells object for the classObj -->
 	[h: classSpellsSearchArg = json.set ("", "object", classSpellsArry,
-									"characterClassId", json.get (class, "id"))]
+									"characterClassId", json.get (classObj, "id"))]
 	[h: classSpells = json.get (dndb_searchJsonObject (classSpellsSearchArg), 0)]
-	[h: spellCastingAbilityId = json.path.read (class, "definition.spellCastingAbilityId")]
-	[h: classRequiresPreparation = json.path.read (class, "definition.spellPrepareType", "SUPPRESS_EXCEPTIONS")]
+	[h: spellCastingAbilityId = json.path.read (classObj, "definition.spellCastingAbilityId")]
+	[h: classRequiresPreparation = json.path.read (classObj, "definition.spellPrepareType", "SUPPRESS_EXCEPTIONS")]
 	[h, if (classRequiresPreparation == "null"): classRequiresPreparation = 0]
-	[h: isRitualCaster = json.path.read (class, "definition.spellRules.isRitualSpellCaster", "SUPPRESS_EXCEPTIONS")]
+	[h: isRitualCaster = json.path.read (classObj, "definition.spellRules.isRitualSpellCaster", "SUPPRESS_EXCEPTIONS")]
 	[h, if (isRitualCaster == "null"): isRitualCaster = 0]
-	[h: spellContainer = json.path.read (class, "definition.spellContainerName", "SUPPRESS_EXCEPTIONS")]
+	[h: spellContainer = json.path.read (classObj, "definition.spellContainerName", "SUPPRESS_EXCEPTIONS")]
 	[h: log.debug ("dndb_getSpells: isRitualCaster = " + isRitualCaster + "; spellContainer = " + spellContainer)]
-	[h: casterLevel = json.get (class, "level")]
+	[h: casterLevel = json.get (classObj, "level")]
 	[h: spells = json.get (classSpells, "spells")]
 	[h: spells = json.merge (spells, bonusClassSpells)]
 	[h: log.debug ("dndb_getSpells: spells = " + spells)]
@@ -88,15 +93,15 @@
 		[h: spellPrepared = json.get (basicSpell, "prepared")]
 		<!-- set spellIsRitual to true when:
 			isRitual is true AND
-					the class is a ritual caster AND
-					the class does not prepare OR the class does prepare AND
+					the classObj is a ritual caster AND
+					the classObj does not prepare OR the classObj does prepare AND
 													the spell is prepared OR the spell is in a Spellbook -->
 		<!-- Im out of nested levels; Fake it -->
 		[h, if (isRitual != "true" || isRitualCaster != "true"): spellIsRitual = 0; spellIsRitual = 1]
 		[h: log.debug ("spellIsRitual after isRitualCaster: " + spellIsRitual)]
 		[h, if (classRequiresPreparation && (spellPrepared != "true" && spellContainer != "Spellbook")): spellIsRitual = 0; ""]
 		[h: log.debug ("spellIsRitual after requires prep: " + spellIsRitual)]
-		<!-- if it is a ritual and class does not require preparation, its already a 1; were g2g -->
+		<!-- if it is a ritual and classObj does not require preparation, its already a 1; were g2g -->
 		[h: basicSpell = json.set (basicSpell, "ritual", spellIsRitual,
 									"abilityBonus", abilityBonus,
 									"saveDC", saveDC,
