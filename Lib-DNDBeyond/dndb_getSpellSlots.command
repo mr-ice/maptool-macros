@@ -19,11 +19,11 @@
 <!-- Build it like its represented in toon json -->
 [h: MULTI_CLASS_SPELL_SLOT_TABLE = "[[0,0,0,0,0,0,0,0,0],[2,0,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0],[4,2,0,0,0,0,0,0,0],[4,3,0,0,0,0,0,0,0],[4,3,2,0,0,0,0,0,0],[4,3,3,0,0,0,0,0,0],[4,3,3,1,0,0,0,0,0],[4,3,3,2,0,0,0,0,0],[4,3,3,3,1,0,0,0,0],[4,3,3,3,2,0,0,0,0],[4,3,3,3,2,1,0,0,0],[4,3,3,3,2,1,0,0,0],[4,3,3,3,2,1,1,0,0],[4,3,3,3,2,1,1,0,0],[4,3,3,3,2,1,1,1,0],[4,3,3,3,2,1,1,1,0],[4,3,3,3,2,1,1,1,1],[4,3,3,3,3,1,1,1,1],[4,3,3,3,3,2,1,1,1],[4,3,3,3,3,2,2,1,1]]"]
 
-[h: classes = json.path.read (toon, "data.classes")]
-[h, if (json.length (classes) > 1): multiClass = 1; multiClass = 0]
+[h: classesArry = json.path.read (toon, "data.classes")]
+[h, if (json.length (classesArry) > 1): multiClass = 1; multiClass = 0]
 [h: totalLevel = 0]
 
-[h, foreach (class, classes), code: {
+[h, foreach (class, classesArry), code: {
 	[h: classDefinition = json.get (class, "definition")]
 	[h: level = number (json.get (class, "level"))]
 	[h: canCastSpells = json.get (classDefinition, "canCastSpells")]
