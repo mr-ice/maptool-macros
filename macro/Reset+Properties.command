@@ -15,7 +15,8 @@
 	"confirm | No, Yes | Are you sure you want to do this? | LIST | SELECT=0");""]
 [h: abort (confirm)]
 
-<!-- do this first! -->
+<!-- do these first! -->
+[h: dnd5e_Property_resetCalculatedProperties()]
 [h: dndb_applyConditions (basicToon)]
 
 [h: setProperty ("Age", json.get (basicToon, "age"))]
@@ -39,6 +40,7 @@
 [h: setProperty ("Wisdom", json.get (abilities, "wis"))]
 [h: setProperty ("Charisma", json.get (abilities, "cha"))]
 
+[h: setProperty ("Proficiency", json.get (basicToon, "proficiencyBonus"))]
 
 [h: setProperty ("Resistances", json.toList (json.get (basicToon, "resistances")))]
 [h: setProperty ("Immunities", json.toList (json.get (basicToon, "immunities")))]
@@ -63,13 +65,46 @@
 
 [h: saves = json.get (basicToon, "savingThrows")]
 [h, foreach (save, saves), code: {
-	[h: saveName = json.get (save, "name") + "Save"]
-	[h: saveBonus = json.get (save, "totalBonus")]
-	[h: setProperty (saveName, saveBonus)]
+	[log.debug (getMacroName() + ": save = " + save)]
+	[saveProperty = json.get (save, "property")]
+	[setProperty ("proficiency." + saveProperty, json.get (save, "proficient"))]
+	<!-- get the calculated bonuses from items, etc -->
+	[bonus = json.get (save, "bonus")]
+	<!-- get the bonus array from user tinkering -->
+	[bonuses = json.get (save, "bonuses")]
+	[magicBonus = json.get (save, "MagicBonus")]
+	[miscBonus = json.get (save, "MiscBonus")]
+	<!-- math it up -->
+	[if (!json.isEmpty(magicBonus)): bonus = bonus + json.get (magicBonus, "value"); ""]
+	[if (!json.isEmpty(miscBonus)): bonus = bonus + json.get (miscBonus, "value"); ""]
+	[setProperty ("bonus." + saveProperty, bonus)]
+
+	<!-- Finally, the user can just ... DECIDE ... to do whatever they want -->
+	[override = json.get (bonuses, "Override")]
+	[if (!json.isEmpty(override)): setProperty (json.get (save, "name") + "Save", json.get (override, "value")); ""]
 }]
 
 [h: skills = json.get (basicToon, "skills")]
-[h, foreach (skill, skills): setProperty (json.get (skill, "name"), json.get (skill, "totalBonus"))]
+[h, foreach (skill, skills), code: {
+	[log.debug (getMacroName() + ": skill = " + skill)]
+	[lowerSkillName = lower (json.get (skill, "name"))]
+	[setProperty ("proficiency." + lowerSkillName, json.get (skill, "proficient"))]
+	[setProperty ("ability." + lowerSkillName, json.get (skill, "ability"))]
+	
+	[bonus = json.get (skill, "bonus")]
+	<!-- in the Bonuses object, MagicBonus and MiscBonus are culmative with bonus -->
+	[bonuses = json.get (skill, "bonuses")]
+	[log.debug (getMacroName() + ": bonuses = " + bonuses)]
+	[magicBonus = json.get (bonuses, "MagicBonus")]
+	[if (!json.isEmpty(magicBonus)): bonus = bonus + json.get (magicBonus, "value")]
+	[miscBonus = json.get (bonuses, "MiscBonus")]
+	[if (!json.isEmpty(miscBonus)): bonus = bonus + json.get (miscBonus, "value")]
+	[setProperty ("bonus." + lowerSkillName, bonus)]
+
+	[override = json.get (bonuses, "Override")]
+	<!-- and then just set the property directly if theres an override -->
+	[if (!json.isEmpty (override)): setProperty (json.get (skill, "name"), json.get (override, "value"))]
+}]
 
 [h: alignment = json.get (basicToon, "alignment")]
 [h: setProperty ("Alignment", alignment)]

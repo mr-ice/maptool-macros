@@ -50,8 +50,13 @@
 	[h: classObj = json.set (classObj, "hitDice", hitDice, "hitDiceUsed", hitDiceUsed)]
 	[h: classArry = json.append (classArry, classObj)]
 }]
+
 [h: log.debug ("classArry: "+ classArry)]
 [h: basicToon = json.set (basicToon, "classes", classArry)]
+
+<!-- Calculate proficiency bonus -->
+[h: proficiencyBonus = floor ((totalLevel - 1) / 4) + 2]
+[h: basicToon = json.set (basicToon, "proficiencyBonus", proficiencyBonus)]
 
 <!-- Resistances / Immunities -->
 [h: resistances = dndb_getResistances (toon)]
