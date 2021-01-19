@@ -39,8 +39,8 @@
 	[h: modLabel = json.get (saveMod, "type")]
 	[h, switch (modLabel):
 		case "expertise": allProfValue = 2;
-		case "proficiency": allProfValue = math.max (allProfValue, 1);
-		case "half-proficiency": allProfValue = math.max (allProfValue, 0.5);
+		case "proficiency": allProfValue = max (allProfValue, 1);
+		case "half-proficiency": allProfValue = max (allProfValue, 0.5);
 		case "bonus": allBonus = allBonus + json.get(saveMod, "value");
 		default: "Someday we'll care about you, but not today"]
 }]
@@ -72,8 +72,8 @@
 		[h: modLabel = json.get (saveMod, "type")]
 		[h, switch (modLabel):
 			case "expertise": profValue = 2;
-			case "proficiency": profValue = math.max (profValue, 1);
-			case "half-proficiency": profValue = math.max (profValue, 0.5);
+			case "proficiency": profValue = max (profValue, 1);
+			case "half-proficiency": profValue = max (profValue, 0.5);
 			case "bonus": bonus = bonus + json.get(saveMod, "value");
 			default: "Someday we'll care about you, but not today"]
 	}]

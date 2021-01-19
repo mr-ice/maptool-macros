@@ -45,6 +45,13 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>Experience Points</name>
+          <shortName>XP</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>---- Abilities Scores ----</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
@@ -129,14 +136,15 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Initiative</name>
-          <shortName>Init</shortName>
+          <name>SpellcastingAbility</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>Charisma</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>AC</name>
+          <name>Initiative</name>
+          <shortName>Init</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
@@ -189,6 +197,103 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Armor ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>armor.type</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>None</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>armor.ac</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>0</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>shield.ac</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>0</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>bonus.ac</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>0</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Attacks ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>Attack bonuses are calculated without proficiency</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>ability.melee</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>Strength</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>ability.finesse</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>Dexterity</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>ability.ranged</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>Dexterity</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>bonus.attack.melee</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.melee + &quot;}&quot;)]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>bonus.attack.finesse</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: evalMacro(&quot;{max (abilityBonus.&quot; + ability.melee + &quot;, abilityBonus.&quot; + ability.finesse + &quot;)}&quot;)]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>bonus.attack.ranged</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.ranged + &quot;}&quot;)]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Spellcasting ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>Unlike melee and ranged, proficiency is built-in by definition</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>bonus.attack.spellcasting</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + SpellcastingAbility + &quot; + Proficiency}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>---- Save Proficiencies ----</name>
@@ -818,11 +923,31 @@
           <defaultValue>Wisdom</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>---- Formulas ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>To override, replace the formula with a static value</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>armor.dexBonus</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: if (armor.type == &quot;Medium&quot;, min (2, DexterityBonus), if (armor.type == &quot;Heavy&quot;, 0, DexterityBonus))]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>AC</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>{armor.ac + shield.ac + bonus.ac + armor.dexBonus}</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>---- Saves ----</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>To override, replace formula with static value</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>StrengthSave</name>
@@ -1293,6 +1418,18 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>libversion</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>campaignPropertiesVersion{0.15}</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>_dndb_OverrideBasicToon</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
@@ -1345,6 +1482,475 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+      </list>
+    </entry>
+    <entry>
+      <string>Simple</string>
+      <list>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Basics ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Race</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Classes</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>CR</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Languages</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Experience Points</name>
+          <shortName>XP</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Abilities Scores ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Strength</name>
+          <shortName>Str</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Dexterity</name>
+          <shortName>Dex</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Constitution</name>
+          <shortName>Con</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Intelligence</name>
+          <shortName>Int</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Wisdom</name>
+          <shortName>Wis</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Charisma</name>
+          <shortName>Char</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Health ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>HP</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>MaxHP</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>TempHP</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Combat ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>AC</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Initiative</name>
+          <shortName>Init</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Resistances</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Immunities</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Movement ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>In Feet</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Walk</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Swim</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Burrow</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Climb</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Fly</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Saves ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>StrengthSave</name>
+          <shortName>Strength Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>DexteritySave</name>
+          <shortName>Dexterity Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>ConstitutionSave</name>
+          <shortName>Constitution Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>IntelligenceSave</name>
+          <shortName>Intelligence Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>WisdomSave</name>
+          <shortName>Wisdom Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>CharismaSave</name>
+          <shortName>Charisma Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>DeathSave</name>
+          <shortName>Death Save</shortName>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Skills &amp; Abilities ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>StrengthAbility</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>DexterityAbility</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>ConstitutionAbility</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>IntelligenceAbility</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>WisdomAbility</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>CharismaAbility</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Acrobatics</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Animal Handling</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Arcana</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Athletics</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Deception</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>History</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Insight</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Intimidation</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Investigation</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Medicine</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Nature</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Perception</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Performance</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Persuasion</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Religion</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Sleight of Hand</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Stealth</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Survival</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>---- Stat Sheet ----</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Senses</name>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.DMSkills</name>
+          <shortName>Skills</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>true</gmOnly>
+          <defaultValue>[r: dnd5e_getDMSkills()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.raceClass</name>
+          <shortName>Race/Class</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getRaceClass()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.languages</name>
+          <shortName>Languages</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getLanguages ()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.health</name>
+          <shortName>HP</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>true</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>Hp: {HP}; Mx: {MaxHP}; Tmp: {TempHP}</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.defenses</name>
+          <shortName>Defenses</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>true</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getDefenses()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.movement</name>
+          <shortName>Move</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_getMovementStat()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>Elevation</name>
+          <shortName>Elv</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.condition</name>
+          <shortName>Conditions</shortName>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getConditionsStat()]</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>stat.effects</name>
+          <highPriority>true</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>[r: dnd5e_Property_getConditionEffects()]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
       </list>
     </entry>

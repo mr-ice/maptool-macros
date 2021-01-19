@@ -7,6 +7,7 @@
 [h: SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
 [h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
 [h: basicToon = dndb_getBasicToon ()]
+[h: dndb_BasicToon_validateVersion (basicToon)]
 
 [h, if (json.length (macro.args) > 0): noConfirm = arg(0); noConfirm = 0]
 [h: confirm = 1]
@@ -31,6 +32,7 @@
 [h: setProperty ("Alignment", json.get (basicToon, "alignment"))]
 [h: setProperty ("AvatarUrl", json.get (basicToon, "avatarUrl"))]
 [h: setProperty ("Initiative", json.get (basicToon, "init"))]
+[h: setProperty ("Experience Points", json.get (basicToon, "xp"))]
 
 [h: abilities = json.get (basicToon, "abilities")]
 [h: setProperty ("Strength", json.get (abilities, "str"))]
@@ -55,10 +57,36 @@
 [h: dndb_applyHealth ()]
 
 [h: armorClass = json.get (basicToon, "armorClass")]
-[h: setProperty ("AC", json.get (armorClass, "total"))]
-[h: setProperty ("AC Dexterity", json.get (armorClass, "Dexterity"))]
-[h: setProperty ("AC Armor", json.get (armorClass, "Armor"))]
-[h: setProperty ("AC Shield", json.get (armorClass, "Shield"))]
+[h: bonuses = json.get (armorClass, "bonuses")]
+[h: acBonus = json.get (armorClass, "bonus")]
+
+[h: equippedArmor = json.get (armorClass, "equippedArmor")]
+[h: equippedShield = json.get (armorClass, "equippedShield")]
+[h: armorAC = json.get (equippedArmor, "armorClass") + json.get (equippedArmor, "bonus")]
+[h: shieldAC = json.get (equippedShield, "armorClass") + json.get (equippedShield, "bonus")]
+[h: setProperty ("armor.ac", armorAC)]
+[h: setProperty ("shield.ac", shieldAC)]
+[h: setProperty ("armor.type", json.get (equippedArmor, "armorType"))]
+
+[h: overridePlusDex = json.get (bonuses, "OverridePlusDex")]
+[h, if (!json.isEmpty (overridePlusDex)), code: {
+	<!-- This value overrides the base AC value plus dexterity. Other custom bonuses still apply -->
+	<!-- So set this value to armor.ac and override the AC formula -->
+	[overrideValue = json.get (overridePlusDex, "value")]
+	[setProperty ("armor.ac", "overridden by DNDBeyond")]
+	[setProperty ("AC", "{" + overrideValue + " + shield.ac + bonus.ac}")]
+	<!-- and override the current acBonus, that value no longer applies -->
+	[asBonus = 0]
+}]
+
+[h: magicBonus = json.get (bonuses, "MagicBonus")]
+[h: miscBonus = json.get (bonuses, "MiscBonus")]
+[h, if (!json.isEmpty(magicBonus)): acBonus = acBonus + json.get (magicBonus, "value"); ""]
+[h, if (!json.isEmpty(miscBonus)): acBonus = acBonus + json.get (miscBonus, "value"); ""]
+[h: setProperty ("bonus.ac", acBonus)]
+
+[h: override = json.get (bonuses, "Override")]
+[h, if (!json.isEmpty (override)): setProperty ("AC", json.get (override, "value")); ""]
 
 <!-- Speeds -->
 [h: dndb_applySpeed ()]
@@ -72,8 +100,8 @@
 	[bonus = json.get (save, "bonus")]
 	<!-- get the bonus array from user tinkering -->
 	[bonuses = json.get (save, "bonuses")]
-	[magicBonus = json.get (save, "MagicBonus")]
-	[miscBonus = json.get (save, "MiscBonus")]
+	[magicBonus = json.get (bonuses, "MagicBonus")]
+	[miscBonus = json.get (bonuses, "MiscBonus")]
 	<!-- math it up -->
 	[if (!json.isEmpty(magicBonus)): bonus = bonus + json.get (magicBonus, "value"); ""]
 	[if (!json.isEmpty(miscBonus)): bonus = bonus + json.get (miscBonus, "value"); ""]

@@ -54,13 +54,15 @@
 	"abilityProficiency.Intelligence",
 	"abilityProficiency.Wisdom",
 	"abilityProficiency.Charisma",
-	"_DM-Skills",
-	"_raceClass",
-	"_languages",
-	"_health",
-	"_defenses",
-	"Movement",
-	"Condition",
-	"Effects"]']
+	"armor.dexBonus",
+	"AC",
+	"stat.DM-Skills",
+	"stat.raceClass",
+	"statlanguages",
+	"stat.health",
+	"stat.defenses",
+	"stat.movement",
+	"stat.condition",
+	"stat.effects"]']
 
 [h, foreach (calculatedProperty, calculatedProperties): resetProperty (calculatedProperty)]

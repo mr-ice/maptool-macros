@@ -49,7 +49,7 @@
 
 <!-- TODO: Ability proficiencies are no longer included within the skill obj. Now need -->
 <!-- to set them separately and let the token handle calculation -->
-<!-- For bardly 'everybody gets half', we will just set each ability proficiency to half-->
+<!-- For bardly 'everybody gets half', we will just set the allAbility proficiency to half-->
 
 <!-- The most frustrating part about any DTO is trying to sniff out the weird places for user override -->
 <!-- values. And its an edge case anyways! So lets fetch all the relevant character values outside of -->

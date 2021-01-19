@@ -27,56 +27,51 @@
 [h: o5e_Token_applySenses (json.get (monsterJson, "senses"))]
 [h: Languages = json.get (monsterJson, "languages")]
 [h: CR = json.get (monsterJson, "challenge_rating")]
-
-
+[h: Proficiency = floor(math.max (0, CR - 1) / 4) + 2]
+[h: log.debug (getMacroName() + ": Proficiency = " + Proficiency)]
 <!-- now the interesting bits -->
 <!-- first up, saves -->
 [h: abilityList = json.append ("", "strength", "dexterity", "constitution",
 							"intelligence", "wisdom", "charisma")]
-
-[h: strSave = json.get (monsterJson, "strength_save")]
-[h, if (!isNumber (strSave)): strSave = StrengthBonus; ""]
-[h: prof = strSave - StrengthBonus]
-[h: setProperty ("StrengthSave", "{" + prof + " + StrengthBonus}")]
-
+[h: abilitySaveMap = json.set ("", "strength", "strSave",
+						"dexterity", "dexSave",
+						"constitution", "conSave",
+						"intelligence", "intSave",
+						"wisdom", "wisSave",
+						"charisma", "chaSave")]
+						
 [h, foreach (ability, abilityList), code: {
 	[abilitySave = json.get (monsterJson, ability + "_save")]
-	[h, if (!isNumber (abilitySave)): abilitySave = eval (ability + "Bonus"); ""]
-	[h: prof = abilitySave - eval (ability + "Bonus")]
-	[h: setProperty (ability + "Save", "{" + prof + " + " + ability + "Bonus}")]
+	[log.debug (getMacroName() + ": abilitySave = " + abilitySave)]
+	[abilityBonus = eval (ability + "Bonus")]
+	<!-- before I calculate, I need it to be some kind of number instead of 'null' -->
+	[if (!isNumber (abilitySave)): abilitySave = abilityBonus; ""]
+	[remainder = abilitySave - abilityBonus]
+	<!-- We have to infer proficiency and bonus values -->
+	[bonusObj = o5e_Util_inferProficiencyAndBonus (remainder, Proficiency)]
+	[saveProperty = json.get (abilitySaveMap, ability)]
+		[log.debug (getMacroName() + ": ability = " + ability + "; abilityBonus = " + 
+			abilityBonus + "; bonusObj = " + bonusObj)]
+	[setProperty ("proficiency." + saveProperty, json.get (bonusObj, "proficiency"))]
+	[setProperty ("bonus." + saveProperty, json.get (bonusObj, "bonus"))]
 }]
 
 <!-- Skillz -->
-[h: bonusSkillsMap = json.set ("", "acrobatics", "DexterityBonus",
-"animal handling", "WisdomBonus",
-"arcana", "IntelligenceBonus",
-"athletics", "StrengthBonus",
-"deception", "CharismaBonus",
-"history", "IntelligenceBonus",
-"insight", "WisdomBonus",
-"intimidation", "CharismaBonus",
-"investigation", "IntelligenceBonus",
-"medicine", "WisdomBonus",
-"nature", "IntelligenceBonus",
-"perception", "WisdomBonus",
-"performance", "CharismaBonus",
-"persuasion", "CharismaBonus",
-"religion", "IntelligenceBonus",
-"sleight of hand", "DexterityBonus",
-"stealth", "DexterityBonus",
-"survival", "WisdomBonus")]
-
 <!-- Havent yet seen an example of a monster w/ proficiency in Animal Handling.
     So going to assume the spaces are replaced with underscores -->
 [h: monsterSkills = json.get (monsterJson, "skills")]
 [h: log.debug ("monsterSkills: " + monsterSkills)]
-[h, foreach (key, json.fields (bonusSkillsMap)), code: {
-	[abilityBonusName = json.get (bonusSkillsMap, key)]
-	[abilityBonus = eval (abilityBonusName)]
-	[monsterSkillKey = replace (key, " ", "_")]
-	[monsterSkill = json.get (monsterSkills, monsterSkillKey)]
-	[log.debug ("monsterSkillKey: " + monsterSkillKey + "; monsterSkill = " + monsterSkill)]
-	[if (monsterSkill == ""): monsterSkill = abilityBonus; ""]
-	[prof = monsterSkill - abilityBonus]
-	[setProperty (key, "{" + prof + " + " + abilityBonusName + "}")]
+[h, foreach (monsterSkill, json.fields (monsterSkills)), code: {
+	<!-- subtract the related ability bonus (as currently calculated) from the total value -->
+	<!-- Infer bonus and proficiency from that value -->
+	<!-- This is "Strength" or "Dexterity", etc -->
+	[ability = getProperty ("ability." + monsterSkill)]
+	[abilityBonus = getProperty ("abilityBonus." + ability)]
+	[log.debug (getMacroName() + ": abilityBonus = " + abilityBonus)]
+	[totalSkillBonus = number(json.get (monsterSkills, monsterSkill))]
+	[log.debug (getMacroName() + ": totalSkillBonus = " + totalSkillBonus)]
+	[remainingBonus = totalSkillBonus - abilityBonus]
+	[bonusObj = o5e_Util_inferProficiencyAndBonus (remainingBonus, Proficiency)]
+	[setProperty ("proficiency." + monsterSkill, json.get (bonusObj, "proficiency"))]
+	[setProperty ("bonus." + monsterSkill, json.get (bonusObj, "bonus"))]
 }]

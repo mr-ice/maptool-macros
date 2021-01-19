@@ -1,6 +1,6 @@
-
-[h: setProperty ("libversion", "0.15")]
-
+[h: REQUIRED_DNDBEYOND_LIB_VERSION = 0.15]
+<!-- No calling lib functions during onCampaignLoad -->
+[h, macro ("dnd5e_Util_assertLibVersion@Lib:DnD5e"): json.append ("", REQUIRED_DNDBEYOND_LIB_VERSION, "-1", "Lib:DnDBeyond")]
 <!-- sigh, instead of explicitly defining each one, just inspect the relevant groups and iterate them -->
 [h: macros = getMacros()]
 [h: log.debug ("macros: " + macros)]

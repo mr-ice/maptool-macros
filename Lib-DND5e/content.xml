@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>OQhB5ZHrR86PdLnvJJFhuA==</baGUID>
+    <baGUID>zRc4w6S6SVyBJVq72ZWkvQ==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,78 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>600</x>
-  <y>300</y>
+  <x>900</x>
+  <y>200</y>
   <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>900</lastX>
+  <lastY>300</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>18</x>
+        <y>6</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>18</x>
+        <y>5</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>24</x>
+          <y>6</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>1.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>18</x>
+        <y>4</y>
+        <g>0.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>18</x>
+        <y>6</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>18</x>
+        <y>4</y>
+        <g>0.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -124,6 +188,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Green</string>
       <boolean>false</boolean>
     </entry>
@@ -132,11 +200,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dead</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -296,6 +376,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Blue</string>
       <boolean>false</boolean>
     </entry>
@@ -323,6 +407,10 @@
       <string>Dying</string>
       <boolean>false</boolean>
     </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
   </state>
   <propertyMapCI>
     <store>
@@ -344,7 +432,7 @@
         <string>libversion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>libversion</key>
-          <value class="string">0.1</value>
+          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -352,6 +440,13 @@
         <string>hp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_metadata</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Metadata</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -560,6 +655,13 @@ function changeType() {
         <string>condition</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_actions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Actions</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -789,6 +891,13 @@ function changeType() {
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_o5e_monsteractions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_o5e_MonsterActions</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1682,6 +1791,26 @@ function changeType() {
     <entry>
       <int>241</int>
       <macro name="dnd5e_Property_resetCalculatedProperties"/>
+    </entry>
+    <entry>
+      <int>242</int>
+      <macro name="dnd5e_Property_calculateXPForCR"/>
+    </entry>
+    <entry>
+      <int>243</int>
+      <macro name="dnd5e_Util_checkVersion"/>
+    </entry>
+    <entry>
+      <int>244</int>
+      <macro name="dnd5e_Util_getCampaignPropertiesVersion"/>
+    </entry>
+    <entry>
+      <int>245</int>
+      <macro name="dnd5e_Util_assertLibVersion"/>
+    </entry>
+    <entry>
+      <int>246</int>
+      <macro name="dnd5e_Util_assertCampaignPropertiesVersion"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
