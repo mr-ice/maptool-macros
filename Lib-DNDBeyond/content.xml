@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>QHQcYeMRS4iZlcWSHu1GFA==</baGUID>
+    <baGUID>fivMD6KgQJeStVNMDovt3A==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>9EtnnIgwTkGnYia81R/98A==</baGUID>
+    <baGUID>fSBjfsQ2QOWv1E1RWI9NJA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,31 +14,75 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>400</x>
-  <y>600</y>
+  <x>1000</x>
+  <y>200</y>
   <z>4</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>400</lastX>
-  <lastY>600</lastY>
+  <lastX>1000</lastX>
+  <lastY>300</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>12</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>20</x>
+        <y>6</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>20</x>
+        <y>5</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>24</x>
+          <y>6</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>1.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>20</x>
+        <y>4</y>
+        <g>0.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>12</y>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>20</x>
+        <y>6</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.model.CellPoint>
+        <x>20</x>
+        <y>4</y>
+        <g>0.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -333,6 +377,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Blue</string>
       <boolean>false</boolean>
     </entry>
@@ -396,6 +444,20 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>HP</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>campaignpropertiesversion{0.15}</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>campaignPropertiesVersion{0.15}</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_metadata</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Metadata</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -540,6 +602,13 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_ae2_javascript</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_JavaScript</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>survival</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Survival</key>
@@ -560,6 +629,14 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Animal Handling</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dndb.basictoonversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb.basicToonVersion</key>
+          <value class="string">0.1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -648,6 +725,13 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>critBonus</key>
           <value class="string">3</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_actions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Actions</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -966,6 +1050,10 @@
     <entry>
       <int>3</int>
       <macro name="DNDBeyond+Campaign+Init"/>
+    </entry>
+    <entry>
+      <int>131</int>
+      <macro name="dndb_BasicToon_validateVersion"/>
     </entry>
     <entry>
       <int>10</int>
