@@ -24,4 +24,5 @@
 	
 	[h: log.debug ("dataPackage: " + json.indent (dataPackage))]
 	[h, macro ("dnd5e_AttackEditor_processor@Lib:DnD5e"): dataPackage]
+	[h: macro.return = ""]
 }]

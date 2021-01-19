@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4ea5933b-fea8-4dc5-829b-fbc4236c80ca</macroUUID>
+  <macroUUID>2b45186e-4d0d-43c8-bf27-af92f141af19</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>20</index>
   <colorKey>default</colorKey>
@@ -19,7 +19,7 @@
 &lt;br&gt;
 This makes a few assumptions:&lt;br&gt;
 - it is only ever 0, 0.5, 1, or 2 the proficiency&lt;br&gt;
-- the bonus is never greater than the proficiency product&lt;br&gt;
+- the bonus is never greater than the proficiency product until the proficiency value is 2.0&lt;br&gt;
 &lt;br&gt;
 Ergo, an input with a base bonus of 10 and a proficiency of 4 would return&lt;br&gt;
 {&lt;br&gt;
