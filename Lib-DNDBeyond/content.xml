@@ -636,7 +636,7 @@
         <string>dndb.basictoonversion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>dndb.basicToonVersion</key>
-          <value class="string">0.1</value>
+          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
