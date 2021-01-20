@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>0d70782e-e11e-4190-9b9c-8cedbc000fdb</macroUUID>
+  <saveLocation>GlobalPanel</saveLocation>
+  <index>65</index>
+  <colorKey>green</colorKey>
+  <hotKey>None</hotKey>
+  <label>Library Version Control</label>
+  <group>Dev</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.15em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Usage: Select the library tokens to version and execute this macro. You will be shown the current
+version of each token and an input for the new version. You will also be prompted to input
+changes (ala, release notes) associated to the new version. Release notes will be displayed 
+in an html format, so newline separators should be &lt;br&gt;. 
+
+There are two relevant propertyes: libversion &amp; lib.releaseNotesObj. lib.releaseNotesObj is
+a JSON object that maps the version to release notes so we can differentiate what's changed
+from version to version. Currently there's no management of the size of that object, but as
+this gains traction and versions are incremented, at some point we'll want to begin pruning
+old version release notes from this object. But that's not in this macro just yet.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
