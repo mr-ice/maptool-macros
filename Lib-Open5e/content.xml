@@ -435,7 +435,7 @@
         <string>libversion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>libversion</key>
-          <value class="string">0.16</value>
+          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
