@@ -2122,6 +2122,27 @@
         </entry>
         <entry>
           <net.rptools.maptool.model.GUID>
+            <baGUID>X198HUDYTAOIc44VfrgB1A==</baGUID>
+          </net.rptools.maptool.model.GUID>
+          <net.rptools.maptool.model.LightSource>
+            <lightList class="linked-list">
+              <net.rptools.maptool.model.Light>
+                <facingOffset>0.0</facingOffset>
+                <radius>1000.0</radius>
+                <arcAngle>90.0</arcAngle>
+                <shape>CIRCLE</shape>
+                <isGM>false</isGM>
+                <ownerOnly>false</ownerOnly>
+              </net.rptools.maptool.model.Light>
+            </lightList>
+            <name>Sunlight</name>
+            <id reference="../../net.rptools.maptool.model.GUID"/>
+            <lumens>0</lumens>
+            <scaleWithToken>false</scaleWithToken>
+          </net.rptools.maptool.model.LightSource>
+        </entry>
+        <entry>
+          <net.rptools.maptool.model.GUID>
             <baGUID>wKgCY3PCvh0GAAAAAKgCYw==</baGUID>
           </net.rptools.maptool.model.GUID>
           <net.rptools.maptool.model.LightSource>
