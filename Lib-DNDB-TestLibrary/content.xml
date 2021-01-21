@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>trnkSkNOSZ61S2jMFek+cQ==</baGUID>
+    <baGUID>rBQFw1eOR4S+rLk8pgckdg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>TxH1lhakQeq5BYNoVub4LA==</baGUID>
+    <baGUID>cMGLzRLDSe6NzTh+3xngdg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,34 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>400</x>
-  <y>700</y>
-  <z>8</z>
+  <x>750</x>
+  <y>400</y>
+  <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>400</lastX>
-  <lastY>700</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>14</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>8</x>
-        <y>14</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -68,7 +48,7 @@
   <tokenShape>SQUARE</tokenShape>
   <tokenType>NPC</tokenType>
   <layer>TOKEN</layer>
-  <propertyType>Basic</propertyType>
+  <propertyType>DNDebug</propertyType>
   <tokenOpacity>1.0</tokenOpacity>
   <terrainModifier>0.0</terrainModifier>
   <terrainModifierOperation>NONE</terrainModifierOperation>
@@ -138,6 +118,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Green</string>
       <boolean>false</boolean>
     </entry>
@@ -146,11 +130,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dead</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -341,6 +337,10 @@
       <string>Dying</string>
       <boolean>false</boolean>
     </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
   </state>
   <propertyMapCI>
     <store>
@@ -377,6 +377,13 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>campaignpropertiesversion{0.15}</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>campaignPropertiesVersion{0.15}</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>constitution ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Ability</key>
@@ -397,6 +404,14 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>DSPass</key>
           <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency</key>
+          <value class="string">6</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -599,6 +614,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>lib.releasenotesobj</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>lib.releaseNotesObj</key>
+          <value class="string">{"0.15": "Library+has+been+officially+versioned."}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>eyes</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Eyes</key>
@@ -641,8 +664,8 @@
       <entry>
         <string>deathsave</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>DeathSave</key>
-          <value class="string">0</value>
+          <key>deathSave</key>
+          <value class="string">{"property":"deathSave","name":"Death","valueId":"-1","bonuses":{},"bonus":0,"proficient":0}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -807,7 +830,7 @@
         <string>_dnd5e_lastrolledexpression</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Test+Attack","types":["staticRoll"],"staticRoll":20,"typedDescriptors":{"condition":"","staticRoll":"%3Cfont+color%3D%27red%27%3E%3Cb%3EA+roll+of+20+has+been+forced%21%3C%2Fb%3E%3C%2Ffont%3E","tooltipRoll":"20","tooltipDetail":"Fixed%2820%29"},"output":"Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 ","rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"outputs":["Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 "],"allTotal":20},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","output":"Critical Damage (+6)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 1d6 = 12 ","rolls":[6],"roll":6,"rollString":"1d6 + 1d6","total":12,"totals":[12],"typedDescriptors":{"tooltipRoll":"1d6+%2B+1d6","tooltipDetail":"%286%29+%2B+Critical%286%29","critable":"1"},"expressions":[{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Critical Damage","name":"Critical","rollString":"1d6","expressions":[],"output":"Rolled: 6&lt;br&gt;Critical Critical Damage Roll: 1d6 = 6 ","rolls":[6],"roll":6,"total":6,"totals":[6],"typedDescriptors":{"tooltipRoll":"1d6","tooltipDetail":"%286%29"},"outputs":["Rolled: 6&lt;br&gt;Critical Critical Damage Roll: 1d6 = 6 "],"allTotal":6}],"description":"Critical Damage (+6)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+6)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 1d6 = 12 "],"allTotal":12},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Save Damage","name":"","saveEffectMultiplier":0.5,"saveEffectDescription":"half","output":"Target must make a  DC  or take 4 &lt;br&gt;half&lt;br&gt;Rolled: 4&lt;br&gt; Save Damage Roll: 1d6 = 4 ","rolls":[4],"roll":4,"rollString":"1d6","total":4,"totals":[4],"typedDescriptors":{"tooltipRoll":"1d6","tooltipDetail":"%284%29","saveable":"%7B%22damage%22%3A2%2C%22saveText%22%3A%22Save+for+Half%22%7D+%282%29","save-effect-damage":"2"},"description":"Target must make a  DC  or take 4 &lt;br&gt;half","outputs":["Target must make a  DC  or take 4 &lt;br&gt;half&lt;br&gt;Rolled: 4&lt;br&gt; Save Damage Roll: 1d6 = 4 "],"allTotal":4}]</value>
+          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Test+Attack","types":["staticRoll"],"staticRoll":20,"typedDescriptors":{"condition":"","staticRoll":"%3Cfont+color%3D%27red%27%3E%3Cb%3EA+roll+of+20+has+been+forced%21%3C%2Fb%3E%3C%2Ffont%3E","tooltipRoll":"20","tooltipDetail":"Fixed%2820%29"},"output":"Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 ","rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"outputs":["Rolled: 20&lt;br&gt;Test Attack Attack Roll: 1d20 = 20 "],"allTotal":20},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","output":"Critical Damage (+3)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 1&lt;br&gt; Damage Roll: 1d6 + 1d6 = 4 ","rolls":[1],"roll":1,"rollString":"1d6 + 1d6","total":4,"totals":[4],"typedDescriptors":{"tooltipRoll":"1d6+%2B+1d6","tooltipDetail":"%281%29+%2B+Critical%283%29","critable":"1"},"expressions":[{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Critical Damage","name":"Critical","rollString":"1d6","expressions":[],"output":"Rolled: 3&lt;br&gt;Critical Critical Damage Roll: 1d6 = 3 ","rolls":[3],"roll":3,"total":3,"totals":[3],"typedDescriptors":{"tooltipRoll":"1d6","tooltipDetail":"%283%29"},"outputs":["Rolled: 3&lt;br&gt;Critical Critical Damage Roll: 1d6 = 3 "],"allTotal":3}],"description":"Critical Damage (+3)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+3)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 1&lt;br&gt; Damage Roll: 1d6 + 1d6 = 4 "],"allTotal":4},{"diceSize":6,"diceRolled":1,"bonus":0,"expressionTypes":"Save Damage","name":"","saveEffectMultiplier":0.5,"saveEffectDescription":"half","output":"Target must make a  DC  or take 5 &lt;br&gt;half&lt;br&gt;Rolled: 5&lt;br&gt; Save Damage Roll: 1d6 = 5 ","rolls":[5],"roll":5,"rollString":"1d6","total":5,"totals":[5],"typedDescriptors":{"tooltipRoll":"1d6","tooltipDetail":"%285%29","saveable":"%7B%22damage%22%3A2%2C%22saveText%22%3A%22Save+for+Half%22%7D+%282%29","save-effect-damage":"2"},"description":"Target must make a  DC  or take 5 &lt;br&gt;half","outputs":["Target must make a  DC  or take 5 &lt;br&gt;half&lt;br&gt;Rolled: 5&lt;br&gt; Save Damage Roll: 1d6 = 5 "],"allTotal":5}]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1253,12 +1276,20 @@
   </propertyMapCI>
   <macroPropertiesMap>
     <entry>
+      <int>128</int>
+      <macro name="data_BasicToon_Yaichi"/>
+    </entry>
+    <entry>
       <int>1</int>
       <macro name="onCampaignLoad"/>
     </entry>
     <entry>
       <int>65</int>
       <macro name="data_AttackEditor_processorParams_2"/>
+    </entry>
+    <entry>
+      <int>129</int>
+      <macro name="dndbt_Horgotin"/>
     </entry>
     <entry>
       <int>66</int>
@@ -1285,28 +1316,12 @@
       <macro name="Run+Tests"/>
     </entry>
     <entry>
-      <int>88</int>
-      <macro name="data_BasicToon_30957877"/>
-    </entry>
-    <entry>
       <int>25</int>
       <macro name="dndbt_Test_KnownToons"/>
     </entry>
     <entry>
-      <int>89</int>
-      <macro name="data_BasicToon_30957978"/>
-    </entry>
-    <entry>
-      <int>90</int>
-      <macro name="data_BasicToon_30959709"/>
-    </entry>
-    <entry>
       <int>27</int>
       <macro name="Rebuild+Known+Static+States"/>
-    </entry>
-    <entry>
-      <int>91</int>
-      <macro name="data_BasicToon_30960137"/>
     </entry>
     <entry>
       <int>28</int>
@@ -1361,84 +1376,96 @@
       <macro name="dndbt_Zairali"/>
     </entry>
     <entry>
-      <int>103</int>
-      <macro name="data_BasicToon_BhelduhrBallrotterThrahak"/>
-    </entry>
-    <entry>
       <int>40</int>
       <macro name="Rebuild+Known+Live+States"/>
-    </entry>
-    <entry>
-      <int>104</int>
-      <macro name="data_BasicToon_Blurrier"/>
-    </entry>
-    <entry>
-      <int>105</int>
-      <macro name="data_BasicToon_Bob"/>
     </entry>
     <entry>
       <int>42</int>
       <macro name="dndbt_Test_KnownLiveToons"/>
     </entry>
     <entry>
-      <int>106</int>
-      <macro name="data_BasicToon_BodeMikbodephace"/>
-    </entry>
-    <entry>
-      <int>107</int>
-      <macro name="data_BasicToon_GeeWiz"/>
-    </entry>
-    <entry>
-      <int>108</int>
-      <macro name="data_BasicToon_KazRedrum"/>
-    </entry>
-    <entry>
-      <int>109</int>
-      <macro name="data_BasicToon_KetdelleDankil"/>
-    </entry>
-    <entry>
-      <int>110</int>
-      <macro name="data_BasicToon_Nibbles"/>
-    </entry>
-    <entry>
-      <int>111</int>
-      <macro name="data_BasicToon_RexRedrum"/>
-    </entry>
-    <entry>
-      <int>112</int>
-      <macro name="data_BasicToon_Zairali"/>
-    </entry>
-    <entry>
       <int>49</int>
       <macro name="dndbt_CreateDataMacro"/>
     </entry>
     <entry>
-      <int>113</int>
-      <macro name="data_BasicToon_Yaichi"/>
+      <int>114</int>
+      <macro name="data_BasicToon_30957877"/>
     </entry>
     <entry>
       <int>51</int>
       <macro name="dndbt_Test_ApplyTokenProperties"/>
     </entry>
     <entry>
+      <int>115</int>
+      <macro name="data_BasicToon_30957978"/>
+    </entry>
+    <entry>
       <int>52</int>
       <macro name="dndbt_Util_compareTokens"/>
+    </entry>
+    <entry>
+      <int>116</int>
+      <macro name="data_BasicToon_30959709"/>
+    </entry>
+    <entry>
+      <int>117</int>
+      <macro name="data_BasicToon_30960137"/>
+    </entry>
+    <entry>
+      <int>118</int>
+      <macro name="data_BasicToon_BhelduhrBallrotterThrahak"/>
+    </entry>
+    <entry>
+      <int>119</int>
+      <macro name="data_BasicToon_Blurrier"/>
+    </entry>
+    <entry>
+      <int>120</int>
+      <macro name="data_BasicToon_Bob"/>
+    </entry>
+    <entry>
+      <int>121</int>
+      <macro name="data_BasicToon_BodeMikbodephace"/>
     </entry>
     <entry>
       <int>58</int>
       <macro name="data_AttackEditor_processorParams_1"/>
     </entry>
     <entry>
+      <int>122</int>
+      <macro name="data_BasicToon_GeeWiz"/>
+    </entry>
+    <entry>
       <int>59</int>
       <macro name="dndbt_Test_AttackEditorProcessor_testRollBuild_1"/>
+    </entry>
+    <entry>
+      <int>123</int>
+      <macro name="data_BasicToon_KazRedrum"/>
     </entry>
     <entry>
       <int>60</int>
       <macro name="data_AttackEditor_processorExpression_1"/>
     </entry>
     <entry>
+      <int>124</int>
+      <macro name="data_BasicToon_KetdelleDankil"/>
+    </entry>
+    <entry>
+      <int>125</int>
+      <macro name="data_BasicToon_Nibbles"/>
+    </entry>
+    <entry>
+      <int>126</int>
+      <macro name="data_BasicToon_RexRedrum"/>
+    </entry>
+    <entry>
       <int>63</int>
       <macro name="dndbt_Test_AttackEditorProcessor_testRollBuild_2"/>
+    </entry>
+    <entry>
+      <int>127</int>
+      <macro name="data_BasicToon_Zairali"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

@@ -1,14 +1,6 @@
 [h: charId = arg (0)]
 
-[h, if (startsWith (charId, "dndbt_")), code: {
-	<!-- the char ID is a test id that is the target method that returns the char json -->
-	[h: log.warn ("Fetching test toon: " + charId)]
-	[h: macroString = "[r: " + charId + "()]"]
-	[h: toon = evalMacro (macroString)]
-}; {
-	[h: toon = dndb_getCharJSON (charId)]	
-}]
-
+[h: toon = dndb_getCharJSON (charId)]
 [h: name = json.path.read (toon, "data.name")]
 
 [h: log.info ("Building basic character")]

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>vF8Umhg1R3GQ+JyQL1cD1w==</baGUID>
+    <baGUID>oojfFZKLQiepBpsi/Ifnkw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>zRc4w6S6SVyBJVq72ZWkvQ==</baGUID>
+    <baGUID>BfYLiLR6SomR9v3bZ/OBkw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,75 +14,31 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>900</x>
-  <y>200</y>
+  <x>850</x>
+  <y>400</y>
   <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>900</lastX>
-  <lastY>300</lastY>
+  <lastX>850</lastX>
+  <lastY>400</lastY>
   <lastPath>
     <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>18</x>
-        <y>6</y>
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>8</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>18</x>
-        <y>5</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>24</x>
-          <y>6</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>1.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>18</x>
-        <y>4</y>
-        <g>0.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>18</x>
-        <y>6</y>
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>8</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>18</x>
-        <y>4</y>
-        <g>0.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -444,6 +400,13 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>campaignpropertiesversion{0.15}</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>campaignPropertiesVersion{0.15}</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>_ae2_metadata</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_AE2_Metadata</key>
@@ -468,14 +431,6 @@
         <string>charisma</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>perception</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Perception</key>
-          <value class="string">4</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -524,13 +479,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>deception</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Deception</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>dexterity save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Save</key>
@@ -538,23 +486,9 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>stealth</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Stealth</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>burrow</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Burrow</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>ac</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>AC</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -581,30 +515,9 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>survival</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Survival</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>constitution save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Save</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>animal handling</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Animal Handling</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>history</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>History</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -619,28 +532,6 @@ function changeType() {
         <string>intelligence</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>acrobatics</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Acrobatics</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>persuasion</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Persuasion</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>insight</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Insight</key>
-          <value class="string">7</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -662,13 +553,6 @@ function changeType() {
         <string>_ae2_actions</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_AE2_Actions</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>arcana</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Arcana</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -718,13 +602,6 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>sleight of hand</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Sleight of Hand</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>intelligence save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Save</key>
@@ -735,6 +612,14 @@ function changeType() {
         <string>intelligence bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lib.releasenotesobj</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>lib.releaseNotesObj</key>
+          <value class="string">{"0.15": "Library+has+been+officially+versioned."}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -775,13 +660,6 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>nature</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Nature</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>temphp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>TempHP</key>
@@ -789,23 +667,9 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>medicine</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Medicine</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>dexterity bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Bonus</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>religion</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Religion</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -821,13 +685,6 @@ function changeType() {
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Fly</key>
           <value class="string">24</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>performance</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Performance</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -856,27 +713,6 @@ function changeType() {
         <string>charisma save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Save</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>investigation</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Investigation</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>athletics</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Athletics</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>intimidation</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intimidation</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1811,6 +1647,10 @@ function changeType() {
     <entry>
       <int>246</int>
       <macro name="dnd5e_Util_assertCampaignPropertiesVersion"/>
+    </entry>
+    <entry>
+      <int>247</int>
+      <macro name="dnd5e_Util_displayReleaseNotes"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
