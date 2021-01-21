@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Gav7uZh7QtSFSG7V3pFO9Q==</baGUID>
+    <baGUID>e8RM0mAhS3ycdPzADcVebw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>AYsK6/hQRHCKST/zr+Fn/Q==</baGUID>
+    <baGUID>AoA58IGyRj2PN7uR9hgg2A==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>650</x>
-  <y>400</y>
-  <z>5</z>
+  <x>700</x>
+  <y>550</y>
+  <z>7</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>700</lastX>
+  <lastY>550</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>14</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>14</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -1015,6 +1035,10 @@
     <entry>
       <int>20</int>
       <macro name="o5e_Util_inferProficiencyAndBonus"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="o5e_Constants_getConstant"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
