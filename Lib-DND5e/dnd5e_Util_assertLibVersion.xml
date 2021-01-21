@@ -1,0 +1,30 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>1147ab79-2a51-483c-a1da-3b35675de374</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>245</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_assertLibVersion</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Utility to assert the current libversion of Lib:DnD5e is compatible. An optional parameter may be passed to assert this for any library token, as well. The entire macro code flow will abort should the version be incompatible.&lt;br&gt;
+arg(0)=required minimum version&lt;br&gt;
+arg(1)=(Optional) required maximum version; Use -1 to mean "no requirement"&lt;br&gt;
+arg(2)=(Optional) Token library to assert against&lt;br&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>JryKZDqXTM+0puttKETtxA==</baGUID>
+    <baGUID>vF8Umhg1R3GQ+JyQL1cD1w==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>F2mr/QwhSXqwTTBAnPYH5g==</baGUID>
+    <baGUID>zRc4w6S6SVyBJVq72ZWkvQ==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,19 +14,19 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>850</x>
-  <y>550</y>
-  <z>16</z>
+  <x>900</x>
+  <y>200</y>
+  <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>550</lastX>
-  <lastY>650</lastY>
+  <lastX>900</lastX>
+  <lastY>300</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>11</x>
-        <y>13</y>
+        <x>18</x>
+        <y>6</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -36,14 +36,14 @@
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>12</x>
-        <y>13</y>
+        <x>18</x>
+        <y>5</y>
         <g>1.0</g>
         <distanceTraveled>1.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
         <parent>
-          <x>11</x>
-          <y>13</y>
+          <x>24</x>
+          <y>6</y>
           <g>0.0</g>
           <distanceTraveled>0.0</distanceTraveled>
           <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -52,115 +52,23 @@
           <terrainModifier>0.0</terrainModifier>
           <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
         </parent>
-        <h>5.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>13</x>
-        <y>12</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>12</x>
-          <y>13</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>5.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>4.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>14</x>
-        <y>12</y>
-        <g>3.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>13</x>
-          <y>12</y>
-          <g>2.0</g>
-          <distanceTraveled>2.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
-          <h>4.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
-        </parent>
-        <h>3.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>15</x>
-        <y>12</y>
-        <g>4.0</g>
-        <distanceTraveled>4.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>14</x>
-          <y>12</y>
-          <g>3.0</g>
-          <distanceTraveled>3.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
-          <h>3.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
-        </parent>
-        <h>2.002</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>16</x>
-        <y>11</y>
-        <g>5.0</g>
-        <distanceTraveled>5.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>15</x>
-          <y>12</y>
-          <g>4.0</g>
-          <distanceTraveled>4.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
-          <h>2.002</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
-        </parent>
-        <h>1.002</h>
+        <h>1.0</h>
         <f>0.0</f>
         <terrainModifier>0.0</terrainModifier>
         <validMoves/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>17</x>
-        <y>11</y>
+        <x>18</x>
+        <y>4</y>
         <g>0.0</g>
-        <distanceTraveled>6.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>11</x>
-        <y>13</y>
+        <x>18</x>
+        <y>6</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -170,11 +78,11 @@
         <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
       </net.rptools.maptool.client.walker.astar.AStarCellPoint>
       <net.rptools.maptool.model.CellPoint>
-        <x>17</x>
-        <y>11</y>
+        <x>18</x>
+        <y>4</y>
         <g>0.0</g>
-        <distanceTraveled>6.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
     </waypointList>
   </lastPath>
@@ -280,6 +188,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Green</string>
       <boolean>false</boolean>
     </entry>
@@ -288,11 +200,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dead</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -452,6 +376,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Target - Blue</string>
       <boolean>false</boolean>
     </entry>
@@ -479,6 +407,10 @@
       <string>Dying</string>
       <boolean>false</boolean>
     </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
   </state>
   <propertyMapCI>
     <store>
@@ -500,7 +432,7 @@
         <string>libversion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>libversion</key>
-          <value class="string">0.1</value>
+          <value class="string">0.15</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -508,6 +440,13 @@
         <string>hp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_metadata</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Metadata</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -571,28 +510,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_javascript</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_AE2_JavaScript</key>
-          <value class="string">$.fn.selectpicker.Constructor.BootstrapVersion = '4';
-$.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
-$.fn.selectpicker.Constructor.DEFAULTS.styleBase = 'form-control';
-$.fn.selectpicker.Constructor.DEFAULTS.style = 'form-control';
-$.fn.selectpicker.Constructor.DEFAULTS.width = 'auto';
-$.fn.selectpicker.Constructor.DEFAULTS.maxOptions = '4';
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-function changeType() {
-   document.getElementById("submit").click();
-}
-          </value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>wisdom save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Save</key>
@@ -638,6 +555,28 @@ function changeType() {
         <string>ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>AC</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_javascript</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_JavaScript</key>
+          <value class="string">$.fn.selectpicker.Constructor.BootstrapVersion = '4';
+$.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
+$.fn.selectpicker.Constructor.DEFAULTS.styleBase = 'form-control';
+$.fn.selectpicker.Constructor.DEFAULTS.style = 'form-control';
+$.fn.selectpicker.Constructor.DEFAULTS.width = 'auto';
+$.fn.selectpicker.Constructor.DEFAULTS.maxOptions = '4';
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+function changeType() {
+   document.getElementById("submit").click();
+}
+          </value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -716,6 +655,13 @@ function changeType() {
         <string>condition</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_actions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Actions</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -945,6 +891,13 @@ function changeType() {
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_o5e_monsteractions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_o5e_MonsterActions</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1834,6 +1787,30 @@ function changeType() {
     <entry>
       <int>240</int>
       <macro name="dnd5e_SavedAttacks_enforceDrain"/>
+    </entry>
+    <entry>
+      <int>241</int>
+      <macro name="dnd5e_Property_resetCalculatedProperties"/>
+    </entry>
+    <entry>
+      <int>242</int>
+      <macro name="dnd5e_Property_calculateXPForCR"/>
+    </entry>
+    <entry>
+      <int>243</int>
+      <macro name="dnd5e_Util_checkVersion"/>
+    </entry>
+    <entry>
+      <int>244</int>
+      <macro name="dnd5e_Util_getCampaignPropertiesVersion"/>
+    </entry>
+    <entry>
+      <int>245</int>
+      <macro name="dnd5e_Util_assertLibVersion"/>
+    </entry>
+    <entry>
+      <int>246</int>
+      <macro name="dnd5e_Util_assertCampaignPropertiesVersion"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

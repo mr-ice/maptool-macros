@@ -10,37 +10,35 @@
 <!-- to build it from scratch -->
 <!-- oh fuck, the only thing in the toon to point to individual skills are jackass valueIds -->
 <!-- So Ima need to map those, also -->
-[h: preSkills = json.append ("",
-		json.set ("", "name", "Acrobatics", "ability", "dex", "entityId", "3"),
-		json.set ("", "name", "Animal Handling", "ability", "wis", "entityId", "11"),
-		json.set ("", "name", "Arcana", "ability", "int", "entityId", "6"),
-		json.set ("", "name", "Athletics", "ability", "str", "entityId", "2"),
-		json.set ("", "name", "Deception", "ability", "cha", "entityId", "16"),
-		json.set ("", "name", "History", "ability", "int", "entityId", "7"),
-		json.set ("", "name", "Insight", "ability", "wis", "entityId", "12"),
-		json.set ("", "name", "Intimidation", "ability", "cha", "entityId", "17"),
-		json.set ("", "name", "Investigation", "ability", "int", "entityId", "8"),
-		json.set ("", "name", "Medicine", "ability", "wis", "entityId", "13"),
-		json.set ("", "name", "Nature", "ability", "int", "entityId", "9"),
-		json.set ("", "name", "Perception", "ability", "wis", "entityId", "14"),
-		json.set ("", "name", "Performance", "ability", "cha", "entityId", "18"),
-		json.set ("", "name", "Persuasion", "ability", "cha", "entityId", "19"),
-		json.set ("", "name", "Religion", "ability", "int", "entityId", "10"),
-		json.set ("", "name", "Sleight of Hand", "ability", "dex", "entityId", "4"),
-		json.set ("", "name", "Stealth", "ability", "dex", "entityId", "5"),
-		json.set ("", "name", "Survival", "ability", "wis", "entityId", "15"),
-		json.set ("", "name", "Strength Ability", "ability", "str", "entityId", "dummyId"),
-		json.set ("", "name", "Dexterity Ability", "ability", "dex", "entityId", "dummyId"),
-		json.set ("", "name", "Constitution Ability", "ability", "con", "entityId", "dummyId"),
-		json.set ("", "name", "Intelligence Ability", "ability", "int", "entityId", "dummyId"),
-		json.set ("", "name", "Wisdom Ability", "ability", "wis", "entityId", "dummyId"),
-		json.set ("", "name", "Charisma Ability", "ability", "cha", "entityId", "dummyId")
+[h: skills = json.append ("",
+		json.set ("", "name", "Acrobatics", "ability", "Dexterity", "entityId", "3", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Animal Handling", "ability", "Wisdom", "entityId", "11", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Arcana", "ability", "Intelligence", "entityId", "6", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Athletics", "ability", "Strength", "entityId", "2", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Deception", "ability", "Charisma", "entityId", "16", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "History", "ability", "Intelligence", "entityId", "7", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Insight", "ability", "Wisdom", "entityId", "12", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Intimidation", "ability", "Charisma", "entityId", "17", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Investigation", "ability", "Intelligence", "entityId", "8", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Medicine", "ability", "Wisdom", "entityId", "13", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Nature", "ability", "Intelligence", "entityId", "9", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Perception", "ability", "Wisdom", "entityId", "14", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Performance", "ability", "Charisma", "entityId", "18", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Persuasion", "ability", "Charisma", "entityId", "19", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Religion", "ability", "Intelligence", "entityId", "10", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Sleight of Hand", "ability", "Dexterity", "entityId", "4", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Stealth", "ability", "Dexterity", "entityId", "5", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "Survival", "ability", "Wisdom", "entityId", "15", "bonuses", "{}", "bonus", 0)
 )]
-
-[h: skills = "[]"]
-[h, foreach (skill, preSkills), code: {
-	[h, if (skillName == "_all" || skillName == json.get (skill, "name")): skills = json.append (skills, skill)] 
-}]
+[h: abilitiesArry = json.append ("",
+		json.set ("", "name", "strAbility", "ability", "Strength", "entityId", "dummyId", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "dexAbility", "ability", "Dexterity", "entityId", "dummyId", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "conAbility", "ability", "Constitution", "entityId", "dummyId", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "intAbility", "ability", "Intelligence", "entityId", "dummyId", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "wisAbility", "ability", "Wisdom", "entityId", "dummyId", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "chaAbility", "ability", "Charisma", "entityId", "dummyId", "bonuses", "{}", "bonus", 0),
+		json.set ("", "name", "allAbility", "ability", "None", "entityId", "dummyId", "bonuses", "{}", "bonus", 0)
+)]
 
 [h: data = json.get (toon, "data")]
 [h: dataRetains = json.append ("", "modifiers", "inventory", "classes", "stats", "bonusStats", "overrideStats")]
@@ -49,25 +47,9 @@
 [h: fatToon = toon]
 [h: toon = json.set (toon, "data", skinnyData)]
 
-<!-- Lets call this the Rex Redrum bug: features that grant all ability checks some level of proficiency have -->
-<!-- to be accounted for, but they wont be found tied to any particular skill -->
-<!-- Find ALL modifiers related to ability-checks -->
-[h: abilitySearchArgs = json.set ("", "object", toon, 
-						"subType", "ability-checks")]
-[h: abilityMods = dndb_searchGrantedModifiers (abilitySearchArgs)]
-
-<!-- Now tease out the interesting bits -->
-<!-- No need to keep searching for stuff. This arry shouldnt be very big -->
-[h: abilityValue = 0]
-[h, foreach (abilityMod, abilityMods), code: {
-	[h: value = json.get (abilityMod, "type")]
-	[h, switch (value):
-		case "expertise": tempAbilityValue = 3;
-		case "proficiency": tempAbilityValue = 2;
-		case "half-proficiency": tempAbilityValue = 1;
-		default: tempAbilityValue = 0]
-	[h: abilityValue = math.max (abilityValue, tempAbilityValue)]
-}]
+<!-- TODO: Ability proficiencies are no longer included within the skill obj. Now need -->
+<!-- to set them separately and let the token handle calculation -->
+<!-- For bardly 'everybody gets half', we will just set the allAbility proficiency to half-->
 
 <!-- The most frustrating part about any DTO is trying to sniff out the weird places for user override -->
 <!-- values. And its an edge case anyways! So lets fetch all the relevant character values outside of -->
@@ -76,7 +58,7 @@
 [h: characterValuesSearchObj = json.set ("", "object", characterValues,
 					"valueTypeId", SKILL_ENTITY_TYPE_ID)]
 [h: skillValues = dndb_searchJsonObject (characterValuesSearchObj)]
-
+[h: log.debug (getMacroName() + ": skillValues = " + skillValues)]
 
 <!-- Since we cant modify existing skill objects, well build new ones instead. Stuff them into this array -->
 [h: afterSkillList = "[]"]
@@ -85,8 +67,6 @@
 [h: skillSearchArgs = json.set ("", "object", toon,
 							"entityTypeId", SKILL_ENTITY_TYPE_ID)]
 [h: skillMods = dndb_searchGrantedModifiers (skillSearchArgs)]
-
-
 <!-- Too many uncertainties here, so just go through the skill list -->
 <!-- Fall back to the generic search instead of more granted modifiers search -->
 [h, foreach (skill, skills), code: {
@@ -109,26 +89,19 @@
 
 	<!-- go from least to best -->
 	[h: proficientValue = 0]
-	[h, if (json.length (halfProfs) > 0): proficientValue = 1]
-	[h, if (json.length (proficiencies) > 0): proficientValue = 2]
-	[h, if (json.length (expertise) > 0): proficientValue = 3]
+	[h, if (json.length (halfProfs) > 0): proficientValue = 0.5]
+	[h, if (json.length (proficiencies) > 0): proficientValue = 1]
+	[h, if (json.length (expertise) > 0): proficientValue = 2]
 
-	[h: actualValue = round (math.max (abilityValue, proficientValue))]
-	[h, switch (actualValue):
-		case 0: proficientStr = "";
-		case 1: proficientStr = "half";
-		case 2: proficientStr = "proficient";
-		case 3: proficientStr = "expert"
-	]
+	[h: skill = json.set (skill, "proficient", proficientValue)]
 	
-	[h: skill = json.set (skill, "proficient", proficientStr)]
 
 	 <!-- now look for the other ridiculousness -->
 	[h: searchArgs = json.set ("", "object", skillValues,
 					"valueId", entityId)]
 	[h: characterValues = dndb_searchJsonObject (searchArgs)]
 	
-	[h: bonuses = "[]"]
+	[h: bonuses = "{}"]
 	<!-- for each choice, inspect the typeId -->
 	[h, foreach (characterValue, characterValues), code: {
 		<!-- Im at my MapTool nested code limit and I need to go deeper. There are ways around it, but lets try and play by the rules -->
@@ -136,25 +109,52 @@
 		[h: typeId = json.get (characterValue, "typeId")]
 		[h, switch (typeId):
 			case 23: typeLabel = "Override";
-			case 24: typeLabel = "Misc. Bonus";
-			case 25: typeLabel = "Magic Bonus";
+			case 24: typeLabel = "MiscBonus";
+			case 25: typeLabel = "MagicBonus";
 			case 26: typeLabel = "Proficiency";
-			case 27: typeLabel = "Stat Override";
+			case 27: typeLabel = "StatOverride";
 			default: typeLabel = typeId;
 		]
 		[h: value = json.get (characterValue, "value")]
-		[h: bonuses = json.append (bonuses, json.set ("", 
-									"typeId", typeId,
-									"typeLabel", typeLabel, 
-									"value", value))]
+		[h: bonus = json.set ("{}", "typeId", typeId, "value", value)]
+		[h: bonuses = json.set (bonuses, typeLabel, bonus)]
 	}]
 	[h: skill = json.set (skill, "bonuses", bonuses)]
 	<!-- Weve discovered all the details, but transforming will require another more nesting -->
 	<!-- Delegate it. -->
 
-	[h: skill = dndb_transformSkill (toon, skill)]
+	[h: skill = dndb_transformSkill (toon, skill, skillMods)]
 	[h: afterSkillList = json.append (afterSkillList, skill)]
 	
+}]
+
+<!-- Lets call this the Rex Redrum bug: features that grant all ability checks some level of proficiency have -->
+<!-- to be accounted for, but they wont be found tied to any particular skill -->
+<!-- Find ALL modifiers related to ability-checks -->
+[h: abilitySearchArgs = json.set ("", "object", toon, 
+						"subType", "ability-checks")]
+[h: abilityMods = dndb_searchGrantedModifiers (abilitySearchArgs)]
+
+<!-- Now tease out the interesting bits -->
+<!-- No need to keep searching for stuff. This arry shouldnt be very big -->
+[h: abilityValue = 0]
+[h, foreach (abilityMod, abilityMods), code: {
+	[h: value = json.get (abilityMod, "type")]
+	[h, switch (value):
+		case "expertise": tempAbilityValue = 2;
+		case "proficiency": tempAbilityValue = 1;
+		case "half-proficiency": tempAbilityValue = 0.5;
+		default: tempAbilityValue = 0]
+	[h: abilityValue = math.max (abilityValue, tempAbilityValue)]
+}]
+<!-- Wonder when I should care about per-ability proficiencies and bonuses? -->
+[h, foreach (ability, abilitiesArry), code: {
+	[abilityName = json.get (ability, "name")]
+	[if (abilityName == "allAbility"): 
+		ability = json.set (ability, "proficient", abilityValue); 
+		ability = json.set (ability, "proficient", 0)
+	]
+	[afterSkillList = json.append (afterSkillList, ability)]
 }]
 
 <!-- all done -->

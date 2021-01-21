@@ -21,4 +21,5 @@
 	[macro ("data_AttackEditor_processorParams_1@Lib:DNDB-TestLibrary"): "dndbt_Test_AttackEditorProcessor_testRollBuild_1@Lib:DNDB-TestLibrary"]
 	[dataPackage = macro.return]
 	[h, macro ("dnd5e_AttackEditor_processor@Lib:DnD5e"): dataPackage]
+	[h: macro.return = ""]
 }]

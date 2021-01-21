@@ -1,6 +1,6 @@
 [h, if (json.length (macro.args) > 0): inputObj = arg (0); inputObj = ""]
 [h: log.debug ("inputObj: " + inputObj)]
-[h: savingThrowNameCsv = "Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma"]
+[h: savingThrowNameCsv = "Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Death"]
 [h: savingThrowOrder = json.fromList (savingThrowNameCsv)]
 [h, if (encode (inputObj) == ""): abort (input ( " savingThrowAbility | " + savingThrowNameCsv + " | Select Saving Throw | List | value=string",
 					" advDisadv | None, Advantage, Disadvantage, Both | Advantage / Disadvantage | List | value=string",

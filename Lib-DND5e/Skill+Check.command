@@ -4,7 +4,7 @@
 [h: abilities = "Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma"]
 [h: skillCheckNameCsv = skillCheckNameCsv + "," + abilities]
 [h: skillCheckOrder = json.fromList (skillCheckNameCsv)]
-[h, if (encode (inputObj) == ""): abort (input ( " skillCheckName | " + skillCheckNameCsv + " | Select Saving Throw | List | value=string",
+[h, if (encode (inputObj) == ""): abort (input ( " skillCheckName | " + skillCheckNameCsv + " | Select Skill / Ability | List | value=string",
 					" advDisadv | None, Advantage, Disadvantage, Both | Advantage / Disadvantage | List | value=string",
 					" saveAsMacro | 0 | Save as Macro | check "))]
 [h, if (encode (inputObj) != ""), code: {
@@ -15,11 +15,13 @@
 }]
 
 [h: abilityArray = json.fromList (abilities)]
-[h, if (json.contains (abilityArray, skillCheckName)): propertyName = skillCheckName + "Bonus"; propertyName = skillCheckName]
-<!-- selection should correspond to the arry position of the skillCheck object -->
-[h: bonus = getProperty (propertyName)]
+[h, if (json.contains (abilityArray, skillCheckName)): propertyName = skillCheckName + "Ability"; propertyName = skillCheckName]
 
-[h: rollExpression = dnd5e_RollExpression_Ability (skillCheckName)]
+[h: bonus = getProperty (propertyName)]
+[h: skillAbility = getProperty ("ability." + lower (propertyName))]
+[h, if (skillAbility != ""): expressionName = propertyName + " (" + skillAbility + ")"; expressionName = propertyName]
+
+[h: rollExpression = dnd5e_RollExpression_Ability (expressionName)]
 [h: rollExpression = dnd5e_RollExpression_setBonus (rollExpression, bonus)]
 [h: rollExpression = dnd5e_RollExpression_setAdvantageDisadvantage (rollExpression, advDisadv)]
 
@@ -30,7 +32,6 @@
 	[h: dnd5e_Macro_clearMacroFamilyFromGroup (macroName, macroGroup)]
 	[h: cmdArg = json.set ("", "skillCheckName", skillCheckName, 
 							"advDisadv", "None")]
-
 	
 	[h: currentMacros = getMacros()]
 	[h: cmd = "Skill Check@Lib:DnD5e"]

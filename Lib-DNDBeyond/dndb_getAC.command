@@ -7,7 +7,7 @@
 				"filterType", "Armor",
 				"name", "Unarmored",
 				"stealthCheck", 1,
-				"armorTypeId", 1))]
+				"armorTypeId", 0))]
 <!-- And a dummy "noShield" -->
 [h: noShield = json.set ("", "equipped", "true",
 	"definition", json.set ("", "armorClass", 0,
@@ -28,13 +28,26 @@
 [h, if (equippedArmorNum > 1): log.warn ("Too many armors equipped, selecting first found armor")]
 [h, if (equippedArmorNum > 0): equippedArmor = json.get(equippedArmors, 0); 
 	equippedArmor = unarmored]
-<!-- adorn the armor with basic details -->
-[h: equippedArmor = dndb_setArmorBonus (equippedArmor)]
-[h: equippedArmorName = json.path.read (equippedArmor, "definition.name")]
+<!-- adorn the basuc armor object -->
+[h: basicArmor = json.set ("", "name", json.path.read (equippedArmor, "definition.name"),
+						"armorClass", json.path.read (equippedArmor, "definition.armorClass"),
+						"armorTypeId", json.path.read (equippedArmor, "definition.armorTypeId"))]
+[h: bonuses = json.path.read (equippedArmor, "definition.grantedModifiers.[?(@.subType == 'armor-class')]['value']", "SUPPRESS_EXCEPTIONS,ALWAYS_RETURN_LIST")]
+[h: totalBonus = 0]
+[h, foreach (bonus, bonuses): totalBonus = totalBonus + bonus]						
+[h: basicArmor = json.set (basicArmor, "bonus", totalBonus)]
 
-<!-- adorn the armor with bonuses -->
-<!-- New approach, get modifiers all at once -->
-[h: log.debug ("Selecting equipped armor: " + equippedArmor)]
+<!-- Magic Armor and Shiled bonuses are swept into the acBonus calculation at this point. Easier to deduct them -->
+<!-- now instead of refactoring code to search the toon sans those two eqiupped items -->
+[h: acBonus = 0 - totalBonus]
+
+[h, switch (json.get (basicArmor, "armorTypeId")):
+	case 1: armorType = "Light";
+	case 2: armorType = "Medium";
+	case 3: armorType = "Heavy";
+	default: armorType = "None";
+]
+[h: basicArmor = json.set (basicArmor, "armorType", armorType)]
 
 <!-- determine equipped shield -->
 [h: shields = json.path.read (allArmors, "[*].[?(@.definition.armorTypeId == 4)]")]
@@ -44,36 +57,21 @@
 [h, if (equippedShieldNum > 1): log.warn ("Too many shields equipped, selecting first found shield")]
 [h, if (equippedShieldNum > 0): equippedShield = json.get(equippedShields, 0); 
 	equippedShield = noShield]
-[h: equippedShield = dndb_setArmorBonus (equippedShield)]
-[h: log.debug ("Selecting equipped shield: " + equippedShield)]
-
-<!-- Calculate Dexterity bonus -->
-[h: attributes = dndb_getAbilities (toon)]
-[h: dexBonus = json.get (attributes, "dexBonus")]
-
-<!-- Apply dex bonus -->
-<!-- rules: -->
-<!-- no or light armor: full dex bonus -->
-<!-- medium armor: dex bonus, up to +2 -->
-<!-- heavy armor: No dex bonus (positive or negative) -->
-[h: armorTypeId = json.path.read (equippedArmor, "definition.armorTypeId")]
-[h: log.debug ("armorTypeId: " + armorTypeId)]
-[h, switch ( armorTypeId ):
-	case "1" : dexBonus = dexBonus;
-	case "2" : dexBonus = math.min (dexBonus, 2);
-	case "3" : dexBonus = 0
-]
-[h: dexBonus = round (dexBonus)]
-[h: log.debug ("dexBonus (calculated): " + dexBonus)]
+[h: basicShield = json.set ("", "name", json.path.read (equippedShield, "definition.name"),
+						"armorClass", json.path.read (equippedShield, "definition.armorClass"),
+						"armorTypeId", json.path.read (equippedShield, "definition.armorTypeId"))]
+[h: bonuses = json.path.read (equippedShield, "definition.grantedModifiers.[?(@.subType == 'armor-class')]['value']", "SUPPRESS_EXCEPTIONS,ALWAYS_RETURN_LIST")]
+[h: totalBonus = 0]
+[h, foreach (bonus, bonuses): totalBonus = totalBonus + bonus]						
+[h: basicShield = json.set (basicShield, "bonus", totalBonus)]
+<!-- Deducting shield bonus -->
+[h: acBonus = acBonus - totalBonus]
 
 <!-- Look for other modifiers -->
-[h: bonus = 0]
 [h: searchObj = json.set ("", "object", toon, 
 						"_searchType", "=~",
 						"subType", "/.*armor-class/")]
 [h: modifiers = dndb_searchGrantedModifiers (searchObj)]
-
-[h: totalBonus = 0]
 [h, foreach (modifier, modifiers), code: {
 	[h: bonus = dndb_getModValue (toon, modifier)]
 	<!-- test some specific conditions -->
@@ -81,58 +79,54 @@
 	[h: unarmoredRequired = 0]
 	[h, switch (id):
 		case "2206": unarmoredRequired = 1;
-		default: totalBonus = totalBonus + bonus
+		default: acBonus = acBonus + bonus
 	]
-	[h, if (unarmoredRequired > 0 && equippedArmorName == "Unarmored"): totalBonus = totalBonus + bonus]
+	[h, if (unarmoredRequired > 0 && json.get (basicArmor, "name") == "Unarmored"): acBonus = acBonus + bonus]
 }]
 
-<!-- And the customizations, by TypeID -->
-
 <!-- typeId 4 - Override base + DEX -->
-<!-- do type 4 before type 1 -->
-[h: overrideValue = -1]
+[h: bonuses = "{}"]
 [h: customSearchObject = json.set ("", "object", json.path.read (toon, "data.characterValues"),
 										"typeId", "4",
 										"property", "value")]
 [h: overridePlusDexValues = dndb_searchJsonObject (customSearchObject)]
-[h, if (json.length (overridePlusDexValues) > 0): overrideValue = json.get (overridePlusDexValues, 0)]
+[h, if (json.length (overridePlusDexValues) > 0), code: {
+	[overrideValue = json.get (overridePlusDexValues, 0)]
+	[bonusObj = json.set ("", "typeId", 4, "value", overrideValue)]
+	[bonuses = json.set (bonuses, "OverridePlusDex", bonusObj)]
+}]
 
-<!-- Not recognizing a difference between types 1 and 4. So for now, they act the same -->
 <!-- typeId 1 - Override -->
 [h: customSearchObject = json.set (customSearchObject, "typeId", "1")]
 [h: overrideValues = dndb_searchJsonObject (customSearchObject)]
-[h, if (json.length (overrideValues) > 0): overrideValue = json.get (overrideValues, 0)]
+[h, if (json.length (overrideValues) > 0), code: {
+	[overrideValue = json.get (overrideValues, 0)]
+	[bonusObj = json.set ("", "typeId", 1, "value", overrideValue)]
+	[bonuses = json.set (bonuses, "Override", bonusObj)]
+}]
 
 <!-- typeId 2 - Magic bonus -->
 [h: customSearchObject = json.set (customSearchObject, "typeId", "2")]
 [h: magicBonusValues = dndb_searchJsonObject (customSearchObject)]
-[h, if (json.length (magicBonusValues) > 0): totalBonus = totalBonus + json.get (magicBonusValues, 0)]
+[h, if (json.length (magicBonusValues) > 0), code: {
+	[magicValue =json.get (magicBonusValues, 0)]
+	[bonusObj = json.set ("", "typeId", 2, "value", magicValue)]
+	[bonuses = json.set (bonuses, "MagicBonus", bonusObj)]
+}]
 
 <!-- typeId 3 - Additional Misc bonus -->
 [h: customSearchObject = json.set (customSearchObject, "typeId", "3")]
 [h: miscBonusValues = dndb_searchJsonObject (customSearchObject)]
-[h, if (json.length (miscBonusValues) > 0): totalBonus = totalBonus + json.get (miscBonusValues, 0)]
+[h, if (json.length (miscBonusValues) > 0), code: {
+	[miscValue = json.get (miscBonusValues, 0)]
+	[bonusObj = json.set ("", "typeId", 3, "value", miscValue)]
+	[bonuses = json.set (bonuses, "MiscBonus", bonusObj)]
+}]
 
 
 <!-- And build it -->
-<!-- Lets recap the players -->
-<!-- total: every thing -->
-<!-- dexterity: dex bonus, modified -->
-<!-- armor: just the equipped armor -->
-<!-- shield: just the equipped shield -->
-<!-- feature: whatever the feature is providing -->
-[h: armorBonus = json.get (equippedArmor, "baseArmorClass")]
-[h: log.debug ("armorBonus: " + armorBonus)]
-[h: shieldBonus = json.get (equippedShield, "baseArmorClass")]
-[h: log.debug ("shieldBonus: " + shieldBonus)]
-<!-- calculate what we have so far -->
-[h: totalACBonus = armorBonus + shieldBonus + dexBonus + totalBonus]
-[h, if (overrideValue > -1): totalACBonus = overrideValue]
-<!-- build the base object -->
-[h: acObj = json.set ("", "Dexterity", dexBonus,
-		"Armor", armorBonus,
-		"Shield", shieldBonus,
-		"Bonus", totalBonus)]
-<!-- hope this added up correctly -->
-[h: acObj = json.set (acObj, "total", totalACBonus)]
+[h: acObj = json.set ("", "equippedArmor", basicArmor,
+		"equippedShield", basicShield,
+		"bonus", acBonus,
+		"bonuses", bonuses)]
 [h: macro.return = acObj]

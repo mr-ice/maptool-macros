@@ -1,0 +1,39 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>2b45186e-4d0d-43c8-bf27-af92f141af19</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>20</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>o5e_Util_inferProficiencyAndBonus</label>
+  <group>Open 5e - Utility</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Given a static bonus value and a base proficiency value, infer the&lt;br&gt; proficiency multiplier (if any) and assume the remainder is a bonus.&lt;br&gt;
+&lt;br&gt;
+This makes a few assumptions:&lt;br&gt;
+- it is only ever 0, 0.5, 1, or 2 the proficiency&lt;br&gt;
+- the bonus is never greater than the proficiency product until the proficiency value is 2.0&lt;br&gt;
+&lt;br&gt;
+Ergo, an input with a base bonus of 10 and a proficiency of 4 would return&lt;br&gt;
+{&lt;br&gt;
+	"proficiency": 2,&lt;br&gt;
+	"bonus": 2&lt;br&gt;
+}&lt;br&gt;
+arg(0): baseBonus&lt;br&gt;
+arg(1): proficiencyBonus&lt;br&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

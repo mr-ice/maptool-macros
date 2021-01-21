@@ -1,0 +1,39 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>8d9def22-1192-42a2-8e56-cb6f4bddda08</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>243</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_checkVersion</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Given a version, a minimum version, and an optional maximum version, return&lt;br&gt;
+true (1) when the version is valid and false (0) when out of bounds.&lt;br&gt;
+&lt;br&gt;
+arg(0) = version&lt;br&gt;
+arg(1) = minimum required version&lt;br&gt;
+arg(2) = (Optional) maximum required version&lt;br&gt;
+&lt;br&gt;
+Valid version formats:&lt;br&gt;
+1 = coerced to 1.0&lt;br&gt;
+1.0 = Major version 1, minor 0&lt;br&gt;
+2.5 = Major version 2, minor 5&lt;br&gt;
+2.3v1 = Invalid and will result in an error&lt;br&gt;
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

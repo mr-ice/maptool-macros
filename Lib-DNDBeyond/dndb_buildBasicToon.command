@@ -50,4 +50,5 @@
 [h: basicToon = json.set (basicToon, "spellSlots", dndb_getSpellSlots (toon))]
 [h: basicToon = json.set (basicToon, "spells", dndb_getSpells (toon))]
 
+[h: basicToon = json.set (basicToon, "basicToonVersion", getLibProperty ("dndb.basicToonVersion"))]
 [h: macro.return = basicToon]
