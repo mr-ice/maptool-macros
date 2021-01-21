@@ -1,4 +1,5 @@
 [h: monsterJson = arg (0)]
+[h: dnd5e_Property_resetCalculatedProperties()]
 [h: setProperty ("Character ID", json.get (monsterJson, "slug"))]
 [h: setName (json.get (monsterJson, "name"))]
 [h: setSize (json.get (monsterJson, "size"))]
