@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>oojfFZKLQiepBpsi/Ifnkw==</baGUID>
+    <baGUID>+tzMITZGRkiigAR86HaR4Q==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>BfYLiLR6SomR9v3bZ/OBkw==</baGUID>
+    <baGUID>iCqr3zRBTRe4iRU6Ld3rYw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,34 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>850</x>
-  <y>400</y>
+  <x>450</x>
+  <y>300</y>
   <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>850</lastX>
-  <lastY>400</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>17</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>17</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -374,6 +354,7 @@
         <string>strength</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength</key>
+          <value class="string">20</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1651,6 +1632,18 @@ function changeType() {
     <entry>
       <int>247</int>
       <macro name="dnd5e_Util_displayReleaseNotes"/>
+    </entry>
+    <entry>
+      <int>250</int>
+      <macro name="dnd5e_Util_Parser_expandProperties"/>
+    </entry>
+    <entry>
+      <int>251</int>
+      <macro name="dnd5e_Util_parseRollString"/>
+    </entry>
+    <entry>
+      <int>252</int>
+      <macro name="dnd5e_Property_getPropertySafe"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

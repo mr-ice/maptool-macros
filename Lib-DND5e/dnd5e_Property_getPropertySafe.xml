@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>cbb18455-0a0a-46a7-bd7d-6d013c4cf0d3</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>252</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Property_getPropertySafe</label>
+  <group>Token Properties</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Returns a property value for the current token, if there is a current token. If not, a default&lt;br&gt;
+value is returned instead. The intent for this macro is to allow the caller to interrogate&lt;br&gt;
+the current token for a property value without knowing if there actually is a current token&lt;br&gt;
+in the first place. Thus macros that are utilitarian in nature may try for property values&lt;br&gt;
+but continue when in an environment where there is no such possibility&lt;br&gt;
+&lt;br&gt;
+arg(0) = propertyName
+arg(1) = (Optional) If there is no current token or the property value is null&lt;/br&gt;
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

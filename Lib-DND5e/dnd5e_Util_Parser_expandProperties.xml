@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ef983344-fc8c-47eb-aff1-3c6430cd9983</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>250</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_Parser_expandProperties</label>
+  <group>Util - Parser</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Given a string like: &lt;br&gt;
+"This Little Pony has {numberOfHeads} heads, each with a bonus of {bonus.head}"&lt;br&gt;
+would return the string with properties 'numberOfHeads' and 'bonus.head' expanded. For&lt;br&gt;
+any property name that doesn't exist, the value is expanded to an empty string. An optional&lt;br&gt;
+second parameter may be passed to expand these values to a desired default value (like 0)&lt;br&gt;
+&lt;br&gt;
+arg(0) = string to parse&lt;br&gt;
+arg(1) = (Optional) default value to use should such a property not exist&lt;br&gt;
+&lt;/html&gt;
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
