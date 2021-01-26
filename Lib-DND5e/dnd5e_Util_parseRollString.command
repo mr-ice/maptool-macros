@@ -16,16 +16,19 @@
 <!-- All we really have to do is tokenize the string into two tokens: die roll and bonus -->
 <!-- base pattern is (\\d+)d(\\d+) for the die roll -->
 <!-- everyting else is .* and just stuff it into bonus. dnd5e_RE_getBonus will expand the value -->
-
+[h: retObj = "{}"]
 [h: rollStringRegEx = "(\\d+)d(\\d+)(.*)"]
 [h: findId = strfind (rollString, rollStringRegEx)]
 [h: findCount = getFindCount (findId)]
-[h: diceRolled = getGroup (findId, 1, 1)]
-[h: diceSize = getGroup (findId, 1, 2)]
-[h: bonus = getGroup (findId, 1, 3)]
-<!-- If bonus starts with + or - followed by a non-integer, prepend the whole string with 0 -->
-[h: pattern = "^\\s*[+-]"]
-[h: beginsWithId = strfind (bonus, pattern)]
-[h, if (getFindCount (beginsWithId) > 0): bonus = "0" + bonus; ""]
-[h: retObj = json.set ("", "diceRolled", diceRolled, "diceSize", diceSize, "bonus", bonus)]
+[h, if (findCount > 0), code: {
+	[h: diceRolled = getGroup (findId, 1, 1)]
+	[h: diceSize = getGroup (findId, 1, 2)]
+	[h: bonus = getGroup (findId, 1, 3)]
+	<!-- If bonus starts with + or - followed by a non-integer, 
+			prepend the whole string with 0 -->
+	[h: pattern = "^\\s*[+-]"]
+	[h: beginsWithId = strfind (bonus, pattern)]
+	[h, if (getFindCount (beginsWithId) > 0): bonus = "0" + bonus; ""]
+	[h: retObj = json.set (retObj, "diceRolled", diceRolled, "diceSize", diceSize, "bonus", bonus)]
+}; {}]
 [h: macro.return = retObj]

@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>iCqr3zRBTRe4iRU6Ld3rYw==</baGUID>
+    <baGUID>jalWVp5XRD2a6DJptTRT7g==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,7 +14,7 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>450</x>
+  <x>1050</x>
   <y>300</y>
   <z>2</z>
   <anchorX>0</anchorX>
@@ -441,7 +441,7 @@
         <string>_dnd5e_lastrolledexpression</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"diceSize":8,"diceRolled":6,"bonus":0,"expressionTypes":"Save Damage","name":"Poison+Punch","saveDC":18,"saveAbility":"Constitution","saveEffectDescription":"Half as much on a successful save","output":"Target must make a Constitution DC ? or take 25 &lt;br&gt;Half as much on a successful save&lt;br&gt;Rolled: 25&lt;br&gt;Poison Punch Save Damage Roll: 6d8 = 25 ","rolls":[25],"roll":25,"rollString":"6d8","total":25,"totals":[25],"typedDescriptors":{"tooltipRoll":"6d8","tooltipDetail":"(7+3+6+2+4+3)","saveable":"DC ? Constitution save for Half as much on a successful save"},"description":"Target must make a Constitution DC ? or take 25 &lt;br&gt;Half as much on a successful save","outputs":["Target must make a Constitution DC ? or take 25 &lt;br&gt;Half as much on a successful save&lt;br&gt;Rolled: 25&lt;br&gt;Poison Punch Save Damage Roll: 6d8 = 25 "],"allTotal":25}]</value>
+          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[],"name":"Scimitars","hasAdvantage":1,"rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"rolls":[20],"roll":20,"rollString":"1d20","total":20,"totals":[20],"typedDescriptors":{"tooltipRoll":"1d20","tooltipDetail":"%2820%29"}}]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -534,6 +534,14 @@ function changeType() {
         <string>_ae2_actions</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_AE2_Actions</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>savedattackrolledexpressions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>savedAttackRolledExpressions</key>
+          <value class="string">[[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%285%29+%2B+8","advantageable":"with+disadvantage","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":0,"hasDisadvantage":1,"output":"&lt;b&gt;Disadvantage:&lt;/b&gt; [5,5], Actual: 5&lt;br&gt;Rolled: 5&lt;br&gt; Attack Roll: 1d20 + 8 = 13 ","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[5],"rolls":[5,5],"roll":5,"rollString":"1d20 + 8","total":13,"totals":[],"maxPriority":-1,"outputs":["&lt;b&gt;Disadvantage:&lt;/b&gt; [5,5], Actual: 5&lt;br&gt;Rolled: 5&lt;br&gt; Attack Roll: 1d20 + 8 = 13 "],"allTotal":0,"description":"&lt;b&gt;Disadvantage:&lt;/b&gt; [5,5], Actual: 5"},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%286%29+%2B+7"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 7 = 13 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rollString":"1d8 + 7","total":13,"totals":[],"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 7 = 13 Bludgeoning"],"allTotal":0}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:100"}],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%286%29+%2B+8","advantageable":"with+advantage+and+disadvantage+cancelling","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":1,"hasDisadvantage":1,"output":"Advantage and Disadvantage cancel&lt;br&gt;Rolled: 6&lt;br&gt; Attack Roll: 1d20 + 8 = 14 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rollString":"1d20 + 8","total":14,"totals":[],"description":"Advantage and Disadvantage cancel","outputs":["Advantage and Disadvantage cancel&lt;br&gt;Rolled: 6&lt;br&gt; Attack Roll: 1d20 + 8 = 14 "],"allTotal":0},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%286%29+%2B+7"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 7 = 13 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rollString":"1d8 + 7","total":13,"totals":[],"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 7 = 13 Bludgeoning"],"allTotal":0}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%289%29+%2B+8","advantageable":"with+advantage","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":1,"hasDisadvantage":0,"output":"&lt;b&gt;Advantage:&lt;/b&gt; [20,9], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 ","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[9],"rolls":[20,9],"roll":20,"rollString":"1d20 + 8","total":28,"totals":[],"maxPriority":-1,"outputs":["&lt;b&gt;Advantage:&lt;/b&gt; [20,9], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 "],"allTotal":0,"description":"&lt;b&gt;Advantage:&lt;/b&gt; [20,9], Actual: 20"},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%287%29+%2B+7","critable":"1"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Critical Damage (+4)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 7&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 18 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[7],"rolls":[7],"roll":7,"rollString":"1d8 + 7 + 1d8","total":18,"totals":[18],"expressions":[{"expressionTypes":"Critical Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"diceSize":8,"diceRolled":1,"bonus":0,"damageTypes":["Bludgeoning"],"rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[4],"rollString":"1d8","expressions":[],"name":"Critical","output":"Rolled: 4&lt;br&gt;Critical Critical Damage Roll: 1d8 = 4 Bludgeoning","rolls":[4],"roll":4,"total":4,"totals":[],"typedDescriptors":{"tooltipRoll":"1d8","tooltipDetail":"%284%29"},"outputs":["Rolled: 4&lt;br&gt;Critical Critical Damage Roll: 1d8 = 4 Bludgeoning"],"allTotal":0}],"description":"Critical Damage (+4)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+4)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 7&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 18 Bludgeoning"],"allTotal":18}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%2820%29+%2B+8","advantageable":"with+advantage","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":1,"hasDisadvantage":0,"output":"&lt;b&gt;Advantage:&lt;/b&gt; [5,20], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 ","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[20],"rolls":[5,20],"roll":20,"rollString":"1d20 + 8","total":28,"totals":[],"maxPriority":-1,"outputs":["&lt;b&gt;Advantage:&lt;/b&gt; [5,20], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 "],"allTotal":0,"description":"&lt;b&gt;Advantage:&lt;/b&gt; [5,20], Actual: 20"},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%281%29+%2B+7","critable":"1"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Critical Damage (+5)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 1&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 13 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[1],"rolls":[1],"roll":1,"rollString":"1d8 + 7 + 1d8","total":13,"totals":[13],"expressions":[{"expressionTypes":"Critical Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"diceSize":8,"diceRolled":1,"bonus":0,"damageTypes":["Bludgeoning"],"rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[5],"rollString":"1d8","expressions":[],"name":"Critical","output":"Rolled: 5&lt;br&gt;Critical Critical Damage Roll: 1d8 = 5 Bludgeoning","rolls":[5],"roll":5,"total":5,"totals":[],"typedDescriptors":{"tooltipRoll":"1d8","tooltipDetail":"%285%29"},"outputs":["Rolled: 5&lt;br&gt;Critical Critical Damage Roll: 1d8 = 5 Bludgeoning"],"allTotal":0}],"description":"Critical Damage (+5)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+5)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 1&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 13 Bludgeoning"],"allTotal":13}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:100"}],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%2819%29+%2B+8","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":0,"hasDisadvantage":0,"output":"Rolled: 19&lt;br&gt; Attack Roll: 1d20 + 8 = 27 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[19],"rolls":[19],"roll":19,"rollString":"1d20 + 8","total":27,"totals":[],"outputs":["Rolled: 19&lt;br&gt; Attack Roll: 1d20 + 8 = 27 "],"allTotal":0},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%283%29+%2B+7"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Rolled: 3&lt;br&gt; Damage Roll: 1d8 + 7 = 10 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[3],"rolls":[3],"roll":3,"rollString":"1d8 + 7","total":10,"totals":[],"outputs":["Rolled: 3&lt;br&gt; Damage Roll: 1d8 + 7 = 10 Bludgeoning"],"allTotal":0}]]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1644,6 +1652,162 @@ function changeType() {
     <entry>
       <int>252</int>
       <macro name="dnd5e_Property_getPropertySafe"/>
+    </entry>
+    <entry>
+      <int>254</int>
+      <macro name="dnd5e_Macro_UDF_getRegistry"/>
+    </entry>
+    <entry>
+      <int>255</int>
+      <macro name="Data_Macro_UDF_Registry"/>
+    </entry>
+    <entry>
+      <int>256</int>
+      <macro name="dnd5e_Util_getRegistry"/>
+    </entry>
+    <entry>
+      <int>257</int>
+      <macro name="dnd5e_Macro_UDF_setRegistry"/>
+    </entry>
+    <entry>
+      <int>258</int>
+      <macro name="dnd5e_Util_setRegistry"/>
+    </entry>
+    <entry>
+      <int>260</int>
+      <macro name="dnd5e_Util_printRegistry"/>
+    </entry>
+    <entry>
+      <int>261</int>
+      <macro name="dnd5e_Macro_UDF_modifyKey"/>
+    </entry>
+    <entry>
+      <int>262</int>
+      <macro name="dnd5e_Macro_UDF_deleteKey"/>
+    </entry>
+    <entry>
+      <int>263</int>
+      <macro name="Manage+Macro+UDF+Registry"/>
+    </entry>
+    <entry>
+      <int>264</int>
+      <macro name="dnd5e_Type_Critable"/>
+    </entry>
+    <entry>
+      <int>265</int>
+      <macro name="dnd5e_Type_Damageable"/>
+    </entry>
+    <entry>
+      <int>266</int>
+      <macro name="dnd5e_Type_Advantagable"/>
+    </entry>
+    <entry>
+      <int>267</int>
+      <macro name="dnd5e_Type_Saveable"/>
+    </entry>
+    <entry>
+      <int>268</int>
+      <macro name="dnd5e_Type_Unrollable"/>
+    </entry>
+    <entry>
+      <int>269</int>
+      <macro name="dnd5e_Type_Lucky"/>
+    </entry>
+    <entry>
+      <int>270</int>
+      <macro name="dnd5e_DiceRoller_unrollableRoll"/>
+    </entry>
+    <entry>
+      <int>271</int>
+      <macro name="dnd5e_Type_Targeted"/>
+    </entry>
+    <entry>
+      <int>272</int>
+      <macro name="dnd5e_DiceRoller_targetedRoll"/>
+    </entry>
+    <entry>
+      <int>273</int>
+      <macro name="dnd5e_RollExpression_getTypeNames"/>
+    </entry>
+    <entry>
+      <int>274</int>
+      <macro name="dnd5e_RollExpression_getDiceRollers"/>
+    </entry>
+    <entry>
+      <int>275</int>
+      <macro name="dnd5e_Type_Basic"/>
+    </entry>
+    <entry>
+      <int>276</int>
+      <macro name="dnd5e_Type_StaticRoll"/>
+    </entry>
+    <entry>
+      <int>277</int>
+      <macro name="dnd5e_RollExpression_removeType"/>
+    </entry>
+    <entry>
+      <int>278</int>
+      <macro name="dnd5e_RollExpression_setMaxPriority"/>
+    </entry>
+    <entry>
+      <int>279</int>
+      <macro name="dnd5e_Type_getPriority"/>
+    </entry>
+    <entry>
+      <int>280</int>
+      <macro name="dnd5e_RollExpression_getMaxPriority"/>
+    </entry>
+    <entry>
+      <int>281</int>
+      <macro name="dnd5e_DiceRoller_staticRoll"/>
+    </entry>
+    <entry>
+      <int>282</int>
+      <macro name="dnd5e_DiceRoller_finalize"/>
+    </entry>
+    <entry>
+      <int>283</int>
+      <macro name="dnd5e_RollExpression_addRoll"/>
+    </entry>
+    <entry>
+      <int>284</int>
+      <macro name="dnd5e_RollExpression_WeaponAttack"/>
+    </entry>
+    <entry>
+      <int>285</int>
+      <macro name="dnd5e_Type_Proficient"/>
+    </entry>
+    <entry>
+      <int>286</int>
+      <macro name="dnd5e_RollExpression_setProficiency"/>
+    </entry>
+    <entry>
+      <int>287</int>
+      <macro name="dnd5e_RollExpression_getProficiency"/>
+    </entry>
+    <entry>
+      <int>288</int>
+      <macro name="dnd5e_RollExpression_setWeaponType"/>
+    </entry>
+    <entry>
+      <int>289</int>
+      <macro name="dnd5e_RollExpression_getWeaponType"/>
+    </entry>
+    <entry>
+      <int>290</int>
+      <macro name="dnd5e_Type_Weapon"/>
+    </entry>
+    <entry>
+      <int>291</int>
+      <macro name="dnd5e_DiceRoller_proficientRoll"/>
+    </entry>
+    <entry>
+      <int>292</int>
+      <macro name="dnd5e_DiceRoller_weaponAttackRoll"/>
+    </entry>
+    <entry>
+      <int>293</int>
+      <macro name="dnd5e_RollExpression_WeaponDamage"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

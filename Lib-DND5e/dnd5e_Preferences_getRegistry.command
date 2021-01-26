@@ -4,8 +4,5 @@
 	retrieval more of a PITA, but thats what this macro is for. And thanks to the encapsulation,
 	whenever we decide to change it up, only have to change it here -->
 [h: DATA_MACRO = "Data_Preference_Registry"]
-[h, macro (DATA_MACRO + "@Lib:DND5e"): ""]
-[h: inputObj = macro.return]
-[h, if (inputObj == ""): inputObj = "{}"; ""]
 
-[h: macro.return = decode (inputObj)]
+[h: macro.return = dnd5e_Util_getRegistry (DATA_MACRO)]
