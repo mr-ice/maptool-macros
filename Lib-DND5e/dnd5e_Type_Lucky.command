@@ -5,6 +5,7 @@
 [h: priority = dnd5e_Type_getPriority (basic) + 1]
 [h: type = json.set ("",
 	"type", "lucky",
-	"roller",  "dnd5e_DiceRoller_luckyRoll:" + priority
+	"roller",  "dnd5e_DiceRoller_luckyRoll:" + priority,
+	"visitor", json.set ("", "luckyRolls", 1)
 )]
 [h: macro.return = type]

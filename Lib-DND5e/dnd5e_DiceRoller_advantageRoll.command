@@ -3,28 +3,34 @@
 [h: disadvantage = dnd5e_RollExpression_hasDisadvantage (rollExpression)]
 <!-- we need to roll again if needsRoll equals exactly 1 -->
 [h: needsRoll = advantage + disadvantage]
-
-<!-- for things like Lucky or other rollers that might need to handle the second roll, send the second roll
-	through the DiceRoller. This means the advantagble type has to go -->
-[h: advantagableType = dnd5e_Type_Advantagable()]
-[h: roll2 = dnd5e_RollExpression_removeType (rollExpression, advantagableType)]
-[h: maxPriority = dnd5e_Type_getPriority (advantagableType, getMacroName())]
-[h: roll2 = dnd5e_RollExpression_setMaxPriority (roll2, maxPriority)]
-[h, if (needsRoll == 1), code: {
-	[rolled2 = dnd5e_DiceRoller_roll (roll2)]
-	[roll2 = json.get (rolled2, 0)]	
-}; {}]
+[h: advantageRolls = json.get (rollExpression, "advantageRolls")]
+[h, if (!isNumber(advantageRolls)): advantageRolls = 0; ""]
+[h: log.debug (getMacroName() + ": advantageRolls = " + advantageRolls)]
+[h: rolled2 = rollExpression]
+[h, if (needsRoll == 1 && advantageRolls > 0), code: {
+	<!-- Technically, its better if I get the type off of the RollExpression instead of
+		using a new instance in case some jackass tweaks the priority. Maybe next time... -->
+	[maxPriority = dnd5e_Type_getPriority (dnd5e_Type_Advantagable(), getMacroName())]
+	[advantageRolls = advantageRolls - 1]
+	<!-- Prevent additional re-rolls from advantage -->
+	[rollExpression = json.set (rollExpression, "advantageRolls", advantageRolls)]
+	[rolledArry = dnd5e_DiceRoller_roll (dnd5e_RollExpression_setMaxPriority (rollExpression, maxPriority))]
+	[rolled2 = json.get (rolledArry, 0)]	
+}; {
+	<!-- theres nothing to do here, return -->
+	[return (0, rollExpression)]
+	}]
 
 [h: roll1Val = json.get (rollExpression, "roll")]
-[h: roll2Val = json.get (roll2, "roll")]
-[h: rolls = json.get (roll2, "rolls")]
+[h: roll2Val = json.get (rolled2, "roll")]
+[h: rolls = json.get (rolled2, "rolls")]
 [h: description = ""]
 [h: descriptor = ""]
 <!-- Default value is roll1Value -->
 [h: roll = json.get (rollExpression, "roll")]
 
 [h, if (advantage && !disadvantage), code: {
-	[h, if (roll1Val > roll2Val):total = dnd5e_RollExpression_getTotal (rollExpression); total = dnd5e_RollExpression_getTotal (roll2)]
+	[h, if (roll1Val > roll2Val):total = dnd5e_RollExpression_getTotal (rollExpression); total = dnd5e_RollExpression_getTotal (rolled2)]
 	[h: roll = round (math.max (roll1Val, roll2Val))]
 	[h: description = "<b>Advantage:</b> " + rolls + ", Actual: " + roll]
 
@@ -32,7 +38,7 @@
 	[h: descriptor = "Advantage"]
 }]
 [h, if (!advantage && disadvantage), code: {
-	[h, if (roll1Val < roll2Val):total = dnd5e_RollExpression_getTotal (rollExpression); total = dnd5e_RollExpression_getTotal (roll2)]
+	[h, if (roll1Val < roll2Val):total = dnd5e_RollExpression_getTotal (rollExpression); total = dnd5e_RollExpression_getTotal (rolled2)]
 	[h: roll = round (math.min (roll1Val, roll2Val))]
 	[h: description = "<b>Disadvantage:</b> " + rolls + ", Actual: " + roll]
 

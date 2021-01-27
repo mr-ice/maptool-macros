@@ -1809,6 +1809,10 @@ function changeType() {
       <int>293</int>
       <macro name="dnd5e_RollExpression_WeaponDamage"/>
     </entry>
+    <entry>
+      <int>294</int>
+      <macro name="dnd5e_Type_getName"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
