@@ -1,0 +1,12 @@
+[h: macroName = arg(0)]
+[h, token ("Lib:ProfilerProxy"): libToken = currentToken()]
+[h, macro ("getMeterName@this"): macroName]
+[h: propertyName = macro.return]
+[h: log.debug (getMacroName() + ": propertyName = " + propertyName)]
+[h: currentValue = getProperty (propertyName, libToken)]
+[h: log.debug (getMacroname() + ": currentValue = " + currentValue)]
+[h, macro ("getClientTime@this"): ""]
+[h: clientTime = macro.return]
+[h: currentValue = json.set (currentValue, 
+			"startTime", clientTime, "macroName", macroName)]
+[h: setProperty (propertyName, currentValue, libToken)]
