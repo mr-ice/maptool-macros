@@ -2,6 +2,7 @@
 [h, if (json.length (macro.args) > 1): totalMultiplier = arg (1); totalMultiplier = 1]
 [h, if (json.length (macro.args) > 2): targeted = arg (2); targeted = 0]
 
+[h: log.debug (getMacroName() + ": rolling " + rollExpressions)]
 <!-- Property contstant -->
 [h: LAST_ROLLED_PROPERTY = "_dnd5e_lastRolledExpression"]
 
@@ -10,6 +11,8 @@
 [h, if (type == "OBJECT"): rollExpressions = json.append ("", rollExpressions)]
 [h: rolled = "[]"]
 [h, foreach (rollExpression, rollExpressions), code: {
+	<!-- Each RE is expected to have the Basic type, so add it now -->
+	[rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
 	<!-- The current RollExpression needs to have context of whats been rolled so far -->
 	[rollExpression = json.set (rollExpression, "rolledExpressions", rolled)]
 	[h: targetRoll = dnd5e_RollExpression_hasType(rollExpression, "target")]

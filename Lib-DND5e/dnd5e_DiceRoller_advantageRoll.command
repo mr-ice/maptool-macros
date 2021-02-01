@@ -1,4 +1,5 @@
 [h: rollExpression = arg (0)]
+[h: log.debug (getMacroName() + ": rolling " + rollExpression)]
 [h: advantage = dnd5e_RollExpression_hasAdvantage (rollExpression)]
 [h: disadvantage = dnd5e_RollExpression_hasDisadvantage (rollExpression)]
 <!-- we need to roll again if needsRoll equals exactly 1 -->
@@ -17,9 +18,9 @@
 	[rolledArry = dnd5e_DiceRoller_roll (dnd5e_RollExpression_setMaxPriority (rollExpression, maxPriority))]
 	[rolled2 = json.get (rolledArry, 0)]	
 }; {
-	<!-- theres nothing to do here, return -->
-	[return (0, rollExpression)]
-	}]
+	<!-- if neither is set, just get out of here -->
+	[return (needsRoll, rollExpression)]
+}]
 
 [h: roll1Val = json.get (rollExpression, "roll")]
 [h: roll2Val = json.get (rolled2, "roll")]
@@ -27,7 +28,7 @@
 [h: description = ""]
 [h: descriptor = ""]
 <!-- Default value is roll1Value -->
-[h: roll = json.get (rollExpression, "roll")]
+[h: roll = roll1Val]
 
 [h, if (advantage && !disadvantage), code: {
 	[h, if (roll1Val > roll2Val):total = dnd5e_RollExpression_getTotal (rollExpression); total = dnd5e_RollExpression_getTotal (rolled2)]
@@ -55,18 +56,15 @@
 [h: rollExpression = json.set (rollExpression, "roll", roll)]
 
 <!-- Update the tool tip detail if needed -->
-[h, if((advantage && !disadvantage) || (!advantage && disadvantage)), code: {
-	[h: bonus = dnd5e_RollExpression_getBonus (rollExpression)]
-	[h, if (!isNumber(bonus)): bonus = 0; ""]
-	[h, if(bonus != 0): bonusOutput = if(bonus > 0, " + " + bonus, " - " + (bonus * -1)); bonusOutput = ""]
-	[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", 
-			descriptor + "(" + json.toList(rolls) + ") " + bonusOutput)]
-}; {""}]
-[h, if (descriptor != ""): rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "advantageable", "with " + lower(descriptor))]
+<!-- TK - Finalizer will get the bonus, this will stick with advantage deets -->
+[h, if((advantage && !disadvantage) || (!advantage && disadvantage)):
+	rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", 
+			descriptor + "(" + json.toList(rolls) + ")"), ""]
+[h, if (descriptor != ""): rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "advantageable", "&nbsp;with " + lower(descriptor))]
 
 <!-- roll is set correctly, but total may not overwrite it -->
 [h: roll = dnd5e_RollExpression_getRoll (rollExpression)]
-[h: bonus = dnd5e_RollExpression_getBonus (rollExpression)]
-[h: rollExpression = json.set (rollExpression, "total", roll + bonus)]
-[h: log.debug ("dnd5e_DiceRoller_advantageRoll: return = " + rollExpression)]
+[h: individualRolls = json.append ("", roll)]
+[h: rollExpression = json.set (rollExpression, "roll", roll, "individualRolls", individualRolls)]
+[h: log.info ("dnd5e_DiceRoller_advantageRoll: return = " + rollExpression)]
 [h: macro.return = rollExpression]

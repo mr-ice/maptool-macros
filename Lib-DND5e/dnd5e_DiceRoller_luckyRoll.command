@@ -1,4 +1,5 @@
 [h: rollExpression = arg (0)]
+[h: log.debug (getMacroName() + ": rolling " + rollExpression)]
 [h: luckyRolls = json.get (rollExpression, "luckyRolls")]
 [h: roll = json.get (rollExpression, "roll")]
 [h, if (roll == 1 && luckyRolls > 0), code: {

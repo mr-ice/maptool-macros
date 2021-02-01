@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f83079c4-d386-44fe-be4a-2cc7879988a3</macroUUID>
+  <macroUUID>adf838d2-9807-417d-8c58-271326cd987d</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>281</index>
+  <index>303</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_DiceRoller_staticRoll</label>
-  <group>Dice Roller</group>
+  <label>dnd5e_RollExpression_compileTypeNames</label>
+  <group>RollExpression</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,22 +14,10 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Sets the roll value for the RollExpression. This value represents the total dice rolled value, excluding bonus and child expressions. For expressions rolling mulitple dice, the individual results will always be rendered as the first roll being the static value and all remaining rolls being 0. 
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>arg(0) = RollExpression
 
-Eg. for a static roll of "20", the following will result:
-
-1d20 = (20)
-2d20 = (20 + 0)
-3d6 = (20 + 0 + 0)
-1d20 + 15 = (20) + 15
-2d20 + 2d4 + 10 = (20 + 0) + 2d4 + 10
-
-
-arg(0) = RollExpression
-arg(1) = Static roll value
-
-returns updated RollExpression</toolTip>
+Returns updated RollExpression w/ typeNames field compiled</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

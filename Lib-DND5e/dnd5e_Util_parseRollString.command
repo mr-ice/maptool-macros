@@ -24,11 +24,16 @@
 	[h: diceRolled = getGroup (findId, 1, 1)]
 	[h: diceSize = getGroup (findId, 1, 2)]
 	[h: bonus = getGroup (findId, 1, 3)]
+	[h, if (bonus == ""): bonus = 0; ""]
 	<!-- If bonus starts with + or - followed by a non-integer, 
 			prepend the whole string with 0 -->
 	[h: pattern = "^\\s*[+-]"]
 	[h: beginsWithId = strfind (bonus, pattern)]
 	[h, if (getFindCount (beginsWithId) > 0): bonus = "0" + bonus; ""]
+
+	<!-- If this is a pure numerical expression, evaluate it now -->
+	[h: log.debug (getMacroName() + ": bonus = " + bonus)]
+	[h, if (indexOf (rollString, "{") < 0): evalMacro ("[h: bonus = " + bonus + "]"); ""]
 	[h: retObj = json.set (retObj, "diceRolled", diceRolled, "diceSize", diceSize, "bonus", bonus)]
 }; {}]
 [h: macro.return = retObj]

@@ -1,4 +1,5 @@
 [h: rollExpression = arg (0)]
+[h: log.debug (getMacroName() + ": rolling " + rollExpression)]
 [h: propertyModifiers = json.get (rollExpression, "propertyModifiers")]
 [h: proficient = dnd5e_RollExpression_getProficiency(rollExpression)]
 [h: propertyModifier = "" + proficient + " * Proficiency"]

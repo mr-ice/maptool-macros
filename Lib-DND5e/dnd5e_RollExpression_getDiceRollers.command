@@ -1,9 +1,10 @@
 [h: rollExpression = arg(0)]
 [h: maxPriority = dnd5e_RollExpression_getMaxPriority (rollExpression)]
 [h: types = dnd5e_RollExpression_getTypes (rollExpression)]
-[h: types = json.append (types, dnd5e_Type_Basic())]
 [h: priorityMap = "{}"]
-[h, foreach (type, types), code: {
+[h: typeFields = json.fields (types)]
+[h, foreach (typeKey, typeFields), code: {
+	[type = json.get (types, typeKey)]
 	[rollers = json.merge("[]", json.get (type, "roller"))]
 	[foreach (roller, rollers), code: {
 		[rollerMacro = listGet (roller, 0, ":")]

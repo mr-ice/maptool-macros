@@ -12,13 +12,6 @@
 [h: outputs = "[]"]
 [h: allTotal = 0]
 
-[h: children = dnd5e_RollExpression_getExpressions (rollExpression)]
-[h, if (!json.isEmpty (children)), code: {
-	<!-- We have to roll the children in multiples of the parents totalRolls -->
-	[children = dnd5e_DiceRoller_roll (children, totalRolls)]
-	[rollExpression = dnd5e_RollExpression_setExpressions (rollExpression, children)]
-}; {""}]
-
 [h, for (i, 0, totalRolls), code: {
 	<!-- clear the output, we capture multiple outputs in an array -->
 	[h: rollExpression = json.set (rollExpression, "output", "")]
@@ -38,12 +31,16 @@
 			the related roller(s) -->
 		[log.debug (getMacroName() + ": rolling " + roller)]
 		[evalMacro ( "[rollExpression = " + roller + "(rollExpression)]")]
+		[rolledRollers = json.get (rollExpression, "rolledRollers")]
+		[rollExpression = json.set (rollExpression, "rolledRollers",
+						json.append (rolledRollers, roller))]
 
 		<!-- Some rollers interrupt the rolling stack, so we have to re-fetch the remaining
 				rollers stack. Typically, these rollers zero out the stack, but some may decide
 				to push something new on the stack -->
 		[rollers = json.get (rollExpression, "remainingRollers")]
 	}]
+
 	[h: rollExpression = dnd5e_DiceRoller_finalize (rollExpression)]
 	[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 	[h: output = dnd5e_RollExpression_getOutput (rollExpression)]

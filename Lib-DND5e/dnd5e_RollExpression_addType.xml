@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1f0099d5-2349-4efb-a38f-0cce7d0d0de1</macroUUID>
+  <macroUUID>fd636fba-9af9-4711-88f1-32f932c57b21</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>55</index>
   <colorKey>default</colorKey>
@@ -18,7 +18,7 @@
   <toolTip>Adds to the types on the RollExpression. This is an uncommon function to call as most RollExpressions would only require an ExpressionType. Callers of this method are addressing edge cases.
 
 arg (0) = RollExpression
-arg (1) = type to add
+arg (1...n) = type(s) to add
 
 Returns RollExpression</toolTip>
   <displayHotKey>true</displayHotKey>

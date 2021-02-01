@@ -6,6 +6,5 @@
 [h: rollExpression = dnd5e_RollExpression_Attack(name, weaponBonus)]
 <!-- Will take care of adding the proficient type -->
 [h: rollExpression = dnd5e_RollExpression_setProficiency (rollExpression, proficient)]
-[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Weapon())]
 [h: rollExpression = dnd5e_RollExpression_setWeaponType (rollExpression, weaponType)]
 [h: macro.return = rollExpression]

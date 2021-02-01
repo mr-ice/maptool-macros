@@ -147,7 +147,7 @@
 	[h, if (newStep == DAMAGE_STEP_TYPE): addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_Damage(), json.length(exps)); ""]
 	[h, if (newStep == SAVE_STEP_TYPE), code: {
     	[h: addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_Save(), json.length(exps))]
-    	[h: addExp = dnd5e_RollExpression_addType(addExp, "target")]
+    	[h: addExp = dnd5e_RollExpression_addType(addExp, TARGET_ROLL_TYPE)]
     };{""}]
 	[h, if (newStep == SAVE_DAMAGE_STEP_TYPE): addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_SaveDamage(), json.length(exps)); ""]
 	[h, if (newStep == SAVE_CONDITION_STEP_TYPE): addExp = dnd5e_AE2_decorateNewStep(dnd5e_RollExpression_SaveEffect(), json.length(exps)); ""]

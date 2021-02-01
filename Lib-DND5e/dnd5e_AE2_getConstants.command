@@ -63,8 +63,9 @@
 					"purple", "Purple", "red", "Red", "silver", "Silver", "teal", "Teal", "white", "White", "yellow", "Yellow")]
 [h: typedDescriptorKeys = json.append("[]", "condition", "tooltipRoll", "tooltipDetail", "advantageable", "lucky", "critable", "saveable", "actionName",
 											"actionDesc", "actionType", "rowId", "extendedValues", "save-effect-damage")]
+
 [h: c = json.set("{}", "FIELDS_BY_STEP_TYPE", fieldsByType, "NAMES_OF_STEP_TYPES", stepNamesByType, "DAMAGE_TYPES", damageTypes, "CHAR_ABILITIES", abilities,
-		"STATE_GROUPS", stateGroups, "MACRO_COLORS", macroColors, "TARGET_ROLL_TYPE", "target", "UNROLLABLE_ROLL_TYPE", "unrollable",
+		"STATE_GROUPS", stateGroups, "MACRO_COLORS", macroColors, "TARGET_ROLL_TYPE", dnd5e_Type_Targeted(), "UNROLLABLE_ROLL_TYPE", dnd5e_Type_Unrollable(),
 	"ACTION_TYPES", actionTypes, "STATE_GROUPS", stateGroups,
 		"DNDB_ATTACK_TYPE", json.get(actionTypes, 0), "DNDB_SPELL_TYPE", json.get(actionTypes, 1), "ATTACK_TYPE", json.get(actionTypes, 2),
 		"SAVE_DAMAGE_TYPE", json.get(actionTypes, 3), "DAMAGE_TYPE", json.get(actionTypes, 4), "SAVE_COND_TYPE", json.get(actionTypes, 5), 

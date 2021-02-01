@@ -1,4 +1,5 @@
 [h: rollExpression = arg (0)]
+[h: log.debug (getMacroName() + ": rolling " + rollExpression)]
 <!-- If this is an attack, ask the RolExpression for the property modifier. If this is damage, 
 	find the last attack and ask it -->
 [h: weaponExpression = rollExpression]
@@ -7,6 +8,8 @@
 	[weaponExpression = dnd5e_RollExpression_findExpressionByType (candidates, "Attack")]
 }]
 [h: log.debug (getMacroName() + ": weaponExpression = " + weaponExpression)]
+<!-- If a Weapon damage roll was made without an associated attack, theres nothing to do -->
+[h, if (json.type (weaponExpression) != "OBJECT"): return (0, rollExpression); ""]
 [h: weaponType = dnd5e_RollExpression_getWeaponType(weaponExpression)]
 [h: propertyModifier = ""]
 [h, switch (weaponType):

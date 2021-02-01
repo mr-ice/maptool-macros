@@ -6,29 +6,36 @@
 [h: baseRoll = diceRolled + "d" + diceSize]
 [h: tooltipRoll = baseRoll + bonusOutput]
 [h: individualRolls = json.get (rollExpression, "individualRolls")]
-
-[h: tooltipDetail = "(" + json.toList(individualRolls, "+") + ")" + bonusOutput]
+[h, if (!json.isEmpty(individualRolls)):tooltipDetail = "(" + json.toList(individualRolls, "+") + ")"; tooltipDetail = ""]
+[h: tooltipDetail = tooltipDetail + bonusOutput]
 
 [h: rollString = dnd5e_RollExpression_getRollString (rollExpression)]
+
+<!-- iterate the children to get their tooltips and sub-totals -->
+[h: childTipDetails = ""]
+[h: childTipRolls = ""]
+[h: childTotals = 0]
+[h, foreach (child, dnd5e_RollExpression_getExpressions(rollExpression), ""), code: {
+	[childTotal = dnd5e_RollExpression_getTotal (child)]
+	[childTotals = childTotals + childTotal]
+	[tipDetail = dnd5e_RollExpression_getTypedDescriptor (child, "tooltipDetail")]
+	[childTipDetails = childTipDetails + " + " + tipDetail]
+	[tipRoll = dnd5e_RollExpression_getTypedDescriptor (child, "tooltipRoll")]
+	[childTipRolls = childTipRolls + " + " + tipRoll]
+}]
+
 [h: rolls = dnd5e_RollExpression_getRolls (rollExpression)]
 [h: log.debug (getMacroName() + ": rolls = " + rolls)]
 [h: totals = "[]"]
-[h: childTotals = 0]
 [h, foreach (roll, rolls), code: {
-	[total = roll + bonus]
-	[childExpressions = dnd5e_RollExpression_getExpressions (rollExpression)]
-	[foreach (child, childExpressions, ""), code: {
-		[childTotal = dnd5e_RollExpression_getTotal (child)]
-		[childTotals = childTotals + childTotal]
-		[total = total + childTotal]
-	}]
+	[total = roll + bonus + childTotals]
 	[totals = json.append (totals, total)]
 }]
-<!-- dont try and guess the roll from the rolls list. Instead, take it from the horses mouth -->
+
 [h: roll = dnd5e_RollExpression_getRoll (rollExpression)]
 [h: total = bonus + roll + childTotals]
 [h: log.debug (getMacroName() + ": rollExpression = " + rollExpression)]
 [h: rollExpression = json.set (rollExpression, "total", total, "totals", totals)]
-[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipRoll", tooltipRoll)]
-[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", tooltipDetail)]
+[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipRoll", tooltipRoll + childTipRolls)]
+[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", tooltipDetail + childTipDetails)]
 [h: macro.return = rollExpression]

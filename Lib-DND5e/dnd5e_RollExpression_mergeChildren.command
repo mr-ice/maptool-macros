@@ -42,8 +42,5 @@
 [h: allTotal = 0]
 
 [h: rollExpression = json.set (rollExpression,	"total", newTotal, "totals", newTotals)]
-
-<!-- rollString builds on the fly, we just set it on the property -->
-[h: rollString = dnd5e_RollExpression_getRollString (rollExpression)]
-[h: rollExpression = json.set (rollExpression, "rollString", rollString)]
+[h: rollExpression = dnd5e_RollExpression_calculateRollString (rollExpression)]
 [h: macro.return = rollExpression]

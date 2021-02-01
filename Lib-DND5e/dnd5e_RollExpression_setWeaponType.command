@@ -1,4 +1,5 @@
 [h: rollExpression = arg(0)]
 [h: weaponType = arg(1)]
 [h: rollExpression = json.set (rollExpression, "weaponType", weaponType)]
+[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Weapon())]
 [h: macro.return = rollExpression]
