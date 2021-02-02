@@ -12,6 +12,6 @@
 	[h: description = "<b>Lucky!</b> 1 rerolled: " + 
 		json.get (rollExpression, "roll") + "<br>New total: " + json.get (rollExpression, "total")]
 	[h: rollExpression = dnd5e_RollExpression_addDescription (rollExpression, description)]
-	[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "lucky", "(lucky reroll)")]
+	[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "lucky", "(lucky reroll)", 0)]
 }]
 [h: macro.return = rollExpression]

@@ -23,8 +23,8 @@
 [h: staticRollText = "<font color='red'><b>A roll of " + roll + " has been forced!</b></font>")]
 [h: broadcast (staticRollText + "<br>")]
 [h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, 
-			"staticRoll", staticRollText)]
+			"staticRoll", staticRollText, 0)]
 [h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, 
-			"tooltipDetail", tooltipDetail)]
+			"tooltipDetail", tooltipDetail, 0)]
 			
 [h: macro.return = rollExpression]

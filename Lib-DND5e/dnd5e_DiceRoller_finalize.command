@@ -36,6 +36,6 @@
 [h: total = bonus + roll + childTotals]
 [h: log.debug (getMacroName() + ": rollExpression = " + rollExpression)]
 [h: rollExpression = json.set (rollExpression, "total", total, "totals", totals)]
-[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipRoll", tooltipRoll + childTipRolls)]
-[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", tooltipDetail + childTipDetails)]
+[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipRoll", tooltipRoll + childTipRolls, 0)]
+[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", tooltipDetail + childTipDetails, 0)]
 [h: macro.return = rollExpression]

@@ -59,12 +59,11 @@
 <!-- TK - Finalizer will get the bonus, this will stick with advantage deets -->
 [h, if((advantage && !disadvantage) || (!advantage && disadvantage)):
 	rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "tooltipDetail", 
-			descriptor + "(" + json.toList(rolls) + ")"), ""]
-[h, if (descriptor != ""): rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "advantageable", "&nbsp;with " + lower(descriptor))]
+			descriptor + "(" + json.toList(rolls) + ")", 0), ""]
+[h, if (descriptor != ""): rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "advantageable", "&nbsp;with " + lower(descriptor), 0)]
 
 <!-- roll is set correctly, but total may not overwrite it -->
 [h: roll = dnd5e_RollExpression_getRoll (rollExpression)]
 [h: individualRolls = json.append ("", roll)]
 [h: rollExpression = json.set (rollExpression, "roll", roll, "individualRolls", individualRolls)]
-[h: log.info ("dnd5e_DiceRoller_advantageRoll: return = " + rollExpression)]
 [h: macro.return = rollExpression]
