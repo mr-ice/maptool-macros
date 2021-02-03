@@ -1,7 +1,6 @@
 <!-- Prompt for source library -->
-[h: PROFILER_PROXY_NAME = "Lib:ProfilerProxy"]
-[h: PROFILER_START_MACRO = "monitorStart@Lib:Profiler"]
-[h: PROFILER_STOP_MACRO = "monitorStop@Lib:Profiler"]
+[h: log_Constants()]
+
 [h: inputStr = "junk | Input Source Library to profile and target proxy | | Label | span=true"]
 [h: libInputSelect = "libTokenName | Lib:TokeName | Token Library | TEXT"]
 
@@ -9,7 +8,7 @@
 
 [h: proxyChoices = ""]
 <!-- Assume there might already be an existing Lib:ProfilerProxy -->
-[h: mapTokens = json.append (getTokenNames("json"), PROFILER_PROXY_NAME)]
+[h: mapTokens = json.append (getTokenNames("json"), LIB_PROXY)]
 [h, foreach (mapToken, mapTokens, ""): proxyChoices = json.append (proxyChoices, mapToken)]
 [h: proxyInputStr = "proxyTokenSelect | " + json.toList (proxyChoices) + " | Target Proxy Token | LIST"]
 [h: inputStr = inputStr + "##" + proxyInputStr]
@@ -49,7 +48,8 @@
 
 <!-- Rename the target token -->
 [h, token (proxyTokenName), code: {
-	[setName (PROFILER_PROXY_NAME)]
+	[setName (LIB_PROXY)]
+	[setOwner ("")]
 	[macroNames = getMacros()]
 	[foreach (macroName, macroNames), code: {
 		[macroIndexes = getMacroIndexes(macroName)]
@@ -61,10 +61,11 @@
 	[foreach (libUdfName, libUdfNames), code: {
 		[fullMacroName = json.get (clientUdfs, libUdfName)]
 		[actualMacroName = listGet (fullMacroName, 0, "@")]
-		[proxyMacroCmd = "[h, macro ('" + PROFILER_START_MACRO + "'): getMacroName()]" +
-			"[macro ('" + actualMacroName + "@" + libTokenName + "'): macro.args]" +
-			"[h: data = macro.return]" +
-			"[h, macro ('" + PROFILER_STOP_MACRO + "'): getMacroName()]" +
+		[proxyMacroCmd = 
+		    "[h, macro ('" + PROFILER_START_MACRO + "'): json.set ('', 'name', getMacroName(), 'args', macro.args)]" + decode ("%0A") +
+			"[r, macro ('" + actualMacroName + "@" + libTokenName + "'): macro.args]" + decode ("%0A") +
+			"[h: data = macro.return]" + decode ("%0A") +
+			"[h, macro ('" + PROFILER_STOP_MACRO + "'): json.set ('', 'name', getMacroName(), 'return', data)]" + decode ("%0A") +
 			"[h: macro.return = data]"]
 		
 		[createMacro (libUdfName, proxyMacroCmd, props)]
@@ -73,7 +74,7 @@
 	}]
 	[props = json.set ("", "playerEditable", 0, "group", "Init")]
 	[createMacro ("Overload UDFs", defineMacroCmd, props)]
-	[macro ("Overload UDFs@" + PROFILER_PROXY_NAME): ""]
+	[macro ("Overload UDFs@" + LIB_PROXY): ""]
 }]
 
 [h: log.warn (getMacroname() + ": Ready to profile")]

@@ -1,0 +1,5 @@
+[h: LIB_PROXY = getLibProperty ("LIB_PROXY")]
+[h: CALL_STACK = getLibProperty ("CALL_STACK")]
+[h: PROFILER_START_MACRO = getLibProperty ("PROFILER_START_MACRO")]
+[h: PROFILER_STOP_MACRO = getLibProperty ("PROFILER_STOP_MACRO")]
+[h: LIB_LOG4MT = getLibProperty ("LIB_LOG4MT")]

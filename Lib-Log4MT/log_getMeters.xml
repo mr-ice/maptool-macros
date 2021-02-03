@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c8689a91-4d79-40c8-8415-db2288635e03</macroUUID>
+  <macroUUID>7dbb256f-233d-406e-a57a-50a54dd8488f</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>5</index>
+  <index>8</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>monitorStop</label>
-  <group>Profile Token Library - Monitor</group>
+  <label>log_getMeters</label>
+  <group>Profile Token Library - Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

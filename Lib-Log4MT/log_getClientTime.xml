@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c8689a91-4d79-40c8-8415-db2288635e03</macroUUID>
+  <macroUUID>6982b219-ea63-44de-b8f4-952af4f82ef3</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>5</index>
+  <index>6</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>monitorStop</label>
-  <group>Profile Token Library - Monitor</group>
+  <label>log_getClientTime</label>
+  <group>Profile Token Library - Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
+  <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

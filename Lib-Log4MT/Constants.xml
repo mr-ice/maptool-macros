@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c8689a91-4d79-40c8-8415-db2288635e03</macroUUID>
+  <macroUUID>9d1ccc54-46f1-4de4-9686-e0321b7029b9</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>5</index>
+  <index>12</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>monitorStop</label>
+  <label>Constants</label>
   <group>Profile Token Library - Monitor</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -14,8 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>This is a unique macro that is user defined as prf_Constants. When executed using the UDF, it will maintain the same variable scope and populate it with global constants.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

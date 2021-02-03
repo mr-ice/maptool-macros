@@ -1,5 +1,4 @@
-[h, macro ("getMeters@this"):""]
-[h: metersRaw = macro.return]
+[h: metersRaw = log_getMeters()]
 [h: log.debug (json.indent (metersRaw))]
 [h: metersCompiled = "{}"]
 <!-- first pass - Collect all meters for their respective macros -->
