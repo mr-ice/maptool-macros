@@ -1,5 +1,4 @@
-[h: metersRaw = log_getMeters()]
-[h: log.debug (json.indent (metersRaw))]
+[h: metersRaw = l4m.getMeters()]
 [h: metersCompiled = "{}"]
 <!-- first pass - Collect all meters for their respective macros -->
 [h, foreach (meterKey, json.fields (metersRaw)), code: {
@@ -42,6 +41,15 @@
 			total]
 }]
 [h: log.debug (getMacroName() + ": returned = " + json.indent (metersCompiled))]
-[h: log.warn (decode ("%0A") + csv)]
-[h: macro.return = csv]
+[h: report = decode ("%0A") + csv]
+[dialog("Performance Meters", "title=Performance Meters; input=1; width=580; height=550; closebutton=0"): {
+	<html><body>
 
+			<pre>[r: report]</pre>
+
+		</body>
+	</html>
+}]
+
+[h: log.warn (report)]
+[h: macro.return = csv]

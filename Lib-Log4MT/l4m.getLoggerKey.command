@@ -1,0 +1,6 @@
+[h, if (argCount() > 0): category = arg(0); category = ""]
+[h, if (argCount() > 1): suffix = arg(1); suffix = ".level"]
+[h: l4m.Constants()]
+[h, if (category == ""): category = ROOT_LOGGER_CATEGORY; ""]
+[h: loggerKey = LOGGER_PREFIX + category + suffix]
+[h: macro.return = lower(loggerKey)]

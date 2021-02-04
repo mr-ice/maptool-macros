@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6982b219-ea63-44de-b8f4-952af4f82ef3</macroUUID>
+  <macroUUID>a806a385-35af-4c20-9677-1e1a194fdc96</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>6</index>
+  <index>27</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>log_getClientTime</label>
+  <label>l4m.l4m.nfo</label>
   <group>Profile Token Library - Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -14,8 +14,9 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg (0) - Message or category
+arg (1) - Message when category supplied. If no category is supplied, root category is used</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

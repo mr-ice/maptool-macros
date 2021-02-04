@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ffda9740-e7d2-442c-9426-e8be009bf911</macroUUID>
+  <macroUUID>f10dc477-5a7c-45c3-9f53-4848f1d644a6</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>11</index>
   <colorKey>blue</colorKey>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>Requires meters to be installed</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

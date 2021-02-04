@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>52b92967-73f1-42ad-9483-d3ab08ac8835</macroUUID>
+  <macroUUID>cf5d1247-c5d9-4648-902f-1b81634c4d1c</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>3</index>
   <colorKey>red</colorKey>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Builds a CSV report of the current meters and outputs them to the log</toolTip>
+  <toolTip>Builds a CSV report of the current meters and outputs them to the log. Requires installing meters.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

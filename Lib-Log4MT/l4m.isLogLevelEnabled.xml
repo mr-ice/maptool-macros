@@ -1,0 +1,30 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>4d306e1f-72b7-427d-a742-4ab50fbfc869</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>15</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>l4m.isLogLevelEnabled</label>
+  <group>Profile Token Library - Functions</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg(0) = Log level (ERROR, WARN, INFO, DEBUG, TRACE)
+arg(1) = (Optional) Category (Macro name, token library, any user defined value). If not specified or category is not defined, root l4m.er configuration is evaluated.
+arg(2) = (Optional) Property Suffix (".level", ".entryExit")]
+Returns 0 = Not enabled or 1 = Is enabled</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

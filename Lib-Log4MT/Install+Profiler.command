@@ -1,5 +1,5 @@
 <!-- Prompt for source library -->
-[h: log_Constants()]
+[h: l4m.Constants()]
 
 [h: inputStr = "junk | Input Source Library to profile and target proxy | | Label | span=true"]
 [h: libInputSelect = "libTokenName | Lib:TokeName | Token Library | TEXT"]

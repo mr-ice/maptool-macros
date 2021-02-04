@@ -1,9 +1,9 @@
 <!-- Print or Clear the current call stack -->
-[h: log_Constants()]
+[h: l4m.Constants()]
 [h: callStack = getLibProperty (CALL_STACK, LIB_PROXY)]
-[h: processorLink = macroLinkText ("clearCallStack@this")]
+[h: processorLink = macroLinkText ("l4m.clearCallStack@this")]
 
-[dialog ("Current Call Stack", "title=Call Stack; input=1; width=580; height=550; closebutton=0"): {
+[dialog("Current Call Stack", "title=Call Stack; input=1; width=580; height=550; closebutton=0"): {
 	<html><body>
 		<form action="[r: processorLink]">
 			<pre>[r: json.indent (callStack)]</pre>

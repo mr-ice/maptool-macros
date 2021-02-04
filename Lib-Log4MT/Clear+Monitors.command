@@ -1,5 +1,5 @@
-[h: meters = log_getMeters()]
-[h, token (LIB_PROXY): libToken = currentToken()]
+[h: l4m.Constants()]
+[h: meters = l4m.getMeters()]
 [h, foreach (propertyName, json.fields (meters)): 
-		setProperty (propertyName, "", libToken)]
+		setLibProperty (propertyName, "", LIB_PROXY)]
 [r: "Monitors Cleared"]

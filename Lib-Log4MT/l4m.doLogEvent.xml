@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>1a262bc4-ead7-4ec7-9d02-f2a12c3bf87b</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>23</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>l4m.doLogEvent</label>
+  <group>Profile Token Library - Functions</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>arg (0) - Level (TRACE, DEBUG, INFO, WARN, ERROR)
+arg (1) - Category - An empty string may be used to denote root
+arg (2) - Msg
+
+If the provided category has the level enabled, a l4m.event will be generated for the GENERATED_LOG_EVENT level (INFO by default)</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

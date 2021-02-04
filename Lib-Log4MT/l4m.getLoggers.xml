@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>7d53ebe7-04bc-4574-ae67-e6a7f7ece73e</macroUUID>
+  <macroUUID>e4d16e47-1031-4968-a14f-cce9021627db</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>13</index>
+  <index>31</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>log_clearCallStack</label>
+  <label>l4m.getLoggers</label>
   <group>Profile Token Library - Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,7 +15,14 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>arg (0) = JSON Loggers object
+{
+   "l4m.er.root.level" : "INFO",
+   "l4m.er.Lib_Token.level" : "DEBUG",
+   "l4m.er.macroName" : "TRACE"
+}
+
+Existing defined l4m.ers not specified will be cleared except root l4m.er. If undefined, it will be set to WARN.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
