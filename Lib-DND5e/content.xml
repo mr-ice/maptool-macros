@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>RQTaJtHhRzie7WuC+JDkqQ==</baGUID>
+    <baGUID>zPV60JwiTwqNXJgJ4f0xDg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -351,32 +351,30 @@
   <propertyMapCI>
     <store>
       <entry>
-        <string>strength</string>
+        <string>ability.acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Strength</key>
-          <value class="string">20</value>
+          <key>ability.acrobatics</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>senses</string>
+        <string>dexteritysave</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Senses</key>
+          <key>DexteritySave</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>libversion</string>
+        <string>abilitybonus.wisdom</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>libversion</key>
-          <value class="string">0.15</value>
+          <key>abilityBonus.Wisdom</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>hp</string>
+        <string>bonus.acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>HP</key>
+          <key>bonus.acrobatics</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -388,30 +386,30 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_metadata</string>
+        <string>proficiency.performance</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_AE2_Metadata</key>
+          <key>proficiency.performance</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>character id</string>
+        <string>bonus.chasave</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Character ID</key>
+          <key>bonus.chaSave</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>strength save</string>
+        <string>---- attacks ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Strength Save</key>
+          <key>---- Attacks ----</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>charisma</string>
+        <string>---- skill bonuses ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Charisma</key>
+          <key>---- Skill Bonuses ----</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -423,53 +421,37 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>climb</string>
+        <string>ability.religion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Climb</key>
-          <value class="string">20</value>
+          <key>ability.religion</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_dnd5e_preferences_user</string>
+        <string>armor.ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dnd5e_Preferences_User</key>
+          <key>armor.ac</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_dnd5e_lastrolledexpression</string>
+        <string>proficiency.investigation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":0,"types":[{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},{"type":"proficient","roller":"dnd5e_DiceRoller_proficientRoll:90"},{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"}],"name":"Scimitar+of+Speed","bonus":2,"proficient":1,"weaponType":2,"hasAdvantage":1,"expressions":[{"name":"Bless","diceSize":4,"diceRolled":1,"expressionTypes":"Blessed","output":"Rolled: 2&lt;br&gt;Bless Blessed Roll: 1d4 = 2 ","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[2],"rolls":[1,2],"roll":2,"rollString":"1d4","total":2,"totals":[1,2],"typedDescriptors":{"tooltipRoll":"+1d4+1d4","tooltipDetail":"+%281%29+%282%29"},"outputs":["Rolled: 2&lt;br&gt;Bless Blessed Roll: 1d4 = 2 "],"allTotal":3}],"typedDescriptors":{"condition":"++","tooltipRoll":"+1d20+%2B+2","tooltipDetail":"+%289%29+%2B+2"},"output":"Rolled: 9&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 2 + 1d4 = 15 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[9],"rolls":[12,9],"roll":9,"rollString":"1d20 + 2 + 1d4","maxPriority":60,"total":15,"totals":[16,13],"outputs":["Rolled: 9&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 2 + 1d4 = 15 "],"allTotal":29}]</value>
+          <key>proficiency.investigation</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>wisdom save</string>
+        <string>---- combat ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Wisdom Save</key>
+          <key>---- Combat ----</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>constitution bonus</string>
+        <string>ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Constitution Bonus</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>dexterity save</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Dexterity Save</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>burrow</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Burrow</key>
+          <key>AC</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -496,9 +478,444 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>constitution save</string>
+        <string>---- ability bonuses ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Constitution Save</key>
+          <key>---- Ability Bonuses ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.animalhandling</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.animalHandling</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.medicine</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- skills &amp; abilities ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Skills &amp; Abilities ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>acrobatics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Acrobatics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.ac</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.deathsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.deathSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- abilities scores ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Abilities Scores ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.chaability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.chaAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>savedattackrolledexpressions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>savedAttackRolledExpressions</key>
+          <value class="string">[[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"proficient":{"type":"proficient","roller":"dnd5e_DiceRoller_proficientRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["advantagable","weapon","proficient","basic"],"name":"Scimitar of Speed","bonus":2,"weaponType":2,"proficient":1,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+11","tooltipDetail":"%282%29+%2B+11","rollerId":"D4DEA254559643C6BB8BC65D20A117BD"},"output":"Rolled: 2&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 11 = 13 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"remainingRollers":[],"individualRolls":[2],"rolls":[2],"roll":2,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"propertyModifiers":["bonus.attack.finesse","1 * Proficiency"],"total":13,"totals":[13],"outputs":["Rolled: 2&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 11 = 13 "],"allTotal":13},{"diceSize":6,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["critable","damageable","weapon","basic"],"name":"","weaponType":2,"damageTypes":["Slashing","magic"],"onCritAdd":4,"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 12 = 18 Slashing,magic","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"propertyModifiers":["bonus.attack.finesse"],"total":18,"totals":[18],"typedDescriptors":{"tooltipRoll":"1d6+%2B+12","tooltipDetail":"%286%29+%2B+12"},"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 12 = 18 Slashing,magic"],"allTotal":18}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"proficient":{"type":"proficient","roller":"dnd5e_DiceRoller_proficientRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["advantagable","weapon","proficient","basic"],"name":"Scimitar of Speed","bonus":2,"weaponType":2,"proficient":1,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+11","tooltipDetail":"%2812%29+%2B+11","rollerId":"D4DEA254559643C6BB8BC65D20A117BD"},"output":"Rolled: 12&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 11 = 23 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"remainingRollers":[],"individualRolls":[12],"rolls":[12],"roll":12,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"propertyModifiers":["bonus.attack.finesse","1 * Proficiency"],"total":23,"totals":[23],"outputs":["Rolled: 12&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 11 = 23 "],"allTotal":23},{"diceSize":6,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["critable","damageable","weapon","basic"],"name":"","weaponType":2,"damageTypes":["Slashing","magic"],"onCritAdd":4,"output":"Rolled: 3&lt;br&gt; Damage Roll: 1d6 + 12 = 15 Slashing,magic","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[3],"rolls":[3],"roll":3,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"propertyModifiers":["bonus.attack.finesse"],"total":15,"totals":[15],"typedDescriptors":{"tooltipRoll":"1d6+%2B+12","tooltipDetail":"%283%29+%2B+12"},"outputs":["Rolled: 3&lt;br&gt; Damage Roll: 1d6 + 12 = 15 Slashing,magic"],"allTotal":15}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"proficient":{"type":"proficient","roller":"dnd5e_DiceRoller_proficientRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["advantagable","weapon","proficient","basic"],"name":"Longbow","bonus":0,"weaponType":1,"proficient":1,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+7","tooltipDetail":"%286%29+%2B+7","rollerId":"D4DEA254559643C6BB8BC65D20A117BD"},"output":"Rolled: 6&lt;br&gt;Longbow Attack Roll: 1d20 + 7 = 13 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"propertyModifiers":["bonus.attack.ranged","1 * Proficiency"],"total":13,"totals":[13],"outputs":["Rolled: 6&lt;br&gt;Longbow Attack Roll: 1d20 + 7 = 13 "],"allTotal":13},{"diceSize":8,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["critable","damageable","weapon","basic"],"name":"","weaponType":1,"damageTypes":["Piercing"],"onCritAdd":1,"output":"Rolled: 7&lt;br&gt; Damage Roll: 1d8 + 2 = 9 Piercing","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[7],"rolls":[7],"roll":7,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"propertyModifiers":["bonus.attack.ranged"],"total":9,"totals":[9],"typedDescriptors":{"tooltipRoll":"1d8+%2B+2","tooltipDetail":"%287%29+%2B+2"},"outputs":["Rolled: 7&lt;br&gt; Damage Roll: 1d8 + 2 = 9 Piercing"],"allTotal":9}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"proficient":{"type":"proficient","roller":"dnd5e_DiceRoller_proficientRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["advantagable","weapon","proficient","basic"],"name":"Scimitar of Speed","bonus":2,"weaponType":2,"proficient":1,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+15","tooltipDetail":"%2814%29+%2B+15","rollerId":"D4DEA254559643C6BB8BC65D20A117BD"},"output":"Rolled: 14&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 15 = 29 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"remainingRollers":[],"individualRolls":[14],"rolls":[14],"roll":14,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_proficientRoll"],"propertyModifiers":["bonus.attack.finesse","1 * Proficiency"],"total":29,"totals":[29],"outputs":["Rolled: 14&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 15 = 29 "],"allTotal":29},{"diceSize":6,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"weapon":{"type":"weapon","roller":"dnd5e_DiceRoller_weaponAttackRoll:90"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["critable","damageable","weapon","basic"],"name":"","weaponType":2,"damageTypes":["Slashing","magic"],"onCritAdd":4,"output":"Rolled: 3&lt;br&gt; Damage Roll: 1d6 + 12 = 15 Slashing,magic","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[3],"rolls":[3],"roll":3,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll"],"propertyModifiers":["bonus.attack.finesse"],"total":15,"totals":[15],"typedDescriptors":{"tooltipRoll":"1d6+%2B+12","tooltipDetail":"%283%29+%2B+12"},"outputs":["Rolled: 3&lt;br&gt; Damage Roll: 1d6 + 12 = 15 Slashing,magic"],"allTotal":15}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["advantagable","basic"],"name":"Scimitar of Speed - Raging","bonus":15,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+15","tooltipDetail":"%286%29+%2B+15","rollerId":"0E53B1ACFBF34801A6CD12CB04E14994"},"output":"Rolled: 6&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 21 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"total":21,"totals":[21],"outputs":["Rolled: 6&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 21 "],"allTotal":21},{"diceSize":6,"diceRolled":1,"bonus":15,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":["critable","damageable","basic"],"name":"","damageTypes":["Slashing","magic"],"onCritAdd":4,"output":"Rolled: 4&lt;br&gt; Damage Roll: 1d6 + 15 = 19 Slashing,magic","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[4],"rolls":[4],"roll":4,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"total":19,"totals":[19],"typedDescriptors":{"tooltipRoll":"1d6+%2B+15","tooltipDetail":"%284%29+%2B+15"},"outputs":["Rolled: 4&lt;br&gt; Damage Roll: 1d6 + 15 = 19 Slashing,magic"],"allTotal":19}]]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>experience points</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Experience Points</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- health ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Health ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>attackexpressionjson</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>attackExpressionJSON</key>
+          <value class="string">{"Slinky":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":"advantagable","name":"Slinky","bonus":8},{"diceSize":8,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":"critable,damageable","name":"","damageTypes":["Smacking"],"onCritAdd":1}]}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.allability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.allAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lib.releasenotesobj</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>lib.releaseNotesObj</key>
+          <value class="string">{"0.15": "Library+has+been+officially+versioned."}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lastattackselection</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>lastAttackSelection</key>
+          <value class="string">Slinky</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligencebonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>IntelligenceBonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.deception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.deception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.survival</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.survival</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strengthsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>StrengthSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.deception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.deception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>deathsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>DeathSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>languages</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Languages</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- movement ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Movement ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.conability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.conAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>temphp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>TempHP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Medicine</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- saves ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Saves ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.movement</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.movement</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Religion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>cr</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CR</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.wissave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.wisSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdombonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>WisdomBonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>fly</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Fly</key>
+          <value class="string">24</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.attack.melee</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.attack.melee</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- ability score bonuses ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Ability Score Bonuses ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligenceability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>IntelligenceAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.wisability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.wisAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.history</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength</key>
+          <value class="string">20</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.intability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.intAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>senses</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Senses</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>libversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>libversion</key>
+          <value class="string">0.15</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>resistances</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Resistances</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>character id</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Character ID</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- formulas ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Formulas ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_preferences_user</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_Preferences_User</key>
+          <value class="string">{"attackEditor_macroFontColor":"white","attackEditor_macroButtonColor":"red"}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdom save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Wisdom Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.performance</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.performance</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>deception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Deception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.investigation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.investigation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.languages</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.languages</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>animal handling</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Animal Handling</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.allability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.allAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- armor ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Armor ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.strability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.strAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilitybonus.intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityBonus.Intelligence</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -510,38 +927,37 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>intelligence</string>
+        <string>---- skill proficiencies ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intelligence</key>
+          <key>---- Skill Proficiencies ----</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>strength bonus</string>
+        <string>bonus.attack.ranged</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Strength Bonus</key>
+          <key>bonus.attack.ranged</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>condition</string>
+        <string>dexteritybonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Condition</key>
+          <key>DexterityBonus</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_actions</string>
+        <string>---- ability proficiencies ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_AE2_Actions</key>
+          <key>---- Ability Proficiencies ----</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>savedattackrolledexpressions</string>
+        <string>proficiency.deception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>savedAttackRolledExpressions</key>
-          <value class="string">[[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:100"}],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%286%29+%2B+8","advantageable":"with+advantage+and+disadvantage+cancelling","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":1,"hasDisadvantage":1,"output":"Advantage and Disadvantage cancel&lt;br&gt;Rolled: 6&lt;br&gt; Attack Roll: 1d20 + 8 = 14 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rollString":"1d20 + 8","total":14,"totals":[],"description":"Advantage and Disadvantage cancel","outputs":["Advantage and Disadvantage cancel&lt;br&gt;Rolled: 6&lt;br&gt; Attack Roll: 1d20 + 8 = 14 "],"allTotal":0},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%286%29+%2B+7"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 7 = 13 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rollString":"1d8 + 7","total":13,"totals":[],"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 7 = 13 Bludgeoning"],"allTotal":0}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%289%29+%2B+8","advantageable":"with+advantage","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":1,"hasDisadvantage":0,"output":"&lt;b&gt;Advantage:&lt;/b&gt; [20,9], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 ","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[9],"rolls":[20,9],"roll":20,"rollString":"1d20 + 8","total":28,"totals":[],"maxPriority":-1,"outputs":["&lt;b&gt;Advantage:&lt;/b&gt; [20,9], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 "],"allTotal":0,"description":"&lt;b&gt;Advantage:&lt;/b&gt; [20,9], Actual: 20"},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%287%29+%2B+7","critable":"1"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Critical Damage (+4)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 7&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 18 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[7],"rolls":[7],"roll":7,"rollString":"1d8 + 7 + 1d8","total":18,"totals":[18],"expressions":[{"expressionTypes":"Critical Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"diceSize":8,"diceRolled":1,"bonus":0,"damageTypes":["Bludgeoning"],"rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[4],"rollString":"1d8","expressions":[],"name":"Critical","output":"Rolled: 4&lt;br&gt;Critical Critical Damage Roll: 1d8 = 4 Bludgeoning","rolls":[4],"roll":4,"total":4,"totals":[],"typedDescriptors":{"tooltipRoll":"1d8","tooltipDetail":"%284%29"},"outputs":["Rolled: 4&lt;br&gt;Critical Critical Damage Roll: 1d8 = 4 Bludgeoning"],"allTotal":0}],"description":"Critical Damage (+4)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+4)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 7&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 18 Bludgeoning"],"allTotal":18}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%2820%29+%2B+8","advantageable":"with+advantage","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":1,"hasDisadvantage":0,"output":"&lt;b&gt;Advantage:&lt;/b&gt; [5,20], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 ","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[20],"rolls":[5,20],"roll":20,"rollString":"1d20 + 8","total":28,"totals":[],"maxPriority":-1,"outputs":["&lt;b&gt;Advantage:&lt;/b&gt; [5,20], Actual: 20&lt;br&gt;Rolled: 20&lt;br&gt; Attack Roll: 1d20 + 8 = 28 "],"allTotal":0,"description":"&lt;b&gt;Advantage:&lt;/b&gt; [5,20], Actual: 20"},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%281%29+%2B+7","critable":"1"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Critical Damage (+5)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 1&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 13 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[1],"rolls":[1],"roll":1,"rollString":"1d8 + 7 + 1d8","total":13,"totals":[13],"expressions":[{"expressionTypes":"Critical Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"diceSize":8,"diceRolled":1,"bonus":0,"damageTypes":["Bludgeoning"],"rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[5],"rollString":"1d8","expressions":[],"name":"Critical","output":"Rolled: 5&lt;br&gt;Critical Critical Damage Roll: 1d8 = 5 Bludgeoning","rolls":[5],"roll":5,"total":5,"totals":[],"typedDescriptors":{"tooltipRoll":"1d8","tooltipDetail":"%285%29"},"outputs":["Rolled: 5&lt;br&gt;Critical Critical Damage Roll: 1d8 = 5 Bludgeoning"],"allTotal":0}],"description":"Critical Damage (+5)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; ","outputs":["Critical Damage (+5)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;Rolled: 1&lt;br&gt; Damage Roll: 1d8 + 7 + 1d8 = 13 Bludgeoning"],"allTotal":13}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","types":[{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:100"}],"typedDescriptors":{"rowId":"row-0","actionType":"Generic+Attack","actionName":"Donkey+Attack","actionDesc":"","condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%2819%29+%2B+8","rollerId":"9FEFAED7ABF14B5D9C3960B9F312D645"},"bonus":8,"hasAdvantage":0,"hasDisadvantage":0,"output":"Rolled: 19&lt;br&gt; Attack Roll: 1d20 + 8 = 27 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[19],"rolls":[19],"roll":19,"rollString":"1d20 + 8","total":27,"totals":[],"outputs":["Rolled: 19&lt;br&gt; Attack Roll: 1d20 + 8 = 27 "],"allTotal":0},{"expressionTypes":"Damage","types":[{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},{"type":"damageable"}],"typedDescriptors":{"rowId":"row-1","actionType":"Generic+Attack","tooltipRoll":"1d8+%2B+7","tooltipDetail":"%283%29+%2B+7"},"diceSize":8,"diceRolled":1,"bonus":7,"damageTypes":["Bludgeoning"],"output":"Rolled: 3&lt;br&gt; Damage Roll: 1d8 + 7 = 10 Bludgeoning","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[3],"rolls":[3],"roll":3,"rollString":"1d8 + 7","total":10,"totals":[],"outputs":["Rolled: 3&lt;br&gt; Damage Roll: 1d8 + 7 = 10 Bludgeoning"],"allTotal":0}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Scimitar of Speed - Raging","bonus":15,"advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"+","tooltipRoll":"+1d20+%2B+15","tooltipDetail":"+%281%29+%2B+15","rollerId":"+78C808DF32DE4B3DA241E0B8232AA61C"},"output":"Rolled: 1&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 16 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[1],"rolls":[1],"roll":1,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"total":16,"totals":[16],"outputs":["Rolled: 1&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 16 "],"allTotal":16},{"diceSize":6,"diceRolled":1,"bonus":15,"expressionTypes":"Damage","name":"","damageTypes":["Slashing","magic"],"onCritAdd":4,"types":{"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"output":"Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 15 = 20 Slashing,magic","rollers":["dnd5e_DiceRoller_basicRoll"],"remainingRollers":[],"individualRolls":[5],"rolls":[5],"roll":5,"rolledRollers":["dnd5e_DiceRoller_basicRoll"],"total":20,"totals":[20],"typedDescriptors":{"tooltipRoll":"+1d6+%2B+15","tooltipDetail":"+%285%29+%2B+15"},"outputs":["Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 15 = 20 Slashing,magic"],"allTotal":20}]]</value>
+          <key>proficiency.deception</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -554,24 +970,58 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>maxhp</string>
+        <string>proficiency.animalhandling</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>MaxHP</key>
+          <key>proficiency.animalHandling</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>constitution</string>
+        <string>stat.defenses</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Constitution</key>
+          <key>stat.defenses</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>attackexpressionjson</string>
+        <string>proficiency.chaability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>attackExpressionJSON</key>
-          <value class="string">{"jh":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"jh","bonus":0},{"diceSize":45,"diceRolled":1,"bonus":0,"expressionTypes":"Damage","name":"","damageTypes":[],"onCritAdd":""}]}</value>
+          <key>proficiency.chaAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>armor.type</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>armor.type</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.survival</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.survival</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.conability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.conAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.chasave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.chaSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>classes</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Classes</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -591,6 +1041,13 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>---- skill abilities ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Skill Abilities ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>intelligence save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Save</key>
@@ -598,17 +1055,9 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>intelligence bonus</string>
+        <string>bonus.strability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Intelligence Bonus</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>lib.releasenotesobj</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>lib.releaseNotesObj</key>
-          <value class="string">{"0.15": "Library+has+been+officially+versioned."}</value>
+          <key>bonus.strAbility</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -620,10 +1069,9 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>lastattackselection</string>
+        <string>proficiency.acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>lastAttackSelection</key>
-          <value class="string">jh</value>
+          <key>proficiency.acrobatics</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -635,23 +1083,65 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>elevation</string>
+        <string>ability.performance</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Elevation</key>
+          <key>ability.performance</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>initiative</string>
+        <string>proficiency.intability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Initiative</key>
+          <key>proficiency.intAbility</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>temphp</string>
+        <string>abilityproficiency.intelligence</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>TempHP</key>
+          <key>abilityProficiency.Intelligence</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilityproficiency.strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityProficiency.Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.raceclass</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.raceClass</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.dexability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.dexAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.consave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.conSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>race</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Race</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.intsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.intSave</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -663,17 +1153,23 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>dexterity</string>
+        <string>strengthbonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Dexterity</key>
+          <key>StrengthBonus</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>fly</string>
+        <string>bonus.animalhandling</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Fly</key>
-          <value class="string">24</value>
+          <key>bonus.animalHandling</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.arcana</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -699,9 +1195,368 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>charisma save</string>
+        <string>bonus.investigation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Charisma Save</key>
+          <key>bonus.investigation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intimidation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intimidation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.medicine</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.effects</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.effects</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.dexability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.dexAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilityproficiency.wisdom</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityProficiency.Wisdom</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilitybonus.constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityBonus.Constitution</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>hp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>HP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.history</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>climb</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Climb</key>
+          <value class="string">20</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.dexsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.dexSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.survival</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.survival</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>burrow</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Burrow</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.religion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.wisability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.wisAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charismasave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CharismaSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.allsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.allSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>insight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterityability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>DexterityAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.sleightofhand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.sleightOfHand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilityproficiency.constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityProficiency.Constitution</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.athletics</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.athletics</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>maxhp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>MaxHP</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>sleight of hand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Sleight of Hand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitutionsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ConstitutionSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.strsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.strSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilitybonus.dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityBonus.Dexterity</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.attack.finesse</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.attack.finesse</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.intimidation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.intimidation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdomsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>WisdomSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>wisdomability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>WisdomAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligencesave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>IntelligenceSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.intsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.intSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.sleightofhand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.sleightOfHand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilitybonus.charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityBonus.Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>armor.dexbonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>armor.dexBonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charismaability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CharismaAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.perception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.persuasion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.persuasion</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -713,6 +1568,427 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_o5e_monsteractions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_o5e_MonsterActions</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.dmskills</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.DMSkills</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.ranged</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.ranged</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilityproficiency.dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityProficiency.Dexterity</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.finesse</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.finesse</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.strsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.strSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.stealth</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.consave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.conSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_metadata</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Metadata</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Perception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_lastrolledexpression</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_lastRolledExpression</key>
+          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":"advantagable,basic","name":"Slinky","bonus":8,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%2815%29+%2B+8"},"output":"Rolled: 15&lt;br&gt;Slinky Attack Roll: 1d20 + 8 = 23 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[15],"rolls":[15],"roll":15,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"total":23,"totals":[23],"outputs":["Rolled: 15&lt;br&gt;Slinky Attack Roll: 1d20 + 8 = 23 "],"allTotal":23},{"diceSize":8,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":"critable,damageable,basic","name":"","damageTypes":["Smacking"],"onCritAdd":1,"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 4 = 10 Smacking","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"total":10,"totals":[10],"typedDescriptors":{"tooltipRoll":"1d8+%2B+4","tooltipDetail":"%286%29+%2B+4"},"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 4 = 10 Smacking"],"allTotal":10}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.religion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.religion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>charismabonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CharismaBonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- basics ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Basics ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.medicine</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.medicine</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dnd5e_campaignpreferences</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_campaignPreferences</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.deathsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.deathSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>survival</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Survival</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution Save</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dev.versionmap</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dev.versionMap</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>History</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilitybonus.strength</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityBonus.Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.perception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>persuasion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Persuasion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>condition</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strength bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Strength Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- save proficiencies ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Save Proficiencies ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_ae2_actions</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_AE2_Actions</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>arcana</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Arcana</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.melee</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.melee</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.health</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.health</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.history</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitutionbonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ConstitutionBonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitution</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Constitution</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence bonus</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence Bonus</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>stat.condition</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>stat.condition</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.sleightofhand</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.sleightOfHand</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>shield.ac</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>shield.ac</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.persuasion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.persuasion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>elevation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Elevation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- ability calculation properties ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Ability Calculation Properties ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- stat sheet ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Stat Sheet ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>initiative</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Initiative</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>abilityproficiency.charisma</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>abilityProficiency.Charisma</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>immunities</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Immunities</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>nature</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Nature</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- save bonuses ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Save Bonuses ----</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>proficiency.dexsave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>proficiency.dexSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.intimidation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.intimidation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.perception</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.perception</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ability.intimidation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ability.intimidation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>performance</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Performance</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.persuasion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.persuasion</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>constitutionability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ConstitutionAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>strengthability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>StrengthAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>investigation</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Investigation</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.wissave</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.wisSave</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
@@ -720,9 +1996,9 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_o5e_monsteractions</string>
+        <string>proficiency.stealth</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_o5e_MonsterActions</key>
+          <key>proficiency.stealth</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1848,6 +3124,10 @@ function changeType() {
     <entry>
       <int>303</int>
       <macro name="dnd5e_RollExpression_compileTypeNames"/>
+    </entry>
+    <entry>
+      <int>304</int>
+      <macro name="dnd5e_Util_HTML_defineSelectVars"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

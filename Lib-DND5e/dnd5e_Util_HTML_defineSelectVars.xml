@@ -1,0 +1,51 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>34e7d78b-d3cf-42cf-b862-05e426186858</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>304</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_HTML_defineSelectVars</label>
+  <group>Util - HTML</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Utility to alleviate identifying selected options of a select element
+
+arg(0) = JSON array of all select option values
+arg(1) = the value that is currently selected (not the array index)
+arg(2) = an identifier
+
+This macro runs in the caller's namespace and will create variables in the namespace like so:
+identifier + '.' + selectOptionValue + '.selected'
+
+If the option value is the selected value, it will be set to the value of "selected". Otherwise it will be empty. Exmaple usage:
+
+[r: selections = json.append ("", "melee", "ranged", "finesse")]
+[r: dnd5e_Util_HTML_buildSelectVars (selections, "ranged", "longbow")]
+
+&lt;select&gt;
+  &lt;option value="melee" [r: longbow.melee.selected]&gt;Melee&lt;/option&gt;
+  &lt;option value="ranged" [r: longbow.ranged.selected]&gt;Ranged&lt;/option&gt;
+  &lt;option value="finesse" [r: longbow.finesse.selected]&gt;Finesse&lt;/option&gt;
+&lt;/select&gt;
+
+Of the three generated vars, only 'longbow.ranged.selected' is populated with the value 'selected'
+
+Returns the variable name that has the 'selected' value (mostly for debug purposes, mostly)
+
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

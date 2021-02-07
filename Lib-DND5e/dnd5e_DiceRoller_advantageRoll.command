@@ -24,6 +24,7 @@
 
 [h: roll1Val = json.get (rollExpression, "roll")]
 [h: roll2Val = json.get (rolled2, "roll")]
+[h: log.debug ("roll1Val = " + roll1Val + "; roll2Val = " + roll2Val)]
 [h: rolls = json.get (rolled2, "rolls")]
 [h: description = ""]
 [h: descriptor = ""]
