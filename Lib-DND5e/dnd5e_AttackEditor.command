@@ -22,6 +22,7 @@
     </head>
     <script>
 [r:"
+
 function openAttack(evt, attackName) {
   var i, tabcontent, tablinks;
 
@@ -41,6 +42,35 @@ function openAttack(evt, attackName) {
   document.getElementById('activeAttack').value = attackName;
 }
 
+function hideElement() {
+	for (i = 0; i < arguments.length; i++) {
+    arguments[i].style.display = 'none';
+  }
+}
+
+function showElement() {
+	for (i = 0; i < arguments.length; i++) {
+    arguments[i].style.display = 'initial';
+  }	
+}
+
+function toggleAttackType(attackType, attackName) {
+  weaponTypeLabel = document.getElementById ('weaponTypeLabelId-' + attackName);
+  abilityLabel = document.getElementById ('abilityLabelId-' + attackName);
+  proficiencyLabel = document.getElementById ('proficiencyLabelId-' + attackName);
+  switch (attackType) {
+  	case 'weapon':
+    	hideElement (abilityLabel);
+      showElement (weaponTypeLabel, proficiencyLabel);
+      break;
+    case 'ability':
+    	hideElement (weaponTypeLabel);
+      showElement (abilityLabel, proficiencyLabel);
+      break;
+    default:
+      hideElement (weaponTypeLabel, abilityLabel, proficiencyLabel);
+  }  
+}
 "]
     </script>
     <body>

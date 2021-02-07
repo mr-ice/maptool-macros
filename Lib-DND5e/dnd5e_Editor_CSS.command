@@ -53,7 +53,7 @@ label {
 }
 
 div.attack-container {
-  width: 500px;
+  width: 650px;
   margin: auto;
   border: 1px solid #000000;
   

@@ -68,7 +68,7 @@
 		[h: save = dnd5e_RollExpression_Save()]
 		[h: save = dnd5e_RollExpression_setSaveAbility(save, dnd5e_RollExpression_getSaveAbility(exp))]
 		[h: save = dnd5e_RollExpression_setSaveDC(save, dnd5e_RollExpression_getSaveDC(exp, 1))]
-		[h: save = dnd5e_RollExpression_addType(save, "target")]
+		[h: save = dnd5e_RollExpression_addType(save, dnd5e_Type_Target())]
 		[h: save = dnd5e_SavedAttacks_makeSave(id, save, optValue)]
 	};{
 		[h: save = ""]

@@ -4,13 +4,6 @@
 [h: log.debug ("rollExpression: " + rollExpression)]
 <!-- Check conditions -->
 [h: rollExpression = dnd5e_DiceRoller_applyConditions (rollExpression)]
-<!-- Static roll check, for broadcast only. Basic roll will take care of bidness -->
-[h, if (dnd5e_RollExpression_hasType (rollExpression, "staticRoll")), code: {
-	[h: staticRoll = dnd5e_RollExpression_getStaticRoll (rollExpression)]
-	[h: staticRollText = "<font color='red'><b>A roll of " + staticRoll + " has been forced!</b></font>")]
-	[h: broadcast (staticRollText + "<br>")]
-	[h: rollExpression = dnd5e_RollExpression_addTypedDescriptor(rollExpression, "staticRoll", staticRollText)]
-}]
 
 [h: totalRolls = json.get (rollExpression, "totalRolls")]
 [h, if (totalRolls == ""): totalRolls = totalMultiplier; totalRolls = totalRolls * totalMultiplier]
@@ -19,25 +12,36 @@
 [h: outputs = "[]"]
 [h: allTotal = 0]
 
-[h: children = dnd5e_RollExpression_getExpressions (rollExpression)]
-[h, if (!json.isEmpty (children)), code: {
-	<!-- We have to roll the children in multiples of the parents totalRolls -->
-	[children = dnd5e_DiceRoller_roll (children, totalRolls)]
-	[rollExpression = dnd5e_RollExpression_setExpressions (rollExpression, children)]
-}; {""}]
 [h, for (i, 0, totalRolls), code: {
 	<!-- clear the output, we capture multiple outputs in an array -->
 	[h: rollExpression = json.set (rollExpression, "output", "")]
-	[h: rollExpression = dnd5e_DiceRoller_basicRoll (rollExpression)]
-	[h, if (dnd5e_RollExpression_hasType (rollExpression, "advantagable")): 
-			rollExpression = dnd5e_DiceRoller_advantageRoll (rollExpression)]
-	[h, if (dnd5e_RollExpression_hasType (rollExpression, "lucky")): 
-			rollExpression = dnd5e_DiceRoller_luckyRoll (rollExpression)]
-	[h, if (dnd5e_RollExpression_hasType (rollExpression, "critable")): 
-			rollExpression = dnd5e_DiceRoller_critableRoll (rollExpression, rolled)]
-	[h, if (json.length (children) > 0): rollExpression = dnd5e_RollExpression_mergeChildren (rollExpression); ""]
-	[h: rollExpression = dnd5e_DiceRoller_saveDamageRoll (rollExpression)]
-	[h: rollExpression = dnd5e_DiceRoller_saveEffectRoll (rollExpression)]
+
+	<!-- Build a stack (array) of rollers -->
+	<!-- The array has been ordered based on roller priority (defined by the Types) -->
+	[rollers = dnd5e_RollExpression_getDiceRollers (rollExpression)]
+	[log.debug (getMacroName() + ": rollers = " + rollers)]
+	[rollExpression = json.set (rollExpression, "rollers", rollers, "remainingRollers", rollers)]
+	[while (!json.isEmpty(rollers)), code: {
+		[roller = json.get (rollers, 0)]
+		[rollers = json.remove (rollers, 0)]
+		[log.debug (getMacroName() + ": remaining rollers = " + rollers)]
+		[rollExpression = json.set (rollExpression, "remainingRollers", rollers)]
+		<!-- For each roller, send RE to roller and capture return RE. Return RE has been fully
+			processed and is considered "roll". Re-roll rules have already been applied by
+			the related roller(s) -->
+		[log.debug (getMacroName() + ": rolling " + roller)]
+		[evalMacro ( "[rollExpression = " + roller + "(rollExpression)]")]
+		[rolledRollers = json.get (rollExpression, "rolledRollers")]
+		[rollExpression = json.set (rollExpression, "rolledRollers",
+						json.append (rolledRollers, roller))]
+
+		<!-- Some rollers interrupt the rolling stack, so we have to re-fetch the remaining
+				rollers stack. Typically, these rollers zero out the stack, but some may decide
+				to push something new on the stack -->
+		[rollers = json.get (rollExpression, "remainingRollers")]
+	}]
+
+	[h: rollExpression = dnd5e_DiceRoller_finalize (rollExpression)]
 	[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 	[h: output = dnd5e_RollExpression_getOutput (rollExpression)]
 	[h: outputs = json.append (outputs, output)]

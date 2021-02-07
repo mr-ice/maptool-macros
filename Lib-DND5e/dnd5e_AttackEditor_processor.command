@@ -1,5 +1,5 @@
 [h: log.debug ("Proc args = " + json.indent (macro.args))]
-[h: log.debug ("Processor - Who am I? " + currentToken())]
+
 [h: inputArgs = macro.args]
 [h: actionButton = json.get (inputArgs, "actionButton")]
 [h: saveAttackAsMacro = json.get (inputArgs, "saveAttack")]
@@ -48,10 +48,29 @@
 	[damageCritical = json.get (inputArgs, "damageCritical-" + attackField)]
 	[attackExpression = dnd5e_RollExpression_Attack (attackName)]
 	[attackExpression = dnd5e_RollExpression_setBonus (attackExpression, attackBonus)]
+	<!-- adorn with weapon or spellcasting, if applicable -->
+	[attackType = json.get (inputArgs, "attackType-" + attackField)]
+	[weaponType = json.get (inputArgs, "weaponType-" + attackField)]
+	[abilityVal = json.get (inputArgs, "ability-" + attackField)]
+	[proficiencyVal = json.get (inputArgs, "proficiency-" + attackField)]
+	[if (attackType == "weapon"), code: {
+		[attackExpression = dnd5e_RollExpression_setWeaponType (attackExpression, weaponType)]
+		[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, proficiencyVal)]
+	}; {}]
+
+	[if (attackType  == "ability"), code: {
+		[attackExpression = dnd5e_RollExpression_setSpellcastingAbility (attackExpression, abilityVal)]
+		[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, proficiency)]
+	}; {}]
+	
 	[rollExpressions = json.append (rollExpressions, attackExpression)]
 
 	<!-- Weapon damage -->
 	[damageExpression = dnd5e_RollExpression_Damage ("", damageRollString)]
+	[if (attackType == "weapon"), code: {
+		[damageExpression = dnd5e_RollExpression_setWeaponType (damageExpression, weaponType)]
+	}; {}]
+	
 	[damageExpression = dnd5e_RollExpression_setDamageTypes (damageExpression, damageType)]
 	[damageExpression = dnd5e_RollExpression_setOnCritAdd (damageExpression, damageCritical)]
 	[rollExpressions = json.append (rollExpressions, damageExpression)]

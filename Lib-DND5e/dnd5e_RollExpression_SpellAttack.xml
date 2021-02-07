@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3105ed2c-734b-415b-92dd-4452df7a7978</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>295</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_SpellAttack</label>
+  <group>RollExpression - Prototypes</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Both optional:
+arg (0) = Spell name
+arg (1) = Spellcasting Ability (
+	0 = Strength,
+	1 = Dexterity,
+	2 = Constitution,
+	3 = Intelligence,
+	4 = Wisdom,
+	5 = Charisma
+)</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

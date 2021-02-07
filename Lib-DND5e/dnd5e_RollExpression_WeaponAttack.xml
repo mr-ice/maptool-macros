@@ -1,0 +1,30 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>c3445925-f5ee-451c-83e8-af1f09d27d69</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>284</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_WeaponAttack</label>
+  <group>RollExpression - Prototypes</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>arg (0): (Optional) Weapon Name
+arg (1): (Optional) Proficiency level (0, 0.5, 1, or 2)
+arg (2): (Optional) Weapon (or other uncommon) bonus
+arg (3): (Optional) 0 = Melee weapon or 1 = Ranged weapon (defaults to 0)</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
