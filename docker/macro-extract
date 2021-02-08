@@ -6,6 +6,7 @@
   .mtmacset - a maptool export of a set of macros
   .rptok - a maptool export of a token
   .mtprpos - a properties export
+  .cmpgn - a campaign export
 
 
 Each of these has a content.xml.  Parse that and extract all
@@ -16,10 +17,6 @@ In addtion, extract the command attribute, writing the .xml without one and
 writing the command to its own file at <label>.command.
 
 labels will be modified slightly to be more filesystem friendly.
-
-In this iteration, leave content.xml intact.  Eventually we want to leave a
-placeholder so that we can pick up the pieces from the filesystem.
-
 """
 
 import os
@@ -31,12 +28,13 @@ from lxml.etree import tostring
 import zipfile
 from urllib.parse import quote
 from MTAssetLibrary import MacroNameQuote as quote, fixed_version, DataElement, XML2File
+from MTAssetLibrary import maptool_macro_tags as mt_tags
 from textwrap import wrap
 
 AP = argparse.ArgumentParser()
 
 AP.add_argument('file', help="file to open, should be a .mtmacro, .mtmacset,"
-                ".rptok, or .mtprops file")
+                ".rptok, .mtprops, or .cmpgn file")
 
 AP.add_argument('--verbose','-v', action='store_true', default=False)
 
@@ -63,9 +61,6 @@ if not zipfile.is_zipfile(opts.file):
 
 zf = zipfile.ZipFile(opts.file)
 xml = objectify.parse(zf.open('content.xml'))
-macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
-tokentag = 'net.rptools.maptool.model.Token'
-proptag = 'net.rptools.maptool.model.CampaignProperties'
 base,ext = os.path.splitext(opts.file)
 
 def mktokendir(path):
@@ -76,23 +71,23 @@ def mktokendir(path):
 
 
 def macroList(elem):
-    if elem.tag == 'list':
-        # usually a list of macros
-        return {x.label:x for x in elem.findall('./'+macrotag)}
-    elif elem.tag == macrotag:
+    if elem.tag == mt_tags.macroset.tag or elem.tag == mt_tags.campaign.tag:
+        # usually a list of macros, but a campaign also has those
+        return {x.label:x for x in elem.findall('.//'+mt_tags.macro.tag)}
+    elif elem.tag == mt_tags.macro.tag:
         # it's already a macro
         return {elem.label:elem}
-    elif elem.tag == tokentag:
+    elif elem.tag == mt_tags.token.tag:
         # a token has a macroPropertiesMap with macros:
         mpm = elem.macroPropertiesMap
-        return {x.label:x for x in mpm.findall('./entry/'+macrotag)}
-    elif elem.tag == proptag:
+        return {x.label:x for x in mpm.findall('./entry/'+mt_tags.macro.tag)}
+    elif elem.tag == mt_tags.properties.tag:
         return {}
 
 for label, elem in macroList(xml.getroot()).items():
     label = quote(str(label))
 
-    if xml.getroot().tag == tokentag and xml.getroot().name.text.startswith('Lib:'):
+    if xml.getroot().tag == mt_tags.token.tag and xml.getroot().name.text.startswith('Lib:'):
         # Lib: tokens' macros stay with them
         mktokendir(base)
         xml_file = '{}/{}.xml'.format(base, label)
@@ -104,8 +99,9 @@ for label, elem in macroList(xml.getroot()).items():
     with open(command_file, 'w') as f:
         f.write(str(elem.command))
         if opts.verbose:
-           print('wrote {} bytes to {}'.format(
-               len(elem.command.text),command_file))
+            t = elem.command.text or elem.command
+            print('wrote {} bytes to {}'.format(
+                len(t),command_file))
     elem.remove(elem.command)
     with open(xml_file, 'w') as f:
         f.write(tostring(elem, pretty_print=True).decode())
@@ -117,7 +113,7 @@ for label, elem in macroList(xml.getroot()).items():
 # their content.xml and their properties.xml is usually more than just
 # the version of maptools.  So we'll extract those as well.  The
 # properties has a version that needs to be pinned, we'll do that next.
-if xml.getroot().tag == tokentag or xml.getroot().tag == proptag:
+if xml.getroot().tag == mt_tags.token.tag or xml.getroot().tag == mt_tags.properties.tag:
     mktokendir(base)
     zf.extractall(path=base)
     if opts.verbose:

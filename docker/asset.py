@@ -16,6 +16,7 @@ mtmacset      | [.../]Name1[.xml|.command]
 mtprops       | PropertiesDir
               | .
 ------------- | ------
+*             | *.project
 """
 
 import os
@@ -24,7 +25,7 @@ import logging as log
 from lxml import objectify
 from lxml.etree import tostring, Element
 
-from MTAssetLibrary import DataElement, tokentag, proptag, macrotag
+from MTAssetLibrary import DataElement, maptool_macro_tags as mt_tags
 from MTAssetLibrary import MacroNameQuote as quote, properties_xml
 from MTAssetLibrary import MTMacro
 
@@ -34,7 +35,7 @@ def xml_get_attr(xml, path, default=None):
     it is not found"""
     try:
         return xml.xpath('./' + path).pop().text
-    except Exception as e:  # noqa: F841
+    except:  # noqa: F841
         return default
 
 
@@ -70,6 +71,7 @@ def add_directory_to_zipfile(zf, directory_name):
                 f, os.path.getsize(f), zf.filename))
 
     for root, dirs, files in os.walk('assets'):
+        f"{dirs}"
         for f in files:
             f = os.path.join(root, f)
             zf.write(f)
@@ -84,8 +86,8 @@ class MTAsset():
     # Inputs for init can be any of
     # directory/
     #           content.xml
-    #               root.tag == tokentag
-    #               root.tag == proptag
+    #               root.tag == mt_tags.token.tag
+    #               root.tag == mt_tags.properties.tag
     # directory/
     #           MacroName
     #           MacroName.xml
@@ -102,30 +104,10 @@ class MTAsset():
         which kind of MapTool asset we intend from those files.  Allows
         transformation between extracted files and maptool asset file"""
 
-        self.types = {
-                'macro': {
-                    'ext': 'mtmacro',
-                    'tag': macrotag,
-                    },
-                'macroset': {
-                    'ext': 'mtmacset',
-                    'tag': 'list',
-                    },
-                'properties': {
-                    'ext': 'mtprops',
-                    'tag': proptag,
-                    },
-                'project': {
-                    'ext': 'project',
-                    'tag': 'project',
-                    },
-                'token': {
-                    'ext': 'rptok',
-                    'tag': tokentag,
-                    }}
+        self.types = mt_tags
 
         # make a lookup by tag
-        self.tags = {x['tag']: k for k, x in self.types.items()}
+        self.tags = {x.tag: k for k, x in self.types.items()}
 
         self.type = None  # will be key from types
         self.macrolist = []  # for macroset only
@@ -176,7 +158,7 @@ class MTAsset():
 
     @property
     def ext(self):
-        return self.types[self.type]['ext']
+        return self.types.get(self.type).ext
 
     @property
     def is_macro(self):
@@ -211,18 +193,24 @@ class MTAsset():
 
     def assemble(self):
         try:
+            log.debug(f'creating {self.path}')
             os.makedirs(self.path, exist_ok=True)
         except FileExistsError:
             pass
         if self.is_macro:
+            log.debug(f'calling assemble_macro')
             return self.assemble_macro()
         elif self.is_macroset:
+            log.debug(f'calling assemble_macroset')
             return self.assemble_macroset()
         elif self.is_project:
+            log.debug(f'calling assemble_project')
             return self.assemble_project()
         elif self.is_properties:
+            log.debug(f'calling assemble_properties')
             return self.assemble_properties()
         elif self.is_token:
+            log.debug(f'calling assemble_token')
             return self.assemble_token()
 
     def assemble_macro(self):

@@ -24,6 +24,7 @@ from lxml.etree import tostring
 import zipfile
 from MTAssetLibrary import MacroNameQuote as quote
 from MTAssetLibrary import DataElement, XML2File, fixed_version
+from MTAssetLibrary import maptool_macro_tags as mt_tags
 from textwrap import wrap
 
 AP = argparse.ArgumentParser()
@@ -55,9 +56,6 @@ if not zipfile.is_zipfile(opts.file):
 
 zf = zipfile.ZipFile(opts.file)
 xml = objectify.parse(zf.open('content.xml'))
-macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
-tokentag = 'net.rptools.maptool.model.Token'
-proptag = 'net.rptools.maptool.model.CampaignProperties'
 base, ext = os.path.splitext(opts.file)
 
 
@@ -108,7 +106,7 @@ new_entry_template = '<entry><int>{}</int><macro name="{}"/></entry>'
 
 root = xml.getroot()
 for i, entry in enumerate(root.macroPropertiesMap.entry):
-    macro = entry[macrotag]
+    macro = entry[mt_tags.macro.tag]
     label = quote(macro.label.text)
     macrobase = os.path.join(base, label)
     write_macro_files(macro, macrobase)
@@ -135,22 +133,22 @@ sys.exit()
 def macroList(elem):
     if elem.tag == 'list':
         # usually a list of macros
-        return {x.label:x for x in elem.findall('./'+macrotag)}
-    elif elem.tag == macrotag:
+        return {x.label:x for x in elem.findall('./'+mt_tags.macro.tag)}
+    elif elem.tag == mt_tags.macro.tag:
         # it's already a macro
         return {elem.label:elem}
-    elif elem.tag == tokentag:
+    elif elem.tag == mt_tags.token.tag:
         # a token has a macroPropertiesMap with macros:
         mpm = elem.macroPropertiesMap
-        return {x.label:x for x in mpm.findall('./entry/'+macrotag)}
-    elif elem.tag == proptag:
+        return {x.label:x for x in mpm.findall('./entry/'+mt_tags.macro.tag)}
+    elif elem.tag == mt_tags.properties.tag:
         return {}
 
 
 for label, elem in macroList(xml.getroot()).items():
     label = quote(str(label))
 
-    if xml.getroot().tag == tokentag and xml.getroot().name.text.startswith('Lib:'):
+    if xml.getroot().tag == mt_tags.token.tag and xml.getroot().name.text.startswith('Lib:'):
         # Lib: tokens' macros stay with them
         mktokendir(base)
         xml_file = '{}/{}.xml'.format(base, label)
