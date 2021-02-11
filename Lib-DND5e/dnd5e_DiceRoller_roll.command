@@ -21,8 +21,7 @@
 	[rollExpression = json.remove (rollExpression, "rolledExpressions")]
 	[h: rolled = json.append (rolled, rollExpression)]
 }]
-<!-- The newness of RE has worn off and the one player that ever cared about this preference thinks its time for it to go -->
-[h, if (dnd5e_Preferences_getPreference ("showRollExpressions")): broadcast ("<pre>" + json.indent (rolled) + "</pre>", "self"); ""]
+
 [h: tokenId = currentToken()]
 [h, if (tokenId != ""): setProperty (LAST_ROLLED_PROPERTY, rolled)]
 [h: macro.return = rolled]

@@ -2,4 +2,5 @@
 [h: rollExpression = dnd5e_RollExpression_setDiceSize (rollExpression, 4)]
 [h: rollExpression = dnd5e_RollExpression_setDiceRolled (rollExpression, 1)]
 [h: rollExpression = dnd5e_RollExpression_setExpressionType (rollExpression, "Blessed")]
+[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
 [h: macro.return = rollExpression]

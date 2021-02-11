@@ -2,8 +2,6 @@
 [h: totalMultiplier = arg(1)]
 [h: rolled = arg(2)]
 [h: log.debug ("rollExpression: " + rollExpression)]
-<!-- Check conditions -->
-[h: rollExpression = dnd5e_DiceRoller_applyConditions (rollExpression)]
 
 [h: totalRolls = json.get (rollExpression, "totalRolls")]
 [h, if (totalRolls == ""): totalRolls = totalMultiplier; totalRolls = totalRolls * totalMultiplier]
@@ -41,7 +39,6 @@
 		[rollers = json.get (rollExpression, "remainingRollers")]
 	}]
 
-	[h: rollExpression = dnd5e_DiceRoller_finalize (rollExpression)]
 	[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 	[h: output = dnd5e_RollExpression_getOutput (rollExpression)]
 	[h: outputs = json.append (outputs, output)]

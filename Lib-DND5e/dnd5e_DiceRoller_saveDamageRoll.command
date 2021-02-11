@@ -12,7 +12,7 @@
 	[h: saveDamage = dnd5e_RollExpression_getTotal(damageExpression)]
 	[h: save = dnd5e_Util_modifySaveDamage(saveDamage, saveEffect)]
 	[h: saveDamage = json.get(save, "damage")]
-	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save + " (" + saveDamage + ")")] 
+	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save)] 
 	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "save-effect-damage", saveDamage)] 
 }]
 [h: macro.return = damageExpression]
