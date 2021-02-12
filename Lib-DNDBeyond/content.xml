@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Pi5we2aPSE+EiG+G9bkRvg==</baGUID>
+    <baGUID>dNiAHJbjSkeNpuFP9FLorg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>rwBdJ+w1RheEu/a0lq7vbg==</baGUID>
+    <baGUID>R5PB/jZ2RgOvICA9tdGDyg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,8 +14,8 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>950</x>
-  <y>400</y>
+  <x>1050</x>
+  <y>450</y>
   <z>4</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
@@ -31,15 +31,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -776,7 +776,7 @@
         <string>lib.releasenotesobj</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>lib.releaseNotesObj</key>
-          <value class="string">{"0.15": "Library+has+been+officially+versioned."}</value>
+          <value class="string">{"0.15": "Library+has+been+officially+versioned.%3Cbr%3E+RollExpressions+were+refactored+to+better+define+their+Types%26semi%3B%3Cbr%3E++%3Cfont+color%3D%27Red%27%3E%3Cb%3EAll+DnDBeyond+Tokens+will+beed+to+be+fully+re-initialized%3C%2Fb%3E%3C%2Ffont%3E%3Cbr%3E+"}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
