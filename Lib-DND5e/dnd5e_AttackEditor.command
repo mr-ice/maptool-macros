@@ -1,5 +1,7 @@
-[h: log.debug ("arrrgs = " + json.indent (macro.args))]
-[h, if (json.length (macro.args) > 1): attackObj = arg (1); attackObj = "{}"]
+[h: incomingArgs = macro.args]
+[h: versioned = dnd5e_AttackEditor_assertVersion (0)]
+[h, if (!versioned): dnd5e_AttackEditor_upgradeAttacks (); ""]
+[h, if (json.length (incomingArgs) > 1): attackObj = arg (1); attackObj = "{}"]
 [h, if (json.isEmpty (attackObj)), code: {
 	[newAttack = dnd5e_RollExpression_Attack()]
 	[newDamage = dnd5e_RollExpression_Damage()]

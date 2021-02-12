@@ -23,7 +23,6 @@
 	[if (disadvantage == "Disadvantage"): advDisadv = "Both"; advDisadv = "Advantage"]
 }; {""}]
 [h, if (disadvantage == "Disadvantage" && advantage != "Advantage"): advDisadv = "Disadvantage"; ""]
-<!-- Well capture the currently selected attack based off of the action selected. For now, none -->
 [h: selectedAttack = json.get (inputArgs, "activeAttack")]
 
 <!-- Build the roll expressions -->

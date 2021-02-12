@@ -1,0 +1,30 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>6df96e3f-2af3-4350-bc8e-68c6182810f6</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>308</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AttackEditor_assertVersion</label>
+  <group>RollExpression - Editor</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Asserts the current AttackEditor object is a compatible version.
+arg(0) = (Optional) If true (1), report the assertion but do not abort
+
+Returns true(1) or false(0), unless assertion ends execution immediately</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
