@@ -7,14 +7,9 @@
 				"hasDisadvantage | 0 | Has Disadvantage | check",
 				"calculateBonus | 0 | Calculate bonus from token | check"))]
 
-[h: saveExpression = json.set ("", "name", name, 
-									"expressionTypes", "Save",
-									"bonus", bonus,
-									"hasAdvantage", hasAdvantage,
-									"hasDisadvantage", hasDisadvantage,
-									"diceSize", 20,
-									"diceRolled", 1)]
-
+[h: saveExpression = dnd5e_RollExpression_Save (name, bonus)]
+[h: saveExpression = dnd5e_RollExpression_setAdvantage (saveExpression, hasAdvantage)]
+[h: saveExpression = dnd5e_RollExpression_setDisadvantage (saveExpression, hasDisadvantage)]
 [h: log.info ("saveExpression: " + json.indent (saveExpression))]
 [h, if (calculateBonus): bonusProperty  = name + " Save"; bonusProperty = ""]
 [h, if (!skipMacro): dnd5e_DiceRoller_createMacro (saveExpression, bonusProperty)]
