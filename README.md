@@ -9,6 +9,10 @@ xml and command (text) files.  They can be reassembled with the tools herein.
 You'll need a working git, docker, and bash.   Note the examples here
 assume you are in the top directory of the checkout.
 
+
+./dockerbuild
+:    make our docker images using bash
+
 <dl>
   <dt><code>./dockerbuild</code></dt>
   <dd>make our docker images using bash</dd>
