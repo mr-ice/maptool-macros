@@ -7,45 +7,34 @@ xml and command (text) files.  They can be reassembled with the tools herein.
 ## Meta-Tools and Tools
 
 You'll need a working git, docker, and bash.   Note the examples here
-assume you are in the top directory of the checkout.
+assume you are in the top directory of the checkout (where the scripts live).
 
-
-./dockerbuild
-:    make our docker images using bash
-
-<dl>
-  <dt><code>./dockerbuild</code></dt>
-  <dd>make our docker images using bash</dd>
-  <dt><code>make build</code></dt>
-  <dd>make our docker images using make</dd>
-  <dt><code>./dockermagic &lt;base thing&gt;</code></dt>
-  <dd>build a macro from its xml file, or a properties or token from its
-  directory</dd>
-  <dt><code>./dockerrun automagic &lt;base thing&gt;</code></dt>
-  <dd>same as <code>./dockermagic</code></dd>
-  <dt><code>./dockerrun macro-extract &lt;thing&gt;</code></dt>
-  <dd>extract macros from mtmacro and mtmacset objects</dd>
-  <dt><code>./dockerrun macro-assemble &lt;macro/1&gt;</code></dt>
-  <dd>assemble a mtmacro from macro/1.xml and macro/1.command</dd>
-  <dt><code>./dockerrun macro-assemble macro/1 macro/2 macro/3 --set myset</code></dt>
-  <dd>assemble myset.mtmacset from macro/1.xml macro/1.command [etc...]</dd>
-  <dt><code>./dockerrun token-extract &lt;thing&gt;</code></dt>
-  <dd>extract a token and its macros from a .rptok file</dd>
-  <dt><code>./dockerrun token-assemble &lt;dir&gt;</code></dt>
-  <dd>put a token back together</dd>
-  <dt><code>./dockerrun project-assemble &lt;thing&gt;</code></dt>
-  <dd>put together tokens, properties, and macrosets described in a
-    .project xml file</dd>
 </dl>
+<dt><code>./dockerbuild</code></dt>
+<dd>make our docker images using a bash script</dd>
+<dt><code>dockerbuild.cmd</code></dt>
+<dd>make our docker images using a windows command script</dd>
+<dt><code>make build</code></dt>
+<dd>make our docker images using make</dd>
+<dt><code>./dockerrun macro-extract &lt;thing&gt;</code></dt>
+<dd>extract macros from a mtmacro or mtmacset object into
+     a macro/ directory</dd>
+<dt><code>./dockerrun token-extract &lt;thing&gt;</code></dt>
+<dd>unpack a tocken object and extract the macros (these
+     will be in the token directory)</dd>
+<dt><code>./dockerrun assemble &lt;thing&gt;</code></dt>
+<dd>If &lt;thing&gt; is a macro/* file, it will assemble a mtmacro object</dd>
+<dd>If &lt;thing&gt; is multiple macro/* files, it will assemble a mtmacset object</dd>
+<dd>If &lt;thing&gt; is a directory, it will assemble the thing in the content.xml file therein</dd>
+<dd>If &lt;thing&gt; is a content.xml, it will assemble that thing (usually this has
+     to be in a directory with the objects referenced in the content.xml)</dd>
+<dd>If &lt;thing&gt; is a .project file, it will assemble all the objects listed in
+  the project file.</dd>
 
----
-**NOTE**
-Note that automagic does not build mtmacsets.  We get rid of the
-container (set) so to re-create them we need the list of macros passed
-to macro-assemble.  This can be done via project file.
+</dl>
 ---
 
-## Macros
+## Sample Macro List (note, this list is not maintained)
 * RollSave - Simple roll an attribute save
 * Set Elevation - Simple set/clear elevation on selected token
 * AttackMacros - Trey's Macro Set
