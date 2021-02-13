@@ -3,11 +3,13 @@
 [h, if(json.type(macro.args) == "ARRAY"): macro.args = json.get(macro.args, 0)]
 [h: id = json.get(macro.args, "id")]
 [h: current = json.get(macro.args, "current")]
-[h, if (!isNumber(current)): current = 0; '']
+[h, if (!isNumber(current)): current = getProperty(current, id)]
+[h, if (!isNumber(current)): current = 0]
 [h: dmg = json.get(macro.args, "damage")]
 [h, if (!isNumber(dmg)): dmg = 0; '']
 [h: temporary = json.get(macro.args, "temporary")]
-[h, if (!isNumber(temporary)): temporary = 0; '']
+[h, if (!isNumber(temporary)): temporary = getProperty(temporary, id)]
+[h, if (!isNumber(temporary)): temporary = 0]
 [h: log.debug("dnd5e_removeDamage: current=" + current + " temporary=" + temporary + " damage=" + dmg)]
 
 <!-- Remove damage temp first, then current -->

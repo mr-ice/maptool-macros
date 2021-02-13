@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>3b24366c-b09b-4355-b9b0-e0ba0799e05e</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>29</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>l4m.getEffectiveLogLevel</label>
+  <group>Profile Token Library - Functions</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg (0) = Category - If none provided, the root l4m.level is returned
+arg (1) = (Optional) Compile Flag
+arg (2) = (Optional) Property suffix (".level", ".entryExit")
+Returns the highest granularity l4m.level for the provided category
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

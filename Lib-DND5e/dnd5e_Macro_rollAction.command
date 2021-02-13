@@ -19,6 +19,7 @@
 [h: rolledExpression = dnd5e_DiceRoller_roll (updatedRollExpressions)]
 [h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(rolledExpression, 0), "rollerId", currentToken())]
 [h: rolledExpression = json.set(rolledExpression, 0, firstExp)]
+[h: rolledExpression = dnd5e_SavedAttacks_setKey(rolledExpression)]
 [h: log.debug("dnd5e_Macro_rollAction: Final attack roll expression: " + json.indent(rolledExpression))]
 [r: dnd5e_RollExpression_getFormattedOutput(rolledExpression)]
 [h: dnd5e_SavedAttacks_push(rolledExpression)]

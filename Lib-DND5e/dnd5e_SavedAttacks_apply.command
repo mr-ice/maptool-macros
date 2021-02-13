@@ -8,7 +8,7 @@
 }; {""}]
 
 <!-- Get the selected tokens -->
-[h, if (argCount() > 0): selected = arg(1); selected = ""]
+[h, if (argCount() > 1): selected = arg(1); selected = ""]
 [h: selectedById = "{}"]
 [h, if (json.isEmpty(selected)), code: {
 

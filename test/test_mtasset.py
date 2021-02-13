@@ -1,3 +1,4 @@
+from docker import MTAssetLibrary
 import sys
 sys.path.append('docker')
 
@@ -8,7 +9,7 @@ import logging as log
 from docker.asset import MTAsset
 from lxml.etree import XMLSyntaxError
 
-from MTAssetLibrary import DataElement, tokentag, proptag, macrotag
+from MTAssetLibrary import DataElement, maptool_macro_tags as mt_tags
 
 class Test_MTAsset():
     @pytest.fixture(autouse=True)
@@ -58,9 +59,9 @@ class Test_MTAsset():
             f.write('')
         fn = os.path.join(tmpdir, 'Junk.xml')
         with open(fn, 'w') as f:
-            f.write('<' + macrotag + '>')
+            f.write('<' + mt_tags.macro.tag + '>')
             f.write('  <label>Test</label>')
-            f.write('</' + macrotag + '>')
+            f.write('</' + mt_tags.macro.tag + '>')
         m = MTAsset(fn)
         assert m.is_macro is True
         assert m.is_project is False
@@ -111,25 +112,26 @@ class Test_MTAsset():
         fn = os.path.join(dn, 'content.xml')
         print(fn)
         with open(fn, 'w') as f:
-            f.write('<' + proptag + '>')
-            f.write('</' + proptag + '>')
+            f.write('<' + mt_tags.properties.tag + '>')
+            f.write('</' + mt_tags.properties.tag + '>')
         m = MTAsset(fn)
         assert m.is_properties is True
         assert m.is_project is False
         assert m.is_macro is False
         assert m.is_macroset is False
         assert m.is_token is False
+        os.makedirs('output', exist_ok=True)
         m.assemble()
-        assert os.path.exists('./MTProps.mtprops')
+        assert os.path.exists('MTProps.mtprops')
 
     def test_asset_with_token(self, tmpdir):
         dn = os.path.join(tmpdir, 'MTToken')
         os.makedirs(dn, exist_ok=True)
         fn = os.path.join(dn, 'content.xml')
         with open(fn, 'w') as f:
-            f.write('<' + tokentag + '>')
+            f.write('<' + mt_tags.token.tag + '>')
             f.write('<name>Test-MTToken</name>')
-            f.write('</' + tokentag + '>')
+            f.write('</' + mt_tags.token.tag + '>')
         m = MTAsset(dn)
         assert m.is_properties is False
         assert m.is_project is False
@@ -160,15 +162,15 @@ class Test_MTAsset():
         assert os.path.exists(macro2 + '.command')
         #os.makedirs('macro', exist_ok=True)
         #with open(macro1 + '.xml', 'w') as f:
-        #    f.write('<' + macrotag + '>')
+        #    f.write('<' + mt_tags.macro.tag + '>')
         #    f.write('<label>' + os.path.basename(macro1) + '</label>')
-        #    f.write('</' + macrotag + '>')
+        #    f.write('</' + mt_tags.macro.tag + '>')
         #with open(macro1 + '.command', 'w') as f:
         #    f.write(macro1)
         #with open(macro2 + '.xml', 'w') as f:
-        #    f.write('<' + macrotag + '>')
+        #    f.write('<' + mt_tags.macro.tag + '>')
         #    f.write('<label>' + os.path.basename(macro2) + '</label>')
-        #    f.write('</' + macrotag + '>')
+        #    f.write('</' + mt_tags.macro.tag + '>')
         #with open(macro2 + '.command', 'w') as f:
         #    f.write(macro2)
 

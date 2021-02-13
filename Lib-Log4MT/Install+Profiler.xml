@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>2308d359-8f65-4d4d-ad1c-1884c5cf0e87</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>2</index>
+  <colorKey>green</colorKey>
+  <hotKey>None</hotKey>
+  <label>Install Profiler</label>
+  <group>Profile Token Library</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.15em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Execute this macro on the same map as the target Token Library. You will be prompted to select a Token Library to profile. You will also be prompted to select a target token to become "Lib:ProfilerProxy". This token need not currrently be an existing Token Library or any other functional token of any kind. It will be renamed to become "Lib:ProfileProxy" and automatically populated with profiled versions of the source library's User Defined Functions. Therefore, a disposable token is desired.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

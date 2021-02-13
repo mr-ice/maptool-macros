@@ -62,8 +62,7 @@
 					"lime", "Lime", "magenta", "Magenta", "maroon", "Maroon", "navy", "Navy", "olive", "Olive", "orange", "Orange", "pink", "Pink",
 					"purple", "Purple", "red", "Red", "silver", "Silver", "teal", "Teal", "white", "White", "yellow", "Yellow")]
 [h: typedDescriptorKeys = json.append("[]", "condition", "tooltipRoll", "tooltipDetail", "advantageable", "lucky", "critable", "saveable", "actionName",
-											"actionDesc", "actionType", "rowId", "extendedValues", "save-effect-damage")]
-
+											"actionDesc", "actionType", "rowId", "extendedValues", "save-effect-damage", "action-execution-key")]
 [h: c = json.set("{}", "FIELDS_BY_STEP_TYPE", fieldsByType, "NAMES_OF_STEP_TYPES", stepNamesByType, "DAMAGE_TYPES", damageTypes, "CHAR_ABILITIES", abilities,
 		"STATE_GROUPS", stateGroups, "MACRO_COLORS", macroColors, "TARGET_ROLL_TYPE", dnd5e_Type_Targeted(), "UNROLLABLE_ROLL_TYPE", dnd5e_Type_Unrollable(),
 		"VERSION_PROPERTY", "_ae2_actions.version", "AE2_CURRENT_VERSION", "0.15",
@@ -91,6 +90,6 @@
 		"ADVANTAGEABLE_TD", json.get(typedDescriptorKeys, 3), "LUCKY_TD", json.get(typedDescriptorKeys, 4), "CRITABLE_TD", json.get(typedDescriptorKeys, 5),
 		"SAVEABLE_TD", json.get(typedDescriptorKeys, 6), "ACTION_NAME_TD", json.get(typedDescriptorKeys, 7), "ACTION_DESC_TD", json.get(typedDescriptorKeys, 8),
 		"ACTION_TYPE_TD", json.get(typedDescriptorKeys, 9), "ROW_ID_TD", json.get(typedDescriptorKeys, 10), "EXTENDED_VALUES_TD", json.get(typedDescriptorKeys, 11),
-		"SAVE_EFFECT_DAMAGE_TD", json.get(typedDescriptorKeys, 12)
+		"SAVE_EFFECT_DAMAGE_TD", json.get(typedDescriptorKeys, 12), "ACTION_EXECUTION_KEY", json.get(typedDescriptorKeys, 13)
 )]
 [h: return(0, c)]

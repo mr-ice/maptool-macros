@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>116ae06e-c1d5-421e-8e99-6de08c4aa013</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>140</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>ggddH_healingPotion</label>
+  <group>Potion</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Heal potion using darker dingeons rules
+&lt;br&gt;
+&lt;br&gt;arg(0) = potion rarity
+&lt;br&gt;
+&lt;br&gt;The selected character is healed the rolled amount.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

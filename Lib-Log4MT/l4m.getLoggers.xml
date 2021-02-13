@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>e4d16e47-1031-4968-a14f-cce9021627db</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>31</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>l4m.getLoggers</label>
+  <group>Profile Token Library - Functions</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg (0) = JSON Loggers object
+{
+   "l4m.er.root.level" : "INFO",
+   "l4m.er.Lib_Token.level" : "DEBUG",
+   "l4m.er.macroName" : "TRACE"
+}
+
+Existing defined l4m.ers not specified will be cleared except root l4m.er. If undefined, it will be set to WARN.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

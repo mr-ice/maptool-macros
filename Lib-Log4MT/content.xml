@@ -1,0 +1,620 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>Chx9CG/+Rq22/1PloSSthQ==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>rfw5US/9SaGQmqQxuCmNow==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>8c7998655d29aed7c2135d983d67089d</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>1050</x>
+  <y>-100</y>
+  <z>40</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
+  <snapToScale>true</snapToScale>
+  <width>256</width>
+  <height>256</height>
+  <isoWidth>256</isoWidth>
+  <isoHeight>256</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:Log4MT</name>
+  <ownerType>0</ownerType>
+  <tokenShape>SQUARE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>Log4MT</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Normal</sightType>
+  <hasSight>false</hasSight>
+  <notes/>
+  <state>
+    <entry>
+      <string>Paralyzed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Longstrider</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Frightened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Petrified</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wild Shape</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Invisible</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconscious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Poisoned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Helpless</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Freedom of Movement</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Diseased</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Expeditious Retreat</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blinded</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Entangled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Restrained</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stunned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 6</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Confused</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Grappled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Rage</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 5</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Haste</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blessed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Fly</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 1</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Faerie Fire</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stable</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Concentration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Deafened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <propertyMapCI>
+    <store>
+      <entry>
+        <string>root_logger_category</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ROOT_LOGGER_CATEGORY</key>
+          <value class="string">root</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>profiler_start_macro</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>PROFILER_START_MACRO</key>
+          <value class="string">monitorStart@Lib:Log4MT</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger.macroname.level</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>logger.macroname.level</key>
+          <value class="string">debug</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>compiled_logger_prefix</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>COMPILED_LOGGER_PREFIX</key>
+          <value class="string">compiled.logger.</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger_prefix</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>LOGGER_PREFIX</key>
+          <value class="string">logger.</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lib_proxy</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>LIB_PROXY</key>
+          <value class="string">Lib:ProfilerProxy</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>profiler_stop_macro</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>PROFILER_STOP_MACRO</key>
+          <value class="string">monitorStop@Lib:Log4MT</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>entry_exit_log_level</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>ENTRY_EXIT_LOG_LEVEL</key>
+          <value class="string">INFO</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger_level_map</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>LOGGER_LEVEL_MAP</key>
+          <value class="string">{"TRACE":5,"DEBUG":4,"INFO":3,"WARN":2,"ERROR":1}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger.tokenlib.level</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>logger.tokenLib.level</key>
+          <value class="string">debug</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lib_log4mt</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>LIB_LOG4MT</key>
+          <value class="string">Lib:Log4MT</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>generated_log_event</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>GENERATED_LOG_EVENT</key>
+          <value class="string">INFO</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>call_stack</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>CALL_STACK</key>
+          <value class="string">profiler.callStack</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger.root.level</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>logger.root.level</key>
+          <value class="string">info</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger_level_array</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>LOGGER_LEVEL_ARRAY</key>
+          <value class="string">["UNDEFINED","ERROR","WARN","INFO","DEBUG","TRACE"]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>logger.root.entryexit</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>logger.root.entryExit</key>
+          <value class="string">info</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+    </store>
+  </propertyMapCI>
+  <macroPropertiesMap>
+    <entry>
+      <int>2</int>
+      <macro name="Install+Meters"/>
+    </entry>
+    <entry>
+      <int>3</int>
+      <macro name="Build+Profiler+Report"/>
+    </entry>
+    <entry>
+      <int>4</int>
+      <macro name="monitorStart"/>
+    </entry>
+    <entry>
+      <int>5</int>
+      <macro name="monitorStop"/>
+    </entry>
+    <entry>
+      <int>6</int>
+      <macro name="l4m.getClientTime"/>
+    </entry>
+    <entry>
+      <int>7</int>
+      <macro name="Clear+Monitors"/>
+    </entry>
+    <entry>
+      <int>8</int>
+      <macro name="l4m.getMeters"/>
+    </entry>
+    <entry>
+      <int>9</int>
+      <macro name="l4m.getMeterName"/>
+    </entry>
+    <entry>
+      <int>10</int>
+      <macro name="Configure+Logging"/>
+    </entry>
+    <entry>
+      <int>11</int>
+      <macro name="Call+Stack"/>
+    </entry>
+    <entry>
+      <int>12</int>
+      <macro name="Constants"/>
+    </entry>
+    <entry>
+      <int>13</int>
+      <macro name="l4m.clearCallStack"/>
+    </entry>
+    <entry>
+      <int>14</int>
+      <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>15</int>
+      <macro name="l4m.isLogLevelEnabled"/>
+    </entry>
+    <entry>
+      <int>16</int>
+      <macro name="l4m.getLogLevel"/>
+    </entry>
+    <entry>
+      <int>17</int>
+      <macro name="l4m.getLoggerKey"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="l4m.isDebugEnabled"/>
+    </entry>
+    <entry>
+      <int>19</int>
+      <macro name="l4m.isTraceEnabled"/>
+    </entry>
+    <entry>
+      <int>20</int>
+      <macro name="l4m.isInfoEnabled"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="l4m.isWarnEnabled"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="l4m.isErrorEnabled"/>
+    </entry>
+    <entry>
+      <int>23</int>
+      <macro name="l4m.doLogEvent"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="l4m.debug"/>
+    </entry>
+    <entry>
+      <int>25</int>
+      <macro name="l4m.trace"/>
+    </entry>
+    <entry>
+      <int>26</int>
+      <macro name="l4m.warn"/>
+    </entry>
+    <entry>
+      <int>27</int>
+      <macro name="l4m.info"/>
+    </entry>
+    <entry>
+      <int>28</int>
+      <macro name="l4m.error"/>
+    </entry>
+    <entry>
+      <int>29</int>
+      <macro name="l4m.getEffectiveLogLevel"/>
+    </entry>
+    <entry>
+      <int>30</int>
+      <macro name="l4m.setLoggers"/>
+    </entry>
+    <entry>
+      <int>31</int>
+      <macro name="l4m.getLoggers"/>
+    </entry>
+    <entry>
+      <int>32</int>
+      <macro name="l4m.configureLoggerProcessor"/>
+    </entry>
+    <entry>
+      <int>33</int>
+      <macro name="l4m_CSS"/>
+    </entry>
+    <entry>
+      <int>34</int>
+      <macro name="l4m.clearCompiledLoggers"/>
+    </entry>
+    <entry>
+      <int>35</int>
+      <macro name="l4m.getCompiledLoggers"/>
+    </entry>
+    <entry>
+      <int>36</int>
+      <macro name="l4m.getCurrentMacroLogger"/>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>

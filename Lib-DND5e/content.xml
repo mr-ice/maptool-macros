@@ -3160,6 +3160,10 @@ function changeType() {
       <int>309</int>
       <macro name="dnd5e_AttackEditor_upgradeAttacks"/>
     </entry>
+    <entry>
+      <int>248</int>
+      <macro name="dnd5e_SavedAttacks_setKey"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

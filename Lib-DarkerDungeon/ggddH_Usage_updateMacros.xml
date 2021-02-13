@@ -1,0 +1,34 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>116ae06e-c1d5-421e-8e99-6de08c4aa013</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>140</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>ggddH_Usage_updateMacros</label>
+  <group>Usage</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Update or create a usable macro on a token
+&lt;br&gt;
+&lt;br&gt;arg(0) = Name of usable
+&lt;br&gt;arg(1) = die size of useable
+&lt;br&gt;arg(2) = ID of the token to update
+&lt;br&gt;
+&lt;br&gt;Ueable with the passed name updated if the macro exists, otherwise it is created
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
