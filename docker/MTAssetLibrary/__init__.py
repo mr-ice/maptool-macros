@@ -9,9 +9,42 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 fixed_version = '1.6.1'
 
-macrotag = 'net.rptools.maptool.model.MacroButtonProperties'
-tokentag = 'net.rptools.maptool.model.Token'
-proptag = 'net.rptools.maptool.model.CampaignProperties'
+class Tag:
+    """This is a mapping of a filesystem extension to the type of xml tag that 
+    file may contain.
+    """
+    def __init__(self, name, ext, tag):
+        self.name = name
+        self.ext = ext
+        self.tag = tag
+
+class TagSet:
+    """This contains different filesystem extensions to the tag found in them"""
+    def __init__(self):
+        self.macro = Tag('macro', 'mtmacro', 'net.rptools.maptool.model.MacroButtonProperties')
+        self.macroset = Tag('macroset', 'mtmacset', 'list')
+        self.project = Tag('project', 'project', 'project')
+        self.token = Tag('token', 'rptok', 'net.rptools.maptool.model.Token')
+        self.properties = Tag('property', 'mtprops', 'net.rptools.maptool.model.CampaignProperties')
+        self.campaign = Tag('campaign', 'cmpgn', 'net.rptools.maptool.util.PersistenceUtil_-PersistedCampaign')
+
+    def keys(self):
+        """expose the dict keys method"""
+        return self.__dict__.keys()
+
+    def items(self):
+        """expose the dict items method"""
+        return self.__dict__.items()
+
+    def values(self):
+        """expose the dict values method"""
+        return self.__dict__.values()
+
+    def get(self, name, default=None):
+        """expose the dict get method"""
+        return self.__dict__.get(name, default)
+
+maptool_macro_tags = TagSet()
 
 # define a properties.xml body for the final .mtmacro assembly
 properties_xml = """<map>
@@ -27,7 +60,7 @@ def DataElement(content):
 
 
 def MacroNameQuote(name):
-    """Quote characters in files that aren't safe for filesystems, there
+    """Quote characters in file names that aren't safe for filesystems, there
     is an overlap here with characters that aren't safe for URLs, so
     we're using an URL quoter"""
     return quote_plus(name, safe='')

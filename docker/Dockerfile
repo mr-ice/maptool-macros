@@ -12,7 +12,8 @@ COPY project-assemble /usr/local/bin
 COPY macro-extract /usr/local/bin
 COPY token-extract /usr/local/bin
 COPY zipfile_infolist.py /usr/local/bin
-COPY MTAssetLibrary.py /usr/local/bin
+RUN mkdir /usr/local/bin/MTAssetLibrary
+COPY MTAssetLibrary/__init__.py /usr/local/bin/MTAssetLibrary
 COPY asset.py /usr/local/bin
 
 RUN dos2unix /usr/local/bin/automagic \
