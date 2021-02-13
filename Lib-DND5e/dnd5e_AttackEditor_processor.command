@@ -1,5 +1,5 @@
 [h: log.debug ("Proc args = " + json.indent (macro.args))]
-[h: log.debug ("Processor - Who am I? " + currentToken())]
+
 [h: inputArgs = macro.args]
 [h: actionButton = json.get (inputArgs, "actionButton")]
 [h: saveAttackAsMacro = json.get (inputArgs, "saveAttack")]
@@ -23,7 +23,6 @@
 	[if (disadvantage == "Disadvantage"): advDisadv = "Both"; advDisadv = "Advantage"]
 }; {""}]
 [h, if (disadvantage == "Disadvantage" && advantage != "Advantage"): advDisadv = "Disadvantage"; ""]
-<!-- Well capture the currently selected attack based off of the action selected. For now, none -->
 [h: selectedAttack = json.get (inputArgs, "activeAttack")]
 
 <!-- Build the roll expressions -->
@@ -48,10 +47,29 @@
 	[damageCritical = json.get (inputArgs, "damageCritical-" + attackField)]
 	[attackExpression = dnd5e_RollExpression_Attack (attackName)]
 	[attackExpression = dnd5e_RollExpression_setBonus (attackExpression, attackBonus)]
+	<!-- adorn with weapon or spellcasting, if applicable -->
+	[attackType = json.get (inputArgs, "attackType-" + attackField)]
+	[weaponType = json.get (inputArgs, "weaponType-" + attackField)]
+	[abilityVal = json.get (inputArgs, "ability-" + attackField)]
+	[proficiencyVal = json.get (inputArgs, "proficiency-" + attackField)]
+	[if (attackType == "weapon"), code: {
+		[attackExpression = dnd5e_RollExpression_setWeaponType (attackExpression, weaponType)]
+		[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, proficiencyVal)]
+	}; {}]
+
+	[if (attackType  == "ability"), code: {
+		[attackExpression = dnd5e_RollExpression_setSpellcastingAbility (attackExpression, abilityVal)]
+		[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, proficiency)]
+	}; {}]
+	
 	[rollExpressions = json.append (rollExpressions, attackExpression)]
 
 	<!-- Weapon damage -->
 	[damageExpression = dnd5e_RollExpression_Damage ("", damageRollString)]
+	[if (attackType == "weapon"), code: {
+		[damageExpression = dnd5e_RollExpression_setWeaponType (damageExpression, weaponType)]
+	}; {}]
+	
 	[damageExpression = dnd5e_RollExpression_setDamageTypes (damageExpression, damageType)]
 	[damageExpression = dnd5e_RollExpression_setOnCritAdd (damageExpression, damageCritical)]
 	[rollExpressions = json.append (rollExpressions, damageExpression)]
@@ -64,14 +82,16 @@
 		[extraDamageSaveDC = json.get (inputArgs, "extraDamageSaveDC-" + attackField + "-" + index)]
 		[extraDamageSaveAbility = json.get (inputArgs, "extraDamageSaveAbility-" + attackField + "-" + index)]
 		[extraDamageSaveEffect = json.get (inputArgs, "extraDamageSaveEffect-" + attackField + "-" + index)]
+		<!-- defaults as regular damage (which has critable) -->
 		[extraDamage = dnd5e_RollExpression_Damage ("", extraDamageRoll)]
+		[diceRolled = dnd5e_RollExpression_getDiceRolled (extraDamage)]
+		[if (isNumber (extraDamageSaveDC) && diceRolled > 0): extraDamage = dnd5e_RollExpression_SaveDamage ("", extraDamageRoll); ""]
+		[if (isNumber (extraDamageSaveDC) && diceRolled == 0): extraDamage = dnd5e_RollExpression_SaveEffect (); ""]
 		[extraDamage = dnd5e_RollExpression_setDamageTypes (extraDamage, extraDamageType)]
 		[extraDamage = dnd5e_RollExpression_setSaveDC (extraDamage, extraDamageSaveDC)]
 		[extraDamage = dnd5e_RollExpression_setSaveAbility (extraDamage, extraDamageSaveAbility)]
 		[extraDamage = dnd5e_RollExpression_setSaveEffect (extraDamage, extraDamageSaveEffect)]
-		[diceRolled = dnd5e_RollExpression_getDiceRolled (extraDamage)]
-		[if (isNumber (extraDamageSaveDC) && diceRolled > 0): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Damage"); ""]
-		[if (isNumber (extraDamageSaveDC) && diceRolled == 0): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Effect"); ""]
+
 		[doDelete = json.get (inputArgs, "deleteExtraDamage-" + attackField + "-" + index)]
 		<!-- if doDelete is blank, add the expression. If it is not, its the selected attack -->
 		[if (doDelete == ""): rollExpressions = json.append (rollExpressions, extraDamage); selectedAttack = attackName]

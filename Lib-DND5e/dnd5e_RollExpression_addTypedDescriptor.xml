@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5330a9ee-4539-4d1e-bb10-c207299473e6</macroUUID>
+  <macroUUID>260eabc0-5d17-4c60-9ab5-3f29ccc2504b</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>148</index>
+  <index>155</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_addTypedDescriptor</label>
@@ -51,7 +51,8 @@
   &lt;dt&gt;&lt;b&gt;action-execution-key&lt;/b&gt;&lt;/dt&gt; 
   &lt;dd&gt;Key placed in the first object of a roll expression to attack a link from chat to a rolled expression&lt;/dd&gt; 
 &lt;/dl&gt; 
-arg(2) = descriptor text
+arg(2) = descriptor text&lt;br&gt;
+arg(3) = (Optional) 0 = append to current value or 1 (default) = Overwrite current value
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

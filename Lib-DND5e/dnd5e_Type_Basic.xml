@@ -1,0 +1,33 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>47c9815a-251c-44de-9fee-53552442956c</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>275</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Type_Basic</label>
+  <group>RollExpression - Prototypes</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Expression Types wouldn't usually add the basic type because it's inferred for all RollExpressions.&lt;br&gt;
+If a RollExpression should not have the basic type, it's considered "unrollable" and likewise&lt;br&gt;
+should have the type dnd5e_Type_unrollable.&lt;br&gt;
+&lt;br&gt;
+The basic roller has a priority of 50. Rollers that should act on the roll before the basic&lt;br&gt;
+roll happens should have a lower priority value (happens earlier) while those that should&lt;br&gt;
+act afterwards have a higher priority value (happens later).&lt;br&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

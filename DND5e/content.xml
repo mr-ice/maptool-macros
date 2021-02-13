@@ -1424,7 +1424,25 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>lib.releaseNotesObj</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>dev.versionMap</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>campaignPropertiesVersion{0.15}</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
+          <name>_dnd5e_campaignPreferences</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
@@ -2139,6 +2157,27 @@
               </net.rptools.maptool.model.Light>
             </lightList>
             <name>Everburning - 20</name>
+            <id reference="../../net.rptools.maptool.model.GUID"/>
+            <lumens>0</lumens>
+            <scaleWithToken>false</scaleWithToken>
+          </net.rptools.maptool.model.LightSource>
+        </entry>
+        <entry>
+          <net.rptools.maptool.model.GUID>
+            <baGUID>X198HUDYTAOIc44VfrgB1A==</baGUID>
+          </net.rptools.maptool.model.GUID>
+          <net.rptools.maptool.model.LightSource>
+            <lightList class="linked-list">
+              <net.rptools.maptool.model.Light>
+                <facingOffset>0.0</facingOffset>
+                <radius>1000.0</radius>
+                <arcAngle>90.0</arcAngle>
+                <shape>CIRCLE</shape>
+                <isGM>false</isGM>
+                <ownerOnly>false</ownerOnly>
+              </net.rptools.maptool.model.Light>
+            </lightList>
+            <name>Sunlight</name>
             <id reference="../../net.rptools.maptool.model.GUID"/>
             <lumens>0</lumens>
             <scaleWithToken>false</scaleWithToken>

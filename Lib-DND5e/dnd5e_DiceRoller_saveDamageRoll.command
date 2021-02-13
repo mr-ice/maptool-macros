@@ -1,4 +1,5 @@
 [h: damageExpression = arg (0)]
+[h: log.debug (getMacroName() + ": rolling " + damageExpression)]
 [h, if (dnd5e_RollExpression_hasType (damageExpression, "saveable") && dnd5e_RollExpression_hasType (damageExpression, "damageable")), code: {
 	[h: saveDC = dnd5e_RollExpression_getSaveDC (damageExpression, 1)]
 	[h: saveEffect = dnd5e_RollExpression_getSaveEffect (damageExpression)]
@@ -11,7 +12,7 @@
 	[h: saveDamage = dnd5e_RollExpression_getTotal(damageExpression)]
 	[h: save = dnd5e_Util_modifySaveDamage(saveDamage, saveEffect)]
 	[h: saveDamage = json.get(save, "damage")]
-	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save + " (" + saveDamage + ")")] 
+	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "saveable", save)] 
 	[h: damageExpression = dnd5e_RollExpression_addTypedDescriptor(damageExpression, "save-effect-damage", saveDamage)] 
 }]
 [h: macro.return = damageExpression]

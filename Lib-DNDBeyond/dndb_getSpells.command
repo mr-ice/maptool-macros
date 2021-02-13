@@ -11,13 +11,24 @@
 <!-- Create a bonus classObj spells array thats included in each iteration of spellcasting classes because 
 	dumb monks are dumb -->
 [h: bonusClassSpells = json.path.read (toon, "data.spells.class")]
+
+[h: filteredBonusSpells = "[]"]
+[h, if (!json.isEmpty(bonusClassSpells)), code: {
+	<!-- look for the definition object. If he aint got one, fuck off -->
+	[foreach (bonusSpell, bonusClassSpells, ""), code: {
+		[if (json.contains (bonusSpell, "definition")): filteredBonusSpells = json.append (filteredBonusSpells, bonusSpell)]
+	}]
+}; {}]
+[h: bonusClassSpells = filteredBonusSpells]
+
 [h: featSpells = json.path.read (toon, "data.spells.feat")]
+
 [h, if (json.length (featSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, featSpells); ""]
 <!-- to the bonusClassSpells, append any always prepared spells -->
 [h: alwaysPreparedSpells = json.path.read (toon, "data.lib_dndb-AlwaysPreparedSpells")]
+
 [h, if (json.length (alwaysPreparedSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, alwaysPreparedSpells); ""]
 
-[h: log.debug ("dndb_getSpells: classSpellsArry = " + classSpellsArry)]
 [h: classesArry = json.path.read (toon, "data.classes")]
 <!-- Merge the spell casting sub-classObj with the classObj only when sub-classObj is spell casting -->
 [h: mergedClasses = "[]"]
@@ -113,3 +124,4 @@
 	}]
 }]
 [h: macro.return = allSpells]
+

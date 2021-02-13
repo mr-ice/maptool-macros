@@ -17,8 +17,8 @@
 [h, foreach (prefObj, prefList), code: {
 	[h: log.debug ("prefObj: " + prefObj)]
 	[h: tempValue = json.get (prefObj, prefKey)]
-	[h, if (tempValue != ""): preference = tempValue; ""]
+	[h, if (encode (tempValue) != ""): preference = tempValue; ""]
 }]
 <!-- Never return "", replace it with 0 so it can easily be used in a boolean -->
-[h, if (preference == ""): preference = 0; ""]
+[h, if (encode (preference) == ""): preference = 0; ""]
 [h: macro.return = preference]

@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>308053f6-ba17-4aa7-8297-d99fcc6959ab</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>306</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_AE2_upgradeActions</label>
+  <group>RollExpression - Action Editor 2.0</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;To be executed against a token in the event its AE2 actions require some udpate action&lt;br&gt;
+This macro will compare the current Token's AE2 action version with AE2 and perform upgraded&lt;br&gt;
+for each version differential, should it be required. This allows this macro to organically&lt;br&gt;
+grow as new model versions evolve.&lt;br&gt;
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

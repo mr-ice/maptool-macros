@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ec43f4f1-22e6-4a1f-9c2e-53c1d411863f</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>279</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Type_getPriority</label>
+  <group>RollExpression - Type</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Returns the priority for a Roller of a given Type. If a roller name isn't given, the priority of the first roller is returned
+arg(0) = Type
+arg(1) = (Optional) Roller name
+
+Returns the assigned priority for the roller, or -1 when the roller is not found</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

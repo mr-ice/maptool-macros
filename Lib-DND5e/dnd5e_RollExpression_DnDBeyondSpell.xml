@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>61f15b47-f2a0-47af-aaf1-6ea3066d6630</macroUUID>
+  <macroUUID>9780c892-3748-44ee-88c7-f47327a060e9</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>201</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_DnDBeyondSpell</label>
-  <group>RollExpression - Templates</group>
+  <group>RollExpression - Prototypes</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -20,7 +20,11 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = optional name of the DnDBeyond generated spell
 &lt;br&gt;
-&lt;br&gt;A roll expression that can be used to indicate this expression came from spells found in DnDBeyond</toolTip>
+&lt;br&gt;A roll expression that can be used to indicate this expression came from spells found in DnDBeyond
+
+TODO: DnDBeyond should build AE2 entries and AE2 should not read DnDBeyond objects. Keeps the
+		dependancy flowing the correct direction (DnDBeyond depends on DnD5e and there is no other way around). 
+		This needs to go away. -TK</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

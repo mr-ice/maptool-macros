@@ -1,0 +1,7 @@
+[h: rollExpression = arg(0)]
+[h: roll = arg(1)]
+[h: rolls = dnd5e_RollExpression_getRolls (rollExpression)]
+[h: rolls = json.append (rolls, roll)]
+[h: rollExpression = json.set (rollExpression, "rolls", rolls)]
+[h: rollExpression = json.set (rollExpression, "roll", roll)]
+[h: macro.return = rollExpression]

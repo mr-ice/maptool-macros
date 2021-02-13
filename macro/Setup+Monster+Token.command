@@ -1,4 +1,5 @@
-[h: slug = getName()]
+[h: slug = getProperty("Character ID")]
+[h, if (encode (slug) == ""): slug = getName(); ""]
 [h: monsterToon = o5e_Open5e_searchMonsterInput (slug)]
 [r: "<br>name: " + json.get (monsterToon, "name")]
 [h: o5e_Token_Monster_applyProperties (monsterToon)]

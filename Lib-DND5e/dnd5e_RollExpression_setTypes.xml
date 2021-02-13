@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>68439905-3ce9-465c-a495-487b6cb0a4e0</macroUUID>
+  <macroUUID>4e56ee55-be9d-4f1c-907d-e5eb5c5a7114</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>56</index>
   <colorKey>default</colorKey>
@@ -15,10 +15,15 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Sets the types on the RollExpression. This is an uncommon function to call as most RollExpressions would only require an ExpressionType. Callers of this method are addressing edge cases.
+  <toolTip>Sets the types on the RollExpression. This is an uncommon function to call as most RollExpressions would only require an ExpressionType. Callers of this method are addressing edge cases. Overwrites the existing types.
 
 arg (0) = RollExpression
-arg (1) = JSON Array or StrList of types to set
+arg (1) = types as:
+	- an Array of Types - Each element is a Type object
+	- an Object of &lt;String, Type&gt; - Each field is the Type name, keyed to a value which is a Type object. The object format is commonly used when copying types from one expression to another:
+	[newRe = setTypes (newRe, getTypes (oldRe))]
+
+Do NOT call setTypes and pass in a Type object. To overwrite, pass an Array with the Type as the only element. To append, use addType instead.
 
 Returns RollExpression</toolTip>
   <displayHotKey>true</displayHotKey>

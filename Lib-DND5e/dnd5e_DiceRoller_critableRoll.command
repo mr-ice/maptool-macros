@@ -1,5 +1,6 @@
 [h: rollExpression = arg (0)]
-[h: fromCritCandidateExpressions = arg (1)]
+[h: log.debug (getMacroName() + ": rolling " + rollExpression)]
+[h: fromCritCandidateExpressions = json.get (rollExpression, "rolledExpressions")]
 
 <!-- all incoming rollExpressions are assumed to already have been rolled. Only roll rollExpression again 
      if its onCritFrom expression was a natural 20 -->

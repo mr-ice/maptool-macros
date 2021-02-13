@@ -1,4 +1,5 @@
 [h: version = arg(0)]
+[h, if (version == ""): version = "0.0"; ""]
 [h: minimumRequiredVersion = arg(1)]
 [h, if (argCount() > 2): 
 			maximumRequiredVersion = arg(2);

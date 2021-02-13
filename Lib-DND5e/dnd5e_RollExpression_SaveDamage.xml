@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>88b03e23-de9c-4ac4-bae9-c5ea2619b41f</macroUUID>
+  <macroUUID>a40435f6-4dbf-48e7-9686-2fffddb7bd9b</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>113</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_SaveDamage</label>
-  <group>RollExpression - Templates</group>
+  <group>RollExpression - Prototypes</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

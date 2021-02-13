@@ -1,7 +1,7 @@
 [h: requiredMinVersion = arg (0)]
 [h, if (argCount() > 1): requiredMaxVersion = arg (1); requiredMaxVersion = -1]
 [h, if (argCount() > 2): libTokenName = arg (2); libTokenName = getMacroLocation()]
-
+[h: log.warn ("Checking libversion on " + libTokenName)]
 [h: libTokenVersion = getLibProperty ("libversion", libTokenName)]
 [h, macro ("dnd5e_Util_checkVersion@this"): json.append ("", libTokenVersion, requiredMinVersion, requiredMaxVersion)]
 [h: isValid = macro.return]

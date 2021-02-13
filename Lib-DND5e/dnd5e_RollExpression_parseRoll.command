@@ -1,37 +1,15 @@
 [h: rollString = arg (0)]
+<!-- Careful not to expand property values yet -->
+<!-- But since Ive improved my MT regex skills since the last time I was here, lets
+     revisit this nonsense. In fact, in o5e Im pretty sure I wrote a pretty solid pattern for this -->
 [h, if (json.length (macro.args) > 1): rollExpression = arg (1); rollExpression = "{}"]
-[h: dIndex = indexOf (rollString, "d")]
-[h, if (dIndex > -1), code: {
-	[h: diceRolled = substring (rollString, 0, dIndex)]
-}; {
-	[h: diceRolled = 0]
-}]
-[h: rollString = substring (rollString, dIndex + 1)]
-[h: opIndex = indexOf (rollString, "+")]
-[h: bonusIsNeg = 0]
-[h, if (opIndex == "-1"), code: {
-	[h: opIndex = indexOf (rollString, "-")]
-	[h, if (opIndex != "-1"): bonusIsNeg = 1; ""]
-}; {""}]
-[h, if (opIndex == "-1"), code: {
-	[h: diceSize = rollString]
-	[h: opIndex = length (rollString) - 1]
-}; {
-	[h: diceSize = substring (rollString, 0, opIndex)]
-}]
-[h: diceSize = trim (diceSize)]
-[h, if (diceSize == ""): diceSize = 0; ""]
-
-[h: rollString = trim (substring (rollString, opIndex + 1))]
-[h, if (rollString != ""): bonus = rollString; bonus = 0]
-[h, if (bonusIsNeg): bonus = -1 * bonus; ""]
-
-[h, if (diceRolled == 0), code: {
-	<!-- in this situation, the only thing that was passed in was the bonus, if anything at all -->
-	[h: bonus = diceSize]
-	[h: diceSize = 0]
-}; {""}]
+[h: rollObj = dnd5e_Util_parseRollString (rollString)]
+[h: diceSize = json.get (rollObj, "diceSize")]
+[h: diceRolled = json.get (rollObj, "diceRolled")]
+[h: bonus = json.get (rollObj, "bonus")]
 [h: rollExpression = json.set (rollExpression, "diceSize", diceSize,
 								"diceRolled", diceRolled,
 								"bonus", bonus)]
+<!-- ensure it has the Basic Type -->
+[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
 [h: macro.return = rollExpression]

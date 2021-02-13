@@ -1,3 +1,4 @@
+[h: log.warn (getMacroName() + " has been deprecated")]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
 [h: json.toVars(dnd5e_AE2_getConstants())]
 [h, if (argCount() > 2): id = arg(2); id = currentToken()]

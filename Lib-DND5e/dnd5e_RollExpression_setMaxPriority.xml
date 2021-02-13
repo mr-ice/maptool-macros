@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ab4c6159-190b-468c-882e-c207abf43393</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>278</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_setMaxPriority</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Sets the maximum roller priority, instructing the DiceRoller at which point to stop rolling. If given a Type object, the priority will be
+extracted from the object
+arg(0) = RollExpression
+arg(1) = priority value
+
+Returns RollExpression</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

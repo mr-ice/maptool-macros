@@ -1,0 +1,37 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>a7a93f31-e06e-4eac-aa62-8921b9000cda</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>297</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_RollExpression_getSpellcastingAbility</label>
+  <group>RollExpression</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg (0) = RollExpression
+
+returns Ability (
+	0 = Strength,
+	1 = Dexterity,
+	2 = Constitution,
+	3 = Intelligence,
+	4 = Wisdom,
+	5 = Charisma
+)
+If not set, returns -1</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>fivMD6KgQJeStVNMDovt3A==</baGUID>
+    <baGUID>dNiAHJbjSkeNpuFP9FLorg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>fSBjfsQ2QOWv1E1RWI9NJA==</baGUID>
+    <baGUID>R5PB/jZ2RgOvICA9tdGDyg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,78 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1000</x>
-  <y>200</y>
+  <x>1050</x>
+  <y>450</y>
   <z>4</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>1000</lastX>
-  <lastY>300</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>20</x>
-        <y>6</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>20</x>
-        <y>5</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>24</x>
-          <y>6</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>1.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>20</x>
-        <y>4</y>
-        <g>0.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>20</x>
-        <y>6</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.model.CellPoint>
-        <x>20</x>
-        <y>4</y>
-        <g>0.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -602,6 +538,13 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_dnd5e_campaignpreferences</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_dnd5e_campaignPreferences</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>_ae2_javascript</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_AE2_JavaScript</key>
@@ -625,6 +568,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>dndb.basictoonversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb.basicToonVersion</key>
+          <value class="string">0.15</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>animal handling</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Animal Handling</key>
@@ -633,10 +584,9 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>dndb.basictoonversion</string>
+        <string>dev.versionmap</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>dndb.basicToonVersion</key>
-          <value class="string">0.15</value>
+          <key>dev.versionMap</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -819,6 +769,14 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Bonus</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>lib.releasenotesobj</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>lib.releaseNotesObj</key>
+          <value class="string">{"0.15": "Library+has+been+officially+versioned.%3Cbr%3E+RollExpressions+were+refactored+to+better+define+their+Types%26semi%3B%3Cbr%3E++%3Cfont+color%3D%27Red%27%3E%3Cb%3EAll+DnDBeyond+Tokens+will+beed+to+be+fully+re-initialized%3C%2Fb%3E%3C%2Ffont%3E%3Cbr%3E+"}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>

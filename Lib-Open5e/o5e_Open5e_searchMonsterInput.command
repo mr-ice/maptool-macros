@@ -1,3 +1,5 @@
+[h: PREF_OVERWRITE_NAME = o5e_Constants_getConstant ("PREF_OVERWRITE_NAME")]
+[h: PREF_USE_GM_NAME = o5e_Constants_getConstant ("PREF_USE_GM_NAME")]
 <!-- prompt for search term -->
 [h, if (json.length (macro.args) > 0): searchString = arg (0); ""]
 [h, if (searchString == ""): searchString = "Adult Donkey"; ""]
@@ -23,10 +25,18 @@
     [if (records < resultCount): resultMsg = resultMsg + " Showing " + records + " entries."; ""]
     [inputString = "junk | " + resultMsg + " | | LABEL | span=true"]
 	[inputString = inputString + "## nameSelection | " + json.toList(nameArray) + " | Select Name or Cancel to refine search | List "]
+
+	[overwriteName = dnd5e_Preferences_getPreference (PREF_OVERWRITE_NAME)]
+	[useGmName = dnd5e_Preferences_getPreference (PREF_USE_GM_NAME)]
+	[inputString = inputString + "## overwriteName | " + overwriteName + " | Overwrite token name | CHECK"]
+	[inputString = inputString + "## useGmName | " + useGmName + " | Populate GM Name Instead | CHECK"]
+
+	
 	[if (resultCount): found = input (inputString); 
 		input ("junk|No results found for " + searchString + "| | Label | span=true")]
 	[if (found): monsterJson = json.get (resultArray, nameSelection); ""]
-
+	[dnd5e_Preferences_setPreference (PREF_OVERWRITE_NAME, overwriteName)]
+	[dnd5e_Preferences_setPreference (PREF_USE_GM_NAME, useGmName)]
 }]
 <!-- return monster json -->
 [h: log.debug (getMacroName() + ": monsterJson = " + monsterJson)]
