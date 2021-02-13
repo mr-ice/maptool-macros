@@ -1,5 +1,10 @@
 [h: saved = dnd5e_SavedAttacks_fetch()]
 [h: return(!json.isEmpty(saved), "")]
-[h, if (argCount() > 0): index = arg(0); index = ""]
-[h, if (!isNumber(index)): index = json.length(saved) - 1]
-[h: macro.return = json.get(saved, index)]
+[h, if (argCount() > 0): index = arg(0); index = json.length(saved) - 1)]
+[h, if (!startsWith(index, "key-")): index = json.length(saved) - 1)]
+[h, if (isNumber(index)): return(0, json.get(saved, index))]
+[h, FOREACH(roll, saved), code: {
+	[h: first = json.get(roll, 0)]
+	[h, if (index == dnd5e_RollExpression_getTypedDescriptor(first, "action-execution-key")): return(0, roll)]
+}]
+[h: macro.return = ""]

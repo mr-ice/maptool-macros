@@ -1812,6 +1812,10 @@ function changeType() {
       <int>246</int>
       <macro name="dnd5e_Util_assertCampaignPropertiesVersion"/>
     </entry>
+    <entry>
+      <int>247</int>
+      <macro name="dnd5e_SavedAttacks_setKey"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

@@ -1,0 +1,6 @@
+[h: roll = arg(0)]
+[h: key = getLibProperty("savedAttackRolledExpressionKey", "Lib:DnD5e")]
+[h, if (isNumber(key)): key = key + 1; key = 10]
+[h: setLibProperty("savedAttackRolledExpressionKey", key, "Lib:DnD5e")]
+[h: first = dnd5e_RollExpression_addTypedDescriptor(json.get(roll, 0), "action-execution-key", "key-" + key)]
+[h: macro.return = json.set(roll, 0, first)] 

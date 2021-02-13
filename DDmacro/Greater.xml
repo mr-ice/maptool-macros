@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>8273279c-c5b0-4948-8b50-6aaabbfbdee0</macroUUID>
+  <saveLocation>CampaignPanel</saveLocation>
+  <index>14</index>
+  <colorKey>green</colorKey>
+  <hotKey>None</hotKey>
+  <label>Greater</label>
+  <group>Darker Dungeon Healing Potion</group>
+  <sortby>2</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.05em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Use a Greater healing potion and heal 4 x Hit Die + 4 damage</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

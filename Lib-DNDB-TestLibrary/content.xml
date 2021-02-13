@@ -1440,6 +1440,10 @@
       <int>63</int>
       <macro name="dndbt_Test_AttackEditorProcessor_testRollBuild_2"/>
     </entry>
+    <entry>
+      <int>64</int>
+      <macro name="Set+Logging+Level"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
