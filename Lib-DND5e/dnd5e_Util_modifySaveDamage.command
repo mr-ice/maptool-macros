@@ -14,7 +14,7 @@
 		[h: saveEffect = "Save Failed"]
 	};
 	default: {
-		[h, if (isNumber(saveEffect)), code: {
+		[h, if (isNumber(saveResult)), code: {
 			[h: totalDamage = floor(totalDamage * saveResult)]
 			[h: saveEffect = "Save for " + round(saveResult * 100) + "%"]
 		}; {

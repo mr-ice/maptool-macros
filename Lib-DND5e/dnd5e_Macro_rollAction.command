@@ -1,5 +1,5 @@
 [h: inputObj = arg(0)]
-[h: log.debug("dnd5e_Macro_rollAction: inputObj=" + json.indent(inputObj))]
+[h: dnd5e_AE2_assertVersion()]
 [h: selectedAttack = json.get (inputObj, "actionName")]
 [h: advDisadv = json.get (inputObj, "advDisadv")]
 [h: attackObj = getProperty("_AE2_Actions")]

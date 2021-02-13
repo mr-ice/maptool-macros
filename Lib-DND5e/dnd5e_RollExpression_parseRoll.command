@@ -10,4 +10,6 @@
 [h: rollExpression = json.set (rollExpression, "diceSize", diceSize,
 								"diceRolled", diceRolled,
 								"bonus", bonus)]
+<!-- ensure it has the Basic Type -->
+[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
 [h: macro.return = rollExpression]

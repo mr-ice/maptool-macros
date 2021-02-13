@@ -11,8 +11,6 @@
 [h, if (type == "OBJECT"): rollExpressions = json.append ("", rollExpressions)]
 [h: rolled = "[]"]
 [h, foreach (rollExpression, rollExpressions), code: {
-	<!-- Each RE is expected to have the Basic type, so add it now -->
-	[rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
 	<!-- The current RollExpression needs to have context of whats been rolled so far -->
 	[rollExpression = json.set (rollExpression, "rolledExpressions", rolled)]
 	[h: targetRoll = dnd5e_RollExpression_hasType(rollExpression, "target")]
@@ -21,8 +19,7 @@
 	[rollExpression = json.remove (rollExpression, "rolledExpressions")]
 	[h: rolled = json.append (rolled, rollExpression)]
 }]
-<!-- The newness of RE has worn off and the one player that ever cared about this preference thinks its time for it to go -->
-[h, if (dnd5e_Preferences_getPreference ("showRollExpressions")): broadcast ("<pre>" + json.indent (rolled) + "</pre>", "self"); ""]
+
 [h: tokenId = currentToken()]
 [h, if (tokenId != ""): setProperty (LAST_ROLLED_PROPERTY, rolled)]
 [h: macro.return = rolled]

@@ -10,14 +10,7 @@
 				"hasAdvantage | 0 | Has Advantage | check",
 				"hasDisadvantage | 0 | Has Disadvantage | check"))]
 
-[h: checkExpression = json.set ("", "name", name, 
-									"expressionTypes", "Ability",
-									"bonus", bonus,
-									"hasAdvantage", hasAdvantage,
-									"hasDisadvantage", hasDisadvantage,
-									"diceSize", 20,
-									"diceRolled", 1)]
-[h: checkExpression = dnd5e_RollExpression_setName ("", name)]
+[h: checkExpression = dnd5e_RollExpression_Ability (name)]									
 [h: checkExpression = dnd5e_RollExpression_setExpressionType (checkExpression, "Ability")]
 [h: checkExpression = dnd5e_RollExpression_setBonus (checkExpression, bonus)]
 [h: checkExpression = dnd5e_RollExpression_setAdvantage (checkExpression, hasAdvantage)]

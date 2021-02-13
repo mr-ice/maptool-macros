@@ -65,7 +65,6 @@
 		[h: currentActionName = dnd5e_Util_createUniqueName("New Action", json.fields(workingCopy, "json"))]
 		[h: workingCopy = json.set(workingCopy, currentActionName, "[]")]
 		[h: exps = dnd5e_AE2_typeAttack("", "[]")]
-		[h: firstExp = json.get(exps, 0)]
 		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), ACTION_NAME_TD, currentActionName)]
 		[h: exps = json.set(exps, 0, firstExp)]
 		[h: oldActionType = ATTACK_TYPE]

@@ -23,7 +23,6 @@
 	[if (disadvantage == "Disadvantage"): advDisadv = "Both"; advDisadv = "Advantage"]
 }; {""}]
 [h, if (disadvantage == "Disadvantage" && advantage != "Advantage"): advDisadv = "Disadvantage"; ""]
-<!-- Well capture the currently selected attack based off of the action selected. For now, none -->
 [h: selectedAttack = json.get (inputArgs, "activeAttack")]
 
 <!-- Build the roll expressions -->
@@ -83,14 +82,16 @@
 		[extraDamageSaveDC = json.get (inputArgs, "extraDamageSaveDC-" + attackField + "-" + index)]
 		[extraDamageSaveAbility = json.get (inputArgs, "extraDamageSaveAbility-" + attackField + "-" + index)]
 		[extraDamageSaveEffect = json.get (inputArgs, "extraDamageSaveEffect-" + attackField + "-" + index)]
+		<!-- defaults as regular damage (which has critable) -->
 		[extraDamage = dnd5e_RollExpression_Damage ("", extraDamageRoll)]
+		[diceRolled = dnd5e_RollExpression_getDiceRolled (extraDamage)]
+		[if (isNumber (extraDamageSaveDC) && diceRolled > 0): extraDamage = dnd5e_RollExpression_SaveDamage ("", extraDamageRoll); ""]
+		[if (isNumber (extraDamageSaveDC) && diceRolled == 0): extraDamage = dnd5e_RollExpression_SaveEffect (); ""]
 		[extraDamage = dnd5e_RollExpression_setDamageTypes (extraDamage, extraDamageType)]
 		[extraDamage = dnd5e_RollExpression_setSaveDC (extraDamage, extraDamageSaveDC)]
 		[extraDamage = dnd5e_RollExpression_setSaveAbility (extraDamage, extraDamageSaveAbility)]
 		[extraDamage = dnd5e_RollExpression_setSaveEffect (extraDamage, extraDamageSaveEffect)]
-		[diceRolled = dnd5e_RollExpression_getDiceRolled (extraDamage)]
-		[if (isNumber (extraDamageSaveDC) && diceRolled > 0): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Damage"); ""]
-		[if (isNumber (extraDamageSaveDC) && diceRolled == 0): extraDamage = dnd5e_RollExpression_setExpressionType (extraDamage, "Save Effect"); ""]
+
 		[doDelete = json.get (inputArgs, "deleteExtraDamage-" + attackField + "-" + index)]
 		<!-- if doDelete is blank, add the expression. If it is not, its the selected attack -->
 		[if (doDelete == ""): rollExpressions = json.append (rollExpressions, extraDamage); selectedAttack = attackName]

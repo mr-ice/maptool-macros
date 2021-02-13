@@ -1,4 +1,4 @@
-[h, if (argCount() > 0): name = arg(0); name = "Weapon"]
+[h, if (argCount() > 0): name = arg(0); name = "Weapon Attack"]
 [h, if (argCount() > 1): proficient = arg(1); proficient = 0]
 [h, if (argCount() > 2): weaponBonus = arg(2); weaponBonus = 0]
 [h, if (argCount() > 3): weaponType = arg(3); weaponType = 0]
