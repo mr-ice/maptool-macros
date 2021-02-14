@@ -21,6 +21,17 @@
 }; {}]
 [h: bonusClassSpells = filteredBonusSpells]
 
+<!-- Racial spells -->
+[h: racialSpells = json.path.read (toon, "data.spells.race")]
+[h: filteredBonusSpells = "[]"]
+[h, if (!json.isEmpty(racialSpells)), code: {
+	<!-- look for the definition object. If he aint got one, fuck off -->
+	[foreach (bonusSpell, racialSpells, ""), code: {
+		[if (json.contains (bonusSpell, "definition")): filteredBonusSpells = json.append (filteredBonusSpells, bonusSpell)]
+	}]
+}; {}]
+[h: bonusClassSpells = filteredBonusSpells]
+
 [h: featSpells = json.path.read (toon, "data.spells.feat")]
 
 [h, if (json.length (featSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, featSpells); ""]

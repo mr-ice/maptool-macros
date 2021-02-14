@@ -92,8 +92,8 @@
 											"diceRolled", diceCount,
 											"expressionTypes", type,
 											"bonus", abilityBonus + fixedValue,
-
 											"damageTypes", subType)]
+		[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
 		[h: rollExpressions = json.append (rollExpressions, rollExpression)]
 	}; {""}]
 }]
