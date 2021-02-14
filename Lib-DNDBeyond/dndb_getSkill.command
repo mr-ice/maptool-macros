@@ -67,6 +67,17 @@
 [h: skillSearchArgs = json.set ("", "object", toon,
 							"entityTypeId", SKILL_ENTITY_TYPE_ID)]
 [h: skillMods = dndb_searchGrantedModifiers (skillSearchArgs)]
+
+<!-- Find ALL modifiers related to ability-checks -->
+[h: abilitySearchArgs = json.set ("", "object", toon, 
+						"subType", "ability-checks")]
+[h: abilityMods = dndb_searchGrantedModifiers (abilitySearchArgs)]
+[h: allBonus = 0]
+[h, foreach (abilityMod, abilityMods), code: {
+	[type = json.get (abilityMod, "type")]
+	[if (type == "bonus"): allBonus = allBonus + json.get (abilityMod, "value"); ""]
+}]
+
 <!-- Too many uncertainties here, so just go through the skill list -->
 <!-- Fall back to the generic search instead of more granted modifiers search -->
 [h, foreach (skill, skills), code: {
@@ -124,16 +135,16 @@
 	<!-- Delegate it. -->
 
 	[h: skill = dndb_transformSkill (toon, skill, skillMods)]
+
+	<!-- add the all-abilities bonus -->
+	[h: bonus = json.get (skill, "bonus")]
+	[h: skill = json.set (skill, "bonus", bonus + allBonus)]
 	[h: afterSkillList = json.append (afterSkillList, skill)]
 	
 }]
 
 <!-- Lets call this the Rex Redrum bug: features that grant all ability checks some level of proficiency have -->
 <!-- to be accounted for, but they wont be found tied to any particular skill -->
-<!-- Find ALL modifiers related to ability-checks -->
-[h: abilitySearchArgs = json.set ("", "object", toon, 
-						"subType", "ability-checks")]
-[h: abilityMods = dndb_searchGrantedModifiers (abilitySearchArgs)]
 
 <!-- Now tease out the interesting bits -->
 <!-- No need to keep searching for stuff. This arry shouldnt be very big -->
@@ -154,6 +165,8 @@
 		ability = json.set (ability, "proficient", abilityValue); 
 		ability = json.set (ability, "proficient", 0)
 	]
+	[abilityBonus = json.get (ability, "bonus")]
+	[ability = json.set (ability, "bonus", abilityBonus + allBonus)]
 	[afterSkillList = json.append (afterSkillList, ability)]
 }]
 
@@ -161,4 +174,3 @@
 <!-- not quite! Bonus arry needs non-choice bonus also. And give the refactoring one more go -->
 <!-- see saves as a new template -->
 [h: macro.return = afterSkillList]
-
