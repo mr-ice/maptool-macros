@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>de13e16f-2cf1-40c0-a434-37340da7284d</macroUUID>
+  <macroUUID>ec22e50c-0de8-4016-8d35-697e73ecd46f</macroUUID>
   <saveLocation>GlobalPanel</saveLocation>
-  <index>32</index>
+  <index>25</index>
   <colorKey>cyan</colorKey>
   <hotKey>shift F12</hotKey>
   <label>BasicToon</label>

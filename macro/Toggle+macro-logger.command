@@ -1,0 +1,6 @@
+[h: BUGGERY = "TRACE"]
+[h: lineParserLog = "macro-logger"]
+[h: currentLevel = json.get (json.path.read (log.getLoggers(), "[*].[?(@.name == '" + lineParserLog  + "')]['level']"), 0)]
+[h: log.debug (lineParserLog + ": " + currentLevel)]
+[h, if (currentLevel == BUGGERY): newLevel = "INFO"; newLevel = BUGGERY]
+[r: log.setLevel (lineParserLog, newLevel)]

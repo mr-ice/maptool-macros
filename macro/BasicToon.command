@@ -1,5 +1,5 @@
 [h: basicToon = getProperty ("dndb_BasicToon")]
-[h: log.error ("Previous: " + basicToon)]
+
 [h: abort (input ("choice | edit,set,print | Action | List | value=string"))]
 [h, if (choice == "copy"), code: {
 	[h: input ("basicToon | " + basicToon + " | Copy BasicToon | Text | span=true")]
@@ -11,7 +11,7 @@
 	[h: log.error ("New: " + basicToon)]
 	[h: abort (0)]
 }]
-[h: keys = json.fields (basicToon)]
+[h: keys = json.toList (json.sort (json.fromList( json.fields (basicToon))))]
 
 [h, if (choice == "get"), code: {
 	[h: abort (input ("field | " + keys + " | Field | List | value=string"))]
@@ -33,4 +33,3 @@
 				"value | | Value | Text"))]
 [h: basicToon = json.set (basicToon, field, value)]
 [h: setProperty ("dndb_BasicToon", basicToon)]
-[h: log.error ("Edited: " + basicToon)]

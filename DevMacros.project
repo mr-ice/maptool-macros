@@ -1,0 +1,10 @@
+<project>
+    <macroset name="Dev Global Macros">
+        <macro name="macro/BasicToon"/>
+        <macro name="macro/Clean+Token"/>
+        <macro name="macro/Get+BasicToon+DTO"/>
+        <macro name="macro/Toggle+LineParser"/>
+        <macro name="macro/Toggle+macro-logger"/>
+        <macro name="macro/Token+Explorer"/>
+    </macroset>
+</project>
