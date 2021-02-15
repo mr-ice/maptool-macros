@@ -136,13 +136,6 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>SpellcastingAbility</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>Charisma</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
           <name>Initiative</name>
           <shortName>Init</shortName>
           <highPriority>false</highPriority>
@@ -287,13 +280,6 @@
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
           <defaultValue>Unlike melee and ranged, proficiency is built-in by definition</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
-          <name>bonus.attack.spellcasting</name>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + SpellcastingAbility + &quot; + Proficiency}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>---- Save Proficiencies ----</name>
