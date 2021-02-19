@@ -1,0 +1,8 @@
+[h: l_checked = arg(0)]
+[h, if (!isNumber(l_checked)): l_checked = 0]
+[h: l_checked = if(l_checked == 1, "checked", "")]
+[h: out = json.append("[]", strformat("<div class='col-2 form-group action-detail%{stepClass}' data-toggle='tooltip' title='Add your proficency bonus?'>"))]
+[h: out = json.append(out, strformat("  <label for='%{rowId}-%{PROFICENCY_FIELD}-id'>Proficient:&nbsp;&nbsp;</label>"))]
+[h: out = json.append(out, strformat("  <input type='checkbox' class='form-check-input' id='%{rowId}-%{PROFICENCY_FIELD}-id' name='%{rowId}-%{PROFICENCY_FIELD}' %{l_checked}>"))]
+[h: out = json.append(out, "</div>")]
+[h: macro.return = json.toList(out, "")]
