@@ -12,10 +12,12 @@
 
 [h, if (doExpansion), code: {
 	[propertyModifiers = json.get (rollExpression, "propertyModifiers")]
+	[h: log.debug(getMacroName() + " propertyModifiers=" + json.indent(propertyModifiers))]
 	[foreach (propertyModifier, propertyModifiers, ""), code: {
-		[log.debug (getMacroName() + ": Evaluating " + propertyModifier)]
+		[log.debug (getMacroName() + ": Evaluating=('" + propertyModifier + "')")]
 		<!-- These are more like expressions rather than sraight property values
 			so run them through macroEval -->
+		[if (json.isEmpty(propertyModifier)): propertyModifier = "0"]
 		[evalMacro ("[h: propertyValue = floor (" + propertyModifier + ")]")]
 		[log.debug (getMacroName() + ": propertyValue = " + propertyValue)]
 		[if (isNumber (propertyValue)): bonus = bonus + propertyValue; ""]

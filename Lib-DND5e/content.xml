@@ -3164,6 +3164,14 @@ function changeType() {
       <int>248</int>
       <macro name="dnd5e_SavedAttacks_setKey"/>
     </entry>
+    <entry>
+      <int>249</int>
+      <macro name="dnd5e_AE2_generateAbilityModFieldHtml"/>
+    </entry>
+    <entry>
+      <int>250</int>
+      <macro name="dnd5e_AE2_generateProficiencyHtml"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

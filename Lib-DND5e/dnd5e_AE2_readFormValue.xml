@@ -17,12 +17,9 @@
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Determines the new value of a field by reading it from the form or using the defaul
 &lt;br&gt;
-&lt;br&gt;arg(0) = Roll Expression to be updated
-&lt;br&gt;arg(1) = Form data
-&lt;br&gt;arg(2) = Field name
-&lt;br&gt;arg(3) = Optionally force the row id
+&lt;br&gt;The value for the field updates the current expression
 &lt;br&gt;
-&lt;br&gt;The new value for the field
+&lt;br&gt;Note: no output generated and it uses readForm scope
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

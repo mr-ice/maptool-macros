@@ -1,11 +1,7 @@
 <!-- Read arguments -->
-[h: id = arg(0)]
-[h: exp = arg(1)]
-[h: state = arg(2)]
-[h: selected = arg(3)]
-[h: index = arg(4)]
+[h: exp = json.get(rolledExpressions, i)]
+[h: selected = json.get(selectedById, id)]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
 
 <!-- Current state -->
 [h: hit = json.get(state, "hit")]
@@ -14,7 +10,7 @@
 [h: save = json.get(state, "save")]
 
 <!-- Selected options key -->
-[h: expKey = "exp-" + index]
+[h: expKey = "exp-" + i]
 [h, if (!json.isEmpty(selected) && json.contains(selected, expKey)): optValue = json.get(selected, expKey); optValue = ""]
 
 <!-- Determine if we hit for all later damage rolls -->
@@ -24,7 +20,7 @@
 	[h: ac = if(isNumber(ac), number(ac), 0)]
 	[h, if (optValue == "half"): cover = 2; cover = 0]
 	[h, if (optValue == "threeQuarters"): cover = 5]
-	[h: hit = if(ac + cover >= dnd5e_RollExpression_getTotal(exp) , 0, 1)]
+	[h: hit = if(ac + cover > dnd5e_RollExpression_getTotal(exp), 0, 1)]
 	[h: hitText = if(hit, "HIT", "MISS")]
 	[h, if (dnd5e_RollExpression_getRoll(exp) == 20), code: {
 		[h: hit = 1]

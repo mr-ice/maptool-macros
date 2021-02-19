@@ -27,7 +27,7 @@
 &lt;br&gt;a previous Target Check has failed.&lt;/dd&gt;
 &lt;dt&gt;&lt;b&gt;Save Damage&lt;/b&gt;&lt;/dt&gt;
 &lt;dd&gt;Apply damage to the target. An earlier Save is checked to see if the damage should
-&lt;br&gt;be modified by the save effect. The value 'none', 'half' and a multiplier are supported.
+&lt;br&gt;be modified by the save effect. The value &apos;none&apos;, &apos;half&apos; and a multiplier are supported.
 &lt;br&gt;This step is ignored if a previous Attack missed or a previous Target Check has failed.
 &lt;br&gt;If created by the attack editor the save is included with this step. A save roll is
 &lt;br&gt;created and rolled against the target before determining the damage applied. See the Save step.&lt;/dd&gt;
@@ -57,7 +57,9 @@ are skipped until the next target check. This step is ignored if a previous Atta
 &lt;br&gt;arg(4) = Index of this step
 &lt;br&gt;
 &lt;br&gt;Returns the updated state object.
-&lt;br&gt;See &lt;font face="monospace"&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
+&lt;br&gt;See &lt;font face=&quot;monospace&quot;&gt;dnd5e_SavedAttacks_updateState&lt;/font&gt; for format
+&lt;br&gt;
+&lt;br&gt;Note that this method does not create output and it uses dnd5e_SavedAttacks_apply scope.
 &lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

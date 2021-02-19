@@ -1467,6 +1467,10 @@
       <int>127</int>
       <macro name="data_BasicToon_Zairali"/>
     </entry>
+    <entry>
+      <int>128</int>
+      <macro name="Set+Logging+Level"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

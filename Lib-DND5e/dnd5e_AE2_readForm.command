@@ -1,26 +1,25 @@
-[h, if (json.length (macro.args) > 0): exps = arg(0); exps = "[]"]
-[h: log.debug("dnd5e_AE2_readForm: exps = " + json.indent(exps))]
+[h, if (argCount() > 0): exps = arg(0); exps = "[]"]
 [h: return(!json.isEmpty(exps), exps)]
-[h, if (json.length (macro.args) > 1): form = arg(1); form = "{}"]
-[h: log.debug("dnd5e_AE2_readForm: form = " + json.indent(form))]
+[h, if (argCount() > 1): form = arg(1); form = "{}"]
 [h: return(!json.isEmpty(form), exps)]
-[h, if (json.length (macro.args) > 2): metaData = arg(2); metaData = "{}"]
-[h: log.debug("dnd5e_AE2_readForm: metaData = " + json.indent(metaData))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h, if (argCount() > 2): metaData = arg(2); metaData = "{}"]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- fill in the expressions from the form -->
 [h: newExps = "[]"]
 [h, foreach(exp, exps, ""), code: {
 
-	<!-- Read the fields for a specific type -->
+	<!-- Get the list of fields for the expression type -->
 	[h: type = dnd5e_RollExpression_getExpressionType(exp)]
 	[h: fieldList = json.get(FIELDS_BY_STEP_TYPE, type)]
-	[h, foreach(field, fieldList, ""): exp = dnd5e_AE2_readFormValue(exp, form, field))]
 
-	<!-- Read the extended values -->
+	<!-- Add the extended fields to the list if needed -->
 	[h: extended = dnd5e_RollExpression_getTypedDescriptor(exp, "extendedValues")]
-	[h, if (extended == "-"): exp = dnd5e_AE2_readFormValue(exp, form, NAME_FIELD); ""]
-	[h, if (extended == "-" && dnd5e_RollExpression_hasType(exp, "critable")): exp = dnd5e_AE2_readFormValue(exp, form, ON_CRITICAL_FIELD); ""]
+	[h, if (extended == "-"): fieldList = json.append(fieldList, NAME_FIELD)]
+	[h, if (extended == "-" && dnd5e_RollExpression_hasType(exp, "critable")): fieldList = json.append(fieldList, ON_CRITICAL_FIELD)]
+
+	<!-- Readall of the field values from the form) -->
+	[h, foreach(field, fieldList, ""): exp = dnd5e_AE2_readFormValue())]
 	[h: newExps = json.append(newExps, exp)]
 }]
 

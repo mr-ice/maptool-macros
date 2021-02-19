@@ -1,11 +1,10 @@
-[h: fieldId = arg(0) + "-" + arg(1)]
-[h: value = arg(2)]
-[h, if (json.isEmpty(value)): value = ""; value = json.get(value, 0)]
-[h: stepClass = arg(3)]
-[h: damageTypes = arg(4)]
-<div class="col-3 form-group action-detail [r:stepClass]" data-toggle="tooltip" title="Choose the type of damage to be applied to the target">
-  <label for="[r:fieldId]-id">Type:&nbsp;</label>
-  <select id="[r:fieldId]-id" name="[r:fieldId]" class="selectpicker" title="Choose type&hellip;" required>
-    [r, foreach(damageType, damageTypes, "</option>"): "<option" + if(value == damageType, " selected", "") + ">" + damageType ]
-  </select>
-</div>
+[h: l_value = arg(0)]
+[h, if (json.isEmpty(l_value)): l_value = ""; l_value = json.get(l_value, 0)]
+[h: l_value = capitalize(lower(l_value))]
+[h: out = json.append("[]", strformat('<div class="col-3 form-group action-detail%{stepClass}" data-toggle="tooltip" title="Choose the type of damage to be applied to the target">'))]
+[h: out = json.append(out, strformat('  <label for="%{rowId}-%{DAMAGE_TYPE_FIELD}-id">Type:&nbsp;</label>'))]
+[h: out = json.append(out, strformat('  <select id="%{rowId}-%{DAMAGE_TYPE_FIELD}-id" name="%{rowId}-%{DAMAGE_TYPE_FIELD}" class="selectpicker" title="Choose type&hellip;" required>'))]
+[h, foreach(l_damageType, DAMAGE_TYPES, ""): out = json.append(out, strformat("<option %s>%{l_damageType}</option>", if(l_value == l_damageType, " selected", "")))]
+[h: out = json.append(out, '  </select>')]
+[h: out = json.append(out, '</div>')]
+[h: macro.return = json.toList(out, "")]

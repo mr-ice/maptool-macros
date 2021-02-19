@@ -21,6 +21,9 @@
 &lt;br&gt;arg(1) = Optional: Options to be applied for each target
 &lt;br&gt;
 &lt;br&gt;Updates the selected token&apos;s damage, conditions, health states and bars.
+&lt;br&gt;Only the GM is given output that describes the attack as applied to a selected token including tooltips that showing starting HP and calculations for hit and damage 
+&lt;br&gt;
+&lt;br&gt;Note that this method does not generate any output
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

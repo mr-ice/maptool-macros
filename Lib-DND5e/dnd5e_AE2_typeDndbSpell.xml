@@ -25,6 +25,8 @@
 &lt;br&gt;
 &lt;br&gt;Outputs html content for all of the action steps currently defined
 &lt;br&gt;Returns the updated roll expression
+&lt;br&gt;
+&lt;br&gt;Note that this method can not generate chat output
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

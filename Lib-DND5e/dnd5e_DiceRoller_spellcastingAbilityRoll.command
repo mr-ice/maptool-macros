@@ -12,5 +12,5 @@
 	default: abilityProperty = "";
 ]
 [h: propertyExpressions = json.get (re, "propertyModifiers")]
-[h: propertyExpressions = json.append (propertyExpressions, abilityProperty)]
+[h, if(abilityProperty != ""): propertyExpressions = json.append (propertyExpressions, "getProperty('" + abilityProperty + "')")]
 [h: macro.return = json.set (re, "propertyModifiers", propertyExpressions)]
