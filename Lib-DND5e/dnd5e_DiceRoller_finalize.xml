@@ -15,7 +15,14 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>DiceRoller_roll will call this after all rollers. It will perform totalling and adornment of descriptors.</toolTip>
+  <toolTip>&lt;html&gt;DiceRoller_roll will call this after all rollers. It will perform totalling and adornment of descriptors.
+&lt;br&gt;
+&lt;br&gt;arg(0) = An RE that has already been rolled.
+&lt;br&gt;
+&lt;br&gt;The rolled expression has totals and tool tips added showing details
+&lt;br&gt;
+&lt;br&gt;Not that this method can not generate any output
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
