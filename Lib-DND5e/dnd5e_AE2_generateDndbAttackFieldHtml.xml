@@ -15,7 +15,14 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>&lt;html&gt;Generate the HTML for the DNDBeyond attack field of a roll expression
+&lt;br&gt;
+&lt;br&gt;arg(0) = The value to be displayed in the field
+&lt;br&gt;
+&lt;br&gt;The html for the DND Beyond Attack field
+&lt;br&gt;
+&lt;br&gt;Note: no output generated and it uses generateStepHtml scope
+&lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

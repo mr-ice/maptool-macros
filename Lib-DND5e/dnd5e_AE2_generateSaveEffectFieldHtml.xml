@@ -17,12 +17,11 @@
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Generate the HTML for the save effect field of a roll expression
 &lt;br&gt;
-&lt;br&gt;arg(0) = Identifier for the row
-&lt;br&gt;arg(1) = Field name
-&lt;br&gt;arg(2) = The value to be displayed in the field
-&lt;br&gt;arg(3) = The class that is attached to fields for type steps created by type
+&lt;br&gt;arg(0) = The value to be displayed in the field
 &lt;br&gt;
-&lt;br&gt;The html for the save effect field is sent to chat
+&lt;br&gt;The html for the save effect field
+&lt;br&gt;
+&lt;br&gt;Note: no output generated and it uses generateStepHtml scope
 &lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

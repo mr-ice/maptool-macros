@@ -1,10 +1,9 @@
-[h: fieldId = arg(0) + "-" + arg(1)]
-[h: value = arg(2)]
-[h, if (value != ""): value = 'value="' + value + '"'; ""]
-[h: stepClass = arg(3)]
-[h: p = "^\\s*[1-9]\\d*d[1-9]\\d*\\s*([+|-]\\s*[1-9]\\d*)?\\s*\$"]
-<div class="col-2 form-group action-detail[r:stepClass]">
-  <label for="[r:fieldId]-id" style="margin-right:15px;">Roll:&nbsp;</label>
-  <input type="text" id="[r:fieldId]-id" name="[r:fieldId]" class="form-control " [r:value] pattern="[r:p]" placeholder="#d#+|-#", style="width:130;" required
-	  data-toggle="tooltip" title="Enter a die roll in the format #d# with an optional damage bonus/penalty">
-</div>
+[h: l_value = arg(0)]
+[h, if (json.isEmpty(l_value)): l_value = ""; l_value = 'value="' + l_value + '"']
+[h: p = "^\\s*([1-9]\\d*d[1-9]\\d*)?\\s*([+|-]\\s*[1-9]\\d*)?\\s*\$"]
+[h: out = json.append("[]", strformat('<div class="col-2 form-group action-detail%{stepClass}">'))]
+[h: out = json.append(out, strformat('  <label for="%{rowId}-%{ROLL_STRING_FIELD}-id" style="margin-right:15px;">Roll:&nbsp;</label>'))]
+[h: out = json.append(out, strformat('  <input type="text" id="%{rowId}-%{ROLL_STRING_FIELD}-id" name="%{rowId}-%{ROLL_STRING_FIELD}" class="form-control" %{l_value} pattern="%s"', p))]
+[h: out = json.append(out, strformat('placeholder="#d#+|-#", style="width:130;" required data-toggle="tooltip" title="Enter a die roll in the format #d#+|-#">'))]
+[h: out = json.append(out, '</div>')]
+[h: macro.return = json.toList(out, "")]
