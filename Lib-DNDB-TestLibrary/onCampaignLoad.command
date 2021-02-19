@@ -14,3 +14,4 @@
 }]
 [h: defineFunction ("dndbt_CleanToken", "Clean Token@this")]
 [h: defineFunction ("dndbt_ResetProperties", "Reset Properties@Campaign")]
+[h: defineFunction ("breakpoint", "dndbt_breakpoint@this", 1, 0)]
