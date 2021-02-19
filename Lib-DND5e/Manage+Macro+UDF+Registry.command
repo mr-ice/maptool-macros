@@ -10,6 +10,5 @@
 	case 1: registry = dnd5e_Macro_UDF_deleteKey (registry);
 	case 2: "";
 ]
-
 [h: dnd5e_Macro_UDF_setRegistry (registry)]
 [h: dnd5e_Util_printRegistry (registry, REG_NAME)]
