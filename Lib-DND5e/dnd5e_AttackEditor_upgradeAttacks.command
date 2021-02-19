@@ -1,4 +1,4 @@
-[h: json.toVars (dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 [h: tokenVersion = getProperty (AE_VERSION_PROPERTY)]
 <!-- From 0.0 to 0.15, we formalized how Types work. Old AE1 attacks need to be adorned with these types -->
 [h: versioned = dnd5e_Util_checkVersion (tokenVersion, "0.15")]

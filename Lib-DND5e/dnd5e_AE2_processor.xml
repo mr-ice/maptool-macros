@@ -20,6 +20,15 @@
 &lt;br&gt;arg(0) = HTML form output
 &lt;br&gt;
 &lt;br&gt;Updates the roll expression with the form data and then handles the various submit buttons
+&lt;br&gt;
+&lt;br&gt;Note that this method can not generate chat output
+&lt;/html&gt;&lt;html&gt;Processes the form data and then handles the buttons
+&lt;br&gt;
+&lt;br&gt;arg(0) = HTML form output
+&lt;br&gt;
+&lt;br&gt;Updates the roll expression with the form data and then handles the various submit buttons
+&lt;br&gt;
+&lt;br&gt;Note that this method can not generate chat output
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

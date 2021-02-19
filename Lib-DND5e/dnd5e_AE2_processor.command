@@ -7,7 +7,7 @@
 [h: metaData = decode(json.get(form, "hidden-meta-data"))]
 [h: oldActionName = decode(json.get(form, "hidden-active-name"))]
 [h: log.debug("dnd5e_AE2_processor: id=" + id + " form=" + json.indent(form))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Get the old action type before reading the form -->
 [h, if (json.isEmpty(exps)), code: {
@@ -113,6 +113,8 @@
 	[h: doNotNeedAdvantage = 1]
 	[h, foreach (exp, exps), if (dnd5e_RollExpression_getExpressionType(exp) == "Attack"): doNotNeedAdvantage = 0]
 	[h, if (saveAttackAsMacro), code: {
+		[h: setProperty("_AE2_Actions", workingCopy)]
+		[h: setProperty("_AE2_Metadata", metaData)]
 		[h: fontColor = json.get(metaData, "macroFontColor")]
 		[h: buttonColor = json.get(metaData, "macroBgColor")]
 		[h: sortByBase = listCount(currentMacros)]

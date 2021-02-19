@@ -17,18 +17,36 @@
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Constants that can be turned into variables for use by the macros
 &lt;br&gt;
-&lt;br&gt;Returns an object with the following structure
+&lt;br&gt;Generates an object with the following structure used to create variables
 &lt;br&gt;&amp;nbsp;&amp;nbsp;{
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"STEP_TYPES": A list of the supported step types
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"xxx_STEP_TYPE": An individual step type from the STEP_TYPES list.
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"FIELDS_BY_STEP_TYPE": An object with step type keys and list of fields for that step as values
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"ACTION_TYPES": A list of all of the supported action types
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"xxx_TYPE": An individual action type from the ACTION_TYPES list.
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"NAMES_OF_STEP_TYPES": The text to be displayed in the step type column
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"DAMAGE_TYPES": A list of all of the supported damage types
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"HTML_FOR_FIELDS": HTML to be used for a form field placed into a single column
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;FIELDS_BY_STEP_TYPE&quot;: An object with step type keys and list of fields for that step as values
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;NAMES_OF_STEP_TYPES&quot;: An object with step type keys and list of step names used by that type
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;DAMAGE_TYPES&quot;: A list of all of the supported damage types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;CHAR_ABILITIES&quot;: A list of character abilities
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;STATE_GROUPS: A list of the campaign property state groupings 
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;MACRO_COLORS&quot;: A list of the colors for macro buttons
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;TARGET_ROLL_TYPE&quot;: An object that contains a type named targeted
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;UNROLLABLE_ROLL_TYPE&quot;: An object that contains a type named unrollable
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;VERSION_PROPERTY&quot;: Name of the action editor version property
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;AE2_CURRENT_VERSION&quot;: Currently supported version number of the action editor
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;AE_VERSION_PROPERTY&quot;: Name of the attack editor version property
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;AE_CURRENT_VERSION&quot;: Currently supported version number of the attack editor
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;WEAPON_TYPES&quot;: A set of objects that describe each &apos;weaponType&apos; supported in REs
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;ACTION_TYPES&quot;: A list of all of the supported action types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;xxx_TYPE&quot;: An individual action type from the ACTION_TYPES list.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;STEP_TYPES&quot;: A list of the supported step types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;xxx_STEP_TYPE&quot;: An individual step type from the STEP_TYPES list.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;STEP_TYPES&quot;: A list of the supported step types
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;xxx_STEP_TYPE&quot;: An individual step type from the STEP_TYPES list.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;STEP_FIELDS&quot;: A list of the step fields
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;xxx_FIELD&quot;: An individual field from the STEP_FIELDS list.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;TYPED_DESCRIPTOR_KEYS&quot;: A list of all of the different type descriptors
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;xxx_TD&quot;: An individual typed descriptor key from the TYPED_DESCRIPTOR_KEYS list.
 &lt;br&gt;&amp;nbsp;&amp;nbsp;}
-</toolTip>
+&lt;br&gt;
+&lt;br&gt;Note that this method generates no output, does not change the scope, and adds a lot of constant variables to the parent scope.
+&lt;br&gt;Make sure it is called &lt;b&gt;After&lt;/b&gt; the arguments in the parent scope are read
+&lt;html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

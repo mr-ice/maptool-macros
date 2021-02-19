@@ -1,10 +1,10 @@
-[h: json.toVars(dnd5e_AE2_getConstants())]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
 [h: form = arg(0)]
 [h: targetId = arg(1)]
 [h: rolledExps = arg(2)]
 [h: row = arg(3)]
 [h, if (argCount() > 4): selected = arg(4); selected="{}"]
+[h: dnd5e_AE2_getConstants()]
 [h: selected = json.set(selected, "id", targetId)]
 
 <!-- Still applying to this token? -->

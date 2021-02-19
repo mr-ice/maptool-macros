@@ -1,7 +1,7 @@
 [h: oldActionType = arg(0)]
 [h: exps = arg(1)]
 [h: log.debug("dnd5e_AE2_typeAttack: oldActionType = " + oldActionType + " exps = " + json.indent(exps))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Type change?, remove old type, make new attack and damage -->
 [h, if (oldActionType != ATTACK_TYPE || json.isEmpty(exps)), code: {

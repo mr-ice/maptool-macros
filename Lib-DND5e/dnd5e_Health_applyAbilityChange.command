@@ -1,17 +1,17 @@
 [h: log.warn (getMacroName() + " has been deprecated")]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: ability = arg(0)]
+[h: amount = arg(1)]
 [h, if (argCount() > 2): id = arg(2); id = currentToken()]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Check the ability -->
-[h: ability = arg(0)]
 [h, if (!json.contains(CHAR_ABILITIES, ability)), code: {
 	[h: broadcast("Apply Ability Change: Unknown ability name '" + ability + "'", "self")]
 	[h: return(0, "")]
 }]
 
 <!-- Amount passed not 0? -->
-[h: amount = arg(1)]
 [h, if (!isNumber(amount) || amount == 0), code: {
 	[h: broadcast("Apply Ability Change: Amount is zero or is invalid: '" + amount + "'", "self")]
 	[h: return(0, "")]

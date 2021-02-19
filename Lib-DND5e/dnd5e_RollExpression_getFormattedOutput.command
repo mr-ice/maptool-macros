@@ -1,7 +1,7 @@
-[h: json.toVars(dnd5e_AE2_getConstants())]
 [h: roll = arg(0)]
 [h, if (argCount() > 1): returnString = arg(1); returnString = 0]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Get a title from the first expression's actionName descriptor or its name, make a link of it -->
 [h: firstExp = json.get(roll, 0)]
