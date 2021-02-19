@@ -42,5 +42,4 @@
 [h: allTotal = 0]
 
 [h: rollExpression = json.set (rollExpression,	"total", newTotal, "totals", newTotals)]
-[h: rollExpression = dnd5e_RollExpression_calculateRollString (rollExpression)]
 [h: macro.return = rollExpression]
