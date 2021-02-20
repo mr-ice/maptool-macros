@@ -9,8 +9,12 @@ endif
 project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
 	$(DOTSLASH)dockerrun assemble DNDBeyond.project
 
-all: DNDBeyond+Open5e.project $(shell echo Lib-DNDBeyond/*) $(shell echo Lib-Open5e/*)
+all:
+	$(DOTSLASH)dockerrun assemble Ashes+PF2.project
+	$(DOTSLASH)dockerrun assemble DNDBeyond.project
 	$(DOTSLASH)dockerrun assemble DNDBeyond+Open5e.project
+	$(DOTSLASH)dockerrun assemble Open5e.project
+	$(DOTSLASH)dockerrun assemble Lib-Log4MT
 
 project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 	$(DOTSLASH)docker/project-assemble DNDBeyond.project
@@ -49,4 +53,12 @@ test: tester.image
 behave: behave.image
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT behave $(ARGS)
 
-.PHONY: build clean test
+.PHONY: build clean test log
+
+log:
+	rm -f output/Lib%3ALog4MT.rptok
+	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint "assemble" maker "Lib-Log4MT/content.xml"
+	shasum --algorithm=256 output/Lib%3ALog4MT.rptok
+	mv output/Lib%3ALog4MT.rptok output/Lib%3ALog4MT.rptok-from-content.xml
+	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint "assemble" maker "Lib-Log4MT"
+	shasum --algorithm=256 output/Lib%3ALog4MT.rptok

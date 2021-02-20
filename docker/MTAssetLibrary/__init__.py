@@ -1,3 +1,8 @@
+"""
+This is the MTAssetLibrary
+
+Just some helper functions and objects.
+"""
 import os
 import zipfile
 import datetime
@@ -7,11 +12,14 @@ from lxml import objectify, etree
 from lxml.etree import tostring
 from zipfile import ZipFile, ZIP_DEFLATED
 
-fixed_version = '1.6.1'
+fixed_version = '1.8.3'
 
 class Tag:
-    """This is a mapping of a filesystem extension to the type of xml tag that 
-    file may contain.
+    """
+    This is a mapping of a
+        object name
+        xml tag
+        file extension (ext)
     """
     def __init__(self, name, ext, tag):
         self.name = name
@@ -19,10 +27,11 @@ class Tag:
         self.tag = tag
 
 class TagSet:
-    """This contains different filesystem extensions to the tag found in them"""
+    """This is a collection of Tag objects for ease of lookup"""
     def __init__(self):
         self.macro = Tag('macro', 'mtmacro', 'net.rptools.maptool.model.MacroButtonProperties')
         self.macroset = Tag('macroset', 'mtmacset', 'list')
+        self.text = Tag('text','txt','text')
         self.project = Tag('project', 'project', 'project')
         self.token = Tag('token', 'rptok', 'net.rptools.maptool.model.Token')
         self.properties = Tag('property', 'mtprops', 'net.rptools.maptool.model.CampaignProperties')
@@ -58,6 +67,10 @@ properties_xml = """<map>
 def DataElement(content):
     return objectify.DataElement(content, nsmap='', _pytype='')
 
+def NewElement(content):
+    new = objectify.Element(content, nsmap='', _pytype='')
+    objectify.deannotate(new, cleanup_namespaces=True)
+    return new
 
 def MacroNameQuote(name):
     """Quote characters in file names that aren't safe for filesystems, there
@@ -74,6 +87,49 @@ def XML2File(to_dir, to_file, xml):
         log.info('wrote {} bytes to modified {}'.
                  format(len(content), to_file))
 
+def add_directory_to_zipfile(zf, directory_name):
+    savedir = os.getcwd()
+    os.chdir(directory_name)
+    for f in ('thumbnail', 'thumbnail_large', 'properties.xml'):
+        if os.path.exists(f):
+            zf.write(f)
+            log.debug('write {} ({} bytes) to {}'.format(
+                f, os.path.getsize(f), zf.filename))
+
+    for root, dirs, files in os.walk('assets'):
+        f"{dirs}"
+        for f in files:
+            f = os.path.join(root, f)
+            zf.write(f)
+            log.debug('wrote {} ({} bytes) to {}'.format(
+                    f, os.path.getsize(f), zf.filename))
+    os.chdir(savedir)
+
+def make_directory_path(path):
+    """
+    This simply wraps os.makedirs() with a test and logging output
+    """
+    if not os.path.exists(path):
+        log.info("creating directory %s" % path)
+        os.makedirs(path, mode=0o755)
+
+def write_macro_files(macro, tofilebase):
+    command_file = tofilebase + '.command'
+    xml_file = tofilebase + '.xml'
+    with open(command_file, 'w') as f:
+        text = ''
+        if macro.command and macro.command.text:
+            text = macro.command.text
+        f.write(text)
+        log.info('wrote {} bytes to {}'.format(
+            len(text),command_file))
+    # Now that the command is saved to file, we'll remove it
+    # from the macro.xml before saving it.  To restore we just read it
+    # off disk and add it back (order doesn't matter).
+    macro.remove(macro.command)
+    with open(xml_file, 'w') as f:
+        f.write(tostring(macro, pretty_print=True).decode())
+        log.info('wrote {} bytes to {}'.format(len(tostring(macro)),xml_file))
 
 class MTMacro():
     def __init__(self, target, ext):
