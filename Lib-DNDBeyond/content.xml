@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>dNiAHJbjSkeNpuFP9FLorg==</baGUID>
+    <baGUID>QrPPUxOBQ/aJqUKAM5oStQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>R5PB/jZ2RgOvICA9tdGDyg==</baGUID>
+    <baGUID>sTidxRDjTyGA6w9AHcdsgw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1050</x>
-  <y>450</y>
-  <z>4</z>
+  <x>800</x>
+  <y>400</y>
+  <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>800</lastX>
+  <lastY>400</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>16</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>16</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -1044,10 +1064,6 @@
     <entry>
       <int>22</int>
       <macro name="dndb_getUnarmedStrike"/>
-    </entry>
-    <entry>
-      <int>23</int>
-      <macro name="dndb_convertWeapons"/>
     </entry>
     <entry>
       <int>24</int>

@@ -40,6 +40,7 @@
 							"dmgDice", json.path.read (action, "dice.diceCount"),
 							"dmgType", json.get (naturalWeaponMod, "friendlySubtypeName"),
 							"range", range,
+							"bonus", 0,
 							"type", json.get (naturalWeaponMod, "friendlyTypeName"),
 							"proficient", 1,
 							"isMonk", "true",
