@@ -37,7 +37,7 @@
 	<!-- Any left over is a user bonus? -->
 	[h: bonus = fullBonus - workingBonus]
 	[h, if(bonus != 0), code: {
-		[h, if (length(bonusOutput) > 0): format = " + Bonus(%+d)"]
+		[h, if (length(bonusOutput) > 0): format = " + Bonus(%+d)"; format = "Bonus(%+d)"]
 		[h: bonusOutput = bonusOutput + strformat(format, bonus)]
 	}]
 	[h, if (length(bonusOutput) > 0): bonusOutput = " + " + bonusOutput]
