@@ -15,15 +15,15 @@
 <!-- sets to the previous value -->
 [h: log.setLevel ("macro-logger", macroLogger)]
 [h: propertyName = l4m.getMeterName(macroName)]
-[h: currentValue = getLibProperty (propertyName, LIB_PROXY)]
+[h: currentValue = getLibProperty (propertyName, LIB_LOG4MT)]
 [h: startTime = json.get (currentValue, "startTime")]
 [h: totalTime = clientTime - startTime]
 [h: meters = json.get (currentValue, "meters")]
 [h: meters = json.append (meters, totalTime)]
 [h: currentValue = json.set (currentValue, "meters", meters)]
 
-[h: setLibProperty (propertyName, currentValue, LIB_PROXY)]
+[h: setLibProperty (propertyName, currentValue, LIB_LOG4MT)]
 
-[h: callStack = getLibProperty (CALL_STACK, LIB_PROXY)]
+[h: callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]
 [h: callStack = json.remove (callStack, json.length (callStack) - 1)]
-[h: setLibProperty (CALL_STACK, callStack, LIB_PROXY)]
+[h: setLibProperty (CALL_STACK, callStack, LIB_LOG4MT)]

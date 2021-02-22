@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>6bb9fc82-1695-4e68-b025-d24edf32aa03</macroUUID>
+  <macroUUID>b810bfe8-2fbe-4c0d-80d8-a3682fe7b560</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>20</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>l4m.isInfoEnabled</label>
-  <group>Profile Token Library - Functions</group>
+  <group>Profile Token Library - User Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

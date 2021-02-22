@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>Chx9CG/+Rq22/1PloSSthQ==</baGUID>
+    <baGUID>vIUq3C32S7SqGaMGKn2c9g==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>rfw5US/9SaGQmqQxuCmNow==</baGUID>
+    <baGUID>Rq3Wr6hVQ5CZ89vUIYkcnw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,9 +14,9 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1050</x>
-  <y>-100</y>
-  <z>40</z>
+  <x>950</x>
+  <y>700</y>
+  <z>5</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -345,130 +345,26 @@
   <propertyMapCI>
     <store>
       <entry>
-        <string>root_logger_category</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>ROOT_LOGGER_CATEGORY</key>
-          <value class="string">root</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>profiler_start_macro</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>PROFILER_START_MACRO</key>
-          <value class="string">monitorStart@Lib:Log4MT</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>logger.macroname.level</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>logger.macroname.level</key>
-          <value class="string">debug</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>compiled_logger_prefix</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>COMPILED_LOGGER_PREFIX</key>
-          <value class="string">compiled.logger.</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>logger_prefix</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>LOGGER_PREFIX</key>
-          <value class="string">logger.</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>lib_proxy</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>LIB_PROXY</key>
-          <value class="string">Lib:ProfilerProxy</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>profiler_stop_macro</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>PROFILER_STOP_MACRO</key>
-          <value class="string">monitorStop@Lib:Log4MT</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>entry_exit_log_level</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>ENTRY_EXIT_LOG_LEVEL</key>
-          <value class="string">INFO</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>logger_level_map</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>LOGGER_LEVEL_MAP</key>
-          <value class="string">{"TRACE":5,"DEBUG":4,"INFO":3,"WARN":2,"ERROR":1}</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>logger.tokenlib.level</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>logger.tokenLib.level</key>
-          <value class="string">debug</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>lib_log4mt</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>LIB_LOG4MT</key>
-          <value class="string">Lib:Log4MT</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>generated_log_event</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>GENERATED_LOG_EVENT</key>
-          <value class="string">INFO</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>call_stack</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>CALL_STACK</key>
-          <value class="string">profiler.callStack</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>logger.root.level</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>logger.root.level</key>
-          <value class="string">info</value>
+          <value class="string">warn</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>logger_level_array</string>
+        <string>logger.lib:log4mt.level</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>LOGGER_LEVEL_ARRAY</key>
-          <value class="string">["UNDEFINED","ERROR","WARN","INFO","DEBUG","TRACE"]</value>
+          <key>logger.lib:log4mt.level</key>
+          <value class="string">warn</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
         <string>logger.root.entryexit</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>logger.root.entryExit</key>
-          <value class="string">info</value>
+          <key>logger.root.entryexit</key>
+          <value class="string">warn</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -477,7 +373,7 @@
   <macroPropertiesMap>
     <entry>
       <int>2</int>
-      <macro name="Install+Meters"/>
+      <macro name="Install+Wrappers"/>
     </entry>
     <entry>
       <int>3</int>
@@ -614,6 +510,38 @@
     <entry>
       <int>36</int>
       <macro name="l4m.getCurrentMacroLogger"/>
+    </entry>
+    <entry>
+      <int>37</int>
+      <macro name="l4m.buildWrapperSrcMacro"/>
+    </entry>
+    <entry>
+      <int>38</int>
+      <macro name="l4m.getWrapperConfig"/>
+    </entry>
+    <entry>
+      <int>39</int>
+      <macro name="l4m.setWrapperConfig"/>
+    </entry>
+    <entry>
+      <int>40</int>
+      <macro name="Configure+Wrappers"/>
+    </entry>
+    <entry>
+      <int>41</int>
+      <macro name="l4m.overwriteUdf"/>
+    </entry>
+    <entry>
+      <int>42</int>
+      <macro name="l4m.initProxyLibrary"/>
+    </entry>
+    <entry>
+      <int>43</int>
+      <macro name="l4m.getProxyTokenName"/>
+    </entry>
+    <entry>
+      <int>44</int>
+      <macro name="l4m.buildWrapperMacros"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

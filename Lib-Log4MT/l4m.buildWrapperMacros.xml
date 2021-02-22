@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>2c22facb-6b9c-4a34-a3c9-3cf5f33ea7ce</macroUUID>
+  <macroUUID>8843bb93-6588-4b10-b50e-48ea06d70969</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>36</index>
+  <index>44</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>l4m.getCurrentMacroLogger</label>
-  <group>Profile Token Library - Log Functions</group>
+  <label>l4m.buildWrapperMacros</label>
+  <group>Profile Token Library - Library Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -14,8 +14,9 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Because writing this macro in meta-macro commands is harsh</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Builds the wrapper macros for the provided Proxy Token
+arg (0) = Proxy library</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

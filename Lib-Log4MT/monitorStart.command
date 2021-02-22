@@ -14,13 +14,13 @@
 [h: log.setLevel ("macro-logger", logLevel)]
 [h: propertyName = l4m.getMeterName (macroName)]
 
-[h: callStack = getLibProperty (CALL_STACK, LIB_PROXY)]
+[h: callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]
 [h: callStack = json.append (callStack, macroName)]
-[h: setLibProperty (CALL_STACK, callStack, LIB_PROXY)]
+[h: setLibProperty (CALL_STACK, callStack, LIB_LOG4MT)]
 
-[h: currentValue = getLibProperty (propertyName, LIB_PROXY)]
+[h: currentValue = getLibProperty (propertyName, LIB_LOG4MT)]
 
 [h: clientTime = l4m.getClientTime()]
 [h: currentValue = json.set (currentValue, 
 			"startTime", clientTime, "macroName", macroName)]
-[h: setLibProperty (propertyName, currentValue, LIB_PROXY)]
+[h: setLibProperty (propertyName, currentValue, LIB_LOG4MT)]

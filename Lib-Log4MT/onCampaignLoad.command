@@ -35,7 +35,7 @@
 [h: macros = getMacros()]
 [h: log.debug ("macros: " + macros)]
 [h, foreach (macroName, macros), code: {
-	[h, if (lastIndexOf (macroName, "l4m.") > -1), code: {
+	[h, if (indexOf (macroName, "l4m.") > -1 || indexOf (macroName, "l4mi.") > -1), code: {
 		[h: log.debug ("Registering " + macroName)]
 		[h: defineFunction (macroName, macroName + "@this")]
 	}]

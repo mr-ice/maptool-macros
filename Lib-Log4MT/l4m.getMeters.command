@@ -1,5 +1,5 @@
 [h: l4m.Constants()]
-[h, token (LIB_PROXY): libToken = currentToken()]
+[h, token (LIB_LOG4MT): libToken = currentToken()]
 
 [h: libProperties = json.fromList (getPropertyNames ("json", libToken))]
 [h: pattern = "meter."]
