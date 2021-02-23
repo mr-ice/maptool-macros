@@ -6,6 +6,8 @@ Just some helper functions and objects.
 import os
 import zipfile
 import datetime
+import random
+import string
 import logging as log
 from urllib.parse import quote_plus
 from lxml import objectify, etree
@@ -88,6 +90,8 @@ def XML2File(to_dir, to_file, xml):
                  format(len(content), to_file))
 
 def add_directory_to_zipfile(zf, directory_name):
+    # the asset zip doesn't have directories, so we'll
+    # have to be in the directory to load the files.
     savedir = os.getcwd()
     os.chdir(directory_name)
     for f in ('thumbnail', 'thumbnail_large', 'properties.xml'):
@@ -104,6 +108,16 @@ def add_directory_to_zipfile(zf, directory_name):
             log.debug('wrote {} ({} bytes) to {}'.format(
                     f, os.path.getsize(f), zf.filename))
     os.chdir(savedir)
+
+def random_string(length=6):
+    what = ''
+    chars = string.ascii_letters + string.digits
+
+    for i in range(0,length):
+        what += random.choice(chars)
+
+    return what
+
 
 def make_directory_path(path):
     """

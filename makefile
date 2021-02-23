@@ -62,3 +62,6 @@ log:
 	mv output/Lib%3ALog4MT.rptok output/Lib%3ALog4MT.rptok-from-content.xml
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint "assemble" maker "Lib-Log4MT"
 	shasum --algorithm=256 output/Lib%3ALog4MT.rptok
+
+ptw:
+	ptw --  --exitfirst --failed-first --last-failed

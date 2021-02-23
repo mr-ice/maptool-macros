@@ -17,6 +17,7 @@ Token macros extract to the Token directory. Campaign Macros
 extract to the Campaign directory.
 """
 import sys
+import zipfile
 sys.path.append('docker')
 from MTAssetLibrary import properties_xml, print_info, XML2File
 from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
@@ -25,6 +26,7 @@ from MTAssetLibrary import add_directory_to_zipfile
 from MTAssetLibrary import write_macro_files, make_directory_path
 
 import os
+from io import BytesIO
 from zipfile import ZipFile, is_zipfile, ZIP_DEFLATED
 from lxml import objectify
 import lxml, lxml.etree as etree
@@ -50,6 +52,11 @@ def GetAsset(whence, name=None, path=None):
         content_xml = zf.open('content.xml')
     elif os.path.isdir(whence):
         content_xml = open(os.path.join(whence,'content.xml'))
+    elif whence.endswith('.command'):
+        # if we were given a .command we switch whence to
+        # the corresponding .xml and open _that_
+        whence = os.path.splitext(whence)[0] + '.xml'
+        content_xml = open(whence)
     else:
         content_xml = open(whence)
         
@@ -230,25 +237,52 @@ class MTAsset:
         dryrun (default None) - don't actually save anything
         verbose (default None) - print out debugging information normally logged
         """
-
-        if not output_dir:
-            output_dir = self.output_dir or '.'
+        # NOTE:  This is the assemble in the base object, it
+        # won't be called if overloaded in a specific object
+        # so tokens and properties and campaigns can use
+        # more appopriate save mechanisms.
+        output_dir = output_dir or self.output_dir or '.'
         # print(f'{type(output_dir)=}')
         # print(f'{type(self.best_name(save_name))=}')
         
         save_file = os.path.join(output_dir,
                                  self.best_name(save_name))
         save_file += '.' + (ext or self.isasset_type.ext)
-
+        if not os.path.exists(output_dir) and not dryrun:
+            log.debug(f'making directories {output_dir}')
+            os.makedirs(output_dir)
         log.debug(f'.save: opening {save_file} for output')
-        
+        if not dryrun:
+            self._assemble_to(save_file)
+
+    def _assemble_to(self, save_file):
+        return self._assemble_objects(
+            save_file,
+            self.is_token or self.is_properties,
+            not self.is_token and not self.is_properties)
+
+    def _assemble_objects(self, save_file, directory=False, properties=False):
+        """MTProperties._assemble_objects()
+        Do the act of creating the zipfile, assuming
+        we have figured out things elsewhere.
+        """
+        zf = ZipFile(save_file, mode='w', compression=ZIP_DEFLATED)
+        if directory:
+            # this assmes we are in the parent directory
+            add_directory_to_zipfile(zf, self.dirname or self.best_name_escaped())
+        zf.writestr('content.xml',
+                    etree.tostring(self.xml, pretty_print=True))
+        if properties:
+            zf.writestr('properties.xml', properties_xml)
+        return zf
+
     def save_to(self, save_name=None, output_dir=None):
         output_dir = output_dir or self.output_dir or '.'
         output_dir = MacroNameQuote(output_dir)
         save_name = self.best_name_escaped(save_name)
         return os.path.join(output_dir, save_name)
 
-    def extract(self, save_name=None, dryrun=None, verbose=None):
+    def extract(self, save_name=None, output_dir=None, dryrun=None, verbose=None):
         """
         MTAsset.extract() method
 
@@ -263,14 +297,51 @@ class MTAsset:
         dryrun (default None) - don't actually save anything
         verbose (default None) - print out debugging information normally logged
         """
-        pass
+        # Properties, Campaigns uses this
+        output_path = self.save_to(save_name, output_dir)
+        if not dryrun:
+            make_directory_path(output_path)
+        
+        # what if we didn't assemble yet? we have to write
+        # a file in memory.
+        if self.zipfile is None:
+            self.zipfile = self._assemble_to(BytesIO())
+        # extract all the files from the zipfile into the directory
+        log.info(f"extracting {self.best_name} to {output_path}")
+        if not dryrun:
+            self.zipfile.extractall(output_path)
 
 
 class MTCampaign(MTAsset): pass
 
 
-class MTProperties(MTAsset): pass
+class MTProperties(MTAsset):
 
+    def append(self, new, collection, xpath):
+        """
+        Properties are several lists of things
+        <tokenTypeMap><entry>/ent[...]
+        <remoteRepositoryList/>
+        <lightSourcesMap><entry>[...]
+        <lookupTableMap/>
+        <sightTypeMap><entry>[...]
+        <tokenStates><entry>[...]
+        <tokenBars><entry>[...]
+        <characterSheets><entry>[...]
+        """
+        # we have to assume collection/xpath to find elements
+        # and we will append them to collection
+        if collection not in xpath:
+            xpath = os.path.join(collection, xpath)
+
+        if type(new) == str:
+            new = GetAsset(new)
+        if type(new) == MTProperties:
+            found = new.root.find(xpath)
+            if found is not None:
+                self.root.find(collection).append(found)
+            else:
+                log.warning(f'{xpath} not found in {self.name}')
 
 class MTToken(MTAsset):
     @property
@@ -362,17 +433,30 @@ class MTToken(MTAsset):
 
         if not dryrun:
             XML2File(output_path, 'content.xml', self.xml)
-  
 
-# Disambiguate from MTMacro from MTAssetLibrary and 
-# still have something to 
 class MTMacroSet(MTAsset):
     @property
     def name(self):
         return os.path.basename(os.path.splitext(self.whence)[0])
 
     def append(self, thing):
-        return self.root.append(thing)
+        """
+        append a MTMacroObj by root
+        append a lxml.etree._ElementTree by getroot()
+        append a str by MTMacroObj(str).root
+        else try to append a thing (should be lxml.etree._Element)
+        """
+        if type(thing) == MTMacroObj:
+            self.root.append(thing.root)
+        elif type(thing) == lxml.etree._ElementTree:
+            self.root.append(thing.getroot())
+        elif type(thing) == str:
+            self.root.append(GetAsset(thing).root)
+        elif type(thing) == lxml.etree._Element:
+            self.root.append(thing)
+        else:
+            log.error("Couldn't append, invalid type")
+        
 
 class MTMacroObj(MTAsset):
     def __init__(self, *args, **kwargs):
@@ -460,7 +544,9 @@ class MTMacroObj(MTAsset):
 
 
 class MTProject(MTAsset):
-    pass
+    def extract(self, *args, **kwargs):
+        log.info("Projects are only for assembly")
+        return False
 # junk.project xml file
 # Dir/content.xml with net.rptools.maptool.model.CampaignProperties creates a .mtprops
 # Dir/content.xml with net.rptools.maptool.model.Token creates a .rptok

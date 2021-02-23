@@ -1,0 +1,67 @@
+Assemble Assets from any source
+
+GetAsset(whence, name=None, path=None)
+Returns: MTAsset
+
+MTAsset.whence = whence
+MTAsset.given_name = name
+MTAsset.output_dir = path
+    
+MTAsset.xmlfile is
+    * whence/content.xml if whence is a directory
+    * whence if whence is an xml file
+    * zipfile(whence).open('content.xml') if whence is a zipfile
+
+MTAsset.zipfile is
+    * zipfile(whence) if whence is a zipfile
+
+
+MTAsset.xml is
+    * objectify.parse(self.xmlfile)
+MTAsset.root = self.xml.getroot()
+MTAsset.tag = self.xml.getroot().tag
+
+MTAsset.is_token = self.tag == tags.token.tag
+MTAsset.is_properties = self.tag == tags.properties.tag
+MTAsset.is_macroset = self.tag == tags.macroset.tag
+MTAsset.is_project = self.tag == tags.project.tag
+MTAsset.is_macro = self.tag == tags.macro.tag
+MTAsset.is_campaign = self.tag == tags.campaign.tag
+
+MTAsset.isasset_type = tags.thing
+    Returning the Tag object from the Tagset here so that
+    one can see all the attributes in the Tag (name, ext, tag)
+
+
+##                             ##
+####### UNDER DEVELOPMENT #######
+##                             ##
+
+MTAsset.fromdir = whence or dirname(self.xmlfile)
+MTAsset.dirname = dirname(self.xmlfile)
+MTAsset.assemble()
+
+    Currently assemble calls add_directory_to_zipfile
+    with a directory name, which can be dirname or
+    the best_name_escaped.  This is a trifle imprecise.
+
+MTAsset._from_dir = is whence a directory
+MTAsset._loaded_from = deprecated
+
+MTAsset.name
+    * self.root.name if token
+    * self.root.label if macro
+    * dirname(self.xmlfile) if whence was a content.xml (not token)
+    * basename(self.whence) if whence is a directory
+    * basename without ext if whence is one of
+        mtprops, mtmacset, project, or cmpgn
+MTAsset.best_name()
+MTAsset.best_name_escaped()
+
+MTAsset.save_to()
+MTAsset.extract()
+    Extracts to output_dir + best_name_escaped
+    
+MTAsset.command_file = path to command file if macro
+MTAsset.append(new) = append a macro to a macro or macroset
+    (Converting MTAsset to a macroset if necessary)

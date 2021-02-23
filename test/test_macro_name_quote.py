@@ -13,3 +13,6 @@ class TestMacroName():
 
     def test_macro_name_quote_plus(self):
         assert quote('has+literal+plus') == 'has%2Bliteral%2Bplus'
+
+    def test_macro_name_quote_colon(self):
+        assert quote('has:colon:in:name') == 'has%3Acolon%3Ain%3Aname'
