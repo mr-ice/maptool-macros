@@ -3,8 +3,9 @@
 [h: log.setLevel("macro-logger", "TRACE")]
 [h, if (argCount() > 0): macroName = arg(0); macroName = "breakpoint"]
 [h, if (argCount() > 1): location = arg(1); location = "unknown"]
-[h: log.trace(macroName + " @ " + location)]
-[h, for(i, 2, argCount()): log.trace(i + ": " + if(json.type(arg(i)) == "UNKNOWN", arg(i), json.indent(arg(i))))]
+<!-- log.trace(macroName + " @ " + location)
+     for(i, 2, argCount()): log.trace(i + ": " + if(json.type(arg(i)) == "UNKNOWN", arg(i), json.indent(arg(i))))
+-->
 [h: template ="i%{i}|<html><b><font size='3'><b color=blue>Argument %{i} %{name} ------------------------------------------------------------------------------------------------</b></font>" 
 			  + "<pre>%s</pre><html>||LABEL|SPAN=TRUE"]
 [h: inputText = json.append("[]", "ignore|<html><font size='6' color=blue><b>" + macroname + "</b> at " + location + "</font></html>||LABEL|SPAN=TRUE")]
