@@ -12,7 +12,7 @@
 
 <!-- Read the value from the user --> 
 [h, if (task == "drain"), code: {
-	[h: json.toVars(dnd5e_AE2_getConstants())]
+	[h: dnd5e_AE2_getConstants()]
 	[h: inputList = listAppend(inputList, "ability|" + CHAR_ABILITIES + "|Select Ability:|LIST|VALUE=Strength DELIMITER=JSON", "##")]
 }]
 [h: inputList = listAppend(inputList, "value|0|" + label + "|TEXT|WIDTH=4", "##")]

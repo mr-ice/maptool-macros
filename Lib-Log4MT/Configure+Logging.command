@@ -1,6 +1,6 @@
 [h: processorLink = macroLinkText ("l4m.configureLoggerProcessor@this", 
 			"all", "", currentToken())]
-[s, dialog5 ("Logging Configuration", "title=Logging Configuration; input=1; width=150; height=80; closebutton=1"): {
+[dialog5 ("Logging Configuration", "title=Logging Configuration; input=1; width=600; height=500; closebutton=1"): {
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="l4m_CSS@Lib:Log4MT"></link>

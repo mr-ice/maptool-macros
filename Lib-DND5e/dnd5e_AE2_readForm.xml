@@ -22,9 +22,11 @@
 &lt;br&gt;
 &lt;br&gt;An object with the format:
 &lt;br&gt;&amp;nbsp;&amp;nbsp;{
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"newActionType": The selected action type on submit
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"exps": The updated expressions
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;newActionType&quot;: The selected action type on submit
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;exps&quot;: The updated expressions
 &lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;
+&lt;br&gt;Note: no output generated
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

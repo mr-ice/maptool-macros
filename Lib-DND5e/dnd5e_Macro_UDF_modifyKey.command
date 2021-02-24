@@ -1,5 +1,5 @@
 [h: registry = arg (0)]
-[h: regKeys = json.fields (registry, "json")]
+[h: regKeys = json.sort(json.fields (registry, "json"))]
 [h: regKeys = json.merge ("['--- New Key ---']", regKeys)] 
 [h: inputMsg = " junk | Select key to modify/create | | LABEL | span=true##" +
 	" keyPos | " + json.toList (regKeys) + " | Key Name | LIST "]

@@ -1,11 +1,12 @@
 [h: damageTypes = json.append("[]", "Acid", "Bludgeoning", "Magical Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", 
 								"Magical Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Magical Slashing", "Thunder")]
 [h: fieldNames = json.append("[]", "bonus", "damageType", "rollString", "DC", "saveAbility", "saveAgainst", "saveEffect", "conditions", "saveResult",
-								   "dndbAttack", "name", "onCritical", "dndbSpell", "dndbSpellLevel", "targetCheck", "drainAbility")]
+								   "dndbAttack", "name", "onCritical", "dndbSpell", "dndbSpellLevel", "targetCheck", "drainAbility", "proficency",
+								   "abilityMod")]
 [h: stepTypes = json.append("[]", "Attack", "Damage", "DnDBeyond Attack", "Save", "Save Damage", "Save Effect", "Condition", "DnDBeyond Spell", "Target Check",
 							      "Drain", "Save Drain")]
-[h: fieldsByType = json.set("{}", json.get(stepTypes, 0), json.append("[]", json.get(fieldNames, 0)),
-								  json.get(stepTypes, 1), json.append("[]", json.get(fieldNames, 2), json.get(fieldNames, 1)),
+[h: fieldsByType = json.set("{}", json.get(stepTypes, 0), json.append("[]", json.get(fieldNames, 0), json.get(fieldNames, 16), json.get(fieldNames, 17)),
+								  json.get(stepTypes, 1), json.append("[]", json.get(fieldNames, 2), json.get(fieldNames, 1), json.get(fieldNames, 16), json.get(fieldNames, 17)),
 								  json.get(stepTypes, 2), json.append("[]", json.get(fieldNames, 9)),
 								  json.get(stepTypes, 3), json.append("[]", json.get(fieldNames, 3), json.get(fieldNames, 4), json.get(fieldNames, 5)),
 								  json.get(stepTypes, 4), json.append("[]", json.get(fieldNames, 2), json.get(fieldNames, 1), json.get(fieldNames, 6)),
@@ -63,10 +64,13 @@
 					"purple", "Purple", "red", "Red", "silver", "Silver", "teal", "Teal", "white", "White", "yellow", "Yellow")]
 [h: typedDescriptorKeys = json.append("[]", "condition", "tooltipRoll", "tooltipDetail", "advantageable", "lucky", "critable", "saveable", "actionName",
 											"actionDesc", "actionType", "rowId", "extendedValues", "save-effect-damage", "action-execution-key")]
+[h: weaponTypes = json.append("[]", json.set("{}", "type", "Melee", "ability", "ability.melee", "bonus", "bonus.attack.melee"),
+							        json.set("{}", "type", "Ranged", "ability", "ability.ranged", "bonus", "bonus.attack.ranged"),
+							        json.set("{}", "type", "Finesse", "ability", "ability.finisse", "bonus", "bonus.attack.finisse"))]
 [h: c = json.set("{}", "FIELDS_BY_STEP_TYPE", fieldsByType, "NAMES_OF_STEP_TYPES", stepNamesByType, "DAMAGE_TYPES", damageTypes, "CHAR_ABILITIES", abilities,
 		"STATE_GROUPS", stateGroups, "MACRO_COLORS", macroColors, "TARGET_ROLL_TYPE", dnd5e_Type_Targeted(), "UNROLLABLE_ROLL_TYPE", dnd5e_Type_Unrollable(),
-		"VERSION_PROPERTY", "_ae2_actions.version", "AE2_CURRENT_VERSION", "0.15",
-		"AE_VERSION_PROPERTY", "attackExpressionJSON.version", "AE_CURRENT_VERSION", "0.15")]
+		"VERSION_PROPERTY", "_ae2_actions.version", "AE2_CURRENT_VERSION", "0.15", "AE_VERSION_PROPERTY", "attackExpressionJSON.version", "AE_CURRENT_VERSION", "0.15",
+		"WEAPON_TYPES", weaponTypes)]
 <!-- Break this statement up. May be too many characters -->
 [h: c = json.set (c, 
 	"ACTION_TYPES", actionTypes, "STATE_GROUPS", stateGroups,
@@ -84,7 +88,7 @@
 		"SAVE_EFFECT_FIELD", json.get(fieldNames, 6), "SAVE_CONDITION_FIELD", json.get(fieldNames, 7), "SAVE_RESULT_FIELD", json.get(fieldNames, 8),
 		"DNDB_ATTACK_FIELD", json.get(fieldNames, 9), "NAME_FIELD", json.get(fieldNames, 10), "ON_CRITICAL_FIELD", json.get(fieldNames, 11),
 		"DNDB_SPELL_FIELD", json.get(fieldNames, 12), "DNDB_SPELL_LEVEL_FIELD", json.get(fieldNames, 13), "TARGET_CHECK_FIELD", json.get(fieldNames, 14),
-		"DRAIN_ABILITY_FIELD", json.get(fieldNames, 15),
+		"DRAIN_ABILITY_FIELD", json.get(fieldNames, 15), "PROFICENCY_FIELD", json.get(fieldNames, 16), "ABILITY_MOD_FIELD", json.get(fieldNames, 17),
 	"TYPED_DESCRIPTOR_KEYS", typedDescriptorKeys,
 		"CONDITION_TD", json.get(typedDescriptorKeys, 0), "TOOLTIP_ROLL_TD", json.get(typedDescriptorKeys, 1), "TOOLTIP_DETAIL_TD", json.get(typedDescriptorKeys, 2),
 		"ADVANTAGEABLE_TD", json.get(typedDescriptorKeys, 3), "LUCKY_TD", json.get(typedDescriptorKeys, 4), "CRITABLE_TD", json.get(typedDescriptorKeys, 5),
@@ -92,4 +96,5 @@
 		"ACTION_TYPE_TD", json.get(typedDescriptorKeys, 9), "ROW_ID_TD", json.get(typedDescriptorKeys, 10), "EXTENDED_VALUES_TD", json.get(typedDescriptorKeys, 11),
 		"SAVE_EFFECT_DAMAGE_TD", json.get(typedDescriptorKeys, 12), "ACTION_EXECUTION_KEY", json.get(typedDescriptorKeys, 13)
 )]
+[h: json.toVars(c)]
 [h: return(0, c)]

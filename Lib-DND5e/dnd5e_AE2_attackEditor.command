@@ -9,13 +9,14 @@
 [h: switchToken(id)]
 [h, if (json.length(incomingArgs) > 2): exps = arg(2); exps = "[]"]
 [h, if (json.length(incomingArgs) > 3): oldActionType = arg(3); oldActionType = ""]
-[h: json.toVars(dnd5e_AE2_getConstants())]
-[h, if (json.length(incomingArgs) > 4): newActionType = arg(4); newActionType = ATTACK_TYPE]
+[h, if (json.length(incomingArgs) > 4): newActionType = arg(4)]
+[h, if (json.length(incomingArgs) > 5): workingCopy = arg(5); workingCopy = getProperty("_AE2_Actions")]
+[h: dnd5e_AE2_getConstants()]
+[h, if (json.length(incomingArgs) <= 4): newActionType = ATTACK_TYPE]
 [h: log.debug("dnd5e_AE2_attackEditor: id=" + id + " newActionType = " + newActionType + " oldActionType = " + oldActionType 
 			+ " activeName=" + activeName + " exps = " + json.indent(exps))]
 
 <!-- Read editor related data -->
-[h, if (json.length(incomingArgs) > 5): workingCopy = arg(5); workingCopy = getProperty("_AE2_Actions")]
 [h, if (json.isEmpty(workingCopy)), code: {
 	<!-- First time edit -->
 	[h: workingCopy = json.set("{}", "New Action", "[]")]

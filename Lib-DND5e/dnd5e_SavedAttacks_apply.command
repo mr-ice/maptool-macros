@@ -38,6 +38,7 @@
 }]
 
 <!-- Modify each selected token -->
+[h: dnd5e_AE2_getConstants()]
 [h, foreach(id, sIds), code: {
 	[h: log.debug(getMacroName() + ": ID: " + id + " " + getName(id) + " HP/Max/Temp:" + getProperty("HP", id) + "/"
 					+ getProperty("MaxHP", id) + "/" + getProperty("TempHP", id) + " selected=" + json.indent(json.get(selectedById, id)))]
@@ -46,8 +47,7 @@
 	[h: tt = "HP/MaxHP/TempHP:" + getProperty("HP", id) + "/" + getProperty("MaxHP", id) + "/" + getProperty("TempHP", id)]
 	[h: state = json.set("{}", "hit", -1, "totalDamage", 0, "save", -1, "check", -1, "action", action,
 					"output", "<br><b><span title='" + tt + "'>" + getName(id) + "</span></b>")]
-	[h, for(i, 0, json.length(rolledExpressions)): state = dnd5e_SavedAttacks_applyRolledExpression(id, json.get(rolledExpressions, i), 
-																	state, json.get(selectedById, id), i)]
+	[h, for(i, 0, json.length(rolledExpressions)): state = dnd5e_SavedAttacks_applyRolledExpression()]
 
 	<!-- Remove the damage and update the output -->
 	[h: dnd5e_removeDamage(json.set("{}", "id", id, "current", getProperty("HP", id), "temporary", getProperty("TempHP", id),

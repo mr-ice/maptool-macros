@@ -19,7 +19,22 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = macro name
 &lt;br&gt;arg(1) = indicator showing where the breakpoint is
-&lt;br&gt;arg(...) = The rest of the parameters are logged 
+&lt;br&gt;arg(...) = The rest of the parameters are logged. 
+&lt;br&gt;
+&lt;br&gt;These argumenst can be strings ending in with &apos;=&apos;. If used
+&lt;br&gt;this way the breakpoint will treat the string before the &apos;=&apos;
+&lt;br&gt;as a variable and display its name in the argument title
+&lt;br&gt;and its value as the output.
+&lt;br&gt;
+&lt;br&gt;If any parameters or variables passed refer to JSON the 
+&lt;br&gt;JSON will be indented.
+&lt;br&gt;
+&lt;br&gt;Note that this sets the MaptoolLineParser logger to &quot;INFO&quot; 
+&lt;br&gt;and sets macro-logger to &quot;TRACE&quot; before printing and then
+&lt;br&gt;restores them after the input function call
+&lt;br&gt;
+&lt;br&gt;This macro must be turned into a UDF w/ no output and 
+&lt;br&gt;use the calling functions scope.
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

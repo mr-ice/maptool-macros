@@ -1,10 +1,10 @@
-[h: json.toVars(dnd5e_AE2_getConstants())]
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
 [h: targetId = arg(0)]
 [h: rolledExps = arg(1)]
 [h: row = arg(2)]
 [h, if (argCount() > 3): selected = arg(3); selected="{}"]
 [h: rowBackgroundClass = "class='" + if(math.mod(row, 2) == 0, "even-row", "odd-row") + "'"]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Start the row with the target name and image -->
 [h: rowName = "row-" + row + "="]

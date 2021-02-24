@@ -2,7 +2,7 @@
 [h: index = arg(1)]
 [h: state = arg(2)]
 [h: count = arg(3)]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 [h: rowId = "row-" + index]
 
 <!-- Create a type name from the type and the subtypes -->
@@ -56,14 +56,17 @@
 
 <!-- Build the other columns by type -->
 [r, if(type == ATTACK_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateBonusFieldHtml(rowId, BONUS_FIELD, dnd5e_RollExpression_getBonus(exp), stepClass)]
+	[r: dnd5e_AE2_generateAbilityModFieldHtml(dnd5e_RollExpression_getSpellcastingAbility(exp))]
+	[r: dnd5e_AE2_generateProficiencyHtml(dnd5e_RollExpression_getProficiency(exp))]
+	[r: dnd5e_AE2_generateBonusFieldHtml(dnd5e_RollExpression_getBonus(exp))]
 }; {[h:""]}]
 [r, if(type == DAMAGE_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(rowId, ROLL_STRING_FIELD, dnd5e_RollExpression_getRollString(exp), stepClass)]
-	[r: dnd5e_AE2_generateDamageTypeFieldHtml(rowId, DAMAGE_TYPE_FIELD, dnd5e_RollExpression_getDamageTypes(exp), stepClass, DAMAGE_TYPES)]
+	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(dnd5e_RollExpression_getRollString(exp))]
+	[r: dnd5e_AE2_generateAbilityModFieldHtml(dnd5e_RollExpression_getSpellcastingAbility(exp))]
+	[r: dnd5e_AE2_generateDamageTypeFieldHtml(dnd5e_RollExpression_getDamageTypes(exp))]
 }; {[h:""]}]
 [r, if(type == DNDB_ATTACK_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateDndbAttackFieldHtml(rowId, DNDB_ATTACK_FIELD, dnd5e_RollExpression_getName(exp), stepClass)]
+	[r: dnd5e_AE2_generateDndbAttackFieldHtml(dnd5e_RollExpression_getName(exp))]
 }; {[h:""]}]
 [r, if(type == DNDB_SPELL_STEP_TYPE), code: {
 	[r: dnd5e_AE2_generateDndbSpellFieldHtml(rowId, DNDB_SPELL_FIELD, dnd5e_RollExpression_getName(exp), stepClass)]
@@ -72,12 +75,12 @@
 [r, if(type == SAVE_STEP_TYPE), code: {
 	[r: dnd5e_AE2_generateSaveDCFieldHtml(rowId, DC_FIELD, dnd5e_RollExpression_getSaveDC(exp, 1), stepClass)]
 	[r: dnd5e_AE2_generateSaveAbilityFieldHtml(rowId, SAVE_ABILITY_FIELD, dnd5e_RollExpression_getSaveAbility(exp), stepClass, CHAR_ABILITIES)]
-	[r: dnd5e_AE2_generateSaveAgainstFieldHtml(rowId, SAVE_AGAINST_FIELD, json.get(exp, SAVE_AGAINST_FIELD), stepClass)]
+	[r: dnd5e_AE2_generateSaveAgainstFieldHtml(json.get(exp, SAVE_AGAINST_FIELD))]
 }; {[h:""]}]
 [r, if(type == SAVE_DAMAGE_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(rowId, ROLL_STRING_FIELD, dnd5e_RollExpression_getRollString(exp), stepClass)]
-	[r: dnd5e_AE2_generateDamageTypeFieldHtml(rowId, DAMAGE_TYPE_FIELD, dnd5e_RollExpression_getDamageTypes(exp), stepClass, DAMAGE_TYPES)]
-	[r: dnd5e_AE2_generateSaveEffectFieldHtml(rowId, SAVE_EFFECT_FIELD, dnd5e_RollExpression_getSaveEffect(exp), stepClass)]
+	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(dnd5e_RollExpression_getRollString(exp))]
+	[r: dnd5e_AE2_generateDamageTypeFieldHtml(dnd5e_RollExpression_getDamageTypes(exp))]
+	[r: dnd5e_AE2_generateSaveEffectFieldHtml(dnd5e_RollExpression_getSaveEffect(exp))]
 }; {[h:""]}]
 [r, if(type == SAVE_CONDITION_STEP_TYPE), code: {
 	[r: dnd5e_AE2_generateSaveResultFieldHtml(rowId, SAVE_RESULT_FIELD, json.get(exp, SAVE_RESULT_FIELD), stepClass)]
@@ -90,13 +93,13 @@
 	[r: dnd5e_AE2_generateTargetCheckFieldHtml(rowId, TARGET_CHECK_FIELD, dnd5e_RollExpression_getTargetCheck(exp), stepClass)]
 }; {[h:""]}]
 [r, if(type == DRAIN_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(rowId, ROLL_STRING_FIELD, dnd5e_RollExpression_getRollString(exp), stepClass)]
+	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(dnd5e_RollExpression_getRollString(exp))]
 	[r: dnd5e_AE2_generateSaveAbilityFieldHtml(rowId, DRAIN_ABILITY_FIELD, dnd5e_RollExpression_getDrainAbility(exp), stepClass, CHAR_ABILITIES)]
 }; {[h:""]}]
 [r, if(type == SAVE_DRAIN_STEP_TYPE), code: {
-	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(rowId, ROLL_STRING_FIELD, dnd5e_RollExpression_getRollString(exp), stepClass)]
+	[r: dnd5e_AE2_generateDamageRollStringFieldHtml(dnd5e_RollExpression_getRollString(exp))]
 	[r: dnd5e_AE2_generateSaveAbilityFieldHtml(rowId, DRAIN_ABILITY_FIELD, dnd5e_RollExpression_getDrainAbility(exp), stepClass, CHAR_ABILITIES)]
-	[r: dnd5e_AE2_generateSaveEffectFieldHtml(rowId, SAVE_EFFECT_FIELD, dnd5e_RollExpression_getSaveEffect(exp), stepClass)]
+	[r: dnd5e_AE2_generateSaveEffectFieldHtml(dnd5e_RollExpression_getSaveEffect(exp))]
 }; {[h:""]}]
 
   <!-- Place the delete & extended buttons at the end of the row -->

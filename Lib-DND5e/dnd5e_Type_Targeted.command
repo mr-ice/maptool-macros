@@ -1,2 +1,2 @@
-[h: type = json.set ("", "type", "targeted")]
+[h: type = json.set ("", "type", "target")]
 [h: macro.return = type]

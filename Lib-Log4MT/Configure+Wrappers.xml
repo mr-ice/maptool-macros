@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>c8939eaa-d513-4553-891f-4725121313d9</macroUUID>
+  <macroUUID>99c88567-f0da-49ca-8f3f-5f0b6a71757f</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>2</index>
-  <colorKey>green</colorKey>
+  <index>40</index>
+  <colorKey>navy</colorKey>
   <hotKey>None</hotKey>
-  <label>Install Meters</label>
+  <label>Configure Wrappers</label>
   <group>Profile Token Library</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Execute this macro on the same map as the target Token Library. You will be prompted to select a Token Library to profile. You will also be prompted to select a target token to become "Lib:ProfilerProxy". This token need not currrently be an existing Token Library or any other functional token of any kind. It will be renamed to become "Lib:ProfileProxy" and automatically populated with profiled versions of the source library's User Defined Functions. Therefore, a disposable token is desired.</toolTip>
+  <toolTip>arg(0) = (Optional) Library token to configure macros for</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

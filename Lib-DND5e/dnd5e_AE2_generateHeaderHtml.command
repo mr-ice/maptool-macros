@@ -1,7 +1,7 @@
 <!-- Check for arguments read constants -->
 [h: exp = arg(0)]
 [h: log.debug("dnd5e_AE2_generateHeaderHtml: exp = " + json.indent(exp))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Read the action name, type & desc from the first expression in the list -->
 [h: actionName = dnd5e_Util_encodeHtml(dnd5e_RollExpression_getTypedDescriptor(exp, "actionName"))]

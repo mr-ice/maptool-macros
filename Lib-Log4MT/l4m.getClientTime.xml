@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ccccf6b9-2005-4789-ac12-190267f122bf</macroUUID>
+  <macroUUID>23fca156-6328-4e5d-a207-578dbbbf2994</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>6</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>l4m.getClientTime</label>
-  <group>Profile Token Library - Functions</group>
+  <group>Profile Token Library - Log Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

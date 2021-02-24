@@ -1,7 +1,7 @@
 [h: oldActionType = arg(0)]
 [h: exps = arg(1)]
 [h: log.debug(getMacroname() + ": args" + json.indent(macro.args))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 
 <!-- Empty lists are bad -->
 [h, if (json.isEmpty(exps)): exps = dnd5e_AE2_typeAttack("WRONG", "[]")]

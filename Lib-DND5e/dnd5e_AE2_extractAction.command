@@ -1,7 +1,7 @@
 [h: workingCopy = arg(0)]
 [h: activeAction = arg(1)]
 [h: log.debug(getMacroName() + ": activeAction=" + activeAction + " workingCopy=" + json.indent(workingCopy))]
-[h: json.toVars(dnd5e_AE2_getConstants())]
+[h: dnd5e_AE2_getConstants()]
 [h: exps = json.get(workingCopy, activeAction)]
 [h: return(!json.isEmpty(exps), "{}")]
 [h: firstExp = json.get(exps, 0)]
