@@ -15,7 +15,7 @@ class Test_MTAsset_Project:
         mvp = 'test/data/MinViable'
         mvzips = ['MVMacro1.zip', 'MVMacro2.zip', 'MVProps.zip',
                   'MVToken.zip', 'MVProject.zip', 'MVProject2.zip',
-                  'MVProject3.zip']
+                  'MVProject3.zip', 'MVProject4.zip']
         for zf in [os.path.join(mvp, z) for z in mvzips]:
             with zipfile.ZipFile(zf, 'r') as zip_ref:
                 zip_ref.extractall(tmpdir)
@@ -62,3 +62,38 @@ class Test_MTAsset_Project:
         assert m.zipfile is None
         assert m.xml.find('macroset') is not None
         assert m.xml.find('project') is not None
+
+    def test_asset_project1_assemble(self, tmpdir):
+        m = GetAsset('MVProject.project')
+        assert m is not None
+        m.assemble()
+        assert os.path.exists('MVToken+1.' + tagset.token.ext)
+        assert os.path.exists('MVProps.' + tagset.properties.ext)
+        assert os.path.exists('MVMacroSet.' + tagset.macroset.ext)
+
+    def test_asset_project2_assemble(self, tmpdir):
+        m = GetAsset('MVProject2.project')
+        assert m is not None
+        m.assemble()
+        assert os.path.exists('README.txt')
+        assert os.path.exists('Minimum+Viable+Macro+1.' + tagset.macro.ext)
+
+    def test_asset_project3_assemble(self, tmpdir):
+        m = GetAsset('MVProject3.project')
+        assert m is not None
+        m.assemble()
+        # These files come from Project2
+        assert os.path.exists('MVProps.' + tagset.properties.ext)
+        assert os.path.exists('MVMacroSet.' + tagset.macroset.ext)
+        assert os.path.exists('README.txt')
+        assert os.path.exists('Minimum+Viable+Macro+1.' + tagset.macro.ext)
+
+    def test_asset_project4_assemble(self, tmpdir):
+        # project 4 has a text with a name
+        m = GetAsset('MVProject4.project')
+        assert m is not None
+        m.assemble()
+        assert os.path.exists('instructions.txt')
+        assert os.path.exists('Minimum+Viable+Macro+1.' + tagset.macro.ext)
+
+    

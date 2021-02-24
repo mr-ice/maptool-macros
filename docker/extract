@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Maptool Object Assembler
+"""Maptool Object Extractor
 
-This provides the UI for running a MTAsset transformation.
+This provides the UI for running a MTAsset transformation
+from an asset file (exported/saved from MapTool) into a
+filesystem format (with macros extracted)
 
-See assemble --help for usage
+See extract --help for usage
 """
+
 import sys
 sys.path.insert(0, 'docker')
 from argparse import ArgumentParser
@@ -21,27 +24,28 @@ def ConfigArgs():
 
     c = configparser.ConfigParser()
     c.read('config.ini')
-    if 'assemble' not in c:
-        c['assemble'] = {}
-    if 'directory' not in c['assemble']:
-        c['assemble']['directory'] = '.'
+    if 'default' not in c:
+        c['extract'] = {}
+    if 'extractdirectory' not in c['default']:
+        c['extract']['directory'] = '.'
 
-    AP = ArgumentParser(description = "MapTool Asset Assembler")
+    AP = ArgumentParser(description = "MapTool Asset Extractor")
 
     AP.add_argument(
             'input',
             nargs='+',
-            help='Source for creating the asset')
-
-    AP.add_argument(
-            '--list', '--name',
-            help='Give a name to a list of macros.  Usually only useful '
-                 'if you provide more than one input, if the input is a project the project name will be used instead')
+            help='Source asset for extracting')
 
     AP.add_argument(
             '--output',
-            default=c['assemble']['directory'],
+            default=c['extract']['directory'],
             help='Output directory')
+
+    AP.add_argument(
+            '--name',
+            default=None,
+            help='Give alternate name for the directory (cmpgn, '
+            'rptok, mtprops) or macro (mtmacro) being extracted')
 
     AP.add_argument(
             '--verbose',
@@ -71,7 +75,7 @@ def SetupLogging(av):
     else:
         log.basicConfig(format=logformat)
     log.debug('input = %s' % ','.join(av.input))
-    log.debug('name = %s' % av.list)
+    log.debug('name = %s' % av.name)
     log.debug('path = %s' % av.output)
 
 if __name__ == '__main__':
@@ -79,5 +83,5 @@ if __name__ == '__main__':
     av = ConfigArgs()
     SetupLogging(av)
 
-    asset = GetAsset(*av.input, name=av.list, path=av.output)
-    asset.assemble()
+    asset = GetAsset(*av.input, name=av.name, path=av.output)
+    asset.extract()

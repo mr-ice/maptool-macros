@@ -1,0 +1,9 @@
+<project>
+  <token name="MVToken"/>
+  <properties name="MVProps"/>
+  <macroset name="MVMacroSet">
+    <macro name="macro/MVMacro1"/>
+    <macro name="macro/MVMacro2"/>
+  </macroset>
+  <project name="MVProject2.project"/>
+</project>

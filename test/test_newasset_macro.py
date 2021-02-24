@@ -194,4 +194,3 @@ class Test_MTAsset_Macro:
         # assert False, f'{m.dirname} is m.dirname'
         m.assemble(save_name=newname)
         assert os.path.exists(newfilename), f'{newfilename} does not exist'
-

@@ -16,14 +16,16 @@ Macro and MacroSet objects extract to a generic macro/ directory,
 Token macros extract to the Token directory. Campaign Macros
 extract to the Campaign directory.
 """
+
 import sys
 import zipfile
 sys.path.append('docker')
 from MTAssetLibrary import properties_xml, print_info, XML2File
 from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
 from MTAssetLibrary import maptool_macro_tags as tagset
-from MTAssetLibrary import add_directory_to_zipfile
+from MTAssetLibrary import add_directory_to_zipfile, GitTag
 from MTAssetLibrary import write_macro_files, make_directory_path
+from MTAssetLibrary import GitSha, GitDirty
 
 import os
 from io import BytesIO
@@ -41,7 +43,10 @@ def GetAsset(whence, name=None, path=None):
     """
     zf = None
     if not os.path.exists(whence):
-        log.error(f"Cannot create an asset, {whence} not found.")
+        if os.path.exists(whence + '.xml'):
+            whence = whence + '.xml'
+        else:
+            log.error(f"Cannot create an asset, {whence} not found.")
 
     # find the xml file
     # if we were given a zipfile, load the zipfile and content.xml 
@@ -221,7 +226,7 @@ class MTAsset:
     def best_name_escaped(self, save_name=None): # return best_name html escaped
         return MacroNameQuote(self.best_name(save_name))
 
-    def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None, verbose=None):
+    def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=False, verbose=False):
         """
         MTAsset.assemble() method
 
@@ -234,8 +239,8 @@ class MTAsset:
 
         Keyword Arguments:
         save_name (default None) - temporary change of name to the object (and resulting filename)
-        dryrun (default None) - don't actually save anything
-        verbose (default None) - print out debugging information normally logged
+        dryrun (default False) - don't actually save anything
+        verbose (default False) - print out debugging information normally logged
         """
         # NOTE:  This is the assemble in the base object, it
         # won't be called if overloaded in a specific object
@@ -268,7 +273,9 @@ class MTAsset:
         """
         zf = ZipFile(save_file, mode='w', compression=ZIP_DEFLATED)
         if directory:
-            # this assmes we are in the parent directory
+            # if we loaded from an xmlfile the directory is the
+            # parent of that xmlfile, if we loaded from a directory
+            # it is that directory, and otherwise it is probably
             add_directory_to_zipfile(zf, self.dirname or self.best_name_escaped())
         zf.writestr('content.xml',
                     etree.tostring(self.xml, pretty_print=True))
@@ -358,11 +365,13 @@ class MTToken(MTAsset):
         dryrun
         verbose
         """
+        log.info('MTToken.assemble called')
         if not output_dir:
             output_dir = self.output_dir or '.'
         save_file = os.path.join(output_dir,
                                  self.best_name_escaped(save_name))
         save_file += '.' + (ext or self.isasset_type.ext)
+        log.debug(f'{save_file=}')
         if not dryrun:
             zf = ZipFile(save_file, mode='w', compression=ZIP_DEFLATED)
             add_directory_to_zipfile(zf, self.dirname)
@@ -373,20 +382,17 @@ class MTToken(MTAsset):
                 except AttributeError:
                     pass
                 else:
-                    macrobase = os.path.join(self.dirname, name)
-                    command_file = macrobase + '.command'
-                    xml_file = macrobase + '.xml'
-                    macro = objectify.parse(xml_file)
-                    command = open(command_file, 'r').read()
-                    macro.getroot().command = DataElement(command)
+                    macrobase = os.path.join(self.dirname, name + '.xml')
+                    macro = GetAsset(macrobase)
                     entry_template = '<entry><int>{}</int>{}</entry>'
                     new_entry = objectify.fromstring(
                         entry_template.format(
                                 entry.int.text,
-                                etree.tostring(macro).decode()))
+                                etree.tostring(macro.root).decode()))
 
                     self.root.macroPropertiesMap.entry[i] = new_entry
         if not dryrun:
+            self.root.gmName = objectify.fromstring('<gmName>'+GitSha()+GitDirty()+'</gmName>')
             try:
                 zf.writestr('content.xml',
                             etree.tostring(self.xml, pretty_print=True))
@@ -457,7 +463,6 @@ class MTMacroSet(MTAsset):
         else:
             log.error("Couldn't append, invalid type")
         
-
 class MTMacroObj(MTAsset):
     def __init__(self, *args, **kwargs):
         # whence, zf=None, xmlfile=None, xml=None, name=None, path=None):
@@ -474,7 +479,8 @@ class MTMacroObj(MTAsset):
         if not self._loaded_from == 'assetTypeFile':
             log.info('loading %s for the macro xml file' % self.whence)
             log.info('loading %s for the macro command file' % self.command_file)
-            command = open(self.command_file).read()
+            tag = '<!-- ' + GitSha() + GitDirty() + ' -->\n'
+            command = tag + open(self.command_file).read()
             # reassemble the command into the xml
             self.xml.getroot().command = DataElement(command)
 
@@ -541,12 +547,46 @@ class MTMacroObj(MTAsset):
 
         self.xml = newxml
         
-
-
 class MTProject(MTAsset):
     def extract(self, *args, **kwargs):
         log.info("Projects are only for assembly")
         return False
+
+    def assemble(self, output_dir=None, dryrun=False, verbose=False):
+        """MTProject.assemble() method
+
+        Returns None
+
+        This reads the project xml file and builds
+        each of the assets described therein.
+
+        Keyword arguments:
+        dryrun (default False) - don't write anything
+        verbose (default False) - turn up debugging information
+        """
+        output_dir = output_dir or self.output_dir
+        for elem in self.root.iterchildren():
+            if elem.tag == 'macroset':
+                asset = None
+                for macro in elem.iterchildren():
+                    if macro.tag != 'macro': continue
+                    if asset is None:
+                        asset = GetAsset(macro.attrib['name'])
+                    else:
+                        asset.append(GetAsset(macro.attrib['name']))
+                if asset is not None:
+                    asset.assemble(save_name = elem.attrib['name'])               
+            elif elem.tag == 'text':
+                name = elem.attrib.get('name','README.txt')
+                with open(os.path.join(output_dir, name), 'w') as asset:
+                    asset.write(elem.text.strip())
+            else:
+                asset_name = elem.attrib['name']
+                if elem.tag == 'project' and not elem.attrib['name'].endswith('.project'):
+                    asset_name = elem.attrib['name'] + '.project'
+                asset = GetAsset(asset_name, path=output_dir)
+                asset.assemble()   
+
 # junk.project xml file
 # Dir/content.xml with net.rptools.maptool.model.CampaignProperties creates a .mtprops
 # Dir/content.xml with net.rptools.maptool.model.Token creates a .rptok

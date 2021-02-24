@@ -9,6 +9,7 @@ import datetime
 import random
 import string
 import logging as log
+from subprocess import run, PIPE
 from urllib.parse import quote_plus
 from lxml import objectify, etree
 from lxml.etree import tostring
@@ -65,6 +66,42 @@ properties_xml = """<map>
   </entry>
 </map>""".format(fixed_version)
 
+def GitCmd(cmd):
+    cmd = bytes(cmd).split()
+    res = run(cmd, stdout=PIPE, stderr=PIPE)
+    if res.stdout and b'fatal' not in res.stderr:
+        return res.stdout.strip().decode()
+
+def GitShow():
+    """Returns all the things we know about git"""
+    return {
+        'tag': GitTag(),
+        'branch': GitBranch(),
+        'sha': GitSha(),
+        'dirty': GitDirty()
+    }
+
+def GitTag():
+    """Returns git describe --tags --dirty """
+    cmd = b'git describe --tags --dirty --broken --abbrev=8'
+    return GitCmd(cmd)
+
+def GitDirty():
+    """Returns '-dirty' or None"""
+    ret = GitTag()
+    if ret and ret.endswith('-dirty'):
+        return '-dirty'
+    return ''
+
+def GitBranch():
+    """Returns current git branch"""
+    cmd = b'git rev-parse --abbrev-ref HEAD'
+    return GitCmd(cmd) or 'unknown'
+
+def GitSha():
+    """Returns sha of current commit"""
+    cmd = b'git log -1 --format=%h --abbrev=8'
+    return GitCmd(cmd) or 'unknown'
 
 def DataElement(content):
     return objectify.DataElement(content, nsmap='', _pytype='')
