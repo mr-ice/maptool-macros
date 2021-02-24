@@ -37,12 +37,12 @@ maker.image: docker/Dockerfile $(shell echo docker/*)
 	docker build docker -t maker
 	touch $@
 
-tester.image: maker.image docker/tester/Dockerfile
-	docker build docker/tester -t tester
+tester.image: maker.image docker/Dockerfile.tester
+	docker build docker -f docker/Dockerfile.tester -t tester
 	touch $@
 
-behave.image: maker.image docker/behave/Dockerfile
-	docker build docker/behave -t behave
+behave.image: maker.image docker/Dockerfile.behave
+	docker build docker -f docker/Dockerfile.behave -t behave
 	touch $@
 
 build: tester.image behave.image
