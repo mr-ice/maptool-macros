@@ -348,6 +348,14 @@
   <propertyMapCI>
     <store>
       <entry>
+        <string>libversion</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>libversion</key>
+          <value class="string">0.1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>ability.acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>ability.acrobatics</key>
