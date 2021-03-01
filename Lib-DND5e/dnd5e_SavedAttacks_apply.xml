@@ -7,7 +7,7 @@
   <label>dnd5e_SavedAttacks_apply</label>
   <group>Saved Attacks</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
