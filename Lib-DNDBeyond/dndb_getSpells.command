@@ -135,6 +135,5 @@
 		[h: allSpells = json.set (allSpells, encode (json.get (basicSpell, "name")), basicSpell)]
 	}]
 }]
-[h: allSpells = dndb_Util_patchObjects (allSpells, "spell")]
 [h: macro.return = allSpells]
 
