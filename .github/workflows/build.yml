@@ -1,0 +1,53 @@
+# Action to run on push to master branch to rebuild packages
+
+name: Test
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: check that files we need are present
+      run: ls -l docker
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install pytest pytest-sugar
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Test with pytest
+      run: |
+        python3 -mpytest
+
+    - name: Build our DNDBeyond Artifacts
+      run: |
+        echo '[assemble]\ndirectory = output' > config.ini
+        PATH=docker:$PATH ./docker/assemble DNDBeyond.project
+
+    - name: Show our artifacts, eventually push these to releases
+      run: |
+        cat config.ini
+        ls -l output
