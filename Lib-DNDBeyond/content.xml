@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>sTidxRDjTyGA6w9AHcdsgw==</baGUID>
+    <baGUID>LOK81PqlT5CHmf6tVkS/0g==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -20,28 +20,8 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>800</lastX>
-  <lastY>400</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>16</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>16</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -1034,8 +1014,36 @@
       <macro name="dndb_BasicToon_validateVersion"/>
     </entry>
     <entry>
+      <int>132</int>
+      <macro name="Managed+Patched+Objects"/>
+    </entry>
+    <entry>
+      <int>133</int>
+      <macro name="dndb_Util_getRegistry"/>
+    </entry>
+    <entry>
+      <int>134</int>
+      <macro name="dndb_Util_setRegistry"/>
+    </entry>
+    <entry>
+      <int>135</int>
+      <macro name="Data_Macro_Patched_Objects_Registry"/>
+    </entry>
+    <entry>
+      <int>136</int>
+      <macro name="dndb_Util_printRegistry"/>
+    </entry>
+    <entry>
       <int>10</int>
       <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>140</int>
+      <macro name="Token+Patches"/>
+    </entry>
+    <entry>
+      <int>141</int>
+      <macro name="dndb_Util_patchObjects"/>
     </entry>
     <entry>
       <int>15</int>
