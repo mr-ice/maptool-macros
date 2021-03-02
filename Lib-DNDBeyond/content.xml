@@ -1038,10 +1038,6 @@
       <macro name="onCampaignLoad"/>
     </entry>
     <entry>
-      <int>140</int>
-      <macro name="Token+Patches"/>
-    </entry>
-    <entry>
       <int>141</int>
       <macro name="dndb_Util_patchObjects"/>
     </entry>
@@ -1342,7 +1338,7 @@
       <macro name="dndb_CastSpell_getSpellSlotHtml"/>
     </entry>
     <entry>
-      <int>126</int>
+      <int>140</int>
       <macro name="dndb_CastSpell_getModHtml"/>
     </entry>
   </macroPropertiesMap>

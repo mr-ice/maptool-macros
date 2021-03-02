@@ -1,0 +1,32 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>d325c467-091f-41ef-84e6-910f4511af12</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>6</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>jse.QnD.json.append</label>
+  <group>Editor</group>
+  <sortby>2</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Prompts to append data to a JSON Object or Array
+
+arg(0) = path
+arg(1) = JSON Array or Object
+
+Returns updated JSON value</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

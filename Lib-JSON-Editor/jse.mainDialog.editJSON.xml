@@ -1,0 +1,36 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>49f636db-3e1b-4b55-b4c9-fd203128721d</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>4</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>jse.mainDialog.editJSON</label>
+  <group>Editor</group>
+  <sortby>1</sortby>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Main JSON Editor function.&lt;br&gt;
+arg(0) = params&lt;br&gt;
+&lt;br&gt;
+params = JSON object with the following keys:&lt;br&gt;
+   'object': JSON Object or Array to edit&lt;br&gt;
+   'macroLinkText': Call-back macro for the form action&lt;br&gt;
+&lt;br&gt;
+The call-back macro will be provided a JSON object with the following:&lt;br&gt;
+   'action': The action selected: 'save' or 'cancel'&lt;br&gt;
+   'object': The JSON object, including any edits&lt;br&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

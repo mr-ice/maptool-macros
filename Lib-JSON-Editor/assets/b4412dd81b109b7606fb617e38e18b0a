@@ -1,0 +1,9 @@
+<net.rptools.maptool.model.Asset>
+  <id>
+    <id>b4412dd81b109b7606fb617e38e18b0a</id>
+  </id>
+  <name>json-logo</name>
+  <extension>png</extension>
+  <type>image</type>
+  <image/>
+</net.rptools.maptool.model.Asset>
