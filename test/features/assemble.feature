@@ -4,6 +4,7 @@
 @fixture.base_properties
 @fixture.base_project
 @fixture.temp_directory
+@fixture.minviable_token
 @fixture.config_env
 
 Feature: Assemble

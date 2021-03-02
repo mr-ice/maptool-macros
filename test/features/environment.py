@@ -46,6 +46,22 @@ def base_token(context):
     except Exception as e:
         pass
 
+@fixture
+def minviable_token(context):
+    """This extracts the minviable token"""
+    log.debug("In environment.minviable_token")
+    log.debug(f'{os.getcwd()=}')
+    context.mvtokensrc = 'test/data/MinViable/MVToken.zip'
+    context.mvtokendir = 'MVToken'
+    log.debug(f'{context.mvtokensrc=}')
+    zf = ZipFile(context.mvtokensrc)
+    zf.extractall()
+    yield context.mvtokensrc
+    try:
+        rmtree(context.mvtokensrc)
+        rmtree(context.mvtokendir)
+    except Exception as e:
+        pass
 
 @fixture
 def base_macro1(context):
@@ -164,6 +180,7 @@ def config_env(context):
 FixtureRegistry = {
     "fixture.base_token": base_token,
     "fixture.base_rptok": base_rptok,
+    "fixture.minviable_token": minviable_token,
     "fixture.base_macro1": base_macro1,
     "fixture.base_macro2": base_macro2,
     "fixture.base_properties": base_properties,

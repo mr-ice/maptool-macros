@@ -192,7 +192,7 @@ def step_impl(context):
         stderr=PIPE, stdout=PIPE, close_fds=True)
     context.stdout, context.stderr = p.communicate()
     context.projcontents = open(context.projpath).read()
-    assert b'Error' not in context.stderr, context.stderr
+    assert b'Error' not in context.stderr, f'{context.stderr=} {context.stdout=}'
 
 @when(u'that Project contains a macroset')  # noqa: F811
 def step_impl(context):

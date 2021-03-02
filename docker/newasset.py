@@ -68,7 +68,7 @@ def GetAsset(*whence, name=None, path=None):
             content_xml = open(whence)
         else:
             content_xml = open(whence)
-            
+
         xml = objectify.parse(content_xml)
 
         if xml.getroot().tag == tagset.macro.tag:
