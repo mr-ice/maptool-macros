@@ -2,12 +2,13 @@ import sys
 sys.path.append('docker')
 
 import os
-import logging as log
 import pytest
 import zipfile
-from lxml.etree import XMLSyntaxError, tostring
+import logging as log
+from lxml.etree import tostring
 from MTAssetLibrary import maptool_macro_tags as tagset
 from MTAssetLibrary import random_string, GetAsset
+
 
 class Test_MTAsset_Properties:
     @pytest.fixture(autouse=True)
@@ -57,7 +58,6 @@ class Test_MTAsset_Properties:
         assert os.path.exists('MTProps.mtprops')
         os.remove('MTProps.mtprops')
 
-
     def test_asset_with_properties_dir(self, tmpdir):
         m = GetAsset('MVProps')
         assert m is not None
@@ -72,7 +72,6 @@ class Test_MTAsset_Properties:
         assert m.xmlfile is not None
         assert m.tag == tagset.properties.tag
 
-    
     def test_properties_asset_from_dir_equals_xml(self, tmpdir):
         m = GetAsset('MVProps/content.xml')
         assert m is not None
@@ -117,22 +116,17 @@ class Test_MTAsset_Properties:
         assert n.xml.find('tokenTypeMap/entry[string="Second"]') is not None
 
     def test_properties_append_invalid_string(self, tmpdir):
-        newname = random_string()
         fakename = random_string()
-        newfilename = newname + '.' + tagset.properties.ext
         m = GetAsset('MVProps/content.xml')
         assert m is not None
         with pytest.raises(FileNotFoundError):
             m.append(fakename, 'tokenTypeMap', 'entry[string="Second"]')
-    
+
     def test_properties_asset_extract(self, tmpdir):
         newname = random_string()
-        newfilename = newname + '.' + tagset.properties.ext
         m = GetAsset('MVProps/content.xml')
         assert m is not None
         m.extract(save_name=newname)
         for filename in 'content.xml', 'properties.xml':
             file_exists = os.path.join(newname, filename)
             assert os.path.exists(file_exists), f'{file_exists} does not exist'
-
-        

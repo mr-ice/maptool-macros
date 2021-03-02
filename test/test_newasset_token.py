@@ -2,11 +2,10 @@ import sys
 sys.path.append('docker')
 
 import os
-import logging as log
 import pytest
 import zipfile
-from lxml.etree import XMLSyntaxError, tostring
 from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
+
 
 class Test_MTAsset_Token:
     @pytest.fixture(autouse=True)
@@ -69,7 +68,7 @@ class Test_MTAsset_Token:
         assert m.xmlfile is not None
         assert m.zipfile is None
         assert m.dirname is not None
-        assert m.tag == tagset.token.tag  
+        assert m.tag == tagset.token.tag
 
     # that's the basic stuff out of the way... now assemble and extract
     def test_asset_token_assemble(self, tmpdir):
@@ -78,8 +77,8 @@ class Test_MTAsset_Token:
         assert m.fromdir is not None
         assert m.xmlfile is not None
         assert m.zipfile is None
-        #assert False, f'{m.whence=}'
-        #assert False, f'{m.dirname=}'
+        # assert False, f'{m.whence=}'
+        # assert False, f'{m.dirname=}'
         m.assemble()
         assert os.path.exists('MVToken+1.rptok')
 
@@ -91,33 +90,33 @@ class Test_MTAsset_Token:
 
     def test_asset_token_save_to(self, tmpdir):
         target = 'NewMVToken'
-        l = GetAsset('MVToken')
-        l.assemble()
+        targetAsset = GetAsset('MVToken')
+        targetAsset.assemble()
         assert os.path.exists('MVToken+1.rptok')
         m = GetAsset('MVToken+1.rptok')
         assert m is not None
-        #m.extract(save_name=target)
+        # m.extract(save_name=target)
         assert m.output_dir == '.'
-        assert m.save_to(target) == './'+target
+        assert m.save_to(target) == './' + target
 
     def test_asset_token_extract(self, tmpdir):
         tdir = 'MVToken'
         tname = 'MVToken+1'
         tfilename = tname + '.rptok'
         # we don't come with a pre-assembled token, so assemble one
-        l = GetAsset(tdir)
-        l.assemble()
+        targetAsset = GetAsset(tdir)
+        targetAsset.assemble()
         assert os.path.exists(tfilename)
         # The original is in 'MVToken', but the name is
         # 'MVToken+1' so we should have a copy there once extracted
         m = GetAsset(tfilename)
         m.extract()
-        #assert False, m.save_to(None, target)
+        # assert False, m.save_to(None, target)
         assert m is not None
         assert m.fromdir is not None
-        assert m.xmlfile is not None # should this be None?
+        assert m.xmlfile is not None  # should this be None?
         assert m.zipfile is not None
-        for asset in 'properties.xml', 'content.xml', 'thumbnail','thumbnail_large','1d20.command','1d20.xml':
+        for asset in 'properties.xml', 'content.xml', 'thumbnail', 'thumbnail_large', '1d20.command', '1d20.xml':
             assert os.path.exists(os.path.join(tname, asset))
 
     def test_asset_token_extract_with_name(self, tmpdir):
@@ -125,17 +124,17 @@ class Test_MTAsset_Token:
         tname = 'MVToken+1'
         tfilename = tname + '.rptok'
         target = 'NewMVToken'
-        l = GetAsset(tdir)
-        l.assemble()
+        targetAsset = GetAsset(tdir)
+        targetAsset.assemble()
         assert os.path.exists(tfilename)
         m = GetAsset(tfilename)
-        #assert False, m.save_to(None, target)
+        # assert False, m.save_to(None, target)
         assert m is not None
         assert m.fromdir is not None
-        assert m.xmlfile is not None # should this be None?
+        assert m.xmlfile is not None  # should this be None?
         assert m.zipfile is not None
         m.extract(save_name=target)
-        for asset in 'properties.xml', 'content.xml', 'thumbnail','thumbnail_large','1d20.command','1d20.xml':
+        for asset in 'properties.xml', 'content.xml', 'thumbnail', 'thumbnail_large', '1d20.command', '1d20.xml':
             assert os.path.exists(os.path.join(target, asset))
 
     def test_asset_token_extract_macro_dryrun(self, tmpdir):
@@ -149,13 +148,13 @@ class Test_MTAsset_Token:
         assert n.xmlfile is not None
         assert n.zipfile is not None
         n.assemble(dryrun=True)
-        should_have = os.path.join('.',macro_name,'properties.xml')
+        should_have = os.path.join('.', macro_name, 'properties.xml')
         assert not os.path.exists(should_have), f"{should_have} exists, not expected"
-        macro_xml = os.path.join('.',macro_name,'1d20.xml')
+        macro_xml = os.path.join('.', macro_name, '1d20.xml')
         assert not os.path.exists(macro_xml), f"{macro_xml} does not exist, but should"
-        macro_cmd = os.path.join('.',macro_name,'1d20.command')
+        macro_cmd = os.path.join('.', macro_name, '1d20.command')
         assert not os.path.exists(macro_cmd), f"{macro_cmd} does not exist, but should"
-        assert not os.path.exists(os.path.join('.',macro_name))
+        assert not os.path.exists(os.path.join('.', macro_name))
 
     def test_asset_token_assemble_dryrun(self, tmpdir):
         macro_name = 'MVToken+1'
@@ -169,7 +168,7 @@ class Test_MTAsset_Token:
         m = GetAsset('MVToken')
         assert m is not None
         m.assemble()
-        n = GetAsset('MVToken+1.rptok')
+        n = GetAsset(macro_name + '.rptok')
         assert n is not None
         assert n.xml.find('macroPropertiesMap/entry/macro') is None
         assert n.xml.find('macroPropertiesMap/entry/' + tagset.macro.tag) is not None

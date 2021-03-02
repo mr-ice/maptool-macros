@@ -2,11 +2,10 @@ import sys
 sys.path.append('docker')
 
 import os
-import logging as log
 import pytest
 import zipfile
-from lxml.etree import XMLSyntaxError, tostring
 from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
+
 
 class Test_MTAsset_Project:
     @pytest.fixture(autouse=True)
@@ -94,5 +93,3 @@ class Test_MTAsset_Project:
         m.assemble()
         assert os.path.exists('instructions.txt')
         assert os.path.exists('Minimum+Viable+Macro+1.' + tagset.macro.ext)
-
-    

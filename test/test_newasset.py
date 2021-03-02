@@ -2,11 +2,11 @@ import sys
 sys.path.append('docker')
 
 import os
-import logging as log
 import pytest
 import zipfile
-from lxml.etree import XMLSyntaxError, tostring
-from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
+from lxml.etree import XMLSyntaxError
+from MTAssetLibrary import GetAsset
+
 
 class Test_MTAsset_Generic:
     """
@@ -42,10 +42,12 @@ class Test_MTAsset_Generic:
     def test_asset_with_no_args(self):
         with pytest.raises(TypeError):
             m = GetAsset()
+            assert m is not None
 
     def test_asset_with_missing_file(self):
         with pytest.raises(FileNotFoundError):
             m = GetAsset('Junk')
+            assert m is not None
 
     def test_asset_with_non_xml_file(self, tmpdir):
         fn = os.path.join(tmpdir, 'Junk.xml')
@@ -53,6 +55,7 @@ class Test_MTAsset_Generic:
             f.write('')
         with pytest.raises(XMLSyntaxError):
             m = GetAsset(fn)
+            assert m is not None
 
     def test_asset_with_non_maptool_xml(self, tmpdir):
         fn = os.path.join(tmpdir, 'Junk.xml')

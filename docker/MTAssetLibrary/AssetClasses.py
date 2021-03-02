@@ -226,14 +226,14 @@ class MTAsset:
         elif os.path.isdir(self.whence):
             return os.path.basename(self.whence)
         elif self.whence.endswith(tagset.properties.ext) or \
-             self.whence.endswith(tagset.macroset.ext) or \
-             self.whence.endswith(tagset.campaign.ext) or \
-             self.whence.endswith(tagset.project.ext):
+            self.whence.endswith(tagset.macroset.ext) or \
+            self.whence.endswith(tagset.campaign.ext) or \
+            self.whence.endswith(tagset.project.ext):
             return os.path.basename(os.path.splitext(self.whence)[0])
         else:
             return 'Generic' + self.isasset_type.name.capitalize()
 
-    def best_name(self, save_name=None): # return best name from given, set, embedded
+    def best_name(self, save_name=None):  # return best name from given, set, embedded
         if save_name:
             return save_name
         if self.given_name:
@@ -242,7 +242,7 @@ class MTAsset:
             return str(self.name)
         return 'Generic' + self.isasset_type.name.capitalize()
 
-    def best_name_escaped(self, save_name=None): # return best_name html escaped
+    def best_name_escaped(self, save_name=None):  # return best_name html escaped
         return MacroNameQuote(self.best_name(save_name))
 
     def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=False, verbose=False):
@@ -253,7 +253,7 @@ class MTAsset:
 
         This will cause the asset to write itself to a file based on the
         maptool asset type.
-        
+
             <output_dir>/<name>.<ext>
 
         Keyword Arguments:
@@ -268,7 +268,7 @@ class MTAsset:
         output_dir = output_dir or self.output_dir or '.'
         # print(f'{type(output_dir)=}')
         # print(f'{type(self.best_name(save_name))=}')
-        
+
         save_file = os.path.join(output_dir,
                                  self.best_name(save_name))
         save_file += '.' + (ext or self.isasset_type.ext)
@@ -327,7 +327,7 @@ class MTAsset:
         output_path = self.save_to(save_name, output_dir)
         if not dryrun:
             make_directory_path(output_path)
-        
+
         # what if we didn't assemble yet? we have to write
         # a file in memory.
         if self.zipfile is None:
@@ -338,7 +338,8 @@ class MTAsset:
             self.zipfile.extractall(output_path)
 
 
-class MTCampaign(MTAsset): pass
+class MTCampaign(MTAsset):
+    pass
 
 
 class MTProperties(MTAsset):
@@ -368,6 +369,7 @@ class MTProperties(MTAsset):
                 self.root.find(collection).append(found)
             else:
                 log.warning(f'{xpath} not found in {self.name}')
+
 
 class MTToken(MTAsset):
     @property
@@ -409,12 +411,12 @@ class MTToken(MTAsset):
                     entry_template = '<entry><int>{}</int>{}</entry>'
                     new_entry = objectify.fromstring(
                         entry_template.format(
-                                entry.int.text,
-                                etree.tostring(macro.root).decode()))
+                            entry.int.text,
+                            etree.tostring(macro.root).decode()))
 
                     self.root.macroPropertiesMap.entry[i] = new_entry
         if not dryrun:
-            self.root.gmName = objectify.fromstring('<gmName>'+GitSha()+GitDirty()+'</gmName>')
+            self.root.gmName = objectify.fromstring('<gmName>' + git_tag_str + '</gmName>')
             try:
                 zf.writestr('content.xml',
                             etree.tostring(self.xml, pretty_print=True))
@@ -441,7 +443,7 @@ class MTToken(MTAsset):
         output_path = self.save_to(save_name, output_dir)
         if not dryrun:
             make_directory_path(output_path)
-        
+
         # extract all the files from the zipfile into the directory
         log.info(f"extracting {self.best_name} to {output_path}")
         if not dryrun:
@@ -461,6 +463,7 @@ class MTToken(MTAsset):
 
         if not dryrun:
             XML2File(output_path, 'content.xml', self.xml)
+
 
 class MTMacroSet(MTAsset):
     @property
@@ -484,7 +487,8 @@ class MTMacroSet(MTAsset):
             self.root.append(thing)
         else:
             log.error("Couldn't append, invalid type")
-        
+
+
 class MTMacroObj(MTAsset):
     def __init__(self, *args, **kwargs):
         # whence, zf=None, xmlfile=None, xml=None, name=None, path=None):
@@ -501,11 +505,10 @@ class MTMacroObj(MTAsset):
         if not self._loaded_from == 'assetTypeFile':
             log.info('loading %s for the macro xml file' % self.whence)
             log.info('loading %s for the macro command file' % self.command_file)
-            tag = '<!-- ' + GitSha() + GitDirty() + ' -->\n'
+            tag = '<!-- https://github.com/mr-ice/maptool-macros/ ' + git_tag_str + ' -->\n'
             command = tag + open(self.command_file).read()
             # reassemble the command into the xml
             self.xml.getroot().command = DataElement(command)
-
 
     @property
     def command_file(self):
@@ -560,14 +563,15 @@ class MTMacroObj(MTAsset):
         the latter is true, it doesn't actually cast us to the
         MTMacroSet object)
         """
-        s = StringIO('<'+tagset.macroset.tag+'/>')
+        s = StringIO('<' + tagset.macroset.tag + '/>')
         newxml = objectify.parse(s)
         newxml.getroot().append(self.root)
         if type(new) == MTMacroObj:
             newxml.getroot().append(new.root)
 
         self.xml = newxml
-        
+
+
 class MTProject(MTAsset):
     def extract(self, *args, **kwargs):
         log.info("Projects are only for assembly")
@@ -593,15 +597,16 @@ class MTProject(MTAsset):
             if elem.tag == 'macroset':
                 asset = None
                 for macro in elem.iterchildren():
-                    if macro.tag != 'macro': continue
+                    if macro.tag != 'macro':
+                        continue
                     if asset is None:
                         asset = GetAsset(macro.attrib['name'])
                     else:
                         asset.append(GetAsset(macro.attrib['name']))
                 if asset is not None:
-                    asset.assemble(save_name = elem.attrib['name'], output_dir=output_dir)               
+                    asset.assemble(save_name=elem.attrib['name'], output_dir=output_dir)
             elif elem.tag == 'text':
-                name = elem.attrib.get('name','README.txt')
+                name = elem.attrib.get('name', 'README.txt')
                 with open(os.path.join(output_dir, name), 'w') as asset:
                     asset.write(elem.text.strip())
             else:
@@ -609,7 +614,7 @@ class MTProject(MTAsset):
                 if elem.tag == 'project' and not elem.attrib['name'].endswith('.project'):
                     asset_name = elem.attrib['name'] + '.project'
                 asset = GetAsset(asset_name)
-                asset.assemble(output_dir=output_dir)   
+                asset.assemble(output_dir=output_dir)
 
 # junk.project xml file
 # Dir/content.xml with net.rptools.maptool.model.CampaignProperties creates a .mtprops

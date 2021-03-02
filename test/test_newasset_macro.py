@@ -8,12 +8,11 @@ import sys
 sys.path.append('docker')
 
 import os
-import logging as log
 import pytest
 import zipfile
-from lxml.etree import XMLSyntaxError
 from MTAssetLibrary import maptool_macro_tags as tagset
 from MTAssetLibrary import random_string, GetAsset, MTMacroSet
+
 
 class Test_MTAsset_Macro:
     """
@@ -44,17 +43,6 @@ class Test_MTAsset_Macro:
             yield
         finally:
             os.chdir(test_start_dir)
-
-
-# macro/MVMacro1.xml
-# macro/MVMacro1.command
-# macro/MVMacro2.xml
-# macro/MVMacro2.command
-# MVProps/content.xml
-# MVToken/content.xml
-# MVProject.project
-# MVProject2.project contains <text>
-# MVProject3.project contains <project> subelement
 
     def test_asset_with_macro_command(self, tmpdir):
         fn = os.path.join(tmpdir, 'Junk.command')
@@ -99,12 +87,14 @@ class Test_MTAsset_Macro:
         assert not os.path.exists(target)
         with pytest.raises(FileNotFoundError):
             m = GetAsset(target)
+            assert m is not None
 
     def test_macro_with_missing_xml_file(self, tmpdir):
         target = 'macro/' + random_string() + '.xml'
         assert not os.path.exists(target)
         with pytest.raises(FileNotFoundError):
             m = GetAsset(target)
+            assert m is not None
 
     def test_macro_with_macro1(self, tmpdir):
         m = GetAsset('macro/MVMacro1.xml')
@@ -123,15 +113,14 @@ class Test_MTAsset_Macro:
         assert m.tag == tagset.macro.tag
 
     def test_macro_assemble_macro1(self, tmpdir):
-        saveperc = 'Minimum%20Viable%20Macro%201'
-        savepath = 'Minimum%2BViable%2BMacro%2B1'
+        # saveperc = 'Minimum%20Viable%20Macro%201'
+        # savepath = 'Minimum%2BViable%2BMacro%2B1'
         saveplus = 'Minimum+Viable+Macro+1'
         m = GetAsset('macro/MVMacro1.xml')
         assert m is not None
         m.assemble()
         assert m.best_name_escaped() == saveplus
-        assert os.path.exists(saveplus+'.mtmacro'), f'{saveplus+".mtmacro"} does not exist as expected'
-        
+        assert os.path.exists(saveplus + '.mtmacro'), f'{saveplus + ".mtmacro"} does not exist as expected'
 
     def test_macro_assemble_macro2(self, tmpdir):
         saveplus = 'Minimum+Viable+Macro+2'
@@ -139,8 +128,8 @@ class Test_MTAsset_Macro:
         assert m is not None
         m.assemble()
         assert m.best_name_escaped() == saveplus
-        assert os.path.exists(saveplus+'.mtmacro'), f'{saveplus+".mtmacro"} does not exist as expected'
-        
+        assert os.path.exists(saveplus + '.mtmacro'), f'{saveplus+".mtmacro"} does not exist as expected'
+
     def test_macro_append_macro_object(self, tmpdir):
         newname = random_string()
         newfilename = newname + '.' + tagset.macroset.ext
@@ -172,7 +161,7 @@ class Test_MTAsset_Macro:
         o.append(m)
         assert o is not None
         # see if o now has two copies of m
-        assert len(o.root.findall('./'+tagset.macro.tag)) == 3
+        assert len(o.root.findall('./' + tagset.macro.tag)) == 3
 
     def test_macro_macro_save_as(self, tmpdir):
         newname = random_string()

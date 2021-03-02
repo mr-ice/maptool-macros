@@ -103,6 +103,8 @@ def GitSha():
     cmd = b'git log -1 --format=%h --abbrev=8'
     return GitCmd(cmd) or 'unknown'
 
+git_tag_str = GitSha() + GitDirty()
+
 def DataElement(content):
     return objectify.DataElement(content, nsmap='', _pytype='')
 

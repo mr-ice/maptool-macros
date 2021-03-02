@@ -1,16 +1,17 @@
 import sys
 sys.path.insert(0, 'docker')
 import os
-
+import random
+import string
 import shutil
+import logging as log
 from behave import fixture, use_fixture
 from behave.fixture import use_fixture_by_tag
 from zipfile import ZipFile
 from shutil import rmtree
-import logging as log
-import random
-import string
+
 from MTAssetLibrary import maptool_macro_tags as tagset, random_string
+
 
 @fixture
 def base_rptok(context):
@@ -43,8 +44,9 @@ def base_token(context):
     yield context.tokenpath
     try:
         rmtree(context.tokenpath)
-    except Exception as e:
+    except Exception:
         pass
+
 
 @fixture
 def minviable_token(context):
@@ -59,8 +61,9 @@ def minviable_token(context):
     yield context.mvtokensrc
     try:
         rmtree(context.mvtokendir)
-    except Exception as e:
+    except Exception:
         pass
+
 
 @fixture
 def base_macro1(context):
@@ -78,7 +81,7 @@ def base_macro1(context):
         'qlabel': 'Minimum+Viable+Macro+1',
         'macrofilename': 'Minimum+Viable+Macro+1.mtmacro',
         'src': 'test/data/MinViable/MVMacro1.zip'
-        }
+    }
     context.macro1src = 'test/data/MinViable/MVMacro1.zip'
     zf = ZipFile(context.macro1['src'])
     zf.extractall()
@@ -105,7 +108,7 @@ def base_macro2(context):
         'qlabel': 'Minimum+Viable+Macro+2',
         'macrofilename': 'Minimum+Viable+Macro+2.mtmacro',
         'src': 'test/data/MinViable/MVMacro2.zip'
-        }
+    }
 
     context.macro2src = 'test/data/MinViable/MVMacro2.zip'
     zf = ZipFile(context.macro2['src'])
@@ -159,6 +162,7 @@ def temp_directory(context):
     yield context.temp_directory
     rmtree(context.temp_directory)
 
+
 @fixture
 def config_env(context):
     """
@@ -173,6 +177,7 @@ def config_env(context):
     else:
         del(os.environ['MTASSET_CONFIG'])
 
+
 @fixture
 def project_with_text_element(context):
     """Create a project with a text element"""
@@ -186,6 +191,7 @@ def project_with_text_element(context):
     yield context.projecttextfile
     os.remove(context.projecttextfile)
     os.remove(context.textfile)
+
 
 @fixture
 def project_with_project(context):
