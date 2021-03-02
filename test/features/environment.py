@@ -1,4 +1,7 @@
+import sys
+sys.path.insert(0, 'docker')
 import os
+
 import shutil
 from behave import fixture, use_fixture
 from behave.fixture import use_fixture_by_tag
@@ -7,20 +10,20 @@ from shutil import rmtree
 import logging as log
 import random
 import string
-
+from MTAssetLibrary import maptool_macro_tags as tagset
 
 @fixture
 def base_rptok(context):
     """This defines a few variables to use in our BDD tests"""
     context.tokenpath = 'BaseToken30957877'
     context.tokenname = 'Base Token 30957877'
-    context.tokenfilename = 'Base+Token+30957877'
+    context.tokenfilename = 'Base+Token+30957877.rptok'
     context.tokensrc = 'test/data/DNDB-Test/BaseToken30957877.zip'
     yield context.tokenpath
     try:
         # if we 'assembled' a token, remove it
         os.remove(context.tokenpath + '.rptok')
-        os.remove(context.tokenfilename + '.rptok')
+        os.remove(context.tokenfilename)
     except Exception as e:
         # avoid flake warning for not using e
         if e is not None:
@@ -105,6 +108,7 @@ def base_properties(context):
     log.debug("In environment.base_properties")
     context.proppath = 'MVProps'
     context.propname = 'MVProps'
+    context.propfilename = context.proppath + '.' + tagset.properties.ext
     context.propsrc = 'test/data/MinViable/MVProps.zip'
     zf = ZipFile(context.propsrc)
     zf.extractall()
@@ -140,6 +144,20 @@ def temp_directory(context):
     yield context.temp_directory
     rmtree(context.temp_directory)
 
+@fixture
+def config_env(context):
+    """
+    Set an environment variable to not use a local
+    config.ini
+    """
+    context.orig_mtasset_config = os.environ.get('MTASSET_CONFIG')
+    os.environ['MTASSET_CONFIG'] = '/dev/null'
+    yield
+    if context.orig_mtasset_config:
+        os.environ['MTASSET_CONFIG'] = context.orig_mtasset_config
+    else:
+        del(os.environ['MTASSET_CONFIG'])
+
 
 # Why is this so stupid in behave?  fixture should automatically
 # register these so we don't have to.   I tried with fixture(name=)
@@ -151,6 +169,7 @@ FixtureRegistry = {
     "fixture.base_properties": base_properties,
     "fixture.base_project": base_project,
     "fixture.temp_directory": temp_directory,
+    "fixture.config_env": config_env,
 }
 
 

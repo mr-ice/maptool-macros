@@ -35,51 +35,68 @@ import lxml, lxml.etree as etree
 import logging as log
 from io import StringIO
 
-def GetAsset(whence, name=None, path=None):
+def GetAsset(*whence, name=None, path=None):
     """Asset Generator
 
     Load the thing we were given to find out what kind of asset
     it is, then return that asset.
     """
     zf = None
-    if not os.path.exists(whence):
-        if os.path.exists(whence + '.xml'):
-            whence = whence + '.xml'
+    if len(whence) == 0:
+        raise TypeError('GetAsset() missing required argument')
+    if len(whence) == 1:
+        whence = whence[0]
+        if not os.path.exists(whence):
+            if os.path.exists(whence + '.xml'):
+                whence = whence + '.xml'
+            else:
+                log.error(f"Cannot create an asset, {whence} not found.")
+
+        # find the xml file
+        # if we were given a zipfile, load the zipfile and content.xml 
+        # to find out what we are. If we were loaded from another type
+        # of file we find and load the xml.
+        if is_zipfile(whence):
+            zf = ZipFile(whence)
+            content_xml = zf.open('content.xml')
+        elif os.path.isdir(whence):
+            content_xml = open(os.path.join(whence,'content.xml'))
+        elif whence.endswith('.command'):
+            # if we were given a .command we switch whence to
+            # the corresponding .xml and open _that_
+            whence = os.path.splitext(whence)[0] + '.xml'
+            content_xml = open(whence)
         else:
-            log.error(f"Cannot create an asset, {whence} not found.")
+            content_xml = open(whence)
+            
+        xml = objectify.parse(content_xml)
 
-    # find the xml file
-    # if we were given a zipfile, load the zipfile and content.xml 
-    # to find out what we are. If we were loaded from another type
-    # of file we find and load the xml.
-    if is_zipfile(whence):
-        zf = ZipFile(whence)
-        content_xml = zf.open('content.xml')
-    elif os.path.isdir(whence):
-        content_xml = open(os.path.join(whence,'content.xml'))
-    elif whence.endswith('.command'):
-        # if we were given a .command we switch whence to
-        # the corresponding .xml and open _that_
-        whence = os.path.splitext(whence)[0] + '.xml'
-        content_xml = open(whence)
+        if xml.getroot().tag == tagset.macro.tag:
+            return MTMacroObj(whence, zf, content_xml.name, xml, name, path)
+        if xml.getroot().tag == tagset.macroset.tag:
+            return MTMacroSet(whence, zf, content_xml.name, xml, name, path)
+        if xml.getroot().tag == tagset.token.tag:
+            return MTToken(whence, zf, content_xml.name, xml, name, path)
+        if xml.getroot().tag == tagset.properties.tag:
+            return MTProperties(whence, zf, content_xml.name, xml, name, path)
+        if xml.getroot().tag == tagset.campaign.tag:
+            return MTCampaign(whence, zf, content_xml.name, xml, name, path)
+        if xml.getroot().tag == tagset.project.tag:
+            return MTProject(whence, zf, content_xml.name, xml, name, path)
     else:
-        content_xml = open(whence)
-        
-    xml = objectify.parse(content_xml)
+        """The only allowed asset from a list is a MacroSet
+        """
+        w = whence[0]
+        if not os.path.exists(w):
+            if os.path.exists(w + '.xml'):
+                w = w + '.xml'
 
-    if xml.getroot().tag == tagset.macro.tag:
-        return MTMacroObj(whence, zf, content_xml.name, xml, name, path)
-    if xml.getroot().tag == tagset.macroset.tag:
-        return MTMacroSet(whence, zf, content_xml.name, xml, name, path)
-    if xml.getroot().tag == tagset.token.tag:
-        return MTToken(whence, zf, content_xml.name, xml, name, path)
-    if xml.getroot().tag == tagset.properties.tag:
-        return MTProperties(whence, zf, content_xml.name, xml, name, path)
-    if xml.getroot().tag == tagset.campaign.tag:
-        return MTCampaign(whence, zf, content_xml.name, xml, name, path)
-    if xml.getroot().tag == tagset.project.tag:
-        return MTProject(whence, zf, content_xml.name, xml, name, path)
-
+        content_xml = open(w)
+        xml = objectify.parse(content_xml)
+        asset = MTMacroObj(w, zf, content_xml.name, xml, name, path)
+        for w in whence[1:]:
+            asset.append(GetAsset(w))
+        return asset
 
 class MTAsset:
     """
@@ -368,6 +385,9 @@ class MTToken(MTAsset):
         log.info('MTToken.assemble called')
         if not output_dir:
             output_dir = self.output_dir or '.'
+        if not os.path.exists(output_dir) and not dryrun:
+            log.debug(f'making directories {output_dir}')
+            os.makedirs(output_dir)
         save_file = os.path.join(output_dir,
                                  self.best_name_escaped(save_name))
         save_file += '.' + (ext or self.isasset_type.ext)
@@ -512,14 +532,13 @@ class MTMacroObj(MTAsset):
             output_dir = self.output_dir or '.'
         # print(f'{type(output_dir)=}')
         # print(f'{type(self.best_name(save_name))=}')
-        
+        if not os.path.exists(output_dir) and not dryrun:
+            log.debug(f'making directories {output_dir}')
+            os.makedirs(output_dir)
         save_file = os.path.join(output_dir,
                                  self.best_name_escaped(save_name))
         save_file += '.' + (ext or self.isasset_type.ext)
 
-        log.debug(f'.assemble: creating {output_dir} if needed')
-        if not dryrun and not os.path.isdir(output_dir):
-            os.makedirs(output_dir)
         log.debug(f'.save: opening {save_file} for output')
         if not dryrun:
             zf = ZipFile(save_file, mode='w', compression=ZIP_DEFLATED)
@@ -565,6 +584,9 @@ class MTProject(MTAsset):
         verbose (default False) - turn up debugging information
         """
         output_dir = output_dir or self.output_dir
+        if not os.path.exists(output_dir) and not dryrun:
+            log.debug(f'making directories {output_dir}')
+            os.makedirs(output_dir)
         for elem in self.root.iterchildren():
             if elem.tag == 'macroset':
                 asset = None
@@ -575,7 +597,7 @@ class MTProject(MTAsset):
                     else:
                         asset.append(GetAsset(macro.attrib['name']))
                 if asset is not None:
-                    asset.assemble(save_name = elem.attrib['name'])               
+                    asset.assemble(save_name = elem.attrib['name'], output_dir=output_dir)               
             elif elem.tag == 'text':
                 name = elem.attrib.get('name','README.txt')
                 with open(os.path.join(output_dir, name), 'w') as asset:
@@ -584,8 +606,8 @@ class MTProject(MTAsset):
                 asset_name = elem.attrib['name']
                 if elem.tag == 'project' and not elem.attrib['name'].endswith('.project'):
                     asset_name = elem.attrib['name'] + '.project'
-                asset = GetAsset(asset_name, path=output_dir)
-                asset.assemble()   
+                asset = GetAsset(asset_name)
+                asset.assemble(output_dir=output_dir)   
 
 # junk.project xml file
 # Dir/content.xml with net.rptools.maptool.model.CampaignProperties creates a .mtprops

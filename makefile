@@ -65,3 +65,10 @@ log:
 
 ptw:
 	ptw --  --exitfirst --failed-first --last-failed
+
+unzip:
+	for z in test/data/MinViable/*.zip; do unzip -o $$z; done
+	rm -rf qaa
+	mkdir qaa
+	./docker/assemble MVProject.project --output qaa
+	ls -altr
