@@ -1044,126 +1044,126 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.acrobatics + &quot; + max(floor (proficiency.acrobatics * Proficiency), abilityProficiency.&quot; + ability.acrobatics + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.acrobatics + &quot; + bonus.acrobatics + max(floor (proficiency.acrobatics * Proficiency), abilityProficiency.&quot; + ability.acrobatics + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Animal Handling</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.animalHandling + &quot; + max(floor (proficiency.animalHandling * Proficiency), abilityProficiency.&quot; + ability.animalHandling + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.animalHandling + &quot; + bonus.animalHandling + max(floor (proficiency.animalHandling * Proficiency), abilityProficiency.&quot; + ability.animalHandling + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Arcana</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.arcana + &quot; + max(floor (proficiency.arcana * Proficiency), abilityProficiency.&quot; + ability.arcana + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.arcana + &quot; + bonus.arcana + max(floor (proficiency.arcana * Proficiency), abilityProficiency.&quot; + ability.arcana + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Athletics</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.athletics + &quot; + max(floor (proficiency.athletics * Proficiency), abilityProficiency.&quot; + ability.athletics + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.athletics + &quot; + bonus.athletics + max(floor (proficiency.athletics * Proficiency), abilityProficiency.&quot; + ability.athletics + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Deception</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.deception + &quot; + max(floor (proficiency.deception * Proficiency), abilityProficiency.&quot; + ability.deception + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.deception + &quot; + bonus.deception + max(floor (proficiency.deception * Proficiency), abilityProficiency.&quot; + ability.deception + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>History</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.history + &quot; + max(floor (proficiency.history * Proficiency), abilityProficiency.&quot; + ability.history + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.history + &quot; + bonus.history + max(floor (proficiency.history * Proficiency), abilityProficiency.&quot; + ability.history + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Insight</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.insight + &quot; + max(floor (proficiency.insight * Proficiency), abilityProficiency.&quot; + ability.insight + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.insight + &quot; + bonus.insight + max(floor (proficiency.insight * Proficiency), abilityProficiency.&quot; + ability.insight + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Intimidation</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.intimidation + &quot; + max(floor (proficiency.intimidation * Proficiency), abilityProficiency.&quot; + ability.intimidation + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.intimidation + &quot; + bonus.intimidation + max(floor (proficiency.intimidation * Proficiency), abilityProficiency.&quot; + ability.intimidation + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Investigation</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.investigation + &quot; + max(floor (proficiency.investigation * Proficiency), abilityProficiency.&quot; + ability.investigation + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.investigation + &quot; + bonus.investigation + max(floor (proficiency.investigation * Proficiency), abilityProficiency.&quot; + ability.investigation + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Medicine</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.medicine + &quot; + max(floor (proficiency.medicine * Proficiency), abilityProficiency.&quot; + ability.medicine + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.medicine + &quot; + bonus.medicine + max(floor (proficiency.medicine * Proficiency), abilityProficiency.&quot; + ability.medicine + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Nature</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.nature + &quot; + max(floor (proficiency.nature * Proficiency), abilityProficiency.&quot; + ability.nature + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.nature + &quot; + bonus.nature + max(floor (proficiency.nature * Proficiency), abilityProficiency.&quot; + ability.nature + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Perception</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.perception + &quot; + max(floor (proficiency.perception * Proficiency), abilityProficiency.&quot; + ability.perception + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.perception + &quot; + bonus.perception + max(floor (proficiency.perception * Proficiency), abilityProficiency.&quot; + ability.perception + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Performance</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.performance + &quot; + max(floor (proficiency.performance * Proficiency), abilityProficiency.&quot; + ability.performance + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.performance + &quot; + bonus.performance + max(floor (proficiency.performance * Proficiency), abilityProficiency.&quot; + ability.performance + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Persuasion</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.persuasion + &quot; + max(floor (proficiency.persuasion * Proficiency), abilityProficiency.&quot; + ability.persuasion + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.persuasion + &quot; + bonus.persuasion + max(floor (proficiency.persuasion * Proficiency), abilityProficiency.&quot; + ability.persuasion + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Religion</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.religion + &quot; + max(floor (proficiency.religion * Proficiency), abilityProficiency.&quot; + ability.religion + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.religion + &quot; + bonus.religion + max(floor (proficiency.religion * Proficiency), abilityProficiency.&quot; + ability.religion + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Sleight of Hand</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.sleightOfHand + &quot; + max(floor (proficiency.sleightOfHand * Proficiency), abilityProficiency.&quot; + ability.sleightOfHand + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.sleightOfHand + &quot; + bonus.sleightOfHand + max(floor (proficiency.sleightOfHand * Proficiency), abilityProficiency.&quot; + ability.sleightOfHand + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Stealth</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.stealth + &quot; + max(floor (proficiency.stealth * Proficiency), abilityProficiency.&quot; + ability.stealth + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.stealth + &quot; + bonus.stealth + max(floor (proficiency.stealth * Proficiency), abilityProficiency.&quot; + ability.stealth + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Survival</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.survival + &quot; + max(floor (proficiency.survival * Proficiency), abilityProficiency.&quot; + ability.survival + &quot;)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.survival + &quot; + bonus.survival + max(floor (proficiency.survival * Proficiency), abilityProficiency.&quot; + ability.survival + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>---- Ability Calculation Properties ----</name>
@@ -2342,10 +2342,6 @@
       <net.rptools.maptool.model.SightType>
         <name>Lowlight</name>
         <multiplier>2.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>0.0</distance>
@@ -2436,10 +2432,6 @@
       <net.rptools.maptool.model.SightType>
         <name>Normal Vision - Short Range</name>
         <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>10.0</distance>
@@ -2478,10 +2470,6 @@
       <net.rptools.maptool.model.SightType>
         <name>Normal</name>
         <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>0.0</distance>
@@ -2494,10 +2482,6 @@
       <net.rptools.maptool.model.SightType>
         <name>Grid Vision</name>
         <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
         <shape>GRID</shape>
         <arc>90</arc>
         <distance>0.0</distance>
@@ -2536,10 +2520,6 @@
       <net.rptools.maptool.model.SightType>
         <name>Conic Vision</name>
         <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
         <shape>CONE</shape>
         <arc>120</arc>
         <distance>0.0</distance>
@@ -2578,10 +2558,6 @@
       <net.rptools.maptool.model.SightType>
         <name>Square Vision</name>
         <multiplier>1.0</multiplier>
-        <personalLightSource>
-          <lumens>0</lumens>
-          <scaleWithToken>false</scaleWithToken>
-        </personalLightSource>
         <shape>SQUARE</shape>
         <arc>90</arc>
         <distance>0.0</distance>
