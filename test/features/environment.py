@@ -58,7 +58,6 @@ def minviable_token(context):
     zf.extractall()
     yield context.mvtokensrc
     try:
-        rmtree(context.mvtokensrc)
         rmtree(context.mvtokendir)
     except Exception as e:
         pass
