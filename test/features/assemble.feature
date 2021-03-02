@@ -95,7 +95,6 @@ Feature: Assemble
          And that properties file should contain a content.xml
          And the Asset content.xml will be a "net.rptools.maptool.model.CampaignProperties"
 
-
     Scenario: I should be able to assemble a macro set from the commandline
        Given I have the assemble command
         When I call the assemble command with two or more macros as input and an output directory
@@ -104,3 +103,18 @@ Feature: Assemble
          And that macroset should contain a content.xml
          And the Asset content.xml will be a list
 
+@fixture.project_with_text_element
+    Scenario: Embed instructions for GMs in project files # Issue #176
+       Given A project with a text element
+         And I have the assemble command
+        When I call the assemble command with the project/text structure
+        Then I should get a text file
+         And the text file should contain my content
+
+@fixture.project_with_project
+    Scenario: make project files reference another project file enhancement # Issue #177
+       Given A project with a project element
+         And I have the assemble command
+        When I call the assemble command with the project/project structure
+        Then I should get a text file from the embedded project
+         And that text file should contain the embedded content

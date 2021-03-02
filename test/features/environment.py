@@ -10,7 +10,7 @@ from shutil import rmtree
 import logging as log
 import random
 import string
-from MTAssetLibrary import maptool_macro_tags as tagset
+from MTAssetLibrary import maptool_macro_tags as tagset, random_string
 
 @fixture
 def base_rptok(context):
@@ -173,6 +173,42 @@ def config_env(context):
     else:
         del(os.environ['MTASSET_CONFIG'])
 
+@fixture
+def project_with_text_element(context):
+    """Create a project with a text element"""
+    context.projecttextfile = random_string() + '.project'
+    context.textfile = random_string() + '.txt'
+    context.random_text = random_string()
+    with open(context.projecttextfile, 'w') as fh:
+        fh.write(f'''<project><text name="{context.textfile}">
+        {context.random_text}
+        </text></project>''')
+    yield context.projecttextfile
+    os.remove(context.projecttextfile)
+    os.remove(context.textfile)
+
+@fixture
+def project_with_project(context):
+    """Create a project with an embedded project"""
+    context.projectprojectfile = random_string() + '.project'
+    context.projectfile = random_string() + '.project'
+    context.textfile = random_string() + '.txt'
+    context.project_random_text = random_string()
+    with open(context.projectfile, 'w') as fh:
+        fh.write(f'''<project>
+        <text name="{context.textfile}">
+        {context.project_random_text}
+        </text>
+        </project>''')
+    with open(context.projectprojectfile, 'w') as fh:
+        fh.write(f'''<project>
+        <project name="{context.projectfile}"/>
+        </project>''')
+    yield context.projectprojectfile
+    os.remove(context.projectprojectfile)
+    os.remove(context.projectfile)
+    os.remove(context.textfile)
+
 
 # Why is this so stupid in behave?  fixture should automatically
 # register these so we don't have to.   I tried with fixture(name=)
@@ -186,6 +222,8 @@ FixtureRegistry = {
     "fixture.base_project": base_project,
     "fixture.temp_directory": temp_directory,
     "fixture.config_env": config_env,
+    "fixture.project_with_text_element": project_with_text_element,
+    "fixture.project_with_project": project_with_project,
 }
 
 

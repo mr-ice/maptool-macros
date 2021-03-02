@@ -21,6 +21,7 @@ import sys
 import zipfile
 sys.path.append('docker')
 from .utils import *
+from .utils import maptool_macro_tags as tagset
 # from MTAssetLibrary import properties_xml, print_info, XML2File
 # from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
 # from MTAssetLibrary import maptool_macro_tags as tagset

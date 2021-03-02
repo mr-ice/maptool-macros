@@ -2,5 +2,5 @@
 This is the MTAssetLibrary
 """
 
-from .AssetClasses import GetAsset
+from .AssetClasses import *
 from .utils import *

@@ -1,3 +1,4 @@
+from docker.MTAssetLibrary.utils import random_string
 import sys
 sys.path.insert(0, 'docker')
 
@@ -299,3 +300,41 @@ def step_impl(context):
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then the token\'s macros will have an html comment of "https://github.com/mr-ice/maptool-macros/ [hash]" replacing a previous comment in that format')
 
+@given(u'A project with a text element')
+def step_impl(context):
+    assert os.path.exists(context.projecttextfile)
+
+@when(u'I call the assemble command with the project/text structure')  # noqa: F811
+def step_impl(context):
+    p = Popen(['./docker/assemble', context.projecttextfile],
+        stderr=PIPE, stdout=PIPE, close_fds=True)
+    context.stdout, context.stderr = p.communicate()
+    assert b'Error' not in context.stderr, context.stderr
+
+@then(u'I should get a text file')  # noqa: F811
+def step_impl(context):
+    assert os.path.exists(context.textfile)
+
+@then(u'the text file should contain my content')  # noqa: F811
+def step_impl(context):
+    assert context.random_text in open(context.textfile).read()
+
+@given(u'A project with a project element')
+def step_impl(context):
+    assert os.path.exists(context.projectprojectfile)
+    assert os.path.exists(context.projectfile)
+
+@when(u'I call the assemble command with the project/project structure')
+def step_impl(context):
+    p = Popen(['./docker/assemble', context.projectprojectfile],
+        stderr=PIPE, stdout=PIPE, close_fds=True)
+    context.stdout, context.stderr = p.communicate()
+    assert b'Error' not in context.stderr, context.stderr
+
+@then(u'I should get a text file from the embedded project')
+def step_impl(context):
+    assert os.path.exists(context.textfile), f'{context.textfile} does not exist'
+
+@then(u'that text file should contain the embedded content')
+def step_impl(context):
+    assert context.project_random_text in open(context.textfile).read()
