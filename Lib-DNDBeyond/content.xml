@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>dNiAHJbjSkeNpuFP9FLorg==</baGUID>
+    <baGUID>QrPPUxOBQ/aJqUKAM5oStQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>R5PB/jZ2RgOvICA9tdGDyg==</baGUID>
+    <baGUID>LOK81PqlT5CHmf6tVkS/0g==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,9 +14,9 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1050</x>
-  <y>450</y>
-  <z>4</z>
+  <x>800</x>
+  <y>400</y>
+  <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -1014,8 +1014,32 @@
       <macro name="dndb_BasicToon_validateVersion"/>
     </entry>
     <entry>
+      <int>132</int>
+      <macro name="Managed+Patched+Objects"/>
+    </entry>
+    <entry>
+      <int>133</int>
+      <macro name="dndb_Util_getRegistry"/>
+    </entry>
+    <entry>
+      <int>134</int>
+      <macro name="dndb_Util_setRegistry"/>
+    </entry>
+    <entry>
+      <int>135</int>
+      <macro name="Data_Macro_Patched_Objects_Registry"/>
+    </entry>
+    <entry>
+      <int>136</int>
+      <macro name="dndb_Util_printRegistry"/>
+    </entry>
+    <entry>
       <int>10</int>
       <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>141</int>
+      <macro name="dndb_Util_patchObjects"/>
     </entry>
     <entry>
       <int>15</int>
@@ -1044,10 +1068,6 @@
     <entry>
       <int>22</int>
       <macro name="dndb_getUnarmedStrike"/>
-    </entry>
-    <entry>
-      <int>23</int>
-      <macro name="dndb_convertWeapons"/>
     </entry>
     <entry>
       <int>24</int>
@@ -1318,7 +1338,7 @@
       <macro name="dndb_CastSpell_getSpellSlotHtml"/>
     </entry>
     <entry>
-      <int>126</int>
+      <int>140</int>
       <macro name="dndb_CastSpell_getModHtml"/>
     </entry>
   </macroPropertiesMap>

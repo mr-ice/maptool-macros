@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>78db72f4-f8cc-44d9-aa73-8ff09605a2a2</macroUUID>
+  <macroUUID>a1357b27-122e-43fd-a4b9-42ec855bca0d</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>23</index>
+  <index>134</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_convertWeapons</label>
+  <label>dndb_Util_setRegistry</label>
   <group>Utility</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,7 +15,8 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>This is a function that requires the DND Beyond Character full JSON. It's not intended to run stand-alone. Returns a simplifed json object of the weapons. Optional boolean flag may be passed to direct if all or only equipped weapons are provided. Default behavior returns only equipped weapons.</toolTip>
+  <toolTip>arg (0) = Name of the registry
+arg (1) = Registry data</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
