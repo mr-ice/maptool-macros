@@ -1,6 +1,6 @@
 # Action to run on push to master branch to rebuild packages
 
-name: Test
+name: Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -44,7 +44,7 @@ jobs:
 
     - name: Build our DNDBeyond Artifacts
       run: |
-        echo '[assemble]\ndirectory = output' > config.ini
+        echo -e '[assemble]\ndirectory = output' > config.ini
         PATH=docker:$PATH ./docker/assemble DNDBeyond.project
 
     - name: Show our artifacts, eventually push these to releases
