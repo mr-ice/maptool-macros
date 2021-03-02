@@ -17,6 +17,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 fixed_version = '1.8.3'
 
+
 class Tag:
     """
     This is a mapping of a
@@ -29,12 +30,13 @@ class Tag:
         self.ext = ext
         self.tag = tag
 
+
 class TagSet:
     """This is a collection of Tag objects for ease of lookup"""
     def __init__(self):
         self.macro = Tag('macro', 'mtmacro', 'net.rptools.maptool.model.MacroButtonProperties')
         self.macroset = Tag('macroset', 'mtmacset', 'list')
-        self.text = Tag('text','txt','text')
+        self.text = Tag('text', 'txt', 'text')
         self.project = Tag('project', 'project', 'project')
         self.token = Tag('token', 'rptok', 'net.rptools.maptool.model.Token')
         self.properties = Tag('property', 'mtprops', 'net.rptools.maptool.model.CampaignProperties')
@@ -56,6 +58,7 @@ class TagSet:
         """expose the dict get method"""
         return self.__dict__.get(name, default)
 
+
 maptool_macro_tags = TagSet()
 
 # define a properties.xml body for the final .mtmacro assembly
@@ -66,11 +69,13 @@ properties_xml = """<map>
   </entry>
 </map>""".format(fixed_version)
 
+
 def GitCmd(cmd):
     cmd = bytes(cmd).split()
     res = run(cmd, stdout=PIPE, stderr=PIPE)
     if res.stdout and b'fatal' not in res.stderr:
         return res.stdout.strip().decode()
+
 
 def GitShow():
     """Returns all the things we know about git"""
@@ -81,10 +86,12 @@ def GitShow():
         'dirty': GitDirty()
     }
 
+
 def GitTag():
     """Returns git describe --tags --dirty """
     cmd = b'git describe --tags --dirty --broken --abbrev=8'
     return GitCmd(cmd)
+
 
 def GitDirty():
     """Returns '-dirty' or None"""
@@ -93,25 +100,31 @@ def GitDirty():
         return '-dirty'
     return ''
 
+
 def GitBranch():
     """Returns current git branch"""
     cmd = b'git rev-parse --abbrev-ref HEAD'
     return GitCmd(cmd) or 'unknown'
+
 
 def GitSha():
     """Returns sha of current commit"""
     cmd = b'git log -1 --format=%h --abbrev=8'
     return GitCmd(cmd) or 'unknown'
 
+
 git_tag_str = GitSha() + GitDirty()
+
 
 def DataElement(content):
     return objectify.DataElement(content, nsmap='', _pytype='')
+
 
 def NewElement(content):
     new = objectify.Element(content, nsmap='', _pytype='')
     objectify.deannotate(new, cleanup_namespaces=True)
     return new
+
 
 def MacroNameQuote(name):
     """Quote characters in file names that aren't safe for filesystems, there
@@ -127,6 +140,7 @@ def XML2File(to_dir, to_file, xml):
         f.write(content)
         log.info('wrote {} bytes to modified {}'.
                  format(len(content), to_file))
+
 
 def add_directory_to_zipfile(zf, directory_name):
     # the asset zip doesn't have directories, so we'll
@@ -145,14 +159,15 @@ def add_directory_to_zipfile(zf, directory_name):
             f = os.path.join(root, f)
             zf.write(f)
             log.debug('wrote {} ({} bytes) to {}'.format(
-                    f, os.path.getsize(f), zf.filename))
+                      f, os.path.getsize(f), zf.filename))
     os.chdir(savedir)
+
 
 def random_string(length=6):
     what = ''
     chars = string.ascii_letters + string.digits
 
-    for i in range(0,length):
+    for i in range(0, length):
         what += random.choice(chars)
 
     return what
@@ -166,6 +181,7 @@ def make_directory_path(path):
         log.info("creating directory %s" % path)
         os.makedirs(path, mode=0o755)
 
+
 def write_macro_files(macro, tofilebase):
     command_file = tofilebase + '.command'
     xml_file = tofilebase + '.xml'
@@ -175,14 +191,15 @@ def write_macro_files(macro, tofilebase):
             text = macro.command.text
         f.write(text)
         log.info('wrote {} bytes to {}'.format(
-            len(text),command_file))
+            len(text), command_file))
     # Now that the command is saved to file, we'll remove it
     # from the macro.xml before saving it.  To restore we just read it
     # off disk and add it back (order doesn't matter).
     macro.remove(macro.command)
     with open(xml_file, 'w') as f:
         f.write(tostring(macro, pretty_print=True).decode())
-        log.info('wrote {} bytes to {}'.format(len(tostring(macro)),xml_file))
+        log.info('wrote {} bytes to {}'.format(len(tostring(macro)), xml_file))
+
 
 class MTMacro():
     def __init__(self, target, ext):

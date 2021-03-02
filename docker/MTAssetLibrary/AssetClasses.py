@@ -9,7 +9,7 @@ files, or an xml file with the outer tag matching one of our asset
 types.
 
 This class will provide a mechanism to extract macros from some
-objects to individual files.  A file for the xml wrapper and a 
+objects to individual files.  A file for the xml wrapper and a
 file for the macro text itself.
 
 Macro and MacroSet objects extract to a generic macro/ directory,
@@ -18,9 +18,8 @@ extract to the Campaign directory.
 """
 
 import sys
-import zipfile
 sys.path.append('docker')
-from .utils import *
+from .utils import *  # noqa: F403
 from .utils import maptool_macro_tags as tagset
 # from MTAssetLibrary import properties_xml, print_info, XML2File
 # from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
@@ -33,9 +32,11 @@ import os
 from io import BytesIO
 from zipfile import ZipFile, is_zipfile, ZIP_DEFLATED
 from lxml import objectify
-import lxml, lxml.etree as etree
+import lxml
+import lxml.etree as etree
 import logging as log
 from io import StringIO
+
 
 def GetAsset(*whence, name=None, path=None):
     """Asset Generator
@@ -55,14 +56,14 @@ def GetAsset(*whence, name=None, path=None):
                 log.error(f"Cannot create an asset, {whence} not found.")
 
         # find the xml file
-        # if we were given a zipfile, load the zipfile and content.xml 
+        # if we were given a zipfile, load the zipfile and content.xml
         # to find out what we are. If we were loaded from another type
         # of file we find and load the xml.
         if is_zipfile(whence):
             zf = ZipFile(whence)
             content_xml = zf.open('content.xml')
         elif os.path.isdir(whence):
-            content_xml = open(os.path.join(whence,'content.xml'))
+            content_xml = open(os.path.join(whence, 'content.xml'))
         elif whence.endswith('.command'):
             # if we were given a .command we switch whence to
             # the corresponding .xml and open _that_
@@ -100,17 +101,18 @@ def GetAsset(*whence, name=None, path=None):
             asset.append(GetAsset(w))
         return asset
 
+
 class MTAsset:
     """
     A MapTool Asset class
     """
     def __init__(self, whence, zf=None, xmlfile=None, xml=None, name=None, path=None):
-        self.whence = whence # file or directory this object loads
-        self.zipfile = zf # zipfile object if whence is a zipfile
-        self.xmlfile = xmlfile # path to xml file opened in GetAsset
-        self.xml = xml # xml object
-        self.given_name = name # output file prefix for saves
-        self.output_dir = path or '.' # output directory prefix for saves
+        self.whence = whence  # file or directory this object loads
+        self.zipfile = zf  # zipfile object if whence is a zipfile
+        self.xmlfile = xmlfile  # path to xml file opened in GetAsset
+        self.xml = xml  # xml object
+        self.given_name = name  # output file prefix for saves
+        self.output_dir = path or '.'  # output directory prefix for saves
 
     @property
     def fromdir(self):
@@ -131,21 +133,21 @@ class MTAsset:
         return None
 
     @property
-    def tag(self): # return tag from xml
+    def tag(self):  # return tag from xml
         """
         Return the current object's outer tag (xml name of the object)
         """
         return self.root.tag
 
     @property
-    def is_token(self): # tag matches token tag
+    def is_token(self):  # tag matches token tag
         """
         Return True if the tag matches a token tag
         """
         return self.tag == tagset.token.tag
 
     @property
-    def is_properties(self): # tag matches properties tag
+    def is_properties(self):  # tag matches properties tag
         """
         Return True if the tag matches a properties tag
         """
@@ -153,60 +155,66 @@ class MTAsset:
             or self.tag == 'campaignProperties'
 
     @property
-    def is_macroset(self): # tag matches macro set tag
+    def is_macroset(self):  # tag matches macro set tag
         """
         Return True if the tag matches a macro set tag
         """
         return self.tag == tagset.macroset.tag
 
     @property
-    def is_project(self): # tag matches project tag
+    def is_project(self):  # tag matches project tag
         """
         Return True if the tag matches a project tag
         """
         return self.tag == tagset.project.tag
 
     @property
-    def is_macro(self): # tag matches macro tag
+    def is_macro(self):  # tag matches macro tag
         """
         Return True if the tag matches a macro tag
         """
         return self.tag == tagset.macro.tag
 
     @property
-    def is_campaign(self): # tag matches campaign tag
+    def is_campaign(self):  # tag matches campaign tag
         """
         Return True if the tag matches a campaign tag
         """
         return self.tag == tagset.campaign.tag
 
     @property
-    def isasset_type(self): # return tag object with ext, name, tag
+    def isasset_type(self):  # return tag object with ext, name, tag
         """
         Returns the Tag Type of the current object, the Tag
         contains a .ext, .name, and .tag attribute.
         """
-        if self.is_token: return tagset.token
-        if self.is_macroset: return tagset.macroset
-        if self.is_properties: return tagset.properties
-        if self.is_project: return tagset.project
-        if self.is_macro: return tagset.macro
-        if self.is_campaign: return tagset.campaign
+        if self.is_token:
+            return tagset.token
+        if self.is_macroset:
+            return tagset.macroset
+        if self.is_properties:
+            return tagset.properties
+        if self.is_project:
+            return tagset.project
+        if self.is_macro:
+            return tagset.macro
+        if self.is_campaign:
+            return tagset.campaign
         return None
 
     @property
-    def root(self): # root element from xml
+    def root(self):  # root element from xml
         """
         Return the root element in the xml for this object
         """
         return self.xml.getroot()
 
     @property
-    def _from_dir(self): # return true if whence is a directory
+    def _from_dir(self):  # return true if whence is a directory
         return os.path.isdir(self.whence)
 
     @property
-    def dirname(self): # return directory of the xmlfile (naively)
+    def dirname(self):  # return directory of the xmlfile (naively)
         return os.path.dirname(self.xmlfile)
 
     @property
@@ -226,9 +234,9 @@ class MTAsset:
         elif os.path.isdir(self.whence):
             return os.path.basename(self.whence)
         elif self.whence.endswith(tagset.properties.ext) or \
-            self.whence.endswith(tagset.macroset.ext) or \
-            self.whence.endswith(tagset.campaign.ext) or \
-            self.whence.endswith(tagset.project.ext):
+                self.whence.endswith(tagset.macroset.ext) or \
+                self.whence.endswith(tagset.campaign.ext) or \
+                self.whence.endswith(tagset.project.ext):
             return os.path.basename(os.path.splitext(self.whence)[0])
         else:
             return 'Generic' + self.isasset_type.name.capitalize()
