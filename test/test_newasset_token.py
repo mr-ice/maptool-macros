@@ -5,9 +5,8 @@ import os
 import logging as log
 import pytest
 import zipfile
-from newasset import GetAsset
 from lxml.etree import XMLSyntaxError, tostring
-from MTAssetLibrary import maptool_macro_tags as tagset
+from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
 
 class Test_MTAsset_Token:
     @pytest.fixture(autouse=True)

@@ -4,9 +4,9 @@ import shutil
 import pytest
 
 sys.path.insert(0, 'docker')
-from newasset import GetAsset
+from MTAssetLibrary import GetAsset
 # class TestExtract():
-#     @pytest.fixture(autouse=True)    
+#     @pytest.fixture(autouse=True)
 #     def setup_method(self, tmpdir):
 #         self.origdir = os.getcwd()
 #         os.chdir(tmpdir)

@@ -11,10 +11,9 @@ import os
 import logging as log
 import pytest
 import zipfile
-from newasset import GetAsset, MTMacroSet
 from lxml.etree import XMLSyntaxError
 from MTAssetLibrary import maptool_macro_tags as tagset
-from MTAssetLibrary import random_string
+from MTAssetLibrary import random_string, GetAsset, MTMacroSet
 
 class Test_MTAsset_Macro:
     """
