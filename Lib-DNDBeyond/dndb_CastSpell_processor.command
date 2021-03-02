@@ -52,6 +52,6 @@
 [h: output = ""]
 [h, if (!json.isEmpty (results)), code: {
 	[dnd5e_SavedAttacks_push (results)]
-	[output = dnd5e_RollExpression_getFormattedOutput (results, 1)]
+	[output = dnd5e_RollExpression_getFormattedOutput (results)]
 }; {}]
 [r: output]
