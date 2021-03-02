@@ -54,7 +54,9 @@ jobs:
         python3 -mbehave
 
     - name: Build our DNDBeyond Artifacts
-      run: PATH=docker:$PATH ./docker/assemble DNDBeyond.project
+      run: |
+        echo '[assemble]\ndirectory = output' > config.ini
+        PATH=docker:$PATH ./docker/assemble DNDBeyond.project
 
     - name: Show our artifacts, eventually push these to releases
       run: |
