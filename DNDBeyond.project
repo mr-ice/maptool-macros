@@ -5,6 +5,7 @@
   <token name="Lib-DNDB-TestLibrary"/>
   <token name="Lib-CampaignPreferences"/>
   <token name="Lib-DarkerDungeon"/>
+  <token name="Lib-JSON-Editor"/>
   <macroset name="DNDBeyond">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>

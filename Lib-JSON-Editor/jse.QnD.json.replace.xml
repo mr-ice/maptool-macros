@@ -1,12 +1,12 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>78db72f4-f8cc-44d9-aa73-8ff09605a2a2</macroUUID>
+  <macroUUID>2ef2ccf5-a95a-4dbf-858e-59e124622352</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>23</index>
+  <index>9</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dndb_convertWeapons</label>
-  <group>Utility</group>
-  <sortby/>
+  <label>jse.QnD.json.replace</label>
+  <group>Editor</group>
+  <sortby>2</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
@@ -14,8 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>This is a function that requires the DND Beyond Character full JSON. It's not intended to run stand-alone. Returns a simplifed json object of the weapons. Optional boolean flag may be passed to direct if all or only equipped weapons are provided. Default behavior returns only equipped weapons.</toolTip>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

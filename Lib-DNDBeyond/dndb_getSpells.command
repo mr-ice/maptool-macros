@@ -6,12 +6,12 @@
 [h: allSpells = "{}"]
 [h: abilities = dndb_getAbilities (toon)]
 [h: classSpellsArry = json.path.read (toon, "data.classSpells")]
-
+[h: log.debug (getMacroName() + ": classSpellsArry = " + classSpellsArry)]
 <!-- Some dumb classes, like Monk, add spells dumbly, like Monk, and are dumb, like Monk -->
 <!-- Create a bonus classObj spells array thats included in each iteration of spellcasting classes because 
 	dumb monks are dumb -->
 [h: bonusClassSpells = json.path.read (toon, "data.spells.class")]
-
+[h: log.debug (getMacroName() + ": bonusClassSpells = " + bonusClassSpells)]
 [h: filteredBonusSpells = "[]"]
 [h, if (!json.isEmpty(bonusClassSpells)), code: {
 	<!-- look for the definition object. If he aint got one, fuck off -->
@@ -20,9 +20,10 @@
 	}]
 }; {}]
 [h: bonusClassSpells = filteredBonusSpells]
-
+[h: log.debug (getMacroName() + ": bonusClassSpells (filtered) = " + bonusClassSpells)]
 <!-- Racial spells -->
 [h: racialSpells = json.path.read (toon, "data.spells.race")]
+[h: log.debug (getMacroName() + ": racialSpells = " + racialSpells)]
 [h: filteredBonusSpells = "[]"]
 [h, if (!json.isEmpty(racialSpells)), code: {
 	<!-- look for the definition object. If he aint got one, fuck off -->
@@ -30,10 +31,10 @@
 		[if (json.contains (bonusSpell, "definition")): filteredBonusSpells = json.append (filteredBonusSpells, bonusSpell)]
 	}]
 }; {}]
-[h: bonusClassSpells = filteredBonusSpells]
+[h: bonusClassSpells = json.merge (filteredBonusSpells, bonusClassSpells)]
 
 [h: featSpells = json.path.read (toon, "data.spells.feat")]
-
+[h: log.debug (getMacroName() + ": featSpells = " + featSpells)]
 [h, if (json.length (featSpells) > 0): bonusClassSpells = json.merge (bonusClassSpells, featSpells); ""]
 <!-- to the bonusClassSpells, append any always prepared spells -->
 [h: alwaysPreparedSpells = json.path.read (toon, "data.lib_dndb-AlwaysPreparedSpells")]
@@ -134,5 +135,6 @@
 		[h: allSpells = json.set (allSpells, encode (json.get (basicSpell, "name")), basicSpell)]
 	}]
 }]
+[h: allSpells = dndb_Util_patchObjects (allSpells, "spell")]
 [h: macro.return = allSpells]
 

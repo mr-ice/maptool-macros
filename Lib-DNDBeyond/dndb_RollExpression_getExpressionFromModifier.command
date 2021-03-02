@@ -9,7 +9,7 @@
 [h: type = json.get (grantedModifier, "type")]
 [h, switch (type), code: 
 	case "damage": {
-		[rollExpression = dnd5e_RollExpression_setExpressionType (rollExpression, "Damage")]
+		[rollExpression = json.merge (dnd5e_RollExpression_Damage(), rollExpression)]
 		[rollExpression = dnd5e_RollExpression_addDamageType (rollExpression, json.get (grantedModifier, "subType"))]
 	};
 	default: {
