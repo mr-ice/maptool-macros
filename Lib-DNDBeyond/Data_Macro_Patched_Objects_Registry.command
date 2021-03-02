@@ -1,1 +1,1 @@
-%7B%22spell%22%3A%5B%7B%22field%22%3A%22name%22%2C%22value%22%3A%22Illusory+Dragon%22%2C%22patch%22%3A%7B%22saveDCAbilityId%22%3A4%7D%7D%5D%2C%22weapon%22%3A%5B%5D%2C%22attack%22%3A%7B%7D%7D
+[h: macro.return = '%7B%22spell%22%3A%5B%7B%22field%22%3A%22name%22%2C%22value%22%3A%22Illusory+Dragon%22%2C%22patch%22%3A%7B%22saveDCAbilityId%22%3A4%7D%7D%5D%2C%22weapon%22%3A%5B%5D%2C%22attack%22%3A%7B%7D%7D']
