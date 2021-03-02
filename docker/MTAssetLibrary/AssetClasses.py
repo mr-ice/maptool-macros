@@ -20,12 +20,13 @@ extract to the Campaign directory.
 import sys
 import zipfile
 sys.path.append('docker')
-from MTAssetLibrary import properties_xml, print_info, XML2File
-from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
-from MTAssetLibrary import maptool_macro_tags as tagset
-from MTAssetLibrary import add_directory_to_zipfile, GitTag
-from MTAssetLibrary import write_macro_files, make_directory_path
-from MTAssetLibrary import GitSha, GitDirty
+from .utils import *
+# from MTAssetLibrary import properties_xml, print_info, XML2File
+# from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
+# from MTAssetLibrary import maptool_macro_tags as tagset
+# from MTAssetLibrary import add_directory_to_zipfile, GitTag
+# from MTAssetLibrary import write_macro_files, make_directory_path
+# from MTAssetLibrary import GitSha, GitDirty
 
 import os
 from io import BytesIO
