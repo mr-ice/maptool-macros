@@ -1,6 +1,6 @@
 # Action to run on push to master branch to rebuild packages
 
-name: CD
+name: Test
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -35,7 +35,7 @@ jobs:
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
-        pip install flake8 pytest pytest-sugar
+        pip install flake8 pytest pytest-sugar behave
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Lint with flake8
@@ -49,11 +49,13 @@ jobs:
       run: |
         python3 -mpytest
 
-    - name: Build our DNDBeyond Artifacts
-      run: PATH=docker:$PATH ./docker/project-assemble DNDBeyond.project
-
-    - name: Show our artifacts, eventually push these to packages
+    - name: Test with behave
       run: |
-        ls -l *.mtmacset
-        ls -l *.rptok
-        ls -l *.mtprops
+        python3 -mbehave
+
+    - name: Build our DNDBeyond Artifacts
+      run: PATH=docker:$PATH ./docker/assemble DNDBeyond.project
+
+    - name: Show our artifacts, eventually push these to releases
+      run: |
+        ls -l output/
