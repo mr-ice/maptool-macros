@@ -424,7 +424,7 @@ class MTToken(MTAsset):
 
                     self.root.macroPropertiesMap.entry[i] = new_entry
         if not dryrun:
-            self.root.gmName = objectify.fromstring('<gmName>' + git_tag_str + '</gmName>')
+            #self.root.gmName = objectify.fromstring('<gmName>' + git_tag_str + '</gmName>')
             try:
                 zf.writestr('content.xml',
                             etree.tostring(self.xml, pretty_print=True))
@@ -513,8 +513,9 @@ class MTMacroObj(MTAsset):
         if not self._loaded_from == 'assetTypeFile':
             log.info('loading %s for the macro xml file' % self.whence)
             log.info('loading %s for the macro command file' % self.command_file)
-            tag = '<!-- https://github.com/mr-ice/maptool-macros/ ' + git_tag_str + ' -->\n'
-            command = tag + open(self.command_file).read()
+            # tag = '<!-- https://github.com/mr-ice/maptool-macros/ ' + git_tag_str + ' -->\n'
+            # command = tag + open(self.command_file).read()
+            command = open(self.command_file).read()
             # reassemble the command into the xml
             self.xml.getroot().command = DataElement(command)
 

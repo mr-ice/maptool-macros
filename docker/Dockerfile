@@ -8,7 +8,6 @@ COPY assemble /usr/local/bin
 COPY extract /usr/local/bin
 COPY zipfile_infolist.py /usr/local/bin
 COPY MTAssetLibrary/* /usr/local/bin/MTAssetLibrary/
-COPY asset.py /usr/local/bin
 
 RUN dos2unix /usr/local/bin/assemble \
   && dos2unix /usr/local/bin/extract
