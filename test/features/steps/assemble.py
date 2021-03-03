@@ -296,7 +296,7 @@ def step_impl(context):  # noqa: F811  # noqa: F811
 
 @then(u'I should get a token file in the output directory')
 def step_impl(context):  # noqa: F811  # noqa: F811
-    tokenfile = os.path.join(context.temp_directory, 'MVToken+1.' + tagset.token.ext)
+    tokenfile = os.path.join(context.temp_directory, 'MVToken.' + tagset.token.ext)
     assert os.path.exists(tokenfile), f'{tokenfile} not found in {context.temp_directory} {os.listdir()=} {os.listdir(context.temp_directory)=}'
 
 

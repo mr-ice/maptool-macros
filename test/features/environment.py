@@ -18,12 +18,11 @@ def base_rptok(context):
     """This defines a few variables to use in our BDD tests"""
     context.tokenpath = 'BaseToken30957877'
     context.tokenname = 'Base Token 30957877'
-    context.tokenfilename = 'Base+Token+30957877.rptok'
+    context.tokenfilename = context.tokenpath + '.rptok'
     context.tokensrc = 'test/data/DNDB-Test/BaseToken30957877.zip'
     yield context.tokenpath
     try:
         # if we 'assembled' a token, remove it
-        os.remove(context.tokenpath + '.rptok')
         os.remove(context.tokenfilename)
     except Exception as e:
         # avoid flake warning for not using e
