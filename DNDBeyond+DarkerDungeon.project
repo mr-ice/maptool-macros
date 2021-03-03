@@ -4,6 +4,7 @@
   <token name="Lib-DND5e"/>
   <token name="Lib-DNDB-TestLibrary"/>
   <token name="Lib-CampaignPreferences"/>
+  <token name="Lib-DarkerDungeon"/>
   <token name="Lib-JSON-Editor"/>
   <macroset name="DNDBeyond">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
@@ -29,5 +30,12 @@
   <macroset name="GM-Panel">
     <macro name="macro/Set+Landing+Map"/>
     <macro name="macro/Configure+GM+Preferences"/>
+  </macroset>
+  <macroset name="Darker-Dungeon">
+    <macro name="DDmacro/Lesser"/>
+    <macro name="DDmacro/Greater"/>
+    <macro name="DDmacro/Superior"/>
+    <macro name="DDmacro/Supreme"/>
+    <macro name="DDmacro/Manage+Usables"/>
   </macroset>
 </project>
