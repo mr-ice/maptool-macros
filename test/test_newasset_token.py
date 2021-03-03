@@ -49,8 +49,8 @@ class Test_MTAsset_Token:
         assert m.is_macroset is False
         assert m.is_token is True
         m.assemble()
-        assert os.path.exists('Test-MTToken.rptok')
-        os.remove('Test-MTToken.rptok')
+        assert os.path.exists('MTToken.rptok')
+        os.remove('MTToken.rptok')
 
         m = GetAsset(fn)
         assert m.is_properties is False
@@ -59,7 +59,7 @@ class Test_MTAsset_Token:
         assert m.is_macroset is False
         assert m.is_token is True
         m.assemble()
-        assert os.path.exists('Test-MTToken.rptok')
+        assert os.path.exists('MTToken.rptok')
 
     def test_asset_token(self, tmpdir):
         m = GetAsset('MVToken/content.xml')
@@ -80,20 +80,20 @@ class Test_MTAsset_Token:
         # assert False, f'{m.whence=}'
         # assert False, f'{m.dirname=}'
         m.assemble()
-        assert os.path.exists('MVToken+1.rptok')
+        assert os.path.exists('MVToken.rptok')
 
     def test_asset_token_best_name(self, tmpdir):
         m = GetAsset('MVToken')
         assert m is not None
-        assert m.best_name() == 'MVToken 1'
-        assert m.best_name_escaped() == 'MVToken+1'
+        assert m.best_name() == 'MVToken'
+        assert m.best_name_escaped() == 'MVToken'
 
     def test_asset_token_save_to(self, tmpdir):
         target = 'NewMVToken'
         targetAsset = GetAsset('MVToken')
         targetAsset.assemble()
-        assert os.path.exists('MVToken+1.rptok')
-        m = GetAsset('MVToken+1.rptok')
+        assert os.path.exists('MVToken.rptok')
+        m = GetAsset('MVToken.rptok')
         assert m is not None
         # m.extract(save_name=target)
         assert m.output_dir == '.'
@@ -101,12 +101,11 @@ class Test_MTAsset_Token:
 
     def test_asset_token_extract(self, tmpdir):
         tdir = 'MVToken'
-        tname = 'MVToken+1'
-        tfilename = tname + '.rptok'
+        tfilename = tdir + '.rptok'
         # we don't come with a pre-assembled token, so assemble one
         targetAsset = GetAsset(tdir)
         targetAsset.assemble()
-        assert os.path.exists(tfilename)
+        assert os.path.exists(tfilename), f'{tfilename} does not exist'
         # The original is in 'MVToken', but the name is
         # 'MVToken+1' so we should have a copy there once extracted
         m = GetAsset(tfilename)
@@ -117,16 +116,15 @@ class Test_MTAsset_Token:
         assert m.xmlfile is not None  # should this be None?
         assert m.zipfile is not None
         for asset in 'properties.xml', 'content.xml', 'thumbnail', 'thumbnail_large', '1d20.command', '1d20.xml':
-            assert os.path.exists(os.path.join(tname, asset))
+            assert os.path.exists(os.path.join(tdir, asset))
 
     def test_asset_token_extract_with_name(self, tmpdir):
         tdir = 'MVToken'
-        tname = 'MVToken+1'
-        tfilename = tname + '.rptok'
+        tfilename = tdir + '.rptok'
         target = 'NewMVToken'
         targetAsset = GetAsset(tdir)
         targetAsset.assemble()
-        assert os.path.exists(tfilename)
+        assert os.path.exists(tfilename), f'{tfilename} does not exist'
         m = GetAsset(tfilename)
         # assert False, m.save_to(None, target)
         assert m is not None
@@ -138,8 +136,8 @@ class Test_MTAsset_Token:
             assert os.path.exists(os.path.join(target, asset))
 
     def test_asset_token_extract_macro_dryrun(self, tmpdir):
-        macro_name = 'MVToken+1'
-        m = GetAsset('MVToken')
+        macro_name = 'MVToken'
+        m = GetAsset(macro_name)
         assert m is not None
         m.assemble()
         n = GetAsset(macro_name + '.rptok')
@@ -148,13 +146,13 @@ class Test_MTAsset_Token:
         assert n.xmlfile is not None
         assert n.zipfile is not None
         n.assemble(dryrun=True)
+        assert os.path.exists(os.path.join('.', macro_name))
         should_have = os.path.join('.', macro_name, 'properties.xml')
-        assert not os.path.exists(should_have), f"{should_have} exists, not expected"
+        assert os.path.exists(should_have), f"{should_have} does not exist"
         macro_xml = os.path.join('.', macro_name, '1d20.xml')
         assert not os.path.exists(macro_xml), f"{macro_xml} does not exist, but should"
         macro_cmd = os.path.join('.', macro_name, '1d20.command')
         assert not os.path.exists(macro_cmd), f"{macro_cmd} does not exist, but should"
-        assert not os.path.exists(os.path.join('.', macro_name))
 
     def test_asset_token_assemble_dryrun(self, tmpdir):
         macro_name = 'MVToken+1'
@@ -164,8 +162,8 @@ class Test_MTAsset_Token:
         assert not os.path.exists(macro_name + '.rptok')
 
     def test_asset_token_assemble_macroPropertiesMap(self, tmpdir):
-        macro_name = 'MVToken+1'
-        m = GetAsset('MVToken')
+        macro_name = 'MVToken'
+        m = GetAsset(macro_name)
         assert m is not None
         m.assemble()
         n = GetAsset(macro_name + '.rptok')

@@ -65,7 +65,7 @@ class Test_MTAsset_Project:
         m = GetAsset('MVProject.project')
         assert m is not None
         m.assemble()
-        assert os.path.exists('MVToken+1.' + tagset.token.ext)
+        assert os.path.exists('MVToken.' + tagset.token.ext)
         assert os.path.exists('MVProps.' + tagset.properties.ext)
         assert os.path.exists('MVMacroSet.' + tagset.macroset.ext)
 
