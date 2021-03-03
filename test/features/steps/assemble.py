@@ -251,13 +251,13 @@ def step_impl(context):  # noqa: F811  # noqa: F811
 
 @then(u'I should get a token file')
 def step_impl(context):  # noqa: F811  # noqa: F811
-    filename = 'MVToken+1.' + tagset.token.ext
+    filename = 'MVToken.' + tagset.token.ext
     assert os.path.exists(filename), f'{filename} does not exist'
 
 
 @then(u'that token should contain a content.xml')
 def step_impl(context):  # noqa: F811  # noqa: F811
-    zf = zipfile.ZipFile('MVToken+1.rptok')
+    zf = zipfile.ZipFile('MVToken.rptok')
     assert 'content.xml' in [x.filename for x in zf.filelist]
     context.contentfile = zf.open('content.xml')
 
