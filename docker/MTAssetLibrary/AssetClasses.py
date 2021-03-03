@@ -236,7 +236,8 @@ class MTAsset:
         elif self.whence.endswith(tagset.properties.ext) or \
                 self.whence.endswith(tagset.macroset.ext) or \
                 self.whence.endswith(tagset.campaign.ext) or \
-                self.whence.endswith(tagset.project.ext):
+                self.whence.endswith(tagset.project.ext) or \
+                self.whence.endswith(tagset.token.ext):
             return os.path.basename(os.path.splitext(self.whence)[0])
         else:
             return 'Generic' + self.isasset_type.name.capitalize()
@@ -380,9 +381,6 @@ class MTProperties(MTAsset):
 
 
 class MTToken(MTAsset):
-    @property
-    def name(self):
-        return self.root.name
 
     def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None):
         """MTToken.assemble()
