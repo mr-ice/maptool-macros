@@ -2342,6 +2342,10 @@
       <net.rptools.maptool.model.SightType>
         <name>Lowlight</name>
         <multiplier>2.0</multiplier>
+        <personalLightSource>
+          <lumens>0</lumens>
+          <scaleWithToken>false</scaleWithToken>
+        </personalLightSource>
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>0.0</distance>
@@ -2432,6 +2436,10 @@
       <net.rptools.maptool.model.SightType>
         <name>Normal Vision - Short Range</name>
         <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lumens>0</lumens>
+          <scaleWithToken>false</scaleWithToken>
+        </personalLightSource>
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>10.0</distance>
@@ -2470,6 +2478,10 @@
       <net.rptools.maptool.model.SightType>
         <name>Normal</name>
         <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lumens>0</lumens>
+          <scaleWithToken>false</scaleWithToken>
+        </personalLightSource>
         <shape>CIRCLE</shape>
         <arc>90</arc>
         <distance>0.0</distance>
@@ -2482,6 +2494,10 @@
       <net.rptools.maptool.model.SightType>
         <name>Grid Vision</name>
         <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lumens>0</lumens>
+          <scaleWithToken>false</scaleWithToken>
+        </personalLightSource>
         <shape>GRID</shape>
         <arc>90</arc>
         <distance>0.0</distance>
@@ -2520,6 +2536,10 @@
       <net.rptools.maptool.model.SightType>
         <name>Conic Vision</name>
         <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lumens>0</lumens>
+          <scaleWithToken>false</scaleWithToken>
+        </personalLightSource>
         <shape>CONE</shape>
         <arc>120</arc>
         <distance>0.0</distance>
@@ -2558,6 +2578,10 @@
       <net.rptools.maptool.model.SightType>
         <name>Square Vision</name>
         <multiplier>1.0</multiplier>
+        <personalLightSource>
+          <lumens>0</lumens>
+          <scaleWithToken>false</scaleWithToken>
+        </personalLightSource>
         <shape>SQUARE</shape>
         <arc>90</arc>
         <distance>0.0</distance>
