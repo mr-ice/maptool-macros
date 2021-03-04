@@ -10,7 +10,7 @@
 [h: actionExecution = if(aTitle == "", 0, 1)]
 [h, if (aTitle == ""): aTitle = dnd5e_RollExpression_getName(firstExp)]
 [h: aTitle = dnd5e_Util_encodeHtml(aTitle)]
-[h, if (returnString == 0): applyLink = macroLink("Apply","dnd5e_SavedAttacks_apply@Lib:DnD5e", "none", json.append("[]", key),"selected")]
+[h, if (returnString == 0): applyLink = macroLink("Apply","dnd5e_SavedAttacks_apply@Lib:DnD5e", "none", json.append("[]", key),"selected"); applyLink = ""]
 
 <!-- If there is a description, attach it to the title as a tool tip -->
 [h: tooltip = if(returnString, "data-toggle='tooltip' ", "") + dnd5e_Util_formatTooltip(dnd5e_RollExpression_getTypedDescriptor(firstExp, ACTION_DESC_TD)) + "'"]
