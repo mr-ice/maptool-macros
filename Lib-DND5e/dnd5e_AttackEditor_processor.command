@@ -59,7 +59,7 @@
 
 	[if (attackType  == "ability"), code: {
 		[attackExpression = dnd5e_RollExpression_setSpellcastingAbility (attackExpression, abilityVal)]
-		[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, proficiency)]
+		[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, proficiencyVal)]
 	}; {}]
 	
 	[rollExpressions = json.append (rollExpressions, attackExpression)]
