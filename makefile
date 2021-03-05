@@ -28,7 +28,7 @@ project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
 clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-* output/*
 
-realclean:
+realclean: clean
 	docker image list | awk '/^(maker|tester|behave)[ \t]/{print $$1}' | xargs docker image rm
 	rm -f {maker,tester,behave}.image
 	rm -rf output

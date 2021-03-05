@@ -151,6 +151,8 @@ class Test_MTAsset_Macro:
         assert o.is_macroset
         assert o.tag == tagset.macroset.tag
         assert type(o) == MTMacroSet
+        for tag in [x.tag for x in o.root.iterchildren()]:
+            assert tag == tagset.macro.tag
 
     def test_macro_macroset_append_object(self, tmpdir):
         m = GetAsset('macro/MVMacro1.xml')
