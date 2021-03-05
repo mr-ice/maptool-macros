@@ -50,10 +50,12 @@ build: tester.image behave.image
 test: tester.image
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester $(ARGS)
 
-behave: behave.image
-	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT behave $(ARGS)
+behave: behave.image clean
+	#docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT behave $(ARGS)
+	behave --no-capture --no-capture-stderr --no-logcapture
+	git status --ignored
 
-.PHONY: build clean test log
+.PHONY: build clean test log behave ptw unzip
 
 log:
 	rm -f output/Lib%3ALog4MT.rptok

@@ -1,23 +1,13 @@
-@fixture.base_token
-@fixture.base_macro1
-@fixture.base_macro2
-@fixture.base_properties
-@fixture.base_project
-@fixture.temp_directory
-@fixture.minviable_token
-@fixture.config_env
-
 Feature: Assemble
 
     As a builder, I want to be able to build Maptool Assets
     from their exploded parts.
 
     Background:
-        Given I have a test token dir
-          And I have two base macros
-          And I have a base properties dir
-          And I have a base project file
-          And I have the assemble command
+       Given I have a test token dir
+         And I have two base macros
+         And I have a base properties dir
+         And I have the assemble command
 
     Scenario: Assemble a Token
         When I call the assemble command with that test token dir
@@ -65,6 +55,7 @@ Feature: Assemble
          And the Asset content.xml will be a "net.rptools.maptool.model.CampaignProperties"
 
     Scenario: I should be able to assemble a Project
+        Given I have a Project with MacroSet Token Props
         When I call assemble with a Project file name
          And that Project contains a macroset
          And that Project contains a token
@@ -81,6 +72,7 @@ Feature: Assemble
          And the Asset content.xml will be a "net.rptools.maptool.model.CampaignProperties"
 
     Scenario: Assembling a project with an output directory should result in all assets created in the output directory
+        Given I have a Project with MacroSet Token Props
          When I call assemble with a Project file name and output directory
          And that Project contains a macroset
          And that Project contains a token
@@ -96,14 +88,13 @@ Feature: Assemble
          And the Asset content.xml will be a "net.rptools.maptool.model.CampaignProperties"
 
     Scenario: I should be able to assemble a macro set from the commandline
-       Given I have the assemble command
-        When I call the assemble command with two or more macros as input and an output directory
+       Given I have two or more macros
+        When I call the assemble command with two or more macros as input, a name, and an output directory
         Then I should get an output directory
          And a named macroset
          And that macroset should contain a content.xml
          And the Asset content.xml will be a list
 
-@fixture.project_with_text_element
     Scenario: Embed instructions for GMs in project files # Issue #176
        Given A project with a text element
          And I have the assemble command
@@ -111,7 +102,6 @@ Feature: Assemble
         Then I should get a text file
          And the text file should contain my content
 
-@fixture.project_with_project
     Scenario: make project files reference another project file enhancement # Issue #177
        Given A project with a project element
          And I have the assemble command
