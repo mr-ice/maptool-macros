@@ -3,7 +3,7 @@ Projects collect sets of maptool assets and can be assembled together.
 
 (!) There is no extract action on projects
   
-## Project files
+## Project xml
 
 Project files end in .project and are xml.
 
@@ -17,7 +17,7 @@ Project files end in .project and are xml.
 </project>
 ```
 
-### macro
+## macro
 ```
 <macro name="Alpha"/>
 ```
