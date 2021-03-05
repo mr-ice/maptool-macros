@@ -17,8 +17,7 @@ class Test_MTAsset_Generic:
     def setup_method(self, tmpdir):
         mvp = 'test/data/MinViable'
         mvzips = ['MVMacro1.zip', 'MVMacro2.zip', 'MVProps.zip',
-                  'MVToken.zip', 'MVProject.zip', 'MVProject2.zip',
-                  'MVProject3.zip']
+                  'MVToken.zip']
         for zf in [os.path.join(mvp, z) for z in mvzips]:
             with zipfile.ZipFile(zf, 'r') as zip_ref:
                 zip_ref.extractall(tmpdir)

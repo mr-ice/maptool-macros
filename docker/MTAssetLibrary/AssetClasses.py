@@ -69,6 +69,8 @@ def GetAsset(*whence, name=None, path=None):
             # the corresponding .xml and open _that_
             whence = os.path.splitext(whence)[0] + '.xml'
             content_xml = open(whence)
+        elif os.path.exists(whence + '.project'):
+            content_xml = open(whence + '.project')
         else:
             content_xml = open(whence)
 

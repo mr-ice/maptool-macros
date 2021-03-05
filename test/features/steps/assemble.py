@@ -5,8 +5,7 @@ import os
 import zipfile
 import glob
 import logging as log
-from lxml import etree
-from lxml.etree import Element
+from lxml.etree import Element, tostring
 from MTAssetLibrary import maptool_macro_tags as tagset, random_string
 from subprocess import Popen, PIPE
 from lxml import objectify
@@ -262,7 +261,7 @@ def step_impl(context):  # noqa: F811
     context.cleanup.append(context.projpath)
     context.cleanup.append(context.macrosetfilename)
     with open(context.projpath, 'w') as fh:
-        fh.write(etree.tostring(root, pretty_print=True).decode())
+        fh.write(tostring(root, pretty_print=True).decode())
 
 
 @when(u'I call assemble with a Project file name')
@@ -417,7 +416,7 @@ def step_impl(context):  # noqa: F811
     root.append(text)
 
     with open(context.projpath, 'w') as fh:
-        fh.write(etree.tostring(root, pretty_print=True).decode())
+        fh.write(tostring(root, pretty_print=True).decode())
     assert os.path.exists(context.projpath)
 
 
@@ -452,7 +451,7 @@ def step_impl(context):  # noqa: F811
     root.append(text)
 
     with open(context.projpath, 'w') as fh:
-        fh.write(etree.tostring(root, pretty_print=True).decode())
+        fh.write(tostring(root, pretty_print=True).decode())
 
     assert os.path.exists(context.projpath)
 
@@ -464,7 +463,7 @@ def step_impl(context):  # noqa: F811
     root.append(text)
     log.info(f'{context.random_text=} up here where it started')
     with open(context.projpath, 'w') as fh:
-        fh.write(etree.tostring(root, pretty_print=True).decode())
+        fh.write(tostring(root, pretty_print=True).decode())
     assert os.path.exists(context.projpath)
 
 
