@@ -1,6 +1,6 @@
 # Action to run on push to master branch to rebuild packages
 
-name: Build
+name: Test
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -35,19 +35,21 @@ jobs:
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
-        pip install pytest
+        pip install flake8 pytest behave
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --ignore E501,E402,F405 --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Test with pytest
       run: |
         python3 -mpytest
 
-    - name: Build our DNDBeyond Artifacts
+    - name: Test with behave
       run: |
-        echo -e '[assemble]\ndirectory = output' > config.ini
-        PATH=docker:$PATH ./docker/assemble DNDBeyond.project
+        python3 -mbehave
 
-    - name: Show our artifacts, eventually push these to releases
-      run: |
-        cat config.ini
-        ls -l output

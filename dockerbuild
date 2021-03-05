@@ -1,2 +1,2 @@
 docker build docker -t maker
-docker build docker/tester -t tester
+docker build docker -f docker/Dockerfile.tester -t tester

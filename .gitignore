@@ -2,6 +2,9 @@
 /*.mtmacro
 /*.mtmacset
 /*.rptok
+/*.cmpgn
+config.ini
+behave.image
 maker.image
 tester.image
 tmp

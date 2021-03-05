@@ -1,160 +1,153 @@
 import os
-import shutil
-from behave import fixture, use_fixture
-from behave.fixture import use_fixture_by_tag
-from zipfile import ZipFile
-from shutil import rmtree
+import sys
+import glob
+import zipfile
 import logging as log
-import random
-import string
+import tempfile
+from shutil import rmtree, copy
+from behave import fixture as behave_fixture
+from behave.fixture import use_fixture_by_tag
 
 
-@fixture
-def base_rptok(context):
-    """This defines a few variables to use in our BDD tests"""
-    context.tokenpath = 'BaseToken30957877'
-    context.tokenname = 'Base Token 30957877'
-    context.tokenfilename = 'Base+Token+30957877'
-    context.tokensrc = 'test/data/DNDB-Test/BaseToken30957877.zip'
-    yield context.tokenpath
-    try:
-        # if we 'assembled' a token, remove it
-        os.remove(context.tokenpath + '.rptok')
-        os.remove(context.tokenfilename + '.rptok')
-    except Exception as e:
-        # avoid flake warning for not using e
-        if e is not None:
+FixtureRegistry = {}  # easier to update existing dict
+fixture_prefix = 'fixture.'
+
+
+def before_all(context):
+    '''Before anything, do some setup'''
+    # -- SET LOG LEVEL: behave --logging-level=ERROR ...
+    # on behave command-line or in "behave.ini".
+    context.config.setup_logging()
+    log.info('Finished setup_logging in before_all')
+
+    # set up a temp directory
+    context.projectdir = os.getcwd()
+    context.testdir = os.path.join(context.projectdir, 'test', 'data')
+    context.tmpdir = tempfile.mkdtemp(
+        prefix='behave-',
+        suffix=f'-{os.getpid()}')
+    os.chdir(context.tmpdir)
+    context.assemble = os.path.join(context.projectdir, 'docker', 'assemble')
+    context.extract = os.path.join(context.projectdir, 'docker', 'extract')
+    context.cleanup = []  # list to remove after _every_ step
+    # in that temp directory we should set up the test sources
+    # from test/data, and some things to point to them
+
+    # -- ALTERNATIVE: Setup logging with a configuration file.
+    # context.config.setup_logging(configfile="behave_logging.ini")
+
+
+def no_after_all(context):
+    '''After everything, do some teardown'''
+    log.info(f'in environment.after_all with {context.testdir=}')
+    log.info(f'in environment.after_all with {context.projectdir=}')
+    os.chdir(context.projectdir)
+    rmtree(context.tmpdir, ignore_errors=True)
+    log.info(f'in {sys._getframe(  ).f_code.co_name}, removed {context.tmpdir=}')
+
+
+def fixture(func, *args, **kwargs):
+    '''
+    This fixture decorator registers the fixture with a library for
+    use_fixture_by_tag in before_tag to find it.  I don't know why
+    this isn't either the default or built in.
+    '''
+    FixtureRegistry.update({fixture_prefix + func.__name__: func})
+    return behave_fixture(func, *args, **kwargs)
+
+# This is not working yet, it was an attempt to wrap a fixture function to
+# log in/out.  Does contain the bit I learned about the name of the current
+# function executing.
+# def enter_exit(func, *args, **kwargs):
+#     log.info(f'Entering environment.{sys._getframe(  ).f_code.co_name}')
+#     func(*args, **kwargs)
+#     log.info(f'Leaving environment.{sys._getframe(  ).f_code.co_name}')
+
+
+def before_scenario(context, scenario):
+    log.debug(f'Entering environment.{sys._getframe(  ).f_code.co_name} for {scenario=}')
+    _prevdir = os.getcwd()
+    os.makedirs('src', exist_ok=True)
+    os.chdir('src')
+    for filename in glob.glob(os.path.join(context.testdir, 'DNDB-Test', '*')):
+        if filename.endswith('.zip'):
+            zipfile.ZipFile(filename).extractall()
+        else:
+            copy(filename, '.')
+    for filename in glob.glob(os.path.join(context.testdir, 'MinViable', '*')):
+        if filename.endswith('.zip'):
+            zipfile.ZipFile(filename).extractall()
+        else:
+            copy(filename, '.')
+    # put a little bit of our inventory into
+    context.source = {}
+    context.source['macro'] = [
+        {
+            'path': 'src/macro/MVMacro1.xml',
+            'filename': 'Minimum+Viable+Macro+1',
+        },
+        {
+            'path': 'src/macro/MVMacro2.xml',
+            'filename': 'Minimum+Viable+Macro+2',
+        }
+    ]
+    context.source['token'] = {
+        'src': [
+            'src/MVToken',
+            'src/BaseToken30957877',
+        ],
+        'rptok': [
+            'src/BaseToken30960137.rptok',
+            'src/BaseToken30957978.rptok',
+            'src/BaseToken30959709.rptok',
+            'src/BaseToken30957877.rptok',
+            'src/TestComparisonToken.rptok',
+        ]
+    }
+    context.source['props'] = [
+        'src/MVProps',
+        'src/MVProps2',
+    ]
+    os.chdir(_prevdir)
+    log.debug(f'Leaving environment.{sys._getframe(  ).f_code.co_name} for {scenario=}')
+
+
+def after_scenario(context, scenario):
+    log.debug(f'Entering environment.{sys._getframe(  ).f_code.co_name} for {scenario=}')
+    os.chdir(context.tmpdir)
+    rmtree('src')
+    log.debug(f'Removed src directory from {context.tmpdir}')
+    log.debug(f'inspecting {context.cleanup=} for things to remove')
+    for pathname in context.cleanup:
+        try:
+            log.debug(f'removing {pathname}')
+            if os.path.isdir(pathname):
+                rmtree(pathname, ignore_errors=True)
+            else:
+                os.remove(pathname)
+        except FileNotFoundError:
             pass
-        pass
-
-
-@fixture
-def base_token(context):
-    """This extracts a base token for use by our BDD tests"""
-    log.debug("In environment.base_token")
-    use_fixture(base_rptok, context)
-    log.debug("os.getcwd() = " + os.getcwd())
-    log.debug("context.tokenpath = " + context.tokenpath)
-    zf = ZipFile(context.tokensrc)
-    zf.extractall()
-    yield context.tokenpath
-    try:
-        rmtree(context.tokenpath)
-    except Exception as e:
-        pass
-
-
-@fixture
-def base_macro1(context):
-    """This extracts a minimum viable macro for testing"""
-    log.debug("In environment.base_macro")
-    context.macro1path = 'macro/MVMacro1'
-    context.macro1name = 'MVMacro1'
-    context.macro1label = 'Minimum Viable Macro 1'
-    context.macro1 = {
-        'path': 'macro/MVMacro1',
-        'xml': 'macro/MVMacro1.xml',
-        'command': 'macro/MVMacro1.command',
-        'name': 'MVMacro1',
-        'label': 'Minimum Viable Macro 1',
-        'qlabel': 'Minimum+Viable+Macro+1',
-        'macrofilename': 'Minimum+Viable+Macro+1.mtmacro',
-        'src': 'test/data/MinViable/MVMacro1.zip'
-        }
-    context.macro1src = 'test/data/MinViable/MVMacro1.zip'
-    zf = ZipFile(context.macro1['src'])
-    zf.extractall()
-    yield context.macro1['path']
-    if os.path.exists(context.macro1['xml']):
-        os.remove(context.macro1['xml'])
-    if os.path.exists(context.macro1['command']):
-        os.remove(context.macro1['command'])
-
-
-@fixture
-def base_macro2(context):
-    """This extracts a minimum viable macro for testing"""
-    log.debug("In environment.base_macro")
-    context.macro2path = 'macro/MVMacro2'
-    context.macro2name = 'MVMacro2'
-    context.macro2label = 'Minimum Viable Macro 2'
-    context.macro2 = {
-        'path': 'macro/MVMacro2',
-        'xml': 'macro/MVMacro2.xml',
-        'command': 'macro/MVMacro2.command',
-        'name': 'MVMacro2',
-        'label': 'Minimum Viable Macro 2',
-        'qlabel': 'Minimum+Viable+Macro+2',
-        'macrofilename': 'Minimum+Viable+Macro+2.mtmacro',
-        'src': 'test/data/MinViable/MVMacro2.zip'
-        }
-
-    context.macro2src = 'test/data/MinViable/MVMacro2.zip'
-    zf = ZipFile(context.macro2['src'])
-    zf.extractall()
-    yield context.macro2path
-    if os.path.exists(context.macro2['xml']):
-        os.remove(context.macro2['xml'])
-    if os.path.exists(context.macro2['command']):
-        os.remove(context.macro2['command'])
-
-
-@fixture
-def base_properties(context):
-    """This unpacks the MVProperties"""
-    log.debug("In environment.base_properties")
-    context.proppath = 'MVProps'
-    context.propname = 'MVProps'
-    context.propsrc = 'test/data/MinViable/MVProps.zip'
-    zf = ZipFile(context.propsrc)
-    zf.extractall()
-    yield context.proppath
-    if os.path.exists(context.proppath):
-        shutil.rmtree(context.proppath)
-
-
-@fixture
-def base_project(context):
-    """This creates a project file for testing"""
-    use_fixture(base_token, context)
-    use_fixture(base_macro1, context)
-    use_fixture(base_macro2, context)
-    context.projpath = 'MVProject.project'
-    context.projname = 'MVProject'
-    context.projsrc = 'test/data/MinViable/MVProject.zip'
-    zf = ZipFile(context.projsrc)
-    zf.extractall()
-    yield context.projsrc
-    if os.path.exists(context.projpath):
-        os.remove(context.projpath)
-
-
-@fixture
-def temp_directory(context):
-    """This creates a temporary directory for test output"""
-    context.temp_directory = ''.join(random.choice(
-        string.ascii_letters + string.digits) for i in range(6))
-    context.macrosetRandomName = ''.join(random.choice(
-        string.ascii_letters + string.digits) for i in range(6))
-    os.makedirs(context.temp_directory)
-    yield context.temp_directory
-    rmtree(context.temp_directory)
-
-
-# Why is this so stupid in behave?  fixture should automatically
-# register these so we don't have to.   I tried with fixture(name=)
-FixtureRegistry = {
-    "fixture.base_token": base_token,
-    "fixture.base_rptok": base_rptok,
-    "fixture.base_macro1": base_macro1,
-    "fixture.base_macro2": base_macro2,
-    "fixture.base_properties": base_properties,
-    "fixture.base_project": base_project,
-    "fixture.temp_directory": temp_directory,
-}
+    log.debug('Emptying context.cleanup for next run')
+    context.cleanup = []
+    log.debug(f'Leaving environment.{sys._getframe(  ).f_code.co_name} for {scenario=}')
 
 
 def before_tag(context, tag):
-    log.debug("In environment.before_tag")
-    if tag.startswith('fixture.'):
+    '''
+    call the fixture by the name of the tag
+    '''
+    log.debug(f'Entering environment.{sys._getframe(  ).f_code.co_name} for {tag=}')
+    if tag.startswith(fixture_prefix):
         return use_fixture_by_tag(tag, context, FixtureRegistry)
+    log.debug(f'Leaving environment.{sys._getframe(  ).f_code.co_name} for {tag=}')
+
+
+@fixture
+def test_fixture(context):
+    log.debug('setup test_fixture')
+    log.debug('creating context.tokenpath')
+    context.tokenpath = 'BraveLittleHamster'
+    print(f'I created {context.tokenpath=}')
+    yield
+    log.debug('cleanup test_fixture')
+    log.debug('leaving test_fixture')
