@@ -572,13 +572,14 @@ class MTMacroObj(MTAsset):
         the latter is true, it doesn't actually cast us to the
         MTMacroSet object)
         """
-        s = StringIO('<' + tagset.macroset.tag + '/>')
-        newxml = objectify.parse(s)
-        newxml.getroot().append(self.root)
+        if self.is_macro:
+            # this replaces the current object's xml with a new one, wrapping
+            # our macro in a list for extending.
+            newxml = objectify.parse(StringIO('<' + tagset.macroset.tag + '/>'))
+            newxml.getroot().append(self.root)
+            self.xml = newxml
         if type(new) == MTMacroObj:
-            newxml.getroot().append(new.root)
-
-        self.xml = newxml
+            self.root.append(new.root)
 
 
 class MTProject(MTAsset):
