@@ -14,9 +14,8 @@ Command | Result
 <code>./dockerbuild</code> | make our docker images using a bash script
 <code>dockerbuild.cmd</code> | make our docker images using a windows command script
 <code>make build</code> | make our docker images using make
-<code>./dockerrun macro-extract &lt;thing&gt;</code> | extract macros from a mtmacro or mtmacset object into the macro/ directory
-<code>./dockerrun token-extract &lt;thing&gt;</code> | unpack a token object and extract the macros (these will be in the token directory)
-<code>./dockerrun assemble &lt;thing&gt;</code> | If &lt;thing&gt; is a macro/* file, it will assemble a mtmacro object<br>If &lt;thing&gt; is multiple macro/* files, it will assemble a mtmacset object<br>If &lt;thing&gt; is a directory, it will assemble the thing in the content.xml file therein<br>If &lt;thing&gt; is a content.xml, it will assemble that thing (usually this has to be in a directory with the objects referenced in the content.xml)<br>If &lt;thing&gt; is a .project file, it will assemble all the objects listed in the project file.<br>
+<code>./dockerrun extract &lt;thing&gt;</code> | extract an object and macros to .xml and .command files
+<code>./dockerrun assemble &lt;thing&gt;</code> | pointed at a directory or file it parses what it can to re-assemble it into a Maptool Asset
 
 
 ----
