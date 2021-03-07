@@ -9,7 +9,7 @@
   <sortby>3</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>white</fontColorKey>
   <fontSize>1.05em</fontSize>
   <minWidth/>
