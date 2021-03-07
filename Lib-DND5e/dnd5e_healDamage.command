@@ -1,13 +1,17 @@
 <!-- Read the parameters -->
-[h: log.debug("dnd5e_healDamage: " + json.indent(macro.args, 2))]
+[h: log.debug(getMacroName() + ": " + json.indent(macro.args))]
+[h, if (json.type(macro.args) == "ARRAY"): macro.args = json.get(macro.args, 0)]
 [h: id = json.get(macro.args, "id")]
+[h, if (json.isEmpty(id) || lower(id) == "currentToken"): id = currentToken()]
 [h: current = json.get(macro.args, "current")]
+[h, if (!isNumber(current)): current = getProperty(current, id)]
 [h, if (!isNumber(current)): current = 0; '']
 [h: healing = json.get(macro.args, "healing")]
 [h, if (!isNumber(healing)): healing = 0; '']
 [h: maximum = json.get(macro.args, "maximum")]
+[h, if (!isNumber(maximum)): maximum = getProperty(maximum, id)]
 [h, if (!isNumber(maximum)): maximum = 0; '']
-[h: log.debug("Before: current=" + current + " maximum=" + maximum + " healing=" + healing)]
+[h: log.debug(getMacroName() + "Before: current=" + current + " maximum=" + maximum + " healing=" + healing)]
 
 <!-- Add healing to health up to max health -->
 [h: current = current + healing]

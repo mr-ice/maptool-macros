@@ -15,17 +15,22 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Heal damage on a token with these parameters in JSON:
-    {
-      "id": Id of the token taking damage,
-      "current": Token's current hit points,
-      "maximum": Token's maximum hit points
-      "healing": The amount of healing applied to the token
-    }
-    Current hit points are healed up to maximum.
-    These token properties must be set: TempHP, DSPass, DSFail.
-    The Exhaustion 6 state should also be set.
-    After applying the healing this macro calls dnd5e_applyHealth</toolTip>
+  <toolTip>&lt;html&gt;Remove damage from a token with these parameters in JSON:
+&lt;br&gt;
+&lt;br&gt;arg(0) = An object with enough information to damage a toon
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;id&quot;: Id of the token taking healing, or &quot;currentToken&quot;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;current&quot;: Token&apos;s current hit points, or property name containing current value
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;maximum&quot;: Token&apos;s maximum hit points, or property name containing maximum value
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;healing&quot;: The amount of haling applied to the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;Current hit points are healed up to maximum.
+&lt;br&gt;These token properties must be set: MaxHP, DSPass, DSFail
+&lt;br&gt;The Exhaustion 6 state should also be set.
+&lt;br&gt;After applying the healing this macro calls dnd5e_applyHealth which sets
+&lt;br&gt;the health states Dead/Dying/Stable/Bloodied and the health bars
+&lt;br&gt;HP/Damage/DSPass/DSFail/
+&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

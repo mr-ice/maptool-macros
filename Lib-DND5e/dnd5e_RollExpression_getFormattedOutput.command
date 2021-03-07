@@ -30,7 +30,7 @@
 	<!-- Generate the tool tip -->
 	[h: total = dnd5e_RollExpression_getTotal(exp)]
 	[h: totalOut = string(total)]
-	[h: params = json.set("{}", "id", currentToken(), "current", "HP", "temporary", "TempHP", "damage", total)]
+	[h: params = json.set("{}", "id", "currentToken", "current", "HP", "temporary", "TempHP", "damage", total)]
 	[h, if (returnString == 0): totalOut = macroLink(totalOut, "dnd5e_removeDamage@Lib:DnD5e", "all", params, "selected")]
 	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_ROLL_TD) + " = " 
 			+ dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_DETAIL_TD) + " = " + total]
@@ -165,7 +165,7 @@
 	}]
 	[h: log.debug("-----------------------------------------------------------------------")]
 }]
-[h: params = json.set("{}", "id", currentToken(), "current", "HP", "temporary", "TempHP", "damage", damageTotal)]
+[h: params = json.set("{}", "id", "currentToken", "current", "HP", "temporary", "TempHP", "damage", damageTotal)]
 [h: damageTotalOut = string(damageTotal)]
 [h, if (returnString == 0): damageTotalOut = macroLink(damageTotalOut, "dnd5e_removeDamage@Lib:DnD5e", "none", params, "selected")]
 [h, if(damageTotal != lastDamage): out = out + "<b color=black><font size='4'>" + damageTotalOut + "</font></b> Total damage"; ""]

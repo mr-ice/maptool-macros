@@ -19,10 +19,10 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = An object with enough information to damage a toon
 &lt;br&gt;&amp;nbsp;&amp;nbsp;{
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"id": Id of the token taking damage,
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"current": Token's current hit points,
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"temporary": Token's temporary hit points
-&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"damage": The amount of damage taken by the token
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;id&quot;: Id of the token taking damage, or &quot;currentToken&quot;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;current&quot;: Token&apos;s current hit points, or property name containing current values
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;temporary&quot;: Token&apos;s temporary hit points, or property name containing temporary values
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;damage&quot;: The amount of damage taken by the token
 &lt;br&gt;&amp;nbsp;&amp;nbsp;}
 &lt;br&gt;Damage is removed from temporary first, then current
 &lt;br&gt;These token properties must be set: MaxHP, DSPass, DSFail

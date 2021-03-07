@@ -3,6 +3,7 @@
 [h: ability = arg(0)]
 [h: amount = arg(1)]
 [h, if (argCount() > 2): id = arg(2); id = currentToken()]
+[h, if (json.isEmpty(id) || lower(id) == "currentToken"): id = currentToken()]
 [h: dnd5e_AE2_getConstants()]
 
 <!-- Check the ability -->
