@@ -26,16 +26,16 @@
     <macro name="macro/Apply+Last+Attack+Options"/>
     <macro name="macro/Restore+Last+Dead+NPC"/>
     <macro name="macro/Change+Elevation"/>
-  </macroset>
-  <macroset name="GM-Panel">
-    <macro name="macro/Set+Landing+Map"/>
-    <macro name="macro/Configure+GM+Preferences"/>
-  </macroset>
-  <macroset name="Darker-Dungeon">
     <macro name="DDmacro/Lesser"/>
     <macro name="DDmacro/Greater"/>
     <macro name="DDmacro/Superior"/>
     <macro name="DDmacro/Supreme"/>
     <macro name="DDmacro/Manage+Usables"/>
+  </macroset>
+  <macroset name="GM-Panel">
+    <macro name="macro/Set+Landing+Map"/>
+    <macro name="macro/Configure+GM+Preferences"/>
+    <macro name="DDmacro/New+Int+Initiative"/>
+    <macro name="DDmacro/Update+Int+Initiative"/>
   </macroset>
 </project>
