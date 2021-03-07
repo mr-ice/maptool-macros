@@ -187,12 +187,11 @@ class Test_MTAsset_Macro:
         m.assemble(save_name=newname)
         assert os.path.exists(newfilename), f'{newfilename} does not exist'
 
-
     def test_macro_git_sha_comment(self, tmpdir):
         macroname = 'macro/MVMacro1'
         m = GetAsset(macroname)
         assert m is not None
-        assert github_url in  m.root.command.text
+        assert github_url in m.root.command.text
 
     def test_macroset_git_sha_comment(self, tmpdir):
         macrosetname = random_string()

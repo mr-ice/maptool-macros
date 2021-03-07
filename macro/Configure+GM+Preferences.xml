@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>dbbd6376-a3b4-4122-b94d-032934cc552a</macroUUID>
+  <macroUUID>d7823af1-fd3f-4890-93f1-da932001d179</macroUUID>
   <saveLocation>GmPanel</saveLocation>
-  <index>1</index>
+  <index>2</index>
   <colorKey>green</colorKey>
   <hotKey>None</hotKey>
   <label>Configure GM Preferences</label>

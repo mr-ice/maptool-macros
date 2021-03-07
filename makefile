@@ -82,4 +82,4 @@ maptool-macros.code-workspace: makefile
 	echo '{\n    "folders": [\n        {\n            "path": "."\n        }\n    ]\n}' > $@
 
 flake8:
-	flake8 --ignore E501,E402
+	flake8 --ignore E501,E402,F405

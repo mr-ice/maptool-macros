@@ -18,6 +18,8 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 fixed_version = '1.8.3'
 github_url = 'https://github.com/mr-ice/maptool-macros/'
+dir_sep_re = r'([\\/]+)'
+
 
 class Tag:
     """
@@ -173,6 +175,20 @@ def random_string(length=6):
         what += random.choice(chars)
 
     return what
+
+
+def basename(string):
+    '''Like os.path.basename, but looks for / and \\'''
+    parts = re.split(dir_sep_re, string)
+    if parts[-1] in ('\\', '/'):
+        return ''
+    return parts[-1]
+
+
+def dirname(string):
+    '''Like os.path.dirname, but looks for / and \\'''
+    parts = re.split(dir_sep_re, string)
+    return ''.join(parts[0:-2])
 
 
 def make_directory_path(path):

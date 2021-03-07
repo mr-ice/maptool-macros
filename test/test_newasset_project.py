@@ -10,18 +10,19 @@ from lxml.etree import Element, tostring
 from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
 from MTAssetLibrary import random_string
 
+
 class Test_MTAsset_Project:
     @pytest.fixture(autouse=True)
     def setup_method(self, tmpdir):
         test_start_dir = os.getcwd()
         os.chdir(tmpdir)
-        mvp =  os.path.join(test_start_dir,'test/data/MinViable')
+        mvp = os.path.join(test_start_dir, 'test/data/MinViable')
         mvzips = ['MVMacro1.zip', 'MVMacro2.zip', 'MVProps.zip',
                   'MVToken.zip']
         for zf in [os.path.join(mvp, z) for z in mvzips]:
             with zipfile.ZipFile(zf, 'r') as zip_ref:
                 zip_ref.extractall(tmpdir)
-        self.source = [\
+        self.source = [
             {'name': random_string(), 'in': ['macroset', 'token']},
             {'name': random_string(), 'in': ['macro', 'text']},
             {'name': random_string(), 'in': ['macroset', 'project']},
@@ -86,7 +87,6 @@ class Test_MTAsset_Project:
             yield
         finally:
             os.chdir(test_start_dir)
-
 
     def test_asset_project(self, tmpdir):
         m = GetAsset(self.source[0]['filename'])
