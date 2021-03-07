@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f603fb3c-52a5-4cc2-b52c-f2028d604daf</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>9</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>o5e_ExtDB_getInputFromJson</label>
+  <group>Ext DB - Editor</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>Returns a string suitable for the 'input()' function using a JSON object
+
+arg(0): JSON object
+arg(1): (Optional) Default values for empty values
+Returns: Input string</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

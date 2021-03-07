@@ -1,0 +1,5 @@
+[h: data = arg(0)]
+[h: monsterDb = json.get (data, "monsterDb_field")]
+[h: objType = json.type (monsterDb)]
+[h: assert (objType == "OBJECT", "Monster Data is not valid a JSON object!")]
+[h: o5e_ExtDB_setDB (monsterDb)]

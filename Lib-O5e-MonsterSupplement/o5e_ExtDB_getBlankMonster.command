@@ -1,0 +1,4 @@
+[h, if (argCount () > 0): values = arg (0); values = "{}"]
+[h: blankJson = '{"slug":"","name":"","size":"","type":"","subtype":"","group":"","alignment":"","armor_class":"","armor_desc":"","hit_points":"","hit_dice":"","speed":"{}","strength":"","dexterity":"","constitution":"","intelligence":"","wisdom":"","charisma":"","strength_save":"","dexterity_save":"","constitution_save":"","intelligence_save":"","wisdom_save":"","charisma_save":"","perception":"","skills":"{}","damage_vulnerabilities":"","damage_resistances":"","damage_immunities":"","condition_immunities":"","senses":"","languages":"","challenge_rating":"","actions":""}']
+[h: blankJson = json.merge (blankJson, values)]
+[h: macro.return = blankJson]

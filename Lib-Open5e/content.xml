@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>e8RM0mAhS3ycdPzADcVebw==</baGUID>
+    <baGUID>qXfzgmCtR8Cd4bMWlMQpjg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>AoA58IGyRj2PN7uR9hgg2A==</baGUID>
+    <baGUID>/RfAY1/jQe66DtcnJwQ0iw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,34 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>700</x>
-  <y>550</y>
-  <z>7</z>
+  <x>800</x>
+  <y>400</y>
+  <z>8</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>700</lastX>
-  <lastY>550</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>14</x>
-        <y>11</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>14</x>
-        <y>11</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -419,6 +399,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>o5e.property.useextendeddatabase</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>o5e.property.useExtendedDatabase</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>_ae2_metadata</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_AE2_Metadata</key>
@@ -582,6 +570,14 @@
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Acrobatics</key>
           <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>0</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>0</key>
+          <value class="string">0</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1039,6 +1035,10 @@
     <entry>
       <int>21</int>
       <macro name="o5e_Constants_getConstant"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="o5e_Constants"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
