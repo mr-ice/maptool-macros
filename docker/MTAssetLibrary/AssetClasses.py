@@ -17,7 +17,6 @@ Token macros extract to the Token directory. Campaign Macros
 extract to the Campaign directory.
 """
 
-import re
 import sys
 sys.path.append('docker')
 from .utils import *  # noqa: F403
@@ -122,7 +121,7 @@ class MTAsset:
         if os.path.isdir(self.whence):
             return self.whence
         else:
-            return os.path.dirname(self.xmlfile)
+            return dirname(self.xmlfile)
 
     @property
     def _loaded_from(self):
@@ -218,7 +217,7 @@ class MTAsset:
 
     @property
     def dirname(self):  # return directory of the xmlfile (naively)
-        return os.path.dirname(self.xmlfile)
+        return dirname(self.xmlfile)
 
     @property
     def name(self):
@@ -233,15 +232,16 @@ class MTAsset:
         This is the base object, which has a default name strategy.
         """
         if self.whence.endswith('content.xml'):
-            return os.path.basename(os.path.dirname(self.whence))
+
+            return basename(dirname(self.whence))
         elif os.path.isdir(self.whence):
-            return os.path.basename(self.whence)
+            return basename(self.whence)
         elif self.whence.endswith(tagset.properties.ext) or \
                 self.whence.endswith(tagset.macroset.ext) or \
                 self.whence.endswith(tagset.campaign.ext) or \
                 self.whence.endswith(tagset.project.ext) or \
                 self.whence.endswith(tagset.token.ext):
-            return os.path.basename(os.path.splitext(self.whence)[0])
+            return basename(os.path.splitext(self.whence)[0])
         else:
             return 'Generic' + self.isasset_type.name.capitalize()
 
@@ -481,7 +481,7 @@ class MTToken(MTAsset):
 class MTMacroSet(MTAsset):
     @property
     def name(self):
-        return os.path.basename(os.path.splitext(self.whence)[0])
+        return basename(os.path.splitext(self.whence)[0])
 
     def append(self, thing):
         """
@@ -500,6 +500,15 @@ class MTMacroSet(MTAsset):
             self.root.append(thing)
         else:
             log.error("Couldn't append, invalid type")
+
+    def extract(self, *args, **kwargs):
+        '''MTMacroSet.extract()
+
+        extract the macros into the macro directory
+        '''
+        for macro in self.root.iterchildren():
+            macro_base = 'macro/' + MacroNameQuote(macro.label.text)
+            write_macro_files(macro, macro_base)
 
 
 class MTMacroObj(MTAsset):
@@ -608,9 +617,10 @@ class MTMacroObj(MTAsset):
         if self.zipfile is None:
             self.zipfile = self._assemble_to(BytesIO())
         # don't extractall for macros
-        basefn = os.path.join(output_path,self.best_name_escaped(save_name))
+        basefn = os.path.join(output_path, self.best_name_escaped(save_name))
         if not dryrun:
             write_macro_files(self.root, basefn)
+
 
 class MTProject(MTAsset):
     def extract(self, *args, **kwargs):
