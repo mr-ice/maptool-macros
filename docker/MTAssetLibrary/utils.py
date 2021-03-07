@@ -3,6 +3,7 @@ This is the MTAssetLibrary
 
 Just some helper functions and objects.
 """
+import re
 import os
 import zipfile
 import datetime
@@ -16,7 +17,7 @@ from lxml.etree import tostring
 from zipfile import ZipFile, ZIP_DEFLATED
 
 fixed_version = '1.8.3'
-
+github_url = 'https://github.com/mr-ice/maptool-macros/'
 
 class Tag:
     """
@@ -114,6 +115,7 @@ def GitSha():
 
 
 git_tag_str = GitSha() + GitDirty()
+git_comment_str = f'<!-- {github_url} {git_tag_str} -->'
 
 
 def DataElement(content):
@@ -183,22 +185,16 @@ def make_directory_path(path):
 
 
 def write_macro_files(macro, tofilebase):
-    command_file = tofilebase + '.command'
-    xml_file = tofilebase + '.xml'
-    with open(command_file, 'w') as f:
-        text = ''
-        if macro.command and macro.command.text:
-            text = macro.command.text
-        f.write(text)
-        log.info('wrote {} bytes to {}'.format(
-            len(text), command_file))
-    # Now that the command is saved to file, we'll remove it
-    # from the macro.xml before saving it.  To restore we just read it
-    # off disk and add it back (order doesn't matter).
-    macro.remove(macro.command)
-    with open(xml_file, 'w') as f:
-        f.write(tostring(macro, pretty_print=True).decode())
-        log.info('wrote {} bytes to {}'.format(len(tostring(macro)), xml_file))
+    command = macro.command.text
+    del(macro.command)
+    log.info(f'extracting {macro.label} to {tofilebase}.xml')
+    pattern = f'(<!-- {github_url} [0-9a-z-]+ -->\n?)'
+    if match := re.match(pattern, command):
+        command = command.replace(match[0], '')
+    with open(tofilebase + '.xml', 'w') as fh:
+        fh.write(tostring(macro, pretty_print=True).decode())
+    with open(tofilebase + '.command', 'w') as fh:
+        fh.write(command)
 
 
 class MTMacro():

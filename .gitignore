@@ -3,6 +3,7 @@
 /*.mtmacset
 /*.rptok
 /*.cmpgn
+/*.code-workspace
 config.ini
 behave.image
 maker.image

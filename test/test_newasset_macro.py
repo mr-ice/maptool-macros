@@ -10,8 +10,11 @@ sys.path.append('docker')
 import os
 import pytest
 import zipfile
+from lxml import objectify
+from glob import glob
 from MTAssetLibrary import maptool_macro_tags as tagset
 from MTAssetLibrary import random_string, GetAsset, MTMacroSet
+from MTAssetLibrary import github_url
 
 
 class Test_MTAsset_Macro:
@@ -164,7 +167,7 @@ class Test_MTAsset_Macro:
         # see if o now has two copies of m
         assert len(o.root.findall('./' + tagset.macro.tag)) == 3
 
-    def test_macro_macro_save_as(self, tmpdir):
+    def test_macro_macro_assemble_save_as(self, tmpdir):
         newname = random_string()
         m = GetAsset('macro/MVMacro1.xml')
         assert m is not None
@@ -172,9 +175,9 @@ class Test_MTAsset_Macro:
         m.assemble(save_name=newname)
         assert os.path.exists(newname + '.mtmacro')
 
-    def test_macro_macroset_save_as(self, tmpdir):
+    def test_macro_macroset_assemble_save_as(self, tmpdir):
         newname = random_string()
-        newfilename = newname + '.mtmacset'
+        newfilename = newname + '.' + tagset.macroset.ext
         assert os.path.exists('MVMacroSet.mtmacset')
         m = GetAsset('MVMacroSet.mtmacset')
         assert m is not None
@@ -183,3 +186,33 @@ class Test_MTAsset_Macro:
         # assert False, f'{m.dirname} is m.dirname'
         m.assemble(save_name=newname)
         assert os.path.exists(newfilename), f'{newfilename} does not exist'
+
+
+    def test_macro_git_sha_comment(self, tmpdir):
+        macroname = 'macro/MVMacro1'
+        m = GetAsset(macroname)
+        assert m is not None
+        assert github_url in  m.root.command.text
+
+    def test_macroset_git_sha_comment(self, tmpdir):
+        macrosetname = random_string()
+        m = GetAsset('macro/MVMacro1')
+        m.append(GetAsset('macro/MVMacro2'))
+        m.assemble(macrosetname)
+        m = GetAsset(macrosetname + '.' + tagset.macroset.ext)
+        assert m is not None
+        for macro in m.root.iterchildren():
+            assert github_url in macro.command.text
+
+    def test_macro_extract_git_sha_remove(self, tmpdir):
+        macroname = random_string()
+        m = GetAsset('macro/MVMacro1')
+        assert m is not None
+        m.root.label = objectify.StringElement(macroname)
+        m.assemble(save_name=macroname)
+        m = GetAsset(macroname + '.' + tagset.macro.ext)
+        assert m is not None
+        assert m.is_macro
+        m.extract()
+        assert os.path.exists(f'macro/{macroname}.xml'), f'expected macro/{macroname}.xml in {glob("**/*")=}'
+        assert os.path.exists(f'macro/{macroname}.command'), f'{glob("**/*")=}'

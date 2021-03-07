@@ -1,10 +1,14 @@
+from docker.MTAssetLibrary.utils import random_string
 import sys
 sys.path.append('docker')
 
 import os
 import pytest
 import zipfile
+from lxml import objectify
 from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
+from MTAssetLibrary import github_url, git_tag_str
+from MTAssetLibrary import MacroNameQuote
 
 
 class Test_MTAsset_Token:
@@ -135,23 +139,26 @@ class Test_MTAsset_Token:
             assert os.path.exists(os.path.join(target, asset))
 
     def test_asset_token_extract_macro_dryrun(self, tmpdir):
+        '''When extracting with dryrun, a token should not actually
+        be created'''
+        newname = random_string()
         macro_name = 'MVToken'
         m = GetAsset(macro_name)
         assert m is not None
-        m.assemble()
-        n = GetAsset(macro_name + '.rptok')
+        m.assemble(newname)
+        n = GetAsset(newname + '.rptok')
         assert n is not None
         assert n.fromdir is not None
         assert n.xmlfile is not None
         assert n.zipfile is not None
         n.assemble(dryrun=True)
-        assert os.path.exists(os.path.join('.', macro_name))
-        should_have = os.path.join('.', macro_name, 'properties.xml')
-        assert os.path.exists(should_have), f"{should_have} does not exist"
-        macro_xml = os.path.join('.', macro_name, '1d20.xml')
-        assert not os.path.exists(macro_xml), f"{macro_xml} does not exist, but should"
-        macro_cmd = os.path.join('.', macro_name, '1d20.command')
-        assert not os.path.exists(macro_cmd), f"{macro_cmd} does not exist, but should"
+        assert not os.path.exists(os.path.join('.', newname))
+        should_have = os.path.join('.', newname, 'properties.xml')
+        assert not os.path.exists(should_have), f"{should_have} exists when using dryrun"
+        macro_xml = os.path.join('.', newname, '1d20.xml')
+        assert not os.path.exists(macro_xml), f"{macro_xml} exists when using dryrun"
+        macro_cmd = os.path.join('.', newname, '1d20.command')
+        assert not os.path.exists(macro_cmd), f"{macro_cmd} exists when using dryrun"
 
     def test_asset_token_assemble_dryrun(self, tmpdir):
         macro_name = 'MVToken+1'
@@ -161,11 +168,62 @@ class Test_MTAsset_Token:
         assert not os.path.exists(macro_name + '.rptok')
 
     def test_asset_token_assemble_macroPropertiesMap(self, tmpdir):
-        macro_name = 'MVToken'
-        m = GetAsset(macro_name)
+        tokenname = 'MVToken'
+        m = GetAsset(tokenname)
         assert m is not None
         m.assemble()
-        n = GetAsset(macro_name + '.rptok')
+        n = GetAsset(tokenname + '.rptok')
         assert n is not None
         assert n.xml.find('macroPropertiesMap/entry/macro') is None
         assert n.xml.find('macroPropertiesMap/entry/' + tagset.macro.tag) is not None
+
+    def test_token_assemble_sha_macro(self, tmpdir):
+        # Macros should get tagged with comment even in
+        # non Lib: tokens.
+        tokenname = 'MVToken'
+        m = GetAsset(tokenname)
+        assert m is not None
+        m.assemble('TestToken')
+        m = GetAsset('TestToken.rptok')
+        assert m is not None
+        for entry in m.root.macroPropertiesMap.iterchildren():
+            for macro in entry.iterchildren():
+                if macro.tag == tagset.macro.tag:
+                    assert github_url in macro.command.text
+
+    def test_token_assemble_no_gmname_change(self, tmpdir):
+        # TODO this will fail if MVToken ever gets a gmName
+        tokenname = random_string()
+        m = GetAsset('MVToken')
+        assert m is not None
+        m.assemble(tokenname)
+        m = GetAsset(tokenname + '.' + tagset.token.ext)
+        assert m is not None
+        assert 'gmName' not in [x.tag for x in m.root.iterchildren()]
+
+    def test_token_assemble_sha_gmname(self, tmpdir):
+        tokenname = 'Lib:' + random_string()
+        tokennameq = tokenname.replace(':', '-')
+        m = GetAsset('MVToken')
+        assert m is not None
+        m.root.name = objectify.StringElement(tokenname)
+        m.assemble(tokennameq)
+        m = GetAsset(MacroNameQuote(tokennameq + '.' + tagset.token.ext))
+        assert m is not None
+        assert 'gmName' in [x.tag for x in m.root.iterchildren()]
+        assert m.root.gmName == git_tag_str
+
+    def test_token_extract_sha_gmname_remove(self, tmpdir):
+        tokenname = 'Lib:' + random_string()
+        tokennameq = tokenname.replace(':', '-')
+        m = GetAsset('MVToken')
+        assert m is not None
+        m.assemble(save_name=tokennameq)
+        m = GetAsset(tokennameq + '.' + tagset.token.ext)
+        assert m is not None
+        m.extract()
+        assert os.path.exists(tokennameq)
+        assert os.path.isdir(tokennameq)
+        assert os.path.exists(os.path.join(tokennameq, 'content.xml'))
+        xml = objectify.parse(os.path.join(tokennameq, 'content.xml'))
+        assert 'gmName' not in [x.tag for x in xml.getroot().iterchildren()]

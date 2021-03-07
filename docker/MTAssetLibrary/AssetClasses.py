@@ -17,6 +17,7 @@ Token macros extract to the Token directory. Campaign Macros
 extract to the Campaign directory.
 """
 
+import re
 import sys
 sys.path.append('docker')
 from .utils import *  # noqa: F403
@@ -314,8 +315,11 @@ class MTAsset:
         return zf
 
     def save_to(self, save_name=None, output_dir=None):
-        output_dir = output_dir or self.output_dir or '.'
-        output_dir = MacroNameQuote(output_dir)
+        default_dir = '.'
+        if self.is_macro:
+            default_dir = 'macro'
+        output_dir = output_dir or self.output_dir or default_dir
+        # output_dir = MacroNameQuote(output_dir)
         save_name = self.best_name_escaped(save_name)
         return os.path.join(output_dir, save_name)
 
@@ -424,7 +428,8 @@ class MTToken(MTAsset):
 
                     self.root.macroPropertiesMap.entry[i] = new_entry
         if not dryrun:
-            #self.root.gmName = objectify.fromstring('<gmName>' + git_tag_str + '</gmName>')
+            if self.root.name.text.startswith('Lib:'):
+                self.root.gmName = objectify.fromstring('<gmName>' + git_tag_str + '</gmName>')
             try:
                 zf.writestr('content.xml',
                             etree.tostring(self.xml, pretty_print=True))
@@ -513,11 +518,10 @@ class MTMacroObj(MTAsset):
         if not self._loaded_from == 'assetTypeFile':
             log.info('loading %s for the macro xml file' % self.whence)
             log.info('loading %s for the macro command file' % self.command_file)
-            # tag = '<!-- https://github.com/mr-ice/maptool-macros/ ' + git_tag_str + ' -->\n'
-            # command = tag + open(self.command_file).read()
-            command = open(self.command_file).read()
+            command = git_comment_str + '\n' + open(self.command_file).read()
+            # command = open(self.command_file).read()
             # reassemble the command into the xml
-            self.xml.getroot().command = DataElement(command)
+            self.root.command = DataElement(command)
 
     @property
     def command_file(self):
@@ -581,6 +585,32 @@ class MTMacroObj(MTAsset):
         if type(new) == MTMacroObj:
             self.root.append(new.root)
 
+    def extract(self, save_name=None, output_dir=None, dryrun=None, verbose=None):
+        """
+        MTMacroObj.extract() method
+
+        Returns None
+
+        This will cause the macro to write itself to a macro directory as MacroName.xml and MacroName.command
+
+        Keyword Arguments
+        save_name (default object_name) - temporary change of name to the object (and resulting files)
+        dryrun (default None) - don't actually save anything
+        verbose (default None) - print out debugging information normally logged
+        """
+        # Properties, Campaigns uses this
+        output_path = output_dir or 'macro'
+        if not dryrun:
+            make_directory_path(output_path)
+
+        # what if we didn't assemble yet? we have to write
+        # a file in memory.
+        if self.zipfile is None:
+            self.zipfile = self._assemble_to(BytesIO())
+        # don't extractall for macros
+        basefn = os.path.join(output_path,self.best_name_escaped(save_name))
+        if not dryrun:
+            write_macro_files(self.root, basefn)
 
 class MTProject(MTAsset):
     def extract(self, *args, **kwargs):

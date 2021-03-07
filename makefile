@@ -55,7 +55,7 @@ behave: behave.image clean
 	behave --no-capture --no-capture-stderr --no-logcapture
 	git status --ignored
 
-.PHONY: build clean test log behave ptw unzip
+.PHONY: build clean test log behave ptw unzip flake8
 
 log:
 	rm -f output/Lib%3ALog4MT.rptok
@@ -74,3 +74,12 @@ unzip:
 	mkdir qaa
 	./docker/assemble MVProject.project --output qaa
 	ls -altr
+
+config.ini: makefile
+	echo '[assemble]\ndirectory = output\n\n[extract]\ndirectory = .' > $@
+
+maptool-macros.code-workspace: makefile
+	echo '{\n    "folders": [\n        {\n            "path": "."\n        }\n    ]\n}' > $@
+
+flake8:
+	flake8 --ignore E501,E402
