@@ -1,14 +1,9 @@
 <project>
-  <properties name="DND5e"/>
-  <token name="Lib-DND5e"/>
+  <project name="DnD5e.project"/>
   <token name="Lib-Open5e"/>
-  <token name="Lib-CampaignPreferences"/>
-  <macroset name="Open5e-Campaign">
-    <macro name="Lib-DND5e/Attack+Editor"/>
-  </macroset>
+  <token name="Lib-O5e-MonsterSupplement"/>
   <macroset name="Open5e-GM">
     <macro name="macro/Setup+Monster+Token"/>
-    <macro name="macro/Set+Landing+Map"/>
-    <macro name="macro/Configure+GM+Preferences"/>
+    <macro name="macro/Edit+Ext+DB"/>
   </macroset>
 </project>
