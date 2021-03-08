@@ -1,0 +1,8 @@
+<project>
+  <project name="DNDBeyond+DarkerDungeon"/>
+  <project name="DNDBeyond+Open5e.project"/>
+  <project name="DevMacros.project"/>
+  <token name="Lib-DNDB-TestLibrary"/>
+  <token name="Lib-JSON-Editor"/>
+  <token name="Lib-Log4MT"/>
+</project>

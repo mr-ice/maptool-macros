@@ -1,33 +1,10 @@
 <project>
+  <project name="DnD5e.project"/>
   <properties name="DND5e"/>
   <token name="Lib-DNDBeyond"/>
-  <token name="Lib-DND5e"/>
-  <token name="Lib-DNDB-TestLibrary"/>
-  <token name="Lib-CampaignPreferences"/>
-  <token name="Lib-JSON-Editor"/>
-  <macroset name="DNDBeyond">
+  <macroset name="DNDBeyond-Campaign">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>
     <macro name="macro/Reset+Properties"/>
-    <macro name="macro/Create+Ability+Check+Roll+Macro"/>
-    <macro name="macro/Create+Damage+Roll+Macro"/>
-    <macro name="macro/Create+Healing+Roll+Macro"/>
-    <macro name="macro/Create+Save+Roll+Macro"/>
-    <macro name="macro/Damage+Selected"/>
-    <macro name="macro/Heal+Selected"/>
-    <macro name="macro/TempHP+for+Selected"/>
-    <macro name="macro/Drain+or+Restore+Selected"/>
-    <macro name="macro/Conditions"/>
-    <macro name="macro/Distance+Between+Selected"/>
-    <macro name="Lib-DND5e/Attack+Editor"/>
-    <macro name="Lib-DND5e/Action+Editor"/>
-    <macro name="macro/Apply+Last+Attack"/>
-    <macro name="macro/Apply+Last+Attack+Options"/>
-    <macro name="macro/Restore+Last+Dead+NPC"/>
-    <macro name="macro/Change+Elevation"/>
-  </macroset>
-  <macroset name="GM-Panel">
-    <macro name="macro/Set+Landing+Map"/>
-    <macro name="macro/Configure+GM+Preferences"/>
   </macroset>
 </project>

@@ -1,8 +1,6 @@
 <project>
   <token name="Lib-DND5e"/>
-  <token name="Lib-CampaignPreferences"/>
   <macroset name="PF2-GMPanel">
     <macro name="macro/Set+Landing+Map"/>
   </macroset>
 </project>
-
