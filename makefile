@@ -45,7 +45,7 @@ behave.image: maker.image docker/Dockerfile.behave
 	docker build docker -f docker/Dockerfile.behave -t behave
 	touch $@
 
-build: tester.image behave.image
+build: maker.image
 
 test: tester.image
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester $(ARGS)
@@ -55,7 +55,7 @@ behave: behave.image clean
 	behave --no-capture --no-capture-stderr --no-logcapture
 	git status --ignored
 
-.PHONY: build clean test log behave ptw unzip flake8
+.PHONY: build clean test log behave ptw unzip flake8 tester
 
 log:
 	rm -f output/Lib%3ALog4MT.rptok
