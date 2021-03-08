@@ -527,8 +527,8 @@ class MTMacroObj(MTAsset):
         if not self._loaded_from == 'assetTypeFile':
             log.info('loading %s for the macro xml file' % self.whence)
             log.info('loading %s for the macro command file' % self.command_file)
-            command = git_comment_str + '\n' + open(self.command_file).read()
-            # command = open(self.command_file).read()
+            # command = git_comment_str + '\n' + open(self.command_file).read()
+            command = open(self.command_file).read()
             # reassemble the command into the xml
             self.root.command = DataElement(command)
 

@@ -177,19 +177,19 @@ class Test_MTAsset_Token:
         assert n.xml.find('macroPropertiesMap/entry/macro') is None
         assert n.xml.find('macroPropertiesMap/entry/' + tagset.macro.tag) is not None
 
-    def test_token_assemble_sha_macro(self, tmpdir):
-        # Macros should get tagged with comment even in
-        # non Lib: tokens.
-        tokenname = 'MVToken'
-        m = GetAsset(tokenname)
-        assert m is not None
-        m.assemble('TestToken')
-        m = GetAsset('TestToken.rptok')
-        assert m is not None
-        for entry in m.root.macroPropertiesMap.iterchildren():
-            for macro in entry.iterchildren():
-                if macro.tag == tagset.macro.tag:
-                    assert github_url in macro.command.text
+    # def test_token_assemble_sha_macro(self, tmpdir):
+    #     # Macros should get tagged with comment even in
+    #     # non Lib: tokens.
+    #     tokenname = 'MVToken'
+    #     m = GetAsset(tokenname)
+    #     assert m is not None
+    #     m.assemble('TestToken')
+    #     m = GetAsset('TestToken.rptok')
+    #     assert m is not None
+    #     for entry in m.root.macroPropertiesMap.iterchildren():
+    #         for macro in entry.iterchildren():
+    #             if macro.tag == tagset.macro.tag:
+    #                 assert github_url in macro.command.text
 
     def test_token_assemble_no_gmname_change(self, tmpdir):
         # TODO this will fail if MVToken ever gets a gmName
