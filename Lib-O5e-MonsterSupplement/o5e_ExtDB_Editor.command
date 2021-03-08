@@ -15,13 +15,13 @@
 [h: basicDefaults = json.set ("", "name", "Name", "strength", 10, "dexterity", 10,
 		"constitution", 10, "intelligence", 10, "wisdom", 10, "charisma", 10)]
 [h: inputStr = "junkTab | Info || TAB ## " +
-		"junkVar | Fill out monster properties as desired. Actions will come later || LABEL | span=true ##"]
+		"junkVar | Fill out monster properties as desired. Actions will come later |Info| LABEL | span=true ##"]
 [h: inputStr = inputStr +
 		"junkVar | For skills and saves, use " + UNSPECIFIED + " to indicate 'Unspecified' " + 
-		"and the Token Setup macro will calculate the correct values || LABEL | span=true ##"]
+		"and the Token Setup macro will calculate the correct values |Info| LABEL | span=true ##"]
 [h: inputStrX = inputStr +
 		"junk | Proficiency Values: Valid choices are " + 
-		"0 = No proficiency; 0.5 = Half; 1 = Proficient; 2 = Expert || LABEL | span=true ##"]
+		"0 = No proficiency; 0.5 = Half; 1 = Proficient; 2 = Expert |Info| LABEL | span=true ##"]
 [h: basicInputStr = o5e_ExtDB_getInputFromJson (basicInputVars, basicDefaults)]
 [h: inputStr = inputStr + "basicTab | Basic | | TAB | select=true##" + basicInputStr]
 
@@ -78,13 +78,11 @@
 [h: newMonster = o5e_ExtDB_stripUnspecified (newMonster, UNSPECIFIED)]
 <!-- Adorn a few key properties -->
 [h: slug = replace (name, "[ ,]", "-")]
-[h: newMonster = json.set (newMonster, "slug", slug, "monsterDBName", name)]
+<!-- always lower case the slug -->
+[h: newMonster = json.set (newMonster, "slug", lower (slug), "monsterDBName", name)]
 [h: doActions = 0]
 [h: input ("doActions | Yes,No | Edit actions? | LIST | select=0")]
 <!-- Reverse physchology for the purposes of making Yes come before No: ! means do it -->
 [h, if (!doActions): newMonster = o5e_ExtDB_EditActions (newMonster)]
-
-
-
 [h: monsterDB = json.set (monsterDB, slug, newMonster)]
 [h: macro.return = monsterDB]

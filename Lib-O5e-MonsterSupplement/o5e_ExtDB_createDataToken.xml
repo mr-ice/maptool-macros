@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>08f16218-4ef5-45e3-af41-b5481b38952b</macroUUID>
+  <macroUUID>fa4de1a4-ed31-423e-8797-67a2e56a5100</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>21</index>
   <colorKey>default</colorKey>
@@ -7,7 +7,7 @@
   <label>o5e_ExtDB_createDataToken</label>
   <group>Ext DB</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>

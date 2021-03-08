@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>b44f13e2-de47-4bfb-b25e-bf2627f5c5cd</macroUUID>
+  <macroUUID>58d17487-defd-4ce5-a7cf-22a404cf1198</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>8</index>
   <colorKey>default</colorKey>
@@ -7,14 +7,14 @@
   <label>o5e_ExtDB_getBlankMonster</label>
   <group>Ext DB - Editor</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>arg(0): (Optional) JSON object to merge over the blank template</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

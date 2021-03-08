@@ -11,9 +11,14 @@
 [h: extDb = o5e_ExtDB_getDB()]
 [h: extDbResults = json.path.read (extDb, ".[?(@.monsterDBName =~ /.*" + slug + ".*/i)]")]
 [h: log.debug (CATEGORY + "extDbResults = " + extDbResults)]
-[h: extDbResultsCount = json.length (extDbResults)]
-[h: responseCount = responseCount + extDbResultsCount]
-[h: responseResults = json.merge (responseResults, extDbResults)]
-[h: o5eResponse = json.set (o5eResponse, "count", responseCount,
-			"results", responseResults)]
+[h, if (!json.isEmpty (extDbResults)), code: {
+	[extDbResultsCount = json.length (extDbResults)]
+	[responseCount = responseCount + extDbResultsCount]
+	[responseResults = json.merge (responseResults, extDbResults)]
+	[log.debug (CATEGORY + "merged responseResults = " + responseResults)]
+	[sortedResults = dnd5e_Util_JSON_sortObjectArray (responseResults, "slug")]
+	[log.debug (CATEGORY + "sortedResults = " + sortedResults)]
+	[o5eResponse = json.set (o5eResponse, "count", responseCount,
+			"results", sortedResults)]
+}]
 [h: macro.return = o5eResponse]

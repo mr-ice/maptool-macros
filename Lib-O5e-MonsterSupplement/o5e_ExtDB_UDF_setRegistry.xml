@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>b89953c8-e0ed-4e5c-8d77-3e289b2ca6cc</macroUUID>
+  <macroUUID>fa07fb56-d3a6-4459-9f47-87dda0ebe0ce</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>26</index>
   <colorKey>default</colorKey>
@@ -7,14 +7,14 @@
   <label>o5e_ExtDB_UDF_setRegistry</label>
   <group>Ext DB - UDF - Util</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

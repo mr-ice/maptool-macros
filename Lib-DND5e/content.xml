@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>O8F6V50VS2KQE+msAuydhg==</baGUID>
+    <baGUID>0zm9oXPfTjqDp7c97fticg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>yqA2y5nXT+WMQm+y7ZRRiQ==</baGUID>
+    <baGUID>HfqvoBDtRO6umMiGAktfxw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,9 +14,9 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1050</x>
-  <y>250</y>
-  <z>48</z>
+  <x>800</x>
+  <y>200</y>
+  <z>11</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -1663,6 +1663,14 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_deadtokens</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_deadTokens</key>
+          <value class="string">[{"id":"09B81C419D934F63958AD1CBBE03E4A0","initiative":"The token is not in the initiative list."}]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>charismabonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>CharismaBonus</key>
@@ -2929,8 +2937,16 @@ function changeType() {
       <macro name="dnd5e_Util_displayReleaseNotes"/>
     </entry>
     <entry>
+      <int>248</int>
+      <macro name="dnd5e_SavedAttacks_setKey"/>
+    </entry>
+    <entry>
+      <int>249</int>
+      <macro name="dnd5e_AE2_generateAbilityModFieldHtml"/>
+    </entry>
+    <entry>
       <int>250</int>
-      <macro name="dnd5e_Util_Parser_expandProperties"/>
+      <macro name="dnd5e_AE2_generateProficiencyHtml"/>
     </entry>
     <entry>
       <int>251</int>
@@ -3161,16 +3177,12 @@ function changeType() {
       <macro name="dnd5e_AttackEditor_upgradeAttacks"/>
     </entry>
     <entry>
-      <int>248</int>
-      <macro name="dnd5e_SavedAttacks_setKey"/>
+      <int>310</int>
+      <macro name="dnd5e_Util_JSON_sortObjectArray"/>
     </entry>
     <entry>
-      <int>249</int>
-      <macro name="dnd5e_AE2_generateAbilityModFieldHtml"/>
-    </entry>
-    <entry>
-      <int>250</int>
-      <macro name="dnd5e_AE2_generateProficiencyHtml"/>
+      <int>311</int>
+      <macro name="dnd5e_Constants"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

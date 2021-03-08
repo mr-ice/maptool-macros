@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>e6bba712-1956-4ed9-8e28-89db655ade77</macroUUID>
+  <macroUUID>f3c1d498-0744-4bf7-b6ae-09584ac04be2</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>13</index>
   <colorKey>default</colorKey>
@@ -7,14 +7,14 @@
   <label>Ext Monster Database - backup 2</label>
   <group>Ext DB - Data</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

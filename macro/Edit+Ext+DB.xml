@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>ea821687-69c4-4ced-ae68-8e2f14cffe8c</macroUUID>
+  <macroUUID>e607de95-4e37-42ab-8891-df2bd5e5416a</macroUUID>
   <saveLocation>GmPanel</saveLocation>
-  <index>10</index>
+  <index>2</index>
   <colorKey>blue</colorKey>
   <hotKey>None</hotKey>
   <label>Edit Ext DB</label>
@@ -14,7 +14,7 @@
   <fontSize>1.15em</fontSize>
   <minWidth>183</minWidth>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Edits the Monster Supplement Database</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

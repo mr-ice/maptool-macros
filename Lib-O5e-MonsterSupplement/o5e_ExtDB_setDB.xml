@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>bd701d36-d7b9-4fa4-8b95-46105ecd5168</macroUUID>
+  <macroUUID>88565ff4-4a2b-4bc2-88f8-de7ce3a350b7</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>4</index>
   <colorKey>default</colorKey>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>arg(0) = Monster Database
 arg(1) = (Optional; Internal Only) Target database
 arg(2) = (Optional; Internal Only) Suppress Backup</toolTip>

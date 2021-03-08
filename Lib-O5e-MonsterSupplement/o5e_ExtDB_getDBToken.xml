@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>4a0660d5-55f0-48e7-834d-6494dce1d3ba</macroUUID>
+  <macroUUID>dd5c5fbc-24af-48b7-bf68-0f5bc6e16d0e</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>23</index>
   <colorKey>default</colorKey>
@@ -7,14 +7,14 @@
   <label>o5e_ExtDB_getDBToken</label>
   <group>Ext DB</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>arg(0)= (Optional; Internal Only) Alternate database name
 
 Returns a JSON object containing the ID of the token and the map it resides on:

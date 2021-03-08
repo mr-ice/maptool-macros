@@ -1,7 +1,7 @@
 [h: o5e_ExtDB_Constants(getMacroName())]
-[h, token ("Lib:O5e-MonsterSupplement"): libTokenId = currentToken()]
+[h, token (LIB_TOKEN_NAME): libTokenId = currentToken()]
 [h, token (PROXY_TOKEN_NAME): tokenId = currentToken()]
-[h: assert (tokenId != "", "This function must be executed from the same map as Lib:O5e-MonsterSupplement")]
+[h: assert (tokenId != "", "This function must be executed from the same map as " + LIB_TOKEN_NAME)]
 
 [h, if (tokenId == libTokenId), code: {
 	[updates = json.set ("{}", "name", PROXY_TOKEN_NAME,

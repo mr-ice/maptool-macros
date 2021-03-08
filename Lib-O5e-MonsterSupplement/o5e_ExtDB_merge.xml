@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>fe9aae24-7ee6-4e52-9481-ad7ba8096be6</macroUUID>
+  <macroUUID>35346418-b919-4f69-964b-829c5779a68c</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>2</index>
   <colorKey>default</colorKey>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

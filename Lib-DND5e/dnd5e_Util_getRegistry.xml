@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>59ef8b8b-4ed9-457e-8d2d-8852fec81df4</macroUUID>
+  <macroUUID>203b9390-1610-4be3-8a3d-4e69ea5bd6b6</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>256</index>
   <colorKey>default</colorKey>
@@ -15,7 +15,8 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>arg(0) = Name of registry</toolTip>
+  <toolTip>arg(0) = Name of registry
+arg(1) = (Optional) Library token name</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>40f9245d-f7c8-40cd-aa61-90c655aa5f24</macroUUID>
+  <macroUUID>07baa708-cfa9-4b59-b102-ff4f09315386</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>6</index>
+  <index>311</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>o5e_ExtDB_Editor</label>
-  <group>Ext DB - Editor</group>
+  <label>dnd5e_Constants</label>
+  <group>Util - Constants</group>
   <sortby/>
   <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Creates a monster for the selected token
-
-arg (0) = (optional) Monster slug to edit (must be exact match)</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

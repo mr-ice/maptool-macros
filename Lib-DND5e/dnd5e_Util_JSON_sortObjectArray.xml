@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>40f9245d-f7c8-40cd-aa61-90c655aa5f24</macroUUID>
+  <macroUUID>6de93a92-348a-4979-9c35-90cb2c82f69e</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>6</index>
+  <index>310</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>o5e_ExtDB_Editor</label>
-  <group>Ext DB - Editor</group>
+  <label>dnd5e_Util_JSON_sortObjectArray</label>
+  <group>Util - JSON</group>
   <sortby/>
   <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,9 +15,11 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Creates a monster for the selected token
+  <toolTip>Sorts and array of objects
+arg(0) = Array of JSON objects
+arg(1) = common field for all JSON objects with which to base the sort on
 
-arg (0) = (optional) Monster slug to edit (must be exact match)</toolTip>
+Returns an array of the objects, sorted by the specified field; Duplicate values are arbitrarily ordered together</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

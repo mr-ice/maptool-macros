@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>815f1016-5186-4004-88fb-7bfae78634d1</macroUUID>
+  <macroUUID>b7796c5e-96d0-4417-95ba-539a32d59b37</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>22</index>
   <colorKey>red</colorKey>
@@ -15,8 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Execute this macro the first time Lib:O5e-MonsterSupplement is installed. It must be executed from the library map. The token it creates will be the Ext Database. This token must be located
-on each map you wish to edit the database from. Ideally, the GM has a "Monster" map where they build all of their monster tokens. Such a map is an ideal location for the Ext Database token to reside.</toolTip>
+  <toolTip>Execute this macro the first time Lib:O5e-MonsterSupplement is installed. The token it creates will be the Ext Databas and will co-exist alongside your other Token Libraries. While there are built-in backups in the token itself, the GM should also make file backups of the token in order to restore an inadvertent deletion.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

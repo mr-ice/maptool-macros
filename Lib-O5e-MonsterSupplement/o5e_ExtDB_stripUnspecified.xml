@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>0d98e409-a4c6-47ac-9070-fc287aaf9ff8</macroUUID>
+  <macroUUID>1b933901-880e-4683-9cd0-281695ae37aa</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>11</index>
   <colorKey>default</colorKey>
@@ -7,14 +7,14 @@
   <label>o5e_ExtDB_stripUnspecified</label>
   <group>Ext DB - Editor</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Given a JSON object, strip keys that are unspecified. By default, unspecified keys are those with:
 - a value of ""
 - or a value of "-1"
