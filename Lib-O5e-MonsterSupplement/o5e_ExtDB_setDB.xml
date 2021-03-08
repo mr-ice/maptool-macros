@@ -1,23 +1,23 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>512bcf4c-c7c6-41e0-ab85-5385a0d4bb8f</macroUUID>
+  <macroUUID>88565ff4-4a2b-4bc2-88f8-de7ce3a350b7</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>258</index>
+  <index>4</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_setRegistry</label>
-  <group>Util - Macro</group>
+  <label>o5e_ExtDB_setDB</label>
+  <group>Ext DB</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>arg(0) = name of registry
-arg(1) = registry data
-arg(2) = (Optional) Library token name</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg(0) = Monster Database
+arg(1) = (Optional; Internal Only) Target database
+arg(2) = (Optional; Internal Only) Suppress Backup</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

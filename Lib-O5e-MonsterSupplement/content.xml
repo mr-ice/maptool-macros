@@ -1,32 +1,32 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>0zm9oXPfTjqDp7c97fticg==</baGUID>
+    <baGUID>eG6YJU65TNKUvvq5dhJiuQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>HfqvoBDtRO6umMiGAktfxw==</baGUID>
+    <baGUID>9N0EcpltSkeC68gSMTszbA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
       <null/>
       <net.rptools.lib.MD5Key>
-        <id>a1dddd11fee78806f354fbe198cf3671</id>
+        <id>4d3b550829c5d7ea16d11d4c00a7e7e2</id>
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>800</x>
-  <y>200</y>
-  <z>11</z>
+  <x>600</x>
+  <y>400</y>
+  <z>9</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
   <lastX>0</lastX>
   <lastY>0</lastY>
   <snapToScale>true</snapToScale>
-  <width>304</width>
-  <height>291</height>
-  <isoWidth>304</isoWidth>
-  <isoHeight>291</isoHeight>
+  <width>256</width>
+  <height>256</height>
+  <isoWidth>200</isoWidth>
+  <isoHeight>200</isoHeight>
   <scaleX>1.0</scaleX>
   <scaleY>1.0</scaleY>
   <sizeMap>
@@ -43,12 +43,12 @@
   <vblColorSensitivity>-1</vblColorSensitivity>
   <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
   <isAlwaysVisible>false</isAlwaysVisible>
-  <name>Lib:DnD5e</name>
+  <name>Lib:O5e-MonsterSupplement</name>
   <ownerType>0</ownerType>
-  <tokenShape>SQUARE</tokenShape>
+  <tokenShape>CIRCLE</tokenShape>
   <tokenType>NPC</tokenType>
   <layer>TOKEN</layer>
-  <propertyType>DNDebug</propertyType>
+  <propertyType>Basic</propertyType>
   <tokenOpacity>1.0</tokenOpacity>
   <terrainModifier>0.0</terrainModifier>
   <terrainModifierOperation>NONE</terrainModifierOperation>
@@ -57,11 +57,8 @@
   </terrainModifiersIgnored>
   <isFlippedX>false</isFlippedX>
   <isFlippedY>false</isFlippedY>
-  <charsheetImage>
-    <id>f2cf86e2e8e9f580808cc099e6215379</id>
-  </charsheetImage>
-  <sightType>Normal</sightType>
-  <hasSight>false</hasSight>
+  <sightType>Darkvision 60</sightType>
+  <hasSight>true</hasSight>
   <state>
     <entry>
       <string>Paralyzed</string>
@@ -93,10 +90,6 @@
     </entry>
     <entry>
       <string>Petrified</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Unconcious</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -379,13 +372,6 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>campaignpropertiesversion{0.15}</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>campaignPropertiesVersion{0.15}</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>proficiency.performance</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>proficiency.performance</key>
@@ -407,6 +393,14 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>dspass</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>DSPass</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>---- skill bonuses ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Skill Bonuses ----</key>
@@ -416,7 +410,8 @@
       <entry>
         <string>attackjson</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>attackJson</key>
+          <key>attackJSON</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -445,6 +440,23 @@
         <string>---- combat ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Combat ----</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>extdb.libmap.name</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>extDb.libMap.name</key>
+          <value class="string">Grasslands</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>height</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Height</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -456,31 +468,18 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_javascript</string>
+        <string>---- ability bonuses ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_AE2_JavaScript</key>
-          <value class="string">$.fn.selectpicker.Constructor.BootstrapVersion = '4';
-$.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
-$.fn.selectpicker.Constructor.DEFAULTS.styleBase = 'form-control';
-$.fn.selectpicker.Constructor.DEFAULTS.style = 'form-control';
-$.fn.selectpicker.Constructor.DEFAULTS.width = 'auto';
-$.fn.selectpicker.Constructor.DEFAULTS.maxOptions = '4';
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-function changeType() {
-   document.getElementById("submit").click();
-}
-          </value>
+          <key>---- Ability Bonuses ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>---- ability bonuses ----</string>
+        <string>strength ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>---- Ability Bonuses ----</key>
+          <key>Strength Ability</key>
+          <value class="string">3</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -502,6 +501,7 @@ function changeType() {
         <string>---- skills &amp; abilities ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Skills &amp; Abilities ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -509,6 +509,7 @@ function changeType() {
         <string>acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Acrobatics</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -530,6 +531,15 @@ function changeType() {
         <string>---- abilities scores ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Abilities Scores ----</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dndb_basictoon</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>dndb_BasicToon</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -541,17 +551,18 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>savedattackrolledexpressions</string>
+        <string>experience points</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>savedAttackRolledExpressions</key>
-          <value class="string">[[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Scimitar+of+Speed","bonus":15,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":["basic","advantagable"],"advantageRolls":0,"hasAdvantage":0,"hasDisadvantage":1,"output":"&lt;b&gt;Disadvantage:&lt;/b&gt; [20,13], Actual: 13&lt;br&gt;Rolled: 13&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 15 = 28 ","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"remainingRollers":[],"typedDescriptors":{"condition":"","tooltipDetail":"Disadvantage%2820%2C13%29+%2813%29+%2B+15","advantageable":"%26nbsp%26semi%3Bwith+disadvantage","tooltipRoll":"1d20+%2B+15","rollerId":"380ADAB319BB4022AB316D7C0D05ED95"},"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"individualRolls":[13],"rolls":[20,13],"roll":13,"total":28,"description":"&lt;b&gt;Disadvantage:&lt;/b&gt; [20,13], Actual: 13","totals":[35,28],"outputs":["&lt;b&gt;Disadvantage:&lt;/b&gt; [20,13], Actual: 13&lt;br&gt;Rolled: 13&lt;br&gt;Scimitar of Speed Attack Roll: 1d20 + 15 = 28 "],"allTotal":63},{"expressionTypes":"Damage","diceRolled":1,"diceSize":6,"bonus":12,"onCritAdd":4,"damageTypes":["Slashing","magic"],"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":["basic","critable","damageable"],"output":"Rolled: 4&lt;br&gt; Damage Roll: 1d6 + 12 = 16 Slashing,magic","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"individualRolls":[4],"rolls":[4],"roll":4,"total":16,"totals":[16],"typedDescriptors":{"tooltipRoll":"1d6+%2B+12","tooltipDetail":"%284%29+%2B+12"},"outputs":["Rolled: 4&lt;br&gt; Damage Roll: 1d6 + 12 = 16 Slashing,magic"],"allTotal":16}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Scimitar of Speed - Raging","bonus":15,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":["basic","advantagable"],"advantageRolls":0,"hasAdvantage":1,"hasDisadvantage":0,"output":"&lt;b&gt;Advantage:&lt;/b&gt; [4,11], Actual: 11&lt;br&gt;Rolled: 11&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 26 ","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"remainingRollers":[],"typedDescriptors":{"condition":"","tooltipDetail":"Advantage%284%2C11%29+%2811%29+%2B+15","advantageable":"%26nbsp%26semi%3Bwith+advantage","tooltipRoll":"1d20+%2B+15","rollerId":"380ADAB319BB4022AB316D7C0D05ED95"},"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"individualRolls":[11],"rolls":[4,11],"roll":11,"total":26,"description":"&lt;b&gt;Advantage:&lt;/b&gt; [4,11], Actual: 11","totals":[19,26],"outputs":["&lt;b&gt;Advantage:&lt;/b&gt; [4,11], Actual: 11&lt;br&gt;Rolled: 11&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 26 "],"allTotal":45},{"diceSize":6,"diceRolled":1,"bonus":15,"expressionTypes":"Damage","name":"","damageTypes":["Slashing","magic"],"onCritAdd":4,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":["basic","critable","damageable"],"output":"Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 15 = 20 Slashing,magic","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"individualRolls":[5],"rolls":[5],"roll":5,"total":20,"totals":[20],"typedDescriptors":{"tooltipRoll":"1d6+%2B+15","tooltipDetail":"%285%29+%2B+15"},"outputs":["Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 15 = 20 Slashing,magic"],"allTotal":20}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Scimitar of Speed - Raging","bonus":15,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":["basic","advantagable"],"advantageRolls":1,"hasAdvantage":0,"hasDisadvantage":0,"output":"Rolled: 10&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 25 ","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"remainingRollers":[],"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+15","tooltipDetail":"%2810%29+%2B+15","rollerId":"380ADAB319BB4022AB316D7C0D05ED95"},"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"individualRolls":[10],"rolls":[10],"roll":10,"total":25,"totals":[25],"outputs":["Rolled: 10&lt;br&gt;Scimitar of Speed - Raging Attack Roll: 1d20 + 15 = 25 "],"allTotal":25},{"diceSize":6,"diceRolled":1,"bonus":15,"expressionTypes":"Damage","name":"","damageTypes":["Slashing","magic"],"onCritAdd":4,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":["basic","critable","damageable"],"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 15 = 21 Slashing,magic","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"individualRolls":[6],"rolls":[6],"roll":6,"total":21,"totals":[21],"typedDescriptors":{"tooltipRoll":"1d6+%2B+15","tooltipDetail":"%286%29+%2B+15"},"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d6 + 15 = 21 Slashing,magic"],"allTotal":21}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Xbow Heavy","bonus":10,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":["basic","advantagable"],"advantageRolls":1,"hasAdvantage":0,"hasDisadvantage":0,"output":"Rolled: 5&lt;br&gt;Xbow Heavy Attack Roll: 1d20 + 10 = 15 ","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"remainingRollers":[],"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+10","tooltipDetail":"%285%29+%2B+10","rollerId":"DA8C71FB4413469B8E270371A80A1BA8"},"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"individualRolls":[5],"rolls":[5],"roll":5,"total":15,"totals":[15],"outputs":["Rolled: 5&lt;br&gt;Xbow Heavy Attack Roll: 1d20 + 10 = 15 "],"allTotal":15},{"diceSize":10,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","name":"","damageTypes":["Piercing"],"onCritAdd":1,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":["basic","critable","damageable"],"output":"Rolled: 7&lt;br&gt; Damage Roll: 1d10 + 4 = 11 Piercing","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"individualRolls":[7],"rolls":[7],"roll":7,"total":11,"totals":[11],"typedDescriptors":{"tooltipRoll":"1d10+%2B+4","tooltipDetail":"%287%29+%2B+4"},"outputs":["Rolled: 7&lt;br&gt; Damage Roll: 1d10 + 4 = 11 Piercing"],"allTotal":11}],[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":["basic","advantagable"],"name":"Bite","bonus":9,"hasAdvantage":0,"hasDisadvantage":0,"output":"Rolled: 12&lt;br&gt;Bite Attack Roll: 1d20 + 9 = 21 ","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"remainingRollers":[],"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+9","tooltipDetail":"%2812%29+%2B+9","rollerId":"F09DF42ABCEB49D79FDF344177AA1BEC"},"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll","dnd5e_DiceRoller_finalize"],"individualRolls":[12],"rolls":[12],"roll":12,"total":21,"totals":[21],"outputs":["Rolled: 12&lt;br&gt;Bite Attack Roll: 1d20 + 9 = 21 "],"allTotal":21},{"diceSize":6,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":["basic","critable","damageable"],"name":"","damageTypes":["piercing"],"onCritAdd":1,"output":"Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 4 = 9 piercing","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll"],"individualRolls":[5],"rolls":[5],"roll":5,"total":9,"totals":[9],"typedDescriptors":{"tooltipRoll":"1d6+%2B+4","tooltipDetail":"%285%29+%2B+4"},"outputs":["Rolled: 5&lt;br&gt; Damage Roll: 1d6 + 4 = 9 piercing"],"allTotal":9},{"diceSize":6,"diceRolled":3,"bonus":0,"expressionTypes":"Save Damage","types":{"basic":{"type":"basic","roller":["dnd5e_DiceRoller_applyConditions:2","dnd5e_DiceRoller_basicRoll:50","dnd5e_DiceRoller_finalize:100"]},"damageable":{"type":"damageable"},"saveable":{"type":"saveable","roller":["dnd5e_DiceRoller_saveDamageRoll:150","dnd5e_DiceRoller_saveEffectRoll:150"]}},"typeNames":["basic","damageable","saveable"],"name":"","damageTypes":["necrotic"],"saveDC":100,"saveAbility":"Charisma","saveEffectDescription":"The target's hit point maximum is reduced by an amount equal to the necrotic damage taken","output":"Target must make a Charisma DC 100 or take 7 necrotic&lt;br&gt;The target's hit point maximum is reduced by an amount equal to the necrotic damage taken&lt;br&gt;Rolled: 7&lt;br&gt; Save Damage Roll: 3d6 = 7 necrotic","rollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_saveDamageRoll","dnd5e_DiceRoller_saveEffectRoll"],"remainingRollers":[],"rolledRollers":["dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_saveDamageRoll","dnd5e_DiceRoller_saveEffectRoll"],"individualRolls":[2,1,4],"rolls":[7],"roll":7,"total":7,"totals":[7],"typedDescriptors":{"tooltipRoll":"3d6","tooltipDetail":"%282%2B1%2B4%29","saveable":"%7B%22damage%22%3A7%2C%22saveText%22%3A%22Save+for+unknown+effect%3A+the+target%27s+hit+point+maximum+is+reduced+by+an+amount+equal+to+the+necrotic+damage+taken%22%7D","save-effect-damage":7},"description":"Target must make a Charisma DC 100 or take 7 necrotic&lt;br&gt;The target's hit point maximum is reduced by an amount equal to the necrotic damage taken","outputs":["Target must make a Charisma DC 100 or take 7 necrotic&lt;br&gt;The target's hit point maximum is reduced by an amount equal to the necrotic damage taken&lt;br&gt;Rolled: 7&lt;br&gt; Save Damage Roll: 3d6 = 7 necrotic"],"allTotal":7}]]</value>
+          <key>Experience Points</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>experience points</string>
+        <string>ac armor</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Experience Points</key>
+          <key>AC Armor</key>
+          <value class="string">10</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -559,6 +570,7 @@ function changeType() {
         <string>---- health ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Health ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -566,7 +578,7 @@ function changeType() {
         <string>attackexpressionjson</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>attackExpressionJSON</key>
-          <value class="string">{"Slinky":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}}},"typeNames":"advantagable","name":"Slinky","bonus":8},{"diceSize":8,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"}},"typeNames":"critable,damageable","name":"","damageTypes":["Smacking"],"onCritAdd":1}]}</value>
+          <value class="string">{"Dagger":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Dagger","bonus":7},{"expressionTypes":"Damage","diceRolled":1,"diceSize":4,"bonus":4,"onCritAdd":1,"damageTypes":["Piercing"]}],"Crossbow++Light":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Crossbow++Light","bonus":77},{"expressionTypes":"Damage","diceRolled":1,"diceSize":8,"bonus":75,"onCritAdd":1,"damageTypes":["Piercing"]}],"Rapier":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Rapier","bonus":4},{"expressionTypes":"Damage","diceRolled":1,"diceSize":8,"bonus":4,"onCritAdd":1,"damageTypes":["Piercing"]}],"Greataxe":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Greataxe","bonus":3},{"expressionTypes":"Damage","diceRolled":1,"diceSize":12,"bonus":3,"onCritAdd":1,"damageTypes":["Slashing"]}],"Scimitar":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Scimitar","bonus":4},{"expressionTypes":"Damage","diceRolled":1,"diceSize":6,"bonus":4,"onCritAdd":1,"damageTypes":["Slashing"]}],"Unarmed+Strike":[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","name":"Unarmed+Strike","bonus":6},{"expressionTypes":"Damage","diceRolled":1,"diceSize":1,"bonus":3,"onCritAdd":1,"damageTypes":["Bludgeoning"]}]}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -578,12 +590,25 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>lib.releasenotesobj</string>
+        <string>wisdom ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>lib.releaseNotesObj</key>
-          <value class="string">{
-    "0.15": "Library+has+been+officially+versioned.%3Cbr%3E+RollExpressions+were+refactored+to+better+define+their+Types%26semi%3B%3Cbr%3E++%3Cfont+color%3D%27Red%27%3E%3Cb%3EAll+Attack+and+Action+macros+will+need+to+be+refreshed%3C%2Fb%3E%3C%2Ffont%3E%3Cbr%3E++Launching+the+respective+editor+once+will+accomplish+this+goal.+"
-}</value>
+          <key>Wisdom Ability</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>spellcastingability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>SpellcastingAbility</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>eyes</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Eyes</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -591,14 +616,6 @@ function changeType() {
         <string>proficiency.athletics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>proficiency.athletics</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>lastattackselection</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>lastAttackSelection</key>
-          <value class="string">Slinky</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -648,6 +665,7 @@ function changeType() {
         <string>languages</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Languages</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -669,6 +687,7 @@ function changeType() {
         <string>temphp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>TempHP</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -676,6 +695,15 @@ function changeType() {
         <string>medicine</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Medicine</key>
+          <value class="string">N/A</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>death save</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Death Save</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -683,6 +711,7 @@ function changeType() {
         <string>---- saves ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Saves ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -704,6 +733,7 @@ function changeType() {
         <string>cr</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>CR</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -725,7 +755,7 @@ function changeType() {
         <string>fly</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Fly</key>
-          <value class="string">24</value>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -740,6 +770,7 @@ function changeType() {
         <string>charisma save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Save</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -754,6 +785,7 @@ function changeType() {
         <string>---- ability score bonuses ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Ability Score Bonuses ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -782,7 +814,15 @@ function changeType() {
         <string>strength</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength</key>
-          <value class="string">20</value>
+          <value class="string">10</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>senses</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Senses</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -794,24 +834,10 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>senses</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Senses</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>libversion</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>libversion</key>
-          <value class="string">0.15</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>resistances</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Resistances</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -819,6 +845,14 @@ function changeType() {
         <string>character id</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Character ID</key>
+          <value class="string">291999</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>---- spellcasting ----</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>---- Spellcasting ----</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -833,7 +867,7 @@ function changeType() {
         <string>_dnd5e_preferences_user</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>_dnd5e_Preferences_User</key>
-          <value class="string">{"attackEditor_macroFontColor":"white","attackEditor_macroButtonColor":"red"}</value>
+          <value class="string">{"showRollExpressions":0,"suppressInitPrompt":1,"privateMacroModLabel":"Double-Triangle","disablePCRollExpressionConditions":0,"tokenNameFormat":"First","tokenNameOther":"Custom Name"}</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -841,6 +875,7 @@ function changeType() {
         <string>wisdom save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Save</key>
+          <value class="string">5</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -862,6 +897,7 @@ function changeType() {
         <string>deception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Deception</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -869,6 +905,7 @@ function changeType() {
         <string>dexterity save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Save</key>
+          <value class="string">7</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -894,6 +931,14 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>weight</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Weight</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>bonus.allability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>bonus.allAbility</key>
@@ -904,6 +949,7 @@ function changeType() {
         <string>---- armor ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Armor ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -932,6 +978,7 @@ function changeType() {
         <string>---- skill proficiencies ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Skill Proficiencies ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -953,6 +1000,7 @@ function changeType() {
         <string>---- ability proficiencies ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Ability Proficiencies ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -964,10 +1012,18 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>alignment</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Alignment</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>swim</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Swim</key>
-          <value class="string">23</value>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1024,6 +1080,7 @@ function changeType() {
         <string>classes</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Classes</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1031,14 +1088,7 @@ function changeType() {
         <string>charisma bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma Bonus</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>description</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>description</key>
-          <value class="string">Critical Damage (+26)&lt;br&gt;&lt;font color='red'&gt;&lt;b&gt;&lt;i&gt;CRITICAL &lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;</value>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1050,9 +1100,18 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>description</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Description</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>intelligence save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Save</key>
+          <value class="string">3</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1067,6 +1126,7 @@ function changeType() {
         <string>wisdom</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom</key>
+          <value class="string">10</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1074,13 +1134,6 @@ function changeType() {
         <string>proficiency.acrobatics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>proficiency.acrobatics</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>_dndb_overridebasictoon</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dndb_OverrideBasicToon</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1120,6 +1173,14 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_raceclass</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_raceClass</key>
+          <value class="string">[r: dnd5e_Property_getRaceClass()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>bonus.dexability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>bonus.dexAbility</key>
@@ -1137,6 +1198,7 @@ function changeType() {
         <string>race</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Race</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1151,6 +1213,7 @@ function changeType() {
         <string>dexterity bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity Bonus</key>
+          <value class="string">4</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1190,9 +1253,18 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>xp</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>XP</key>
+          <value class="string">900</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>wisdom bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Wisdom Bonus</key>
+          <value class="string">1</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1207,6 +1279,7 @@ function changeType() {
         <string>athletics</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Athletics</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1214,6 +1287,15 @@ function changeType() {
         <string>intimidation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intimidation</key>
+          <value class="string">N/A</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>age</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Age</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1246,6 +1328,22 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>dsfail</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>DSFail</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>avatarurl</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AvatarUrl</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>abilitybonus.constitution</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>abilityBonus.Constitution</key>
@@ -1256,14 +1354,15 @@ function changeType() {
         <string>hp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>HP</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_actions.version</string>
+        <string>constitution ability</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_ae2_actions.version</key>
-          <value class="string">0.15</value>
+          <key>Constitution Ability</key>
+          <value class="string">2</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1278,14 +1377,15 @@ function changeType() {
         <string>strength save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength Save</key>
+          <value class="string">7</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
         <string>proficiency</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>proficiency</key>
-          <value class="string">0</value>
+          <key>Proficiency</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1293,6 +1393,7 @@ function changeType() {
         <string>charisma</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Charisma</key>
+          <value class="string">10</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1300,7 +1401,15 @@ function changeType() {
         <string>climb</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Climb</key>
-          <value class="string">20</value>
+          <value class="string">N/A</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>intelligence ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Intelligence Ability</key>
+          <value class="string">2</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1308,6 +1417,7 @@ function changeType() {
         <string>constitution bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Bonus</key>
+          <value class="string">2</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1322,6 +1432,7 @@ function changeType() {
         <string>stealth</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Stealth</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1336,6 +1447,7 @@ function changeType() {
         <string>burrow</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Burrow</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1350,6 +1462,14 @@ function changeType() {
         <string>proficiency.insight</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>proficiency.insight</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>_dm-skills</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_DM-Skills</key>
+          <value class="string">[r: dnd5e_getDMSkills()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1385,6 +1505,7 @@ function changeType() {
         <string>intelligence</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence</key>
+          <value class="string">10</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1392,6 +1513,7 @@ function changeType() {
         <string>insight</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Insight</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1427,6 +1549,23 @@ function changeType() {
         <string>maxhp</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>MaxHP</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>gender</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Gender</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>skin</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Skin</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1487,9 +1626,25 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_languages</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_languages</key>
+          <value class="string">[r: dnd5e_Property_getLanguages ()]</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>bonus.stealth</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>bonus.stealth</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac dexterity</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Dexterity</key>
+          <value class="string">4</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1574,13 +1729,7 @@ function changeType() {
         <string>movement</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Movement</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>_o5e_monsteractions</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_o5e_MonsterActions</key>
+          <value class="string">[r: dnd5e_getMovementStat()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1634,24 +1783,10 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_metadata</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_AE2_Metadata</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>perception</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Perception</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>_dnd5e_lastrolledexpression</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dnd5e_lastRolledExpression</key>
-          <value class="string">[{"diceSize":20,"diceRolled":1,"expressionTypes":"Attack","advantageRolls":1,"types":{"advantagable":{"type":"advantagable","roller":"dnd5e_DiceRoller_advantageRoll:60","visitor":{"advantageRolls":1}},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":"advantagable,basic","name":"Slinky","bonus":8,"hasAdvantage":0,"hasDisadvantage":0,"typedDescriptors":{"condition":"","tooltipRoll":"1d20+%2B+8","tooltipDetail":"%2815%29+%2B+8"},"output":"Rolled: 15&lt;br&gt;Slinky Attack Roll: 1d20 + 8 = 23 ","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"remainingRollers":[],"individualRolls":[15],"rolls":[15],"roll":15,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_advantageRoll"],"total":23,"totals":[23],"outputs":["Rolled: 15&lt;br&gt;Slinky Attack Roll: 1d20 + 8 = 23 "],"allTotal":23},{"diceSize":8,"diceRolled":1,"bonus":4,"expressionTypes":"Damage","types":{"critable":{"type":"critable","roller":"dnd5e_DiceRoller_critableRoll:100"},"damageable":{"type":"damageable"},"basic":{"type":"basic","roller":"dnd5e_DiceRoller_basicRoll:50"}},"typeNames":"critable,damageable,basic","name":"","damageTypes":["Smacking"],"onCritAdd":1,"output":"Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 4 = 10 Smacking","rollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"remainingRollers":[],"individualRolls":[6],"rolls":[6],"roll":6,"rolledRollers":["dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_critableRoll"],"total":10,"totals":[10],"typedDescriptors":{"tooltipRoll":"1d8+%2B+4","tooltipDetail":"%286%29+%2B+4"},"outputs":["Rolled: 6&lt;br&gt; Damage Roll: 1d8 + 4 = 10 Smacking"],"allTotal":10}]</value>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1663,10 +1798,10 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_deadtokens</string>
+        <string>_defenses</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_deadTokens</key>
-          <value class="string">[{"id":"09B81C419D934F63958AD1CBBE03E4A0","initiative":"The token is not in the initiative list."}]</value>
+          <key>_defenses</key>
+          <value class="string">[r: dnd5e_Property_getDefenses()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1681,6 +1816,14 @@ function changeType() {
         <string>---- basics ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Basics ----</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>bonus.attack.spellcasting</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>bonus.attack.spellcasting</key>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1699,13 +1842,6 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_dnd5e_campaignpreferences</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_dnd5e_campaignPreferences</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>bonus.deathsave</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>bonus.deathSave</key>
@@ -1713,30 +1849,18 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>survival</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Survival</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>constitution save</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution Save</key>
+          <value class="string">5</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>dev.versionmap</string>
+        <string>survival</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>dev.versionMap</key>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>history</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>History</key>
+          <key>Survival</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1744,6 +1868,14 @@ function changeType() {
         <string>abilitybonus.strength</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>abilityBonus.Strength</key>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>history</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>History</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1758,13 +1890,15 @@ function changeType() {
         <string>persuasion</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Persuasion</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>condition</string>
+        <string>effects</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>Condition</key>
+          <key>Effects</key>
+          <value class="string">[r: dnd5e_Property_getConditionEffects()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1772,6 +1906,15 @@ function changeType() {
         <string>strength bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Strength Bonus</key>
+          <value class="string">3</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>condition</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Condition</key>
+          <value class="string">[r: dnd5e_Property_getConditionsStat()]</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1790,17 +1933,10 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>_ae2_actions</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>_AE2_Actions</key>
-          <value class="string">{}</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
         <string>arcana</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Arcana</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1836,6 +1972,15 @@ function changeType() {
         <string>constitution</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Constitution</key>
+          <value class="string">10</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>faith</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Faith</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1843,6 +1988,7 @@ function changeType() {
         <string>intelligence bonus</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Intelligence Bonus</key>
+          <value class="string">2</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1861,6 +2007,30 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>charisma ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Charisma Ability</key>
+          <value class="string">1</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>hair</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Hair</key>
+          <value class="string"/>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>ac shield</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>AC Shield</key>
+          <value class="string">0</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>shield.ac</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>shield.ac</key>
@@ -1875,9 +2045,26 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>_health</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>_health</key>
+          <value class="string">Hp: {HP}; Mx: {MaxHP}; Tmp: {TempHP}</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
+        <string>dexterity ability</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>Dexterity Ability</key>
+          <value class="string">4</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>elevation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Elevation</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1892,6 +2079,7 @@ function changeType() {
         <string>---- stat sheet ----</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>---- Stat Sheet ----</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1899,6 +2087,7 @@ function changeType() {
         <string>initiative</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Initiative</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1913,6 +2102,7 @@ function changeType() {
         <string>immunities</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Immunities</key>
+          <value class="string"/>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1920,6 +2110,7 @@ function changeType() {
         <string>nature</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Nature</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1959,9 +2150,18 @@ function changeType() {
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
+        <string>extdb.backup.idx</string>
+        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+          <key>extDb.backup.idx</key>
+          <value class="string">5</value>
+          <outer-class reference="../../../.."/>
+        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+      </entry>
+      <entry>
         <string>dexterity</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Dexterity</key>
+          <value class="string">10</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -1997,6 +2197,7 @@ function changeType() {
         <string>investigation</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Investigation</key>
+          <value class="string">N/A</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -2011,6 +2212,7 @@ function changeType() {
         <string>walk</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>Walk</key>
+          <value class="string">30</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -2029,1160 +2231,104 @@ function changeType() {
       <macro name="onCampaignLoad"/>
     </entry>
     <entry>
+      <int>2</int>
+      <macro name="o5e_ExtDB_merge"/>
+    </entry>
+    <entry>
       <int>3</int>
-      <macro name="dnd5e_getMovementStat"/>
+      <macro name="o5e_ExtDB_getDB"/>
+    </entry>
+    <entry>
+      <int>4</int>
+      <macro name="o5e_ExtDB_setDB"/>
     </entry>
     <entry>
       <int>5</int>
-      <macro name="dnd5e_getInsightStat"/>
+      <macro name="o5e_ExtDB_Constants"/>
     </entry>
     <entry>
       <int>6</int>
-      <macro name="dnd5e_getPerceptionStat"/>
+      <macro name="o5e_ExtDB_Editor"/>
     </entry>
     <entry>
       <int>7</int>
-      <macro name="dnd5e_DiceRoller_roll"/>
+      <macro name="Ext+Monster+Database"/>
     </entry>
     <entry>
       <int>8</int>
-      <macro name="dnd5e_DiceRoller_advantageRoll"/>
+      <macro name="o5e_ExtDB_getBlankMonster"/>
     </entry>
     <entry>
       <int>9</int>
-      <macro name="dnd5e_DiceRoller_basicRoll"/>
-    </entry>
-    <entry>
-      <int>10</int>
-      <macro name="dnd5e_RollExpression_hasType"/>
+      <macro name="o5e_ExtDB_getInputFromJson"/>
     </entry>
     <entry>
       <int>11</int>
-      <macro name="dnd5e_DiceRoller_luckyRoll"/>
+      <macro name="o5e_ExtDB_stripUnspecified"/>
     </entry>
     <entry>
       <int>12</int>
-      <macro name="dnd5e_DiceRoller_critableRoll"/>
+      <macro name="Ext+Monster+Database+-+backup+1"/>
     </entry>
     <entry>
       <int>13</int>
-      <macro name="Manage+Preference+Registry"/>
+      <macro name="Ext+Monster+Database+-+backup+2"/>
     </entry>
     <entry>
       <int>14</int>
-      <macro name="Data_Preference_Registry"/>
+      <macro name="Ext+Monster+Database+-+backup+3"/>
     </entry>
     <entry>
       <int>15</int>
-      <macro name="dnd5e_Preferences_convertPrefEntryToInput"/>
+      <macro name="Ext+Monster+Database+-+backup+4"/>
     </entry>
     <entry>
       <int>16</int>
-      <macro name="dnd5e_Preferences_createPreference"/>
+      <macro name="Ext+Monster+Database+-+backup+5"/>
     </entry>
     <entry>
       <int>17</int>
-      <macro name="dnd5e_Preferences_deletePreference"/>
+      <macro name="o5e_ExtDB_EditActions"/>
     </entry>
     <entry>
       <int>18</int>
-      <macro name="dnd5e_Preferences_editPreference"/>
+      <macro name="Ext+Monster+JSON+Editor"/>
     </entry>
     <entry>
       <int>19</int>
-      <macro name="dnd5e_Preferences_getPreference"/>
+      <macro name="o5e_ExtDB_JSON_processor"/>
     </entry>
     <entry>
       <int>20</int>
-      <macro name="dnd5e_Preferences_getRegistry"/>
+      <macro name="o5e_ExtDB_CSS"/>
     </entry>
     <entry>
       <int>21</int>
-      <macro name="dnd5e_Preferences_getRegistryInput"/>
+      <macro name="o5e_ExtDB_createDataToken"/>
     </entry>
     <entry>
       <int>22</int>
-      <macro name="dnd5e_Preferences_promptMacroInput"/>
+      <macro name="Create+Ext+Database"/>
     </entry>
     <entry>
       <int>23</int>
-      <macro name="dnd5e_Preferences_setRegistry"/>
+      <macro name="o5e_ExtDB_getDBToken"/>
     </entry>
     <entry>
       <int>24</int>
-      <macro name="dnd5e_Util_getMetaInputString"/>
-    </entry>
-    <entry>
-      <int>25</int>
-      <macro name="dnd5e_Preferences_getUserPreferences"/>
-    </entry>
-    <entry>
-      <int>26</int>
-      <macro name="dnd5e_Preferences_setUserPreferences"/>
-    </entry>
-    <entry>
-      <int>27</int>
-      <macro name="Configure+Preferences"/>
-    </entry>
-    <entry>
-      <int>28</int>
-      <macro name="dnd5e_Preferences_setPreference"/>
-    </entry>
-    <entry>
-      <int>31</int>
-      <macro name="dnd5e_Conditions"/>
-    </entry>
-    <entry>
-      <int>32</int>
-      <macro name="dnd5e_ProcessConditions"/>
-    </entry>
-    <entry>
-      <int>33</int>
-      <macro name="dnd5e_ConditionsCSS"/>
-    </entry>
-    <entry>
-      <int>34</int>
-      <macro name="dnd5e_applyHealth"/>
-    </entry>
-    <entry>
-      <int>35</int>
-      <macro name="dnd5e_takeDamage"/>
-    </entry>
-    <entry>
-      <int>37</int>
-      <macro name="dnd5e_RollExpression_parseRoll"/>
-    </entry>
-    <entry>
-      <int>38</int>
-      <macro name="dnd5e_DiceRoller_createMacro"/>
-    </entry>
-    <entry>
-      <int>43</int>
-      <macro name="dnd5e_Macro_copyMacroConfig"/>
-    </entry>
-    <entry>
-      <int>44</int>
-      <macro name="dnd5e_RollExpression_getCombinedOutput"/>
-    </entry>
-    <entry>
-      <int>45</int>
-      <macro name="dnd5e_RollExpression_setName"/>
-    </entry>
-    <entry>
-      <int>46</int>
-      <macro name="dnd5e_RollExpression_getName"/>
-    </entry>
-    <entry>
-      <int>47</int>
-      <macro name="dnd5e_RollExpression_setDiceSize"/>
-    </entry>
-    <entry>
-      <int>48</int>
-      <macro name="dnd5e_RollExpression_getDiceSize"/>
-    </entry>
-    <entry>
-      <int>49</int>
-      <macro name="dnd5e_RollExpression_setBonus"/>
-    </entry>
-    <entry>
-      <int>50</int>
-      <macro name="dnd5e_RollExpression_getBonus"/>
-    </entry>
-    <entry>
-      <int>51</int>
-      <macro name="dnd5e_RollExpression_setDiceRolled"/>
-    </entry>
-    <entry>
-      <int>52</int>
-      <macro name="dnd5e_RollExpression_getDiceRolled"/>
-    </entry>
-    <entry>
-      <int>53</int>
-      <macro name="dnd5e_RollExpression_setExpressionType"/>
-    </entry>
-    <entry>
-      <int>54</int>
-      <macro name="dnd5e_RollExpression_getExpressionType"/>
-    </entry>
-    <entry>
-      <int>55</int>
-      <macro name="dnd5e_RollExpression_addType"/>
-    </entry>
-    <entry>
-      <int>56</int>
-      <macro name="dnd5e_RollExpression_setTypes"/>
-    </entry>
-    <entry>
-      <int>57</int>
-      <macro name="dnd5e_RollExpression_addExpression"/>
-    </entry>
-    <entry>
-      <int>58</int>
-      <macro name="dnd5e_RollExpression_setExpressions"/>
-    </entry>
-    <entry>
-      <int>59</int>
-      <macro name="dnd5e_RollExpression_getExpressions"/>
-    </entry>
-    <entry>
-      <int>60</int>
-      <macro name="dnd5e_RollExpression_getRolls"/>
-    </entry>
-    <entry>
-      <int>61</int>
-      <macro name="dnd5e_RollExpression_getRoll"/>
-    </entry>
-    <entry>
-      <int>62</int>
-      <macro name="dnd5e_RollExpression_getRollString"/>
-    </entry>
-    <entry>
-      <int>63</int>
-      <macro name="dnd5e_RollExpression_setTotalRolls"/>
-    </entry>
-    <entry>
-      <int>64</int>
-      <macro name="dnd5e_RollExpression_getTotalRolls"/>
-    </entry>
-    <entry>
-      <int>65</int>
-      <macro name="dnd5e_RollExpression_setDisadvantage"/>
-    </entry>
-    <entry>
-      <int>66</int>
-      <macro name="dnd5e_RollExpression_hasDisadvantage"/>
-    </entry>
-    <entry>
-      <int>67</int>
-      <macro name="dnd5e_RollExpression_setAdvantage"/>
-    </entry>
-    <entry>
-      <int>68</int>
-      <macro name="dnd5e_RollExpression_hasAdvantage"/>
-    </entry>
-    <entry>
-      <int>69</int>
-      <macro name="dnd5e_RollExpression_setOnCritAdd"/>
-    </entry>
-    <entry>
-      <int>70</int>
-      <macro name="dnd5e_RollExpression_getOnCritAdd"/>
-    </entry>
-    <entry>
-      <int>71</int>
-      <macro name="dnd5e_RollExpression_getTotal"/>
-    </entry>
-    <entry>
-      <int>72</int>
-      <macro name="dnd5e_RollExpression_getTotals"/>
-    </entry>
-    <entry>
-      <int>73</int>
-      <macro name="dnd5e_RollExpression_getAllTotal"/>
-    </entry>
-    <entry>
-      <int>74</int>
-      <macro name="dnd5e_RollExpression_getOutput"/>
-    </entry>
-    <entry>
-      <int>75</int>
-      <macro name="dnd5e_RollExpression_getOutputs"/>
-    </entry>
-    <entry>
-      <int>76</int>
-      <macro name="dnd5e_RollExpression_getStaticRoll"/>
-    </entry>
-    <entry>
-      <int>77</int>
-      <macro name="dnd5e_RollExpression_setStaticRoll"/>
-    </entry>
-    <entry>
-      <int>78</int>
-      <macro name="dnd5e_RollExpression_setDescription"/>
-    </entry>
-    <entry>
-      <int>79</int>
-      <macro name="dnd5e_RollExpression_getDescription"/>
-    </entry>
-    <entry>
-      <int>80</int>
-      <macro name="dnd5e_RollExpression_getDamageTypes"/>
-    </entry>
-    <entry>
-      <int>81</int>
-      <macro name="dnd5e_RollExpression_addDamageType"/>
-    </entry>
-    <entry>
-      <int>82</int>
-      <macro name="dnd5e_RollExpression_setDamageTypes"/>
-    </entry>
-    <entry>
-      <int>83</int>
-      <macro name="dnd5e_getInvestigationStat"/>
-    </entry>
-    <entry>
-      <int>84</int>
-      <macro name="dnd5e_DiceRoller_applyConditions"/>
-    </entry>
-    <entry>
-      <int>85</int>
-      <macro name="dnd5e_RollExpression_BuildBless"/>
-    </entry>
-    <entry>
-      <int>86</int>
-      <macro name="dnd5e_DiceRoller_applyConditionsToAbility"/>
-    </entry>
-    <entry>
-      <int>87</int>
-      <macro name="dnd5e_DiceRoller_applyConditionsToSave"/>
-    </entry>
-    <entry>
-      <int>88</int>
-      <macro name="dnd5e_DiceRoller_applyConditionsToAttack"/>
-    </entry>
-    <entry>
-      <int>89</int>
-      <macro name="dnd5e_RollExpression_getTypes"/>
-    </entry>
-    <entry>
-      <int>90</int>
-      <macro name="dnd5e_RollExpression_mergeChildren"/>
-    </entry>
-    <entry>
-      <int>91</int>
-      <macro name="dnd5e_RollExpression_buildOutput"/>
-    </entry>
-    <entry>
-      <int>92</int>
-      <macro name="dnd5e_RollExpression_addDescription"/>
-    </entry>
-    <entry>
-      <int>93</int>
-      <macro name="dnd5e_removeDamage"/>
-    </entry>
-    <entry>
-      <int>94</int>
-      <macro name="dnd5e_updateSelectedHealth"/>
-    </entry>
-    <entry>
-      <int>95</int>
-      <macro name="dnd5e_healDamage"/>
-    </entry>
-    <entry>
-      <int>96</int>
-      <macro name="dnd5e_updateTemp"/>
-    </entry>
-    <entry>
-      <int>97</int>
-      <macro name="dnd5e_takeHealing"/>
-    </entry>
-    <entry>
-      <int>98</int>
-      <macro name="dnd5e_takeTemp"/>
-    </entry>
-    <entry>
-      <int>99</int>
-      <macro name="dnd5e_RollExpression_Attack"/>
-    </entry>
-    <entry>
-      <int>100</int>
-      <macro name="dnd5e_RollExpression_Ability"/>
-    </entry>
-    <entry>
-      <int>101</int>
-      <macro name="dnd5e_RollExpression_Damage"/>
-    </entry>
-    <entry>
-      <int>102</int>
-      <macro name="dnd5e_RollExpression_Save"/>
-    </entry>
-    <entry>
-      <int>103</int>
-      <macro name="dnd5e_RollExpression_Healing"/>
-    </entry>
-    <entry>
-      <int>104</int>
-      <macro name="dnd5e_RollExpression_fromRollExpression"/>
-    </entry>
-    <entry>
-      <int>105</int>
-      <macro name="dnd5e_AttackEditor"/>
-    </entry>
-    <entry>
-      <int>106</int>
-      <macro name="dnd5e_Editor_CSS"/>
-    </entry>
-    <entry>
-      <int>108</int>
-      <macro name="dnd5e_Editor_getAttackDamageHtml"/>
-    </entry>
-    <entry>
-      <int>109</int>
-      <macro name="dnd5e_RollExpression_findExpressionByType"/>
-    </entry>
-    <entry>
-      <int>111</int>
-      <macro name="dnd5e_Editor_getAdditionalDamageHtml"/>
-    </entry>
-    <entry>
-      <int>112</int>
-      <macro name="dnd5e_AttackEditor_processor"/>
-    </entry>
-    <entry>
-      <int>113</int>
-      <macro name="dnd5e_RollExpression_SaveDamage"/>
-    </entry>
-    <entry>
-      <int>114</int>
-      <macro name="dnd5e_RollExpression_getSaveDC"/>
-    </entry>
-    <entry>
-      <int>115</int>
-      <macro name="dnd5e_RollExpression_setSaveDC"/>
-    </entry>
-    <entry>
-      <int>116</int>
-      <macro name="dnd5e_RollExpression_getSaveAbility"/>
-    </entry>
-    <entry>
-      <int>117</int>
-      <macro name="dnd5e_RollExpression_setSaveAbility"/>
-    </entry>
-    <entry>
-      <int>118</int>
-      <macro name="dnd5e_RollExpression_getSaveEffect"/>
-    </entry>
-    <entry>
-      <int>119</int>
-      <macro name="dnd5e_RollExpression_setSaveEffect"/>
-    </entry>
-    <entry>
-      <int>120</int>
-      <macro name="dnd5e_RollExpression_getSaveEffectMultiplier"/>
-    </entry>
-    <entry>
-      <int>121</int>
-      <macro name="dnd5e_RollExpression_setSaveEffectMultiplier"/>
-    </entry>
-    <entry>
-      <int>122</int>
-      <macro name="dnd5e_Editor_buildAttackHTML"/>
-    </entry>
-    <entry>
-      <int>123</int>
-      <macro name="dnd5e_Macro_rollAttack"/>
-    </entry>
-    <entry>
-      <int>125</int>
-      <macro name="dnd5e_deathSavesCSS"/>
-    </entry>
-    <entry>
-      <int>126</int>
-      <macro name="dnd5e_deathSaves"/>
-    </entry>
-    <entry>
-      <int>127</int>
-      <macro name="dnd5e_deathSaveSubmit"/>
-    </entry>
-    <entry>
-      <int>128</int>
-      <macro name="dnd5e_done"/>
-    </entry>
-    <entry>
-      <int>129</int>
-      <macro name="dnd5e_DiceRoller_saveDamageRoll"/>
-    </entry>
-    <entry>
-      <int>130</int>
-      <macro name="dnd5e_RollExpression_SaveEffect"/>
-    </entry>
-    <entry>
-      <int>131</int>
-      <macro name="dnd5e_DiceRoller_saveEffectRoll"/>
-    </entry>
-    <entry>
-      <int>132</int>
-      <macro name="dnd5e_Property_wrapText"/>
-    </entry>
-    <entry>
-      <int>133</int>
-      <macro name="dnd5e_Property_getConditionsStat"/>
-    </entry>
-    <entry>
-      <int>134</int>
-      <macro name="dnd5e_getDMSkills"/>
-    </entry>
-    <entry>
-      <int>135</int>
-      <macro name="dnd5e_Property_getConditionEffects"/>
-    </entry>
-    <entry>
-      <int>136</int>
-      <macro name="dnd5e_Property_getLanguages"/>
-    </entry>
-    <entry>
-      <int>137</int>
-      <macro name="dnd5e_Property_getRaceClass"/>
-    </entry>
-    <entry>
-      <int>138</int>
-      <macro name="dnd5e_Property_getDefenses"/>
-    </entry>
-    <entry>
-      <int>139</int>
-      <macro name="dnd5e_AttackEditor_getAttackExpression"/>
-    </entry>
-    <entry>
-      <int>140</int>
-      <macro name="Attack+Editor"/>
-    </entry>
-    <entry>
-      <int>141</int>
-      <macro name="dnd5e_AttackEditor_setAttackExpression"/>
-    </entry>
-    <entry>
-      <int>142</int>
-      <macro name="dnd5e_Macro_getModLabel"/>
-    </entry>
-    <entry>
-      <int>143</int>
-      <macro name="dnd5e_AttackEditor_getMacroHtml"/>
-    </entry>
-    <entry>
-      <int>144</int>
-      <macro name="dnd5e_Preferences_setupCampaignPreferenceToken"/>
-    </entry>
-    <entry>
-      <int>147</int>
-      <macro name="dnd5e_Preferences_getRegistryPromptedKeys"/>
-    </entry>
-    <entry>
-      <int>148</int>
-      <macro name="Saving+Throw"/>
-    </entry>
-    <entry>
-      <int>149</int>
-      <macro name="Skill+Check"/>
-    </entry>
-    <entry>
-      <int>150</int>
-      <macro name="dnd5e_RollExpression_setAdvantageDisadvantage"/>
-    </entry>
-    <entry>
-      <int>151</int>
-      <macro name="dnd5e_Macro_createAdvDisadvMacroFamily"/>
-    </entry>
-    <entry>
-      <int>152</int>
-      <macro name="dnd5e_Macro_clearMacroFamilyFromGroup"/>
-    </entry>
-    <entry>
-      <int>153</int>
-      <macro name="dnd5e_Macro_getIndexForGroup"/>
-    </entry>
-    <entry>
-      <int>154</int>
-      <macro name="dnd5e_Macro_createPlayerMacros"/>
-    </entry>
-    <entry>
-      <int>155</int>
-      <macro name="dnd5e_RollExpression_addTypedDescriptor"/>
-    </entry>
-    <entry>
-      <int>156</int>
-      <macro name="dnd5e_RollExpression_getFormattedOutput"/>
-    </entry>
-    <entry>
-      <int>157</int>
-      <macro name="dnd5e_RollExpression_getTypedDescriptor"/>
-    </entry>
-    <entry>
-      <int>158</int>
-      <macro name="dnd5e_RollExpression_getTypedDescriptors"/>
-    </entry>
-    <entry>
-      <int>159</int>
-      <macro name="dnd5e_RollExpression_setTypedDescriptors"/>
-    </entry>
-    <entry>
-      <int>160</int>
-      <macro name="dnd5e_Macro_clearTokenMacros"/>
-    </entry>
-    <entry>
-      <int>161</int>
-      <macro name="dnd5e_SavedAttacks_apply"/>
-    </entry>
-    <entry>
-      <int>162</int>
-      <macro name="dnd5e_SavedAttacks_applyRolledExpression"/>
-    </entry>
-    <entry>
-      <int>163</int>
-      <macro name="dnd5e_SavedAttacks_calculateDamage"/>
-    </entry>
-    <entry>
-      <int>164</int>
-      <macro name="dnd5e_SavedAttacks_fetch"/>
-    </entry>
-    <entry>
-      <int>165</int>
-      <macro name="dnd5e_SavedAttacks_get"/>
-    </entry>
-    <entry>
-      <int>166</int>
-      <macro name="dnd5e_SavedAttacks_makeSave"/>
-    </entry>
-    <entry>
-      <int>167</int>
-      <macro name="dnd5e_SavedAttacks_push"/>
-    </entry>
-    <entry>
-      <int>168</int>
-      <macro name="dnd5e_SavedAttacks_updateState"/>
-    </entry>
-    <entry>
-      <int>169</int>
-      <macro name="dnd5e_Health_restoreDeadNPC"/>
-    </entry>
-    <entry>
-      <int>170</int>
-      <macro name="dnd5e_Preferences_getGMPreferences"/>
-    </entry>
-    <entry>
-      <int>171</int>
-      <macro name="dnd5e_Preferences_setGMPreferences"/>
-    </entry>
-    <entry>
-      <int>172</int>
-      <macro name="dnd5e_AE2_typeSaveCondition"/>
-    </entry>
-    <entry>
-      <int>173</int>
-      <macro name="dnd5e_AE2_typeCondition"/>
-    </entry>
-    <entry>
-      <int>174</int>
-      <macro name="dnd5e_AE2_typeFreeForm"/>
-    </entry>
-    <entry>
-      <int>175</int>
-      <macro name="dnd5e_RollExpression_removeTypedDescriptor"/>
-    </entry>
-    <entry>
-      <int>176</int>
-      <macro name="dnd5e_AE2_removeOldTypes"/>
-    </entry>
-    <entry>
-      <int>177</int>
-      <macro name="dnd5e_AE2_readForm"/>
-    </entry>
-    <entry>
-      <int>178</int>
-      <macro name="dnd5e_AE2_readFormValue"/>
-    </entry>
-    <entry>
-      <int>179</int>
-      <macro name="dnd5e_AE2_getConstants"/>
-    </entry>
-    <entry>
-      <int>180</int>
-      <macro name="dnd5e_AE2_generateStepHtml"/>
-    </entry>
-    <entry>
-      <int>182</int>
-      <macro name="dnd5e_AE2_generateBonusFieldHtml"/>
-    </entry>
-    <entry>
-      <int>183</int>
-      <macro name="dnd5e_AE2_generateDamageRollStringFieldHtml"/>
-    </entry>
-    <entry>
-      <int>184</int>
-      <macro name="dnd5e_AE2_generateDamageTypeFieldHtml"/>
-    </entry>
-    <entry>
-      <int>189</int>
-      <macro name="dnd5e_AE2_generateDndbAttackFieldHtml"/>
-    </entry>
-    <entry>
-      <int>190</int>
-      <macro name="dnd5e_AE2_decorateNewStep"/>
-    </entry>
-    <entry>
-      <int>191</int>
-      <macro name="dnd5e_AE2_generateSaveDCFieldHtml"/>
-    </entry>
-    <entry>
-      <int>192</int>
-      <macro name="dnd5e_AE2_generateSaveAbilityFieldHtml"/>
-    </entry>
-    <entry>
-      <int>193</int>
-      <macro name="dnd5e_AE2_generateSaveAgainstFieldHtml"/>
-    </entry>
-    <entry>
-      <int>194</int>
-      <macro name="dnd5e_AE2_generateSaveEffectFieldHtml"/>
-    </entry>
-    <entry>
-      <int>195</int>
-      <macro name="dnd5e_AE2_generateSaveResultFieldHtml"/>
-    </entry>
-    <entry>
-      <int>196</int>
-      <macro name="dnd5e_AE2_generateConditionFieldHtml"/>
-    </entry>
-    <entry>
-      <int>197</int>
-      <macro name="dnd5e_RollExpression_Condition"/>
-    </entry>
-    <entry>
-      <int>198</int>
-      <macro name="dnd5e_AE2_generateExtendedNameFieldHtml"/>
-    </entry>
-    <entry>
-      <int>199</int>
-      <macro name="dnd5e_AE2_generateExtendedCritFieldHtml"/>
-    </entry>
-    <entry>
-      <int>200</int>
-      <macro name="dnd5e_RollExpression_DnDBeyondAttack"/>
-    </entry>
-    <entry>
-      <int>201</int>
-      <macro name="dnd5e_RollExpression_DnDBeyondSpell"/>
-    </entry>
-    <entry>
-      <int>202</int>
-      <macro name="dnd5e_AE2_generateDndbSpellLevelFieldHtml"/>
-    </entry>
-    <entry>
-      <int>203</int>
-      <macro name="dnd5e_AE2_generateDndbSpellFieldHtml"/>
-    </entry>
-    <entry>
-      <int>204</int>
-      <macro name="dnd5e_Util_ordinalPostfix"/>
-    </entry>
-    <entry>
-      <int>205</int>
-      <macro name="dnd5e_Util_createUniqueName"/>
-    </entry>
-    <entry>
-      <int>206</int>
-      <macro name="dnd5e_AE2_extractAction"/>
-    </entry>
-    <entry>
-      <int>207</int>
-      <macro name="dnd5e_DiceRoller_rollOneExpression"/>
-    </entry>
-    <entry>
-      <int>208</int>
-      <macro name="dnd5e_Macro_rollAction"/>
-    </entry>
-    <entry>
-      <int>209</int>
-      <macro name="dnd5e_AE2_attackEditor"/>
-    </entry>
-    <entry>
-      <int>210</int>
-      <macro name="dnd5e_AE2_CSS"/>
-    </entry>
-    <entry>
-      <int>211</int>
-      <macro name="dnd5e_AE2_processor"/>
-    </entry>
-    <entry>
-      <int>212</int>
-      <macro name="dnd5e_AE2_generateHeaderHtml"/>
-    </entry>
-    <entry>
-      <int>213</int>
-      <macro name="dnd5e_AE2_typeDndbWeapon"/>
-    </entry>
-    <entry>
-      <int>214</int>
-      <macro name="dnd5e_AE2_typeDndbSpell"/>
-    </entry>
-    <entry>
-      <int>215</int>
-      <macro name="dnd5e_AE2_typeAttack"/>
-    </entry>
-    <entry>
-      <int>216</int>
-      <macro name="dnd5e_AE2_typeSaveDamage"/>
-    </entry>
-    <entry>
-      <int>217</int>
-      <macro name="dnd5e_AE2_typeDamage"/>
-    </entry>
-    <entry>
-      <int>218</int>
-      <macro name="dnd5e_RollExpression_TargetCheck"/>
-    </entry>
-    <entry>
-      <int>219</int>
-      <macro name="dnd5e_AE2_generateTargetCheckFieldHtml"/>
-    </entry>
-    <entry>
-      <int>220</int>
-      <macro name="dnd5e_RollExpression_getTargetCheck"/>
-    </entry>
-    <entry>
-      <int>221</int>
-      <macro name="dnd5e_RollExpression_setTargetCheck"/>
-    </entry>
-    <entry>
-      <int>222</int>
-      <macro name="dnd5e_Util_encodeHtml"/>
-    </entry>
-    <entry>
-      <int>223</int>
-      <macro name="dnd5e_SavedAttacks_evaluateCheckExpression"/>
-    </entry>
-    <entry>
-      <int>224</int>
-      <macro name="dnd5e_SavedAttacks_enforceConditions"/>
-    </entry>
-    <entry>
-      <int>225</int>
-      <macro name="dnd5e_Util_formatTooltip"/>
-    </entry>
-    <entry>
-      <int>226</int>
-      <macro name="dnd5e_SavedAttacks_applyCSS"/>
-    </entry>
-    <entry>
-      <int>227</int>
-      <macro name="dnd5e_SavedAttacks_readTargetRow"/>
-    </entry>
-    <entry>
-      <int>228</int>
-      <macro name="dnd5e_SavedAttacks_targetRow"/>
-    </entry>
-    <entry>
-      <int>229</int>
-      <macro name="dnd5e_SavedAttacks_applyProcessor"/>
-    </entry>
-    <entry>
-      <int>230</int>
-      <macro name="dnd5e_SavedAttacks_applyUI"/>
-    </entry>
-    <entry>
-      <int>231</int>
-      <macro name="dnd5e_RollExpression_SaveDrain"/>
-    </entry>
-    <entry>
-      <int>232</int>
-      <macro name="dnd5e_RollExpression_Drain"/>
-    </entry>
-    <entry>
-      <int>233</int>
-      <macro name="dnd5e_RollExpression_getDrainAbility"/>
-    </entry>
-    <entry>
-      <int>234</int>
-      <macro name="dnd5e_RollExpression_setDrainAbility"/>
-    </entry>
-    <entry>
-      <int>235</int>
-      <macro name="Action+Editor"/>
-    </entry>
-    <entry>
-      <int>236</int>
-      <macro name="dnd5e_Health_applyAbilityChange"/>
-    </entry>
-    <entry>
-      <int>237</int>
-      <macro name="dnd5e_takeAbilityDamage"/>
-    </entry>
-    <entry>
-      <int>238</int>
-      <macro name="dnd5e_Util_modifySaveDamage"/>
-    </entry>
-    <entry>
-      <int>239</int>
-      <macro name="dnd5e_SavedAttacks_processSave"/>
-    </entry>
-    <entry>
-      <int>240</int>
-      <macro name="dnd5e_SavedAttacks_enforceDrain"/>
-    </entry>
-    <entry>
-      <int>241</int>
-      <macro name="dnd5e_Property_resetCalculatedProperties"/>
-    </entry>
-    <entry>
-      <int>242</int>
-      <macro name="dnd5e_Property_calculateXPForCR"/>
-    </entry>
-    <entry>
-      <int>243</int>
-      <macro name="dnd5e_Util_checkVersion"/>
-    </entry>
-    <entry>
-      <int>244</int>
-      <macro name="dnd5e_Util_getCampaignPropertiesVersion"/>
-    </entry>
-    <entry>
-      <int>245</int>
-      <macro name="dnd5e_Util_assertLibVersion"/>
-    </entry>
-    <entry>
-      <int>246</int>
-      <macro name="dnd5e_Util_assertCampaignPropertiesVersion"/>
-    </entry>
-    <entry>
-      <int>247</int>
-      <macro name="dnd5e_Util_displayReleaseNotes"/>
-    </entry>
-    <entry>
-      <int>248</int>
-      <macro name="dnd5e_SavedAttacks_setKey"/>
-    </entry>
-    <entry>
-      <int>249</int>
-      <macro name="dnd5e_AE2_generateAbilityModFieldHtml"/>
-    </entry>
-    <entry>
-      <int>250</int>
-      <macro name="dnd5e_AE2_generateProficiencyHtml"/>
-    </entry>
-    <entry>
-      <int>251</int>
-      <macro name="dnd5e_Util_parseRollString"/>
-    </entry>
-    <entry>
-      <int>252</int>
-      <macro name="dnd5e_Property_getPropertySafe"/>
-    </entry>
-    <entry>
-      <int>254</int>
-      <macro name="dnd5e_Macro_UDF_getRegistry"/>
-    </entry>
-    <entry>
-      <int>255</int>
-      <macro name="Data_Macro_UDF_Registry"/>
-    </entry>
-    <entry>
-      <int>256</int>
-      <macro name="dnd5e_Util_getRegistry"/>
-    </entry>
-    <entry>
-      <int>257</int>
-      <macro name="dnd5e_Macro_UDF_setRegistry"/>
-    </entry>
-    <entry>
-      <int>258</int>
-      <macro name="dnd5e_Util_setRegistry"/>
-    </entry>
-    <entry>
-      <int>260</int>
-      <macro name="dnd5e_Util_printRegistry"/>
-    </entry>
-    <entry>
-      <int>261</int>
-      <macro name="dnd5e_Macro_UDF_modifyKey"/>
-    </entry>
-    <entry>
-      <int>262</int>
-      <macro name="dnd5e_Macro_UDF_deleteKey"/>
-    </entry>
-    <entry>
-      <int>263</int>
       <macro name="Manage+Macro+UDF+Registry"/>
     </entry>
     <entry>
-      <int>264</int>
-      <macro name="dnd5e_Type_Critable"/>
+      <int>25</int>
+      <macro name="o5e_ExtDB_UDF_getRegistry"/>
     </entry>
     <entry>
-      <int>265</int>
-      <macro name="dnd5e_Type_Damageable"/>
+      <int>26</int>
+      <macro name="o5e_ExtDB_UDF_setRegistry"/>
     </entry>
     <entry>
-      <int>266</int>
-      <macro name="dnd5e_Type_Advantagable"/>
-    </entry>
-    <entry>
-      <int>267</int>
-      <macro name="dnd5e_Type_Saveable"/>
-    </entry>
-    <entry>
-      <int>268</int>
-      <macro name="dnd5e_Type_Unrollable"/>
-    </entry>
-    <entry>
-      <int>269</int>
-      <macro name="dnd5e_Type_Lucky"/>
-    </entry>
-    <entry>
-      <int>270</int>
-      <macro name="dnd5e_DiceRoller_unrollableRoll"/>
-    </entry>
-    <entry>
-      <int>271</int>
-      <macro name="dnd5e_Type_Targeted"/>
-    </entry>
-    <entry>
-      <int>272</int>
-      <macro name="dnd5e_DiceRoller_targetedRoll"/>
-    </entry>
-    <entry>
-      <int>273</int>
-      <macro name="dnd5e_RollExpression_getTypeNames"/>
-    </entry>
-    <entry>
-      <int>274</int>
-      <macro name="dnd5e_RollExpression_getDiceRollers"/>
-    </entry>
-    <entry>
-      <int>275</int>
-      <macro name="dnd5e_Type_Basic"/>
-    </entry>
-    <entry>
-      <int>276</int>
-      <macro name="dnd5e_Type_StaticRoll"/>
-    </entry>
-    <entry>
-      <int>277</int>
-      <macro name="dnd5e_RollExpression_removeType"/>
-    </entry>
-    <entry>
-      <int>278</int>
-      <macro name="dnd5e_RollExpression_setMaxPriority"/>
-    </entry>
-    <entry>
-      <int>279</int>
-      <macro name="dnd5e_Type_getPriority"/>
-    </entry>
-    <entry>
-      <int>280</int>
-      <macro name="dnd5e_RollExpression_getMaxPriority"/>
-    </entry>
-    <entry>
-      <int>281</int>
-      <macro name="dnd5e_DiceRoller_staticRoll"/>
-    </entry>
-    <entry>
-      <int>282</int>
-      <macro name="dnd5e_DiceRoller_finalize"/>
-    </entry>
-    <entry>
-      <int>283</int>
-      <macro name="dnd5e_RollExpression_addRoll"/>
-    </entry>
-    <entry>
-      <int>284</int>
-      <macro name="dnd5e_RollExpression_WeaponAttack"/>
-    </entry>
-    <entry>
-      <int>285</int>
-      <macro name="dnd5e_Type_Proficient"/>
-    </entry>
-    <entry>
-      <int>286</int>
-      <macro name="dnd5e_RollExpression_setProficiency"/>
-    </entry>
-    <entry>
-      <int>287</int>
-      <macro name="dnd5e_RollExpression_getProficiency"/>
-    </entry>
-    <entry>
-      <int>288</int>
-      <macro name="dnd5e_RollExpression_setWeaponType"/>
-    </entry>
-    <entry>
-      <int>289</int>
-      <macro name="dnd5e_RollExpression_getWeaponType"/>
-    </entry>
-    <entry>
-      <int>290</int>
-      <macro name="dnd5e_Type_Weapon"/>
-    </entry>
-    <entry>
-      <int>291</int>
-      <macro name="dnd5e_DiceRoller_proficientRoll"/>
-    </entry>
-    <entry>
-      <int>292</int>
-      <macro name="dnd5e_DiceRoller_weaponAttackRoll"/>
-    </entry>
-    <entry>
-      <int>293</int>
-      <macro name="dnd5e_RollExpression_WeaponDamage"/>
-    </entry>
-    <entry>
-      <int>294</int>
-      <macro name="dnd5e_Type_getName"/>
-    </entry>
-    <entry>
-      <int>295</int>
-      <macro name="dnd5e_RollExpression_SpellAttack"/>
-    </entry>
-    <entry>
-      <int>296</int>
-      <macro name="dnd5e_RollExpression_setSpellcastingAbility"/>
-    </entry>
-    <entry>
-      <int>297</int>
-      <macro name="dnd5e_RollExpression_getSpellcastingAbility"/>
-    </entry>
-    <entry>
-      <int>298</int>
-      <macro name="dnd5e_Type_SpellcastingAbility"/>
-    </entry>
-    <entry>
-      <int>299</int>
-      <macro name="dnd5e_DiceRoller_spellcastingAbilityRoll"/>
-    </entry>
-    <entry>
-      <int>300</int>
-      <macro name="dnd5e_Type_getRoller"/>
-    </entry>
-    <entry>
-      <int>301</int>
-      <macro name="dnd5e_Type_Children"/>
-    </entry>
-    <entry>
-      <int>302</int>
-      <macro name="dnd5e_DiceRoller_childRoll"/>
-    </entry>
-    <entry>
-      <int>303</int>
-      <macro name="dnd5e_RollExpression_compileTypeNames"/>
-    </entry>
-    <entry>
-      <int>304</int>
-      <macro name="dnd5e_Util_HTML_defineSelectVars"/>
-    </entry>
-    <entry>
-      <int>305</int>
-      <macro name="dnd5e_AE2_assertVersion"/>
-    </entry>
-    <entry>
-      <int>306</int>
-      <macro name="dnd5e_AE2_upgradeActions"/>
-    </entry>
-    <entry>
-      <int>307</int>
-      <macro name="dnd5e_AE2_adornActionTypes"/>
-    </entry>
-    <entry>
-      <int>308</int>
-      <macro name="dnd5e_AttackEditor_assertVersion"/>
-    </entry>
-    <entry>
-      <int>309</int>
-      <macro name="dnd5e_AttackEditor_upgradeAttacks"/>
-    </entry>
-    <entry>
-      <int>310</int>
-      <macro name="dnd5e_Util_JSON_sortObjectArray"/>
-    </entry>
-    <entry>
-      <int>311</int>
-      <macro name="dnd5e_Constants"/>
+      <int>27</int>
+      <macro name="Data_Macro_UDF_Registry"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

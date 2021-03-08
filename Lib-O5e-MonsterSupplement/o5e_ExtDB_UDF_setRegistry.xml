@@ -1,23 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>512bcf4c-c7c6-41e0-ab85-5385a0d4bb8f</macroUUID>
+  <macroUUID>fa07fb56-d3a6-4459-9f47-87dda0ebe0ce</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>258</index>
+  <index>26</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_setRegistry</label>
-  <group>Util - Macro</group>
+  <label>o5e_ExtDB_UDF_setRegistry</label>
+  <group>Ext DB - UDF - Util</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>arg(0) = name of registry
-arg(1) = registry data
-arg(2) = (Optional) Library token name</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

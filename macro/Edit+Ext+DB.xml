@@ -1,23 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>512bcf4c-c7c6-41e0-ab85-5385a0d4bb8f</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>258</index>
-  <colorKey>default</colorKey>
+  <macroUUID>e607de95-4e37-42ab-8891-df2bd5e5416a</macroUUID>
+  <saveLocation>GmPanel</saveLocation>
+  <index>2</index>
+  <colorKey>blue</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_setRegistry</label>
-  <group>Util - Macro</group>
+  <label>Edit Ext DB</label>
+  <group>Open5e - ExtDB</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
-  <minWidth/>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.15em</fontSize>
+  <minWidth>183</minWidth>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>arg(0) = name of registry
-arg(1) = registry data
-arg(2) = (Optional) Library token name</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Edits the Monster Supplement Database</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

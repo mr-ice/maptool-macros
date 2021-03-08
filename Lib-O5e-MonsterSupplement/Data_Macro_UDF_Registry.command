@@ -1,0 +1,1 @@
+[h: macro.return = '%7B%22o5e_ExtDB_Constants%22%3A%22ignoreOutput%3D1+%26semi%3B+newScope%3D0+%26semi%3B%22%2C%22o5e_ExtDB_JSON_processor%22%3A%22ignoreOutput%3D1+%26semi%3B+newScope%3D1+%26semi%3B%22%2C%22o5e_ExtDB_Editor%22%3A%22ignoreOutput%3D1+%26semi%3B+newScope%3D1+%26semi%3B%22%2C%22o5e_ExtDB_setDB%22%3A%22ignoreOutput%3D1+%26semi%3B+newScope%3D1+%26semi%3B%22%7D']

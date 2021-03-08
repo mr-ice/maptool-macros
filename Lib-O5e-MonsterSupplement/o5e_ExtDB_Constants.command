@@ -1,0 +1,7 @@
+[h: DATA_MACRO = "Ext Monster Database"]
+[h: LIB_TOKEN_NAME = "Lib:O5e-MonsterSupplement"]
+[h: CATEGORY = LIB_TOKEN_NAME + "." + arg(0) + "##"]
+[h: MAX_BACKUPS = 5]
+[h: PROP_BACKUP_IDX = "extDb.backup.idx"]
+[h: LABEL_TOKEN_BACKUP = " - backup %s"]
+[h: PROXY_TOKEN_NAME = LIB_TOKEN_NAME + " Ext Database"]

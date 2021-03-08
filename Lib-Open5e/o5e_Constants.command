@@ -1,0 +1,5 @@
+[h: PREF_OVERWRITE_NAME = "o5e.preference.overwriteTokenName"]
+[h:	PREF_USE_GM_NAME = "o5e.preference.useGMNameField"]
+[h: PROP_USE_EXT_DB = "o5e.property.useExtendedDatabase"]
+[h: LIB_MONSTER_SUPPL = "Lib:O5e-MonsterSupplement"]
+[h: CATEGORY = getName() + "." + arg(0)]

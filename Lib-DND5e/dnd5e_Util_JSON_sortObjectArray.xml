@@ -1,23 +1,25 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>512bcf4c-c7c6-41e0-ab85-5385a0d4bb8f</macroUUID>
+  <macroUUID>6de93a92-348a-4979-9c35-90cb2c82f69e</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>258</index>
+  <index>310</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_setRegistry</label>
-  <group>Util - Macro</group>
+  <label>dnd5e_Util_JSON_sortObjectArray</label>
+  <group>Util - JSON</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>arg(0) = name of registry
-arg(1) = registry data
-arg(2) = (Optional) Library token name</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Sorts and array of objects
+arg(0) = Array of JSON objects
+arg(1) = common field for all JSON objects with which to base the sort on
+
+Returns an array of the objects, sorted by the specified field; Duplicate values are arbitrarily ordered together</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,23 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>512bcf4c-c7c6-41e0-ab85-5385a0d4bb8f</macroUUID>
+  <macroUUID>b7796c5e-96d0-4417-95ba-539a32d59b37</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>258</index>
-  <colorKey>default</colorKey>
+  <index>22</index>
+  <colorKey>red</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_Util_setRegistry</label>
-  <group>Util - Macro</group>
+  <label>Create Ext Database</label>
+  <group/>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.15em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>arg(0) = name of registry
-arg(1) = registry data
-arg(2) = (Optional) Library token name</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Execute this macro the first time Lib:O5e-MonsterSupplement is installed. The token it creates will be the Ext Databas and will co-exist alongside your other Token Libraries. While there are built-in backups in the token itself, the GM should also make file backups of the token in order to restore an inadvertent deletion.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

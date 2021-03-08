@@ -1,6 +1,5 @@
 [h: monsterJson = arg (0)]
-[h: PREF_OVERWRITE_NAME = o5e_Constants_getConstant ("PREF_OVERWRITE_NAME")]
-[h: PREF_USE_GM_NAME = o5e_Constants_getConstant ("PREF_USE_GM_NAME")]
+[h: o5e_Constants (getMacroName())]
 [h: overwriteName = dnd5e_Preferences_getPreference (PREF_OVERWRITE_NAME)]
 [h: useGmName = dnd5e_Preferences_getPreference (PREF_USE_GM_NAME)]
 [h: dnd5e_Property_resetCalculatedProperties()]
@@ -34,7 +33,9 @@
 [h: ConditionImmunities = json.get (monsterJson, "condition_immunities")]
 [h: o5e_Token_applySenses (json.get (monsterJson, "senses"))]
 [h: Languages = json.get (monsterJson, "languages")]
-[h: CR = json.get (monsterJson, "challenge_rating")]
+[h: CRString = json.get (monsterJson, "challenge_rating")]
+[h, if (CRString == ""): CRString = "0"]
+[h: evalMacro ("[h: CR = " + CRString + "]")]
 [h: Proficiency = floor(math.max (0, CR - 1) / 4) + 2]
 [h: log.debug (getMacroName() + ": Proficiency = " + Proficiency)]
 <!-- now the interesting bits -->
