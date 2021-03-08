@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
   <macroUUID>8273279c-c5b0-4948-8b50-6aaabbfbdee0</macroUUID>
-  <saveLocation>CampaignPanel</saveLocation>
+  <saveLocation>GMPanel</saveLocation>
   <index>14</index>
-  <colorKey>green</colorKey>
+  <colorKey>purple</colorKey>
   <hotKey>None</hotKey>
-  <label>Supreme</label>
-  <group>Darker Dungeon Healing Potion</group>
+  <label>New Int Initiative</label>
+  <group>Initiative</group>
   <sortby>3</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>white</fontColorKey>
   <fontSize>1.05em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Use a Supreme healing potion and heal 8 x Hit Die + 16 damage</toolTip>
+  <toolTip>Clear the existing initiative and add the selected tokens rolling their initiative based on intelligence</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -1,5 +1,5 @@
 <!-- Get the health related values from params -->
-[h: log.debug("dnd5e_applyHealth: " + json.indent(macro.args, 2))]
+[h: log.debug(getMacroName() + ": " + json.indent(macro.args))]
 [h: id = json.get(macro.args, "id")]
 [h: libToken = startsWith(getName(id), "Lib:")]
 [h, if(libToken), code: {
@@ -10,6 +10,10 @@
 [h, if (!isNumber(current)): current = 0; '']
 [h: maximum = json.get(macro.args, "maximum")]
 [h, if (!isNumber(maximum)): maximum = 0; '']
+[h, if (maximum == 0), code: {
+	[h: broadcast(strformat("No maximum HP value is set for token %s. Health will not be changed.", getName(id)))]
+	[h: return(0, "")]
+}]
 [h: temporary = json.get(macro.args, "temporary")]
 [h, if (!isNumber(temporary)): temporary = 0; '']
 [h: dsPass = json.get(macro.args, "dsPass")]

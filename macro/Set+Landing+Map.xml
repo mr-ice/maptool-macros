@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>902e2acf-a25b-429d-89f1-7b18f8421bbd</macroUUID>
+  <macroUUID>8c55b7d1-8f16-470d-8ac5-ce708b1eabfb</macroUUID>
   <saveLocation>GmPanel</saveLocation>
-  <index>3</index>
+  <index>1</index>
   <colorKey>teal</colorKey>
   <hotKey>None</hotKey>
   <label>Set Landing Map</label>
