@@ -25,11 +25,11 @@
 [h: basicInputStr = o5e_ExtDB_getInputFromJson (basicInputVars, basicDefaults)]
 [h: inputStr = inputStr + "basicTab | Basic | | TAB | select=true##" + basicInputStr]
 
-[h: combatInputVars = json.get (monsterObj, "size", "type","armor_class", "hit_points",
+[h: combatInputVars = json.get (monsterObj, "size", "type","armor_class", "hit_points", "hit_dice",
 		"damage_vulnerabilities", "damage_resistances", "damage_immunities", "condition_immunities",
 		"senses")]
 [h: combatDefaults = json.set ("", "size", "Medium", "type", "Humanoid", "armor_class", 10,
-		"damage_vulnerabilities", UNSPECIFIED, "damage_resistances", UNSPECIFIED, + 
+		"hit_points", 10, "hit_dice", "1d10+5", "damage_vulnerabilities", UNSPECIFIED, "damage_resistances", UNSPECIFIED, + 
 		"damage_immunities", UNSPECIFIED, "condition_immunities", UNSPECIFIED, "senses", UNSPECIFIED)]
 [h: combatInputStr = o5e_ExtDB_getInputFromJson (combatInputVars, combatDefaults)]
 [h: inputStr = inputStr + "## combatTab | Combat || TAB ##" + combatInputStr)]

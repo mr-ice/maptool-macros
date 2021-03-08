@@ -4,7 +4,7 @@
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>FUS9HUlvSGWQFTjESVw/oA==</baGUID>
+    <baGUID>9N0EcpltSkeC68gSMTszbA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -20,28 +20,8 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>600</lastX>
-  <lastY>400</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>12</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>12</x>
-        <y>8</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -2173,7 +2153,7 @@
         <string>extdb.backup.idx</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>extDb.backup.idx</key>
-          <value class="string">2</value>
+          <value class="string">5</value>
           <outer-class reference="../../../.."/>
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
@@ -2329,6 +2309,26 @@
     <entry>
       <int>22</int>
       <macro name="Create+Ext+Database"/>
+    </entry>
+    <entry>
+      <int>23</int>
+      <macro name="o5e_ExtDB_getDBToken"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="Manage+Macro+UDF+Registry"/>
+    </entry>
+    <entry>
+      <int>25</int>
+      <macro name="o5e_ExtDB_UDF_getRegistry"/>
+    </entry>
+    <entry>
+      <int>26</int>
+      <macro name="o5e_ExtDB_UDF_setRegistry"/>
+    </entry>
+    <entry>
+      <int>27</int>
+      <macro name="Data_Macro_UDF_Registry"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

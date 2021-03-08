@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>7591f17b-344f-4985-a45a-d82db8195cad</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>24</index>
+  <colorKey>navy</colorKey>
+  <hotKey>None</hotKey>
+  <label>Manage Macro UDF Registry</label>
+  <group>Ext DB - UDF</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>white</fontColorKey>
+  <fontSize>1.10em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

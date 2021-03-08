@@ -1,0 +1,35 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>4a0660d5-55f0-48e7-834d-6494dce1d3ba</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>23</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>o5e_ExtDB_getDBToken</label>
+  <group>Ext DB</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>arg(0)= (Optional; Internal Only) Alternate database name
+
+Returns a JSON object containing the ID of the token and the map it resides on:
+{
+	"tokenId" : id of the token
+	"mapName" : name of the map
+}
+
+Returns an empty object if not found</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
