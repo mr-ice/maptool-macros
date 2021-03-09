@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1b9db9be-cee7-4e38-8ce5-2e3a0f28427b</macroUUID>
+  <macroUUID>b05b8eee-6fc6-4c82-afd6-8d71a0d6f041</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>1</index>
-  <colorKey/>
+  <index>314</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>getCampaignPreferences</label>
-  <group/>
+  <group>Preferences - Campaign Preferences</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>

@@ -1,3 +1,5 @@
+<!-- Get ye ole Campaign Preferences rockin -->
+[h, macro ("dnd5e_Preferences_createCampaignPrefToken@this"): ""]
 <!-- Assert Campaign Version -->
 [h: REQUIRED_CAMPAIGN_PROP_VERSION = "0.15"]
 [h, macro ("dnd5e_Util_assertCampaignPropertiesVersion@this"): json.append ("", REQUIRED_CAMPAIGN_PROP_VERSION)]
