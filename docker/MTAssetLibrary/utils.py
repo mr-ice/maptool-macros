@@ -92,7 +92,7 @@ def GitShow():
 
 def GitTag():
     """Returns git describe --tags --dirty """
-    cmd = b'git describe --tags --dirty --broken --abbrev=8'
+    cmd = b'git describe --tags --dirty --abbrev=8'
     return GitCmd(cmd)
 
 
