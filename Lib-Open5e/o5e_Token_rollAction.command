@@ -40,6 +40,16 @@
 	}]
 }]
 [h: rolledExpressions = dnd5e_DiceRoller_roll (attackExpressions)]
+
 [h: log.debug (getMacroName() + ": rolledExpressions = " + rolledExpressions)]
-[h, if (json.length (rolledExpressions) > 0): output = dnd5e_RollExpression_getFormattedOutput (rolledExpressions); ""]
+[h: reLength = json.length (rolledExpressions)]
+[h: damageRe = dnd5e_RollExpression_findExpressionByType (rolledExpressions, dnd5e_Type_Damageable())]
+[h, if (reLength > 0 && json.type (damageRe) == "OBJECT"), code: {
+	[firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(rolledExpressions, 0), "rollerId", currentToken())]
+	[rolledExpressions = json.set(rolledExpressions, 0, firstExp)]
+	[rolledExpressions = dnd5e_SavedAttacks_setKey(rolledExpressions)]
+	[log.debug(getMacroName() + ": Final attack roll expression: " + json.indent(rolledExpressions))]
+	[output = dnd5e_RollExpression_getFormattedOutput (rolledExpressions)]
+	[dnd5e_SavedAttacks_push(rolledExpressions)]
+}]
 [r: output]
