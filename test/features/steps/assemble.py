@@ -23,12 +23,6 @@ def run_assemble(context, *args):
     context.stdout, context.stderr = p.communicate()
 
 
-def run_extract(context, *args):
-    p = Popen([context.extract, *args],
-              stderr=PIPE, stdout=PIPE, close_fds=True)
-    context.stdout, context.stderr = p.communicate()
-
-
 @given('I have a test token dir')
 def step_impl(context):  # noqa: F811
     assert 'source' in context, f'{context} does not have source'
