@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# this canonicalizes the path to the current script
-DIR=$(cd $(dirname $0) && pwd)
-
-$DIR/dockerrun automagic "$@"
