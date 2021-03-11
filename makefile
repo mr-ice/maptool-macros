@@ -81,5 +81,11 @@ config.ini: makefile
 maptool-macros.code-workspace: makefile
 	echo '{\n    "folders": [\n        {\n            "path": "."\n        }\n    ]\n}' > $@
 
+.vscode/extensions.json: makefile
+	mkdir -p .vscode
+	echo '{\n    "recommendations": [\n        "slevesque.vscode-zipexplorer"\n    ]\n}' > $@
+
+vscode: .vscode/extensions.json maptool-macros.code-workspace
+
 flake8:
 	flake8 --ignore E501,E402,F405

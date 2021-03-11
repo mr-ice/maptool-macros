@@ -10,4 +10,5 @@ maker.image
 tester.image
 tmp
 __pycache__
+.vscode
 .DS_Store
