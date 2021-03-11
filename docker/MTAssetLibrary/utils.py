@@ -201,7 +201,7 @@ def make_directory_path(path):
 
 
 def write_macro_files(macro, tofilebase):
-    command = macro.command.text
+    command = macro.command.text or ''
     del(macro.command)
     log.info(f'extracting {macro.label} to {tofilebase}.xml')
     pattern = f'(<!-- {github_url} [0-9a-z-]+ -->\n?)'
