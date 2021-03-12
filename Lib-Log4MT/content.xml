@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>i+wfv+WaRjuKz0L7Q4OF3g==</baGUID>
+    <baGUID>EqCDQQc4SVSLUXkdiY+anw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,14 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>800</x>
-  <y>650</y>
-  <z>15</z>
+  <x>900</x>
+  <y>700</y>
+  <z>21</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>800</lastX>
+  <lastY>650</lastY>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -60,7 +60,7 @@
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
   <notes/>
-  <gmName>6fb546de</gmName>
+  <gmName>e030ab25</gmName>
   <state>
     <entry>
       <string>Paralyzed</string>
@@ -554,7 +554,7 @@
     </entry>
     <entry>
       <int>48</int>
-      <macro name="l4m.break"/>
+      <macro name="break"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

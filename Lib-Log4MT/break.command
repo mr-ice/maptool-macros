@@ -11,10 +11,15 @@
 	[if (json.length (argArry) > 3):
 		params = json.get (argArry, 3, json.length (argArry) - 1);
 		params = "[]"]
+	[evalParams = "{}"]
+	[foreach (param, params): evalParams = json.set (evalParams, param, evalMacro ("[r: " + param + "]"))]
 	[message = json.append ("", json.set ("", "category", category), json.set ("", "msg", msg))]
-	[message = json.append (message, json.set ("", "params", params))]
+	[message = json.append (message, json.set ("", "params", evalParams))]
 	[callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]
 	[message = json.append (message, json.set ("", "currentCallStack", callStack))]
 	[message = json.indent (message)]
-	[abort (input ("jayEatsBoogers | <html><pre>" + json.indent (message) + "</pre></html> | | label | span=true", "evenOtherPeoplesBoogers | <html><b> Hit OK to continue and Cancel to break</b></html> | | label | span=true"))]
+	[abort (input ("jayEatsBoogers | <html><pre>" + json.indent (message) + "</pre></html> | | label | span=true", "evenOtherPeoplesBoogers | <html><b> Hit OK to continue and Cancel to break</b></html> | | label | span=true",
+	"updateJson | {  } | | Text | span=true width=80",
+	"nastyJay | To update any variables, define them within a JSON object and paste it above || label | span=true"))]
+	[json.toVars (updateJson)]
 }]
