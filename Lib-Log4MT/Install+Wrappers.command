@@ -33,36 +33,15 @@
 <!-- Initialize the proxy token -->
 [h: proxyTokenId = l4m.initProxyLibrary (libTokenName)]
 
-<!-- Build/Update the Configuration object -->
-[h: currentConfig = l4m.getWrapperConfig (proxyTokenName)]
-[h: existingUdfCfg = json.fields (currentConfig)]
-
 [h: l4m.debug (CATEGORY, "libTokenName = " + libTokenName)]
 [h, token (libTokenName), code: {
 	[libMacros = getMacros ()]
 	[libTokenId = currentToken()]
 }]
 
-<!-- Interrogate Client for user defined functions, locating all those defined for source token -->
-[h: libUdfNames = "[]"]
-[h: clientInfo = getInfo ("client")]
-[h: clientUdfs = json.get (clientInfo, "user defined functions")]
+[h: currentConfig = l4m.getUdfConfig (libTokenName, proxyTokenName)]
 
-[h, foreach (clientUdfName, json.fields (clientUdfs)), code: {
-	<!-- will be KVP of UDF - Macro-location -->
-	[udfMacro = json.get (clientUdfs, clientUdfName)]
-	[udfLocation = listGet (udfMacro, 1, "@")]
-	[if (udfLocation == libTokenName): libUdfNames = json.append (libUdfNames, clientUdfName), ""]
-}]
-
-[h: l4m.info (CATEGORY, "Configuring UDFs in proxy token - " + json.indent (libUdfNames))]
-
-[h: defaultConfigParams = json.set ("", "newScope", 1, "ignoreOutput", 0)]
-[h, foreach (udfMacro, libUdfNames), code: {
-	[if (!json.contains (existingUdfCfg, udfMacro)), code: {
-		[currentConfig = json.set (currentConfig, udfMacro, defaultConfigParams)]
-	}; {}]
-}]
+[h: l4m.info (CATEGORY, "Configuring UDFs in proxy token - " + json.indent (json.fields (currentConfig, "json")))]
 
 <!-- Store the configuration on the token -->
 [h: l4m.setWrapperConfig (proxyTokenName, currentConfig)]

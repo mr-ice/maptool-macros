@@ -3,15 +3,17 @@
 [h: args = json.get (macro.args, "args")]
 [h: l4m.Constants()]
 [h: category = tokenName + "." + macroName]
-[h: logLevel = l4m.getEffectiveLogLevel (category)]
-
 [h, if (l4m.isLogLevelEnabled (ENTRY_EXIT_LOG_LEVEL, category, ".entryExit")), code: {
 	[enteringMsg = "Entering " + macroName + ": (" + args + ")"]
-	[log.setLevel ("macro-logger", "INFO")]		
-	[log.info (enteringMsg)]
+	[log.info (category, enteringMsg, ".entryExit")]
 }]
 
-[h: log.setLevel ("macro-logger", logLevel)]
+[h: logLevel = l4m.getEffectiveLogLevel (category)]
+[h, if (logLevel == ""): logLevel = ROOT_LOGGER_WRAPPER_DEFAULT_LEVEL]
+[h: setLibProperty (LOGGER_PREFIX + ROOT_LOGGER_CATEGORY + ".level", logLevel)]
+[h: setLibProperty (COMPILED_LOGGER_PREFIX + ".value", "")]
+[h: setLibProperty (COMPILED_LOGGER_PREFIX + ".level", "")]
+
 [h: propertyName = l4m.getMeterName (macroName)]
 
 [h: callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]

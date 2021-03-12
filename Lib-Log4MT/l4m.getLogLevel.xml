@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d772793d-8c9e-45bd-8324-0b00e1b732ec</macroUUID>
+  <macroUUID>a95150ad-1509-4964-bd2c-842761b6909e</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>16</index>
   <colorKey>default</colorKey>
@@ -17,7 +17,7 @@
   <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>arg(0) - Category
 arg(1) - (Optional) Key Suffix (".level", ".entryExit", ".value")
-returns - The effective l4m.level for the given category</toolTip>
+returns - The configured level for the category</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

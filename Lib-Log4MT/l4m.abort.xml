@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>5c26ffa6-8cf9-49fe-9114-9bfac9eae80c</macroUUID>
+  <macroUUID>1c23a0c4-cc99-49e4-b8f8-638417110e99</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>41</index>
+  <index>47</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>l4m.overwriteUdf</label>
+  <label>l4m.abort</label>
   <group>Profile Token Library - Library Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -14,8 +14,8 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
-  <toolTip>Reads the target proxy library's UDF configuration and defines User Defined Functions to wrap the native library functions.</toolTip>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

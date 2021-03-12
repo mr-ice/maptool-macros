@@ -4,16 +4,16 @@
 [h: macroName = json.get (args, "name")]
 [h: retVal = json.get (args, "return")]
 [h: tokenName = json.get (args, "token")]
-[h: macroLogger = json.get (args, "macro-logger")]
+[h: previousRootLogger = json.get (args, "previousRootLogger")]
+[h, if (previousRootLogger == ""): previousRootLogger = ROOT_LOGGER_WRAPPER_DEFAULT_LEVEL]
 [h: category = tokenName + "." + macroName]
 [h, if (l4m.isLogLevelEnabled (ENTRY_EXIT_LOG_LEVEL, category, ".entryExit")), code: {
 	[exitingMsg = "Exiting " + macroName + ": " + retVal]
-	[log.setLevel ("macro-logger", "INFO")]
-	[log.info (exitingMsg)]
+	[log.info (category, exitingMsg, ".entryExit")]
 }]
-
-<!-- sets to the previous value -->
-[h: log.setLevel ("macro-logger", macroLogger)]
+[h: setLibProperty (LOGGER_PREFIX + ROOT_LOGGER_CATEGORY + ".level", previousRootLogger)]
+[h: setLibProperty (COMPILED_LOGGER_PREFIX + ".value", "")]
+[h: setLibProperty (COMPILED_LOGGER_PREFIX + ".level", "")]
 [h: propertyName = l4m.getMeterName(macroName)]
 [h: currentValue = getLibProperty (propertyName, LIB_LOG4MT)]
 [h: startTime = json.get (currentValue, "startTime")]
@@ -25,5 +25,9 @@
 [h: setLibProperty (propertyName, currentValue, LIB_LOG4MT)]
 
 [h: callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]
-[h: callStack = json.remove (callStack, json.length (callStack) - 1)]
+[h: lastCall = json.get (callStack, json.length (callStack) - 1)]
+[h, if (lastCall != MACRO_ABORT): 
+	callStack = json.remove (callStack, json.length (callStack) - 1)]
 [h: setLibProperty (CALL_STACK, callStack, LIB_LOG4MT)]
+
+[h: abort (lastCall != MACRO_ABORT)]
