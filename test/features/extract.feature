@@ -10,7 +10,6 @@ Feature: extract
          And I have a sample macroset
          And I have a sample properties
 
-    @wip
     Scenario: Extract a Token
         When I extract a token
         Then I should get a token directory
@@ -56,9 +55,9 @@ Feature: extract
          And I should get a macro command file
          And that macro command file should not have a github comment
 
+    @wip
     Scenario: Extract a macro from token with github comment
-       Given I have a macro with github comment
-         And that macro is on a token
+       Given I have a token with github comment on a macro
         When I extract a token
         Then I should get a token directory
          And I should get a token/content.xml

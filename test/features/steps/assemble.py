@@ -6,7 +6,7 @@ import zipfile
 import glob
 import logging as log
 from lxml.etree import Element, tostring
-from MTAssetLibrary import maptool_macro_tags as tagset, random_string
+from MTAssetLibrary import tagset, random_string
 from subprocess import Popen, PIPE
 from lxml import objectify
 from behave import given, when, then

@@ -19,15 +19,6 @@ extract to the Campaign directory.
 
 import sys
 sys.path.append('docker')
-from .utils import *  # noqa: F403
-from .utils import maptool_macro_tags as tagset
-# from MTAssetLibrary import properties_xml, print_info, XML2File
-# from MTAssetLibrary import MacroNameQuote, DataElement, NewElement
-# from MTAssetLibrary import maptool_macro_tags as tagset
-# from MTAssetLibrary import add_directory_to_zipfile, GitTag
-# from MTAssetLibrary import write_macro_files, make_directory_path
-# from MTAssetLibrary import GitSha, GitDirty
-
 import os
 from io import BytesIO
 from zipfile import ZipFile, is_zipfile, ZIP_DEFLATED
@@ -36,6 +27,7 @@ import lxml
 import lxml.etree as etree
 import logging as log
 from io import StringIO
+from .utils import *  # noqa: F403
 
 
 def GetAsset(*whence, name=None, path=None):
@@ -475,6 +467,8 @@ class MTToken(MTAsset):
             self.root.macroPropertiesMap.entry[i] = new_entry
 
         if not dryrun:
+            if 'Lib:' in self.root.name.text and 'gmName' in [x.tag for x in self.root.iterchildren()]:
+                del(self.root.gmName)
             XML2File(output_path, 'content.xml', self.xml)
 
 
