@@ -5,7 +5,7 @@
 [h: l4m.Constants()]
 
 [h: isEnabled = l4m.isLogLevelEnabled ("DEBUG", category, ".break")]
-[h: log.debug (category, "Break level enabled: " + isEnabled + "; break condition: " + condition)]
+[h: l4m.debug (category, "Break level enabled: " + isEnabled + "; break condition: " + condition)]
 [h, if (isEnabled && !condition), code: {
 	<!-- were doing this -->
 	[if (json.length (argArry) > 3):
@@ -21,5 +21,12 @@
 	[abort (input ("jayEatsBoogers | <html><pre>" + json.indent (message) + "</pre></html> | | label | span=true", "evenOtherPeoplesBoogers | <html><b> Hit OK to continue and Cancel to break</b></html> | | label | span=true",
 	"updateJson | {  } | | Text | span=true width=80",
 	"nastyJay | To update any variables, define them within a JSON object and paste it above || label | span=true"))]
+	[l4m.debug (category, "updateJson = " + updateJson)]
 	[json.toVars (updateJson)]
+	[if (l4m.isDebugEnabled (category)), code: {
+		[jsonReport = "{}"]
+		[foreach (update, json.fields (updateJson, "json")): 
+			jsonReport = json.set (jsonReport, update, evalMacro ("[r: " + update + "]"))]
+		[l4m.debug (category, "update report: " + jsonReport)]
+	}]
 }]

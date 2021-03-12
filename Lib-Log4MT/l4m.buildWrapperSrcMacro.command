@@ -8,7 +8,7 @@
 "[h: l4m.Constants()]" + NEW_LINE +
 "[h: previousRootLevel = getLibProperty ( LOGGER_PREFIX + ROOT_LOGGER_CATEGORY + '.level', LIB_LOG4MT)]" + NEW_LINE +
 "[h, macro ('" + PROFILER_START_MACRO + "'): " + 
-	"json.set ('', 'name', getMacroName(), 'args', macro.args, 'token', '"+ libToken + "')]" + NEW_LINE +
+	"json.set ('', 'name', getMacroName(), 'args', args, 'token', '"+ libToken + "')]" + NEW_LINE +
 "[h: numArgs = json.length (args)]" + NEW_LINE +
 "[h: useClassicMacro = 0]" + NEW_LINE +
 "[h: macro.catchAbort = 1]" + NEW_LINE +

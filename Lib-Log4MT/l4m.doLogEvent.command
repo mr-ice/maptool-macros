@@ -7,7 +7,7 @@
 [h: delimLength = length (secondDelim)]
 [h, if (secondDelim >= 0), code: {
 	[secondCat = substring (msg, 0, secondDelim)]
-	[category = category + "." + secondCat]
+	[if (category != ""): category = category + "." + secondCat; category = secondCat]
 	[msg = substring (msg, secondDelim + delimLength, length (msg))]
 }]
 
