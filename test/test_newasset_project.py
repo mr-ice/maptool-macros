@@ -7,7 +7,7 @@ import zipfile
 import logging as log
 from glob import glob
 from lxml.etree import Element, tostring
-from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
+from MTAssetLibrary import tagset, GetAsset
 from MTAssetLibrary import random_string
 
 

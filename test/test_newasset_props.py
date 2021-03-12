@@ -6,8 +6,7 @@ import pytest
 import zipfile
 import logging as log
 from lxml.etree import tostring
-from MTAssetLibrary import maptool_macro_tags as tagset
-from MTAssetLibrary import random_string, GetAsset
+from MTAssetLibrary import tagset, random_string, GetAsset
 
 
 class Test_MTAsset_Properties:

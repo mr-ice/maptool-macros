@@ -62,7 +62,7 @@ class TagSet:
         return self.__dict__.get(name, default)
 
 
-maptool_macro_tags = TagSet()
+tagset = TagSet()
 
 # define a properties.xml body for the final .mtmacro assembly
 properties_xml = """<map>
@@ -201,8 +201,14 @@ def make_directory_path(path):
 
 
 def write_macro_files(macro, tofilebase):
-    command = macro.command.text or ''
-    del(macro.command)
+    if '/' in tofilebase:
+        dir = os.path.dirname(tofilebase)
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+    command = ''
+    if 'command' in [x.tag for x in macro.iterchildren()]:
+        command = macro.command.text or ''
+        del(macro.command)
     log.info(f'extracting {macro.label} to {tofilebase}.xml')
     pattern = f'(<!-- {github_url} [0-9a-z-]+ -->\n?)'
     if match := re.match(pattern, command):

@@ -12,7 +12,7 @@ import pytest
 import zipfile
 from lxml import objectify
 from glob import glob
-from MTAssetLibrary import maptool_macro_tags as tagset
+from MTAssetLibrary import tagset
 from MTAssetLibrary import random_string, GetAsset, MTMacroSet
 from MTAssetLibrary import github_url
 

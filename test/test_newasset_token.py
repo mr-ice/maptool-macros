@@ -6,9 +6,8 @@ import os
 import pytest
 import zipfile
 from lxml import objectify
-from MTAssetLibrary import maptool_macro_tags as tagset, GetAsset
-from MTAssetLibrary import github_url, git_tag_str
-from MTAssetLibrary import MacroNameQuote
+from MTAssetLibrary import tagset, GetAsset
+from MTAssetLibrary import git_tag_str, MacroNameQuote
 
 
 class Test_MTAsset_Token:
