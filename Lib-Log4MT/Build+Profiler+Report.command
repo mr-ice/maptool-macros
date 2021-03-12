@@ -1,5 +1,4 @@
 [h: metersRaw = l4m.getMeters()]
-[h: log.info (json.set ("", "message", "metersRaw =  " + metersRaw))]
 [h: metersCompiled = "{}"]
 <!-- first pass - Collect all meters for their respective macros -->
 [h, foreach (meterKey, json.fields (metersRaw)), code: {
@@ -17,7 +16,6 @@
 		[metersCompiled = json.set (metersCompiled, macroName, meterCompiled)]
 	}; {}]
 }]
-[h: log.info (json.set ("", "message", "metersCompiled =  " + metersCompiled))]
 [h: csv = "macro name, count, min, max, average, total"]
 [h, foreach (macroName, json.fields (metersCompiled)), code: {
 	[meterCompiled = json.get (metersCompiled, macroName)]
