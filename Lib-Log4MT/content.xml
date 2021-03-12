@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>vIUq3C32S7SqGaMGKn2c9g==</baGUID>
+    <baGUID>i+wfv+WaRjuKz0L7Q4OF3g==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>Rq3Wr6hVQ5CZ89vUIYkcnw==</baGUID>
+    <baGUID>b3OOLCM3SK+iDB/bXK55Ng==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,9 +14,9 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>950</x>
-  <y>700</y>
-  <z>5</z>
+  <x>800</x>
+  <y>650</y>
+  <z>15</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -48,7 +48,7 @@
   <tokenShape>SQUARE</tokenShape>
   <tokenType>NPC</tokenType>
   <layer>TOKEN</layer>
-  <propertyType>Log4MT</propertyType>
+  <propertyType>Basic</propertyType>
   <tokenOpacity>1.0</tokenOpacity>
   <terrainModifier>0.0</terrainModifier>
   <terrainModifierOperation>NONE</terrainModifierOperation>
@@ -60,6 +60,7 @@
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
   <notes/>
+  <gmName>6fb546de</gmName>
   <state>
     <entry>
       <string>Paralyzed</string>
@@ -353,7 +354,7 @@
         </net.rptools.CaseInsensitiveHashMap_-KeyValue>
       </entry>
       <entry>
-        <string>logger.lib:log4mt.level</string>
+        <string>logger.lib:token.level</string>
         <net.rptools.CaseInsensitiveHashMap_-KeyValue>
           <key>logger.lib:log4mt.level</key>
           <value class="string">warn</value>
@@ -528,10 +529,6 @@
       <macro name="Configure+Wrappers"/>
     </entry>
     <entry>
-      <int>41</int>
-      <macro name="l4m.overwriteUdf"/>
-    </entry>
-    <entry>
       <int>42</int>
       <macro name="l4m.initProxyLibrary"/>
     </entry>
@@ -542,6 +539,22 @@
     <entry>
       <int>44</int>
       <macro name="l4m.buildWrapperMacros"/>
+    </entry>
+    <entry>
+      <int>45</int>
+      <macro name="l4m.buildGlobalMacros"/>
+    </entry>
+    <entry>
+      <int>46</int>
+      <macro name="l4m.getUdfConfig"/>
+    </entry>
+    <entry>
+      <int>47</int>
+      <macro name="l4m.abort"/>
+    </entry>
+    <entry>
+      <int>48</int>
+      <macro name="l4m.break"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

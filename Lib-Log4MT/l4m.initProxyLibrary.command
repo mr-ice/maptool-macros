@@ -1,7 +1,6 @@
 [h: libTokenName = arg(0)]
 [h: l4m.Constants()]
 [h: CATEGORY = getMacroName() + "." + LIB_LOG4MT]
-[h: log.debug (getMacroName() + ": libTokenName = " + libTokenName)]
 
 [h: proxyTokenName = l4m.getProxyTokenName (libTokenName)]
 [h: l4m.debug (CATEGORY, "proxyTokenName = " + proxyTokenName)]

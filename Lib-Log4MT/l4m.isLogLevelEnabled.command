@@ -2,6 +2,8 @@
 [h, if (argCount() > 1): category = arg(1); category = ""]
 [h, if (argCount() > 2): suffix = arg(2); suffix = ""]
 [h: l4m.Constants()]
+<!-- Dont let the native category be part of this calculation -->
+[h, if (category == NATIVE_CATEGORY): category = ""]
 [h: logLevelVal = json.get (LOGGER_LEVEL_MAP, logLevel)]
 
 <!-- Assuming log configuration doesnt change much, compile the levels we 

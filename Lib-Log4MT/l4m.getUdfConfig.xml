@@ -1,13 +1,13 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f8cb8681-d832-4850-89e4-ecd59f594e36</macroUUID>
+  <macroUUID>f09cb21b-3f62-4b23-9783-6fcdf03966ff</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>32</index>
+  <index>46</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>l4m.configureLoggerProcessor</label>
-  <group>Profile Token Library - Log Functions</group>
+  <label>l4m.getUdfConfig</label>
+  <group>Profile Token Library - Library Functions</group>
   <sortby/>
-  <autoExecute>true</autoExecute>
+  <autoExecute>false</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
@@ -15,7 +15,12 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>arg (0) = Library Token to fetch UDFs for
+arg (2) = Proxy Token name
+
+Returns JSON with default config params
+
+</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

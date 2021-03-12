@@ -1,7 +1,7 @@
 [h: proxyTokenName = arg(0)]
 [h, token (proxyTokenName): proxyTokenId = currentToken()]
 [h: l4m.Constants()]
-[h: CATEGORY = getMacroName() + "." + getLabel()]
+[h: CATEGORY = LIB_LOG4MT + "." + getMacroName()]
 
 [h: findId = strfind (proxyTokenName, PROXY_LIB_PATTERN)]
 [h: findCount = getFindCount (findId)]
