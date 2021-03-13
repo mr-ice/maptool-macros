@@ -1,14 +1,14 @@
 <project>
   <project name="DNDBeyond.project"/>
   <token name="Lib-DarkerDungeon"/>
-  <macroset name="DarkerDungeon-Campaign">
+  <macroset name="DnD5e-Campaign">
     <macro name="DDmacro/Lesser"/>
     <macro name="DDmacro/Greater"/>
     <macro name="DDmacro/Superior"/>
     <macro name="DDmacro/Supreme"/>
     <macro name="DDmacro/Manage+Usables"/>
   </macroset>
-  <macroset name="DarkerDungeon-GM">
+  <macroset name="DnD5e-GM">
     <macro name="DDmacro/New+Int+Initiative"/>
     <macro name="DDmacro/Update+Int+Initiative"/>
   </macroset>

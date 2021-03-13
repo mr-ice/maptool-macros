@@ -2,7 +2,7 @@
   <project name="DnD5e.project"/>
   <token name="Lib-Open5e"/>
   <token name="Lib-O5e-MonsterSupplement"/>
-  <macroset name="Open5e-GM">
+  <macroset name="DnD5e-GM">
     <macro name="macro/Setup+Monster+Token"/>
     <macro name="macro/Edit+Ext+DB"/>
   </macroset>

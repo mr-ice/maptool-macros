@@ -2,7 +2,7 @@
   <project name="DnD5e.project"/>
   <properties name="DND5e"/>
   <token name="Lib-DNDBeyond"/>
-  <macroset name="DNDBeyond-Campaign">
+  <macroset name="DnD5e-Campaign">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>
     <macro name="macro/Reset+Properties"/>
