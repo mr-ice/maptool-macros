@@ -112,7 +112,6 @@ class Test_MTAsset_Project:
         assert m.xmlfile is not None
         assert m.zipfile is None
         assert m.xml.find('macroset') is not None
-        assert m.xml.find('project') is not None
 
     def test_asset_project1_assemble(self, tmpdir):
         print(f'in test_asset_project1_assemble with {self.source}')
