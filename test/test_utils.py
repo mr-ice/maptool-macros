@@ -32,3 +32,6 @@ class TestUtilities:
         assert basename('C:\\Where\\Is\\D') == 'D'
         assert basename('.\\Does\\Not\\Exist.text') == 'Exist.text'
         assert basename('.\\Where\\') == ''
+
+    def test_project_merge(context):
+        pass

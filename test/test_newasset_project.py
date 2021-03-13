@@ -17,9 +17,7 @@ class Test_MTAsset_Project:
         test_start_dir = os.getcwd()
         os.chdir(tmpdir)
         mvp = os.path.join(test_start_dir, 'test/data/MinViable')
-        mvzips = ['MVMacro1.zip', 'MVMacro2.zip', 'MVProps.zip',
-                  'MVToken.zip']
-        for zf in [os.path.join(mvp, z) for z in mvzips]:
+        for zf in glob(mvp + '/*.zip'):
             with zipfile.ZipFile(zf, 'r') as zip_ref:
                 zip_ref.extractall(tmpdir)
         self.source = [

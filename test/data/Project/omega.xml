@@ -1,0 +1,23 @@
+<project>
+  <token name="FunkyColdMedina"/>
+  <macroset name="GM">
+    <macro name="Pieces-of-Eight"/>
+    <macro name="BillyBobBlast-o-matic"/>
+    <macro name="BodeMcBobSlayer"/>
+    <macro name="TauntGM"/>
+    <macro name="WhineLikeJay"/>
+    <macro name="BobsRevenge"/>
+    <macro name="Sir-RollsaLot"/>
+  </macroset>
+  <properties name="DND5e"/>
+  <token name="Lib-DND5e"/>
+  <macroset name="Campaign">
+    <macro name="WhizBangInterface"/>
+    <macro name="ResurrectAllNPCS"/>
+    <macro name="tauntNPC"/>
+    <macro name="tauntPC"/>
+    <macro name="LevelUp"/>
+  </macroset>
+  <properties name="VanillaCampaign"/>
+  <token name="Lib-DNDBeyond"/>
+</project>

@@ -5,6 +5,7 @@ sys.path.append('docker')
 import os
 import pytest
 import zipfile
+from glob import glob
 from lxml import objectify
 from MTAssetLibrary import tagset, GetAsset
 from MTAssetLibrary import git_tag_str, MacroNameQuote
@@ -14,9 +15,7 @@ class Test_MTAsset_Token:
     @pytest.fixture(autouse=True)
     def setup_method(self, tmpdir):
         mvp = 'test/data/MinViable'
-        mvzips = ['MVMacro1.zip', 'MVMacro2.zip', 'MVProps.zip',
-                  'MVToken.zip']
-        for zf in [os.path.join(mvp, z) for z in mvzips]:
+        for zf in glob(mvp + '/*.zip'):
             with zipfile.ZipFile(zf, 'r') as zip_ref:
                 zip_ref.extractall(tmpdir)
         test_start_dir = os.getcwd()
