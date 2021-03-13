@@ -1,0 +1,42 @@
+ <net.rptools.maptool.model.Token>
+   <id>
+-    <baGUID></baGUID>
++    <baGUID>Kpu8pmXmQhOCgcfFs59UaA==</baGUID>
+   </id>
+
+ <net.rptools.maptool.model.Token>
+   <id>
++    <baGUID>qzH7SCEiRcuWjXqs0tMRZg==</baGUID>
+   </id>
+ <net.rptools.maptool.model.Token>
++  <id>
++    <baGUID>ORBQ84iAQXqgAxjGZ3pW4w==</baGUID>
++  </id>
+
+the id.baGUID can be empty, missing, and the id can be empty or missing.  MT will generate and insert it.
+
+<net.rptools.maptool.model.Token>
+    <exposedAreaGUID>
+        <baGUID>b3OOLCM3SK+iDB/bXK55Ng==</baGUID>
+    </exposedAreaGUID>
+
+the exposedAreaGUID.baGUID can be empty or missing, MT ignores it (and on rewrite the
+exposedAreaGUID is simplified).  If exposedAreaGUID is missing, MT will re-create it.
+
+<net.rptools.maptool.model.Token>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+
+empty or missing baGUID here results in :
+java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+removing net.rptools.maptool.model.GUID results in another error (PersistenceUtil.error.tokenVersion)
+
+
+

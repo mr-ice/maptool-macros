@@ -1,0 +1,3 @@
+We rewrite the macroPropertiesMap, replacing macro tags with <macro name="filesystem-name"/>
+
+We need to find out if the id tags matter
