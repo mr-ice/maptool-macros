@@ -5,6 +5,7 @@ Just some helper functions and objects.
 """
 import re
 import os
+import copy
 import zipfile
 import datetime
 import random
@@ -144,6 +145,65 @@ def XML2File(to_dir, to_file, xml):
         f.write(content)
         log.info('wrote {} bytes to modified {}'.
                  format(len(content), to_file))
+
+
+
+def objectify_merge(orig, add):
+    '''This merges objectify.ObjectifiedObject trees.  Useful
+    in flattening nested project xml representations.
+
+    The outer wrapper is here just to make a reference
+    copy before calling the internal merge.
+
+    :returns: a copy of orig merged with add'''
+
+    def recurse_merge(add, new, start):
+        '''Wrapped to keep anything from using it
+        directly, this uses the start as a reference
+        to decide what from the add object to put
+        into the new object.
+
+        Modifies the new object in place'''
+
+        for child in add.iterchildren():
+            log.debug(f'{tostring(child)=} found in add')
+            xpath_child = f'{child.tag}[@name="{child.get("name")}"]'
+
+            child_start = start.find(xpath_child)
+            if child_start is not None:
+                log.debug(f'{tostring(child_start)=} found in start')
+
+            child_new = new.find(xpath_child)
+            if child_new is not None:
+                log.debug(f'{tostring(child_new)=} found in new')
+
+            if child_start is None:
+                log.debug(f'{xpath_child} not found in start, appending to new')
+                new.append(copy.deepcopy(child))
+            elif child.countchildren() > 0:
+                log.debug(f'{tostring(child)=} has children, recursing')
+                recurse_merge(child, child_new, child_start)
+
+    start = copy.deepcopy(orig)
+    recurse_merge(add, orig, start)
+    return orig
+
+def flatten_project(p):
+    '''Projects can refer to projects (see doc/Project.md).
+    This function is to flatten the current top level with
+    all reference projects into one structure.
+
+    :return: copy of p with all <project> elements removed
+    and the contents of <project> transcluded.
+    '''
+    while projects := p.findall('project'):
+        for project in projects:
+            p.remove(project)
+        for project in projects:
+            new = GetAsset(project.get('name'))
+            log.debug('recursing into', project.get('name'))
+            p = objectify_merge(p, new.root)
+    return p
 
 
 def add_directory_to_zipfile(zf, directory_name):

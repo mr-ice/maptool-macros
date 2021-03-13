@@ -406,7 +406,7 @@ class MTToken(MTAsset):
         if self.xml.find('macroPropertiesMap') is not None:
             for i, entry in enumerate(self.root.macroPropertiesMap.entry):
                 try:
-                    name = entry.macro.attrib['name']
+                    name = entry.macro.get('name')
                 except AttributeError:
                     pass
                 else:
@@ -644,19 +644,19 @@ class MTProject(MTAsset):
                     if macro.tag != 'macro':
                         continue
                     if asset is None:
-                        asset = GetAsset(macro.attrib['name'])
+                        asset = GetAsset(macro.get('name'))
                     else:
-                        asset.append(GetAsset(macro.attrib['name']))
+                        asset.append(GetAsset(macro.get('name')))
                 if asset is not None:
-                    asset.assemble(save_name=elem.attrib['name'], output_dir=output_dir)
+                    asset.assemble(save_name=elem.get('name'), output_dir=output_dir)
             elif elem.tag == 'text':
-                name = elem.attrib.get('name', 'README.txt')
+                name = elem.get('name', 'README.txt')
                 with open(os.path.join(output_dir, name), 'w') as asset:
                     asset.write(elem.text.strip())
             else:
-                asset_name = elem.attrib['name']
-                if elem.tag == 'project' and not elem.attrib['name'].endswith('.project'):
-                    asset_name = elem.attrib['name'] + '.project'
+                asset_name = elem.get('name')
+                if elem.tag == 'project' and not elem.get('name','').endswith('.project'):
+                    asset_name = elem.get('name') + '.project'
                 asset = GetAsset(asset_name)
                 asset.assemble(output_dir=output_dir)
 
