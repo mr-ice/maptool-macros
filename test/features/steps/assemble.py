@@ -481,3 +481,66 @@ def step_impl(context):   # noqa: F811
     assert os.path.exists(context.projecttextfile), f'{context.projecttextfile} missing when looking for missing context'
     # time.sleep(300)
     assert context.random_text in open(context.projecttextfile).read(), f'{context.projecttextfile=} missing {context.random_text=}, {open(context.projecttextfile).read()=}'
+
+@given(u'I have three nested project files with common macroset')
+def step_impl(context):   # noqa: F811
+    context.macrosetname = random_string()
+    # first.project refers to second.project and has a macrosetname with macro/MVMacro1
+    # second.project refers to third.project and has a macrosetname with macro/MVMacro2
+    # third.project has a macrosetname with macro/MVMacro3
+    create = (
+        ('first', 'macro/MVMacro1'),
+        ('second', 'macro/MVMacro2'),
+        ('third', 'macro/MVMacro3')
+    )
+    with open('first.project', 'w') as fh:
+        fh.write(f'''<project>
+        <project name="second"/>
+        <macroset name="{context.macrosetname}">
+            <macro name="src/macro/MVMacro1"/>
+        </macroset>
+        </project>''')
+    with open('second.project', 'w') as fh:
+        fh.write(f'''<project>
+        <project name="third"/>
+        <macroset name="{context.macrosetname}">
+            <macro name="src/macro/MVMacro2"/>
+        </macroset>
+        </project>''')
+    with open('third.project', 'w') as fh:
+        fh.write(f'''<project>
+        <macroset name="{context.macrosetname}">
+            <macro name="src/macro/MVMacro3"/>
+        </macroset>
+        </project>''')
+    
+    assert os.path.exists('first.project')
+    assert os.path.exists('second.project')
+    assert os.path.exists('third.project')
+
+
+@when(u'I assemble the master project')
+def step_impl(context):   # noqa: F811
+    run_assemble(context, 'first.project')
+    assert b'Error' not in context.stderr
+
+
+@then(u'I get the macroset from the collection')
+def step_impl(context):   # noqa: F811
+    context.macrosetfilename = context.macrosetname + '.' + tagset.macroset.ext
+    assert os.path.exists(context.macrosetfilename)
+
+
+@then(u'that macroset contains macros from the "{which}" project')
+def step_impl(context, which):   # noqa: F811
+    zf = zipfile.ZipFile(context.macrosetfilename)
+    cf = zf.open('content.xml').read().decode()
+    if which == 'first':
+        label = '<label>Minimum Viable Macro 1</label>'
+    if which == 'second':
+        label = '<label>Minimum Viable Macro 2</label>'
+    if which == 'third':
+        label = '<label>Minimum Viable Macro 3</label>'
+    assert label in cf
+    # assert False, f"looking for {context.macrosetname} in '{os.getcwd()}'"
+

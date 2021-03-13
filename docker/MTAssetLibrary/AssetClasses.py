@@ -617,6 +617,12 @@ class MTMacroObj(MTAsset):
 
 
 class MTProject(MTAsset):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # glue in the flatten_project, note we have to convert from
+        # ElementTree to Element and back
+        self.xml = flatten_project(self.xml.getroot()).getroottree()
+
     def extract(self, *args, **kwargs):
         log.info("Projects are only for assembly")
         return False

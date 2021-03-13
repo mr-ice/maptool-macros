@@ -108,3 +108,13 @@ Feature: Assemble
         When I call the assemble command with the project/project structure
         Then I should get a text file from the embedded project
          And that text file should contain the embedded content
+
+    @wip
+    Scenario: make project files merge macrosets # Issue #67
+       Given I have three nested project files with common macroset
+        When I assemble the master project
+        Then I get the macroset from the collection
+         And that macroset contains macros from the "first" project
+         And that macroset contains macros from the "second" project
+         And that macroset contains macros from the "third" project
+
