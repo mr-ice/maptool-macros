@@ -1,0 +1,14 @@
+<project>
+  <properties name="DND5e"/>
+  <token name="Lib-DND5e"/>
+  <macroset name="GM">
+    <macro name="BillyBobBlast-o-matic"/>
+    <macro name="BodeMcBobSlayer"/>
+    <macro name="TauntGM"/>
+    <macro name="WhineLikeJay"/>
+  </macroset>
+  <macroset name="Campaign">
+    <macro name="WhizBangInterface"/>
+    <macro name="ResurrectAllNPCS"/>
+  </macroset>
+</project>

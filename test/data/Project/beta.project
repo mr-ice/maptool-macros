@@ -1,0 +1,8 @@
+<project>
+    <project name="gamma"/>
+    <token name="FunkyColdMedina"/>
+    <macroset name="GM">
+        <macro name="Pieces-of-Eight"/>
+    </macroset>
+    <project name="delta.xml"/>
+</project>

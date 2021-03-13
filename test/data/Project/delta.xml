@@ -1,0 +1,16 @@
+<project>
+  <properties name="DND5e"/>
+  <properties name="VanillaCampaign"/>
+  <token name="Lib-DNDBeyond"/>
+  <macroset name="GM">
+    <macro name="BillyBobBlast-o-matic"/>
+    <macro name="BodeMcBobSlayer"/>
+    <macro name="BobsRevenge"/>
+    <macro name="Sir-RollsaLot"/>
+  </macroset>
+  <macroset name="Campaign">
+    <macro name="tauntNPC"/>
+    <macro name="tauntPC"/>
+    <macro name="LevelUp"/>
+  </macroset>
+</project>
