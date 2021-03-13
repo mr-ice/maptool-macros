@@ -200,9 +200,14 @@ def flatten_project(p):
         for project in projects:
             p.remove(project)
         for project in projects:
-            new = GetAsset(project.get('name'))
+            # GetAsset would parse the name but it isn't available
+            # have to do this in a hopefully similar way.
+            name = project.get('name')
+            if os.path.exists(name + '.project'):
+                name = name + '.project'
+            new = objectify.parse(name).getroot()
             log.debug('recursing into', project.get('name'))
-            p = objectify_merge(p, new.root)
+            p = objectify_merge(p, new)
     return p
 
 

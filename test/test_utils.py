@@ -1,7 +1,12 @@
 import os
 import sys
+import pytest
+from glob import glob
+from shutil import copy
+from lxml import objectify
+from lxml.etree import tostring
 sys.path.insert(0, 'docker')
-from MTAssetLibrary import dirname, basename
+from MTAssetLibrary import dirname, basename, flatten_project
 
 
 class TestUtilities:
@@ -33,5 +38,20 @@ class TestUtilities:
         assert basename('.\\Does\\Not\\Exist.text') == 'Exist.text'
         assert basename('.\\Where\\') == ''
 
-    def test_project_merge(context):
-        pass
+class Test_Utils_in_Tmpdir:
+    @pytest.fixture(autouse=True)
+    def setup_method(self, tmpdir):
+        test_start_dir = os.getcwd()
+        for pf in glob('test/data/Project/*'):
+            copy(pf, tmpdir)
+        os.chdir(tmpdir)
+
+    def test_project_merge(context, tmpdir):
+        assert os.path.exists('alpha.project')
+        assert os.path.exists('beta.project')
+        assert os.path.exists('gamma.project')
+        assert os.path.exists('delta.xml')
+        assert os.path.exists('omega.xml')
+        proj = objectify.parse('alpha.project').getroot()
+        flat = flatten_project(proj)
+        assert tostring(flat, pretty_print=True).decode() == open('omega.xml').read()
