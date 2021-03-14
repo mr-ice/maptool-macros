@@ -60,7 +60,6 @@
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
   <notes/>
-  <gmName>e030ab25</gmName>
   <state>
     <entry>
       <string>Paralyzed</string>
@@ -343,34 +342,6 @@
       <boolean>false</boolean>
     </entry>
   </state>
-  <propertyMapCI>
-    <store>
-      <entry>
-        <string>logger.root.level</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>logger.root.level</key>
-          <value class="string">warn</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>logger.lib:token.level</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>logger.lib:log4mt.level</key>
-          <value class="string">warn</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-      <entry>
-        <string>logger.root.entryexit</string>
-        <net.rptools.CaseInsensitiveHashMap_-KeyValue>
-          <key>logger.root.entryexit</key>
-          <value class="string">warn</value>
-          <outer-class reference="../../../.."/>
-        </net.rptools.CaseInsensitiveHashMap_-KeyValue>
-      </entry>
-    </store>
-  </propertyMapCI>
   <macroPropertiesMap>
     <entry>
       <int>2</int>
