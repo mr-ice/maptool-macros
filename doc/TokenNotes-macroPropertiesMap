@@ -1,3 +1,10 @@
 We rewrite the macroPropertiesMap, replacing macro tags with <macro name="filesystem-name"/>
 
-We need to find out if the id tags matter
+Id tags
+    * must be present
+    * must not be empty
+    * needs to match the <index> of the macro or the macro won't show
+    * needs to be unique
+    * need not be sequential
+    
+
