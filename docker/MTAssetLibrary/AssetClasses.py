@@ -387,7 +387,6 @@ class MTToken(MTAsset):
             propmap = objectify.parse(propmapfile).getroot()
             self.root.append(propmap)
 
-
     def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None):
         """MTToken.assemble()
 
