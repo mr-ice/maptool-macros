@@ -17,11 +17,12 @@
 	     as currently set for diceRolled -->
 	[h: onCritAdd = dnd5e_RollExpression_getOnCritAdd (rollExpression)]
 	[h, if (onCritAdd == ""): onCritAdd = dnd5e_RollExpression_getDiceRolled (rollExpression)]
-	[h: critRoll = dnd5e_RollExpression_fromRollExpression (rollExpression)]
+	[h: diceSize = dnd5e_RollExpression_getDiceSize (rollExpression)]
+	[h: critRoll = dnd5e_RollExpression_Damage("Critical Damage", 
+						onCritAdd + "d" + diceSize)]
 	[h: critRoll = dnd5e_RollExpression_setExpressionType (critRoll, "Critical Damage")]
-	[h: critRoll = dnd5e_RollExpression_setBonus (critRoll, 0)]
+
 	[h: critRoll = dnd5e_RollExpression_setDiceRolled (critRoll, onCritAdd)]
-	[h: critRoll = dnd5e_RollExpression_setName (critRoll, "Critical")]
 	[h: critRoll = json.get (dnd5e_DiceRoller_roll (critRoll), 0)]
 	[h: rollExpression = dnd5e_RollExpression_addExpression (rollExpression, critRoll)]
 	[h: rollExpression = dnd5e_RollExpression_mergeChildren (rollExpression)]
