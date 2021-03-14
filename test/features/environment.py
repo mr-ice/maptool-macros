@@ -115,7 +115,6 @@ def before_scenario(context, scenario):
 def after_scenario(context, scenario):
     log.debug(f'Entering environment.{sys._getframe(  ).f_code.co_name} for {scenario=}')
     os.chdir(context.tmpdir)
-    #rmtree('src')
     log.debug(f'Removed src directory from {context.tmpdir}')
     log.debug(f'inspecting {context.cleanup=} for things to remove')
     for pathname in context.cleanup:

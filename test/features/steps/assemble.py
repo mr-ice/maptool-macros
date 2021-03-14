@@ -6,8 +6,7 @@ import zipfile
 import glob
 import logging as log
 from lxml.etree import Element, tostring
-from MTAssetLibrary import tagset, random_string
-from subprocess import Popen, PIPE
+from MTAssetLibrary import tagset, random_string, run_extract, run_assemble
 from lxml import objectify
 from behave import given, when, then
 
@@ -15,12 +14,6 @@ from behave import given, when, then
 # In behave, common usage is to use step_impl as the function in each
 # step.  They don't have to be, but they also don't have to have unique
 # or any other predefined name pattern.
-
-
-def run_assemble(context, *args):
-    p = Popen([context.assemble, *args],
-              stderr=PIPE, stdout=PIPE, close_fds=True)
-    context.stdout, context.stderr = p.communicate()
 
 
 @given('I have a test token dir')
@@ -373,7 +366,7 @@ def step_impl(context):  # noqa: F811
 @when(u'I assemble that Token')
 def step_impl(context):  # noqa: F811
     run_assemble(context, context.tokenpath)
-    context.projcontents = open(context.projpath).read()
+    # context.projcontents = open(context.projpath).read()
     assert b'Error' not in context.stderr, context.stderr
 
 
@@ -482,17 +475,13 @@ def step_impl(context):   # noqa: F811
     # time.sleep(300)
     assert context.random_text in open(context.projecttextfile).read(), f'{context.projecttextfile=} missing {context.random_text=}, {open(context.projecttextfile).read()=}'
 
+
 @given(u'I have three nested project files with common macroset')
 def step_impl(context):   # noqa: F811
     context.macrosetname = random_string()
     # first.project refers to second.project and has a macrosetname with macro/MVMacro1
     # second.project refers to third.project and has a macrosetname with macro/MVMacro2
     # third.project has a macrosetname with macro/MVMacro3
-    create = (
-        ('first', 'macro/MVMacro1'),
-        ('second', 'macro/MVMacro2'),
-        ('third', 'macro/MVMacro3')
-    )
     with open('first.project', 'w') as fh:
         fh.write(f'''<project>
         <project name="second"/>
@@ -513,7 +502,7 @@ def step_impl(context):   # noqa: F811
             <macro name="src/macro/MVMacro3"/>
         </macroset>
         </project>''')
-    
+
     assert os.path.exists('first.project')
     assert os.path.exists('second.project')
     assert os.path.exists('third.project')
@@ -544,3 +533,36 @@ def step_impl(context, which):   # noqa: F811
     assert label in cf
     # assert False, f"looking for {context.macrosetname} in '{os.getcwd()}'"
 
+
+@given(u'I have a token extract directory')
+def step_impl(context):   # noqa: F811
+    assert 'token' in context.source
+    assert 'rptok' in context.source['token']
+    assert len(context.source['token']['rptok']) > 1
+    context.tokenfile = context.source['token']['rptok'][0]
+    run_extract(context, context.tokenfile)
+    assert b'Error' not in context.stderr
+    context.tokenpath = os.path.basename(os.path.splitext(context.tokenfile)[0])
+    assert os.path.exists(context.tokenpath)
+
+
+@given(u'the content.xml does not have a propertyMapCI')
+def step_impl(context):   # noqa: F811
+    cf = os.path.join(context.tokenpath, 'content.xml')
+    assert os.path.exists(cf)
+    assert 'propertyMapCI' not in open(cf).read()
+
+
+@given(u'that directory has a propertyMapCI.xml file')
+def step_impl(context):   # noqa: F811
+    pm = os.path.join(context.tokenpath, 'propertyMapCI.xml')
+    assert os.path.exists(pm)
+
+
+@then(u'the asset has a propertyMapCI')
+def step_impl(context):   # noqa: F811
+    assert os.path.exists(context.tokenpath + '.' + tagset.token.ext)
+    zf = zipfile.ZipFile(context.tokenpath + '.' + tagset.token.ext)
+    cf = zf.open('content.xml')
+    content_text = cf.read()
+    assert b'propertyMapCI' in content_text

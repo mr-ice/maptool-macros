@@ -38,6 +38,7 @@ class TestUtilities:
         assert basename('.\\Does\\Not\\Exist.text') == 'Exist.text'
         assert basename('.\\Where\\') == ''
 
+
 class Test_Utils_in_Tmpdir:
     @pytest.fixture(autouse=True)
     def setup_method(self, tmpdir):
@@ -45,6 +46,8 @@ class Test_Utils_in_Tmpdir:
         for pf in glob('test/data/Project/*'):
             copy(pf, tmpdir)
         os.chdir(tmpdir)
+        yield
+        os.chdir(test_start_dir)
 
     def test_project_merge(context, tmpdir):
         assert os.path.exists('alpha.project')

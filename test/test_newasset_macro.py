@@ -14,7 +14,6 @@ from lxml import objectify
 from glob import glob
 from MTAssetLibrary import tagset
 from MTAssetLibrary import random_string, GetAsset, MTMacroSet
-from MTAssetLibrary import github_url
 
 
 class Test_MTAsset_Macro:

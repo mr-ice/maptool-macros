@@ -11,7 +11,7 @@ import datetime
 import random
 import string
 import logging as log
-from subprocess import run, PIPE
+from subprocess import Popen, run, PIPE
 from urllib.parse import quote_plus
 from lxml import objectify, etree
 from lxml.etree import tostring
@@ -147,7 +147,6 @@ def XML2File(to_dir, to_file, xml):
                  format(len(content), to_file))
 
 
-
 def objectify_merge(orig, add):
     '''This merges objectify.ObjectifiedObject trees.  Useful
     in flattening nested project xml representations.
@@ -187,6 +186,7 @@ def objectify_merge(orig, add):
     start = copy.deepcopy(orig)
     recurse_merge(add, orig, start)
     return orig
+
 
 def flatten_project(p):
     '''Projects can refer to projects (see doc/Project.md).
@@ -351,3 +351,15 @@ def print_info(archive_name):
 
     log.info("---------                        ----")
     log.info("{:>9}                        {} files".format(sum, count))
+
+
+def run_assemble(context, *args):
+    p = Popen([context.assemble, *args],
+              stderr=PIPE, stdout=PIPE, close_fds=True)
+    context.stdout, context.stderr = p.communicate()
+
+
+def run_extract(context, *args):
+    p = Popen([context.extract, *args],
+              stderr=PIPE, stdout=PIPE, close_fds=True)
+    context.stdout, context.stderr = p.communicate()

@@ -380,6 +380,14 @@ class MTProperties(MTAsset):
 
 class MTToken(MTAsset):
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        propmapfile = os.path.join(self.whence, 'propertyMapCI.xml')
+        if os.path.isdir(self.whence) and os.path.exists(propmapfile):
+            propmap = objectify.parse(propmapfile).getroot()
+            self.root.append(propmap)
+
+
     def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None):
         """MTToken.assemble()
 
@@ -454,6 +462,8 @@ class MTToken(MTAsset):
         if not dryrun:
             self.zipfile.extractall(output_path)
 
+        # extract macros to individual .xml and .command files, replacing
+        # them with a placeholder
         for i, entry in enumerate(self.root.macroPropertiesMap.entry):
             macro = entry[tagset.macro.tag]
             label = MacroNameQuote(macro.label.text)
@@ -465,6 +475,14 @@ class MTToken(MTAsset):
             new_entry = new_entry_template.format(entry.int, label)
             new_entry = objectify.fromstring(new_entry)
             self.root.macroPropertiesMap.entry[i] = new_entry
+
+        # extract the propertyMapCI to its own file, removing it from
+        # the content.xml
+        if not dryrun:
+            if (propmap := self.root.find('propertyMapCI')) is not None:
+                propmap.getparent().remove(propmap)
+                with open(os.path.join(output_path, 'propertyMapCI.xml'), 'w') as fh:
+                    fh.write(tostring(propmap, pretty_print=True).decode())
 
         if not dryrun:
             if 'Lib:' in self.root.name.text and 'gmName' in [x.tag for x in self.root.iterchildren()]:
@@ -661,7 +679,7 @@ class MTProject(MTAsset):
                     asset.write(elem.text.strip())
             else:
                 asset_name = elem.get('name')
-                if elem.tag == 'project' and not elem.get('name','').endswith('.project'):
+                if elem.tag == 'project' and not elem.get('name', '').endswith('.project'):
                     asset_name = elem.get('name') + '.project'
                 asset = GetAsset(asset_name)
                 asset.assemble(output_dir=output_dir)

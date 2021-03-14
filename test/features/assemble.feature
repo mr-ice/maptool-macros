@@ -109,7 +109,6 @@ Feature: Assemble
         Then I should get a text file from the embedded project
          And that text file should contain the embedded content
 
-    @wip
     Scenario: make project files merge macrosets # Issue #67
        Given I have three nested project files with common macroset
         When I assemble the master project
@@ -118,3 +117,10 @@ Feature: Assemble
          And that macroset contains macros from the "second" project
          And that macroset contains macros from the "third" project
 
+    @wip
+    Scenario: assemble a token pulls in propertyMapCI.xml automatically
+       Given I have a token extract directory
+         And the content.xml does not have a propertyMapCI
+         And that directory has a propertyMapCI.xml file
+        When I assemble that token
+        Then the asset has a propertyMapCI
