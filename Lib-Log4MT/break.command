@@ -3,11 +3,8 @@
 [h: v_l4m.condition = arg (2)]
 [h: v_l4m.argArry = macro.args]
 [h: l4m.Constants()]
-[h: currentLineParser = l4m.getCurrentLoggerLevel (LINE_PARSER)]
-[h: log.setLevel (LINE_PARSER, "WARN")]
 
 [h: isEnabled = l4m.isLogLevelEnabled ("DEBUG", v_l4m.category, ".break")]
-[h: l4m.debug (v_l4m.category, "Break level enabled: " + isEnabled + "; break v_l4m.condition: " + v_l4m.condition)]
 [h, if (isEnabled && !v_l4m.condition), code: {
 	<!-- were doing this -->
 	[if (json.length (v_l4m.argArry) > 3):
@@ -20,9 +17,10 @@
 	[callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]
 	[v_l4m.message = json.append (v_l4m.message, json.set ("", "currentCallStack", callStack))]
 	[v_l4m.message = json.indent (v_l4m.message)]
-	[abort (input ("jayEatsBoogers | <html><pre>" + json.indent (v_l4m.message) + "</pre></html> | | label | span=true", "evenOtherPeoplesBoogers | <html><b> Hit OK to continue and Cancel to break</b></html> | | label | span=true",
-	"updateJson | {  } | | Text | span=true width=80",
-	"nastyJay | To update any variables, define them within a JSON object and paste it above || label | span=true"))]
+	[l4m.error (v_l4m.category, v_l4m.message)]
+	[abort (input (v_l4m.category + " details | <html><pre>" + json.indent (v_l4m.message) + "</pre></html> | | label | span=true", v_l4m.category + " details | <html><b> Hit OK to continue and Cancel to break</b></html> | | label | span=true",
+	"updateJSON | {  } | | Text | span=true width=80",
+	"updateJSON | To update any variables, define them within a JSON object and paste it above || label | span=true"))]
 	[l4m.debug (v_l4m.category, "updateJson = " + updateJson)]
 	[json.toVars (updateJson)]
 	[if (l4m.isDebugEnabled (v_l4m.category)), code: {
@@ -32,4 +30,3 @@
 		[l4m.debug (v_l4m.category, "update report: " + v_l4m.jsonReport)]
 	}]
 }]
-[h: log.setLevel (LINE_PARSER, currentLineParser)]
