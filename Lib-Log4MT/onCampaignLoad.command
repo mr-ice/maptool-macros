@@ -1,3 +1,5 @@
+<!-- We have a habit of leaving this at times -->
+[h: log.setLevel ("net.rptools.maptool.client.MapToolLineParser", "WARN")]
 <!-- Populate our complicated constants -->
 [h: LIB_LOG4MT = json.get (getMacroContext(), "source")]
 [h: setLibProperty ("LIB_LOG4MT", LIB_LOG4MT)]
