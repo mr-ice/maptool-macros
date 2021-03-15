@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>285db27b-5cde-450f-afa8-34aa09b8dc76</macroUUID>
+  <macroUUID>2ac75fff-63ed-4116-82fc-61c815689d81</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>45</index>
+  <index>50</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>l4m.buildGlobalMacros</label>
-  <group>Profile Token Library - Meta</group>
+  <label>l4m.printUDFRegistry</label>
+  <group>Profile Token Library - Library Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>arg (0) = Proxy token</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

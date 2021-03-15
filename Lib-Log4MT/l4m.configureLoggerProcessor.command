@@ -1,4 +1,5 @@
 [h: loggers = json.get (macro.args, "mtLoggers")]
+[h: l4m.disableLineParser()]
 [h: l4m.Constants()]
 [h: log.setLevel ("macro-logger", "INFO")]
 [h: l4m.setLoggers (loggers)]
