@@ -385,7 +385,7 @@ class MTToken(MTAsset):
         propmapfile = os.path.join(self.whence, 'propertyMapCI.xml')
         if os.path.isdir(self.whence) and os.path.exists(propmapfile):
             propmap = objectify.parse(propmapfile).getroot()
-            if len(pmap := self.root.find('propertyMapCI')):
+            if (pmap := self.root.find('propertyMapCI')) is not None:
                 self.root.remove(pmap)
             self.root.append(propmap)
 
