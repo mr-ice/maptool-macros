@@ -15,7 +15,7 @@
 [h: libTokenFields = json.removeAll (libTokenFields, toRemove)]
 
 [h: inputStr = "junk | Input Source Library to profile and target proxy | | Label | span=true"]
-[h: inputStr = inputStr + "## libTokenName | " + libTokenFields + " | Token Library | LIST | DELIMITER=JSON VALUE=STRING "]
+[h: inputStr = inputStr + "## libTokenName | " + libTokenFields + " | Token Library | LIST | DELIMITER=JSON VALUE=STRING " + "##useBulkImport | | Use bulk configuration | CHECK"]
 
 <!-- Prompt for target Proxy Library -->
 [h: l4m.debug (CATEGORY, "inputStr = " + inputStr)]
@@ -45,7 +45,7 @@
 
 <!-- Store the configuration on the token -->
 [h: l4m.setWrapperConfig (proxyTokenName, currentConfig)]
-
-<!-- Launch the Config Wrapper macro -->
-[h, macro ("Configure Wrappers@this"): json.append ("", proxyTokenName)]
+<!-- Build the wrappers, configure afterwards -->
 [h: l4m.buildWrapperMacros (proxyTokenName)]
+<!-- Launch the Config Wrapper macro -->
+[h, macro ("Configure Wrappers@this"): json.append ("", proxyTokenName, useBulkImport)]

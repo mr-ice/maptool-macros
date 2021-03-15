@@ -1,0 +1,1 @@
+[h: log.setLevel ("net.rptools.maptool.client.MapToolLineParser", "ERROR")]

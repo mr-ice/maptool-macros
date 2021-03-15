@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>95d7356d-2455-46f1-a8b6-4ec2625ddbe2</macroUUID>
+  <macroUUID>2552948a-534e-4e14-9f8c-a7392a75fd37</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>9</index>
+  <index>55</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>l4m.getMeterName</label>
+  <label>l4m.configureWrappers</label>
   <group>Profile Token Library - Library Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,7 +15,9 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>arg(0) = base key name</toolTip>
+  <toolTip>arg(0) = wrapperConfiguration
+arg(1) = LibToken
+arg(2) = Boolean; Apply the ovewritten definitions</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

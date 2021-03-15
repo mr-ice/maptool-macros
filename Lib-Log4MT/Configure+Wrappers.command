@@ -1,4 +1,5 @@
 [h, if (argCount() > 0): selectedLibToken = arg (0); selectedLibToken = ""]
+[h, if (argCount() > 1): useBulkImport = arg (1); useBulkImport = 0]
 [h: l4m.Constants()]
 [h: CATEGORY = getMacroName() + "." + LIB_LOG4MT]
 [h: l4m.debug (CATEGORY, "selectedLibToken = " + selectedLibToken)]
@@ -14,10 +15,16 @@
 }]
 [h, if (selectedLibToken == ""), code: {
 	[if (json.isEmpty (proxyLibraries)): assert (0, "<font color='red'><b>Wrappers must be installed on a proxy token, first!</b></font>", 0)]
-	[abort (input ("selectedLibToken | " + proxyLibraries + " | Select proxy library | LIST | DELIMITER=JSON VALUE=STRING"))]
+	[abort (input ("selectedLibToken | " + proxyLibraries + " | Select proxy library | LIST | DELIMITER=JSON VALUE=STRING",
+	"useBulkImport | | Use bulk configuration | CHECK"))]
 }; {}]
 
 [h: l4m.debug (CATEGORY, "selectedLibToken = " + selectedLibToken)]
+[h, if (useBulkImport), code: {
+	[l4m.bulkConfigureWrappers (selectedLibToken)]
+	[return (0)]
+}]
+
 <!-- Get the cofig json from that token -->
 [h: configuration = l4m.getWrapperConfig (selectedLibToken)]
 
@@ -39,36 +46,13 @@
 [h: l4m.trace (CATEGORY, "inputString = " + inputString + "; funcVarMap = " + funcVarMap)]
 [h: abort (input (inputString))]
 [h: l4m.debug (CATEGORY, "overwriteFunctions = " + overwriteFunctions)]
-[h: defineMacroCmd = "[h: overwriteMacros = '[]']" + NEW_LINE]
+
 <!-- Save the configuration -->
 [h: newConfig = "{}"]
 [h, foreach (functionName, functionNames), code: {
 	[funcVar = json.get (funcVarMap, functionName)]
 	[evalMacro ("[functionCfg = " + funcVar + "]")]
 	[newConfig = json.set (newConfig, functionName, functionCfg)]
-	[defineMacroCmd = defineMacroCmd + 
-			"[h: overwriteMacros = json.append (overwriteMacros, '" + functionName + "')]" + NEW_LINE]
 }]
 [h: l4m.trace (CATEGORY, "newConfig = " + newConfig)]
-[h: l4m.setWrapperConfig (selectedLibToken, newConfig)]
-<!-- Build the Define Overwrite macros -->
-[h, token (selectedLibToken), code: {
-	[macroIndexes = getMacroIndexes (MACRO_OVERWRITE_UDF_NAME)]
-	[foreach (macroIndex, macroIndexes): removeMacro (macroIndex)]
-	[defineMacroCmd = defineMacroCmd + 
-		"[h: src = json.get (getMacroContext(), 'source')]" + NEW_LINE +
-		"[h: wrapperCfgs = l4m.getWrapperConfig (src)]" + NEW_LINE +
-		"[h, foreach (wrapperName, json.fields (wrapperCfgs, 'json')), code: {" + NEW_LINE +
-		"	[cfg = json.get (wrapperCfgs, wrapperName)]" + NEW_LINE +
-		"	[ignoreOutput = json.get (cfg, '" + CFG_IGNORE_OUTPUT  + "')]" + NEW_LINE +
-		"	[newScope = json.get (cfg, '" + CFG_NEW_SCOPE + "')]" + NEW_LINE +
-		"	[defineFunction (wrapperName, wrapperName + '@this', " +
-				"ignoreOutput, newScope)]" + NEW_LINE +
-		"}]"]
-	[props = json.set ("", "playerEditable", 0, "group", "Init")]
-	[createMacro (MACRO_OVERWRITE_UDF_NAME, defineMacroCmd, props)]
-}]
-[h: l4m.debug (CATEGORY, "overwriteFunctions = " + overwriteFunctions)]
-[h, if (overwriteFunctions), code: {
-	[macro (MACRO_OVERWRITE_UDF_NAME + "@" + selectedLibToken): ""]
-}; {}]
+[h: l4m.configureWrappers (newConfig, selectedLibToken, overwriteFunctions)]

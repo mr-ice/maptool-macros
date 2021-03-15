@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>mVYwT7lIT12CArnhfAiWcA==</baGUID>
+    <baGUID>YYOxJn1yTlWeyrVHRnVHGQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>P6vGf497QPagAMRtuNveGw==</baGUID>
+    <baGUID>XtcV/lV8TdygkUbutO7MpA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>850</x>
-  <y>650</y>
-  <z>1</z>
+  <x>800</x>
+  <y>550</y>
+  <z>14</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>800</lastX>
+  <lastY>550</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>16</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>16</x>
+        <y>11</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -512,10 +532,6 @@
       <macro name="l4m.buildWrapperMacros"/>
     </entry>
     <entry>
-      <int>45</int>
-      <macro name="l4m.buildGlobalMacros"/>
-    </entry>
-    <entry>
       <int>46</int>
       <macro name="l4m.getUdfConfig"/>
     </entry>
@@ -530,6 +546,38 @@
     <entry>
       <int>49</int>
       <macro name="l4m.getCurrentLoggerLevel"/>
+    </entry>
+    <entry>
+      <int>50</int>
+      <macro name="l4m.printUDFRegistry"/>
+    </entry>
+    <entry>
+      <int>51</int>
+      <macro name="Print+Proxy+UDF+Registry"/>
+    </entry>
+    <entry>
+      <int>52</int>
+      <macro name="l4m.bulkConfigureWrappers"/>
+    </entry>
+    <entry>
+      <int>53</int>
+      <macro name="l4m.bulkConfigureWrappersProcessor"/>
+    </entry>
+    <entry>
+      <int>54</int>
+      <macro name="l4m.convertConfigToStrProp"/>
+    </entry>
+    <entry>
+      <int>55</int>
+      <macro name="l4m.configureWrappers"/>
+    </entry>
+    <entry>
+      <int>56</int>
+      <macro name="l4m.enableLineParser"/>
+    </entry>
+    <entry>
+      <int>57</int>
+      <macro name="l4m.disableLineParser"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

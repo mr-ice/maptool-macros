@@ -1,8 +1,10 @@
+<!-- Not a good place to call lib macros. Just set variables and be on your way -->
 [h: CALL_STACK = "profiler.callStack"]
 [h: CATEGORY_DELIM = "##"]
 [h: CFG_IGNORE_OUTPUT = "ignoreOutput"]
 [h: CFG_NEW_SCOPE = "newScope"]
 [h: COMPILED_PREFIX = "compiled."]
+[h: DEFAULT_UDF_CONFIG = "ignoreOutput=0; newScope=1"]
 [h: ENTRY_EXIT_LOG_LEVEL = "INFO"]
 [h: EVAL_FUNCTION_ARGS = "functionArgs"]
 [h: EVAL_FUNCTION_NAME = "functionName"]

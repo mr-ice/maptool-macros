@@ -1,6 +1,6 @@
 [h: libTokenName = arg(0)]
 [h: proxyTokenName = arg(1)]
-[h: defaultConfig = json.set ("", "newScope", 1, "ignoreOutput", 0)]
+[h: defaultConfig = json.set ("", "ignoreOutput", 0, "newScope", 1)]
 
 <!-- Build/Update the Configuration object -->
 [h: currentConfig = l4m.getWrapperConfig (proxyTokenName)]

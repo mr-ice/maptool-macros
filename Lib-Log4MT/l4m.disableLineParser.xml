@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>95d7356d-2455-46f1-a8b6-4ec2625ddbe2</macroUUID>
+  <macroUUID>0c446f82-5af7-431b-adc1-22b0261bd079</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>9</index>
+  <index>57</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>l4m.getMeterName</label>
-  <group>Profile Token Library - Library Functions</group>
+  <label>l4m.disableLineParser</label>
+  <group>Profile Token Library - User Functions</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>arg(0) = base key name</toolTip>
+  <toolTip>Always disables the Line Parser</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

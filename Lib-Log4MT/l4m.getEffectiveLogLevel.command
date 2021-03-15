@@ -4,9 +4,11 @@
 [h, if (argCount() > 2): suffix = arg (2); suffix = ".level"]
 [h, if (suffix == ""): suffix = ".level")]
 [h: l4m.Constants()]
+
 [h: compiledLoggerLevel = COMPILED_LOGGER_PREFIX + category + suffix]
 <!-- try compiled version first -->
 [h: compiledLevel = getLibProperty (compiledLoggerLevel)]
+
 [h, if (compiledLevel != ""): return (0, compiledLevel); ""]
 
 <!-- split up cat list on periods -->
