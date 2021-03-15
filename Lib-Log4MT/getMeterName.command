@@ -1,5 +1,0 @@
-[h: macroName = arg(0)]
-[h: macroContext = getMacroContext()]
-[h: stackSize = json.get (macroContext, "stackSize")]
-[h: propertyName = "meter." + macroName + "-" + stackSize]
-[h: macro.return = propertyName]
