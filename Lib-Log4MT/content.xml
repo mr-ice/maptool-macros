@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>EqCDQQc4SVSLUXkdiY+anw==</baGUID>
+    <baGUID>mVYwT7lIT12CArnhfAiWcA==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>b3OOLCM3SK+iDB/bXK55Ng==</baGUID>
+    <baGUID>P6vGf497QPagAMRtuNveGw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,14 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>900</x>
-  <y>700</y>
-  <z>21</z>
+  <x>850</x>
+  <y>650</y>
+  <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>800</lastX>
-  <lastY>650</lastY>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -526,6 +526,10 @@
     <entry>
       <int>48</int>
       <macro name="break"/>
+    </entry>
+    <entry>
+      <int>49</int>
+      <macro name="l4m.getCurrentLoggerLevel"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

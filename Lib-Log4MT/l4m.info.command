@@ -1,3 +1,5 @@
+[h: currentLineParser = l4m.getCurrentLoggerLevel ("net.rptools.maptool.client.MapToolLineParser")]
+[h: log.setLevel ("net.rptools.maptool.client.MapToolLineParser", "WARN")]
 [h, if (argCount() > 1), code: {
 	[category = arg(0)]
 	[msg = arg(1)]
@@ -13,3 +15,4 @@
 }; {
 	[l4m.doLogEvent ("INFO", category, msg, suffix)]	
 }]
+[h: log.setLevel ("net.rptools.maptool.client.MapToolLineParser", currentLineParser)]

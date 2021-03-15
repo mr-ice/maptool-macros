@@ -3,6 +3,8 @@
 [h: v_l4m.condition = arg (2)]
 [h: v_l4m.argArry = macro.args]
 [h: l4m.Constants()]
+[h: currentLineParser = l4m.getCurrentLoggerLevel (LINE_PARSER)]
+[h: log.setLevel (LINE_PARSER, "WARN")]
 
 [h: isEnabled = l4m.isLogLevelEnabled ("DEBUG", v_l4m.category, ".break")]
 [h: l4m.debug (v_l4m.category, "Break level enabled: " + isEnabled + "; break v_l4m.condition: " + v_l4m.condition)]
@@ -30,3 +32,4 @@
 		[l4m.debug (v_l4m.category, "update report: " + v_l4m.jsonReport)]
 	}]
 }]
+[h: log.setLevel (LINE_PARSER, currentLineParser)]

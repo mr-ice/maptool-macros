@@ -3,6 +3,7 @@
 [h: msg = arg (2)]
 [h: suffix = arg (3)]
 [h: l4m.Constants()]
+
 [h: secondDelim = indexOf (msg, CATEGORY_DELIM)]
 [h: delimLength = length (secondDelim)]
 [h, if (secondDelim >= 0), code: {

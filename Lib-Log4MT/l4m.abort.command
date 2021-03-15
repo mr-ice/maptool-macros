@@ -1,5 +1,7 @@
 [h: doAbort = arg(0)]
 [h: l4m.Constants()]
+[h: currentLineParser = l4m.getCurrentLoggerLevel (LINE_PARSER)]
+[h: log.setLevel (LINE_PARSER, "WARN")]
 [h: callStack = getLibProperty (CALL_STACK, LIB_LOG4MT)]
 [h: doStack = 1]
 [h: lastCall = ""]
@@ -11,4 +13,5 @@
 	[callStack = json.append (callStack, MACRO_ABORT)]
 	[setLibProperty (CALL_STACK, callStack, LIB_LOG4MT)]
 }]
+[h: log.setLevel (LINE_PARSER, currentLineParser)]
 [h: oldFunction (doAbort)]
