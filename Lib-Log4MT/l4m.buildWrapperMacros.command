@@ -16,7 +16,7 @@
 [h: props = json.set ("", "group", "UDF Overrides")]
 
 [h, foreach (wrapperUdf, json.fields (wrapperConfig, "json")), code: {
-		[proxyMacroCmd = decode (l4m.buildWrapperSrcMacro (wrapperUdf, libTokenName, 6))]
+		[proxyMacroCmd = decode (l4m.buildWrapperSrcMacro (wrapperUdf, libTokenName, WRAPPER_MAX_UDF_ARGS))]
 		[props = json.set (props, "label", wrapperUdf, "command", proxyMacroCmd)]
 		[createMacro (wrapperUdf, proxyMacroCmd, props, "json", proxyTokenid)]
 }]
