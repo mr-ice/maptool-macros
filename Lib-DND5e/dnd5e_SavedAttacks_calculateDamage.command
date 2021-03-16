@@ -21,6 +21,7 @@
 	[h: resistances = lower(getProperty("Resistances", id))]
 	[h, if (listContains(resistances, damageType) || optValue == "resistance"), code: {
 		[h: totalDamage = floor(totalDamage / 2)]
+		[h, if (totalDamage == 0): totalDamage = 1]
 		[h: applied = listAppend(applied, "Resistance")]
 	}; {""}]
 	[h: vulnerabilities = lower(getProperty("Vulnerabilities", id))]
@@ -29,7 +30,7 @@
 		[h: applied = listAppend(applied, "Vulnerability")]
 	}; {""}]
 }; {""}]
-[h, if (totalDamage == 0): totalDamage = 1]
+
 
 <!-- If there is no save roll we are done -->
 [h: macro.return = json.set("{}", "damage", totalDamage, "applied", applied, "type", damageType)]

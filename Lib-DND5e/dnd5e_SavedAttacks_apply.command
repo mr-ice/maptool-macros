@@ -55,6 +55,6 @@
 						"damage", json.get(state, "totalDamage")))]
 	[h: tt = "HP/MaxHP/TempHP:" + getProperty("HP", id) + "/" + getProperty("MaxHP", id) + "/" + getProperty("TempHP", id)]
 	[h, if(libToken): allOutput = allOutput + "<br/>Ignoring library token: <b>" + getName(id) + "</b>";	
-			allOutput + json.get(state, "output") + " <span title='" + tt + "'>HP: " + getProperty("HP", id)]
+			allOutput = allOutput + json.get(state, "output") + " <span title='" + tt + "'>HP: " + getProperty("HP", id)]
 }]
 [h: broadcast(allOutput, "gm")]
