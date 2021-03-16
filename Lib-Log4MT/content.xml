@@ -1,47 +1,27 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>YYOxJn1yTlWeyrVHRnVHGQ==</baGUID>
+    <baGUID>XRe9DimhTj+EXN3iVsCYaw==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>XtcV/lV8TdygkUbutO7MpA==</baGUID>
+    <baGUID>KrPBBUi+TaSPxR35LAwJnA==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
       <null/>
       <net.rptools.lib.MD5Key>
-        <id>8c7998655d29aed7c2135d983d67089d</id>
+        <id>8d8d77761c5bacec4473081e4bf78d71</id>
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>800</x>
-  <y>550</y>
-  <z>14</z>
+  <x>850</x>
+  <y>350</y>
+  <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>800</lastX>
-  <lastY>550</lastY>
-  <lastPath>
-    <cellList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>16</x>
-        <y>11</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </cellList>
-    <waypointList class="linked-list">
-      <net.rptools.maptool.model.CellPoint>
-        <x>16</x>
-        <y>11</y>
-        <g>0.0</g>
-        <distanceTraveled>0.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-      </net.rptools.maptool.model.CellPoint>
-    </waypointList>
-  </lastPath>
+  <lastX>0</lastX>
+  <lastY>0</lastY>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -385,7 +365,7 @@
     </entry>
     <entry>
       <int>7</int>
-      <macro name="Clear+Monitors"/>
+      <macro name="Clear+Meters"/>
     </entry>
     <entry>
       <int>8</int>
@@ -578,6 +558,38 @@
     <entry>
       <int>57</int>
       <macro name="l4m.disableLineParser"/>
+    </entry>
+    <entry>
+      <int>58</int>
+      <macro name="l4m.sanitizeJson"/>
+    </entry>
+    <entry>
+      <int>59</int>
+      <macro name="l4m.buildProfilerReport"/>
+    </entry>
+    <entry>
+      <int>60</int>
+      <macro name="l4m.callStack"/>
+    </entry>
+    <entry>
+      <int>61</int>
+      <macro name="l4m.clearMeters"/>
+    </entry>
+    <entry>
+      <int>62</int>
+      <macro name="l4m.configureLogging"/>
+    </entry>
+    <entry>
+      <int>63</int>
+      <macro name="l4m.configureWrappersMacro"/>
+    </entry>
+    <entry>
+      <int>64</int>
+      <macro name="l4m.installWrappers"/>
+    </entry>
+    <entry>
+      <int>65</int>
+      <macro name="l4m.printProxyUDFRegistry"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
