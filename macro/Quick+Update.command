@@ -22,8 +22,12 @@
 <!-- Spell Slots -->
 [h: spellSlots = dndb_getSpellSlots (toon)]
 
+<!-- Attacks -->
+[h: attacks = dndb_getAttack (toon)]
+
 [h: basicToon = json.set (basicToon, 
 				"speeds", speeds,
+				"attacks", attacks,
 				"spellSlots", spellSlots,
 				"hitPoints", hitPoints,
 				"armorClass", ac,
