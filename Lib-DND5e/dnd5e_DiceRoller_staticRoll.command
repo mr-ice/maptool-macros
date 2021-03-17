@@ -1,11 +1,12 @@
 [h: rollExpression = arg (0)]
 [h: log.debug (getMacroName() + ": rolling " + rollExpression)]
-<!-- Remove the remaining rollers -->
-[h: rollers = json.get (rollExpression, "remainingRollers")]
-<!-- remove all rollers specified by the Basic type. There should really only be one -->
-[h: basicRollers = dnd5e_Type_getRoller (dnd5e_Type_Basic())]
-[h: rollers = json.removeAll (rollers, basicRollers)]
-[h: rollExpression = json.set (rollExpression, "remainingRollers", rollers)]
+
+<!-- Add dnd5e_DiceRoller_basicRoll rolledRollers list, causing them to be skipped -->
+[h: rolledRollers = json.get (rollExpression, "rolledRollers")]
+[h: rolledRollers = json.append (rolledRollers, "dnd5e_DiceRoller_basicRoll")]
+[h: rollExpression = json.set (rollExpression, "rolledRollers", rolledRollers)]
+
+<!-- do everything basic would, and make it static -->
 [h: roll = dnd5e_RollExpression_getStaticRoll (rollExpression)]
 [h: rolls = dnd5e_RollExpression_getRolls (rollExpression)]
 [h: diceRolled = dnd5e_RollExpression_getDiceRolled (rollExpression)]
