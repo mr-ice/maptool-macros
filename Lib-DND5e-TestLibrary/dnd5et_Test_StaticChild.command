@@ -1,0 +1,7 @@
+[h: re = dnd5e_RollExpression_setStaticRoll (dnd5e_RollExpression_Attack(), 20)]
+[h: staticChild = dnd5e_RollExpression_setStaticRoll (dnd5e_RollExpression_BuildBless(), 4)]
+[h: re = dnd5e_RollExpression_addExpression (re, staticChild)]
+[h: rolled = json.get (dnd5e_DiceRoller_roll (re), 0)]
+[h: total = dnd5e_RollExpression_getTotal (rolled)]
+[h: reportResults = dnd5et_Util_assertEqual (total, 24, "Static Roll w/ Child")]
+[h: macro.return = reportResults]
