@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>19438bfd-4b64-4c9b-b242-f84eaa06447f</macroUUID>
+  <macroUUID>9cedc7e8-569f-43c9-ae0f-807b988c5b7c</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>126</index>
+  <index>140</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dndb_CastSpell_getModHtml</label>

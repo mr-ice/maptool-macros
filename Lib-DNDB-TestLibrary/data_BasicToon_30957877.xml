@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>51792b3f-94df-45dc-9585-df7aae42e0c9</macroUUID>
+  <macroUUID>346f2efc-b489-49b5-a0ca-52d3640ee79e</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>88</index>
+  <index>134</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>data_BasicToon_30957877</label>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

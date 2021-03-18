@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>e4c859e7-fbe8-46d4-a141-a7d572c53aad</macroUUID>
+  <macroUUID>d2803f73-f09f-4190-8af5-b96d1ced8d6f</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>129</index>
-  <colorKey>default</colorKey>
+  <index>138</index>
+  <colorKey/>
   <hotKey>None</hotKey>
-  <label>dndb_getAlwaysPreparedSpellsJSON</label>
-  <group>Utility - Character Service</group>
+  <label>data_BasicToon_atumash_raging</label>
+  <group>Data</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,11 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>&lt;html&gt;Given a toon, make a secondary API call to Character Service for the list of always prepared spells.&lt;br&gt;
-&lt;br&gt;
-arg(0) = toon&lt;br&gt;
-Returns a JSON array of all always prepared spells for all classes of the provided toon&lt;br&gt;
-&lt;/html&gt;</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

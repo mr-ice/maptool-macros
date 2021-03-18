@@ -37,7 +37,6 @@
 		[searchObj = json.set ("", "object", proficiencies, "property", "id", "type", "proficiency", 
 							"subType", lower (json.path.read (weapon, "definition.type")))]
 		[proficientArry = dndb_searchJsonObject (searchObj)]
-		[l4m.break (getMacroName(), "search object says", 0, "searchObj", "weapon")]
 		[log.debug (getMacroName() + "## by type proficientArry = " + proficientArry)]
 		[if (json.length (proficientArry) > 0): isProficient = 1]
 	}]

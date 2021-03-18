@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>a27ffdf4-ff22-4b06-bd26-c92559611957</macroUUID>
+  <macroUUID>38f4c199-169e-4867-b691-1389b6b0427b</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>113</index>
+  <index>133</index>
   <colorKey/>
   <hotKey>None</hotKey>
   <label>data_BasicToon_Yaichi</label>
@@ -14,7 +14,7 @@
   <fontSize>1.00em</fontSize>
   <minWidth/>
   <maxWidth/>
-  <allowPlayerEdits>true</allowPlayerEdits>
+  <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

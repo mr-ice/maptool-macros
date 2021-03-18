@@ -1,4 +1,4 @@
-[h: toonNames = "BhelduhrBallrotterThrahak,Blurrier,Bob,BodeMikbodephace," + 
+[h: toonNames = "atumash_raging,BhelduhrBallrotterThrahak,Blurrier,Bob,BodeMikbodephace," + 
 				"GeeWiz,KazRedrum,KetdelleDankil,Nibbles,RexRedrum,Zairali,Yaichi"]
 
 [h: report = json.append ("", "dndbt_Test_KnownToons Report:")]
@@ -6,8 +6,8 @@
 	[h: log.warn ("Testing known state for " + toonName)]
 	[h: report = json.append (report, "Testing known state for " + toonName)]
 	[h: functionName = "[h: builtToon = dndb_buildBasicToon ('dndbt_" + toonName + "')]"]
-	[h: macroIdx = getMacroIndexes ("data_BasicToon_" + toonName)]
 	[h: evalMacro (functionName)]
+	[h: macroIdx = getMacroIndexes ("data_BasicToon_" + toonName)]
 	[h: macroCoded = getMacroCommand (macroIdx)]
 	[h: builtCoded = base64.encode (builtToon)]
 	[h, if (macroCoded != builtCoded), code: {
