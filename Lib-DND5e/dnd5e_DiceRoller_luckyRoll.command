@@ -5,9 +5,10 @@
 [h, if (roll == 1 && luckyRolls > 0), code: {
 	[h: log.debug ("dnd5e_DiceRoller_luckyRoll: Rerolling 1")]
 	[h: luckyRolls = luckyRolls - 1]
-	[h: rollExpression = json.set (rollExpression, "luckyRolls", luckyRolls)]
+	[h: cloneExpression = json.set (rollExpression, "luckyRolls", luckyRolls)]
+	[h: cloneExpression = json.set (cloneExpression, "rolledRollers", "[]")]
 	[h: maxPriority = dnd5e_Type_getPriority (dnd5e_Type_Lucky(), getMacroName())]
-	[h: rolled = dnd5e_DiceRoller_roll (rollExpression)]
+	[h: rolled = dnd5e_DiceRoller_roll (cloneExpression)]
 	[h: rollExpression = json.get (rolled, 0)]
 	[h: description = "<b>Lucky!</b> 1 rerolled: " + 
 		json.get (rollExpression, "roll") + "<br>New total: " + json.get (rollExpression, "total")]

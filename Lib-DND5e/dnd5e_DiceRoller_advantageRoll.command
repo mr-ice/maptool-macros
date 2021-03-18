@@ -1,12 +1,11 @@
 [h: rollExpression = arg (0)]
-[h: log.debug (getMacroName() + ": rolling " + rollExpression)]
 [h: advantage = dnd5e_RollExpression_hasAdvantage (rollExpression)]
 [h: disadvantage = dnd5e_RollExpression_hasDisadvantage (rollExpression)]
 <!-- we need to roll again if needsRoll equals exactly 1 -->
 [h: needsRoll = advantage + disadvantage]
 [h: advantageRolls = json.get (rollExpression, "advantageRolls")]
 [h, if (!isNumber(advantageRolls)): advantageRolls = 0; ""]
-[h: log.debug (getMacroName() + ": advantageRolls = " + advantageRolls)]
+[h: log.debug (getMacroName() + "## needsRoll = " + needsRoll + "; advantageRolls = " + advantageRolls)]
 [h: rolled2 = rollExpression]
 [h, if (needsRoll == 1 && advantageRolls > 0), code: {
 	<!-- Technically, its better if I get the type off of the RollExpression instead of
@@ -14,8 +13,9 @@
 	[maxPriority = dnd5e_Type_getPriority (dnd5e_Type_Advantagable(), getMacroName())]
 	[advantageRolls = advantageRolls - 1]
 	<!-- Prevent additional re-rolls from advantage -->
-	[rollExpression = json.set (rollExpression, "advantageRolls", advantageRolls)]
-	[rolledArry = dnd5e_DiceRoller_roll (dnd5e_RollExpression_setMaxPriority (rollExpression, maxPriority))]
+	[rollExpressionClone = json.set (rollExpression, "advantageRolls", advantageRolls)]
+	[rollExpressionClone = json.set (rollExpressionClone, "rolledRollers", "[]")]
+	[rolledArry = dnd5e_DiceRoller_roll (dnd5e_RollExpression_setMaxPriority (rollExpressionClone, maxPriority))]
 	[rolled2 = json.get (rolledArry, 0)]	
 }; {
 	<!-- if neither is set, just get out of here -->
@@ -24,7 +24,7 @@
 
 [h: roll1Val = json.get (rollExpression, "roll")]
 [h: roll2Val = json.get (rolled2, "roll")]
-[h: log.debug ("roll1Val = " + roll1Val + "; roll2Val = " + roll2Val)]
+[h: log.debug (getMacroName() + "## roll1Val = " + roll1Val + "; roll2Val = " + roll2Val)]
 [h: rolls = json.get (rolled2, "rolls")]
 [h: description = ""]
 [h: descriptor = ""]
