@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>1c79fc23-085e-48ea-a9ba-480745f61eb6</macroUUID>
-  <saveLocation>GmPanel</saveLocation>
-  <index>7</index>
+  <macroUUID>e534cc32-d7e0-46e4-b59a-26cf5285d0ad</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>317</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Roll Initiative</label>
-  <group/>
+  <label>dnd5e_Property_getInitAbility</label>
+  <group>Token Properties</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Roll Initiative for all Selected Tokens </toolTip>
+  <toolTip>Returns the initiative ability for the selected token. This value can be overriden by a campaign preference by the GM</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
