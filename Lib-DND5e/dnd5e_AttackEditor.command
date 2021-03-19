@@ -17,7 +17,7 @@
 [h, if (firstSelected == ""): firstSelected = json.get (attackFields, 0); ""]
 [h: log.debug ("firstSelected: " + firstSelected)]
 
-[dialog5 ("Attack Editor", "title=Attack Editor; input=0; width=580; height=550; closebutton=0"): {
+[dialog5 ("Attack Editor", "title=Attack Editor; input=0; width=705; height=550; closebutton=0"): {
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="dnd5e_Editor_CSS@Lib:DnD5e"></link>
