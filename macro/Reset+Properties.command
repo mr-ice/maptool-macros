@@ -31,7 +31,6 @@
 [h: setProperty ("Gender", json.get (basicToon, "gender"))]
 [h: setProperty ("Alignment", json.get (basicToon, "alignment"))]
 [h: setProperty ("AvatarUrl", json.get (basicToon, "avatarUrl"))]
-[h: setProperty ("Initiative", json.get (basicToon, "init"))]
 [h: setProperty ("Experience Points", json.get (basicToon, "xp"))]
 
 [h: abilities = json.get (basicToon, "abilities")]
@@ -46,6 +45,11 @@
 
 [h: setProperty ("Resistances", json.toList (json.get (basicToon, "resistances")))]
 [h: setProperty ("Immunities", json.toList (json.get (basicToon, "immunities")))]
+
+<!-- Initiative -->
+[h: initBonusObj = json.get (basicToon, "init")]
+[h: setProperty ("bonus.initiative", json.get (initBonusObj, "bonus"))]
+[h: setProperty ("proficiency.initiative", json.get (initBonusObj, "proficiency"))]
 
 <!-- Senses -->
 [h: dndb_applyVision (basicToon)]

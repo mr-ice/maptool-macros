@@ -18,6 +18,7 @@
 	[addToInitiative()]
 	[setInitiative(init)]
 }]
+[h: log.debug (getMacroName() + "## initList = " + initList)]
 [h: sortInitiative()]
 [h,foreach(Selected, getSelected("json")), CODE:
 {

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>XInoT92/SP6df911EzSfEA==</baGUID>
+    <baGUID>p3jmxcqnSni5/jLqrsOD7w==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>f20pmhPkSmaJGDEq4+Cnhw==</baGUID>
+    <baGUID>09fEJ2TYQtuILc6XHBQeZg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,9 +14,9 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>800</x>
-  <y>200</y>
-  <z>1</z>
+  <x>900</x>
+  <y>250</y>
+  <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -1524,6 +1524,10 @@
     <entry>
       <int>316</int>
       <macro name="dnd5e_RollExpression_getRemainingRollers"/>
+    </entry>
+    <entry>
+      <int>317</int>
+      <macro name="dnd5e_Property_getInitAbility"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

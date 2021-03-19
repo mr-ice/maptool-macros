@@ -7,23 +7,24 @@
 <!-- Skinnify the toon -->
 [h: skinnyToon = json.set (toon, "data", skinnyData)]
 
-[h: abilities = dndb_getAbilities (toon)]
-[h: init = json.get (abilities, "dexBonus")]
 [h: modSearchArgs = json.set ("", "object", skinnyToon,
 							"subType", "initiative")]
 
 [h: initMods = dndb_searchGrantedModifiers (modSearchArgs)]
-[h: proficiency = dndb_getProficiencyBonus (toon)]
+[h: bonus = 0]
+[h: proficiency = 0]
 [h, foreach (initMod, initMods), code: {
 	[h: type = json.get (initMod, "type")]
 	[h: modBonus = 0]
+	[h: profBonus = 0]
 	[h, switch (type):
 		case "bonus": modBonus = dndb_getModValue (skinnyToon, initMod);
-		case "half-proficiency": modBonus = round (math.floor (proficiency / 2));
-		case "proficiency": modBonus = proficiency;
-		case "expertise": modBonus = proficiency * 2; 
+		case "half-proficiency": profBonus = 0.5);
+		case "proficiency": profBonus = 1;
+		case "expertise": profBonus = 2; 
 		default: "Don't care right now"]
-	[h: init = init + modBonus]
+	[h: proficiency = max (proficiency, profBonus)]
+	[h: bonus = bonus + modBonus]
 }]
-
-[h: macro.return = init]
+[h: initBonusObj = json.set ("", "bonus", bonus, "proficiency", proficiency)]
+[h: macro.return = initBonusObj]

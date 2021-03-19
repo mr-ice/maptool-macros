@@ -1,4 +1,5 @@
 [h: calculatedProperties = '[
+	"Initiative",
     "StrengthAbility",
     "DexterityAbility",
     "ConstitutionAbility",
