@@ -18,14 +18,11 @@
 	<!-- The array has been ordered based on roller priority (defined by the Types) -->
 	[rollers = dnd5e_RollExpression_getDiceRollers (rollExpression)]
 	[log.debug (getMacroName() + ": rollers = " + rollers)]
-	[rollExpression = json.set (rollExpression, "rollers", rollers, "remainingRollers", rollers)]
 	[while (!json.isEmpty(rollers)), code: {
 		[roller = json.get (rollers, 0)]
-		[rollers = json.remove (rollers, 0)]
 		[log.debug (getMacroName() + ": remaining rollers = " + rollers)]
-		[rollExpression = json.set (rollExpression, "remainingRollers", rollers)]
 		<!-- For each roller, send RE to roller and capture return RE. Return RE has been fully
-			processed and is considered "roll". Re-roll rules have already been applied by
+			processed and is considered "rolle". Re-roll rules have already been applied by
 			the related roller(s) -->
 		[log.debug (getMacroName() + ": rolling " + roller)]
 		[evalMacro ( "[rollExpression = " + roller + "(rollExpression)]")]
@@ -36,7 +33,7 @@
 		<!-- Some rollers interrupt the rolling stack, so we have to re-fetch the remaining
 				rollers stack. Typically, these rollers zero out the stack, but some may decide
 				to push something new on the stack -->
-		[rollers = json.get (rollExpression, "remainingRollers")]
+		[rollers = dnd5e_RollExpression_getRemainingRollers(rollExpression)]
 	}]
 
 	[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]

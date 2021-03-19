@@ -8,11 +8,12 @@
 <!-- TODO: Why two reads?? -->
 <!-- Get proficencies -->
 [h: proficiencies = json.path.read (toon, "data.modifiers..[?(@.type == 'proficiency')]")]
-<!-- Get proficencies, just the two -->
-[h: allProficiencies = json.path.read (toon, "data.modifiers..[?(@.type == 'proficiency')]")]
-[h: weaponProficiencies = json.path.read (allProficiencies,
+
+[h: weaponProficiencies = json.path.read (proficiencies,
 		".[?(@.subType in ['simple-weapons', 'martial-weapons'])]")]
 
+[h: log.debug (getMacroname() + "## proficiencies = " + proficiencies + 
+		"; weaponProficiencies = " + weaponProficiencies)]
 [h, foreach (weapon, weapons), code: {
 	<!-- Build basic weapon json -->
 	[equipped = json.path.read (weapon, "equipped")]
@@ -28,7 +29,17 @@
 	[proficiencyId = json.path.read (weapon, "definition.categoryId")]
 	[proficientArry = json.path.read (weaponProficiencies, 
 		".[?(@.entityId == '" + proficiencyId + "')]")]
+	[log.debug (getMacroName() + "## proficiencyId = " + proficiencyId +
+				"; proficientArry = " + proficientArry)]
 	[if (json.length (proficientArry) > 0): isProficient = 1; isProficient = 0]
+	[if (!isProficient), code: {
+		<!-- try by type -->
+		[searchObj = json.set ("", "object", proficiencies, "property", "id", "type", "proficiency", 
+							"subType", lower (json.path.read (weapon, "definition.type")))]
+		[proficientArry = dndb_searchJsonObject (searchObj)]
+		[log.debug (getMacroName() + "## by type proficientArry = " + proficientArry)]
+		[if (json.length (proficientArry) > 0): isProficient = 1]
+	}]
 	[if (attackType == "1"): attackTypeLabel = "Melee"; attackTypeLabel = "Ranged"]
 	[dmgDie = json.path.read (weapon, "definition.damage.diceValue", "SUPPRESS_EXCEPTIONS")]
 	[if (dmgDie == "null"): dmgDie = 0]

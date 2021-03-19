@@ -1,0 +1,647 @@
+<propertyMapCI>
+  <store>
+    <entry>
+      <string>strength</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Strength</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>senses</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Senses</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>libversion</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>libversion</key>
+        <value class="string">0.15</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>hp</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>HP</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>campaignpropertiesversion{0.15}</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>campaignPropertiesVersion{0.15}</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_ae2_metadata</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_AE2_Metadata</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>character id</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Character ID</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>strength save</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Strength Save</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>charisma</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Charisma</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>perception</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Perception</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>attackjson</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>attackJson</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>climb</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Climb</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dnd5e_preferences_user</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dnd5e_Preferences_User</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dnd5e_lastrolledexpression</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dnd5e_lastRolledExpression</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>wisdom save</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Wisdom Save</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>constitution bonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Constitution Bonus</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>deception</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Deception</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dexterity save</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Dexterity Save</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dmgdie</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dmgDie</key>
+        <value class="string">6</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>stealth</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Stealth</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>burrow</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Burrow</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>oncampaignload</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>onCampaignLoad</key>
+        <value class="string">true</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>ac</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>AC</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>israging</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>isRaging</key>
+        <value class="string">1</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dnd5e_campaignpreferences</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dnd5e_campaignPreferences</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_ae2_javascript</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_AE2_JavaScript</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>survival</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Survival</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>constitution save</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Constitution Save</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dndb.basictoonversion</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dndb.basicToonVersion</key>
+        <value class="string">0.15</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>animal handling</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Animal Handling</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dev.versionmap</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dev.versionMap</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>history</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>History</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dmgroll</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dmgRoll</key>
+        <value class="string">1d6</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>attackbonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>attackBonus</key>
+        <value class="string">10</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>ragebonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>rageBonus</key>
+        <value class="string">3</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>intelligence</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Intelligence</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>acrobatics</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Acrobatics</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>persuasion</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Persuasion</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>insight</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Insight</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>strength bonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Strength Bonus</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>condition</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Condition</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>critbonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>critBonus</key>
+        <value class="string">3</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_ae2_actions</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_AE2_Actions</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dmgbonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dmgBonus</key>
+        <value class="string">8</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>arcana</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Arcana</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>swim</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Swim</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>maxhp</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>MaxHP</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>constitution</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Constitution</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>attackexpressionjson</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>attackExpressionJSON</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>charisma bonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Charisma Bonus</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>description</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Description</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>sleight of hand</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Sleight of Hand</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>intelligence save</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Intelligence Save</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>intelligence bonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Intelligence Bonus</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>lib.releasenotesobj</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>lib.releaseNotesObj</key>
+        <value class="string">{"0.15": "Library+has+been+officially+versioned.%3Cbr%3E+RollExpressions+were+refactored+to+better+define+their+Types%26semi%3B%3Cbr%3E++%3Cfont+color%3D%27Red%27%3E%3Cb%3EAll+DnDBeyond+Tokens+will+beed+to+be+fully+re-initialized%3C%2Fb%3E%3C%2Ffont%3E%3Cbr%3E+"}</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>wisdom</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Wisdom</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dndb_overridebasictoon</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dndb_OverrideBasicToon</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dndb_preferences_user</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dndb_Preferences_User</key>
+        <value class="string">{"variableName":"snubb","askeePrompt":"no"}</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>defense</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Defense</key>
+        <value class="string">Lightening Resistance</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dmgnumdice</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dmgNumDice</key>
+        <value class="string">1</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>elevation</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Elevation</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>initiative</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Initiative</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>nature</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Nature</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>temphp</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>TempHP</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>medicine</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Medicine</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dexterity bonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Dexterity Bonus</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dndb_preferences_system</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dndb_Preferences_System</key>
+        <value class="string">{"sysPref1":"donkey","format":"sysFormat"}</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>religion</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Religion</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dexterity</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Dexterity</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>fly</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Fly</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>performance</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Performance</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>insight-gm</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Insight-GM</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>perception-gm</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Perception-GM</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>wisdom bonus</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Wisdom Bonus</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>charisma save</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Charisma Save</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dndb_preferences_gm</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dndb_Preferences_GM</key>
+        <value class="string">{"gmPref":"blarb","format":"gmFormat"}</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>investigation</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Investigation</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>athletics</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Athletics</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>intimidation</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Intimidation</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>movement</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Movement</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>walk</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Walk</key>
+        <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_o5e_monsteractions</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_o5e_MonsterActions</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+  </store>
+</propertyMapCI>

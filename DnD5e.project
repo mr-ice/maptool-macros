@@ -1,6 +1,7 @@
 <project>
   <properties name="DND5e"/>
   <token name="Lib-DND5e"/>
+  <token name="Lib-DND5e-TestLibrary"/>
   <macroset name="DnD5e-Campaign">
     <macro name="macro/Create+Ability+Check+Roll+Macro"/>
     <macro name="macro/Create+Damage+Roll+Macro"/>

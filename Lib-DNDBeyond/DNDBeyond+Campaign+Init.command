@@ -14,6 +14,3 @@
 		[h: defineFunction (macroName, macroName + "@this")]
 	}]
 }]
-
-
-[h: log.info (json.indent (getInfo ("client"), 3))]

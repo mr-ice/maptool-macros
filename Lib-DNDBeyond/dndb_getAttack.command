@@ -41,7 +41,7 @@
 	[h: name = json.get (weapon, "name")]
 	<!-- commas are scary -->
 	[h: name = replace (name, ",", " ")]
-	[h: attackExpression = dnd5e_RollExpression_Attack (name)]
+	[h: attackExpression = dnd5e_RollExpression_WeaponAttack (name)]
 
 	[h: atkBonus = "" + json.get (weaponAtkBonusObj, "bonus")]
 	[h: attackExpression = dnd5e_RollExpression_setBonus (attackExpression, atkBonus)]
@@ -57,7 +57,7 @@
 
 	[h: attackExpression = dnd5e_RollExpression_setWeaponType (attackExpression, attackTypeIndex)]
 
-	[h: dmgExpression = dnd5e_RollExpression_Damage ()]
+	[h: dmgExpression = dnd5e_RollExpression_WeaponDamage ()]
 	[h: dmgExpression = dnd5e_RollExpression_setDiceRolled (dmgExpression, json.get (weapon, "dmgDice"))]
 	[h: dmgExpression = dnd5e_RollExpression_setDiceSize (dmgExpression, json.get (weapon, "dmgDie"))]
 	[h: dmdExpression = dnd5e_RollExpression_setWeaponType (dmgExpression, attackTypeIndex)]

@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>b2f87743-176c-4718-a0e4-fac3f649842a</macroUUID>
+  <macroUUID>7ce336bf-0f8d-4e8f-8d2f-c55ea33104db</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>28</index>
   <colorKey>cyan</colorKey>
@@ -15,7 +15,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip/>
+  <toolTip>&lt;html&gt;Use this token to extract toons from DNDBeyond and serialize as a macro&lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
