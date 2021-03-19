@@ -24,7 +24,6 @@
 [h: NEW_LINE = decode ("%0A")]
 [h: PACKAGE_DELIMS = "[_\\-]"]
 [h: PROPERTY_DISPLAYED_WRAPPER_CONFIG_HELP = "l4m.displayedWrapperConfigHelp"]
-[h: PROPERTY_DISPLAYED_LOGGER_CONFIG_HELP = "l4m.displayedLoggerConfigHelp"]
 [h: PROXY_LIB_TOKEN = "-Proxy"]
 [h: ROOT_LOGGER_CATEGORY = "root"]
 [h: ROOT_LOGGER_WRAPPER_DEFAULT_LEVEL = "WARN"]
