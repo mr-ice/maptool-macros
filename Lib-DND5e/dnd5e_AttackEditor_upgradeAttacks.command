@@ -11,8 +11,7 @@
 		[updatedAtk = dnd5e_AE2_adornActionTypes (action)]
 		[updatedAtkObj = json.set (updatedAtkObj, actionKey, updatedAtk)]
 	}]
-	[setProperty ("attackExpressionJSON", updatedAtkObj)]
+	[dnd5e_AttackEditor_setAttackExpression (updatedAtkObj)]
 }; {}]
 
-[h: setProperty (AE_VERSION_PROPERTY, AE_CURRENT_VERSION)]
 [h: broadcast ("<font color='green'><b>Attacks Updated!</b></font>", "self")]

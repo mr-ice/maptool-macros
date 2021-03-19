@@ -1,4 +1,5 @@
 [h: attackObj = arg (0)]
+[h: dnd5e_AE2_getConstants()]
 [h, if (json.type (attackObj) != "OBJECT"), code: {
 	[log.error (getMacroName() + ": invalid attack expression provided; aborting")]
 	[log.error ("id: " + currentToken()]
@@ -12,4 +13,5 @@
 	[encodedAttackObj = json.set (encodedAttackObj, encode (field), value)]
 }]
 [h: setProperty ("attackExpressionJSON", encodedAttackObj)]
+[h: setProperty (AE_VERSION_PROPERTY, AE_CURRENT_VERSION)]
 [h: macro.return = encodedAttackObj]
