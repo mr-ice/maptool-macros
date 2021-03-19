@@ -1,3 +1,4 @@
+[h: l4m.enableLineParser("root")]
 [h: selectedLibToken = arg (0)]
 [h: l4m.Constants()]
 [h: configuration = l4m.convertConfigToStrProp (l4m.getWrapperConfig (selectedLibToken))]
@@ -28,7 +29,11 @@
 		Bulk configured wrappers are not automatically enabled. Please use <pre>' + 
 		MACRO_OVERWRITE_UDF_NAME + '@' + selectedLibToken + '</pre> to enable wrappers.
 ']
-[dialog5 ("Wrapper Configuration Help", "title=Wrapper Configuration Help; input=0; width=783; height=362; closebutton=1"): {
+[h: displayedHelp = getLibProperty (PROPERTY_DISPLAYED_WRAPPER_CONFIG_HELP, LIB_LOG4MT)]
+[h, if (displayedHelp == "" || !isNumber (displayedHelp)): displayedHelp = 0]
+[h: setLibProperty (PROPERTY_DISPLAYED_WRAPPER_CONFIG_HELP, 1, LIB_LOG4MT)]
+[if (!displayedHelp), code: {
+	[dialog5 ("Wrapper Configuration Help", "title=Wrapper Configuration Help; input=0; width=783; height=362; closebutton=1"): {
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="l4m_CSS@Lib:Log4MT"></link>
@@ -37,4 +42,5 @@
 		[r: helpText]
 	</body>
 </html>
+	}]
 }]

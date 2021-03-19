@@ -5,10 +5,7 @@
 [h: actionButton = json.get (data, "actionButton")]
 [h, if (actionButton != "Save Configuration"): return (0)]
 [h: wrapperConfig = json.get (data, "mtWrappers")]
-<!-- encode / decode to normalize it -->
-[h: encWrapperConfig = encode (wrapperConfig)]
-[h: encWrapperConfig = replace (encWrapperConfig, "%0A", "")]
-[h: wrapperConfig = decode (encWrapperConfig)]
+[h: wrapperConfig = l4m.sanitizeJson (wrapperConfig)]
 [h: log.debug (CATEGORY, "wrapperConfig = " + wrapperConfig)]
 [h: libToken = json.get (data, "mtLibToken")]
 [h: fullConfig = "{}"]
