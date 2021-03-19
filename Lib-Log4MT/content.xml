@@ -591,6 +591,10 @@
       <int>65</int>
       <macro name="l4m.printProxyUDFRegistry"/>
     </entry>
+    <entry>
+      <int>66</int>
+      <macro name="l4m.helpConfigureLoggers"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
