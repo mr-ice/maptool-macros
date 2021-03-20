@@ -1,5 +1,5 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>fda3f1e8-585d-4b19-b041-3a1759f4a8ce</macroUUID>
+  <macroUUID>016c590c-afd9-44e3-9d1d-17c84eaeddcd</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>167</index>
   <colorKey>default</colorKey>
@@ -19,8 +19,7 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = RollExpression of last attack
 &lt;br&gt;
-&lt;br&gt;Returns the updated list with the new attack at the end.
-&lt;br&gt;The list is trimmed to the last 5 attacks
+&lt;br&gt;Returns the updated RollExpressions with the first expression keyed
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
