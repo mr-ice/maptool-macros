@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>3fec02a8-3c44-4bd1-8c3e-07815603c409</macroUUID>
+  <macroUUID>61756830-e39c-4f53-a48e-af72545193f7</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>163</index>
+  <index>248</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_SavedAttacks_setKey</label>
@@ -17,9 +17,9 @@
   <allowPlayerEdits>true</allowPlayerEdits>
   <toolTip>&lt;html&gt;Create a unique key for a saved attack so that a link to it can be made
 &lt;br&gt;
-&lt;br&gt;arg(0)= The RolledExpressions to be given a key
+&lt;br&gt;arg(0)= The RolledExpression to be given a key
 &lt;br&gt;
-&lt;br&gt;The expression passed in is returned with the first expression containing a key value typed descriptor
+&lt;br&gt;The expression passed in is returned with a key value typed descriptor
 &lt;/html&gt;</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>

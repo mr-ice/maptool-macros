@@ -22,4 +22,6 @@
 
 [h: tokenId = currentToken()]
 [h, if (tokenId != ""): setProperty (LAST_ROLLED_PROPERTY, rolled)]
+
+[h: rolled = dnd5e_SavedAttacks_push (rolled)]
 [h: macro.return = rolled]
