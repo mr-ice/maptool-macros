@@ -23,5 +23,9 @@
 [h: tokenId = currentToken()]
 [h, if (tokenId != ""): setProperty (LAST_ROLLED_PROPERTY, rolled)]
 
-[h: rolled = dnd5e_SavedAttacks_push (rolled)]
+<!-- for an RE to be saved, it needs to have damage or an effect -->
+[h: damageable = dnd5e_RollExpression_findExpressionByType (rolled, dnd5e_Type_Damageable())]
+[h: saveable = dnd5e_RollExpression_findExpressionByType (rolled, dnd5e_Type_Saveable())]
+[h: saveable = if (json.type (damageable) == "OBJECT" || json.type (saveable) == "OBJECT", 1, 0)]
+[h, if (saveable): rolled = dnd5e_SavedAttacks_push (rolled)]
 [h: macro.return = rolled]

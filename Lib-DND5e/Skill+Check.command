@@ -16,13 +16,12 @@
 
 [h: abilityArray = json.fromList (abilities)]
 [h, if (json.contains (abilityArray, skillCheckName)): propertyName = skillCheckName + "Ability"; propertyName = skillCheckName]
-
-[h: bonus = getProperty (propertyName)]
+[h: propertyName = replace (propertyName, " ", "")]
 [h: skillAbility = getProperty ("ability." + lower (propertyName))]
-[h, if (skillAbility != ""): expressionName = propertyName + " (" + skillAbility + ")"; expressionName = propertyName]
+[h, if (skillAbility != ""): expressionName = skillCheckName + " (" + skillAbility + ")"; expressionName = propertyName]
 
 [h: rollExpression = dnd5e_RollExpression_Ability (expressionName)]
-[h: rollExpression = dnd5e_RollExpression_setBonus (rollExpression, bonus)]
+[h: rollExpression = dnd5e_RollExpression_addPropertyModifiers (rollExpression, propertyName)]
 [h: rollExpression = dnd5e_RollExpression_setAdvantageDisadvantage (rollExpression, advDisadv)]
 
 [h: macroGroup = "D&D 5e - Skills"]

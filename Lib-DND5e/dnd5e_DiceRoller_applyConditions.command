@@ -11,5 +11,7 @@
 			rollExpression = dnd5e_DiceRoller_applyConditionsToSave (rollExpression); ""]
 	[h, if (dnd5e_RollExpression_hasType (rollExpression, "Ability")): 
 			rollExpression = dnd5e_DiceRoller_applyConditionsToAbility (rollExpression); ""]
+	[h, if (dnd5e_RollExpression_hasType (rollExpression, "Initiative")):
+			rollExpression = dnd5e_DiceRoller_applyConditionsToInitiative (rollExpression)]
 }]
 [h: macro.return = rollExpression]
