@@ -7,5 +7,3 @@
 	[h: addToInitiative(0, init, id)]
 }]
 [h: sortInitiative()]
-[h: setInitiativeRound(1)]
-[h: setCurrentInitiative(0)]
