@@ -108,8 +108,8 @@
 
 	<!-- Macro Action? -->
 	[h: saveAttackAsMacro = if(control == "macro", 1, 0)]
-	[h: currentMacros = getMacros()]
-	[h, foreach (currentMacro, currentMacros), if (currentMacro == currentActionName): saveAttackAsMacro = 0]
+	[h: currentMacros = getMacros("json")]
+	[h: saveAttackAsMacro = if (json.contains(currentMacros, currentActionName), 0 , 1)]
 	[h: doNotNeedAdvantage = 1]
 	[h, foreach (exp, exps), if (dnd5e_RollExpression_getExpressionType(exp) == "Attack"): doNotNeedAdvantage = 0]
 	[h, if (saveAttackAsMacro), code: {
@@ -129,7 +129,7 @@
 								"tooltip", "Execute the " + currentActionName + " action.",
 								"sortBy", sortByBase)]
 		<!-- Normal Attack -->
-		[h: macroInputs = json.set ("", "actionName", currentActionName)]	
+		[h: macroInputs = json.set ("", "actionName", currentActionName)]
 		[h: lastSortBy = dnd5e_Macro_createAdvDisadvMacroFamily(currentActionName, "dnd5e_Macro_rollAction@Lib:DnD5e", macroInputs, macroConfig, doNotNeedAdvantage)]
 		[h: lastSortBy = lastSortBy + 1]
 		<!-- Edit -->
@@ -138,7 +138,14 @@
 						"sortBy", sortByBase + "-" + lastSortBy)]
 		[h: macroCmd = "[macro('dnd5e_AE2_attackEditor@Lib:DnD5e'):'" + currentActionName + "']"]
 		[h: createMacro ("<html>&#x270e;</html>", macroCmd, macroConfig)]
-	}]
+		<!-- Remove Macros -->
+		[h: macroInputs = json.append("[]", currentActionName, "D&D 5e - Actions")]
+		[h: macroConfig = json.set(macroConfig, "minWidth", 12,
+						"tooltip", "Remove the " + currentActionName + " attack macros. This does not remove the actual action, just the macros",
+						"sortBy", sortByBase + "-" + lastSortBy + 1)]
+		[h: macroCmd = "[macro('dnd5e_Macro_clearMacroFamilyFromGroup@Lib:DnD5e'): '" + macroInputs + "']"]
+		[h: createMacro ("<html>&#128939;</html>", macroCmd, macroConfig)]
+c	}]
 }]
 
 <!-- Should we add a step? -->
