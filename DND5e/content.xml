@@ -4874,7 +4874,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Disadvantage on Initiative</name>
         <order>132</order>
-        <group>13. Disadvantage for Attacks</group>
+        <group>13. Disadvantage for Combat</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4891,7 +4891,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Disadvantage on All Attacks</name>
         <order>133</order>
-        <group>13. Disadvantage for Attacks</group>
+        <group>13. Disadvantage for Combat</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4908,7 +4908,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Disadvantage on Melee Attacks</name>
         <order>134</order>
-        <group>13. Disadvantage for Attacks</group>
+        <group>13. Disadvantage for Combat</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4925,7 +4925,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Disadvantage on Ranged Attacks</name>
         <order>135</order>
-        <group>13. Disadvantage for Attacks</group>
+        <group>13. Disadvantage for Combat</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
