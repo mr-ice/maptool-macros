@@ -94,10 +94,10 @@
 
 	<!-- Duplicate Action? -->
 	[h, if (control == "duplicate"), code: {
-		[h: currentActionName = dnd5e_Util_createUniqueName(" Copy of " + currentActionName, json.fields(workingCopy, "json"))]
-		[h: workingCopy = json.set(workingCopy, currentActionName, "[]")]
+		[h: currentActionName = dnd5e_Util_createUniqueName("Copy of " + currentActionName, json.fields(workingCopy, "json"))]
 		[h: firstExp = dnd5e_RollExpression_addTypedDescriptor(json.get(exps, 0), ACTION_NAME_TD, currentActionName)]
 		[h: exps = json.set(exps, 0, firstExp)]
+		[h: workingCopy = json.set(workingCopy, currentActionName, exps)]
 	}]
 
 	<!-- Exit Action? -->
@@ -109,7 +109,7 @@
 	<!-- Macro Action? -->
 	[h: saveAttackAsMacro = if(control == "macro", 1, 0)]
 	[h: currentMacros = getMacros("json")]
-	[h: saveAttackAsMacro = if (json.contains(currentMacros, currentActionName), 0 , 1)]
+	[h, if (saveAttackAsMacro): saveAttackAsMacro = if (json.contains(currentMacros, currentActionName), 0 , 1)]
 	[h: doNotNeedAdvantage = 1]
 	[h, foreach (exp, exps), if (dnd5e_RollExpression_getExpressionType(exp) == "Attack"): doNotNeedAdvantage = 0]
 	[h, if (saveAttackAsMacro), code: {

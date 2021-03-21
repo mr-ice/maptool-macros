@@ -4,7 +4,7 @@
 [h: versioned = dnd5e_AE2_assertVersion (0)]
 [h, if (!versioned): dnd5e_AE2_upgradeActions(); ""]
 <!-- Check the parameters passed -->
-[h, if (json.length(incomingArgs) > 0): activeName = arg(0); activeName = ""]
+[h, if (json.length(incomingArgs) > 0): activeName = trim(arg(0)); activeName = ""]
 [h, if (json.length(incomingArgs) > 1): id = arg(1); id = currentToken()]
 [h: switchToken(id)]
 [h, if (json.length(incomingArgs) > 2): exps = arg(2); exps = "[]"]
