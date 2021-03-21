@@ -25,7 +25,7 @@
 
 <!-- View each expression -->
 [h: indent = "<div style='margin-left:15px;'>"]
-[h: damageTotal = 0]
+[h: damageTotal = "[]"]
 [h: lastDamage = 0]
 [h: showConditions = 1]
 [foreach(exp, roll, ""), code: {
@@ -63,7 +63,7 @@
 	[h, if (expressionType == DAMAGE_STEP_TYPE), code: {
 
 		<!-- Regular damage with tool tip and damage types -->
-		[h: damageTotal = damageTotal + total]
+		[h: damageTotal = json.append(damageTotal, total)]
 		[h: lastDamage = total]
 		[h: out = out + indent + tt + "<b color=black><font size='4'>"+totalOut+"</font></b>"]
 		[h: out = out + " " + json.toList(dnd5e_RollExpression_getDamageTypes(exp), ", ") + " Damage "]
@@ -74,7 +74,7 @@
 	[h, if (expressionType == SAVE_DAMAGE_STEP_TYPE), code: {
 
 		<!-- Damage on Save with tool tip, damage types & save information -->
-		[h: damageTotal = damageTotal + total]
+		[h: damageTotal = json.append(damageTotal, total)]
 		[h: lastDamage = total]
 		[h: out = out + indent + tt + "<b color=black><font size='4'>"+totalOut+"</font></b> "]
 		[h: out = out + json.toList(dnd5e_RollExpression_getDamageTypes(exp), ", ") + " Damage "]
@@ -85,12 +85,12 @@
 		<!-- Actions apply the save effect here w/o DC & Ability, the attack editor uses those 2 fields -->
 		[h: saveEffect = dnd5e_RollExpression_getSaveEffect(exp)]
 		[h: saveEffectDamage = dnd5e_RollExpression_getTypedDescriptor(exp, SAVE_EFFECT_DAMAGE_TD)]
-		[h: params = json.set("{}", "id", currentToken(), "current", "HP", "temporary", "TempHP", "damage", saveEffectDamage)]
+		[h: params = json.set("{}", "id", "currentToken", "current", "HP", "temporary", "TempHP", "damage", saveEffectDamage)]
 		[h: saveEffectDamageOut = saveEffectDamage]
 		[h, if (returnString == 0): saveEffectDamageOut = macroLink(saveEffectDamageOut, "dnd5e_removeDamage@Lib:DnD5e", "none", params, "selected")]
 		[h, if (lower(saveEffect) == "none"): saveEffect = "no"]
 		[h, if (isNumber(saveEffect)): saveEffect = floor(saveEffect * 100) + "%"]
-		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage" + if(saveEffectDamage == 0, "", " of " + saveEffectDamageOut); 
+		[h, if (saveEffect != ""): saveEffect = saveEffect + " damage" + if(saveEffectDamage == 0, "", " of " + saveEffectDamageOut);
 					saveEffect = saveEffectDamageOut + " damage"]
 		[h, if (actionExecution): out = out + "<span  color=black> If target save passes the target takes " + saveEffect + "</span>"]
 		[h: saveable = dnd5e_RollExpression_getTypedDescriptor(exp, SAVEABLE_TD)]
@@ -169,10 +169,24 @@
 	}]
 	[h: log.debug("-----------------------------------------------------------------------")]
 }]
-[h: params = json.set("{}", "id", "currentToken", "current", "HP", "temporary", "TempHP", "damage", damageTotal)]
-[h: damageTotalOut = string(damageTotal)]
-[h, if (returnString == 0): damageTotalOut = macroLink(damageTotalOut, "dnd5e_removeDamage@Lib:DnD5e", "none", params, "selected")]
-[h, if(damageTotal != lastDamage): out = out + "<b color=black><font size='4'>" + damageTotalOut + "</font></b> Total damage"; ""]
+
+<!-- Need to show total damage? 00>
+[h: damageTotalSum = math.arraySum(damageTotal)]
+[h, if(damageTotalSum != lastDamage), code: {
+	
+	<!-- Create the tooltip showing that all damages were added together -->	
+	[h: tt= json.toList(damageTotal, " + ") + " = " + damageTotalSum]
+	[h: tt = dnd5e_Util_encodeHtml(tt)]
+	[h: tt = "<span " + if(returnString, "data-toggle='tooltip' ", "") + "title='" + tt + "'>"]
+
+	<!-- Link in chat only -->
+	[h: params = json.set("{}", "id", "currentToken", "current", "HP", "temporary", "TempHP", "damage", damageTotalSum)]
+	[h: damageTotalOut = string(damageTotalSum)]
+	[h, if (returnString == 0): damageTotalOut = macroLink(damageTotalOut, "dnd5e_removeDamage@Lib:DnD5e", "none", params, "selected")]
+	[h: out = out + tt + "<b color=black><font size='4'>" + damageTotalOut + "</font></b> Total damage</span>"]
+}]
+
+<!-- End the containers -->
 [h: out = out + "  </div>"]
 [h: out = out + "</div>"]
 [h: log.debug(getMacroName() + ": returnString=" + returnString + " out=" + out)]
