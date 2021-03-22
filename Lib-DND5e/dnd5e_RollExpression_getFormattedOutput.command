@@ -60,6 +60,15 @@
 		[h: out = out + dnd5e_RollExpression_getTypedDescriptor(exp, LUCKY_TD)]
 		[h: out = out + "</span><br>"]
 	}]
+	[h, if (expressionType == "Initiative"), code: {
+		<!-- Get all of the condition output -->
+		[h: conditions = dnd5e_RollExpression_getTypedDescriptor(exp, CONDITION_TD)]
+		[h, if (!json.isEmpty(conditions) && showConditions): out = out + json.toList(conditions, "<br>") + "<br>"]
+		[h: showConditions = 0]
+		[h: out = out + tt + "<b><font size='4'>"+total+"</font></b> inititative "]
+		[h: out = out + dnd5e_RollExpression_getTypedDescriptor(exp, ADVANTAGEABLE_TD)]
+		[h: out = out + "</span><br>"]		
+	}]
 	[h, if (expressionType == DAMAGE_STEP_TYPE), code: {
 
 		<!-- Regular damage with tool tip and damage types -->

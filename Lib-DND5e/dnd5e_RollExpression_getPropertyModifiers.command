@@ -1,0 +1,5 @@
+[h: re = arg(0)]
+[h: propertyMods = json.get (re, "propertyModifiers")]
+[h: log.debug (getMacroName() + "## propertyMods = " + propertyMods)]
+[h, if (json.type (propertyMods) != "ARRAY"): propertyMods = "[]"]
+[h: macro.return = propertyMods]

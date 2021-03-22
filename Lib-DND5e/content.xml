@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>p3jmxcqnSni5/jLqrsOD7w==</baGUID>
+    <baGUID>hbLDbuvsSruJFZ2DD25LCQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>09fEJ2TYQtuILc6XHBQeZg==</baGUID>
+    <baGUID>Xj5wwukzS82jwjjQhogM5w==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -16,7 +16,7 @@
   </imageAssetMap>
   <x>900</x>
   <y>250</y>
-  <z>2</z>
+  <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -1530,7 +1530,27 @@
       <macro name="dnd5e_Property_getInitAbility"/>
     </entry>
     <entry>
-      <int>315</int>
+      <int>318</int>
+      <macro name="dnd5e_RollExpression_Initiative"/>
+    </entry>
+    <entry>
+      <int>319</int>
+      <macro name="dnd5e_DiceRoller_applyConditionsToInitiative"/>
+    </entry>
+    <entry>
+      <int>320</int>
+      <macro name="dnd5e_RollExpression_getPropertyModifiers"/>
+    </entry>
+    <entry>
+      <int>321</int>
+      <macro name="dnd5e_RollExpression_addPropertyModifiers"/>
+    </entry>
+    <entry>
+      <int>322</int>
+      <macro name="dnd5e_RollExpression_setPropertyModifiers"/>
+    </entry>
+    <entry>
+      <int>323</int>
       <macro name="dnd5e_Util_titledOutput"/>
     </entry>
   </macroPropertiesMap>

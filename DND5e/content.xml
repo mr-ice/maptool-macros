@@ -1069,7 +1069,8 @@
           <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.acrobatics + &quot; + bonus.acrobatics + max(floor (proficiency.acrobatics * Proficiency), abilityProficiency.&quot; + ability.acrobatics + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Animal Handling</name>
+          <name>AnimalHandling</name>
+          <shortName>Animal Handling</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
@@ -1167,7 +1168,8 @@
           <defaultValue>[r: evalMacro(&quot;{abilityBonus.&quot; + ability.religion + &quot; + bonus.religion + max(floor (proficiency.religion * Proficiency), abilityProficiency.&quot; + ability.religion + &quot;)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>Sleight of Hand</name>
+          <name>SleightofHand</name>
+          <shortName>Sleight of Hand</shortName>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
@@ -2716,7 +2718,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Blinded</name>
         <order>5</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2733,7 +2735,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Charmed</name>
         <order>6</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2750,7 +2752,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Deafened</name>
         <order>7</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2767,7 +2769,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Frightened</name>
         <order>8</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2784,7 +2786,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Grappled</name>
         <order>9</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2801,7 +2803,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Incapacitated</name>
         <order>10</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2818,7 +2820,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Invisible</name>
         <order>11</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2835,7 +2837,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Paralyzed</name>
         <order>12</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2852,7 +2854,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Petrified</name>
         <order>13</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2869,7 +2871,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Poisoned</name>
         <order>14</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2886,7 +2888,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Prone</name>
         <order>15</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2903,7 +2905,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Restrained</name>
         <order>16</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2920,7 +2922,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Stunned</name>
         <order>17</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2937,7 +2939,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Unconscious</name>
         <order>18</order>
-        <group>2. Conditions</group>
+        <group>02. Conditions</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2954,7 +2956,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 1</name>
         <order>19</order>
-        <group>4. Fatigued</group>
+        <group>04. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2971,7 +2973,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 2</name>
         <order>20</order>
-        <group>4. Fatigued</group>
+        <group>04. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -2988,7 +2990,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 3</name>
         <order>21</order>
-        <group>4. Fatigued</group>
+        <group>04. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3005,7 +3007,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 4</name>
         <order>22</order>
-        <group>4. Fatigued</group>
+        <group>04. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3022,7 +3024,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 5</name>
         <order>23</order>
-        <group>4. Fatigued</group>
+        <group>04. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3039,7 +3041,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Exhaustion 6</name>
         <order>24</order>
-        <group>4. Fatigued</group>
+        <group>04. Fatigued</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3056,7 +3058,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Bardic Inspiration</name>
         <order>25</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3073,7 +3075,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Blessed</name>
         <order>26</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3090,7 +3092,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Concentration</name>
         <order>27</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3107,7 +3109,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Confused</name>
         <order>28</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3124,7 +3126,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Diseased</name>
         <order>29</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3141,7 +3143,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Entangled</name>
         <order>30</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3158,7 +3160,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Expeditious Retreat</name>
         <order>31</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3175,7 +3177,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Faerie Fire</name>
         <order>32</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3192,7 +3194,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Fly</name>
         <order>33</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3209,7 +3211,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Freedom of Movement</name>
         <order>34</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3226,7 +3228,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Haste</name>
         <order>35</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3243,7 +3245,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Helpless</name>
         <order>36</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3260,7 +3262,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hidden</name>
         <order>37</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3277,7 +3279,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Longstrider</name>
         <order>38</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3294,7 +3296,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Rage</name>
         <order>39</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3311,7 +3313,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Cross - Blue</name>
         <order>40</order>
-        <group>5. Crosses</group>
+        <group>05. Crosses</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3328,7 +3330,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wild Shape</name>
         <order>41</order>
-        <group>3. Game States</group>
+        <group>03. Game States</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3345,7 +3347,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Cross - Green</name>
         <order>42</order>
-        <group>5. Crosses</group>
+        <group>05. Crosses</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3362,7 +3364,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Cross - Orange</name>
         <order>43</order>
-        <group>5. Crosses</group>
+        <group>05. Crosses</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3379,7 +3381,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Cross - Red</name>
         <order>44</order>
-        <group>5. Crosses</group>
+        <group>05. Crosses</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3396,7 +3398,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Cross - Turquoise</name>
         <order>45</order>
-        <group>5. Crosses</group>
+        <group>05. Crosses</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3413,7 +3415,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Cross - Yellow</name>
         <order>46</order>
-        <group>5. Crosses</group>
+        <group>05. Crosses</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3430,7 +3432,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hex - Blue</name>
         <order>47</order>
-        <group>6. Hexes</group>
+        <group>06. Hexes</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3447,7 +3449,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hex - Green</name>
         <order>48</order>
-        <group>6. Hexes</group>
+        <group>06. Hexes</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3464,7 +3466,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hex - Orange</name>
         <order>49</order>
-        <group>6. Hexes</group>
+        <group>06. Hexes</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3481,7 +3483,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hex - Red</name>
         <order>50</order>
-        <group>6. Hexes</group>
+        <group>06. Hexes</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3498,7 +3500,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hex - Turquoise</name>
         <order>51</order>
-        <group>6. Hexes</group>
+        <group>06. Hexes</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3515,7 +3517,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Hex - Yellow</name>
         <order>52</order>
-        <group>6. Hexes</group>
+        <group>06. Hexes</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3532,7 +3534,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Target - Blue</name>
         <order>53</order>
-        <group>7. Targets</group>
+        <group>07. Targets</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3549,7 +3551,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Target - Green</name>
         <order>54</order>
-        <group>7. Targets</group>
+        <group>07. Targets</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3566,7 +3568,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Target - Orange</name>
         <order>55</order>
-        <group>7. Targets</group>
+        <group>07. Targets</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3583,7 +3585,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Target - Red</name>
         <order>56</order>
-        <group>7. Targets</group>
+        <group>07. Targets</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3600,7 +3602,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Target - Turquoise</name>
         <order>57</order>
-        <group>7. Targets</group>
+        <group>07. Targets</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3617,7 +3619,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Target - Yellow</name>
         <order>58</order>
-        <group>7. Targets</group>
+        <group>07. Targets</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3634,7 +3636,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wheel - Blue</name>
         <order>59</order>
-        <group>8. Wheels</group>
+        <group>08. Wheels</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3651,7 +3653,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wheel - Green</name>
         <order>60</order>
-        <group>8. Wheels</group>
+        <group>08. Wheels</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3668,7 +3670,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wheel - Orange</name>
         <order>61</order>
-        <group>8. Wheels</group>
+        <group>08. Wheels</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3685,7 +3687,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wheel - Red</name>
         <order>62</order>
-        <group>8. Wheels</group>
+        <group>08. Wheels</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3702,7 +3704,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wheel - Turquoise</name>
         <order>63</order>
-        <group>8. Wheels</group>
+        <group>08. Wheels</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3719,7 +3721,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Wheel - Yellow</name>
         <order>64</order>
-        <group>8. Wheels</group>
+        <group>08. Wheels</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3736,7 +3738,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Damaged</name>
         <order>65</order>
-        <group>1. Health</group>
+        <group>01. Health</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3753,7 +3755,7 @@
       <net.rptools.maptool.client.ui.token.FlowImageTokenOverlay>
         <name>Bloodied</name>
         <order>66</order>
-        <group>1. Health</group>
+        <group>01. Health</group>
         <mouseover>false</mouseover>
         <opacity>100</opacity>
         <showGM>true</showGM>
@@ -3770,7 +3772,7 @@
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Stable</name>
         <order>67</order>
-        <group>1. Health</group>
+        <group>01. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
         <showGM>true</showGM>
@@ -3786,7 +3788,7 @@
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Dying</name>
         <order>68</order>
-        <group>1. Health</group>
+        <group>01. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
         <showGM>true</showGM>
@@ -3802,7 +3804,7 @@
       <net.rptools.maptool.client.ui.token.ImageTokenOverlay>
         <name>Dead</name>
         <order>69</order>
-        <group>1. Health</group>
+        <group>01. Health</group>
         <mouseover>false</mouseover>
         <opacity>50</opacity>
         <showGM>true</showGM>
@@ -3812,6 +3814,1264 @@
           <id>70bca92c7929cd14e1df42802e0bc713</id>
         </assetId>
       </net.rptools.maptool.client.ui.token.ImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on All Abilities</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on All Abilities</name>
+        <order>70</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Strength</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Strength</name>
+        <order>71</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Dexterity</name>
+        <order>72</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Constitution</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Constitution</name>
+        <order>73</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Intelligence</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Intelligence</name>
+        <order>74</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Wisdom</name>
+        <order>75</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Charisma</name>
+        <order>76</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Acrobatics</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Acrobatics</name>
+        <order>77</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Animal Handling</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Animal Handling</name>
+        <order>78</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Arcana</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Arcana</name>
+        <order>79</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Athletics</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Athletics</name>
+        <order>80</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Deception</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Deception</name>
+        <order>81</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on History</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on History</name>
+        <order>82</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Insight</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Insight</name>
+        <order>83</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Intimidation</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Intimidation</name>
+        <order>84</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Investigation</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Investigation</name>
+        <order>85</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Medicine</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Medicine</name>
+        <order>86</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Nature</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Nature</name>
+        <order>87</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Perception</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Perception</name>
+        <order>88</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Performance</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Performance</name>
+        <order>89</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Persuastion</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Persuastion</name>
+        <order>90</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Religion</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Religion</name>
+        <order>91</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Sleight of Hand</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Sleight of Hand</name>
+        <order>92</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Stealth</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Stealth</name>
+        <order>93</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Survival</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Survival</name>
+        <order>94</order>
+        <group>09. Advantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Initiative</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Initiative</name>
+        <order>95</order>
+        <group>10. Advantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on All Attacks</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on All Attacks</name>
+        <order>96</order>
+        <group>10. Advantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Melee Attacks</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Melee Attacks</name>
+        <order>97</order>
+        <group>10. Advantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Ranged Attacks</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Ranged Attacks</name>
+        <order>98</order>
+        <group>10. Advantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on All Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on All Saving Throws</name>
+        <order>99</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Strength Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Strength Saving Throws</name>
+        <order>100</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Dexterity Saving Throws</name>
+        <order>101</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Constitution Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Constitution Saving Throws</name>
+        <order>102</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Intelligence Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Intelligence Saving Throws</name>
+        <order>103</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Wisdom Saving Throws</name>
+        <order>104</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Charisma Saving Throws</name>
+        <order>105</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Advantage on Death Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Advantage on Death Saving Throws</name>
+        <order>106</order>
+        <group>11. Advantage for Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>6bd3c66c60575a9286881ff738a9bdd6</id>
+        </assetId>
+        <corner>NORTH_WEST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Abilities</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on All Abilities</name>
+        <order>107</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Strength</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Strength</name>
+        <order>108</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Dexterity</name>
+        <order>109</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Constitution</name>
+        <order>110</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Intelligence</name>
+        <order>111</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Wisdom</name>
+        <order>112</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Charisma</name>
+        <order>113</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Acrobatics</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Acrobatics</name>
+        <order>114</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Animal Handling</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Animal Handling</name>
+        <order>115</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Arcana</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Arcana</name>
+        <order>116</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Athletics</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Athletics</name>
+        <order>117</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Deception</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Deception</name>
+        <order>118</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on History</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on History</name>
+        <order>119</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Insight</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Insight</name>
+        <order>120</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intimidation</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Intimidation</name>
+        <order>121</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Investigation</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Investigation</name>
+        <order>122</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Medicine</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Medicine</name>
+        <order>123</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Nature</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Nature</name>
+        <order>124</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Perception</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Perception</name>
+        <order>125</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Performance</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Performance</name>
+        <order>126</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Persuastion</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Persuastion</name>
+        <order>127</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Religion</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Religion</name>
+        <order>128</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Sleight of Hand</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Sleight of Hand</name>
+        <order>129</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Stealth</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Stealth</name>
+        <order>130</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Survival</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Survival</name>
+        <order>131</order>
+        <group>12. Disadvantage for Abilities</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Initiative</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Initiative</name>
+        <order>132</order>
+        <group>13. Disadvantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Attacks</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on All Attacks</name>
+        <order>133</order>
+        <group>13. Disadvantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Melee Attacks</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Melee Attacks</name>
+        <order>134</order>
+        <group>13. Disadvantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Ranged Attacks</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Ranged Attacks</name>
+        <order>135</order>
+        <group>13. Disadvantage for Combat</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on All Saving Throws</name>
+        <order>136</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Strength Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Strength Saving Throws</name>
+        <order>137</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Dexterity Saving Throws</name>
+        <order>138</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Constitution Saving Throws</name>
+        <order>139</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Intelligence Saving Throws</name>
+        <order>140</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Wisdom Saving Throws</name>
+        <order>141</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Charisma Saving Throws</name>
+        <order>142</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+    </entry>
+    <entry>
+      <string>Disadvantage on Death Saving Throws</string>
+      <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
+        <name>Disadvantage on Death Saving Throws</name>
+        <order>143</order>
+        <group>14. Disadvantage for Saving Throws</group>
+        <mouseover>false</mouseover>
+        <opacity>1</opacity>
+        <showGM>true</showGM>
+        <showOwner>true</showOwner>
+        <showOthers>true</showOthers>
+        <assetId>
+          <id>7c0885cd64393a8abf46cb1bbf394035</id>
+        </assetId>
+        <corner>NORTH_EAST</corner>
+      </net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
     </entry>
   </tokenStates>
   <tokenBars class="linked-hash-map">
