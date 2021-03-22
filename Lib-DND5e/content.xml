@@ -1529,6 +1529,10 @@
       <int>317</int>
       <macro name="dnd5e_Property_getInitAbility"/>
     </entry>
+    <entry>
+      <int>315</int>
+      <macro name="dnd5e_Util_titledOutput"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
