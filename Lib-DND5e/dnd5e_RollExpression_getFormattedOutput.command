@@ -179,7 +179,8 @@
 	[h: log.debug("-----------------------------------------------------------------------")]
 }]
 
-<!-- Need to show total damage? 00>
+<!-- Need to show total damage? -->
+[h, if (json.isEmpty (damageTotal)): damageTotal = json.append (damageTotal, 0)]
 [h: damageTotalSum = math.arraySum(damageTotal)]
 [h, if(damageTotalSum != lastDamage), code: {
 	
