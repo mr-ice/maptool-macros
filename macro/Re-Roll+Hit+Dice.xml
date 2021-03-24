@@ -1,0 +1,27 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>d3e6ea4f-fd89-4a07-87db-cfe8b298920a</macroUUID>
+  <saveLocation>GmPanel</saveLocation>
+  <index>8</index>
+  <colorKey>orange</colorKey>
+  <hotKey>None</hotKey>
+  <label>Re-Roll Hit Dice</label>
+  <group>D&amp;D 5e - Creatures</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.15em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Re-rolls the selected token's maximum hit points based on the Hit Dice. If the creature is at maximum HP, their current HP will be adjusted to always be the new Maximum. If a creature's HP is less than the current maximum, the current will remain unchanged unless the new maximum is below the current.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
