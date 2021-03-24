@@ -1,5 +1,5 @@
 [h: inputObj = arg (0)]
-[h: log.debug (getMacroName() + ": inputObj = " + inputObj)]
+[h: o5e_Constants(getMacroName())]
 [h: actionName = json.get (inputObj, "actionName")]
 [h: advDisadv = json.get (inputObj, "advDisadv")]
 [h: monsterActions = getProperty ("_o5e_MonsterActions")]
@@ -12,7 +12,7 @@
 	[broadcast ("Action " + actionName + " not found")]
 }; {""}]
 [h: actionObjType = json.type (actionObj)]
-[h: log.debug ("actionObjType = " + actionObjType)]
+[h: log.debug (CATEGORY + "## actionObjType = " + actionObjType)]
 [h: output = "Something <i>HAPPENS</i>"]
 
 [h, if (actionObjType == "UNKNOWN"), code: {
@@ -22,7 +22,7 @@
 	[h: rollExpression = dnd5e_RollExpression_setSaveDC (rollExpression, 0)]
 	[h: rolled = json.get (dnd5e_DiceRoller_roll (rollExpression), 0)]
 	[h: output = dnd5e_RollExpression_getOutput (rolled)]
-	[h: log.info ("Weird code block reached: actionObj = " + actionObj)]
+	[h: log.warn (CATEGORY + "## Weird code block reached: actionObj = " + actionObj)]
 	[h: return (0, output)]
 }; {""}]
 
@@ -35,13 +35,16 @@
 	[foreach (extraObj, extraObjs), code: {
 		[extDamageExpression = o5e_RollExpression_forDamageAction (extraObj)]
 		[if (encode(extDamageExpression) == ""): extDamageExpression = o5e_RollExpression_forSaveAction (extraObj); ""]
-		[log.debug (getMacroName() + ": extDamageExpression = " + extDamageExpression)]
-		[if (encode (extDamageExpression) != ""): attackExpressions = json.append (attackExpressions, extDamageExpression); ""]
+		[log.debug (CATEGORY + "## extDamageExpression = " + extDamageExpression)]
+		[if (json.type (extDamageExpression) == "ARRAY"):
+			attackExpressions = json.merge (attackExpressions, extDamageExpression)]
+		[if (json.type (extDamageExpression) == "OBJECT"):
+			attackExpressions = json.append (attackExpressions, extDamageExpression)]
 	}]
 }]
 [h: rolledExpressions = dnd5e_DiceRoller_roll (attackExpressions)]
 
-[h: log.debug (getMacroName() + ": rolledExpressions = " + rolledExpressions)]
+[h: log.debug (CATEGORY + "## rolledExpressions = " + rolledExpressions)]
 [h: reLength = json.length (rolledExpressions)]
 [h: damageRe = dnd5e_RollExpression_findExpressionByType (rolledExpressions, dnd5e_Type_Damageable())]
 [h, if (reLength > 0 && json.type (damageRe) == "OBJECT"), code: {

@@ -13,16 +13,16 @@
                 
 [h: dmgRegEx =  "\\s?" + REG_HIT_AVG_DMG + " *" + REG_DMG_ROLL_STRING + " *(.*)"]
 
-[h: log.debug (getMacroName() + ": attackRegEx = " + attackRegEx)]
+[h: log.debug (getMacroName() + "## attackRegEx = " + attackRegEx)]
 [h: attackFindId = strfind (actionString, attackRegEx)]
 [h: findMatches = getFindCount (attackFindId)]
 [h, if (findMatches == 0), code: {
-	[log.debug (getMacroName() + ": No match, returning original")]
+	[log.debug (getMacroName() + "## No match, returning original")]
 	[return (0, actionString)]
 }]
 
 [h, for (grp, 1, getGroupCount (attackFindId, 1) + 1), code: {
-	[log.debug ("group " + grp + ": " + getGroup (attackFindId, 1, grp))]
+	[log.debug (getMacroName() + "## group " + grp + ": " + getGroup (attackFindId, 1, grp))]
 }]
 
 <!-- there are 7 capture groups, with 7th being the tail -->
@@ -36,10 +36,9 @@
 <!-- Some attacks dont have a type; assume melee -->
 [h, if (attackType == ""): attackType = "Melee"; ""]
 [h, if (attackType == "Melee"): ability = "Strength"; ability = "Dexterity"]
-[h: abilityBonus = eval (ability + "Bonus")]
 
 [h: attackObj = json.set ("", "attackType", attackType,
-                         "attackBonus", attackBonus - abilityBonus,
+                         "attackBonus", attackBonus,
                          "reachRange", reachRange,
                          "attackRange", attackRange)]
 
@@ -54,7 +53,7 @@
 	[dmgBonus = json.get (dmgRollObj, "bonus")]
 
 	[if (!isNumber (dmgBonus)): dmgBonus = 0; ""]
-	[dmgRollObj = json.set (dmgRollObj, "bonus", dmgBonus - abilityBonus)]
+	[dmgRollObj = json.set (dmgRollObj, "bonus", dmgBonus)]
 
 	[damageActionString = getGroup (damageFindId, 1, 3)]
 	<!-- damageType string  -->
@@ -63,7 +62,7 @@
 	[damageActionString = json.get (damageTypeObj, "tail")]
 
 	[attackObj = json.set (attackObj,
-                         "damageAverage", dmgAvg - abilityBonus,
+                         "damageAverage", dmgAvg,
                          "damageRollObj", dmgRollObj,
                          "damageRollString", dmgRollString,
                          "damageType", damageType)]
@@ -72,5 +71,5 @@
 
 [h: attackObj = json.set (attackObj, "tail", damageActionString)]
 
-[h: log.debug (getMacroName() + ": attackObj = " + attackObj)]
+[h: log.debug (getMacroName() + "## attackObj = " + attackObj)]
 [h: macro.return = attackObj]
