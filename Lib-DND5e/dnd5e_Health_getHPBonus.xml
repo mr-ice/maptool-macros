@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>fc6f2884-fbcc-45c0-a410-32e92c1e24bb</macroUUID>
+  <macroUUID>e8aa4b7d-7613-4137-99c2-0328da0701b7</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>119</index>
+  <index>323</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_setSaveEffect</label>
-  <group>RollExpression</group>
+  <label>dnd5e_Health_getHPBonus</label>
+  <group>Health</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,13 +15,12 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Sets a descriptor indicating the result of saving against the Save Damage roll. This is a free-form value determined by the caller. Typical examples are:
+  <toolTip>Determines the Max HP bonus based off of hit dice and Constitution. Uses 
 
-"none"
-"half"
-"saved"
+bonus.maxHP.value
+bonus.maxHP.level
 
-Callers must also call setSaveEffectMultiplier and supply the appropriate numerical value.</toolTip>
+properties for calculation</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

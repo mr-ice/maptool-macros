@@ -35,7 +35,7 @@
 [h: log.debug ("releaseNotesMap: " + json.indent (releaseNotesMap))]
 [h, if (json.isEmpty(releaseNotesMap)): return (0); ""]
 
-[dialog (libTokenName + " Release Notes"): {
+[dialog (libTokenName + " Release Notes", "width=400; height=450"): {
 	<html>
 		<head>
 			<title>[r: libTokenName] Release Notes</title>
