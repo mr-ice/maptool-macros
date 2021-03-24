@@ -22,5 +22,5 @@
 		}]
 	}
 ]
-[h, if (totalDamage == 0): totalDamage = 1]
+[h, if (totalDamage == 0 && saveResult != "none"): totalDamage = 1]
 [h: macro.return = json.set("{}", "damage", totalDamage, "saveText", saveEffect)]

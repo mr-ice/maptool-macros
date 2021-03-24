@@ -19,5 +19,3 @@
 }]
 [g, r: gmOutput]
 [h: sortInitiative()]
-[h: setInitiativeRound(1)]
-[h: setCurrentInitiative(0)]

@@ -1852,6 +1852,10 @@
     </entry>
     <entry>
       <int>324</int>
+      <macro name="dnd5e_Util_titledOutput"/>
+    </entry>
+    <entry>
+      <int>325</int>
       <macro name="dnd5e_Util_parseMultiRollString"/>
     </entry>
   </macroPropertiesMap>
