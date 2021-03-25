@@ -5,7 +5,7 @@
 [h: hitDiceString = getProperty ("hitdice")]
 <!-- If there are no hit dice, there is no hit point bonus -->
 [h, if (hitDiceString == ""), code: {
-	[log.debug (CATEGORY + "No hit dice string")]
+	[log.debug (CATEGORY + "## No hit dice string")]
 	[return (0, 0)]
 }]
 [h: hitDiceObj = dnd5e_Util_parseMultiRollString (hitDiceString)]
