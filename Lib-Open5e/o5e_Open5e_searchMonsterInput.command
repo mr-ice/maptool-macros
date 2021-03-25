@@ -25,18 +25,16 @@
     [inputString = "junk | " + resultMsg + " | | LABEL | span=true"]
 	[inputString = inputString + "## nameSelection | " + json.toList(nameArray) + " | Select Name or Cancel to refine search | List "]
 
-	[overwriteName = dnd5e_Preferences_getPreference (PREF_OVERWRITE_NAME)]
-	[useGmName = dnd5e_Preferences_getPreference (PREF_USE_GM_NAME)]
-	[inputString = inputString + "## overwriteName | " + overwriteName + " | Overwrite token name | CHECK"]
-	[inputString = inputString + "## useGmName | " + useGmName + " | Populate GM Name Instead | CHECK"]
+	[overwriteLabelValue = dnd5e_Preferences_getPreference (PREF_OVERWRITE_LABEL)]
+	[inputString = inputString + "## overwriteLabelValue | " + VALUE_OVERWRITE_LABEL_CHOICES + " | Overwrite token name | LIST | delimiter=json select=" + overwriteLabelValue]
+
 	[hitPointsRoll = dnd5e_Preferences_getPreference (PREF_HIT_DICE_ROLL)]
 	[inputString = inputString  + "## hitPointsRoll | " + VALUES_HIT_DICE_ROLL + " | Hit Points Value | LIST | select=" + hitPointsRoll + " delimiter=json"]
 	
 	[if (resultCount): found = input (inputString); 
 		input ("junk|No results found for " + searchString + "| | Label | span=true")]
 	[if (found): monsterJson = json.get (resultArray, nameSelection); ""]
-	[dnd5e_Preferences_setPreference (PREF_OVERWRITE_NAME, overwriteName, 1)]
-	[dnd5e_Preferences_setPreference (PREF_USE_GM_NAME, useGmName, 1)]
+	[dnd5e_Preferences_setPreference (PREF_OVERWRITE_LABEL, overwriteLabelValue, 1)]
 	[dnd5e_Preferences_setPreference (PREF_HIT_DICE_ROLL, hitPointsRoll, 1)]
 }]
 <!-- return monster json -->
