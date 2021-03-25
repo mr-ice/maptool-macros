@@ -1,5 +1,6 @@
 <project>
   <project name="DNDBeyond.project"/>
+  <project name="Open5e.project"/>
   <token name="Lib-DarkerDungeon"/>
   <macroset name="DnD5e-Campaign">
     <macro name="DDmacro/Lesser"/>
@@ -11,5 +12,6 @@
   <macroset name="DnD5e-GM">
     <macro name="DDmacro/New+Int+Initiative"/>
     <macro name="DDmacro/Update+Int+Initiative"/>
+    <macro name="macro/Roll+Initiative"/>
   </macroset>
 </project>

@@ -30,8 +30,8 @@
 };{
 	[h: exp = "{}"]
 }]
-[h: exp = dnd5e_RollExpression_addTypedDescriptor(exp, "actionName", json.get(form, "actionName"))]
-[h: exp = dnd5e_RollExpression_addTypedDescriptor(exp, "actionDesc", json.get(form, "actionDesc"))]
+[h: exp = dnd5e_RollExpression_addTypedDescriptor(exp, "actionName", trim(json.get(form, "actionName")))]
+[h: exp = dnd5e_RollExpression_addTypedDescriptor(exp, "actionDesc", trim(json.get(form, "actionDesc")))]
 
 <!-- Fill in the meta data from the form -->
 [h, if (json.contains(form, "macro-font-color")): metaData = json.set(metaData, "macroFontColor", json.get(form, "macro-font-color"))]

@@ -2,7 +2,7 @@
 [h: log.debug("dnd5e_removeDamage: " + json.indent(macro.args))]
 [h, if(json.type(macro.args) == "ARRAY"): macro.args = json.get(macro.args, 0)]
 [h: id = json.get(macro.args, "id")]
-[h, if (json.isEmpty(id) || lower(id) == "currentToken"): id = currentToken()]
+[h, if (json.isEmpty(id) || lower(id) == "currenttoken"): id = currentToken()]
 [h: current = json.get(macro.args, "current")]
 [h, if (!isNumber(current)): current = getProperty(current, id)]
 [h, if (!isNumber(current)): current = 0]
