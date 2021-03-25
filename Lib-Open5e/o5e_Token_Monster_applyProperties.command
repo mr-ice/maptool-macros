@@ -95,5 +95,6 @@
 	[setProperty ("proficiency." + monsterSkill, json.get (bonusObj, "proficiency"))]
 	[setProperty ("bonus." + monsterSkill, json.get (bonusObj, "bonus"))]
 }]
+[h: dnd5e_Util_Token_setDrawOrder (currentToken())]
 [h: setProperty (PROP_MONSTER_TOON_JSON, monsterJson)]
 [h: setProperty (PROP_MONSTER_TOON_VERSION, MONSTER_TOON_VERSION)]

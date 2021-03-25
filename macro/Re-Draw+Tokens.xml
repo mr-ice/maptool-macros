@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>87b934d6-3d6b-4ff4-bd58-cdc18c609c80</macroUUID>
+  <saveLocation>GmPanel</saveLocation>
+  <index>8</index>
+  <colorKey>aqua</colorKey>
+  <hotKey>None</hotKey>
+  <label>Re-Draw Tokens</label>
+  <group>D&amp;D 5e - Map</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>navy</fontColorKey>
+  <fontSize>1.15em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Resets the Draw Order on each selected token to ensure:
+- Larger tokens are below smaller tokens
+- NPC tokens are below PC tokens (GM configurable)
+
+The draw order value is applied to a token property that may be leveraged in other macros to reset a token's draw order.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

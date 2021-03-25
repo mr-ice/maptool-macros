@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>hbLDbuvsSruJFZ2DD25LCQ==</baGUID>
+    <baGUID>zPlMMnpaTN2uMzD3I0QeqQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>Mj1uFmYHSB2zZbZ/3qjybA==</baGUID>
+    <baGUID>f+ruTTylSR2+PXPPGdxMTg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -20,8 +20,28 @@
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>950</lastX>
+  <lastY>250</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>19</x>
+        <y>5</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>19</x>
+        <y>5</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -1852,11 +1872,11 @@
     </entry>
     <entry>
       <int>324</int>
-      <macro name="dnd5e_Util_titledOutput"/>
+      <macro name="dnd5e_Util_parseMultiRollString"/>
     </entry>
     <entry>
       <int>325</int>
-      <macro name="dnd5e_Util_parseMultiRollString"/>
+      <macro name="dnd5e_Util_Token_setDrawOrder"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
