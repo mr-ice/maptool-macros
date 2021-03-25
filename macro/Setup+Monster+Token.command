@@ -1,7 +1,6 @@
 [h: selected = getSelected("json")]
 [h: CATEGORY = "Lib:Open5e.setup"]
 [h: log.debug (CATEGORY + "## selected = " + selected)]
-[h: l4m.enableLineParser (CATEGORY)]
 [h: assert (json.length (selected), "<b><font color='red'>No Token selected!</font></b><Br>Please select 1 or more tokens")]
 [h: firstSelected = json.get (selected, 0)]
 [h, token (firstSelected): slug = getProperty("Character ID")]
