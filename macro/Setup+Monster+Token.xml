@@ -1,7 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>cc6e5b95-8d05-4985-bb1a-ca633c860baa</macroUUID>
+  <macroUUID>6710c033-0f9f-4bc4-a531-63c2691a7732</macroUUID>
   <saveLocation>GmPanel</saveLocation>
-  <index>2</index>
+  <index>3</index>
   <colorKey>red</colorKey>
   <hotKey>None</hotKey>
   <label>Setup Monster Token</label>
@@ -9,7 +9,7 @@
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>true</applyToTokens>
+  <applyToTokens>false</applyToTokens>
   <fontColorKey>white</fontColorKey>
   <fontSize>1.20em</fontSize>
   <minWidth/>

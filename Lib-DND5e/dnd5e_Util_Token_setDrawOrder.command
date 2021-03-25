@@ -1,0 +1,32 @@
+[h: argType = json.type (arg(0))]
+[h, if (argType != "ARRAY"): tokens = json.append ("[]", arg(0)); tokens = arg(0)]
+[h: dnd5e_Constants(getMacroName())]
+[h: log.debug (CATEGORY + "##tokens = " + tokens)]
+[h: incr = 500]
+[h: index = 0]
+[h: sizeArry = json.append ("", "Colossal", "Gargantuan", "Huge", "Large",
+		"Medium", "Small", "Tiny", "Diminutive", "Fine")]
+[h: drawNPCOverPC = dnd5e_Preferences_getPreference ("drawNpcOverPc")]
+[h: sizeMap = "{}"]
+[h, foreach (sizeEl, sizeArry, "json"), code: {
+	[sizeMap = json.set (sizeMap, sizeEl, index)]
+	[index = index + incr]
+}]
+[h: log.debug (CATEGORY + "##sizeMap = " + sizeMap + "; sizeArry = " + sizeArry)]
+[h: counter = 1]
+[h, foreach (selectedToken, tokens), code: {
+	[log.debug (CATEGORY + "##token: " + selectedToken)]
+	[tokenSize = getSize(selectedToken)]
+	[baseDraw = json.get (sizeMap, tokenSize)]
+	[log.debug (CATEGORY + "## name = " + getName(selectedToken) + "; tokenSize = " + tokenSize + "; baseDraw = " + baseDraw)]
+	[if (isNPC(selectedToken)), code: {
+		[if (drawNPCOverPC): baseDraw = baseDraw + incr / 2]
+	}; {
+		[if (!drawNPCOverPC): baseDraw = baseDraw + incr / 2]
+	}]
+	[baseDraw = baseDraw + counter]
+	[log.debug (CATEGORY + "## Final draw order: " + baseDraw)]
+	[setTokenDrawOrder (baseDraw, selectedToken)]
+	[setProperty (PROP_DRAW_ORDER, baseDraw, selectedToken)]
+	[counter = counter + 1]
+}]

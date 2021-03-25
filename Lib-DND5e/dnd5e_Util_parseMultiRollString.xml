@@ -1,0 +1,57 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>b2ba4b2e-25fa-4dca-bdc0-b7a34de28bcf</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>324</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_parseMultiRollString</label>
+  <group>Util - Parser</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Given a string like:
+"4d6 + 2 + 2d8 - 6 - 2d20"
+return an object:
+[
+        {
+            "diceRolled": 4,
+            "diceSize": 6
+        },
+        {
+            "diceRolled": 2,
+            "diceSize": 8,
+        },
+        {
+            "diceRolled": 2,
+            "diceSize": 20,
+            "subtract": 1
+        },
+        {
+        		"diceRolled": 0,
+        		"diceSize": 0,
+        	  "bonus": -4
+        }
+]
+Keys:
+	"diceRolled": The number of dice rolled; always positive.
+	"diceSize": The size of the die; always positive.
+	"bonus": The amount added to the roll; may be positive or negative.
+	"subtract": boolean value (0, 1) where false means the roll is subtracted and positive means the roll is added. When subtract is unspecified, addition is assumed.
+
+"Why are the bonus values all added up and by itself?"
+"...Shuttup."</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

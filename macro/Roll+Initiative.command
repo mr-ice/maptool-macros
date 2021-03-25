@@ -19,7 +19,7 @@
 		[h: total = dnd5e_RollExpression_getTotal (re)]
 		[h: init = total + tie]
 		[h: owners = getOwners ("json")]
-		[if (!json.isEmpty(owners)), w (owners), r: dnd5e_RollExpression_getFormattedOutput (rolled);
+		[if (!json.isEmpty(owners)), w (owners), g, r: dnd5e_RollExpression_getFormattedOutput (rolled);
 			gmOutput = gmOutput + dnd5e_RollExpression_getFormattedOutput (rolled)]
 		[h: initList = concat(initList, ";", SelectedGMName, "=", init)]
 	}]

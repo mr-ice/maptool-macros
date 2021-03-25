@@ -23,5 +23,6 @@
   <macroset name="DnD5e-GM">
     <macro name="macro/Set+Landing+Map"/>
     <macro name="macro/Configure+GM+Preferences"/>
+    <macro name="macro/Re-Draw+Tokens"/>
   </macroset>
 </project>

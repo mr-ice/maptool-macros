@@ -1,27 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>fc6f2884-fbcc-45c0-a410-32e92c1e24bb</macroUUID>
-  <saveLocation>Token</saveLocation>
-  <index>119</index>
-  <colorKey>default</colorKey>
+  <macroUUID>d3e6ea4f-fd89-4a07-87db-cfe8b298920a</macroUUID>
+  <saveLocation>GmPanel</saveLocation>
+  <index>8</index>
+  <colorKey>orange</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_RollExpression_setSaveEffect</label>
-  <group>RollExpression</group>
+  <label>Re-Roll Hit Dice</label>
+  <group>D&amp;D 5e - Creatures</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
-  <applyToTokens>false</applyToTokens>
+  <applyToTokens>true</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.00em</fontSize>
+  <fontSize>1.15em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Sets a descriptor indicating the result of saving against the Save Damage roll. This is a free-form value determined by the caller. Typical examples are:
-
-"none"
-"half"
-"saved"
-
-Callers must also call setSaveEffectMultiplier and supply the appropriate numerical value.</toolTip>
+  <toolTip>Re-rolls the selected token's maximum hit points based on the Hit Dice. If the creature is at maximum HP, their current HP will be adjusted to always be the new Maximum. If a creature's HP is less than the current maximum, the current will remain unchanged unless the new maximum is below the current.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

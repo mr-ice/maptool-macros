@@ -143,7 +143,7 @@
 
 [h: setProperty ("Race", json.get (basicToon, "race"))]
 [h: setProperty ("Classes", dndb_BasicToon_getClasses ())]
-
+[h: dnd5e_Util_Token_setDrawOrder (currentToken())]
 [h: dndb_mergeAttackJson ()]
 [h: dndb_createPlayerMacros()]
 }]

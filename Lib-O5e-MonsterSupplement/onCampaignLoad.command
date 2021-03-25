@@ -15,3 +15,5 @@
 		[h: defineFunction (macroName, macroName + "@this", ignoreOutput, newScope)]
 	}]
 }]
+<!-- Create the EXT DB after defining functions -->
+[h: o5e_ExtDB_createDataToken()]

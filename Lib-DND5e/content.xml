@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>hbLDbuvsSruJFZ2DD25LCQ==</baGUID>
+    <baGUID>zPlMMnpaTN2uMzD3I0QeqQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>Xj5wwukzS82jwjjQhogM5w==</baGUID>
+    <baGUID>f+ruTTylSR2+PXPPGdxMTg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>900</x>
+  <x>950</x>
   <y>250</y>
   <z>1</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>950</lastX>
+  <lastY>250</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>19</x>
+        <y>5</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>19</x>
+        <y>5</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -62,9 +82,14 @@
   </charsheetImage>
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
+  <label></label>
   <state>
     <entry>
       <string>Paralyzed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution Saving Throws</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -80,15 +105,19 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Advantage on All Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Frightened</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Target - Yellow</string>
+      <string>Advantage on All Saving Throws</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Cross - Green</string>
+      <string>Advantage on Investigation</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -96,15 +125,11 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Unconcious</string>
+      <string>Disadvantage on Arcana</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Target - Turquoise</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Prone</string>
+      <string>Advantage on Survival</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -112,19 +137,7 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Wild Shape</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Invisible</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Unconscious</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Disabled</string>
+      <string>Disadvantage on Intelligence Saving Throws</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -144,11 +157,7 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Dead</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Wheel - Blue</string>
+      <string>Disadvantage on Constitution</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -156,11 +165,15 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Helpless</string>
+      <string>Advantage on Athletics</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Freedom of Movement</string>
+      <string>Disadvantage on Persuastion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on History</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -168,15 +181,7 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Diseased</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Expeditious Retreat</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Target - Red</string>
+      <string>Disadvantage on Dexterity Saving Throws</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -188,6 +193,10 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disadvantage on Perception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Blinded</string>
       <boolean>false</boolean>
     </entry>
@@ -196,23 +205,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Advantage on Intelligence Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Restrained</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Target - Orange</string>
+      <string>Advantage on Intimidation</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Hex - Green</string>
+      <string>Advantage on Ranged Attacks</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Hex - Turquoise</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
-      <string>Hex - Red</string>
+      <string>Advantage on Constitution Saving Throws</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -232,15 +241,19 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Grappled</string>
-      <boolean>false</boolean>
-    </entry>
-    <entry>
       <string>Rage</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>Exhaustion 3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Medicine</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Performance</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -252,7 +265,15 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disadvantage on Strength</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Exhaustion 5</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -264,7 +285,7 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Blessed</string>
+      <string>Advantage on Intelligence</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -276,11 +297,23 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Charmed</string>
+      <string>Advantage on All Abilities</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Bardic Inspiration</string>
+      <string>Disadvantage on All Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Perception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Stealth</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -292,11 +325,39 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Advantage on Strength Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Ranged Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Faerie Fire</string>
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disadvantage on Stealth</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Arcana</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Wheel - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Insight</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Religion</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -308,7 +369,7 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Hex - Orange</string>
+      <string>Advantage on Constitution</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -316,11 +377,259 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Target - Blue</string>
+      <string>Disadvantage on Strength Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom Saving Throws</string>
       <boolean>false</boolean>
     </entry>
     <entry>
       <string>Wheel - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Initiative</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Deafened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Nature</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Melee Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Performance</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconcious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Initiative</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wild Shape</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Death Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Invisible</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconscious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Persuastion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Acrobatics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Animal Handling</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Deception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Helpless</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Nature</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Freedom of Movement</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Diseased</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Expeditious Retreat</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Survival</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Animal Handling</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Insight</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Medicine</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Investigation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Deception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Grappled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on History</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blessed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Acrobatics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Melee Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intimidation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Religion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Athletics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Strength</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -332,7 +641,7 @@
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Deafened</string>
+      <string>Disadvantage on All Abilities</string>
       <boolean>false</boolean>
     </entry>
     <entry>
@@ -340,11 +649,19 @@
       <boolean>false</boolean>
     </entry>
     <entry>
+      <string>Disadvantage on Sleight of Hand</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
       <string>Dying</string>
       <boolean>false</boolean>
     </entry>
     <entry>
-      <string>Other</string>
+      <string>Advantage on Sleight of Hand</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Death Saving Throws</string>
       <boolean>false</boolean>
     </entry>
   </state>
@@ -1551,7 +1868,15 @@
     </entry>
     <entry>
       <int>323</int>
-      <macro name="dnd5e_Util_titledOutput"/>
+      <macro name="dnd5e_Health_getHPBonus"/>
+    </entry>
+    <entry>
+      <int>324</int>
+      <macro name="dnd5e_Util_parseMultiRollString"/>
+    </entry>
+    <entry>
+      <int>325</int>
+      <macro name="dnd5e_Util_Token_setDrawOrder"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
