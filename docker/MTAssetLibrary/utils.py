@@ -99,9 +99,9 @@ def GitTag():
 
 
 def GitTagRef():
-    '''Returns GitTag after \d-g'''  # noqa: W605
+    """Returns GitTag after \d-g"""
     tag = GitTag()
-    return re.sub(r'.*\d-g', '', tag)
+    return re.sub('.*\d-g', '', str(tag))
 
 
 def GitDirty():
