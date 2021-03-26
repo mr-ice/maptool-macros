@@ -233,8 +233,7 @@ def step_impl(context):   # noqa: F811
 def step_impl(context):   # noqa: F811
     fn = context.macrofilename
     assert os.path.exists(fn), f"{fn} not in tmpdir = '{os.getcwd()}'"
-    assert False, f"{fn} contains {github_url} but should not tmpdir = '{os.getcwd()}'\n\n{open(fn).read()}"
-    assert github_url not in open(fn).read(), f"{fn} contains {github_url} but should not"
+    assert github_url not in open(fn).read(), f"{fn} contains {github_url} but should not, tmpdir = '{os.getcwd()}'"
 
 
 @given(u'I have a token with github comment on a macro')

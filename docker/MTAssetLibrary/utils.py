@@ -282,7 +282,7 @@ def write_macro_files(macro, tofilebase):
         command = macro.command.text or ''
         del(macro.command)
     log.info(f'extracting {macro.label} to {tofilebase}.xml')
-    pattern = f'(<!-- {github_url} [0-9a-z-]+ -->\n?)'
+    pattern = f'(<!-- {github_url} [0-9a-zA-Z-]+ -->\n?)'
     if match := re.match(pattern, command):
         command = command.replace(match[0], '')
     with open(tofilebase + '.xml', 'w') as fh:

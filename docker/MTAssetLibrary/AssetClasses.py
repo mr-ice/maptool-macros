@@ -611,7 +611,7 @@ class MTMacroObj(MTAsset):
         if type(new) == MTMacroObj:
             self.root.append(new.root)
 
-    def extract(self, save_name=None, output_dir=None, dryrun=None, verbose=None):
+    def extract(self, save_name=None, output_dir=None, dryrun=None):
         """
         MTMacroObj.extract() method
 
@@ -622,7 +622,6 @@ class MTMacroObj(MTAsset):
         Keyword Arguments
         save_name (default object_name) - temporary change of name to the object (and resulting files)
         dryrun (default None) - don't actually save anything
-        verbose (default None) - print out debugging information normally logged
         """
         # Properties, Campaigns uses this
         output_path = output_dir or 'macro'
