@@ -382,6 +382,8 @@ class MTToken(MTAsset):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.gitTagElement = 'gmName'
+        self.gitTagElementWhenNameMatches = 'Lib:'
         propmapfile = os.path.join(self.whence, 'propertyMapCI.xml')
         if os.path.isdir(self.whence) and os.path.exists(propmapfile):
             propmap = objectify.parse(propmapfile).getroot()
@@ -389,7 +391,7 @@ class MTToken(MTAsset):
                 self.root.remove(pmap)
             self.root.append(propmap)
 
-    def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None):
+    def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None, gitTagElement=None):
         """MTToken.assemble()
 
         Keyword Arguments:
@@ -428,9 +430,11 @@ class MTToken(MTAsset):
                             etree.tostring(macro.root).decode()))
 
                     self.root.macroPropertiesMap.entry[i] = new_entry
+        if gitTagElement is None:
+            gitTagElement = self.gitTagElement
+        if self.root.name.text.startswith(self.gitTagElementWhenNameMatches):
+            self.root[gitTagElement] = DataElement(git_tag_str)
         if not dryrun:
-            if self.root.name.text.startswith('Lib:'):
-                self.root.gmName = objectify.fromstring('<gmName>' + git_tag_str + '</gmName>')
             try:
                 zf.writestr('content.xml',
                             etree.tostring(self.xml, pretty_print=True))
@@ -638,12 +642,12 @@ class MTMacroObj(MTAsset):
 class MTProject(MTAsset):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # glue in the flatten_project, note we have to convert from
+        # glue in flatten_project, note we have to convert from
         # ElementTree to Element and back
         self.xml = flatten_project(self.xml.getroot()).getroottree()
 
     def extract(self, *args, **kwargs):
-        log.info("Projects are only for assembly")
+        log.warning("Projects are only for assembly")
         return False
 
     def assemble(self, output_dir=None, dryrun=False, verbose=False):
@@ -683,6 +687,8 @@ class MTProject(MTAsset):
                 if elem.tag == 'project' and not elem.get('name', '').endswith('.project'):
                     asset_name = elem.get('name') + '.project'
                 asset = GetAsset(asset_name)
+                if elem.tag == 'token':
+                    asset.gitTagElement = elem.get('gitTagElement', 'gmName')
                 asset.assemble(output_dir=output_dir)
 
 # junk.project xml file

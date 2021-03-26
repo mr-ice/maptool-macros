@@ -87,14 +87,21 @@ def GitShow():
         'tag': GitTag(),
         'branch': GitBranch(),
         'sha': GitSha(),
-        'dirty': GitDirty()
+        'dirty': GitDirty(),
+        'tagref': GitTagRef()
     }
 
 
 def GitTag():
-    """Returns git describe --tags --dirty """
+    """Returns git describe --tags --dirty --abbrev=8 """
     cmd = b'git describe --tags --dirty --abbrev=8'
     return GitCmd(cmd)
+
+
+def GitTagRef():
+    '''Returns GitTag after \d-g'''  # noqa: W605
+    tag = GitTag()
+    return re.sub(r'.*\d-g', '', tag)
 
 
 def GitDirty():
@@ -117,7 +124,7 @@ def GitSha():
     return GitCmd(cmd) or 'unknown'
 
 
-git_tag_str = GitSha() + GitDirty()
+git_tag_str = GitTagRef()
 git_comment_str = f'<!-- {github_url} {git_tag_str} -->'
 
 

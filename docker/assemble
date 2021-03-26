@@ -10,7 +10,7 @@ import os
 import sys
 sys.path.insert(0, 'docker')
 from argparse import ArgumentParser
-from MTAssetLibrary import GetAsset
+from MTAssetLibrary import GetAsset, tagset
 import logging as log
 import configparser
 
@@ -55,6 +55,10 @@ def ConfigArgs():
             action='store_true',
             help='Turn on informative output')
 
+    AP.add_argument(
+            '--gitTagElement',
+            help='Element to put a git tag string on a token with Lib: name, default None')
+
     return AP.parse_args()
 
 def SetupLogging(av):
@@ -82,4 +86,6 @@ if __name__ == '__main__':
     SetupLogging(av)
 
     asset = GetAsset(*av.input, name=av.list, path=av.output)
+    if av.gitTagElement and asset.tag == tagset.token.tag:
+        asset.gitTagElement = av.gitTagElement
     asset.assemble()
