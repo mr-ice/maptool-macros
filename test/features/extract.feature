@@ -46,7 +46,8 @@ Feature: extract
         Then I should get a properties directory
          And I should get a properties/content.xml
          And I should get a properties/properties.xml
-        
+
+    @wip
     Scenario: Extract a macro with github comment
        Given I have a macro asset with github comment
         When I extract a macro
@@ -55,6 +56,7 @@ Feature: extract
          And I should get a macro command file
          And that macro command file should not have a github comment
 
+    @wip
     Scenario: Extract a macro from token with github comment
        Given I have a token with github comment on a macro
         When I extract a token
