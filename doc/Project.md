@@ -54,6 +54,12 @@ A token element must be empty and must contain a name attribute.
 
 A token name should refer to a token directory containing a content.xml, or a path to the content.xml.
 
+A token MAY have a gitTagElement attribute.  If a Token name begins with
+Lib: the current git tag string will be inserted when we build it.   By
+default the git tag string will be put into the gmName element.  You can
+use this attribute to put it onto a different element.  NB: This
+overwrites the named element.
+
 ## project
 ```
 <project name="Echo"/>

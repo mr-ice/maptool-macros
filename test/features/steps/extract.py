@@ -26,8 +26,8 @@ def step_impl(context):  # noqa: F811
     context.macrosrc = context.source['macro'][0]['path']
     assert os.path.exists(context.macrosrc)
     run_assemble(context, context.macrosrc)
-    context.macrofile = context.source['macro'][0]['filename'] + '.' + tagset.macro.ext
-    assert os.path.exists(context.macrofile)
+    context.macrofile = os.path.join('output',context.source['macro'][0]['filename']) + '.' + tagset.macro.ext
+    assert os.path.exists(context.macrofile), f"no {context.macrofile} in '{os.getcwd()}'"
 
 
 @given(u'I have a sample macroset')
@@ -43,7 +43,7 @@ def step_impl(context):   # noqa: F811
         context.source['macro'][1]['path']
     )
     context.macrosetfilename = context.macrosetname + '.' + tagset.macroset.ext
-    assert os.path.exists(context.macrosetfilename)
+    assert os.path.exists(os.path.join('output', context.macrosetfilename)), f"no {context.macrosetfilename} in '{os.getcwd()}'"
 
 
 @given(u'I have a sample properties')
@@ -149,9 +149,9 @@ def step_impl(context):   # noqa: F811
 
 @when(u'I extract a macro')
 def step_impl(context):   # noqa: F811
-    assert os.path.exists(context.macrofile)
+    assert os.path.exists(context.macrofile), f"no {context.macrofile} in '{os.getcwd()}'"
     run_extract(context, context.macrofile)
-    assert b'Error' not in context.stderr
+    assert b'Error' not in context.stderr, f"{context.stderr} running extract on {context.macrofile} in '{os.getcwd()}'"
 
 
 @then(u'I should get a macro directory')
@@ -173,8 +173,8 @@ def step_impl(context):   # noqa: F811
 
 @when(u'I extract a macroset')
 def step_impl(context):   # noqa: F811
-    assert os.path.exists(context.macrosetfilename)
-    run_extract(context, context.macrosetfilename)
+    assert os.path.exists(os.path.join('output', context.macrosetfilename)), f"{context.macrosetfilename} not found in '{os.getcwd()}'"
+    run_extract(context, os.path.join('output', context.macrosetfilename))
     assert b'Error' not in context.stderr, f"{context.stderr}\ntmpdir = '{os.getcwd()}'"
 
 
@@ -225,15 +225,14 @@ def step_impl(context):   # noqa: F811
     m.root.command = objectify.StringElement(git_comment_str + '\n' + m.root.command.text)
     context.macroname = random_string()
     m.assemble(context.macroname)
-    context.macrofile = context.macroname + '.' + tagset.macro.ext
-    assert os.path.exists(context.macrofile)
+    assert os.path.exists(context.macrofile), f"{context.macrofile} not found in '{os.getcwd()}'"
 
 
 @then(u'that macro command file should not have a github comment')
 def step_impl(context):   # noqa: F811
     fn = context.macrofilename
     assert os.path.exists(fn), f"{fn} not in tmpdir = '{os.getcwd()}'"
-    assert github_url not in open(fn).read()
+    assert github_url not in open(fn).read(), f"{fn} contains {github_url} but should not, tmpdir = '{os.getcwd()}'"
 
 
 @given(u'I have a token with github comment on a macro')

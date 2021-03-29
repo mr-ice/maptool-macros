@@ -6,14 +6,21 @@ else
 	DOTSLASH := ./
 endif
 
+PROJECTS := $(wildcard *.project)
+
 project: DNDBeyond.project $(shell echo Lib-DNDBeyond/*)
 	$(DOTSLASH)dockerrun assemble DNDBeyond.project
 
-all:
+%.project:
+	$(DOTSLASH)dockerrun assemble $<
+
+all: Lib-Log4MT
 	$(DOTSLASH)dockerrun assemble Ashes+PF2.project
 	$(DOTSLASH)dockerrun assemble DNDBeyond.project
 	$(DOTSLASH)dockerrun assemble DNDBeyond+Open5e.project
 	$(DOTSLASH)dockerrun assemble Open5e.project
+
+Lib-Log4MT:
 	$(DOTSLASH)dockerrun assemble Lib-Log4MT
 
 project-local: DNDBeyond.project $(shell echo LIB-DNDBeyond/*)
@@ -55,7 +62,6 @@ behave: behave.image clean
 	behave --no-capture --no-capture-stderr --no-logcapture
 	git status --ignored
 
-.PHONY: build clean test log behave ptw unzip flake8 tester
 
 log:
 	rm -f output/Lib%3ALog4MT.rptok
@@ -89,3 +95,5 @@ vscode: .vscode/extensions.json maptool-macros.code-workspace
 
 flake8:
 	flake8 --ignore E501,E402,F405
+
+.PHONY: build clean test log behave ptw unzip flake8 tester Lib-Log4MT $(PROJECTS)

@@ -12,7 +12,7 @@ import os
 import sys
 sys.path.insert(0, 'docker')
 from argparse import ArgumentParser
-from MTAssetLibrary import GetAsset
+from MTAssetLibrary import GetAsset, LoadConfig
 import logging as log
 import configparser
 
@@ -23,12 +23,7 @@ def ConfigArgs():
     Returns: argumentparser namespace with config and commandline arguments
     """
 
-    c = configparser.ConfigParser()
-    c.read(os.getenv('MTASSET_CONFIG') or 'config.ini')
-    if 'extract' not in c:
-        c['extract'] = {}
-    if 'extractdirectory' not in c['extract']:
-        c['extract']['directory'] = '.'
+    c = LoadConfig()
 
     AP = ArgumentParser(description = "MapTool Asset Extractor")
 
@@ -58,7 +53,7 @@ def ConfigArgs():
             action='store_true',
             help='Turn on informative output')
 
-    return AP.parse_args()
+    return c, AP.parse_args()
 
 def SetupLogging(av):
     """SetupLogging
@@ -81,7 +76,7 @@ def SetupLogging(av):
 
 if __name__ == '__main__':
 
-    av = ConfigArgs()
+    config, av = ConfigArgs()
     SetupLogging(av)
 
     asset = GetAsset(*av.input, name=av.name, path=av.output)

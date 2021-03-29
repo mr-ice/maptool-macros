@@ -11,6 +11,7 @@ import datetime
 import random
 import string
 import logging as log
+import configparser
 from subprocess import Popen, run, PIPE
 from urllib.parse import quote_plus
 from lxml import objectify, etree
@@ -87,14 +88,21 @@ def GitShow():
         'tag': GitTag(),
         'branch': GitBranch(),
         'sha': GitSha(),
-        'dirty': GitDirty()
+        'dirty': GitDirty(),
+        'tagref': GitTagRef()
     }
 
 
 def GitTag():
-    """Returns git describe --tags --dirty """
+    """Returns git describe --tags --dirty --abbrev=8 """
     cmd = b'git describe --tags --dirty --abbrev=8'
     return GitCmd(cmd)
+
+
+def GitTagRef():
+    """Returns GitTag after \d-g"""
+    tag = GitTag()
+    return re.sub('.*\d-g', '', str(tag))
 
 
 def GitDirty():
@@ -117,7 +125,7 @@ def GitSha():
     return GitCmd(cmd) or 'unknown'
 
 
-git_tag_str = GitSha() + GitDirty()
+git_tag_str = GitTagRef()
 git_comment_str = f'<!-- {github_url} {git_tag_str} -->'
 
 
@@ -275,7 +283,7 @@ def write_macro_files(macro, tofilebase):
         command = macro.command.text or ''
         del(macro.command)
     log.info(f'extracting {macro.label} to {tofilebase}.xml')
-    pattern = f'(<!-- {github_url} [0-9a-z-]+ -->\n?)'
+    pattern = f'(<!-- {github_url} [0-9a-zA-Z-]+ -->\n?)'
     if match := re.match(pattern, command):
         command = command.replace(match[0], '')
     with open(tofilebase + '.xml', 'w') as fh:
@@ -363,3 +371,24 @@ def run_extract(context, *args):
     p = Popen([context.extract, *args],
               stderr=PIPE, stdout=PIPE, close_fds=True)
     context.stdout, context.stderr = p.communicate()
+
+
+def LoadConfig():
+    c = configparser.ConfigParser()
+    c.read_dict(
+        {
+            'assemble': {
+                'directory': '.',
+                'LibTokenGitTagElement': 'label'
+            },
+            'extract': {
+                'directory': '.'
+            }
+        }
+    )
+    c.read(os.getenv('MTASSET_CONFIG') or 'config.ini')
+    if 'assemble' not in c:
+        c['assemble'] = {}
+    if 'directory' not in c['assemble']:
+        c['assemble']['directory'] = '.'
+    return c

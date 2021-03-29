@@ -7,6 +7,7 @@ import glob
 import logging as log
 from lxml.etree import Element, tostring
 from MTAssetLibrary import tagset, random_string, run_extract, run_assemble
+from MTAssetLibrary import DataElement, git_tag_str
 from lxml import objectify
 from behave import given, when, then
 
@@ -113,7 +114,7 @@ def step_impl(context):  # noqa: F811
 
 @then(u'I will have a Token file')
 def step_impl(context):  # noqa: F811
-    assert os.path.exists(context.tokenfilename), f'{os.listdir(".")=}'
+    assert os.path.exists(context.tokenfilename), f"{os.listdir('.')=} in '{os.getcwd()}'"
 
 
 @then(u'the Token file will be a zipfile')
@@ -366,8 +367,9 @@ def step_impl(context):  # noqa: F811
 @when(u'I assemble that Token')
 def step_impl(context):  # noqa: F811
     run_assemble(context, context.tokenpath)
+    # assert False, f"{context.tokenpath} may have something to share (possibly {context.stderr}) in '{os.getcwd()}'"
     # context.projcontents = open(context.projpath).read()
-    assert b'Error' not in context.stderr, context.stderr
+    assert b'Error' not in context.stderr, f"{context.stderr} assembling {context.tokenpath} in '{os.getcwd()}'"
 
 
 @when(u'that token is in a clean checkout')
@@ -541,7 +543,7 @@ def step_impl(context):   # noqa: F811
     assert len(context.source['token']['rptok']) > 1
     context.tokenfile = context.source['token']['rptok'][0]
     run_extract(context, context.tokenfile)
-    assert b'Error' not in context.stderr
+    assert b'Error' not in context.stderr, f"{context.stderr} in '{os.getcwd()}'"
     context.tokenpath = os.path.basename(os.path.splitext(context.tokenfile)[0])
     assert os.path.exists(context.tokenpath)
 
@@ -566,3 +568,37 @@ def step_impl(context):   # noqa: F811
     cf = zf.open('content.xml')
     content_text = cf.read()
     assert b'propertyMapCI' in content_text
+
+
+@given(u'that token name begins with Lib')
+def step_impl(context):  # noqa: F811
+    content_xml = os.path.join(context.tokenpath, 'content.xml')
+    xml = objectify.parse(content_xml)
+    xml.getroot().name = DataElement('Lib:' + random_string())
+    xml.write(content_xml, pretty_print=True)
+    assert '<name>Lib:' in open(content_xml).read(), f"Name not Lib: in {content_xml} in '{os.getcwd()}'"
+
+
+@given(u'LibTokenGitTagElement in config.ini')
+def step_impl(context):  # noqa: F811
+    context.tokenelement = '_' + random_string()
+    context.tokenname = os.path.join('output', os.path.basename(context.tokenfile))
+    with open('config.ini', 'w') as fh:
+        fh.write('[assemble]\ndirectory = output\nLibTokenGitTagElement = ' + context.tokenelement + '\n\n[extract]\ndirectory = .')
+    assert 'LibTokenGitTagElement' in open('config.ini').read()
+
+
+@then(u'the asset has the element named')
+def step_impl(context):  # noqa: F8119
+    zf = zipfile.ZipFile(context.tokenname)
+    content_xml = zf.open('content.xml')
+    assert context.tokenelement in content_xml.read().decode()
+    content_xml.seek(0, 0)
+    xml = objectify.parse(content_xml)
+    context.root = xml.getroot()
+    assert context.tokenelement in [x.tag for x in context.root.iterchildren()]
+
+
+@then(u'the element has the git tag string')
+def step_impl(context):  # noqa: F811
+    assert context.root[context.tokenelement] == 'None'

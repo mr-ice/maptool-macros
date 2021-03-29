@@ -117,10 +117,18 @@ Feature: Assemble
          And that macroset contains macros from the "second" project
          And that macroset contains macros from the "third" project
 
-    @wip
     Scenario: assemble a token pulls in propertyMapCI.xml automatically
        Given I have a token extract directory
          And the content.xml does not have a propertyMapCI
          And that directory has a propertyMapCI.xml file
         When I assemble that token
         Then the asset has a propertyMapCI
+
+    @wip
+    Scenario: assemble a token puts git tag on element in config file
+       Given I have a token extract directory
+         And that token name begins with Lib
+         And LibTokenGitTagElement in config.ini
+        When I assemble that token
+        Then the asset has the element named
+         And the element has the git tag string
