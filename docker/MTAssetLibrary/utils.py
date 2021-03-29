@@ -11,6 +11,7 @@ import datetime
 import random
 import string
 import logging as log
+import configparser
 from subprocess import Popen, run, PIPE
 from urllib.parse import quote_plus
 from lxml import objectify, etree
@@ -370,3 +371,24 @@ def run_extract(context, *args):
     p = Popen([context.extract, *args],
               stderr=PIPE, stdout=PIPE, close_fds=True)
     context.stdout, context.stderr = p.communicate()
+
+
+def LoadConfig():
+    c = configparser.ConfigParser()
+    c.read_dict(
+        {
+            'assemble': {
+                'directory': '.',
+                'LibTokenGitTagElement': 'label'
+            },
+            'extract': {
+                'directory': '.'
+            }
+        }
+    )
+    c.read(os.getenv('MTASSET_CONFIG') or 'config.ini')
+    if 'assemble' not in c:
+        c['assemble'] = {}
+    if 'directory' not in c['assemble']:
+        c['assemble']['directory'] = '.'
+    return c

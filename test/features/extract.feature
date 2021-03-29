@@ -56,7 +56,6 @@ Feature: extract
          And I should get a macro command file
          And that macro command file should not have a github comment
 
-    @wip
     Scenario: Extract a macro from token with github comment
        Given I have a token with github comment on a macro
         When I extract a token
