@@ -5,6 +5,7 @@
 [h: dnd5e_Property_resetCalculatedProperties()]
 [h: monsterName = json.get (monsterJson, "name")]
 [h: setProperty ("Character ID", monsterName)]
+[h: setProperty (PROP_MONSTER_TOON_SLUG, json.get (monsterJson, "slug"))]
 [h, if (overwriteLabelChoice == VALUE_OVERWRITE_LABEL_NAME): setName (monsterName)]
 [h, if (overwriteLabelChoice == VALUE_OVERWRITE_LABEL_GM): setGMName (monsterName)]
 [h: setSize (json.get (monsterJson, "size"))]

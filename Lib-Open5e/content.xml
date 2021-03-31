@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>tTKk9+bxQ/GuBZ5deSfyKQ==</baGUID>
+    <baGUID>VfzHaowmTf64kVDx5ej+OQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>pBovtUn/RZqRFYNHfUwMww==</baGUID>
+    <baGUID>YZ+myICpTZyercr97yr0KQ==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -16,7 +16,7 @@
   </imageAssetMap>
   <x>950</x>
   <y>350</y>
-  <z>13</z>
+  <z>2</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
@@ -59,7 +59,7 @@
   <isFlippedY>false</isFlippedY>
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
-  <label></label>
+  <label/>
   <state>
     <entry>
       <string>Paralyzed</string>
@@ -730,6 +730,54 @@
     <entry>
       <int>23</int>
       <macro name="o5e_RollExpression_forSave"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="o5e_RollExpression_forSpellAttack"/>
+    </entry>
+    <entry>
+      <int>25</int>
+      <macro name="o5e_RollExpression_forWeaponAttack"/>
+    </entry>
+    <entry>
+      <int>26</int>
+      <macro name="o5e_Praser_parseSpellcasting"/>
+    </entry>
+    <entry>
+      <int>27</int>
+      <macro name="o5e_Token_Monster_applySpecialAbilities"/>
+    </entry>
+    <entry>
+      <int>28</int>
+      <macro name="o5e_Macro_resetToken"/>
+    </entry>
+    <entry>
+      <int>29</int>
+      <macro name="o5e_Macro_setupToken"/>
+    </entry>
+    <entry>
+      <int>30</int>
+      <macro name="o5e_Token_applyMonsterToon"/>
+    </entry>
+    <entry>
+      <int>31</int>
+      <macro name="o5e_Parser_parseSpells"/>
+    </entry>
+    <entry>
+      <int>32</int>
+      <macro name="o5e_Monster_refreshMonster_v15"/>
+    </entry>
+    <entry>
+      <int>33</int>
+      <macro name="Reset+Monster+Token"/>
+    </entry>
+    <entry>
+      <int>34</int>
+      <macro name="Setup+Monster+Token"/>
+    </entry>
+    <entry>
+      <int>35</int>
+      <macro name="Update+Token+to+v0.16"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

@@ -1,5 +1,9 @@
 [h: inputObj = arg (0)]
 [h: o5e_Constants(getMacroName())]
+[h: isOldVersion = dnd5e_Util_checkVersion (getProperty (PROP_MONSTER_TOON_VERSION), "0.16")]
+
+[h, if (!isOldVersion): o5e_Monster_refreshMonster_v15()]
+
 [h: actionName = json.get (inputObj, "actionName")]
 [h: advDisadv = json.get (inputObj, "advDisadv")]
 [h: monsterActions = getProperty ("_o5e_MonsterActions")]

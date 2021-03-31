@@ -1,0 +1,1 @@
+[r: o5e_Macro_setupToken()]
