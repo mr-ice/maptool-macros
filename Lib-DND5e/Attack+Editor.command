@@ -1,9 +1,12 @@
-[h: log.debug ("Attack Editor: args = " + json.indent (macro.args))]
+[h: inputArgs = macro.args]
+[h: dnd5e_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "## Attack Editor: args = " + inputArgs)]
 [h: LAST_ATTACK_SELECTION = "lastAttackSelection"]
 [h: lastAttackSelection = getProperty (LAST_ATTACK_SELECTION)]
-[r, if (json.length (macro.args) > 0), code: {
+[r, if (json.length (inputArgs) > 0), code: {
 	<!-- Called back from the processor, do the thing -->
-	[h: retObj = arg (0)]
+	<!-- retObj = json.get (inputArgs, 0)-->
+	[h: retObj = inputArgs]
 	[h: action = json.get (retObj, "action")]
 	[h: attackObj = json.get (retObj, "attackObj")]
 	[h: selectedAttack = json.get (retObj, "selectedAttack")]

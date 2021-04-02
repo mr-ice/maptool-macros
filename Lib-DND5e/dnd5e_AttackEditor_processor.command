@@ -1,6 +1,7 @@
-[h: log.debug ("Proc args = " + json.indent (macro.args))]
 
 [h: inputArgs = macro.args]
+[h: dnd5e_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "##Proc args = " + json.indent (inputArgs))]
 [h: actionButton = json.get (inputArgs, "actionButton")]
 [h: saveAttackAsMacro = json.get (inputArgs, "saveAttack")]
 [h: duplicateAttack = json.get (inputArgs, "duplicateAttack")]
@@ -145,7 +146,7 @@
 							   "attackObj", attackObj)]
 	[h: queryParamIndex = indexOf (callbackLink, "?")]
 	[h, if (queryParamIndex == -1): queryParamIndex = length (callbackLink); ""]
-	[h: callbackLinkWithQuery = substring (callbackLink, 0, queryParamIndex) + "?" + retObj]
-	[h: log.debug ("callbackLinkWithQuery: " + callbackLinkWithQuery)]
+	[h: callbackLinkWithQuery = substring (callbackLink, 0, queryParamIndex) + "?" + encode (retObj)]
+	[h: log.debug (CATEGORY + "## callbackLinkWithQuery: " + callbackLinkWithQuery)]
 	[h: execLink (callbackLinkWithQuery)]
 }]
