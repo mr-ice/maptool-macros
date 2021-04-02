@@ -1,0 +1,10 @@
+[h: o5e_Constants (getMacroName())]
+[h: selected = getSelected("json")]
+[h: log.debug (CATEGORY + "## selected = " + selected)]
+[h: assert (json.length (selected), "<b><font color='red'>No Token selected!</font></b><Br>Please select 1 or more tokens")]
+[r, foreach (tokenId, selected, ""), code: {
+	[h: monsterToon = getProperty (PROP_MONSTER_TOON_JSON, tokenId)]
+	[h: o5e_Token_applyMonsterToon (monsterToon, tokenId)]
+	[h: msg = "Token: " + getName (tokenId) + "<br>Monster: " + json.get (monsterToon, "name") + "<br><br>"]
+	[r: msg]
+}]

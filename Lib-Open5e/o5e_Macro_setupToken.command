@@ -1,0 +1,12 @@
+[h: selected = getSelected("json")]
+[h: o5e_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "## selected = " + selected)]
+[h: assert (json.length (selected), "<b><font color='red'>No Token selected!</font></b><Br>Please select 1 or more tokens")]
+[h: firstSelected = json.get (selected, 0)]
+[h, token (firstSelected): slug = getProperty("Character ID")]
+[h, token (firstSelected), if (encode (slug) == ""): slug = getName(); ""]
+[h: monsterToon = o5e_Open5e_searchMonsterInput (slug)]
+[r: "<br>name: " + json.get (monsterToon, "name")]
+[h, foreach (selectedToken, selected), code: {
+	[o5e_Token_applyMonsterToon (monsterToon, selectedToken)]
+}]

@@ -1,5 +1,6 @@
 [h: rollString = arg (0)]
-[h: log.debug (getMacroName() + ": rollString = " + rollString)]
+[h: o5e_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "## rollString = " + rollString)]
 [h: rollString = replace (rollString, "\\s", "")]
 <!-- 1d6+8, 4d8 + 9, 67d20, 8d9-12 -->
 [h: rollStringRegEx = "(\\d+)d(\\d+)\\+?(-?\\d*)"]

@@ -3,7 +3,9 @@
   <token name="Lib-Open5e"/>
   <token name="Lib-O5e-MonsterSupplement"/>
   <macroset name="DnD5e-GM">
-    <macro name="macro/Setup+Monster+Token"/>
-    <macro name="macro/Edit+Ext+DB"/>
+    <macro name="Lib-Open5e/Setup+Monster+Token"/>
+    <macro name="Lib-Open5e/Reset+Monster+Token"/>
+    <macro name="Lib-Open5e/Update+Token+to+v0.16"/>
+    <macro name="Lib-O5e-MonsterSupplement/Edit+Ext+DB"/>
   </macroset>
 </project>

@@ -1,44 +1,36 @@
 [h: actionObj = arg (0)]
-[h, if (json.length (macro.args) > 1):  attackExpression = arg (1); attackExpression = "{}"]
+
 [h: o5e_Constants (getMacroName())]
 [h: damageRollObj = json.get (actionObj, "damageRollObj")]
 [h: log.debug (CATEGORY + "## damageRollObj = " + damageRollObj)]
 [h, if (encode (damageRollObj) == ""): return (0, ""); ""]
-<!-- 0.16 - Were going to ignore this value right now, because we always have. In a future
-	version, well come back and use this as a basis for calculating an actual bonus, should
-	a monster actually have one. When we get to that point, hopefully well be at a point
-	where we can distinguish a monster toons version and know if the damageBonus is legit, or
-	the "0 bug" thats in 0.15 (where monster toons are unversioned) -->
+
 [h: damageBonus = json.get (damageRollObj, "bonus")]
 [h: damageDiceRolled = json.get (damageRollObj, "diceRolled")]
 [h: damageDiceSize = json.get (damageRollObj, "diceSize")]
 [h: damageType = json.get (actionObj, "damageType")]
 
-[h: isWeapon = if (dnd5e_RollExpression_hasType (attackExpression, "weapon"), 1, 0)]
-[h, if (isWeapon): weaponType = dnd5e_RollExpression_getWeaponType (attackExpression); weaponType = -1]
-[h: log.debug (CATEGORY + "## isWeapon = " + isWeapon + "; weaponType = " + weaponType)]
+<!-- on occassion, we get a monster that does static damage (usually just the 1 point). They
+	wont have any useful data on the dmageRollObj. In that case, build a roll string 1d1 and
+	add the avg damage and the bonus - 1 -->
+[h, if (damageDiceRolled == ""), code: {
+	[damageDiceRolled = 1]
+	[damageDiceSize = 1]
+	[damageBonus = damageBonus + json.get (actionObj, "damageAverage") - 1]
+}]
 
-<!-- someday, use these cases
-	case 0: damageBonus = damageBonus - getProperty ("bonus.attack.melee");
-	case 1: damageBonus = damageBonus - getProperty ("bonus.attack.ranged");
-	case 2: damageBonus = damageBonus - getProperty ("bonus.attack.finesse");
--->
-<!-- for now, there is no "bonus" -->
-[h: damageBonus = 0]
-
-[h: log.debug (CATEGORY + "## damageBonus = " + damageBonus)]
+[h: attackClass = json.get (actionObj, "attackClass")]
 [h: saveDC = json.get (actionObj, "saveDC")]
-[h, if (!isNumber (saveDC)): saveDC = 0; ""]
+[h, if (saveDC == ""): saveDC = 0]
 [h: damageExpressions = "[]"]
 [h, if (saveDC > 0), code: {
 	[saveExpression = o5e_RollExpression_forSave (actionobj)]
 	[damageExpressions = json.append (damageExpressions, saveExpression)]
 	[damageExpression = dnd5e_RollExpression_SaveDamage ()]
     [damageExpression = dnd5e_RollExpression_setSaveEffect (damageExpression, "none")]
-
 }; {
 	[damageExpression = dnd5e_RollExpression_Damage ()]
-	[if (isWeapon):
+	[if (attackClass == "Weapon"):
 		damageExpression = dnd5e_RollExpression_addType (damageExpression, dnd5e_Type_Weapon())]
 }]
 [h: damageExpression = dnd5e_RollExpression_setDiceRolled (damageExpression, damageDiceRolled)]

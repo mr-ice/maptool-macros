@@ -1,0 +1,23 @@
+<propertyMapCI>
+  <store>
+    <entry>
+      <string>libversion</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>libversion</key>
+        <value class="string">0.16</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>lib.releasenotesobj</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>lib.releaseNotesObj</key>
+        <value class="string">{
+  "0.15": "Library+has+been+officially+versioned.",
+  "0.16": "%3Cli%3EMonster+attacks+include+Save+expressions%3C%2Fli%3E+%3Cli%3EAttack+RollExpressions+use+Weapon+Types+%28melee%2C+ranged%2C+finesse%29.+These+attacks+are+affected+by+the+related+Advantage%2FDisadvantage+States%3C%2Fli%3E+%3Cli%3E%3Cfont+color%3D%22red%22%3E%3Cb%3EMonsters+built+prior+to+0.16+require+an+Update.%3C%2Fb%3E%3C%2Ffont%3E+This+can+be+accomplished+in+one+of+two+ways%3A%3CBr%3E+%3Col%3E%3Cli%3EAutomatically%3A+The+first+time+any+of+the+generated+action+macros+are+used+for+a+token%2C+it+will+first+automatically+update+itself+before+completing+the+macro.+This+will+result+in+a+noticeable+pause+for+each+affected+token%2C+but+only+once+per+token.%3C%2Fli%3E+%3Cli%3EManually%3A+Select+any+number+of+tokens+to+update+and+then+launch+the+%22Update+Token+to+v0.16%22+macro%3C%2Fli%3E+%3C%2Fol%3E%3C%2Fli%3E"
+}</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+  </store>
+</propertyMapCI>

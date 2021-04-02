@@ -1,8 +1,17 @@
 [h: actionObj = arg (0)]
 [h: o5e_Constants (getMacroName())]
+
+[h: spellcastingAbility = json.get (actionObj, "spellcastingAbility")]
+<!-- If its not listed, its an innate ability (like a breath weapon) - thats constitution based -->
+[h, if (spellcastingAbility == ""): spellcastingAbility = "Constitution"]
+[h: abilityBonus = getProperty ("abilityBonus." + spellcastingAbility)]
+[h: profValue = getProperty ("Proficiency")]
 [h: saveDC = json.get (actionObj, "saveDC")]
-[h, if (!isNumber (saveDC)): return (0, "")]
-[h, if (saveDC <= 1): return (0, "")]
+<!-- No calculating the saveDC, just yet. Issue #260 -->
+[h: saveDCx = 8 + profValue + abilityBonus]
+[h: log.debug (CATEGORY + "## profValue = " + profValue + "; spellcastingAbility = " + 
+		spellcastingAbility + "; abilityBonus = " + abilityBonus)]
+
 [h: saveAbility = json.get (actionObj, "saveAbility")]
 [h, if (saveAbility == ""), code: {
 	[log.debug (CATEGORY + "## no save ability in save object")]

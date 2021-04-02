@@ -15,4 +15,6 @@
 [h: CATEGORY = LIB_TOKEN + "." + arg(0)]
 [h: PROP_MONSTER_TOON_VERSION = "o5e.monsterToon.version"]
 [h: PROP_MONSTER_TOON_JSON = "o5e.monsterToon.json"]
+[h: PROP_MONSTER_TOON_SPELLCASTING_OBJ = "o5e.monsterToon.spellCasting"]
+[h: PROP_MONSTER_TOON_SLUG = "o5e.monsterToon.slug"]
 [h: MONSTER_TOON_VERSION = 0.16]

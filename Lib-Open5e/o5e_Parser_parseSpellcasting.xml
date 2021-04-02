@@ -1,0 +1,41 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>17072bef-9c10-4d82-8562-a3f7d3e55cc7</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>26</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>o5e_Parser_parseSpellcasting</label>
+  <group>Open 5e - Parser</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;Given a monster toon, return the Spellcasting object:
+
+{
+	"ability": "Charisma",
+	"level": 8,
+	"saveDC": 14,
+	"spellList": "wizard",
+	"spells": {
+		"at will": ["fire bolt", "minor illusion", "poison spray"],
+		"1st level" : ["burning hands", "mage armor", "magic missile"],
+		"2nd level" : ["hold person", "mirror image", "misty step"]
+		}
+}&lt;/pre&gt;&lt;/html&gt;
+
+If the monstertoon has no Spellcasting special ability, an empty object is returned. For Innate spellcasters, the spellList will be "innate" and spells will be keyed as "n/day" instead of "nth level".</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

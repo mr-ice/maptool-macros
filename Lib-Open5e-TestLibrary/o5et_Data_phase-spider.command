@@ -1,0 +1,33 @@
+[h: macro.return = "%7B%22slug%22%3A%22phase-spider%22%2C%22name%22%3A%22Phase+Spider%22%2C%22size%2" + 
+ "2%3A%22Large%22%2C%22type%22%3A%22monstrosity%22%2C%22subtype%22%3A%22%22%2C%22g" + 
+ "roup%22%3Anull%2C%22alignment%22%3A%22unaligned%22%2C%22armor_class%22%3A13%2C%2" + 
+ "2armor_desc%22%3A%22natural+armor%22%2C%22hit_points%22%3A32%2C%22hit_dice%22%3A" + 
+ "%225d10%22%2C%22speed%22%3A%7B%22walk%22%3A30%2C%22climb%22%3A30%7D%2C%22strengt" + 
+ "h%22%3A15%2C%22dexterity%22%3A15%2C%22constitution%22%3A12%2C%22intelligence%22%" + 
+ "3A6%2C%22wisdom%22%3A10%2C%22charisma%22%3A6%2C%22strength_save%22%3Anull%2C%22d" + 
+ "exterity_save%22%3Anull%2C%22constitution_save%22%3Anull%2C%22intelligence_save%" + 
+ "22%3Anull%2C%22wisdom_save%22%3Anull%2C%22charisma_save%22%3Anull%2C%22perceptio" + 
+ "n%22%3Anull%2C%22skills%22%3A%7B%22stealth%22%3A6%7D%2C%22damage_vulnerabilities" + 
+ "%22%3A%22%22%2C%22damage_resistances%22%3A%22%22%2C%22damage_immunities%22%3A%22" + 
+ "%22%2C%22condition_immunities%22%3A%22%22%2C%22senses%22%3A%22darkvision+60+ft.%" + 
+ "2C+passive+Perception+10%22%2C%22languages%22%3A%22%22%2C%22challenge_rating%22%" + 
+ "3A%223%22%2C%22actions%22%3A%5B%7B%22name%22%3A%22Bite%22%2C%22desc%22%3A%22Mele" + 
+ "e+Weapon+Attack%3A+%2B4+to+hit%2C+reach+5+ft.%2C+one+creature.+Hit%3A+7+%281d10+" + 
+ "%2B+2%29+piercing+damage%2C+and+the+target+must+make+a+DC+11+Constitution+saving" + 
+ "+throw%2C+taking+18+%284d8%29+poison+damage+on+a+failed+save%2C+or+half+as+much+" + 
+ "damage+on+a+successful+one.+If+the+poison+damage+reduces+the+target+to+0+hit+poi" + 
+ "nts%2C+the+target+is+stable+but+poisoned+for+1+hour%2C+even+after+regaining+hit+" + 
+ "points%2C+and+is+paralyzed+while+poisoned+in+this+way.%22%2C%22attack_bonus%22%3" + 
+ "A4%2C%22damage_dice%22%3A%221d10%22%2C%22damage_bonus%22%3A2%7D%5D%2C%22reaction" + 
+ "s%22%3A%22%22%2C%22legendary_desc%22%3A%22%22%2C%22legendary_actions%22%3A%22%22" + 
+ "%2C%22special_abilities%22%3A%5B%7B%22name%22%3A%22Ethereal+Jaunt%22%2C%22desc%2" + 
+ "2%3A%22As+a+bonus+action%2C+the+spider+can+magically+shift+from+the+Material+Pla" + 
+ "ne+to+the+Ethereal+Plane%2C+or+vice+versa.%22%7D%2C%7B%22name%22%3A%22Spider+Cli" + 
+ "mb%22%2C%22desc%22%3A%22The+spider+can+climb+difficult+surfaces%2C+including+ups" + 
+ "ide+down+on+ceilings%2C+without+needing+to+make+an+ability+check.%22%7D%2C%7B%22" + 
+ "name%22%3A%22Web+Walker%22%2C%22desc%22%3A%22The+spider+ignores+movement+restric" + 
+ "tions+caused+by+webbing.%22%7D%5D%2C%22spell_list%22%3A%5B%5D%2C%22img_main%22%3" + 
+ "Anull%2C%22document__slug%22%3A%22wotc-srd%22%2C%22document__title%22%3A%22Syste" + 
+ "ms+Reference+Document%22%2C%22document__license_url%22%3A%22http%3A%2F%2Fopen5e." + 
+ "com%2Flegal%22%7D" + 
+ ""]
