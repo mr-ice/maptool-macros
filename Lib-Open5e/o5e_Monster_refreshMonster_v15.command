@@ -2,7 +2,15 @@
 [h: isOldVersion = dnd5e_Util_checkVersion (getProperty (PROP_MONSTER_TOON_VERSION), "0.16")]
 [h: assert (!isOldVersion, getName() + ": Does not require refresh")]
 [h: slug = getProperty ("Character ID")]
-[h: monsterToon = o5e_Open5e_get ("monsters/" + slug)]
+<!-- Search by name == slug first. If that doesnt work, try the direct path -->
+[h: resultSet = o5e_Open5e_get ("monsters/?name=" + encode (slug))]
+[h: resultCount = json.get (resultSet, "count")]
+[h, if (resultCount > 0), code: {
+	[results = json.get (resultSet, "results")]
+	[monsterToon = json.get (results, 0)]
+}; {
+	[monsterToon = o5e_Open5e_get ("monsters/" + slug)]
+}]
 [h: setProperty (PROP_MONSTER_TOON_JSON, monsterToon)]
 [h: CRString = json.get (monsterToon, "challenge_rating")]
 [h, if (CRString == ""): CRString = "0"]
