@@ -54,9 +54,9 @@
 	1 - ranged
 	2 - finesse -->
 [h: weaponType = "0"]
-[h: finesseBonus = bonus.attack.finesse]
-[h: meleeBonus = bonus.attack.melee]
-[h: rangedBonus = bonus.attack.ranged]
+[h: finesseBonus = getProperty ("bonus.attack.finesse")]
+[h: meleeBonus = getProperty ("bonus.attack.melee")]
+[h: rangedBonus = getProperty ("bonus.attack.ranged")]
 [h: spellcastingAbility = "Charisma"]
 [h: log.debug (CATEGORY + "## finesseBonus = " + finesseBonus + "; meleeBonus = " + 
 		meleeBonus + "; rangedBonus = " + rangedBonus + "; profValue = " + profValue)]
@@ -97,8 +97,8 @@
 }]
 
 [h: attackObj = json.set ("", "weaponType", weaponType,
-						 "spellcastingAbility", spellcastingAbility,
-					     "attackType", attackType,
+                         "spellcastingAbility", spellcastingAbility,
+                         "attackType", attackType,
                          "attackClass", attackClass,
                          "attackBonus", attackBonus,
                          "reachRange", reachRange,
