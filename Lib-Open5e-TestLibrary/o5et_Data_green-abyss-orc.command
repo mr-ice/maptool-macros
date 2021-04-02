@@ -1,0 +1,33 @@
+[h: macro.return = "%7B%22slug%22%3A%22green-abyss-orc%22%2C%22name%22%3A%22Green+Abyss+Orc%22%2C%22" + 
+ "size%22%3A%22Medium%22%2C%22type%22%3A%22humanoid%22%2C%22subtype%22%3A%22orc%22" + 
+ "%2C%22group%22%3Anull%2C%22alignment%22%3A%22chaotic+evil%22%2C%22armor_class%22" + 
+ "%3A13%2C%22armor_desc%22%3Anull%2C%22hit_points%22%3A15%2C%22hit_dice%22%3A%222d" + 
+ "8%2B6%22%2C%22speed%22%3A%7B%22climb%22%3A30%2C%22walk%22%3A30%7D%2C%22strength%" + 
+ "22%3A14%2C%22dexterity%22%3A16%2C%22constitution%22%3A16%2C%22intelligence%22%3A" + 
+ "9%2C%22wisdom%22%3A11%2C%22charisma%22%3A10%2C%22strength_save%22%3Anull%2C%22de" + 
+ "xterity_save%22%3Anull%2C%22constitution_save%22%3Anull%2C%22intelligence_save%2" + 
+ "2%3Anull%2C%22wisdom_save%22%3Anull%2C%22charisma_save%22%3Anull%2C%22perception" + 
+ "%22%3A2%2C%22skills%22%3A%7B%22acrobatics%22%3A5%2C%22athletics%22%3A4%2C%22perc" + 
+ "eption%22%3A2%2C%22stealth%22%3A5%7D%2C%22damage_vulnerabilities%22%3A%22%22%2C%" + 
+ "22damage_resistances%22%3A%22%22%2C%22damage_immunities%22%3A%22poison%22%2C%22c" + 
+ "ondition_immunities%22%3A%22poisoned%22%2C%22senses%22%3A%22darkvision+90+ft.%2C" + 
+ "+passive+Perception+12%22%2C%22languages%22%3A%22Orc%22%2C%22challenge_rating%22" + 
+ "%3A%221%2F2%22%2C%22actions%22%3A%5B%7B%22attack_bonus%22%3A4%2C%22damage_dice%2" + 
+ "2%3A%221d6%2B2%22%2C%22desc%22%3A%22Melee+or+Ranged+Weapon+Attack%3A+%2B4+to+hit" + 
+ "%2C+reach+5+ft.+or+range+20%2F60+ft.%2C+one+target.+Hit%3A+5+%281d6+%2B+2%29+pie" + 
+ "rcing+damage%2C+or+6+%281d8+%2B+2%29+piercing+damage+if+used+with+two+hands+to+m" + 
+ "ake+a+melee+attack.+If+the+target+is+a+creature%2C+it+must+succeed+on+a+DC+13+Co" + 
+ "nstitution+saving+throw%2C+taking+9+%282d8%29+poison+damage+on+a+failed+save%2C+" + 
+ "or+half+as+much+damage+on+a+successful+one.+If+the+poison+damage+reduces+the+tar" + 
+ "get+to+0+hp%2C+the+target+is+stable+but+poisoned+for+1+hour%2C+even+after+regain" + 
+ "ing+hp%2C+and+is+paralyzed+while+poisoned+in+this+way.%22%2C%22name%22%3A%22Pois" + 
+ "oned+Spear%22%7D%5D%2C%22reactions%22%3A%22%22%2C%22legendary_desc%22%3A%22%22%2" + 
+ "C%22legendary_actions%22%3A%22%22%2C%22special_abilities%22%3A%5B%7B%22desc%22%3" + 
+ "A%22As+a+bonus+action%2C+the+orc+can+move+up+to+its+speed+toward+a+hostile+creat" + 
+ "ure+that+it+can+see.%22%2C%22name%22%3A%22Aggressive%22%7D%2C%7B%22desc%22%3A%22" + 
+ "While+in+sunlight%2C+the+orc+has+disadvantage+on+attack+rolls%2C+as+well+as+on+W" + 
+ "isdom+%28Perception%29+checks+that+rely+on+sight.+s%22%2C%22name%22%3A%22Sunligh" + 
+ "t+Sensitivity%22%7D%5D%2C%22spell_list%22%3A%5B%5D%2C%22img_main%22%3Anull%2C%22" + 
+ "document__slug%22%3A%22cc%22%2C%22document__title%22%3A%22Creature+Codex+OGL%22%" + 
+ "2C%22document__license_url%22%3A%22http%3A%2F%2Fopen5e.com%2Flegal%22%7D" + 
+ ""]
