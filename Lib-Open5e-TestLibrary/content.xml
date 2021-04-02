@@ -1,32 +1,32 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>TRAdp084TtOjPDXNFK1ZNw==</baGUID>
+    <baGUID>NcnHdsHLRC2gCJ1ysi3aig==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>yK/gFyucR5u68TG624a0bA==</baGUID>
+    <baGUID>xD0XhueiT/OPTcHjUiOoAg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
       <null/>
       <net.rptools.lib.MD5Key>
-        <id>21115388b005a89162a6765131ae01d8</id>
+        <id>4d3b550829c5d7ea16d11d4c00a7e7e2</id>
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
   <x>1000</x>
-  <y>450</y>
-  <z>1</z>
+  <y>550</y>
+  <z>4</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
   <lastX>1000</lastX>
-  <lastY>450</lastY>
+  <lastY>550</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
         <x>20</x>
-        <y>9</y>
+        <y>11</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -35,7 +35,7 @@
     <waypointList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
         <x>20</x>
-        <y>9</y>
+        <y>11</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
@@ -63,7 +63,7 @@
   <vblColorSensitivity>-1</vblColorSensitivity>
   <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
   <isAlwaysVisible>false</isAlwaysVisible>
-  <name>Lib:Open5e</name>
+  <name>Lib:Open5e-TestLibrary</name>
   <ownerType>0</ownerType>
   <tokenShape>SQUARE</tokenShape>
   <tokenType>NPC</tokenType>
@@ -79,7 +79,20 @@
   <isFlippedY>false</isFlippedY>
   <sightType>Normal</sightType>
   <hasSight>false</hasSight>
-  <label/>
+  <notes>Test Plan:
+- Test that weapon attacks are token scaleable
+	Weapon attacks: need a melee attack, ranged attack, and finesse attack
+	Just use some toons from our static list; other tests will confirm we've got those atk types
+		Finesse: deathsworn-elf
+		Melee: stone-giant (both attacks)
+		Ranged: elvish-veteran-archer
+
+- Test that spell attacks are token scaleable
+
+- Test actions that require Saves
+- Test parse unique actions to ensure edge case scenarios are addressed:
+	- Multiple spellcaster abilities
+	- Non-standard attack and damage bonuses</notes>
   <state>
     <entry>
       <string>Paralyzed</string>
@@ -660,144 +673,152 @@
   </state>
   <macroPropertiesMap>
     <entry>
+      <int>128</int>
+      <macro name="o5et_Data_flame-scourged-scion"/>
+    </entry>
+    <entry>
       <int>1</int>
       <macro name="onCampaignLoad"/>
     </entry>
     <entry>
+      <int>129</int>
+      <macro name="o5et_Data_ghoul-imperial"/>
+    </entry>
+    <entry>
       <int>2</int>
-      <macro name="o5e_Parser_parseActionString"/>
+      <macro name="Override+Run+Tests"/>
+    </entry>
+    <entry>
+      <int>130</int>
+      <macro name="o5et_Data_roper"/>
     </entry>
     <entry>
       <int>3</int>
-      <macro name="o5e_Parser_parseDamageType"/>
+      <macro name="Run+Tests"/>
+    </entry>
+    <entry>
+      <int>131</int>
+      <macro name="o5et_Test_testWeaponActions"/>
     </entry>
     <entry>
       <int>4</int>
-      <macro name="o5e_Parser_parseRollString"/>
-    </entry>
-    <entry>
-      <int>5</int>
-      <macro name="o5e_Open5e_searchMonster"/>
+      <macro name="Constants"/>
     </entry>
     <entry>
       <int>6</int>
-      <macro name="o5e_Open5e_get"/>
-    </entry>
-    <entry>
-      <int>7</int>
-      <macro name="o5e_Token_Monster_applyProperties"/>
-    </entry>
-    <entry>
-      <int>8</int>
-      <macro name="o5e_Token_Monster_applyActions"/>
+      <macro name="o5e_Util_createTestToken"/>
     </entry>
     <entry>
       <int>9</int>
-      <macro name="o5e_Open5e_searchMonsterInput"/>
-    </entry>
-    <entry>
-      <int>10</int>
-      <macro name="o5e_Token_Monster_createMacros"/>
-    </entry>
-    <entry>
-      <int>11</int>
-      <macro name="o5e_Token_rollAction"/>
-    </entry>
-    <entry>
-      <int>12</int>
-      <macro name="o5e_Token_getMonsterActions"/>
-    </entry>
-    <entry>
-      <int>13</int>
-      <macro name="o5e_RollExpression_forAttackAction"/>
-    </entry>
-    <entry>
-      <int>14</int>
-      <macro name="o5e_Parser_parseAttackString"/>
-    </entry>
-    <entry>
-      <int>15</int>
-      <macro name="o5e_RollExpression_forDamageAction"/>
-    </entry>
-    <entry>
-      <int>16</int>
-      <macro name="o5e_Parser_parseSaveString"/>
-    </entry>
-    <entry>
-      <int>17</int>
-      <macro name="o5e_RollExpression_forSaveAction"/>
-    </entry>
-    <entry>
-      <int>18</int>
-      <macro name="o5e_Parser_parseSubActionStrings"/>
+      <macro name="Create+Static+Toons"/>
     </entry>
     <entry>
       <int>19</int>
-      <macro name="o5e_Token_applySenses"/>
-    </entry>
-    <entry>
-      <int>20</int>
-      <macro name="o5e_Util_inferProficiencyAndBonus"/>
-    </entry>
-    <entry>
-      <int>21</int>
-      <macro name="o5e_Constants_getConstant"/>
-    </entry>
-    <entry>
-      <int>22</int>
-      <macro name="o5e_Constants"/>
-    </entry>
-    <entry>
-      <int>23</int>
-      <macro name="o5e_RollExpression_forSave"/>
-    </entry>
-    <entry>
-      <int>24</int>
-      <macro name="o5e_RollExpression_forSpellAttack"/>
-    </entry>
-    <entry>
-      <int>25</int>
-      <macro name="o5e_RollExpression_forWeaponAttack"/>
-    </entry>
-    <entry>
-      <int>26</int>
-      <macro name="o5e_Parser_parseSpellcasting"/>
-    </entry>
-    <entry>
-      <int>27</int>
-      <macro name="o5e_Token_Monster_applySpecialAbilities"/>
-    </entry>
-    <entry>
-      <int>28</int>
-      <macro name="o5e_Macro_resetToken"/>
+      <macro name="o5et_Test_testStaticToons"/>
     </entry>
     <entry>
       <int>29</int>
-      <macro name="o5e_Macro_setupToken"/>
+      <macro name="Create+Base+Properties"/>
     </entry>
     <entry>
       <int>30</int>
-      <macro name="o5e_Token_applyMonsterToon"/>
+      <macro name="o5et_Util_createTestToken"/>
     </entry>
     <entry>
       <int>31</int>
-      <macro name="o5e_Parser_parseSpells"/>
+      <macro name="o5et_Util_cleanTokenProperties"/>
     </entry>
     <entry>
-      <int>32</int>
-      <macro name="o5e_Monster_refreshMonster_v15"/>
+      <int>96</int>
+      <macro name="o5et_Test_testSpellActions"/>
     </entry>
     <entry>
-      <int>33</int>
-      <macro name="Reset+Monster+Token"/>
+      <int>97</int>
+      <macro name="o5et_Util_setupSlug"/>
     </entry>
     <entry>
-      <int>34</int>
-      <macro name="Setup+Monster+Token"/>
+      <int>109</int>
+      <macro name="o5et_Data_Properties_elvish-veteran-archer"/>
     </entry>
     <entry>
-      <int>35</int>
-      <macro name="Update+Token+to+v0.16"/>
+      <int>110</int>
+      <macro name="o5et_Data_Properties_deathsworn-elf"/>
+    </entry>
+    <entry>
+      <int>111</int>
+      <macro name="o5et_Data_Properties_ancient-mithral-dragon"/>
+    </entry>
+    <entry>
+      <int>112</int>
+      <macro name="o5et_Data_Properties_pact-lich"/>
+    </entry>
+    <entry>
+      <int>113</int>
+      <macro name="o5et_Data_Properties_stone-giant"/>
+    </entry>
+    <entry>
+      <int>114</int>
+      <macro name="o5et_Data_Properties_stryx"/>
+    </entry>
+    <entry>
+      <int>115</int>
+      <macro name="o5et_Data_Properties_adult-rime-worm"/>
+    </entry>
+    <entry>
+      <int>116</int>
+      <macro name="o5et_Data_Properties_fire-elemental"/>
+    </entry>
+    <entry>
+      <int>117</int>
+      <macro name="o5et_Data_Properties_flame-scourged-scion"/>
+    </entry>
+    <entry>
+      <int>54</int>
+      <macro name="o5et_Test_testApplyProperties"/>
+    </entry>
+    <entry>
+      <int>118</int>
+      <macro name="o5et_Data_Properties_ghoul-imperial"/>
+    </entry>
+    <entry>
+      <int>55</int>
+      <macro name="o5et_Util_assertEqual"/>
+    </entry>
+    <entry>
+      <int>119</int>
+      <macro name="o5et_Data_Properties_roper"/>
+    </entry>
+    <entry>
+      <int>120</int>
+      <macro name="o5et_Data_elvish-veteran-archer"/>
+    </entry>
+    <entry>
+      <int>121</int>
+      <macro name="o5et_Data_deathsworn-elf"/>
+    </entry>
+    <entry>
+      <int>122</int>
+      <macro name="o5et_Data_ancient-mithral-dragon"/>
+    </entry>
+    <entry>
+      <int>123</int>
+      <macro name="o5et_Data_pact-lich"/>
+    </entry>
+    <entry>
+      <int>124</int>
+      <macro name="o5et_Data_stone-giant"/>
+    </entry>
+    <entry>
+      <int>125</int>
+      <macro name="o5et_Data_stryx"/>
+    </entry>
+    <entry>
+      <int>126</int>
+      <macro name="o5et_Data_adult-rime-worm"/>
+    </entry>
+    <entry>
+      <int>127</int>
+      <macro name="o5et_Data_fire-elemental"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

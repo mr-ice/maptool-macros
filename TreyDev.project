@@ -3,6 +3,7 @@
   <project name="DNDBeyond+Open5e.project"/>
   <project name="DevMacros.project"/>
   <token name="Lib-DNDB-TestLibrary"/>
+  <token name="Lib-Open5e-TestLibrary"/>
   <token name="Lib-JSON-Editor"/>
   <token name="Lib-Log4MT" gitTagElement="label"/>
 </project>

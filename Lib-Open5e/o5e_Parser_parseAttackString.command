@@ -13,6 +13,7 @@
                 REG_RANGE_DIST + "\\s+" + REG_JUNK_TARGET + "\\s+(.*Hit:.*)" ]
                 
 [h: dmgRegEx =  "\\s?" + REG_HIT_AVG_DMG + " *" + REG_DMG_ROLL_STRING + " *(.*)"]
+[h: dmgStaticRegEx = "\\s?" + REG_HIT_AVG_DMG + "(\\s)*(.*)"]
 
 [h: log.debug (CATEGORY + "## attackRegEx = " + attackRegEx)]
 [h: attackFindId = strfind (actionString, attackRegEx)]
@@ -27,7 +28,7 @@
 }]
 
 <!-- there are 6 capture groups, with 6th being the tail -->
-[h: attackType = getGroup (attackFindId, 1, 1)]
+[h: attackType = trim (getGroup (attackFindId, 1, 1))]
 [h: attackClass = getGroup (attackFindId, 1, 2)]
 [h: attackBonus = getGroup (attackFindId, 1, 3)]
 <!-- Ancient Black dragon has weird spaces -->
@@ -68,8 +69,9 @@
 			weaponType = "2"]
 	}; {
 		<!-- Ranged attack -->
-		<!-- use ranged if ranged is a match -->
-		[if (rangedBonus + profValue == attackBonus):
+		<!-- Stone giant throwing rocks edge case: use melee only if melee is a match
+			 and ranged is not-->
+		[if (meleeBonus + profValue != attackBonus || rangedBonus + profValue == attackBonus):
 			weaponType = "1"]
 	}]
 	[switch (weaponType):
@@ -103,18 +105,28 @@
                          "attackRange", attackRange)]
 
 [h: damageActionString = getGroup (attackFindId, 1, 6)]
+[h: log.trace (CATEGORY + "## damageActionString = " + damageActionString)]
 [h: damageFindId = strfind (damageActionString, dmgRegEx)]
 [h: findMatches = getFindCount (damageFindId)]
 [h: log.debug (CATEGORY + "## dmgRegEx = " + dmgRegEx)]
-[h, for (grp, 1, getGroupCount (damageFindId, 1) + 1), code: {
+[h, if (!findMatches), code: {
+	[log.debug (CATEGORY + "## Attempting alternate pattern: " + dmgStaticRegEx]
+	[dmgRegEx = dmgStaticRegEx]
+	[damageFindId = strfind (damageActionString, dmgRegEx)]
+	[findMatches = getFindCount (damageFindId)]
+	[log.trace (CATEGORY + "## findMatches = " + findMatches + "; groupCount = " + 
+		getGroupCount (damageFindId))]
+}]
+
+[h, if (findMatches), for (grp, 1, getGroupCount (damageFindId, 1) + 1), code: {
 	[log.trace (CATEGORY + "## group " + grp + ": " + getGroup (damageFindId, 1, grp))]
 }]
 
 [h, if (findMatches > 0), code: {
 	[dmgAvg = getGroup (damageFindId, 1, 1)]
 	[dmgrollString = getGroup (damageFindId, 1, 2)]
-	
-	[dmgRollObj = o5e_Parser_parseRollString (dmgRollString)]
+	[if (dmgrollString == ""): dmgRollObj = "{}"; 
+		dmgRollObj = o5e_Parser_parseRollString (dmgRollString)]
 	[dmgBonus = json.get (dmgRollObj, "bonus")]
 
 	[if (!isNumber (dmgBonus)): dmgBonus = 0; ""]
@@ -126,6 +138,7 @@
 		default: log.debug (CATEGORY + "## Aw, geeze - weaponType = " + 
 			weaponType + "; attackClass = " + attackClass);
 	]
+	[if (dmgBonus < 0): dmgBonusx = 0]
 	[dmgRollObj = json.set (dmgRollObj, "bonus", dmgBonus)]
 
 	[damageActionString = getGroup (damageFindId, 1, 3)]

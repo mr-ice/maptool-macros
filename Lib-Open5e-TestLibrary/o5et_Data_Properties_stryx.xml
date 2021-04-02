@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f6dd8f26-a459-4d97-b213-9cc3bddd9508</macroUUID>
+  <macroUUID>b33a4cfb-372f-4992-8bef-3a8485bfb58f</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>29</index>
-  <colorKey>blue</colorKey>
+  <index>114</index>
+  <colorKey/>
   <hotKey>None</hotKey>
-  <label>Edit Ext DB</label>
-  <group>Open 5e - Ext DB - GM</group>
+  <label>o5et_Data_Properties_stryx</label>
+  <group>Data Macros</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>white</fontColorKey>
-  <fontSize>1.15em</fontSize>
-  <minWidth>183</minWidth>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Edits the Monster Supplement Database</toolTip>
+  <toolTip/>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

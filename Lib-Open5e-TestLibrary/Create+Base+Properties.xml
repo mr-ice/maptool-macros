@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f6dd8f26-a459-4d97-b213-9cc3bddd9508</macroUUID>
+  <macroUUID>15042c7d-0af5-4baa-b95e-348506a56dc6</macroUUID>
   <saveLocation>Token</saveLocation>
   <index>29</index>
-  <colorKey>blue</colorKey>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Edit Ext DB</label>
-  <group>Open 5e - Ext DB - GM</group>
+  <label>Create Base Properties</label>
+  <group>Tests - Util</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>white</fontColorKey>
-  <fontSize>1.15em</fontSize>
-  <minWidth>183</minWidth>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Edits the Monster Supplement Database</toolTip>
+  <toolTip>Creates the data macros for each example monster token. Specifically, a JSON object keyed by the relevant token properties.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

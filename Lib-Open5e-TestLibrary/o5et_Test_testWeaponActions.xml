@@ -1,21 +1,21 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>f6dd8f26-a459-4d97-b213-9cc3bddd9508</macroUUID>
+  <macroUUID>69419e78-401e-432e-bead-7fc3dbfd0eb2</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>29</index>
-  <colorKey>blue</colorKey>
+  <index>131</index>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>Edit Ext DB</label>
-  <group>Open 5e - Ext DB - GM</group>
+  <label>o5et_Test_testWeaponActions</label>
+  <group>Tests - Main</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
-  <fontColorKey>white</fontColorKey>
-  <fontSize>1.15em</fontSize>
-  <minWidth>183</minWidth>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Edits the Monster Supplement Database</toolTip>
+  <toolTip>Converts expected actionObjects into RollExpressions. Confirms attack &amp; damage bonuses are as expected and scale with token changes.</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

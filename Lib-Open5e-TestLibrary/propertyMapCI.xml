@@ -1,0 +1,137 @@
+<propertyMapCI>
+  <store>
+    <entry>
+      <string>ggdd_useables</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>ggdd_useables</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dnd5e_campaignpreferences</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dnd5e_campaignPreferences</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_ae2_javascript</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_AE2_JavaScript</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>libversion</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>libversion</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>attackexpressionjson</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>attackExpressionJSON</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>savedattackrolledexpressionkey</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>savedAttackRolledExpressionKey</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>campaignpropertiesversion{0.15}</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>campaignPropertiesVersion{0.15}</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dev.versionmap</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dev.versionMap</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>character id</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>Character ID</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_ae2_metadata</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_AE2_Metadata</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>lib.releasenotesobj</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>lib.releaseNotesObj</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>attackjson</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>attackJson</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dnd5e_preferences_user</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dnd5e_Preferences_User</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dnd5e_lastrolledexpression</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dnd5e_lastRolledExpression</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_dndb_overridebasictoon</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_dndb_OverrideBasicToon</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_ae2_actions</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_AE2_Actions</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>dndb_basictoon</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dndb_BasicToon</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>savedattackrolledexpressions</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>savedAttackRolledExpressions</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>_o5e_monsteractions</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>_o5e_MonsterActions</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+  </store>
+</propertyMapCI>

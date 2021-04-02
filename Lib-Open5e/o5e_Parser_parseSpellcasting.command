@@ -13,9 +13,9 @@
 	[desc = ""]
 	[if (json.length (descArry) > 0): desc = json.get (descArry, 0)]
 	[descx = replace (desc, "\\n", "")]
-	[log.debug (CATEGORY + "## desc = " + desc)]
+	[log.debug (CATEGORY + "## desc = " + desc + "; pattern = " + SPELLCASTING_PATTERN)]
 	[findId = strfind (desc, SPELLCASTING_PATTERN)]
-	[log.debug (CATEGORY + "## groups = " + getGroupCount(findId))]
+	[log.trace (CATEGORY + "## groups = " + getGroupCount(findId))]
 	[if (getFindCount(findId) > 0), code: {
 		<!-- group 1: spellcasting ability -->
 		[spellCastingAbility = getGroup (findId, 1, 1)]

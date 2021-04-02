@@ -1,0 +1,33 @@
+[h: macro.return = "%7B%22slug%22%3A%22stone-giant%22%2C%22name%22%3A%22Stone+Giant%22%2C%22size%22%" + 
+ "3A%22Huge%22%2C%22type%22%3A%22giant%22%2C%22subtype%22%3A%22%22%2C%22group%22%3" + 
+ "A%22Giants%22%2C%22alignment%22%3A%22neutral%22%2C%22armor_class%22%3A17%2C%22ar" + 
+ "mor_desc%22%3A%22natural+armor%22%2C%22hit_points%22%3A126%2C%22hit_dice%22%3A%2" + 
+ "211d12%2B55%22%2C%22speed%22%3A%7B%22walk%22%3A40%7D%2C%22strength%22%3A23%2C%22" + 
+ "dexterity%22%3A15%2C%22constitution%22%3A20%2C%22intelligence%22%3A10%2C%22wisdo" + 
+ "m%22%3A12%2C%22charisma%22%3A9%2C%22strength_save%22%3Anull%2C%22dexterity_save%" + 
+ "22%3A5%2C%22constitution_save%22%3A8%2C%22intelligence_save%22%3Anull%2C%22wisdo" + 
+ "m_save%22%3A4%2C%22charisma_save%22%3Anull%2C%22perception%22%3A4%2C%22skills%22" + 
+ "%3A%7B%22athletics%22%3A12%2C%22perception%22%3A4%7D%2C%22damage_vulnerabilities" + 
+ "%22%3A%22%22%2C%22damage_resistances%22%3A%22%22%2C%22damage_immunities%22%3A%22" + 
+ "%22%2C%22condition_immunities%22%3A%22%22%2C%22senses%22%3A%22darkvision+60+ft.%" + 
+ "2C+passive+Perception+14%22%2C%22languages%22%3A%22Giant%22%2C%22challenge_ratin" + 
+ "g%22%3A%227%22%2C%22actions%22%3A%5B%7B%22name%22%3A%22Multiattack%22%2C%22desc%" + 
+ "22%3A%22The+giant+makes+two+greatclub+attacks.%22%7D%2C%7B%22name%22%3A%22Greatc" + 
+ "lub%22%2C%22desc%22%3A%22Melee+Weapon+Attack%3A+%2B9+to+hit%2C+reach+15+ft.%2C+o" + 
+ "ne+target.+Hit%3A+19+%283d8+%2B+6%29+bludgeoning+damage.%22%2C%22attack_bonus%22" + 
+ "%3A9%2C%22damage_dice%22%3A%223d8%22%2C%22damage_bonus%22%3A6%7D%2C%7B%22name%22" + 
+ "%3A%22Rock%22%2C%22desc%22%3A%22Ranged+Weapon+Attack%3A+%2B9+to+hit%2C+range+60%" + 
+ "2F240+ft.%2C+one+target.+Hit%3A+28+%284d10+%2B+6%29+bludgeoning+damage.+If+the+t" + 
+ "arget+is+a+creature%2C+it+must+succeed+on+a+DC+17+Strength+saving+throw+or+be+kn" + 
+ "ocked+prone.%22%2C%22attack_bonus%22%3A9%2C%22damage_dice%22%3A%224d10%22%2C%22d" + 
+ "amage_bonus%22%3A6%7D%5D%2C%22reactions%22%3A%5B%7B%22name%22%3A%22Rock+Catching" + 
+ "%22%2C%22desc%22%3A%22If+a+rock+or+similar+object+is+hurled+at+the+giant%2C+the+" + 
+ "giant+can%2C+with+a+successful+DC+10+Dexterity+saving+throw%2C+catch+the+missile" + 
+ "+and+take+no+bludgeoning+damage+from+it.%22%7D%5D%2C%22legendary_desc%22%3A%22%2" + 
+ "2%2C%22legendary_actions%22%3A%22%22%2C%22special_abilities%22%3A%5B%7B%22name%2" + 
+ "2%3A%22Stone+Camouflage%22%2C%22desc%22%3A%22The+giant+has+advantage+on+Dexterit" + 
+ "y+%28Stealth%29+checks+made+to+hide+in+rocky+terrain.%22%7D%5D%2C%22spell_list%2" + 
+ "2%3A%5B%5D%2C%22img_main%22%3Anull%2C%22document__slug%22%3A%22wotc-srd%22%2C%22" + 
+ "document__title%22%3A%22Systems+Reference+Document%22%2C%22document__license_url" + 
+ "%22%3A%22http%3A%2F%2Fopen5e.com%2Flegal%22%7D" + 
+ ""]

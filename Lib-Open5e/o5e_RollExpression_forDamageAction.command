@@ -10,6 +10,15 @@
 [h: damageDiceSize = json.get (damageRollObj, "diceSize")]
 [h: damageType = json.get (actionObj, "damageType")]
 
+<!-- on occassion, we get a monster that does static damage (usually just the 1 point). They
+	wont have any useful data on the dmageRollObj. In that case, build a roll string 1d1 and
+	add the avg damage and the bonus - 1 -->
+[h, if (damageDiceRolled == ""), code: {
+	[damageDiceRolled = 1]
+	[damageDiceSize = 1]
+	[damageBonus = damageBonus + json.get (actionObj, "damageAverage") - 1]
+}]
+
 [h: attackClass = json.get (actionObj, "attackClass")]
 [h: saveDC = json.get (actionObj, "saveDC")]
 [h, if (saveDC == ""): saveDC = 0]
