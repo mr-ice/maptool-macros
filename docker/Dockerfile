@@ -1,4 +1,5 @@
-FROM alpine
+FROM azul/zulu-openjdk-alpine:14
+#FROM alpine
 
 RUN apk add --update --no-cache make zip bash git python3 py3-lxml py3-pip
 
