@@ -58,16 +58,14 @@ behave: tester.image
 	#git status --ignored
 
 
-log:
-	rm -f output/Lib%3ALog4MT.rptok
+label:
+	rm -rf output/Lib*Log4MT*
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint "assemble" maker "Lib-Log4MT/content.xml"
-	shasum --algorithm=256 output/Lib%3ALog4MT.rptok
-	mv output/Lib%3ALog4MT.rptok output/Lib%3ALog4MT.rptok-from-content.xml
-	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint "assemble" maker "Lib-Log4MT"
-	shasum --algorithm=256 output/Lib%3ALog4MT.rptok
+	(mkdir output/Lib-Log4MT && cd output/Lib-Log4MT && unzip ../Lib-Log4MT.rptok)
+	tail output/Lib-Log4MT/content.xml
 
 ptw:
-	ptw --  --exitfirst --failed-first --last-failed
+	ptw -- --exitfirst --failed-first --last-failed
 
 unzip:
 	for z in test/data/MinViable/*.zip; do unzip -o $$z; done

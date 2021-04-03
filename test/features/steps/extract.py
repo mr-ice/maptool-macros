@@ -56,7 +56,7 @@ def step_impl(context):   # noqa: F811
         os.path.join('src', context.propsname)
     )
     assert b'Error' not in context.stderr, f'{context.stderr=}'
-    context.propsfilename = context.propsname + '.' + tagset.properties.ext
+    context.propsfilename = os.path.join('output', context.propsname + '.' + tagset.properties.ext)
     assert os.path.exists(context.propsfilename), f'{context.propsfilename=} does not exist in\ntmpdir = \'{os.getcwd()}\' \n{glob("*")=}\n{glob("src/*")=}\n{context.stdout=}\n{context.stderr=}'
 
 

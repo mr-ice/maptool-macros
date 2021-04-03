@@ -124,7 +124,6 @@ Feature: Assemble
         When I assemble that token
         Then the asset has a propertyMapCI
 
-    @wip
     Scenario: assemble a token puts git tag on element in config file
        Given I have a token extract directory
          And that token name begins with Lib
