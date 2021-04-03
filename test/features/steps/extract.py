@@ -26,7 +26,7 @@ def step_impl(context):  # noqa: F811
     context.macrosrc = context.source['macro'][0]['path']
     assert os.path.exists(context.macrosrc)
     run_assemble(context, context.macrosrc)
-    context.macrofile = os.path.join('output',context.source['macro'][0]['filename']) + '.' + tagset.macro.ext
+    context.macrofile = os.path.join('output', context.source['macro'][0]['filename']) + '.' + tagset.macro.ext
     assert os.path.exists(context.macrofile), f"no {context.macrofile} in '{os.getcwd()}'"
 
 

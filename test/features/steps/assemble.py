@@ -7,7 +7,7 @@ import glob
 import logging as log
 from lxml.etree import Element, tostring
 from MTAssetLibrary import tagset, random_string, run_extract, run_assemble
-from MTAssetLibrary import DataElement, git_tag_str
+from MTAssetLibrary import DataElement
 from lxml import objectify
 from behave import given, when, then
 
@@ -589,7 +589,7 @@ def step_impl(context):  # noqa: F811
 
 
 @then(u'the asset has the element named')
-def step_impl(context):  # noqa: F8119
+def step_impl(context):  # noqa: F811
     zf = zipfile.ZipFile(context.tokenname)
     content_xml = zf.open('content.xml')
     assert context.tokenelement in content_xml.read().decode()
