@@ -36,9 +36,10 @@ clean:
 	rm -rf *.mtprops *.mtmacro *.mtmacset *.rptok .temp-* output/*
 
 realclean: clean
-	docker image list | awk '/^(maker|tester|behave)[ \t]/{print $$1}' | xargs docker image rm
+	docker image rm maker -f 2> /dev/null
+	docker image rm tester -f 2> /dev/null
+	docker image rm behave -f 2> /dev/null
 	rm -f {maker,tester,behave}.image
-	rm -rf output
 
 maker.image: docker/Dockerfile $(shell echo docker/*)
 	docker build docker -t maker
