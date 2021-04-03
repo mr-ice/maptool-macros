@@ -48,19 +48,14 @@ tester.image: maker.image docker/Dockerfile.tester
 	docker build docker -f docker/Dockerfile.tester -t tester
 	touch $@
 
-behave.image: maker.image docker/Dockerfile.behave
-	docker build docker -f docker/Dockerfile.behave -t behave
-	touch $@
-
 build: maker.image
 
 test: tester.image
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT tester $(ARGS)
 
-behave: behave.image clean
-	#docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT behave $(ARGS)
-	behave --no-capture --no-capture-stderr --no-logcapture
-	git status --ignored
+behave: tester.image
+	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint=behave tester --no-capture --no-capture-stderr --no-logcapture
+	#git status --ignored
 
 
 log:

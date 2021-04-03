@@ -1,6 +1,6 @@
 FROM maker
 
-RUN python3 -mpip install wheel pytest pytest-sugar
+RUN python3 -mpip install wheel pytest pytest-sugar behave
 
 WORKDIR "/MT"
 
