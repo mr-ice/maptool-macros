@@ -1,7 +1,21 @@
-[h: argType = json.type (arg(0))]
-[h, if (argType != "ARRAY"): tokens = json.append ("[]", arg(0)); tokens = arg(0)]
+[h, if (argCount() == 0): tokens = "[]"; tokens = arg(0)]
 [h: dnd5e_Constants(getMacroName())]
 [h: log.debug (CATEGORY + "##tokens = " + tokens)]
+[h, if (json.type (tokens) != "ARRAY"): tokens = json.append ("[]", tokens)]
+
+[h: PROF_SELECT_ALL_TOKENS = "dnd5e.setDrawOrder.noPromptSelectAll"]
+
+[h, if (json.length (tokens) == 0), code: {
+	<!-- do everything in the damn map -->
+	[tokens = getTokens("json")]
+	[assert (json.length(tokens) != 0, "No tokens to redraw")]
+	[doNotPrompt = dnd5e_Preferences_getPreference (PROF_SELECT_ALL_TOKENS)]
+	[log.debug (CATEGORY + "## map tokens = " + tokens + "; doNotPrompt = " + 0)]
+	[if (!doNotPrompt), code: {
+		[abort (input ("junk | Warning: Re-drawing " + json.length (tokens) + " tokens| | Label | span=true","doNotPrompt | 0 | Don't ask again | CHECK"))]
+	}]
+	[dnd5e_Preferences_setPreference (PROF_SELECT_ALL_TOKENS, doNotPrompt, 1)]
+}]
 [h: incr = 500]
 [h: index = 0]
 [h: sizeArry = json.append ("", "Colossal", "Gargantuan", "Huge", "Large",
