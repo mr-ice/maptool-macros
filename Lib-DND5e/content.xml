@@ -1862,6 +1862,10 @@
       <int>326</int>
       <macro name="dnd5e_Macro_createDataMacro"/>
     </entry>
+    <entry>
+      <int>327</int>
+      <macro name="dnd5e_Util_titledOutput"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
