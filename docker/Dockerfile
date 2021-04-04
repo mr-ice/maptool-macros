@@ -13,9 +13,8 @@ COPY MTAssetLibrary/* /usr/local/bin/MTAssetLibrary/
 RUN dos2unix /usr/local/bin/assemble \
   && dos2unix /usr/local/bin/extract
 
-RUN mkdir -p /tmp/fetch \
-  && cd /tmp/fetch \
-  && curl -s -LO https://github.com/RPTools/maptool/releases/download/1.8.4/MapTool-1.8.4.jar
+RUN mkdir -p /tmp/fetch
+ADD https://github.com/RPTools/maptool/releases/download/1.8.4/MapTool-1.8.4.jar /tmp/fetch/
 
 ENV CLASSPATH /tmp/fetch/MapTool-1.8.4.jar:.
 
