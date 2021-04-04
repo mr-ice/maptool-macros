@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>EG9z47UbQUKwN19xLRIqxQ==</baGUID>
+    <baGUID>UrsUbtC7ShGJL71E2sI91w==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>oXWIH6GFTYKVNLKx6dII1w==</baGUID>
+    <baGUID>HnD7nhSQQvifvCBd7jzHuw==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -14,14 +14,34 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>1000</x>
-  <y>350</y>
-  <z>2</z>
+  <x>950</x>
+  <y>150</y>
+  <z>30</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>950</lastX>
+  <lastY>150</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>19</x>
+        <y>3</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>19</x>
+        <y>3</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>304</width>
   <height>291</height>
@@ -1865,6 +1885,14 @@
     <entry>
       <int>327</int>
       <macro name="dnd5e_Util_titledOutput"/>
+    </entry>
+    <entry>
+      <int>328</int>
+      <macro name="dnd5e_Macro_rollInitiative"/>
+    </entry>
+    <entry>
+      <int>329</int>
+      <macro name="dnd5e_Util_Initiative_getGroupByValue"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>
