@@ -9,25 +9,21 @@
 [h: bonus = json.get(macro.args, "bonus")]
 [h, if (!isNumber(bonus)): bonus = 0; '']
 [h: roll = json.get(macro.args, "advantage")]
-[r, switch(json.get(macro.args, "myForm_btn")), code:
+[h, switch(json.get(macro.args, "myForm_btn")), code:
 	case "Roll": {
 		[h, if (bonus != 0): roll = roll + if(bonus > 0, " + ", " - ") + replace(bonus, "-", "");""]
 		[h: log.info("roll = " + roll + "=" + eval(roll))]
 		[h: result = eval(roll)]
-		[r: "Death Save: (" + roll + ") = " + result + "<br/>"]
-		[r, if (result >= 10), code: {
+		[h, if (result >= 10), code: {
 			[h: dsPass = dsPass + 1]
-			[r: "Death Save Passed!" + if(dsPass >= 3, " You are now stable.", "")]
+			[h: textValue = strformat("PASSED(%{result})")]
 		}; {
 			[h: dsFail = dsFail + 1]
-			[r: "Death Save Failed!" + if(dsFail >= 3, " You are dead.", "")]
+			[h: textValue = strformat("FAILED(%{result})")]
 		}]
 	};
 	case "Set": {
-		[r: "Setting death saves to " + dsPass + if(dsPass == 1, " pass", " passes") + " and "
-			+ dsFail + if(dsFail == 1, " failure", " failures") + "."]
-		[r, if (dsFail >= 3): "You are dead."; ""]
-		[r, if (dsFail < 3 && dsPass >= 3): "You are stable."; ""]			
+		[h: textValue = strformat("SET %{dsPass} Pass/%{dsFail} Fail")]
 	};
 	default: {
 	}
@@ -35,5 +31,5 @@
 <!-- Update the toon  -->
 [h: params = json.set("{}", "id", id, "current", 0, "temporary", getProperty("TempHP", id), 
 	"maximum", getProperty("MaxHP", id), "dsPass", dsPass, "dsFail", dsFail, 
-	"exhaustion6", getState("Exhaustion 6", id))]
+	"exhaustion6", getState("Exhaustion 6", id), "text-type", "deathSave", "text-value", textValue)]
 [h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]

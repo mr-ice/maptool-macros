@@ -8,6 +8,7 @@
 [h, if (!isNumber(current)): current = 0; '']
 [h: healing = json.get(macro.args, "healing")]
 [h, if (!isNumber(healing)): healing = 0; '']
+[h, if (healing == 0): text = "none"; text = "healed"]
 [h: maximum = json.get(macro.args, "maximum")]
 [h, if (!isNumber(maximum)): maximum = getProperty(maximum, id)]
 [h, if (!isNumber(maximum)): maximum = 0; '']
@@ -19,6 +20,7 @@
 [h: log.debug("After: current=" + current)]
 
 <!-- Update the toon  -->
-[h: params = json.set("{}", "id", id, "current", current, "temporary", getProperty("TempHP", id), "maximum", maximum),
-	"dsPass", getProperty("DSPass", id), "dsFail", getProperty("DSFail", id), "exhaustion6", getState("Exhaustion 6", id))]
+[h: params = json.set("{}", "id", id, "current", current, "temporary", getProperty("TempHP", id), "maximum", maximum,
+	"dsPass", getProperty("DSPass", id), "dsFail", getProperty("DSFail", id), "exhaustion6", getState("Exhaustion 6", id),
+	"text-type", text, "text-value", healing)]
 [h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]

@@ -7,7 +7,8 @@
 [h, if (!isNumber(current)): current = getProperty(current, id)]
 [h, if (!isNumber(current)): current = 0]
 [h: dmg = json.get(macro.args, "damage")]
-[h, if (!isNumber(dmg)): dmg = 0; '']
+[h, if (!isNumber(dmg)): dmg = 0]
+[h, if (dmg == 0): text = "none"; text = "damage"]
 [h: temporary = json.get(macro.args, "temporary")]
 [h, if (!isNumber(temporary)): temporary = getProperty(temporary, id)]
 [h, if (!isNumber(temporary)): temporary = 0]
@@ -26,6 +27,6 @@
 
 <!-- Update the toon  -->
 [h: params = json.set("{}", "id", id, "current", current, "temporary", temporary, "maximum", getProperty("MaxHP", id),
-	"dsPass", getProperty("DSPass", id), "dsFail", getProperty("DSFail", id), "exhaustion6", getState("Exhaustion 6", id))]
-[h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]
+	"dsPass", getProperty("DSPass", id), "dsFail", getProperty("DSFail", id), "exhaustion6", getState("Exhaustion 6", id),
+	"text-type", text, "text-value", dmg)]
 [h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]
