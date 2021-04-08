@@ -62,8 +62,7 @@ behave: tester.image
 label:
 	rm -rf output/Lib*Log4MT*
 	docker run --rm -it --mount type=bind,source="$$(pwd)",target=/MT --entrypoint "assemble" maker "Lib-Log4MT/content.xml"
-	(mkdir output/Lib-Log4MT && cd output/Lib-Log4MT && unzip ../Lib-Log4MT.rptok)
-	tail output/Lib-Log4MT/content.xml
+	unzip -p output/Lib-Log4MT.rptok content.xml | tail
 
 ptw:
 	ptw -- --exitfirst --failed-first --last-failed
