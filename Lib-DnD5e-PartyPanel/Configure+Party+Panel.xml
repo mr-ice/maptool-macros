@@ -6,12 +6,12 @@
   <hotKey>None</hotKey>
   <label>Configure Party Panel</label>
   <group>D&amp;D 5e - Party Panel</group>
-  <sortby/>
+  <sortby>2</sortby>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
   <applyToTokens>false</applyToTokens>
   <fontColorKey>black</fontColorKey>
-  <fontSize>1.15em</fontSize>
+  <fontSize>1.10em</fontSize>
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
