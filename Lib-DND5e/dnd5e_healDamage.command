@@ -23,4 +23,4 @@
 [h: params = json.set("{}", "id", id, "current", current, "temporary", getProperty("TempHP", id), "maximum", maximum,
 	"dsPass", getProperty("DSPass", id), "dsFail", getProperty("DSFail", id), "exhaustion6", getState("Exhaustion 6", id),
 	"text-type", text, "text-value", healing)]
-[h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]
+[h: dnd5e_applyHealth(params)]

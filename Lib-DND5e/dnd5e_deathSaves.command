@@ -1,15 +1,15 @@
 [h: id = currentToken()]
 [h: dsPass = getProperty("DSPass")]
-[h, if (!isNumber(dsPass)): dsPass = 0; '']
+[h, if (!isNumber(dsPass)): dsPass = 0]
 [h: dsFail = getProperty("DSFail")]
-[h, if (!isNumber(dsFail)): dsFail = 0; '']
+[h, if (!isNumber(dsFail)): dsFail = 0]
 [h: current = getProperty("HP")]
-[h, if (!isNumber(current)): current = 0; '']
+[h, if (!isNumber(current)): current = 0]
 [h: isStable = getState("Stable"))]
 [h: isDead = getState("Dead")]
 [h: log.info("dnd5e_deathSaves: id=" + id + " name=" + getName(id) + " dsPass=" + dsPass + " dsFail=" + dsFail)]
 [h: processorLink = macroLinkText("dnd5e_deathSaveSubmit@Lib:DnD5e", "all", "", id)]
-[dialog5("Death Saves", "title=Make a Death Save; input=1; width=250; height=360"): {
+[dialog5("Death Saves", "title=Make a Death Save; input=1; width=250; height=380"): {
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="dnd5e_deathSavesCSS@Lib:DnD5e" />
@@ -45,15 +45,15 @@
         </div>
         <div>
           Passed Saves<br/>
-          <input type="checkbox" name="pass-1" value="1" class="pass" [r, if(dsPass >= 1): "checked";'']>
-          <input type="checkbox" name="pass-2" value="1" class="pass" [r, if(dsPass >= 2): "checked";'']>
-          <input type="checkbox" name="pass-3" value="1" class="pass" [r, if(dsPass >= 3): "checked";'']>
+          <input type="checkbox" name="pass-1" value="1" class="pass" [r, if(dsPass >= 1): "checked"]>
+          <input type="checkbox" name="pass-2" value="1" class="pass" [r, if(dsPass >= 2): "checked"]>
+          <input type="checkbox" name="pass-3" value="1" class="pass" [r, if(dsPass >= 3): "checked"]>
         </div>
         <div>
           Failed Saves<br/>
-          <input type="checkbox" name="fail-1" value="1" class="fail" [r, if(dsFail >= 1): "checked";'']>
-          <input type="checkbox" name="fail-2" value="1" class="fail" [r, if(dsFail >= 2): "checked";'']>
-          <input type="checkbox" name="fail-3" value="1" class="fail" [r, if(dsFail >= 3): "checked";'']>
+          <input type="checkbox" name="fail-1" value="1" class="fail" [r, if(dsFail >= 1): "checked"]>
+          <input type="checkbox" name="fail-2" value="1" class="fail" [r, if(dsFail >= 2): "checked"]>
+          <input type="checkbox" name="fail-3" value="1" class="fail" [r, if(dsFail >= 3): "checked"]>
         </div>
         <div>
 	      <input type="submit" name="myForm_btn" value="Roll">

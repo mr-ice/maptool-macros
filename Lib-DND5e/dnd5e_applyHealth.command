@@ -1,5 +1,6 @@
 <!-- Get the health related values from params -->
 [h: log.debug(getMacroName() + ": " + json.indent(macro.args))]
+[h, if (json.type(macro.args) == "ARRAY"): macro.args = json.get(macro.args, 0)]
 [h: id = json.get(macro.args, "id")]
 [h: libToken = startsWith(getName(id), "Lib:")]
 [h, if(libToken), code: {
