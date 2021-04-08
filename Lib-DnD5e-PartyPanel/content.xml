@@ -1,0 +1,215 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>jC99EBW1SZyu+wQwEeOo/w==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>8qELYWTTR8KfC8+TELd9TQ==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>33d8131aa99953069a27bde308f34b4a</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>850</x>
+  <y>350</y>
+  <z>2251</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>850</lastX>
+  <lastY>400</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>7</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>17</x>
+          <y>8</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves/>
+        </parent>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>7</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/parent"/>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </waypointList>
+  </lastPath>
+  <snapToScale>true</snapToScale>
+  <width>256</width>
+  <height>256</height>
+  <isoWidth>304</isoWidth>
+  <isoHeight>291</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:DnD5e-PartyPanel</name>
+  <ownerType>0</ownerType>
+  <tokenShape>SQUARE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>Basic</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Darkvision 60</sightType>
+  <hasSight>true</hasSight>
+  <state/>
+  <macroPropertiesMap>
+    <entry>
+      <int>1</int>
+      <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>2</int>
+      <macro name="Data_Macro_UDF_Registry"/>
+    </entry>
+    <entry>
+      <int>3</int>
+      <macro name="Manage+Macro+UDF+Registry"/>
+    </entry>
+    <entry>
+      <int>4</int>
+      <macro name="dnd5e_PartyPanel_UDF_getRegistry"/>
+    </entry>
+    <entry>
+      <int>5</int>
+      <macro name="dnd5e_PartyPanel_UDF_setRegistry"/>
+    </entry>
+    <entry>
+      <int>6</int>
+      <macro name="dnd5e_PartyPanel_Constants"/>
+    </entry>
+    <entry>
+      <int>7</int>
+      <macro name="dnd5e_PartyPanel_Configure"/>
+    </entry>
+    <entry>
+      <int>8</int>
+      <macro name="dnd5e_PartyPanel_getConfig"/>
+    </entry>
+    <entry>
+      <int>9</int>
+      <macro name="dnd5e_PartyPanel_setConfig"/>
+    </entry>
+    <entry>
+      <int>10</int>
+      <macro name="dnd5e_PartyPanel_DefaultConfiguration"/>
+    </entry>
+    <entry>
+      <int>11</int>
+      <macro name="dnd5e_PartyPanel_Panel_formatBonus"/>
+    </entry>
+    <entry>
+      <int>12</int>
+      <macro name="Configure+Party+Panel"/>
+    </entry>
+    <entry>
+      <int>13</int>
+      <macro name="dnd5e_PartyPanel_getTokenHtml"/>
+    </entry>
+    <entry>
+      <int>14</int>
+      <macro name="dnd5e_PartyPanel_Panel"/>
+    </entry>
+    <entry>
+      <int>15</int>
+      <macro name="Party+Panel"/>
+    </entry>
+    <entry>
+      <int>16</int>
+      <macro name="dnd5e_PartyPanel_css"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="dnd5e_PartyPanel_rollAbility"/>
+    </entry>
+    <entry>
+      <int>19</int>
+      <macro name="dnd5e_PartyPanel_rollInitiative"/>
+    </entry>
+    <entry>
+      <int>20</int>
+      <macro name="dnd5e_PartyPanel_rollSave"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="dnd5e_PartyPanel_getRollLink"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="dnd5e_PartyPanel_rollAllColumn"/>
+    </entry>
+    <entry>
+      <int>23</int>
+      <macro name="dnd5e_PartyPanel_getPCTokens"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="dnd5e_PartyPanel_refreshPanel"/>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>
