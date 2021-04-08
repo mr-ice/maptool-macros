@@ -1,4 +1,3 @@
-[h: l4m.disableLineParser()]
 [h: dnd5e_PartyPanel_Constants (getMacroName())]
 [h, token (LIB_TOKEN): tokenId = currentToken()]
 [h, if (tokenId == ""), code: {
