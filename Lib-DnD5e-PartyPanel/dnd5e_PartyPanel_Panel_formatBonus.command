@@ -1,0 +1,7 @@
+[h: bonus = arg(0)]
+[h: dnd5e_PartyPanel_Constants (getMacroName())]
+[h: return (isNumber (bonus), bonus)]
+[h: bonusStr = string(bonus)]
+[h, if (bonus >= 0): bonusStr = concat ("&#x2b;", bonusStr)]
+[h: log.debug (CATEGORY + "## bonus = " + bonus + "; bonusStr = " + bonusStr)]
+[h: macro.return = bonusStr]
