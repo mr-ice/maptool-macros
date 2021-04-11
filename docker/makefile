@@ -1,10 +1,7 @@
-all: CampaignMerge.class
+all: /usr/local/libexec/CampaignMerge.class
 
 %.class: %.java
 	javac $<
 	
-clean:
-	rm -f *.class *.zip *.xml
-
-test: CampaignMerge.class
-	java CampaignMerge ../One/content.xml ../Two/content.xml Merged-One-Two.zip
+test: all
+	(CampaignMerge ../DND5e1/content.xml ../altCampaignProps/content.xml junk.zip) 2>&1 | head
