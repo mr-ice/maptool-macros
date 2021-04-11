@@ -8,7 +8,7 @@
 [h: isStable = getState("Stable"))]
 [h: isDead = getState("Dead")]
 [h: log.info("dnd5e_deathSaves: id=" + id + " name=" + getName(id) + " dsPass=" + dsPass + " dsFail=" + dsFail)]
-[h: processorLink = macroLinkText("dnd5e_deathSaveSubmit@Lib:DnD5e", "all", "", id)]
+[h: processorLink = macroLinkText("dnd5e_deathSaveSubmit@Lib:DnD5e", "none", "", id)]
 [dialog5("Death Saves", "title=Make a Death Save; input=1; width=250; height=380"): {
 <html>
   <head>
