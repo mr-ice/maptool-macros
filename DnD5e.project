@@ -2,6 +2,7 @@
   <properties name="DND5e"/>
   <token name="Lib-DND5e"/>
   <token name="Lib-DND5e-TestLibrary"/>
+  <token name="Lib-DnD5e-PartyPanel"/>
   <macroset name="DnD5e-Campaign">
     <macro name="macro/Create+Ability+Check+Roll+Macro"/>
     <macro name="macro/Create+Damage+Roll+Macro"/>
@@ -24,5 +25,7 @@
     <macro name="macro/Set+Landing+Map"/>
     <macro name="macro/Configure+GM+Preferences"/>
     <macro name="macro/Re-Draw+Tokens"/>
+    <macro name="Lib-DnD5e-PartyPanel/Configure+Party+Panel"/>
+    <macro name="Lib-DnD5e-PartyPanel/Party+Panel"/>
   </macroset>
 </project>

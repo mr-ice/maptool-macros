@@ -1,0 +1,28 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>9e33473f-4e68-47ad-b202-ab7814eda912</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>19</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_PartyPanel_rollInitiative</label>
+  <group>Panel - RollExpression</group>
+  <sortby/>
+  <autoExecute>false</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>arg(0) = ** Unused **
+arg(1) = Token ID</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

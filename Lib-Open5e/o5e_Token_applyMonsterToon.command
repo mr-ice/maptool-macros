@@ -10,5 +10,5 @@
 	"temporary", TempHP, "maximum", MaxHP,
 	"dsPass", 0, "dsFail", 0, "exhaustion6", 0,
 	"text-type", "o5e", "text-value", "")]
-[h, macro("dnd5e_applyHealth@Lib:DnD5e"): params]
+[h: dnd5e_applyHealth (params)]
 [h: setNPC ()]
