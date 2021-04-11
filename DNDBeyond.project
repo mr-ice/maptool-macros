@@ -2,6 +2,7 @@
   <project name="DnD5e.project"/>
   <properties name="DND5e"/>
   <token name="Lib-DNDBeyond"/>
+  <token name="Lib-MultiSelect"/>  
   <macroset name="DnD5e-Campaign">
     <macro name="macro/Initialize+DNDBeyond+Character"/>
     <macro name="macro/Quick+Update"/>
