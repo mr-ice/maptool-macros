@@ -476,8 +476,8 @@ class MTToken(MTAsset):
         if not dryrun:
             self.zipfile.extractall(output_path)
 
-        # extract macros to individual .xml and .command files, replacing
-        # them with a placeholder
+        # extract macros to individual .xml and .command files, removing
+        # the macroPropertiesMap from the token
         for i, entry in enumerate(self.root.macroPropertiesMap.entry):
             macro = entry[tagset.macro.tag]
             label = MacroNameQuote(macro.label.text)
@@ -488,7 +488,7 @@ class MTToken(MTAsset):
             # replace macro with placeholder in content.xml
             new_entry = new_entry_template.format(entry.int, label)
             new_entry = objectify.fromstring(new_entry)
-            self.root.macroPropertiesMap.entry[i] = new_entry
+        self.root.remove(self.root.macroPropertiesMap)
 
         # extract the propertyMapCI to its own file, removing it from
         # the content.xml
