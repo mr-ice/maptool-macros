@@ -130,6 +130,9 @@ git_comment_str = f'<!-- {github_url} {git_tag_str} -->'
 
 
 def DataElement(content):
+    """This returns an objectify.DataElement with the content,
+    and sets the nsmap and _pytype so those won't translate to the
+    final xml."""
     return objectify.DataElement(content, nsmap='', _pytype='')
 
 

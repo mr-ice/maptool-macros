@@ -4,6 +4,7 @@ sys.path.insert(0, 'docker')
 sys.path.insert(0, '/Users/michael/project/maptool-macros/docker')
 from MTAssetLibrary import flatten_project, GetAsset
 import code
+import pdb
 from lxml import objectify
 from lxml.etree import tostring
 
@@ -30,8 +31,12 @@ class LogO:
 
 log = LogO()
 
-code.interact(local=locals())
-# pdb.set_trace()
+#code.interact(local=locals())
+tok = GetAsset('Lib-DND5e')
+pdb.set_trace()
+tok.assemble()
+
+
 if __name__ == '__main__':
     AP = argparse.ArgumentParser()
     AP.add_argument('file',

@@ -384,12 +384,37 @@ class MTToken(MTAsset):
         super().__init__(*args, **kwargs)
         self.gitTagElement = 'gmName'
         self.gitTagElementWhenNameMatches = 'Lib:'
-        propmapfile = os.path.join(self.whence, 'propertyMapCI.xml')
-        if os.path.isdir(self.whence) and os.path.exists(propmapfile):
-            propmap = objectify.parse(propmapfile).getroot()
-            if (pmap := self.root.find('propertyMapCI')) is not None:
-                self.root.remove(pmap)
-            self.root.append(propmap)
+
+        if self.fromdir != '':
+            # When picking up files from the filesystem, make sure to pick
+            # up some of the elements we split out on extract.
+            macrofiles = []
+            for fn in os.listdir(self.fromdir):
+                if fn == 'propertyMapCI.xml':
+                    propmapfile = os.path.join(self.fromdir, fn)
+                    propmap = objectify.parse(propmapfile).getroot()
+                    if (pmap := self.root.find('propertyMapCI')) is not None:
+                        self.root.remove(pmap)
+                    self.root.append(propmap)
+                elif fn in ('content.xml', 'properties.xml'):
+                    pass  # handled differently
+                elif fn.endswith('.xml'):
+                    macrofiles.append(fn)
+
+            if macrofiles:
+                E = objectify.ElementMaker(annotate=False)
+                if (mpm := self.xml.find('macroPropertiesMap')) is not None:
+                    mpm.getparent().remove(mpm)
+                count = 1
+                macroPropertiesMap = E.macroPropertiesMap()
+                for macro in macrofiles:
+                    macro = GetAsset(os.path.join(self.fromdir, macro))
+                    macro.root.index = DataElement(count)
+                    new_entry = E.entry(E.int(count), macro.root)
+                    macroPropertiesMap.append(new_entry)
+                    count = count + 1
+                self.root.macroPropertiesMap = macroPropertiesMap
+
 
     def assemble(self, save_name=None, output_dir=None, ext=None, dryrun=None, gitTagElement=None):
         """MTToken.assemble()
@@ -414,22 +439,6 @@ class MTToken(MTAsset):
         if not dryrun:
             zf = ZipFile(save_file, mode='w', compression=ZIP_DEFLATED)
             add_directory_to_zipfile(zf, self.dirname)
-        if self.xml.find('macroPropertiesMap') is not None:
-            for i, entry in enumerate(self.root.macroPropertiesMap.entry):
-                try:
-                    name = entry.macro.get('name')
-                except AttributeError:
-                    pass
-                else:
-                    macrobase = os.path.join(self.dirname, name + '.xml')
-                    macro = GetAsset(macrobase)
-                    entry_template = '<entry><int>{}</int>{}</entry>'
-                    new_entry = objectify.fromstring(
-                        entry_template.format(
-                            entry.int.text,
-                            etree.tostring(macro.root).decode()))
-
-                    self.root.macroPropertiesMap.entry[i] = new_entry
         if gitTagElement is None:
             gitTagElement = self.gitTagElement
         if self.root.name.text.startswith(self.gitTagElementWhenNameMatches):
@@ -689,6 +698,7 @@ class MTProject(MTAsset):
                 if elem.tag == 'token':
                     asset.gitTagElement = elem.get('gitTagElement', 'gmName')
                 asset.assemble(output_dir=output_dir)
+
 
 # junk.project xml file
 # Dir/content.xml with net.rptools.maptool.model.CampaignProperties creates a .mtprops
