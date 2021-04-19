@@ -51,8 +51,11 @@
 
 	<!-- Remove the damage and update the output -->
 	[h: libToken = startsWith(getName(id), "Lib:")]
-	[h, if (!libToken): dnd5e_removeDamage(json.set("{}", "id", id, "current", getProperty("HP", id), "temporary", getProperty("TempHP", id),
+	[h, if (!libToken), code: {
+		[h: dnd5e_Util_chatTokenOutput(json.set("{}", "id", id, "text", "apply attack <b><i>" + actionName + "</b></i>"), json.get(state, "player"))]
+		[h: dnd5e_removeDamage(json.set("{}", "id", id, "current", getProperty("HP", id), "temporary", getProperty("TempHP", id),
 						"damage", json.get(state, "totalDamage")))]
+	}]
 	[h: tt = "HP/MaxHP/TempHP:" + getProperty("HP", id) + "/" + getProperty("MaxHP", id) + "/" + getProperty("TempHP", id)]
 	[h, if(libToken): allOutput = allOutput + "<br/>Ignoring library token: <b>" + getName(id) + "</b>";	
 			allOutput = allOutput + json.get(state, "output") + " <span title='" + tt + "'>HP: " + getProperty("HP", id)]

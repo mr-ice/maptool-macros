@@ -1,0 +1,60 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>ec118f17-c877-48b9-ab45-40d0fd91bd12</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>205</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_Util_chatTokenOutput</label>
+  <group>Util</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>true</allowPlayerEdits>
+  <toolTip>&lt;html&gt;Generate a table of output for a single token
+&lt;br&gt;
+&lt;br&gt;arg(0) = Token Object
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;id&quot;: Id of the token being displayed,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;text&quot;: Text added to the token name,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;bgColor&quot;: Optional: background color applied to token name and text
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;
+&lt;br&gt;arg(1) = List of texts &amp; images to be displayed, one column each
+&lt;br&gt;To show a column of text send this object in the list: 
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;text&quot;: Text that is displayed,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;bgColor&quot;: Optional: Background color applied to text,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;to&quot;: Optional: JSON array of groups &amp; players that should see this text. Defaults to all
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;To show a column with an image in it send this object in the list:
+&lt;br&gt;&amp;nbsp;&amp;nbsp;{
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;image&quot;: Asset reference ,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;text&quot;: Alt text for the image,
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;to&quot;: Optional: JSON array of groups &amp; players that should see this text. Defaults to all
+&lt;br&gt;&amp;nbsp;&amp;nbsp;}
+&lt;br&gt;
+&lt;br&gt;arg(2) = Optional json array of what groups &amp; players are actually broadcast. Defaults to gm, owner, other groups
+&lt;br&gt;
+&lt;br&gt;The macro broadcasts a table to chat that shows the following columns to the user &amp; groups specified:
+&lt;ol&gt;
+&lt;li&gt;The token image
+&lt;li&gt;Token name and passed text in the background color
+&lt;li&gt;For each text object in the array: &lt;br&gt;Text in the background color sent only certain players or groups
+&lt;li&gt;For each image object in the array: &lt;br&gt;Image sent only certain players or groups
+&lt;/ol&gt;
+The last two are added in the same order they were passed in arg(1)
+&lt;/html&gt;</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

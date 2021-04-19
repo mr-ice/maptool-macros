@@ -13,24 +13,23 @@
 <!-- Check damage type against immunities/resistances/vulnerablilities -->
 [h: applied = ""]
 [h, if (damageType != ""), code: {
-	[h: immunities = lower(getProperty("Immunities", id))]
-	[h, if (listContains(immunities, damageType) || optValue == "immunity"), code: {
+	[h: allImmunities = lower(getProperty("Immunities", id))]
+	[h, if (listContains(allImmunities, damageType) || optValue == "immunity"), code: {
 		[h: totalDamage = 0]
 		[h: applied = listAppend(applied, "Immunity")]
 	}; {""}]
-	[h: resistances = lower(getProperty("Resistances", id))]
-	[h, if (listContains(resistances, damageType) || optValue == "resistance"), code: {
+	[h: allResistances = lower(getProperty("Resistances", id))]
+	[h, if (listContains(allResistances, damageType) || optValue == "resistance"), code: {
 		[h: totalDamage = floor(totalDamage / 2)]
 		[h, if (totalDamage == 0): totalDamage = 1]
 		[h: applied = listAppend(applied, "Resistance")]
 	}; {""}]
-	[h: vulnerabilities = lower(getProperty("Vulnerabilities", id))]
-	[h, if (listContains(vulnerabilities, damageType) || optValue == "vulnerability"), code: {
+	[h: allVulnerabilities = lower(getProperty("Vulnerabilities", id))]
+	[h, if (listContains(allVulnerabilities, damageType) || optValue == "vulnerability"), code: {
 		[h: totalDamage = totalDamage * 2]
 		[h: applied = listAppend(applied, "Vulnerability")]
 	}; {""}]
 }; {""}]
-
 
 <!-- If there is no save roll we are done -->
 [h: macro.return = json.set("{}", "damage", totalDamage, "applied", applied, "type", damageType)]

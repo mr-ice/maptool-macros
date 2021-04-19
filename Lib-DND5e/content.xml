@@ -1935,6 +1935,10 @@
       <int>330</int>
       <macro name="dnd5e_Macro_rollSavingThrow"/>
     </entry>
+    <entry>
+      <int>331</int>
+      <macro name="dnd5e_Util_chatTokenOutput"/>
+    </entry>
   </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
