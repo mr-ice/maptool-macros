@@ -465,7 +465,6 @@ class MTToken(MTAsset):
         #   a placeholder
         # write the modified content.xml
 
-        new_entry_template = '<entry><int>{}</int><macro name="{}"/></entry>'
         # make the directory if needed
         output_path = self.save_to(save_name, output_dir)
         if not dryrun:
@@ -480,14 +479,12 @@ class MTToken(MTAsset):
         # the macroPropertiesMap from the token
         for i, entry in enumerate(self.root.macroPropertiesMap.entry):
             macro = entry[tagset.macro.tag]
+            macro.remove(macro['index'])
             label = MacroNameQuote(macro.label.text)
             macrobase = os.path.join(output_path, label)
             if not dryrun:
                 write_macro_files(macro, macrobase)
 
-            # replace macro with placeholder in content.xml
-            new_entry = new_entry_template.format(entry.int, label)
-            new_entry = objectify.fromstring(new_entry)
         self.root.remove(self.root.macroPropertiesMap)
 
         # extract the propertyMapCI to its own file, removing it from
@@ -497,6 +494,14 @@ class MTToken(MTAsset):
                 propmap.getparent().remove(propmap)
                 with open(os.path.join(output_path, 'propertyMapCI.xml'), 'w') as fh:
                     fh.write(tostring(propmap, pretty_print=True).decode())
+
+                
+        # remove the gitTagElement on extract
+        if self.root.name.text.startswith(self.gitTagElementWhenNameMatches):
+            for ename in ('gmName', 'label', self.gitTagElement):
+                if (elem := self.root.find(ename)) is not None:
+                    self.root.remove(elem)
+
 
         if not dryrun:
             if 'Lib:' in self.root.name.text and 'gmName' in [x.tag for x in self.root.iterchildren()]:
