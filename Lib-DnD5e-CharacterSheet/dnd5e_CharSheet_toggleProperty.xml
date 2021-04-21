@@ -1,0 +1,31 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>a7cb0c35-aeee-4579-9606-9d7728446cdf</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>27</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_toggleProperty</label>
+  <group>Character Sheet - Macros</group>
+  <sortby/>
+  <autoExecute>false</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;Toggles a boolean property from 'true' to 'false' and
+back to 'true'. Any non-zero value is truthy and will be set to
+false | 0. 0 and an empty value are falsey and will be set to
+true | 1.
+arg (0) = Property name</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

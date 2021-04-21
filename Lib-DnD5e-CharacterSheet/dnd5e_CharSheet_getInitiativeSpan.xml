@@ -1,0 +1,28 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>8c87ada0-7ec4-449d-8a0f-d2d395ff93f0</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>46</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_getInitiativeSpan</label>
+  <group>Character Sheet - Panel</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;Returns a &amp;lt;span/&gt; with a title breaking down the initiative bonus.
+arg (0) = (Optional) Text to display; If not provided, the Initiative bonus is used.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

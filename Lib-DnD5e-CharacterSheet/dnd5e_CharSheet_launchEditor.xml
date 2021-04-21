@@ -1,0 +1,29 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>f57998b4-810c-47d3-9ef5-86608d11f952</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>53</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_launchEditor</label>
+  <group>Character Sheet - Macros</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Launches the Character Sheet editor of choice for attacks (Currently Attack Editor).
+This macro handles the call-back from the processor to ensure the attackExpressionJSON
+is updated and character sheet refreshed.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
