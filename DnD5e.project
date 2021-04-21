@@ -3,7 +3,8 @@
   <token name="Lib-DND5e"/>
   <token name="Lib-DND5e-TestLibrary"/>
   <token name="Lib-DnD5e-PartyPanel"/>
-  <token name="Lib-DnD5e-CharacterSheet"/>
+  <token name="Lib-MultiSelect"/> 
+  <token name="Lib-DnD5e-CharacterSheet"/> 
   <macroset name="DnD5e-Campaign">
     <macro name="macro/Create+Ability+Check+Roll+Macro"/>
     <macro name="macro/Create+Damage+Roll+Macro"/>
