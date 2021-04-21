@@ -1,5 +1,6 @@
 [h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
 [h: totalDamage = arg(0)]
+[h: startingTotalDamage = totalDamage]
 [h: saveResult = lower(arg(1))]
 [h, switch(saveResult), code:
 	case "half": {
@@ -22,5 +23,5 @@
 		}]
 	}
 ]
-[h, if (totalDamage == 0 && saveResult != "none"): totalDamage = 1]
+[h, if (totalDamage == 0 && startingTotalDamage != 0 && saveResult != "none"): totalDamage = 1]
 [h: macro.return = json.set("{}", "damage", totalDamage, "saveText", saveEffect)]

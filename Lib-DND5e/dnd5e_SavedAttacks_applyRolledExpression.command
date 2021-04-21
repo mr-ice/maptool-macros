@@ -1,7 +1,7 @@
 <!-- Read arguments -->
 [h: exp = json.get(rolledExpressions, i)]
 [h: selected = json.get(selectedById, id)]
-[h: log.debug(getMacroName() + ": args=" + json.indent(macro.args))]
+[h: log.debug(getMacroName() + ": selected=" + selected + " exp=" + json.indent(exp))]
 
 <!-- Current state -->
 [h: hit = json.get(state, "hit")]
@@ -11,6 +11,7 @@
 
 <!-- Selected options key -->
 [h: expKey = "exp-" + i]
+[h: playerTextColumn = '{"text":"%s"}']
 [h, if (!json.isEmpty(selected) && json.contains(selected, expKey)): optValue = json.get(selected, expKey); optValue = ""]
 
 <!-- Determine if we hit for all later damage rolls -->
@@ -34,7 +35,8 @@
 			+ dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_DETAIL_TD) + " = " + dnd5e_RollExpression_getTotal(exp)]
 	[h: tt = tt + if(hit, " >=", " <") + " AC(" + ac + ")" + if(cover > 0, " + Cover(" + cover + ")", "") + " = " + if (hit, "HIT", "MISS")]
 	[h: output = json.get(state, "output") + " <span title='" + tt + "'>Attack " + hitText + ";</span>"]
-	[h: state = json.set(state, "hit", hit, "output", output)]
+	[h: player = json.append(json.get(state, "player"), strformat(playerTextColumn, "Attack " + hitText))]
+	[h: state = json.set(state, "hit", hit, "output", output, "player", player)]
 }]
 
 <!-- On a hit/check apply calculated damage -->

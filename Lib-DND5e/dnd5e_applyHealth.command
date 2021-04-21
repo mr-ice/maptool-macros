@@ -116,30 +116,10 @@
 [h: endingValues = json.set(endingValues, "DSFail", if(current == 0, dsFail, 0))]
 [h: log.debug(getMacroName() + ": endingValues=" + json.indent(endingValues))]
 
-<!-- Output values set to empty -->
-[h: detailImages = "[]"]
-[h: ownerText = "[]"]
-[h: imgSrc = '<img src="%s" alt="%s" width="30" height="30"/>']
-[h: imageColumn = '<td width="34" style="padding:0px;border-width:1pt;border-style:solid;text-align:center;">' + imgSrc + '</td>']
-
-<!-- set the state, and show state images being set, and only those being set -->
-[h, foreach(state, states), code: {
-	[h: ending = number(json.get(endingValues, state))]
-	[h: setState(state, ending, id)]
-	[h: log.debug(getMacroName() + ": state=" + state + " ending=" + ending + " getState()=" + getState(state, id))]
-	[h, if (ending == 1 && ending != json.get(startingValues, state)): detailImages = json.append(detailImages , strformat(imageColumn, getStateImage(state), state))]
-}]
-
-<!-- Set the bars, death save changes are shown -->
-[h, foreach(bar, bars), code: {
-	[h: visible = number(json.get(endingValues, bar + "-visible"))]
-	[h: value = number(json.get(endingValues, bar + "-value"))]
-	[h: deathSave = if (visible == 1 && (bar == "DSPass" || bar == "DSFail"), 1, 0)]
-	[h, if (visible): setBar(bar, value, id); setBarVisible(bar, visible)]
-	<!-- if (deathSave && value != json.get(startingValues, bar + "-value")): detailImages = json.append(detailImages , strformat(imageColumn, getBarImage(bar, 0, value), bar)) -->
-}]
-
 <!-- Set the properties, changes are shown to owner/GM -->
+[h: ownerText = "[]"]
+[h: columns = "[]"]
+[h: textColumn = '{"text":"%s", "to":["gm","owner"]}']
 [h, foreach(prop, properties), code:  {
 	[h: ending = number(json.get(endingValues, prop))]
 	[h: setProperty(prop, ending, id)]
@@ -147,46 +127,42 @@
 	[h, if (ending != json.get(startingValues, prop)): ownerText = json.append(ownerText, strformat("%{prop} = <b>%{ending}</b>"))]
 }]
 [h, if (!json.isEmpty(ownerText)), code: {
-	[h: ownerText = json.toList(ownerText, ", ")]
-	[h: ownerText = strformat('<td style="border-width:1pt;border-style:solid;padding:0px 5px 0px 3px;" NOWRAP>%{ownerText}</td>')]
+	[h: columns = json.append(columns, strformat(textColumn, json.toList(ownerText, ", ")))]
+}]
+[h: log.debug(getMacroName() + ": after properties columns=" + json.indent(columns))]
+
+<!-- set the state, and show state images being set, and only those being set -->
+[h: imageColumn = '{"image": "%s", "text":"%s"}']
+[h, foreach(state, states), code: {
+	[h: ending = number(json.get(endingValues, state))]
+	[h: setState(state, ending, id)]
+	[h: log.debug(getMacroName() + ": state=" + state + " ending=" + ending + " getState()=" + getState(state, id))]
+	[h, if (ending == 1 && ending != json.get(startingValues, state)): columns = json.append(columns, strformat(imageColumn, getStateImage(state), state))]
+}]
+[h: log.debug(getMacroName() + ": after states columns=" + json.indent(columns))]
+
+<!-- Set the bars, death save changes are shown -->
+[h, foreach(bar, bars), code: {
+	[h: visible = number(json.get(endingValues, bar + "-visible"))]
+	[h: value = number(json.get(endingValues, bar + "-value"))]
+	[h: log.debug(getMacroName() + ": bar=" + bar + " visible=" + visible + " value=" + value)]
+	[h, if (visible): setBar(bar, value, id); setBarVisible(bar, visible, id)]
 }]
 
 <!-- Output -->
+[h: tokenColumn = '{"id": "%{id}", "text":"%{adjustText}", "bgColor":"%{adjustStyle}"}']
 [h: supportedTypes = json.append("[]", "damage", "healed", "tempHp", "update", "deathSave", "o5e")]
 [h: type = json.indexOf(supportedTypes, textType)]
 [h: log.debug(getMacroName() + ": textType=" + textType + " type=" + type)] 
 [h, if (type >= 0), code: {
 
 	<!-- Set up the variables used to generate ouput -->
-	[h: name = getName(id)]
-	[h: imageLink = strformat(imgSrc, getTokenImage("", id), getName(id))]
 	[h: adjustStyle = json.append("[]", "rgb(255,192,192)", "rgb(192,255,192)", "yellow", "rgb(192,192,192)", "rgb(192,192,255)", "rgb(192,192,192)")]
 	[h: adjustStyle = json.get(adjustStyle, type)]
 	[h: adjustText = json.append("[]", "<i><b>DAMAGED</b></i> for <b>%{textValue}</b>", "<i><b>HEALED</b></i> for <b>%{textValue}</b>",
 						"<i><b>TEMP HP</b></i> of <b>%{textValue}</b> applied", "<i><b>DND BEYOND UPDATE</b></i>", "<i><b>DEATH SAVE</b></i> <b>%{textValue}</b>",
 						"<i><b>O5E UPDATE</b></i> <b>%{textValue}</b>")]
 	[h: adjustText = strformat(json.get(adjustText, type))]
-	[h: ownerText = json.toList(ownerText, " ")]
-	[h: detailImages = json.toList(detailImages, " ")]
-	[h: outTable  = 
-		'<table style="border-spacing:1pt;border-width:0px;border-style:solid;padding:0px;">
-		  <tr>
-		    <td width="34" style="padding:0px;border-width:1pt;border-style:solid;text-align:center;">%{imageLink}</t>
-		    <td width="250" style="background-color:%{adjustStyle};border-width:1pt;border-style:solid;padding:0px 5px 0px 3px;" NOWRAP><b>%{name}</b> %{adjustText}.</td>
-		    %{ownerText}
-		    %{detailImages}
-		  </tr>
-		</table>']
-
-	<!-- Determine the people who get details -->
-	[h: owners = getOwners("json", id)]	
-	[h: players = getAllPlayerNames("json")]
-	[h: detailPlayers = "[]"]
-	[h: otherPlayers = "[]"]
-	[h, foreach(player, players), code: {
-		[h, if (isGM(player) || json.contains(owners, player)): detailPlayers = json.append(detailPlayers, player); otherPlayers = json.append(otherPlayers, player)]
-	}]	
-	[h: broadcast(strformat(outTable), detailPlayers)]
-	[h: ownerText = ""]
-	[h, if (!json.isEmpty(otherPlayers)): broadcast(strformat(outTable), otherPlayers)]
+	[h: log.debug(getMacroName() + ": adjustStyle=" + adjustStyle + " adjustText=" + adjustText + " tokenColumn=" + json.indent(strformat(tokenColumn)))]
+	[h: dnd5e_Util_chatTokenOutput(strformat(tokenColumn), columns)]
 }]

@@ -14,7 +14,7 @@
 [h: damageable = dnd5e_RollExpression_findExpressionByType (roll, dnd5e_Type_Damageable())]
 [h: saveable = dnd5e_RollExpression_findExpressionByType (roll, dnd5e_Type_Saveable())]
 [h: applicable = if (json.type (damageable) == "OBJECT" || json.type (saveable) == "OBJECT", 1, 0)]
-[h, if (returnString == 0 && applicable): applyLink = macroLink("Apply","dnd5e_SavedAttacks_apply@Lib:DnD5e", "none", json.append("[]", key),"selected"); applyLink = ""]
+[h, if (returnString == 0 && applicable): applyLink = macroLink("Apply","dnd5e_SavedAttacks_apply@Lib:DnD5e", "none", json.append("[]", key)); applyLink = ""]
 
 <!-- If there is a description, attach it to the title as a tool tip -->
 [h: tooltip = if(returnString, "data-toggle='tooltip' ", "") + dnd5e_Util_formatTooltip(dnd5e_RollExpression_getTypedDescriptor(firstExp, ACTION_DESC_TD)) + "'"]

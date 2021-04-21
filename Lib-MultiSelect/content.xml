@@ -1,0 +1,1194 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>P5m4sySnRDKyr4N2KKmrwA==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>5U3s67cITg2UvEgi+ORE/Q==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>ec7bdafd09b1a8317166b1886cfd161f</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>200</x>
+  <y>800</y>
+  <z>2346</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>250</lastX>
+  <lastY>-150</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>5</x>
+        <y>-3</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>-2</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>-3</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves/>
+        </parent>
+        <h>18.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>-1</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>-2</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/parent"/>
+          <h>18.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>17.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>0</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>-1</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>17.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>16.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>1</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>0</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>16.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>15.004</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>2</y>
+        <g>5.0</g>
+        <distanceTraveled>5.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>1</y>
+          <g>4.0</g>
+          <distanceTraveled>4.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+          <h>15.004</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+        </parent>
+        <h>14.005</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>3</y>
+        <g>6.0</g>
+        <distanceTraveled>6.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>2</y>
+          <g>5.0</g>
+          <distanceTraveled>5.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>5.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/parent"/>
+          <h>14.005</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[5]/validMoves"/>
+        </parent>
+        <h>13.006</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>4</y>
+        <g>7.0</g>
+        <distanceTraveled>7.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>3</y>
+          <g>6.0</g>
+          <distanceTraveled>6.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>6.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/parent"/>
+          <h>13.006</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[6]/validMoves"/>
+        </parent>
+        <h>12.007</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>5</y>
+        <g>8.0</g>
+        <distanceTraveled>8.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>8.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>4</y>
+          <g>7.0</g>
+          <distanceTraveled>7.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>7.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[7]/parent"/>
+          <h>12.007</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[7]/validMoves"/>
+        </parent>
+        <h>11.008</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>5</x>
+        <y>6</y>
+        <g>9.0</g>
+        <distanceTraveled>9.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>9.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>5</y>
+          <g>8.0</g>
+          <distanceTraveled>8.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>8.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[8]/parent"/>
+          <h>11.008</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[8]/validMoves"/>
+        </parent>
+        <h>10.009</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>7</y>
+        <g>10.0</g>
+        <distanceTraveled>10.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>10.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>5</x>
+          <y>6</y>
+          <g>9.0</g>
+          <distanceTraveled>9.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>9.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[9]/parent"/>
+          <h>10.009</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[9]/validMoves"/>
+        </parent>
+        <h>9.009</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>8</y>
+        <g>11.0</g>
+        <distanceTraveled>11.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>11.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>7</y>
+          <g>10.0</g>
+          <distanceTraveled>10.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>10.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[10]/parent"/>
+          <h>9.009</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[10]/validMoves"/>
+        </parent>
+        <h>8.008</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>9</y>
+        <g>12.0</g>
+        <distanceTraveled>12.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>12.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>8</y>
+          <g>11.0</g>
+          <distanceTraveled>11.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>11.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[11]/parent"/>
+          <h>8.008</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[11]/validMoves"/>
+        </parent>
+        <h>7.007</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>10</y>
+        <g>13.0</g>
+        <distanceTraveled>13.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>13.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>9</y>
+          <g>12.0</g>
+          <distanceTraveled>12.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>12.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[12]/parent"/>
+          <h>7.007</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[12]/validMoves"/>
+        </parent>
+        <h>6.006</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>11</y>
+        <g>14.0</g>
+        <distanceTraveled>14.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>14.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>10</y>
+          <g>13.0</g>
+          <distanceTraveled>13.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>13.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[13]/parent"/>
+          <h>6.006</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[13]/validMoves"/>
+        </parent>
+        <h>5.005</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>12</y>
+        <g>15.0</g>
+        <distanceTraveled>15.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>15.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>11</y>
+          <g>14.0</g>
+          <distanceTraveled>14.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>14.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[14]/parent"/>
+          <h>5.005</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[14]/validMoves"/>
+        </parent>
+        <h>4.004</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>13</y>
+        <g>16.0</g>
+        <distanceTraveled>16.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>16.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>12</y>
+          <g>15.0</g>
+          <distanceTraveled>15.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>15.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[15]/parent"/>
+          <h>4.004</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[15]/validMoves"/>
+        </parent>
+        <h>3.003</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>14</y>
+        <g>17.0</g>
+        <distanceTraveled>17.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>17.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>13</y>
+          <g>16.0</g>
+          <distanceTraveled>16.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>16.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[16]/parent"/>
+          <h>3.003</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[16]/validMoves"/>
+        </parent>
+        <h>2.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>15</y>
+        <g>18.0</g>
+        <distanceTraveled>18.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>18.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>14</y>
+          <g>17.0</g>
+          <distanceTraveled>17.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>17.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[17]/parent"/>
+          <h>2.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[17]/validMoves"/>
+        </parent>
+        <h>1.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>16</y>
+        <g>19.0</g>
+        <distanceTraveled>19.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>19.5</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>4</x>
+          <y>15</y>
+          <g>18.0</g>
+          <distanceTraveled>18.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>18.5</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[18]/parent"/>
+          <h>1.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[18]/validMoves"/>
+        </parent>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>5</x>
+        <y>-3</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>4</x>
+        <y>16</y>
+        <g>19.0</g>
+        <distanceTraveled>19.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>19.5</distanceTraveledWithoutTerrain>
+        <parent reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[19]/parent"/>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[19]/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </waypointList>
+  </lastPath>
+  <snapToScale>true</snapToScale>
+  <width>224</width>
+  <height>225</height>
+  <isoWidth>224</isoWidth>
+  <isoHeight>225</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:MultiSelect</name>
+  <ownerType>0</ownerType>
+  <tokenShape>SQUARE</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>MultiSelect</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Normal</sightType>
+  <hasSight>false</hasSight>
+  <state>
+    <entry>
+      <string>Paralyzed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Longstrider</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on All Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Frightened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on All Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Investigation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Petrified</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Arcana</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Survival</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Poisoned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Athletics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Persuastion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on History</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Perception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blinded</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Entangled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Intelligence Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Restrained</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Intimidation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Ranged Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Constitution Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stunned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 6</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Confused</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Rage</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Medicine</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Performance</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Strength</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 5</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Haste</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Intelligence</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Fly</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 1</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on All Abilities</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Perception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Stealth</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Strength Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Ranged Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Faerie Fire</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Stealth</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Arcana</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Insight</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Religion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stable</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Concentration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Constitution</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Strength Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Initiative</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Deafened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Nature</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Melee Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Performance</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Initiative</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wild Shape</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Death Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Invisible</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconscious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Persuastion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Acrobatics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Animal Handling</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Deception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Helpless</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Nature</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Freedom of Movement</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Diseased</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Expeditious Retreat</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Survival</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Animal Handling</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Insight</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Medicine</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Investigation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Deception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Grappled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on History</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blessed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Acrobatics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Melee Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intimidation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Religion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Athletics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Strength</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Abilities</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Sleight of Hand</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Sleight of Hand</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Death Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <macroPropertiesMap>
+    <entry>
+      <int>16</int>
+      <macro name="ms_appendSelect"/>
+    </entry>
+    <entry>
+      <int>1</int>
+      <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>17</int>
+      <macro name="ms_selectToFront"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="ms_toBack"/>
+    </entry>
+    <entry>
+      <int>19</int>
+      <macro name="ms_tokenCollector"/>
+    </entry>
+    <entry>
+      <int>20</int>
+      <macro name="ms_toggleSelect"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="ms_replaceSelect"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="ms_encodeHtml"/>
+    </entry>
+    <entry>
+      <int>13</int>
+      <macro name="ms_frame"/>
+    </entry>
+    <entry>
+      <int>14</int>
+      <macro name="ms_generateRow"/>
+    </entry>
+    <entry>
+      <int>15</int>
+      <macro name="ms_toFront"/>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>

@@ -26,7 +26,7 @@
 		[h: textValue = strformat("SET %{dsPass} Pass/%{dsFail} Fail")]
 	};
 	default: {
-		[h: abort(0)]
+    [h: abort(0)]
 	}
 ]
 <!-- Update the toon  -->
@@ -34,4 +34,3 @@
 	"maximum", getProperty("MaxHP", id), "dsPass", dsPass, "dsFail", dsFail, 
 	"exhaustion6", getState("Exhaustion 6", id), "text-type", "deathSave", "text-value", textValue)]
 [h: dnd5e_applyHealth(params)]
-[h: abort(0)] <!-- No output -->

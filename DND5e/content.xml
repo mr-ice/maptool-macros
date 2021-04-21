@@ -240,7 +240,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>0</defaultValue>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>shield.ac</name>
@@ -639,6 +639,13 @@
           <defaultValue>0</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
+          <name>bonus.allSave</name>
+          <highPriority>false</highPriority>
+          <ownerOnly>false</ownerOnly>
+          <gmOnly>false</gmOnly>
+          <defaultValue>0</defaultValue>
+        </net.rptools.maptool.model.TokenProperty>
+        <net.rptools.maptool.model.TokenProperty>
           <name>---- Ability Bonuses ----</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
@@ -992,7 +999,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(StrengthBonus + bonus.strSave + (Proficiency * max(proficiency.strSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(StrengthBonus + bonus.strSave + (Proficiency * max(proficiency.strSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>DexteritySave</name>
@@ -1000,7 +1007,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(DexterityBonus + bonus.dexSave + (Proficiency * max(proficiency.dexSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(DexterityBonus + bonus.dexSave + (Proficiency * max(proficiency.dexSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>ConstitutionSave</name>
@@ -1008,7 +1015,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(ConstitutionBonus + bonus.conSave + Proficiency * max (proficiency.conSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(ConstitutionBonus + bonus.conSave + Proficiency * max (proficiency.conSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>IntelligenceSave</name>
@@ -1016,7 +1023,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(IntelligenceBonus + bonus.intSave + Proficiency * max (proficiency.intSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(IntelligenceBonus + bonus.intSave + Proficiency * max (proficiency.intSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>WisdomSave</name>
@@ -1024,7 +1031,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(WisdomBonus + bonus.wisSave + (Proficiency * max (proficiency.wisSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(WisdomBonus + bonus.wisSave + (Proficiency * max (proficiency.wisSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>CharismaSave</name>
@@ -1032,7 +1039,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(CharismaBonus + bonus.chaSave + (Proficiency * max (proficiency.chaSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(CharismaBonus + bonus.chaSave + (Proficiency * max (proficiency.chaSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>DeathSave</name>
@@ -1040,7 +1047,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(bonus.deathSave + (Proficiency * max (proficiency.deathSave, proficiency.allSave)))}</defaultValue>
+          <defaultValue>{floor(bonus.deathSave + (Proficiency * max (proficiency.deathSave, proficiency.allSave)) + bonus.allSave)}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>---- Skills &amp; Abilities ----</name>
@@ -1067,7 +1074,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor(DexterityBonus + bonus.conAbility + (Proficiency * max(proficiency.conAbility, proficiency.allAbility)))}</defaultValue>
+          <defaultValue>{floor(ConstitutionBonus + bonus.conAbility + (Proficiency * max(proficiency.conAbility, proficiency.allAbility)))}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>IntelligenceAbility</name>
@@ -1440,6 +1447,7 @@
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>stat.effects</name>
+          <shortName>Effects</shortName>
           <highPriority>true</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
