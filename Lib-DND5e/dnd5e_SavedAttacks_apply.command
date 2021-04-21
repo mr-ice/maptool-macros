@@ -32,9 +32,9 @@
 [h, if (actionName == ""): actionName = dnd5e_RollExpression_getName(titleExp)]
 [h: tt = dnd5e_RollExpression_getTypedDescriptor(titleExp, "actionDesc")]
 [h, if (tt != "") , code: {
-	[h: allOutput = "<b>Applying attack: <span " +  dnd5e_Util_formatTooltip(tt) + "'>" + actionName + "</span></b>"]
+	[h: allOutput = "<b>Applying: <span " +  dnd5e_Util_formatTooltip(tt) + "'>" + actionName + "</span></b>"]
 }; {
-	[h: allOutput = "<b>Applying attack: " + actionName + "</b>"]	
+	[h: allOutput = "<b>Applying: " + actionName + "</b>"]	
 }]
 
 <!-- Modify each selected token -->
@@ -52,7 +52,7 @@
 	<!-- Remove the damage and update the output -->
 	[h: libToken = startsWith(getName(id), "Lib:")]
 	[h, if (!libToken), code: {
-		[h: dnd5e_Util_chatTokenOutput(json.set("{}", "id", id, "text", "apply attack <b><i>" + actionName + "</b></i>"), json.get(state, "player"))]
+		[h: dnd5e_Util_chatTokenOutput(json.set("{}", "id", id, "text", "APPLYING <b><i>" + actionName + "</b></i>"), json.get(state, "player"))]
 		[h: dnd5e_removeDamage(json.set("{}", "id", id, "current", getProperty("HP", id), "temporary", getProperty("TempHP", id),
 						"damage", json.get(state, "totalDamage")))]
 	}]

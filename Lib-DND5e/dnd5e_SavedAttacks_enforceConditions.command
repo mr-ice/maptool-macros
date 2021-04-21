@@ -25,10 +25,18 @@
 
 <!-- Apply the states -->
 [h: output = json.get(state, "output") + "<i>"]
+[h: player = json.get(state, "player")]
+[h: playerFail = ""]
 [h, foreach(cond, json.get(condExp, "conditions")), code: {
-	[h, if (addStates): setState(cond, 1, id)]
+	[h, if (addStates), code: {
+		[h: setState(cond, 1, id)]
+		[h: player = json.append(player, strformat('{"text": "%{cond}", "image": "%s"}', getStateImage(cond)))]
+	}; {
+		[h: playerFail = playerFail + strformat("<s><i>%{cond}</i></s> "))]
+	}]
 	[h: output = output + " " + if(!addStates, "<s>", "") + "<span title='" + tt + "'>" + cond + "</span>" + if(!addStates, "</s>", "") + ","]
 }]
 [h: output = output + "</i>"] 
-[h: state = json.set(state, "output", output)]
+[h, if(!addStates): player = json.append(player, strformat('{"text": "%{playerFail}(Save %s)"}', capitalize(json.get(saveExp, "saveResult"))))]
+[h: state = json.set(state, "output", output, "player", player)]
 [h: macro.return = state]

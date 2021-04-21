@@ -84,5 +84,7 @@
 <!-- Update the state -->
 [h: tt = dnd5e_Util_encodeHtml(dnd5e_RollExpression_getTargetCheck(checkExp) + " = " + check + " = " + if(checkResult, "True", "False"))]
 [h: output = json.get(state, "output") + " <span title='" + tt + "'>Check " + if(checkResult, "PASS", "FAIL") + ";</span>"]
-[h: state = json.set(state, "check", checkResult, "output", output)]
+[h: player = json.get(state, "player")]
+[h: player = json.append(player, strformat('{"text": "Check %s"}', if(checkResult, "PASS", "FAIL")))]
+[h: state = json.set(state, "check", checkResult, "output", output, "player", player)]
 [h: macro.return = state]

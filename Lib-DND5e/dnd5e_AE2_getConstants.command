@@ -57,7 +57,7 @@
 [h: actionTypes = json.append("[]", "DnD Beyond Weapon", "DnD Beyond Spell", "Generic Attack", "Damage with save", "Damage only",
 							"Condition with save", "Condition only", "Free Form")]
 [h: abilities = json.append("[]", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma")]
-[h: stateGroups = json.append("[]", "2. Conditions", "3. Game States", "4. Fatigued", "5. Crosses", "6. Hexes", "7. Targets", "8. Wheels")]
+[h: stateGroups = json.append("[]", "02. Conditions", "03. Game States", "04. Fatigued", "05. Crosses", "06. Hexes", "07. Targets", "08. Wheels")]
 [h: macroColors = json.set("{}", "aqua", "Aqua", "black", "Black", "blue", "Blue", "cyan", "Cyan", "darkgray", "Dark Gray", "fuchsia", "Fuchsia",
 					"gray", "Gray", "gray25", "25% Gray", "gray50", "50% Gray", "gray75", "75% Gray", "green", "Green", "lightgray", "Light Gray",
 					"lime", "Lime", "magenta", "Magenta", "maroon", "Maroon", "navy", "Navy", "olive", "Olive", "orange", "Orange", "pink", "Pink",

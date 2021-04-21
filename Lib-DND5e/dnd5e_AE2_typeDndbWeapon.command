@@ -81,6 +81,7 @@
 		[h, if (json.length(types) > 0): types = json.get(types, 0)]
 		[h, if (listCount(types) > 1): types = listGet(types, 0)]		
 		[h: exp = dnd5e_RollExpression_setDamageTypes(exp, types)]
+		[h: exp = dnd5e_RollExpression_removeType(exp, "weapon")]
 	}]
 
 	<!-- Decorate and copy the step to the new list -->
