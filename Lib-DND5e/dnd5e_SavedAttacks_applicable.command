@@ -1,0 +1,7 @@
+[h: roll = arg(0)]
+[h: dnd5e_AE2_getConstants()]
+[h: checkForTypes = json.append("[]", dnd5e_Type_Damageable(), dnd5e_Type_Saveable(), CONDITION_STEP_TYPE)]
+[h: applicable = false]
+[h, foreach(type, checkForTypes, ""): applicable = if(applicable || json.type(dnd5e_RollExpression_findExpressionByType(roll, type)) == "OBJECT", true, false)]
+[h: log.debug(getMacroName() + "## applicable=" + applicable + " ## condition?" + json.indent(dnd5e_RollExpression_findExpressionByType(roll, COND_TYPE)))]
+[h: macro.return = applicable]
