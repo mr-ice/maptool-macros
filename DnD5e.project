@@ -3,7 +3,8 @@
   <token name="Lib-DND5e"/>
   <token name="Lib-DND5e-TestLibrary"/>
   <token name="Lib-DnD5e-PartyPanel"/>
-  <token name="Lib-MultiSelect"/>  
+  <token name="Lib-MultiSelect"/> 
+  <token name="Lib-DnD5e-CharacterSheet"/> 
   <macroset name="DnD5e-Campaign">
     <macro name="macro/Create+Ability+Check+Roll+Macro"/>
     <macro name="macro/Create+Damage+Roll+Macro"/>
@@ -21,6 +22,7 @@
     <macro name="macro/Apply+Last+Attack+Options"/>
     <macro name="macro/Restore+Last+Dead+NPC"/>
     <macro name="macro/Change+Elevation"/>
+    <macro name="Lib-DnD5e-CharacterSheet/Character+Sheet"/>
   </macroset>
   <macroset name="DnD5e-GM">
     <macro name="macro/Set+Landing+Map"/>

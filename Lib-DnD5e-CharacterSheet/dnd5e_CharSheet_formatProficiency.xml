@@ -1,0 +1,45 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>919719c9-3ac6-402e-bf5b-3730cf3d1e52</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>29</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_formatProficiency</label>
+  <group>Character Sheet - Panel</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;Given a property representing a proficiency of one of the following values:
+
+arg (0) = proficiency property value
+
+0 = Not Proficient
+0.5 = Half Proficient
+1 = Proficient
+2 = Expert
+
+* Any value not in this list is treated as '0' - Not Proficient
+
+Returns: a String representation:
+
+O = Not Proficient
+&amp;#189; = Half
+&amp;check; = Proficient
+&amp;check;&amp;check; = Expert
+
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

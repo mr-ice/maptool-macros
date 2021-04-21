@@ -1,0 +1,42 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>99d51c20-9efd-43b6-89ef-044f52edddbe</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>60</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_Util_getEquipmentInput</label>
+  <group>Character Sheet - Macros - Utils</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;Returns a String suitable for input() for the given equipment item.
+arg(0) = (Optional) Equipment item
+Returns: Input string. If no item was given, an input string with 
+	blank values will be returned.
+
+Input String populates variables:
+
+eqName: Equipment name
+eqQuantity: Number equipped
+eqValue: Purchase price of a single unit
+eqWeight: Weight of a single unit
+eqContainer: Container equipment is in, if any
+eqDescription: Description of the item
+eqCarried: If this item is caried or equipped
+eqDelete: If this item should be deleted
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

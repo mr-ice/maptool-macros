@@ -1,0 +1,64 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>e3dd37bb-6172-498d-be17-715494dccf04</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>64</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_Util_getCounterInput</label>
+  <group>Character Sheet - Macros - Utils</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;arg (0) = (Optional) Counter to return an input string for. If none is
+provided, an input string for each counter is returned
+
+Returns: a JSON object including the inputString and field names including a special "NEW_COUNTER"
+	field. If the stringProperty for the "NEW_COUNTER" variable has a name property of "NEW_COUNTER", 
+	the caller must assume a new counter was NOT defined and ignore "NEW_COUNTER".
+
+Input String fields, per tab:
+	name: Name of the counter
+	limit: Maximum iterations of the counter
+	current: Current iteration of the counter
+	type: "rounds", "minutes", "hours", or "other", indicating the kind of iteration being counted
+	delete: Boolean 1 or 0, indicating the counter is to be removed (1) or retained (0)
+
+Example:
+{
+    "inputString": "Rage | Rage || TAB## name | Rage | Counter Name | TEXT | width=8## curent | 8 | 
+    Current Value | TEXT | width=5## limit | 10 | Expires After | TEXT | width=5## type |
+    [\"rounds\",\"minutes\",\"hours\",\"other\"] | The type | LIST | delimiter=json select=0 value=string
+    span=true, delete | 0 | Delete Counter | CHECK## Bless | Bless || TAB## name | Bless | Counter Name |
+    TEXT | width=8## curent | 10 | Current Value | TEXT | width=5## limit | 12 | Expires After | TEXT |
+    width=5## type | [\"rounds\",\"minutes\",\"hours\",\"other\"] | The type | LIST | delimiter=json
+    select=1 value=string span=true, delete | 0 | Delete Counter | CHECK## Invisible | Invisible || 
+    TAB## name | Invisible | Counter Name | TEXT | width=8## curent | 2 | Current Value | TEXT | 
+    width=5## limit | 20 | Expires After | TEXT | width=5## type |
+    [\"rounds\",\"minutes\",\"hours\",\"other\"] | The type | LIST | delimiter=json select=2 
+    value=string span=true, delete | 0 | Delete Counter | CHECK## NEW_COUNTER | NEW_COUNTER || 
+    TAB## name | NEW_COUNTER | Counter Name | TEXT | width=8## curent | 10 | Current Value | TEXT |
+    width=5## limit | 10 | Expires After | TEXT | width=5## type |
+    [\"rounds\",\"minutes\",\"hours\",\"other\"] | The type | LIST | delimiter=json select=0 
+    value=string span=true, delete | 0 | Delete Counter | CHECK",
+    "tabFields": [
+        "Rage",
+        "Bless",
+        "Invisible",
+        "NEW_COUNTER"
+    ]
+}</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

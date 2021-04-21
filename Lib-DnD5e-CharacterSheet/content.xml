@@ -1,0 +1,1070 @@
+<net.rptools.maptool.model.Token>
+  <id>
+    <baGUID>WnRCg39pScya4GiTZ6z9Yw==</baGUID>
+  </id>
+  <beingImpersonated>false</beingImpersonated>
+  <exposedAreaGUID>
+    <baGUID>jHqakT7ZSW+hPpWZmOjrmQ==</baGUID>
+  </exposedAreaGUID>
+  <imageAssetMap>
+    <entry>
+      <null/>
+      <net.rptools.lib.MD5Key>
+        <id>fa7ee035758f6be021c93059f5143d91</id>
+      </net.rptools.lib.MD5Key>
+    </entry>
+  </imageAssetMap>
+  <x>850</x>
+  <y>200</y>
+  <z>7</z>
+  <anchorX>0</anchorX>
+  <anchorY>0</anchorY>
+  <sizeScale>1.0</sizeScale>
+  <lastX>850</lastX>
+  <lastY>400</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>7</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>17</x>
+          <y>8</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves/>
+        </parent>
+        <h>3.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>6</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>17</x>
+          <y>7</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/parent"/>
+          <h>3.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>2.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>5</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>17</x>
+          <y>6</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>2.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>1.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>4</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>17</x>
+          <y>5</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>1.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>17</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>17</x>
+        <y>4</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </waypointList>
+  </lastPath>
+  <snapToScale>true</snapToScale>
+  <width>256</width>
+  <height>256</height>
+  <isoWidth>256</isoWidth>
+  <isoHeight>256</isoHeight>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <sizeMap>
+    <entry>
+      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.SquareGrid</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+  </sizeMap>
+  <snapToGrid>true</snapToGrid>
+  <isVisible>true</isVisible>
+  <visibleOnlyToOwner>false</visibleOnlyToOwner>
+  <vblColorSensitivity>-1</vblColorSensitivity>
+  <alwaysVisibleTolerance>2</alwaysVisibleTolerance>
+  <isAlwaysVisible>false</isAlwaysVisible>
+  <name>Lib:DnD5e-CharacterSheet</name>
+  <ownerList>
+    <string>Kayla</string>
+    <string>Pzzzt</string>
+  </ownerList>
+  <ownerType>0</ownerType>
+  <tokenShape>TOP_DOWN</tokenShape>
+  <tokenType>NPC</tokenType>
+  <layer>TOKEN</layer>
+  <propertyType>DNDebug</propertyType>
+  <tokenOpacity>1.0</tokenOpacity>
+  <terrainModifier>0.0</terrainModifier>
+  <terrainModifierOperation>NONE</terrainModifierOperation>
+  <terrainModifiersIgnored>
+    <net.rptools.maptool.model.Token_-TerrainModifierOperation>NONE</net.rptools.maptool.model.Token_-TerrainModifierOperation>
+  </terrainModifiersIgnored>
+  <isFlippedX>false</isFlippedX>
+  <isFlippedY>false</isFlippedY>
+  <sightType>Normal</sightType>
+  <hasSight>true</hasSight>
+  <notes>Character Sheet inspired by and adapted from https://github.com/rtakehara/5e-Framework. 
+Consider visiting their Patreon: https://www.patreon.com/rtakehara</notes>
+  <gmNotes>TODO:
+- Resources needs a smarter input than "changeProperty". Clicking "Resources" takes you to an input for the user to specify limited resources (things that refresh after long or short rests).  When a resource is displayed, clicking on its link will bring up an editor for that resource. For usage, use Xs and Os (like failed death saves. Clicking the Reset link will reset the individual resource. Clicking the Reset header will reset all resources.
+
+
+- Reaction, Concentration: Reaction is Check and O. Concentration is Concentrating and Not concentrating (gren and red)
+
+- Features And Traits: Don't like " &amp; Traits", rename that to something else; clashes with Personality Traits. Take a cue from the original and make this a tabbed input?</gmNotes>
+  <state>
+    <entry>
+      <string>Paralyzed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Longstrider</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on All Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Frightened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on All Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Investigation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Petrified</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Arcana</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Survival</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hidden</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Poisoned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Constitution</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Athletics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Persuastion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on History</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Incapacitated</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Perception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blinded</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Entangled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Intelligence Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Restrained</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Intimidation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Ranged Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Constitution Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stunned</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 6</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Confused</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Rage</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 3</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Medicine</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Performance</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bloodied</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 2</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Strength</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 5</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intelligence</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 4</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Haste</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Intelligence</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Exhaustion 1</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Fly</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on All Abilities</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Perception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Stealth</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Strength Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Ranged Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Faerie Fire</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Stealth</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Arcana</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Insight</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Religion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Stable</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Concentration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Constitution</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Damaged</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Strength Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Wisdom Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Initiative</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Deafened</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Nature</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Melee Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Other</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Performance</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Yellow</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconcious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Initiative</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Prone</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Charisma Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wild Shape</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Death Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Invisible</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Unconscious</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disabled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dead</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Persuastion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Acrobatics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Animal Handling</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Deception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Helpless</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Nature</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Freedom of Movement</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Wisdom Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Diseased</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Expeditious Retreat</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Survival</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Animal Handling</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Insight</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Green</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Turquoise</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Red</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Medicine</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Investigation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Deception</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Grappled</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Charisma Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Dexterity Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on History</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Blessed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Charmed</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Bardic Inspiration</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Acrobatics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Melee Attacks</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Intimidation</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Religion</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Dexterity</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Athletics</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Target - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Strength</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Cross - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Wheel - Orange</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on All Abilities</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Hex - Blue</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Disadvantage on Sleight of Hand</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Dying</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Sleight of Hand</string>
+      <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>Advantage on Death Saving Throws</string>
+      <boolean>false</boolean>
+    </entry>
+  </state>
+  <macroPropertiesMap>
+    <entry>
+      <int>1</int>
+      <macro name="onCampaignLoad"/>
+    </entry>
+    <entry>
+      <int>2</int>
+      <macro name="Manage+Macro+UDF+Registry"/>
+    </entry>
+    <entry>
+      <int>3</int>
+      <macro name="Data_Macro_UDF_Registry"/>
+    </entry>
+    <entry>
+      <int>4</int>
+      <macro name="dnd5e_CharSheet_UDF_getRegistry"/>
+    </entry>
+    <entry>
+      <int>5</int>
+      <macro name="dnd5e_CharSheet_UDF_setRegistry"/>
+    </entry>
+    <entry>
+      <int>6</int>
+      <macro name="CharSheet_CSS"/>
+    </entry>
+    <entry>
+      <int>7</int>
+      <macro name="Character+Sheet"/>
+    </entry>
+    <entry>
+      <int>8</int>
+      <macro name="dnd5e_CharSheet_CharacterSheet"/>
+    </entry>
+    <entry>
+      <int>10</int>
+      <macro name="dnd5e_CharSheet_Constants"/>
+    </entry>
+    <entry>
+      <int>11</int>
+      <macro name="dnd5e_CharSheet_changeProperty"/>
+    </entry>
+    <entry>
+      <int>12</int>
+      <macro name="dnd5e_CharSheet_refreshPanel"/>
+    </entry>
+    <entry>
+      <int>15</int>
+      <macro name="dnd5e_CharSheet_getInfoHTML"/>
+    </entry>
+    <entry>
+      <int>16</int>
+      <macro name="dnd5e_CharSheet_getAbilitiesHTML"/>
+    </entry>
+    <entry>
+      <int>17</int>
+      <macro name="dnd5e_CharSheet_getTacticalAndEquipmentHTML"/>
+    </entry>
+    <entry>
+      <int>18</int>
+      <macro name="dnd5e_CharSheet_getBackgroundAndResourcesHTML"/>
+    </entry>
+    <entry>
+      <int>20</int>
+      <macro name="dnd5e_CharSheet_changeTokenName"/>
+    </entry>
+    <entry>
+      <int>21</int>
+      <macro name="dnd5e_CharSheet_changeClasses"/>
+    </entry>
+    <entry>
+      <int>22</int>
+      <macro name="dnd5e_CharSheet_formatBonus"/>
+    </entry>
+    <entry>
+      <int>23</int>
+      <macro name="dnd5e_CharSheet_changeAbilities"/>
+    </entry>
+    <entry>
+      <int>24</int>
+      <macro name="dnd5e_CharSheet_Util_getAbilitiesInput"/>
+    </entry>
+    <entry>
+      <int>25</int>
+      <macro name="dnd5e_CharSheet_rollAbility"/>
+    </entry>
+    <entry>
+      <int>26</int>
+      <macro name="dnd5e_CharSheet_formatBoolean"/>
+    </entry>
+    <entry>
+      <int>27</int>
+      <macro name="dnd5e_CharSheet_toggleProperty"/>
+    </entry>
+    <entry>
+      <int>28</int>
+      <macro name="dnd5e_CharSheet_Util_calculateProficiency"/>
+    </entry>
+    <entry>
+      <int>29</int>
+      <macro name="dnd5e_CharSheet_formatProficiency"/>
+    </entry>
+    <entry>
+      <int>30</int>
+      <macro name="dnd5e_CharSheet_changeProficiency"/>
+    </entry>
+    <entry>
+      <int>31</int>
+      <macro name="dnd5e_CharSheet_rollSave"/>
+    </entry>
+    <entry>
+      <int>32</int>
+      <macro name="dnd5e_CharSheet_changeSaves"/>
+    </entry>
+    <entry>
+      <int>33</int>
+      <macro name="dnd5e_CharSheet_Util_getProficiencyInput"/>
+    </entry>
+    <entry>
+      <int>34</int>
+      <macro name="dnd5e_CharSheet_changeSkills"/>
+    </entry>
+    <entry>
+      <int>35</int>
+      <macro name="dnd5e_CharSheet_getArmorClassSpan"/>
+    </entry>
+    <entry>
+      <int>36</int>
+      <macro name="dnd5e_CharSheet_changeArmorClass"/>
+    </entry>
+    <entry>
+      <int>37</int>
+      <macro name="dnd5e_CharSheet_changeInitiative"/>
+    </entry>
+    <entry>
+      <int>38</int>
+      <macro name="dnd5e_CharSheet_rollInitiative"/>
+    </entry>
+    <entry>
+      <int>39</int>
+      <macro name="dnd5e_CharSheet_changeSpeed"/>
+    </entry>
+    <entry>
+      <int>40</int>
+      <macro name="dnd5e_CharSheet_changeHitPoints"/>
+    </entry>
+    <entry>
+      <int>41</int>
+      <macro name="dnd5e_CharSheet_applyHealth"/>
+    </entry>
+    <entry>
+      <int>43</int>
+      <macro name="dnd5e_CharSheet_toggleDeathSaves"/>
+    </entry>
+    <entry>
+      <int>44</int>
+      <macro name="dnd5e_CharSheet_Util_getArmorClassInput"/>
+    </entry>
+    <entry>
+      <int>45</int>
+      <macro name="dnd5e_CharSheet_Util_getInitiativeInput"/>
+    </entry>
+    <entry>
+      <int>46</int>
+      <macro name="dnd5e_CharSheet_getInitiativeSpan"/>
+    </entry>
+    <entry>
+      <int>47</int>
+      <macro name="dnd5e_CharSheets_Util_getSpeedsInput"/>
+    </entry>
+    <entry>
+      <int>48</int>
+      <macro name="dnd5e_CharSheet_formatDeathSave"/>
+    </entry>
+    <entry>
+      <int>49</int>
+      <macro name="dnd5e_CharSheet_getAttacksHTML"/>
+    </entry>
+    <entry>
+      <int>50</int>
+      <macro name="dnd5e_CharSheet_rollAttack"/>
+    </entry>
+    <entry>
+      <int>51</int>
+      <macro name="dnd5e_CharSheet_rollAttackOnly"/>
+    </entry>
+    <entry>
+      <int>52</int>
+      <macro name="dnd5e_CharSheet_rollDamageOnly"/>
+    </entry>
+    <entry>
+      <int>53</int>
+      <macro name="dnd5e_CharSheet_launchEditor"/>
+    </entry>
+    <entry>
+      <int>54</int>
+      <macro name="dnd5e_CharSheet_spellCastingPanel"/>
+    </entry>
+    <entry>
+      <int>55</int>
+      <macro name="dnd5e_CharSheet_changeCoins"/>
+    </entry>
+    <entry>
+      <int>56</int>
+      <macro name="dnd5e_CharSheet_toggleCarried"/>
+    </entry>
+    <entry>
+      <int>57</int>
+      <macro name="dnd5e_CharSheet_changeEquipment"/>
+    </entry>
+    <entry>
+      <int>58</int>
+      <macro name="dnd5e_CharSheet_doesNothing"/>
+    </entry>
+    <entry>
+      <int>59</int>
+      <macro name="dnd5e_CharSheet_Util_adornRollExpressions"/>
+    </entry>
+    <entry>
+      <int>60</int>
+      <macro name="dnd5e_CharSheet_Util_getEquipmentInput"/>
+    </entry>
+    <entry>
+      <int>61</int>
+      <macro name="dnd5e_CharSheet_getEquipementHTML"/>
+    </entry>
+    <entry>
+      <int>62</int>
+      <macro name="dnd5e_CharSheet_Util_getCoinTemplate"/>
+    </entry>
+    <entry>
+      <int>63</int>
+      <macro name="dnd5e_CharSheet_launchConditions"/>
+    </entry>
+    <entry>
+      <int>64</int>
+      <macro name="dnd5e_CharSheet_Util_getCounterInput"/>
+    </entry>
+    <entry>
+      <int>66</int>
+      <macro name="dnd5e_CharSheet_getCounterHTML"/>
+    </entry>
+    <entry>
+      <int>67</int>
+      <macro name="dnd5e_CharSheet_changeCounters"/>
+    </entry>
+    <entry>
+      <int>68</int>
+      <macro name="dnd5e_CharSheet_incrementCounter"/>
+    </entry>
+    <entry>
+      <int>69</int>
+      <macro name="dnd5e_CharSheet_Util_getResourceInput"/>
+    </entry>
+    <entry>
+      <int>70</int>
+      <macro name="dnd5e_CharSheet_getResourceHTML"/>
+    </entry>
+    <entry>
+      <int>71</int>
+      <macro name="dnd5e_CharSheet_getResourceHTML"/>
+    </entry>
+    <entry>
+      <int>72</int>
+      <macro name="dnd5e_CharSheet_changeResources"/>
+    </entry>
+    <entry>
+      <int>73</int>
+      <macro name="dnd5e_CharSheet_resetResources"/>
+    </entry>
+    <entry>
+      <int>74</int>
+      <macro name="dnd5e_CharSheet_Util_getTabSafeVar"/>
+    </entry>
+  </macroPropertiesMap>
+  <speechMap/>
+</net.rptools.maptool.model.Token>

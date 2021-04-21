@@ -1,0 +1,26 @@
+[h, if (argCount() > 0): resourceField = arg(0); resourceField = ""]
+[h: dnd5e_CharSheet_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "## resourceField = " + resourceField)]
+[h: inputObject = dnd5e_CharSheet_Util_getResourceInput (resourceField)]
+[h: inputFields = json.get (inputObject, "tabFields")]
+[h: inputString = json.get (inputObject, "inputString")]
+[h: abort (input (inputString))]
+[h: resourceObject = getProperty (PROP_RESOURCES)]
+[h, if (json.type (resourceObject) != "OBJECT"): resourceObject = "{}"]
+[h: newResourceObject = "{}"]
+[h, foreach (inputField, inputFields), code: {
+	[strPropField = eval (inputField)]
+	[log.debug (CATEGORY + "## strPropField = " + strPropField)]
+	[doDelete = getStrProp (strPropField, "delete", 0, "##")]
+	[resourceName = getStrProp (strPropField, "name", inputField, "##")]
+	[fieldName = dnd5e_CharSheet_Util_getTabSafeVar (resourceName)]
+	[log.debug (CATEGORY + "## inputField = " + inputField + "; fieldName = " + fieldName +
+		"; doDelete = " + doDelete)]
+	[if (!doDelete && resourceName != "NEW_RESOURCE"):
+		newResourceObject = json.set (newResourceObject, fieldName, strPropField)]
+}]
+[h, if (resourceField != ""): newResourceObject = json.merge (resourceObject, newResourceObject)]
+[h: log.debug (CATEGORY + "## resourceObject = " + resourceObject + 
+	"; newResourceObject = " + newResourceObject)]
+[h: setProperty (PROP_RESOURCES, newResourceObject)]
+[h: dnd5e_CharSheet_refreshPanel ()]
