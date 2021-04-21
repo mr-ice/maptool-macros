@@ -81,9 +81,9 @@
 
 <form action="[r:processorLink]" method="json" id="editor">
   <ul class="nav nav-tabs">
-    [r, foreach(action, json.fields(workingCopy), ""): "<li class='nav-item'><button type='submit' class='nav-link " 
-    		+ if(activeName == action, "active", "") + "' name='chooseAction' value='"	+ action + "'
-    		>" + action + "</button></li>"]
+    [r, foreach(action, json.fields(workingCopy, "json"), ""): "<li class='nav-item'><button type='submit' class='nav-link " 
+    		+ if(activeName == action, "active", "") + "' name='chooseAction' value='"	+ action + "'>" 
+    		+ action + "</button></li>"]
   </ul>  
   <div class="form-container">
 
