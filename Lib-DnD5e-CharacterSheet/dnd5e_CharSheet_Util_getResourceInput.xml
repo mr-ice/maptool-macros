@@ -1,0 +1,40 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>d668f121-01fe-468e-a346-b11493127a69</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>69</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_Util_getResourceInput</label>
+  <group>Character Sheet - Macros - Utils</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>true</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;arg (0) = (Optional) Resource to return an input string for. If noe is
+provided, an input string for each resource is returned.
+
+Returns: a JSON object including the inputString and field names including a special "NEW_RESOURCE"
+	field. If the stringProperty for the "NEW_RESOURCE" variable has a name property of "NEW_RESOURCE", 
+	the caller must assume a new resource was NOT defined and ignore "NEW_RESOURCE".
+
+Input String fields, per tab:
+	name: Name of the resource
+	limit: Maximum uses of the counter
+	current: Current uses of the counter
+	resets: "Short", "Long", or "Special", indicating the circumstances a resource is reset to full
+	delete: Boolean 1 or 0, indicating the resource is to be removed (1) or retained (0)
+</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

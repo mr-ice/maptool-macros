@@ -1,0 +1,7 @@
+[h: attackKey = arg(0)]
+[h: dnd5e_CharSheet_Constants (getMacroName())]
+[h: attackJson = getProperty ("attackExpressionJSON")]
+[h: rollExpression = json.get (attackJson, attackKey)]
+[h: log.debug (CATEGORY + "## attackKey = " + attackKey + "; re = " + rollExpression)]
+[h: rolled = dnd5e_DiceRoller_roll (rollExpression)]
+[r: dnd5e_RollExpression_getFormattedOutput (rolled)]

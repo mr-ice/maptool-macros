@@ -1,0 +1,38 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>195aeaa2-65e9-4af8-b7f1-d6ee2e9149b6</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <index>24</index>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dnd5e_CharSheet_Util_getAbilitiesInput</label>
+  <group>Character Sheet - Macros - Utils</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>&lt;html&gt;&lt;pre&gt;
+arg(0) = tokenID
+
+Returns a string used to Input a token's abilities. When processed by
+input(), the following variables are populated:
+
+'inputStrength',
+'inputDexterity',
+'inputConstitution',
+'inputIntelligence',
+'inputWisdom',
+'inputCharisma'</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

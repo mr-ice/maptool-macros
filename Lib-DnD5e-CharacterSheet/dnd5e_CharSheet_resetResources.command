@@ -1,0 +1,28 @@
+[h: resourceField = arg(0)]
+[h, if (argCount() > 1): propertyName = arg (1); propertyName = ""]
+[h: dnd5e_CharSheet_Constants (getMacroName())]
+[h, if (propertyName == ""): propertyName = PROP_RESOURCES]
+[h: resourceObject = getProperty (PROP_RESOURCES)]
+[h, if (json.type (resourceObject) != "OBJECT"): resourceObject = "{}"]
+[h: strProp = json.get (resourceObject, resourceField)]
+[h, if (strProp == ""), code: {
+	[log.warn (CATEGORY + "## no resource found for " + resourceField)]
+	[return (0, "")]
+}]
+[h: resetType = getStrProp (strProp, "reset", "Special", "##")]
+[h, if (resetType == "Special"), code: {
+	[log.debug (CATEGORY + "## special")]
+	[strProp = setStrProp (strProp, "current", 0, "##")]
+	[resourceObject = json.set (resourceObject, resourceField, strProp)]
+}; {
+	[log.debug (CATEGORY + "## grouped: " + resetType)]
+	[foreach (otherResourceField, resourceObject), code: {
+		[strProp = json.get (resourceObject, otherResourceField)]
+		[otherReset = getStrProp (strProp, "reset", "Special", "##")]
+		[if (otherReset == resetType): strProp = setStrProp (strProp, "current", 0, "##")]
+		[resourceObject = json.set (resourceObject, otherResourceField, strProp)]
+	}]
+}]
+[h: setProperty (propertyName, resourceObject)]
+[h: log.debug (CATEGORY + "## updated resourceObject = " + resourceObject)]
+[h: dnd5e_CharSheet_refreshPanel ()]

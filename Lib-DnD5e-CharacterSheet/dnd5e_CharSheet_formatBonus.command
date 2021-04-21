@@ -1,0 +1,8 @@
+[h: bonus = arg(0)]
+[h: dnd5e_CharSheet_Constants (getMacroName())]
+[h, if (bonus == ""): bonus = 0]
+[h: return (isNumber (bonus), bonus)]
+[h: bonusStr = string(bonus)]
+[h, if (bonus >= 0): bonusStr = concat ("&#x2b;", bonusStr)]
+[h: log.debug (CATEGORY + "## bonus = " + bonus + "; bonusStr = " + bonusStr)]
+[h: macro.return = bonusStr]
