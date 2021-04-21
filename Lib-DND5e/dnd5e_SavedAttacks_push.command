@@ -1,7 +1,7 @@
 [h: rolledExpressions = arg(0)]
 [h: rolled = json.get (rolledExpressions, 0)]
 [h: rolled = dnd5e_SavedAttacks_setKey (rolled)]
-[h: rolled = json.set (rolled, "rollerId", currentToken())]
+[h: rolled = dnd5e_RollExpression_addTypedDescriptor(rolled, "rollerId", currentToken())]
 [h: rolledExpressions = json.set (rolledExpressions, 0, rolled)]
 [h: saved = dnd5e_SavedAttacks_fetch()]
 [h, if (json.isEmpty(saved)): saved = "[]"; ""]
