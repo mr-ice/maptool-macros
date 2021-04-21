@@ -20,9 +20,10 @@ RUN dos2unix /usr/local/bin/assemble \
     /usr/local/bin/assemble \
     /usr/local/bin/extract
 
-ADD https://github.com/RPTools/maptool/releases/download/1.8.4/MapTool-1.8.4.jar /usr/local/libexec/
+ARG maptool_version=1.8.5
+ADD https://github.com/RPTools/maptool/releases/download/$maptool_version/MapTool-$maptool_version.jar /usr/local/libexec/
 
-ENV CLASSPATH /usr/local/libexec/MapTool-1.8.4.jar:/usr/local/libexec
+ENV CLASSPATH /usr/local/libexec/MapTool-$maptool_version.jar:/usr/local/libexec
 RUN javac /usr/local/libexec/CampaignMerge.java
 
 WORKDIR "/MT"
