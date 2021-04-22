@@ -41,6 +41,14 @@
 		[h: macroCmd = "[h: setProperty('" + LAST_ATTACK_SELECTION + "', '" + selectedAttack + "')]"]
 		[h: macroCmd = macroCmd + "[r, macro('" + getMacroName() + "@" + getMacroLocation() + "'):'']"]
 		[h: createMacro ("<html>&#x270e;</html>", macroCmd, macroConfig)]
+		<!-- Remove Macros -->
+		[h: macroInputs = json.append("[]", selectedAttack, "D&D 5e - Attacks")]
+		[h: macroConfig = json.set(macroConfig, "minWidth", 12,
+						"tooltip", "Remove the " + selectedAttack + " attack macros. This does not remove the actual action, just the macros",
+						"sortBy", sortByBase + "-" + lastSortBy + 1)]
+		[h: macroCmd = "[macro('dnd5e_Macro_clearMacroFamilyFromGroup@Lib:DnD5e'): '" + macroInputs + "']"]
+		[h: createMacro ("<html>&#128939;</html>", macroCmd, macroConfig)]
+
 
 
 	}; {""}]
