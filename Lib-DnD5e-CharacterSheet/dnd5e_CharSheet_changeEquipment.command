@@ -4,7 +4,7 @@
 [h, if (json.type (equipmentObject) != "OBJECT"): equipmentObject = "{}"]
 [h, if (equipmentKey != ""):
 	item = json.get (equipmentObject, equipmentKey);
-	item = "{}"]
+	item = json.set ("", "name", "New Item", "carried", 1, "quantity", 1)]
 [h: inputStr = dnd5e_CharSheet_Util_getEquipmentInput (item)]
 [h: abort (input (inputStr))]
 [h, if (equipmentKey == ""): equipmentKey = eqName]

@@ -8,7 +8,7 @@
 [h: saveAdditionalBonusTemplate = "%{additionalBonusVar} | %{additionalBonusValue} | <html>%{abilityName} " +
 	"(%{abilityBonus})&nbsp;&nbsp; + added bonus</html>| TEXT | width=3"]
 
-[h: abilityNames = json.append (ARRY_ABILITIES_NAMES, "Death")]
+[h: abilityNames = json.append (ARRY_ABILITIES_NAMES, "Death", "All")]
 [h: sep = "_____________________________________________"]
 [h: sepCount = 1]
 [h: sepLength = json.length (abilityNames)]

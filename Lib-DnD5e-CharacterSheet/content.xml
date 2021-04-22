@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>WnRCg39pScya4GiTZ6z9Yw==</baGUID>
+    <baGUID>RX4o45LwQfObrEKi4noU3g==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
-    <baGUID>jHqakT7ZSW+hPpWZmOjrmQ==</baGUID>
+    <baGUID>o1HXyeMyTAaHk4eFHmljRg==</baGUID>
   </exposedAreaGUID>
   <imageAssetMap>
     <entry>
@@ -16,142 +16,30 @@
   </imageAssetMap>
   <x>850</x>
   <y>200</y>
-  <z>7</z>
+  <z>3</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
   <lastX>850</lastX>
-  <lastY>400</lastY>
+  <lastY>200</lastY>
   <lastPath>
     <cellList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
         <x>17</x>
-        <y>8</y>
+        <y>4</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>17</x>
-        <y>7</y>
-        <g>1.0</g>
-        <distanceTraveled>1.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>17</x>
-          <y>8</y>
-          <g>0.0</g>
-          <distanceTraveled>0.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
-          <h>0.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <isAStarCanceled>false</isAStarCanceled>
-          <validMoves/>
-        </parent>
-        <h>3.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <isAStarCanceled>false</isAStarCanceled>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>17</x>
-        <y>6</y>
-        <g>2.0</g>
-        <distanceTraveled>2.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>17</x>
-          <y>7</y>
-          <g>1.0</g>
-          <distanceTraveled>1.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/parent"/>
-          <h>3.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <isAStarCanceled>false</isAStarCanceled>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
-        </parent>
-        <h>2.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <isAStarCanceled>false</isAStarCanceled>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>17</x>
-        <y>5</y>
-        <g>3.0</g>
-        <distanceTraveled>3.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>17</x>
-          <y>6</y>
-          <g>2.0</g>
-          <distanceTraveled>2.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
-          <h>2.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <isAStarCanceled>false</isAStarCanceled>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
-        </parent>
-        <h>1.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <isAStarCanceled>false</isAStarCanceled>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>17</x>
-        <y>4</y>
-        <g>4.0</g>
-        <distanceTraveled>4.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-        <parent>
-          <x>17</x>
-          <y>5</y>
-          <g>3.0</g>
-          <distanceTraveled>3.0</distanceTraveled>
-          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
-          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
-          <h>1.0</h>
-          <f>0.0</f>
-          <terrainModifier>0.0</terrainModifier>
-          <isAStarCanceled>false</isAStarCanceled>
-          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
-        </parent>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <isAStarCanceled>false</isAStarCanceled>
-        <validMoves/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
     </cellList>
     <waypointList class="linked-list">
       <net.rptools.maptool.model.CellPoint>
         <x>17</x>
-        <y>8</y>
+        <y>4</y>
         <g>0.0</g>
         <distanceTraveled>0.0</distanceTraveled>
         <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
       </net.rptools.maptool.model.CellPoint>
-      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
-        <x>17</x>
-        <y>4</y>
-        <g>4.0</g>
-        <distanceTraveled>4.0</distanceTraveled>
-        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
-        <parent reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
-        <h>0.0</h>
-        <f>0.0</f>
-        <terrainModifier>0.0</terrainModifier>
-        <isAStarCanceled>false</isAStarCanceled>
-        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
-      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
     </waypointList>
   </lastPath>
   <snapToScale>true</snapToScale>
@@ -163,15 +51,15 @@
   <scaleY>1.0</scaleY>
   <sizeMap>
     <entry>
-      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
-      <net.rptools.maptool.model.GUID>
-        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
-      </net.rptools.maptool.model.GUID>
-    </entry>
-    <entry>
       <java-class>net.rptools.maptool.model.SquareGrid</java-class>
       <net.rptools.maptool.model.GUID>
         <baGUID>fwABAc9lFSoFAAAAKgABAQ==</baGUID>
+      </net.rptools.maptool.model.GUID>
+    </entry>
+    <entry>
+      <java-class>net.rptools.maptool.model.HexGridHorizontal</java-class>
+      <net.rptools.maptool.model.GUID>
+        <baGUID>fwABAQllXDgBAAAAOAABAQ==</baGUID>
       </net.rptools.maptool.model.GUID>
     </entry>
   </sizeMap>
@@ -1064,6 +952,22 @@ Consider visiting their Patreon: https://www.patreon.com/rtakehara</notes>
     <entry>
       <int>74</int>
       <macro name="dnd5e_CharSheet_Util_getTabSafeVar"/>
+    </entry>
+    <entry>
+      <int>75</int>
+      <macro name="dnd5e_CharSheet_formatProperty"/>
+    </entry>
+    <entry>
+      <int>76</int>
+      <macro name="dnd5e_CharSheet_formatNumber"/>
+    </entry>
+    <entry>
+      <int>77</int>
+      <macro name="dnd5e_CharSheet_Util_getClassArray"/>
+    </entry>
+    <entry>
+      <int>78</int>
+      <macro name="dnd5e_CharSheet_Util_setClassArry"/>
     </entry>
   </macroPropertiesMap>
   <speechMap/>

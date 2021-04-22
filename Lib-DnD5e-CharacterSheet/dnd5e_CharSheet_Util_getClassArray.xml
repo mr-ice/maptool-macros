@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>313e3300-bde1-47df-b3d0-832b2b6fce90</macroUUID>
+  <macroUUID>e8686f5c-2a00-4329-a355-aa813870f447</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
+  <index>77</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_CharSheet_Util_calculateProficiency</label>
+  <label>dnd5e_CharSheet_Util_getClassArray</label>
   <group>Character Sheet - Macros - Utils</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,11 +15,20 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Calculates and updates the proficiency bonus for the token based on the classes property.
-Expected formats are:
-'Fighter 2'
-'Druid 3 / Wizard 10'
-Returns The proficiency value</toolTip>
+  <toolTip>&lt;html&gt;&lt;pre&gt;Returns a JSON object of class breakdown. The trick about it is the token might not already have this information, and if it doesn't, we have to infer some bits of it.
+
+[
+	{
+		"class": "Fighter",
+		"level": 4,
+		"hitDie": 1d10
+	},
+	{
+		"class": "Cleric",
+		"level": 6,
+		"hitDie": 1d8
+	}
+]</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

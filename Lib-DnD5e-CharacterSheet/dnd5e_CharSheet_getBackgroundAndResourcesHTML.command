@@ -1,6 +1,9 @@
 [h: dnd5e_CharSheet_Constants (getMacroName())]
 [h: isReactionAvailable = getProperty (PROP_REACTION)]
-[h, if (isReactionAvailable == ""): isReactionAvailable = 1]
+[h, if (isReactionAvailable == ""), code: {
+	[isReactionAvailable = 1]
+	[setProperty (PROP_REACTION, isReactionAvailable)]
+}]
 [h: reactionVerb = if (!isReactionAvailable, "<font color='red'><b>Not</b></font>", "")]
 [h: isConcentrating = getProperty (PROP_CONCENTRATING)]
 [h, if (isConcentrating == ""): isConcentrating = 0]

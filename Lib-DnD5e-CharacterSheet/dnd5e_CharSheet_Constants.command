@@ -5,6 +5,7 @@
 [h: PANEL_CHARACTER_SHEET_NAME = "%{token.name} - Character Sheet"]
 [h: ATTR_CHAR_SHEET_PANEL_WIDTH = 845]
 [h: ATTR_CHAR_SHEET_PANEL_HEIGHT = 760]
+[h: ATTR_CHAR_SHEET_FONT_SIZE = "16px"]
 [h: PROP_BACKGROUND = "dnd5e.token.background"]
 [h: PROP_SUBCLASS = "dnd5e.token.subclass"]
 [h: PROP_ALIGNMENT = "dnd5e.token.alignment"]
@@ -24,6 +25,7 @@
 [h: PROP_CONCENTRATING = "dnd5e.token.concentrating"]
 [h: PROP_COUNTERS = "dnd5e.token.counters"]
 [h: PROP_RESOURCES = "dnd5e.token.resources"]
+[h: PROP_CLASS_OBJ = "dnd5e.token.classObj"]
 [h: ARRY_ABILITIES_NAMES = 
 	"['Strength','Dexterity','Constitution','Intelligence','Wisdom','Charisma']"]
 [h: ARRY_PROF_NAMES	= 
@@ -36,6 +38,6 @@
 	"'Perception','Performance','Persuasion','Religion','Sleight of Hand'," +
 	"'Stealth','Survival']"]
 [h: ARRY_OTHER_PROPERTIES = "['" + PROP_ARMOR_PROF + "','" + PROP_WEAPON_PROF + "','" + 
-	PROP_TOOL_PROF + "']"]
-[h: ARRY_OTHER_PROP_NAMES = "['Armor', 'Weapons', 'Tools']"]
+	PROP_TOOL_PROF + "','Languages']"]
+[h: ARRY_OTHER_PROP_NAMES = "['Armor', 'Weapons', 'Tools', 'Languages']"]
 [h: ARRY_ARMOR_TYPES = "['Heavy', 'Medium', 'Light', 'Natural', 'None']"]

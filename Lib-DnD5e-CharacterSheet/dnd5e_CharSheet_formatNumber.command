@@ -1,0 +1,5 @@
+[h: value = arg (0)]
+[h, if (argCount() > 1): defaultValue = arg (1); defaultValue = 0]
+[h, if (argCount() > 2): isReturn = arg (2); isReturn = 0]
+[h, if (!isNumber (value)): value = defaultValue]
+[r: value]

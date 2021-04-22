@@ -38,9 +38,9 @@
 					<table class="double-outline" style="border-collapse: collapse">
 						<tr>
 							<td height="15">
-								<i> ' + getProperty ("classes") + '</i>
+								<i> ' + dnd5e_CharSheet_formatProperty ("classes") + '</i>
 							</td>
-							<td>' + getProperty (PROP_SUBCLASS) + '</td>
+							<td>' + dnd5e_CharSheet_formatProperty (PROP_SUBCLASS) + '</td>
 							<td>' + getPlayerName() + '</td>
 						</tr>
 						<tr class="subtext" style="border-top: 1px solid grey">
@@ -60,9 +60,11 @@
 							<td>PLAYER NAME</td>
 						</tr>
 						<tr>
-							<td>' + getProperty ("Race") + '</td>
-							<td>' + getProperty (PROP_ALIGNMENT) + '</td>
-							<td>' + getProperty (PROP_EXPERIENCE_POINTS) + '</td>
+							<td>' + dnd5e_CharSheet_formatProperty ("Race") + '</td>
+							<td>' + dnd5e_CharSheet_formatProperty (PROP_ALIGNMENT) + '</td>
+							<td>' + dnd5e_CharSheet_formatNumber(
+										dnd5e_CharSheet_formatProperty (PROP_EXPERIENCE_POINTS)
+									) + '</td>
 						</tr>
 						<tr class="subtext" style="border-top: 1px solid gray;">
 							<td>

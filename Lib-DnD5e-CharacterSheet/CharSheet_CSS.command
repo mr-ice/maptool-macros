@@ -102,7 +102,7 @@ td.ability-title {
 }
 
 td.ability-value {
-	font-size: 18px;
+	font-size: 1.125em;
 	text-align: center;
 }
 
@@ -118,7 +118,7 @@ td.inspiration-toggle {
 	text-align: center;
 	border-style: solid;
 	border-width: 2px;
-	font-size: 14px;
+	font-size: 0.875em;
 }
 
 td.inspiration-label {

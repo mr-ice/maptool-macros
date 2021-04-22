@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>313e3300-bde1-47df-b3d0-832b2b6fce90</macroUUID>
+  <macroUUID>a853cf0c-2841-4c46-8929-8b3438116c90</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
+  <index>76</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_CharSheet_Util_calculateProficiency</label>
-  <group>Character Sheet - Macros - Utils</group>
+  <label>dnd5e_CharSheet_formatNumber</label>
+  <group>Character Sheet - Panel</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,11 +15,10 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Calculates and updates the proficiency bonus for the token based on the classes property.
-Expected formats are:
-'Fighter 2'
-'Druid 3 / Wizard 10'
-Returns The proficiency value</toolTip>
+  <toolTip>arg (0) - Numerical value
+arg (1) - (Optional) - Default number to use instead of 0
+
+Prints the number or "0" when given an empty string or a non-numeric string</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

@@ -73,6 +73,8 @@
             <table class="single-outline" style="margin-top:5;">'
 ]
             <!-- SAVES -->
+[h: allSavesProf = dnd5e_CharSheet_formatNumber (getProperty ("proficiency.allSave"))]
+[h: log.debug (CATEGORY + "## allSavesProf = " + allSavesProf)]
 [h, foreach (abilityName, json.append (ARRY_ABILITIES_NAMES, "Death")), CODE: {
 	[upperAbility = upper (abilityName)]
 	[if (abilityName == "Death"): 
@@ -82,8 +84,8 @@
 	[saveValueStr = dnd5e_CharSheet_formatBonus (saveValue)]
 	[saveProficiencyProperty = "proficiency." + abbrevAbility + "Save"]
 	[saveProficiency = getProperty (saveProficiencyProperty)]
-	[saveProficiencyStr = dnd5e_CharSheet_formatProficiency (saveProficiency)]
-
+	[effectiveProficiency = max (saveProficiency, allSavesProf)]
+	[saveProficiencyStr = dnd5e_CharSheet_formatProficiency (effectiveProficiency)]
 	[html = html + '
                 <tr>
                     <td class="save-proficient">
@@ -129,6 +131,7 @@
             <!-- SKILLS -->
             <table class="single-outline" style="margin-top:5">']
 
+[h: allAbilityProf = getProperty ("proficiency.allAbility")]
 [h, foreach (skillName, ARRY_SKILLS_NAMEs), code: {
 	[log.debug (CATEGORY + "## skillName = " + skillName)]
 	[skillPropertyName = replace (skillName, " ", "")]
@@ -136,22 +139,28 @@
 	[skillNonBreakingName = replace (skillName, " ", "&nbsp")]
 	[skillProficiencyPropertyName = "proficiency." + skillPropertyName]
 	[skillProficiencyValue = getProperty (skillProficiencyPropertyName)]
-	[skillProficiencyStr = dnd5e_CharSheet_formatProficiency (skillProficiencyValue)]
 	[skillAbility = getProperty ("ability." + skillPropertyName)]
 	[skillAbilityAbbrev = substring (skillAbility, 0, 3)]
+	[skillAbilityProf = getProperty ("proficiency." + skillAbilityAbbrev + "Ability")]
+	[effectiveProficiency = max (skillAbilityProf, skillProficiencyValue)]
+	[effectiveProficiency = max (effectiveProficiency, allAbilityProf)]
+	[log.debug (CATEGORY + "## skillAbilityProf = " + skillAbilityProf + "; skillProficiencyValue = " +
+		skillProficiencyValue + "; effectiveProficiency = " + effectiveProficiency)]
+	[skillProficiencyStr = dnd5e_CharSheet_formatProficiency (effectiveProficiency) + "&nbsp;"]
 
 	[html = html + '
 				<tr>
-                    <td class="save-proficient">' +
+                    <td class="save-proficient">
+                    	<span title="Change Proficiciency for '+ skillName +'">' +
 			macroLink (skillProficiencyStr, 
 				"dnd5e_CharSheet_changeProficiency@" + LIB_TOKEN,
 				"",
 				json.append ("", skillProficiencyPropertyName, skillName),
 				currentToken())
-                    + '</td>
+                    + '</span></td>
                     <td class="save-bonus">
                         <span title="Roll '+skillName+'">' +
-			macroLink (skillBonus,
+			macroLink (dnd5e_CharSheet_formatBonus (skillBonus),
 				"dnd5e_CharSheet_rollAbility@" + LIB_TOKEN,
 				"all",
 				json.append ("", skillPropertyName, skillName),

@@ -1,10 +1,10 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>313e3300-bde1-47df-b3d0-832b2b6fce90</macroUUID>
+  <macroUUID>4b4872ce-4013-4c89-8551-5c85a7775245</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
+  <index>78</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_CharSheet_Util_calculateProficiency</label>
+  <label>dnd5e_CharSheet_Util_setClassArry</label>
   <group>Character Sheet - Macros - Utils</group>
   <sortby/>
   <autoExecute>true</autoExecute>
@@ -15,11 +15,21 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Calculates and updates the proficiency bonus for the token based on the classes property.
-Expected formats are:
-'Fighter 2'
-'Druid 3 / Wizard 10'
-Returns The proficiency value</toolTip>
+  <toolTip>&lt;html&gt;&lt;pre&gt;arg (0): Array of class ojbects:
+[
+	{
+		"class": "Fighter",
+		"level": 4,
+		"hitDie": 1d10
+	},
+	{
+		"class": "Cleric",
+		"level": 6,
+		"hitDie": 1d8
+	}
+]
+
+In addition to setting the classes properties, also updates the Proficiency</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
