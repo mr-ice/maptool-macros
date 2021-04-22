@@ -2,7 +2,7 @@
 [h: dnd5e_CharSheet_Constants (getMacroName())]
 [h, if (displayText != ""): totalAC = displayText; totalAC = getProperty ("AC")]
 
-[h: armorBonus = getProperty ("armor.ac")]
+[h: armorBonus = dnd5e_CharSheet_formatNumber (getProperty ("armor.ac"), 10)]
 [h, if (armorBonus == ""): armorBonus = 0]
 [h: shieldBonus = getProperty ("shield.ac")]
 [h, if (shieldBonus == ""): shieldBonus = 0]

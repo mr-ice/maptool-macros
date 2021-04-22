@@ -6,8 +6,9 @@
 	[abilitiesProperties = ""]
 	[foreach (abilityName, ARRY_ABILITIES_NAMES):
 		abilitiesProperties = json.append (abilitiesProperties,
-			abilityName + "Ability")]
+			substring (abilityName, 0, 3) + "Ability")]
 	[skillArry = json.merge (ARRY_SKILLS_NAMES, abilitiesProperties)]
+	[skillArry = json.append (skillArry, "allAbility")]
 }; {
 	[skillArry = json.append ("", skillName)]
 }]

@@ -1237,42 +1237,42 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{StrengthBonus + bonus.strAbility}</defaultValue>
+          <defaultValue>{StrengthBonus + bonus.strAbility + bonus.allAbility}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityBonus.Dexterity</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{DexterityBonus + bonus.dexAbility}</defaultValue>
+          <defaultValue>{DexterityBonus + bonus.dexAbility + bonus.allAbility}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityBonus.Constitution</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{ConstitutionBonus + bonus.conAbility}</defaultValue>
+          <defaultValue>{ConstitutionBonus + bonus.conAbility + bonus.allAbility}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityBonus.Intelligence</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{IntelligenceBonus + bonus.intAbility}</defaultValue>
+          <defaultValue>{IntelligenceBonus + bonus.intAbility + bonus.allAbility}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityBonus.Wisdom</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{WisdomBonus + bonus.wisAbility}</defaultValue>
+          <defaultValue>{WisdomBonus + bonus.wisAbility + bonus.allAbility}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityBonus.Charisma</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{CharismaBonus + bonus.chaAbility}</defaultValue>
+          <defaultValue>{CharismaBonus + bonus.chaAbility + bonus.allAbility}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityProficiency.Strength</name>
@@ -1307,14 +1307,14 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor (max (Proficiency * proficiency.wisAbility, proficiency.allAbility))}</defaultValue>
+          <defaultValue>{floor (Proficiency * max (proficiency.wisAbility, proficiency.allAbility))}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>abilityProficiency.Charisma</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>{floor (max (Proficiency * proficiency.chaAbility, proficiency.allAbility))}</defaultValue>
+          <defaultValue>{floor (Proficiency * max (proficiency.chaAbility, proficiency.allAbility))}</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>---- Ability Score Bonuses ----</name>

@@ -1,11 +1,11 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>313e3300-bde1-47df-b3d0-832b2b6fce90</macroUUID>
+  <macroUUID>e0b6ec74-93a0-4206-804d-fbcbdc0d2ebb</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>28</index>
+  <index>75</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
-  <label>dnd5e_CharSheet_Util_calculateProficiency</label>
-  <group>Character Sheet - Macros - Utils</group>
+  <label>dnd5e_CharSheet_formatProperty</label>
+  <group>Character Sheet - Panel</group>
   <sortby/>
   <autoExecute>true</autoExecute>
   <includeLabel>false</includeLabel>
@@ -15,11 +15,12 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>Calculates and updates the proficiency bonus for the token based on the classes property.
-Expected formats are:
-'Fighter 2'
-'Druid 3 / Wizard 10'
-Returns The proficiency value</toolTip>
+  <toolTip>&lt;html&gt;&lt;pre&gt;To be used in liue of getProperty. Ensures that when a property is empty (""), a non-breaking space character is returned. This helps to anchor fields that might otherwise collapse down.
+arg (0) = Property name
+arg (1) = (Optional) Boolean - isLiteral - when true (1), the first argument is treated as a literal value instead of a property name
+arg (2) = (Optional) Boolean - noNbsp - when true (1), the property value is returned as-is. If the value is empty, that is what will be returned
+
+Returns the property value or &lt;code&gt;&amp;amp;nbsp;&lt;/code&gt; when there is no value</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>

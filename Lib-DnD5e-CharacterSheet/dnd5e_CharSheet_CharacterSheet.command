@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" 
 			href="CharSheet_CSS@Lib:DnD5e-CharacterSheet">
 	</head>
-	<body>
+	<body style="font-size: ' + ATTR_CHAR_SHEET_FONT_SIZE + '">
 		' + dnd5e_CharSheet_getInfoHTML() + '
 		<table>
 			<tr>

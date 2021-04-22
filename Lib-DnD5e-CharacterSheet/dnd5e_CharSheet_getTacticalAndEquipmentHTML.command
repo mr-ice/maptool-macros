@@ -54,7 +54,7 @@
 												<td class="armor-class-value ac-init-move"><span title="' +
 										getProperty ("stat.movement")
 										+ '">'+
-										getProperty ("walk")
+										dnd5e_CharSheet_formatNumber (getProperty ("walk"))
 												+ ' ft.</span></td>
 												</tr>
 												<tr>
@@ -75,7 +75,7 @@
     <tr>
         <td class="detail-label">Hit Point Maximum</td>
         <td class="hitpoint-maximum">
-            <span title="Edit Maximum Hit Points">' + macroLink (getProperty ("MaxHP"),
+            <span title="Edit Maximum Hit Points">' + macroLink (dnd5e_CharSheet_formatNumber(getProperty ("MaxHP")),
                 "dnd5e_CharSheet_changeProperty@" + LIB_TOKEN, "", json.append ("", "MaxHP", 
                 "Maximum Hit Points"), currentToken()) + '</span>
         </td>
@@ -95,7 +95,7 @@
     		</span>
     	</td>
     	<td class="hitpoint-current"><span title="Edit Hit Points">'+
-    		macroLink (getProperty ("HP"), "dnd5e_CharSheet_changeHitPoints@" + LIB_TOKEN,
+    		macroLink (dnd5e_CharSheet_formatNumber(getProperty ("HP")), "dnd5e_CharSheet_changeHitPoints@" + LIB_TOKEN,
     			"all",
     			"",
     			currentToken())
@@ -131,7 +131,7 @@
 												<tr>
 												<td class="temp-hp-value">
 													<span title="Edit Temporary Hit Points">' +
-			macroLink (getProperty ("TempHP"), "dnd5e_CharSheet_changeProperty@" + LIB_TOKEN,
+			macroLink (dnd5e_CharSheet_formatNumber(getProperty ("TempHP")), "dnd5e_CharSheet_changeProperty@" + LIB_TOKEN,
 				"all", json.append ("", "TempHP", "Temporary Hit Points"), currentToken())
 												+ '</span></td>
 												</tr>
@@ -155,14 +155,13 @@
             <table class="back-white mixed-outline" height="50px">
                 <tr>
 
-                    <td class="save-bonus">' + getProperty ("HitDice") + '</td>
+                    <td class="save-bonus">' + dnd5e_CharSheet_formatProperty ("HitDice") + '</td>
                 </tr>
                 <tr>
                     <td align="center" class="subtext">
                         <b>
-                            <span title="Edit Hit Dice">'+ macroLink ("HIT DICE",
-                                "dnd5e_CharSheet_changeProperty@" + LIB_TOKEN, "", json.append ("",
-                                "HitDice", "Hit Dice"), currentToken()) + '</span>
+                            <span title="Edit Hit Dice">'+ 
+		macroLink ("HIT DICE", "dnd5e_CharSheet_changeClasses@" + LIB_TOKEN, "", "", currentToken()) + '</span>
                         </b>
                     </td>
                 </tr>
