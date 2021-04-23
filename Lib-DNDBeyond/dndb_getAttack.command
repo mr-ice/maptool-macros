@@ -79,5 +79,5 @@
 
 	[h: attackObj = json.set (attackObj, name, rollExpressions)]
 }]
-
+[h: attackObj = json.merge (attackObj, dndb_getCustomAttacks(json.path.read (toon, "data.customActions")))]
 [h: macro.return = attackObj]
