@@ -87,6 +87,7 @@
 									"characterClassId", json.get (classObj, "id"))]
 	[h: classSpells = json.get (dndb_searchJsonObject (classSpellsSearchArg), 0)]
 	[h: spellCastingAbilityId = json.path.read (classObj, "definition.spellCastingAbilityId")]
+	[h: spellCastingAbilityId = spellCastingAbilityId - 1]
 	[h: classRequiresPreparation = json.path.read (classObj, "definition.spellPrepareType", "SUPPRESS_EXCEPTIONS")]
 	[h, if (classRequiresPreparation == "null"): classRequiresPreparation = 0]
 	[h: isRitualCaster = json.path.read (classObj, "definition.spellRules.isRitualSpellCaster", "SUPPRESS_EXCEPTIONS")]
