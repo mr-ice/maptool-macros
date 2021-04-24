@@ -19,12 +19,12 @@
 [h, if (isNumber (saveDCAbilityId)), code: {
 	[h: saveDC = json.get (selectedSpell, "saveDC")]
 	[h, switch (saveDCAbilityId):
-		case 1: saveAbility = "Strength";
-		case 2: saveAbility = "Dexterity";
-		case 3: saveAbility = "Constitution";
-		case 4: saveAbility	= "Intelligence";
-		case 5: saveAbility = "Wisdom";
-		case 6: saveAbility = "Charisma"]
+		case 0: saveAbility = "Strength";
+		case 1: saveAbility = "Dexterity";
+		case 2: saveAbility = "Constitution";
+		case 3: saveAbility	= "Intelligence";
+		case 4: saveAbility = "Wisdom";
+		case 5: saveAbility = "Charisma"]
 	[h: saveDescription = saveAbility + " save DC " + saveDC]
 }]
 
