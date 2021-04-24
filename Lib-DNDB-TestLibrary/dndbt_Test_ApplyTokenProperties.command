@@ -1,7 +1,6 @@
 <!-- Use the Live characters for these tests -->
 <!-- Assumes DTO tests are passing -->
 [h: toonNames = "30957877,30957978,30959709,30960137"]
-[h: narp_toonNames = "30957978"]
 [h: doFinalClean = 1]
 [h: libTokenId = currentToken()]
 
@@ -32,5 +31,5 @@
 }]
 [h, token (compToken), if (doFinalClean): dndbt_CleanToken()]
 [h: report = json.set ("{}", getMacroName(), reportArry)]
-[h: log.info (report)]
+[h: log.info (getMacroName() + "##" + report)]
 [h: macro.return = report]

@@ -29,7 +29,10 @@
 						)
 					)
 		]
-		[h, if (encode (macroValue) != encode (builtValue)): report = json.append (report, messageObject); ""]
+		[h: reportName = toonName + " - " + field]
+		[h: reportObject = dnd5et_Util_assertEqual (macroValue, builtValue, reportName)]
+		[h: reportMsg = json.get (reportObject, reportName)]
+		[h, if (reportMsg != "Test passed"): report = json.append (report, messageObject)]
 	}]
 }]
 [h: reportObj = json.set ("", "dndbt_Test_KnownToons", report)]

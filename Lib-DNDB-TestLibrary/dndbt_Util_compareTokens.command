@@ -3,7 +3,8 @@
 
 [h: token1Label = getName (tokenId1)]
 [h: token2Label = getName (tokenId2)]
-
+[h: log.debug (getMacroName() + "## token1: " + token1Label + "; token2: " 
+		+ token2Label)]
 [h: reportName = "Token compare report for " + token1Label + "::" + token2Label]
 [h: reportArry = "[]"]
 <!-- Compare properties, stick to Basic -->
@@ -13,7 +14,11 @@
 	
 	[h: prop1 = getProperty (property, tokenId1)]
 	[h: prop2 = getProperty (property, tokenId2)]
-	[h, if (encode (prop1) != encode (prop2)): reportArry = json.append (reportArry, json.set ("", property, prop1 + "::" + prop2))]
+	[h: reportName = "Compare Token - " + property]
+	[h: testResult = dnd5et_Util_assertEqual (prop1, prop2, reportName)]
+	[h: resultMsg = json.get (testResult, reportName)]
+	[h: log.debug (getMacroName() + "## " + property + ": " + resultMsg)]
+	[h, if (resultMsg != "Test passed"): reportArry = json.append (reportArry, testResult)]
 }]
 <!-- Compare Bars -->
 
