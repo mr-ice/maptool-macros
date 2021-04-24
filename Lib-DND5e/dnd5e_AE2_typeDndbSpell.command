@@ -43,7 +43,7 @@
 [h, if (isNumber(saveDCAbilityId)), code: {
 	[h: save = dnd5e_RollExpression_Save()]
 	[h: save = dnd5e_RollExpression_addType(save, TARGET_ROLL_TYPE)]
-	[h: save = dnd5e_RollExpression_setSaveAbility(save, json.get(CHAR_ABILITIES, saveDCAbilityId - 1))]
+	[h: save = dnd5e_RollExpression_setSaveAbility(save, json.get(CHAR_ABILITIES, saveDCAbilityId))]
 	[h: save = dnd5e_RollExpression_setSaveDC(save, json.get(selectedSpell, "saveDC"))]
 	<!-- Guess that subType is the save against value as it ususally is a damage type -->
 	[h: save = json.set(save, "saveAgainst", json.path.read(selectedSpell, "modifiers[0].subType"))]

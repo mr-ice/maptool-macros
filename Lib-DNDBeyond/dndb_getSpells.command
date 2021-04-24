@@ -87,6 +87,7 @@
 									"characterClassId", json.get (classObj, "id"))]
 	[h: classSpells = json.get (dndb_searchJsonObject (classSpellsSearchArg), 0)]
 	[h: spellCastingAbilityId = json.path.read (classObj, "definition.spellCastingAbilityId")]
+	[h: spellCastingAbilityId = spellCastingAbilityId - 1]
 	[h: classRequiresPreparation = json.path.read (classObj, "definition.spellPrepareType", "SUPPRESS_EXCEPTIONS")]
 	[h, if (classRequiresPreparation == "null"): classRequiresPreparation = 0]
 	[h: isRitualCaster = json.path.read (classObj, "definition.spellRules.isRitualSpellCaster", "SUPPRESS_EXCEPTIONS")]
@@ -100,12 +101,12 @@
 	[h, foreach (spell, spells), code: {
 		[h: basicSpell = dndb_convertSpell (toon, spell)]
 		[h, switch (spellCastingAbilityId):
-			case 1: abilityName = "str";
-			case 2: abilityName - "dex";
-			case 3: abilityName = "con";
-			case 4: abilityName = "int";
-			case 5: abilityName = "wis";
-			case 6: abilityName = "cha"]
+			case 0: abilityName = "str";
+			case 1: abilityName - "dex";
+			case 2: abilityName = "con";
+			case 3: abilityName = "int";
+			case 4: abilityName = "wis";
+			case 5: abilityName = "cha"]
 			
 		[h: abilityBonus = json.get (abilities, abilityName + "Bonus")]
 		[h: atkBonus = abilityBonus + proficiency]
