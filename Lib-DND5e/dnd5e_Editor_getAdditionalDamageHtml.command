@@ -54,7 +54,7 @@
         </div>
         <div>
         <label>Save Effect<input class="wide-input" name="extraDamageSaveEffect-[r: attackIndex]-[r:extraDmgIndex]" value="[r: damageSaveEffect]" title="Describe the effect that occurs based on passing or failing the save"/></label>
-        <input name="deleteExtraDamage-[r: attackIndex]-[r:extraDmgIndex]" class="button red-right" value="Delete Damage" type="submit" title="Deletes the extra damage"/>
+        <input name="deleteExtraDamage-[r: attackIndex]-[r:extraDmgIndex]" class="button right red-button" value="Delete Damage" type="submit" title="Deletes the extra damage"/>
       </div>
     </div>
   </div>

@@ -22,6 +22,3 @@
   <hr />
     [r: dnd5e_Editor_getAdditionalDamageHtml (extraDamageExpressions, attackIndex)]
 </div>
-<div>
-	  <input name="deleteAttack-[r:attackName]" class="button red-right" value="Delete Attack" type="submit"/>
-</div>
