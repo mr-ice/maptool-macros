@@ -543,7 +543,7 @@ def step_impl(context):   # noqa: F811
     assert len(context.source['token']['rptok']) > 1
     context.tokenfile = context.source['token']['rptok'][0]
     run_extract(context, context.tokenfile)
-    assert b'Error' not in context.stderr, f"{context.stderr} in '{os.getcwd()}'"
+    assert b'Error' not in context.stderr, f"{context.stderr} extracting {context.tokenfile} in '{os.getcwd()}'"
     context.tokenpath = os.path.basename(os.path.splitext(context.tokenfile)[0])
     assert os.path.exists(context.tokenpath)
 
