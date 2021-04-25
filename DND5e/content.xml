@@ -4350,7 +4350,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on All Saving Throws</name>
         <order>99</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4367,7 +4367,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Strength Saving Throws</name>
         <order>100</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4384,7 +4384,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Dexterity Saving Throws</name>
         <order>101</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4401,7 +4401,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Constitution Saving Throws</name>
         <order>102</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4418,7 +4418,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Intelligence Saving Throws</name>
         <order>103</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4435,7 +4435,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Wisdom Saving Throws</name>
         <order>104</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4452,7 +4452,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Charisma Saving Throws</name>
         <order>105</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4469,7 +4469,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Death Saving Throws</name>
         <order>106</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
