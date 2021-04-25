@@ -103,6 +103,7 @@ function toggleAttackType(attackType, attackName) {
 <div class="roll-container">
   <input name="addAttack" class="button" value="Add Attack" type="submit"/>
   <input name="duplicateAttack" class="button" value="Duplicate Attack" type="submit"/>
+  <input name="deleteAttack-[r:field]" class="button red-button"  value="Delete Attack" type="submit"/>
 </div>
 
 </div>

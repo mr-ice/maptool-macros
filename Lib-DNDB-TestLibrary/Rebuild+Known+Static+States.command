@@ -6,4 +6,4 @@
 	[h: evalMacro (functionName)]
 	[h: dndbt_CreateDataMacro (builtToon, toonName)]
 }]
-[h: log.info ("Build Known States, done")]
+[h: log.info ("Build Known Static States, done")]

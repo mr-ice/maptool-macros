@@ -4,45 +4,135 @@
 [h, if (getState ("Dead")), code: {
 	[h: description = description + "<br><br>You're <font color='red'><b>DEAD</b></font>!"]
 	[h: rollExpression = dnd5e_RollExpression_setStaticRoll (rollExpression, 1)]
+	[h: rollExpression = dnd5e_RollExpression_addDescription (rollExpression, description)]
+	[h: return (0, rollExpression)]
 }]
 
 [h: saveName = dnd5e_RollExpression_getName (rollExpression)]
 
-<!-- Fails str and dex -->
-[h: fuckedStates = json.append ("", "Paralyzed", "Petrified", "Stunned", "Unconscious")]
-[h: isFucked = 0]
-[h: fuckedMsg = ""]
-[h, foreach (fuckedState, fuckedStates), code: {
-	[h: theState = getState (fuckedState)]
-	[h, if (theState > 0), code: {
-		[h: isFucked = isFucked + 1]
-		[h: fuckedMsg = fuckedMsg + "You're <font color='red'><b>" + fuckedState + "</b></font>!<br>"]
-	}]
+[h: currentStates = getTokenStates ("json", "*", currentToken())]
+
+[h: disadvantageConditions = "[]"]
+[h: advantageConditions = "[]"]
+[h: fuckedStates = "[]"]
+
+[h: description = "[]"]
+
+[h, foreach (currentState, currentStates), code: {
+	[switch (currentState), code: 
+		case "Advantage on All Saving Throws": {
+			[advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Disadvantage on All Saving Throws": {
+			[disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Advantage on Strength Saving Throws": {
+			[if (saveName == "Strength"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Advantage on Dexterity Saving Throws": {
+			[if (saveName == "Dexterity"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};		
+		case "Advantage on Constitution Saving Throws": {
+			[if (saveName == "Constitution"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Advantage on Intelligence Saving Throws": {
+			[if (saveName == "Intelligence"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Advantage on Wisdom Saving Throws": {
+			[if (saveName == "Wisdom"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Advantage on Charisma Saving Throws": {
+			[if (saveName == "Charisma"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Advantage on Death Saving Throws": {
+			[if (saveName == "Death"): 
+				advantageConditions = json.append (advantageConditions, currentState)]
+		};
+		case "Disadvantage on Strength Saving Throws": {
+			[if (saveName == "Strength"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Disadvantage on Dexterity Saving Throws": {
+			[if (saveName == "Dexterity"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};		
+		case "Disadvantage on Constitution Saving Throws": {
+			[if (saveName == "Constitution"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Disadvantage on Intelligence Saving Throws": {
+			[if (saveName == "Intelligence"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Disadvantage on Wisdom Saving Throws": {
+			[if (saveName == "Wisdom"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Disadvantage on Charisma Saving Throws": {
+			[if (saveName == "Charisma"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Disadvantage on Death Saving Saving Throws": {
+			[if (saveName == "Death"): 
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Paralyzed": {
+			[if (saveName == "Strength" || saveName == "Dexterity"):
+				fuckedStates = json.append (fuckedStates, currentState)]
+		};
+		case "Petrified": {
+			[if (saveName == "Strength" || saveName == "Dexterity"):
+				fuckedStates = json.append (fuckedStates, currentState)]
+		};
+		case "Stunned": {
+			[if (saveName == "Strength" || saveName == "Dexterity"):
+				fuckedStates = json.append (fuckedStates, currentState)]
+		};
+		case "Unconscious": {
+			[if (saveName == "Strength" || saveName == "Dexterity"):
+				fuckedStates = json.append (fuckedStates, currentState)]
+		};
+		case "Restrained": {
+			[if (saveName == "Dexterity"):
+				disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Exhaustion 3": {
+			[disadvantageConditions = json.append (disadvantageConditions, currentState)]
+		};
+		case "Blessed": {
+			[h: blessed = dnd5e_RollExpression_BuildBless ()]
+			[h: rollExpression = dnd5e_RollExpression_addExpression (rollExpression, blessed)]
+			[h: description = json.append(description, "You're <font color='blue'><b>Blessed</b></font>! Adding 1d4 to your roll.")]
+		};
+		default: {""};
+	]
 }]
-<!-- disadv on dex -->
-[h: isRestrained = getState ("Restrained")]
 
-<!-- Auto fails -->
-[h, if ( (saveName == "Strength" || saveName == "Dexterity") && isFucked > 0), code: {
-	[h: description = description + "<br>" + fuckedMsg +
-			"<b>You automatically <font color='red'><i>FAIL</i></font>!!<b><br>"]
-	[h: rollExpression = dnd5e_RollExpression_setStaticRoll (rollExpression, 1)]
-}; {}]
-
-[h, if (saveName == "Dexterity" && isRestrained > 0), code: {
-	[h: description = description + "<br>You're <font color='red'><b>Restrained</b></font>! Applying Disadvantage."]
-	[h: rollExpression = dnd5e_RollExpression_setDisadvantage (rollExpression, 1)]
-}; {}]
-
-[h, if (getState ("Exhaustion 3")), code: {
-	[h: description = description + "<br>You're <font color='red'><b>Exhaustion 3</b></font>! Applying Disadvantage."]
-	[h: rollExpression = dnd5e_RollExpression_setDisadvantage (rollExpression, 1)]
+[h, if (json.length (advantageConditions) > 0), code: {
+	[description = json.append (description, "Applying Advantage due to the condition" +
+		if (json.length (advantageConditions) > 1, "s: ", ": ") +
+		"<span style='color: blue; font-weight: bold;'>" + json.toList (advantageConditions, ", ") + "</span>")]
+	[rollExpression = dnd5e_RollExpression_setAdvantage (rollExpression, 1)]
 }]
 
-[h, if (getState ("Blessed")), code: {
-	[h: blessed = dnd5e_RollExpression_BuildBless ()]
-	[h: rollExpression = dnd5e_RollExpression_addExpression (rollExpression, blessed)]
+[h, if (json.length (disadvantageConditions) > 0), code: {
+	[description = json.append (description, "Applying Disadvantage due to the condition" +
+		if (json.length (disadvantageConditions) > 1, "s: ", ": ") +
+		"<span style='color: red; font-weight: bold;'>" + json.toList (disadvantageConditions, ", ") + "</span>")]
+	[rollExpression = dnd5e_RollExpression_setDisadvantage (rollExpression, 1)]
 }]
 
-[h: rollExpression = dnd5e_RollExpression_addDescription (rollExpression, description)]
+[h, if (json.length (fuckedStates) > 0), code: {
+	[description = json.append (description, "You're <span style='color: red; font-weight: bold;'>" + 
+		json.toList (fuckedStates, ", ") + "</span><br><b>You automatically <font color='red'><i>FAIL</i></font>!!</b> ")]
+	[rollExpression = dnd5e_RollExpression_setStaticRoll (rollExpression, 1)]
+}]
+
+[h, foreach(desc, description): rollExpression = dnd5e_RollExpression_addDescription (rollExpression, desc)]
 [h: macro.return = rollExpression]

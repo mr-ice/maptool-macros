@@ -63,6 +63,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Dexterity</name>
@@ -70,6 +71,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Constitution</name>
@@ -77,6 +79,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Intelligence</name>
@@ -84,6 +87,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Wisdom</name>
@@ -91,6 +95,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Charisma</name>
@@ -98,6 +103,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
+          <defaultValue>10</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Proficiency</name>
@@ -138,14 +144,6 @@
           <gmOnly>false</gmOnly>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
-          <name>BonusHP</name>
-          <shortName>Bonus Hit Points</shortName>
-          <highPriority>false</highPriority>
-          <ownerOnly>false</ownerOnly>
-          <gmOnly>false</gmOnly>
-          <defaultValue>[r: dnd5e_Health_getHPBonus()]</defaultValue>
-        </net.rptools.maptool.model.TokenProperty>
-        <net.rptools.maptool.model.TokenProperty>
           <name>bonus.maxHP.value</name>
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
@@ -171,7 +169,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro (&quot;{abilityBonus.&quot; + dnd5e_Property_getInitAbility() + &quot; + bonus.initiative + floor (proficiency.initiative * Proficiency)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro (&quot;{&quot; + dnd5e_Property_getInitAbility() + &quot;Bonus + bonus.initiative + floor (proficiency.initiative * Proficiency)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Resistances</name>
@@ -4350,7 +4348,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on All Saving Throws</name>
         <order>99</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4367,7 +4365,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Strength Saving Throws</name>
         <order>100</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4384,7 +4382,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Dexterity Saving Throws</name>
         <order>101</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4401,7 +4399,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Constitution Saving Throws</name>
         <order>102</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4418,7 +4416,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Intelligence Saving Throws</name>
         <order>103</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4435,7 +4433,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Wisdom Saving Throws</name>
         <order>104</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4452,7 +4450,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Charisma Saving Throws</name>
         <order>105</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>
@@ -4469,7 +4467,7 @@
       <net.rptools.maptool.client.ui.token.CornerImageTokenOverlay>
         <name>Advantage on Death Saving Throws</name>
         <order>106</order>
-        <group>11. Advantage for Throws</group>
+        <group>11. Advantage for Saving Throws</group>
         <mouseover>false</mouseover>
         <opacity>1</opacity>
         <showGM>true</showGM>

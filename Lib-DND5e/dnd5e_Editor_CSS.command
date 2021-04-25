@@ -106,8 +106,15 @@ div {
   border-top: none;
 }
 
-.red-right {
-  float: right;
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.red-button {
   background-color: red; 
   color: white; 
   border-top-color: #c23300; 
@@ -162,6 +169,9 @@ div {
 }
 
 .grid-item1, .grid-item2, .grid-item3, .grid-item12, .grid-item23 {
-  font-size: 20px;
-  
+  font-size: 20px; 
+}
+
+.debug {
+	border: solid green 3px
 }

@@ -41,7 +41,7 @@
 [h, if (hpType == VALUE_HIT_DICE_AVG), code: {
 	[HP = json.get (monsterJson, "hit_points")]
 };{
-	[HP = evalMacro ("[r: " + HitDice + " + " + BonusHP + "]")]
+	[HP = evalMacro ("[r: " + HitDice + " + " + dnd5e_Health_getHPBonus() + "]")]
 }]
 [h: MaxHP = HP]
 [h: CRString = json.get (monsterJson, "challenge_rating")]

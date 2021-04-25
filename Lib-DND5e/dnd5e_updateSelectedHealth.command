@@ -5,9 +5,10 @@
 [h: apply = json.get(macro.args, "apply")]
 
 <!-- Create the list of token names to show to the user -->
-[h: sNames = getSelectedNames()]
+[h: sNames = getSelectedNames("json")]
 [h, if (sNames == ""): names = "No tokens selected!"; names = ""]
-[h, forEach(name, sNames): names = names + "<li>" + name]
+[h, forEach(name, sNames, "json"): names = names + "<li>" + name]
+[h: log.debug (getMacroName() + "## sNames = " + sNames + "; names = " + names)]
 [h: inputList = listAppend("", "junk|<html><b>" + header + "</b><ul>" + names + "</ul></html>|-|LABEL|SPAN=TRUE", "##")]
 
 <!-- Read the value from the user --> 
@@ -24,7 +25,7 @@
 [h: sIds = getSelected()]
 [h: log.debug("IDs:'" + sIds + "' Names:" + sNames)]
 [h, foreach(id, sIds), code: {
-	[h: log.debug("ID: " + id + " " + task +"=" + value)]
+	[h: log.debug(getMacroName() + "## ID: " + id + " " + task +"=" + value)]
 	[h, if (task == "drain"), code: {
 		 [h: dnd5e_Health_applyAbilityChange(json.get(CHAR_ABILITIES, ability), value, id)]
 	}; {
