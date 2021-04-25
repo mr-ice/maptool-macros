@@ -4,4 +4,4 @@
 	[h: builtToon = dndb_buildBasicToon (toonName)]
 	[h: dndbt_CreateDataMacro (builtToon, toonName)]
 }]
-[h: log.info ("Build Known States, done")]
+[h: log.info ("Build Known Live States, done")]

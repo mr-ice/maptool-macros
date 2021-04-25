@@ -9,7 +9,7 @@
 [h: re = dnd5e_RollExpression_addType (re, dnd5e_Type_Targeted())]
 [h: re = dnd5e_RollExpression_addType (re, dnd5e_Type_Unrollable())]
 [h: re = dnd5e_RollExpression_addType (re, dnd5e_Type_Weapon())]
-[h: testRollers = '["dnd5e_DiceRoller_staticRoll","dnd5e_DiceRoller_unrollableRoll","dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_luckyRoll","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_childRoll","dnd5e_DiceRoller_proficientRoll","dnd5e_DiceRoller_spellcastingAbilityRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_critableRoll","dnd5e_DiceRoller_saveDamageRoll","dnd5e_DiceRoller_saveEffectRoll"]']
+[h: testRollers = '["dnd5e_DiceRoller_staticRoll","dnd5e_DiceRoller_unrollableRoll","dnd5e_DiceRoller_applyConditions","dnd5e_DiceRoller_luckyRoll","dnd5e_DiceRoller_basicRoll","dnd5e_DiceRoller_childRoll","dnd5e_DiceRoller_proficientRoll","dnd5e_DiceRoller_spellcastingAbilityRoll","dnd5e_DiceRoller_weaponAttackRoll","dnd5e_DiceRoller_critableRoll","dnd5e_DiceRoller_finalize","dnd5e_DiceRoller_saveDamageRoll","dnd5e_DiceRoller_saveEffectRoll"]']
 [h: actualRollers = dnd5e_RollExpression_getDiceRollers (re)]
 [h: reportResults = dnd5et_Util_assertEqual (actualRollers, testRollers, "Dice Rollers")]
 [h: macro.return = reportResults]
