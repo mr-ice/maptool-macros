@@ -163,7 +163,7 @@
           <highPriority>false</highPriority>
           <ownerOnly>false</ownerOnly>
           <gmOnly>false</gmOnly>
-          <defaultValue>[r: evalMacro (&quot;{abilityBonus.&quot; + dnd5e_Property_getInitAbility() + &quot; + bonus.initiative + floor (proficiency.initiative * Proficiency)}&quot;)]</defaultValue>
+          <defaultValue>[r: evalMacro (&quot;{&quot; + dnd5e_Property_getInitAbility() + &quot;Bonus + bonus.initiative + floor (proficiency.initiative * Proficiency)}&quot;)]</defaultValue>
         </net.rptools.maptool.model.TokenProperty>
         <net.rptools.maptool.model.TokenProperty>
           <name>Resistances</name>
