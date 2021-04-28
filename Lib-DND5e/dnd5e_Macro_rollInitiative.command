@@ -1,6 +1,7 @@
 [h: dnd5e_Constants (getMacroName())]
 [h: initList = ""]
 [h: gmOutput = ""]
+[h: removeAllFromInitiative()]
 [r, foreach(Selected, getSelected("json"), ""), CODE:
 {
 	[h: log.trace (CATEGORY + "## Selected = " + Selected)]
@@ -43,3 +44,5 @@
 	[init = floor(init)]
 	[setInitiative(init)]
 }]
+[h: setInitiativeRound(1)]
+[h: setCurrentInitiative(0)]
