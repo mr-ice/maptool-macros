@@ -1,5 +1,5 @@
 [h: inputObj = arg(0)]
-[h: dnd5e_AE2_assertVersion()]
+[h: dnd5e_AE2_assertVersion(1)]
 [h: selectedAttack = json.get (inputObj, "actionName")]
 [h: advDisadv = json.get (inputObj, "advDisadv")]
 [h: attackObj = getProperty("_AE2_Actions")]

@@ -1,5 +1,5 @@
 [h: inputObj = arg (0)]
-[h: dnd5e_AttackEditor_assertVersion()]
+[h: dnd5e_AttackEditor_assertVersion(1)]
 [h: selectedAttack = json.get (inputObj, "selectedAttack")]
 [h: advDisadv = json.get (inputObj, "advDisadv")]
 [h, if (advDisadv == ""): advDisadv = json.get (inputObj, "advantageDisadvantage"); ""]

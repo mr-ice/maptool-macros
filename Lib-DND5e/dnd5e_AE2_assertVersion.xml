@@ -1,7 +1,6 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>8bdcb21a-2f4f-4da1-9646-882501362d46</macroUUID>
+  <macroUUID>fb7e9699-d1ba-4277-b64e-b385cf4cad79</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>305</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_AE2_assertVersion</label>
@@ -16,7 +15,7 @@
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
   <toolTip>Asserts the current AE2 action object is a compatible version.
-arg(0) = (Optional) If true (1), report the assertion but do not abort
+arg(0) = (Optional) If true (1), report the assertion and abort. If false (default), do not report or abort but return the result.
 
 Returns true(1) or false(0), unless assertion ends execution immediately</toolTip>
   <displayHotKey>true</displayHotKey>

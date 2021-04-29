@@ -1,4 +1,4 @@
-[h, if (argCount() > 0): doAssert = arg(0); doAssert = 1]
+[h, if (argCount() > 0): doAssert = arg(0); doAssert = 0]
 [h: dnd5e_AE2_getConstants()]
 
 [h: tokenVersion = getProperty (AE_VERSION_PROPERTY)]
@@ -6,6 +6,6 @@
 [h, if (!versioned), code: {
 	[msg = 	"<b><font color='red'>Token " + getName() + " Attack Editor attacks must be updated.</font></b><br> Token version " +
 		tokenVersion + " must be updated with Attack Editor version " + AE_CURRENT_VERSION)]
-	[if (doAssert): assert (0, msg); broadcast (msg, "self")]
+	[if (doAssert): assert (0, msg)]
 }]
 [h: macro.return = versioned]
