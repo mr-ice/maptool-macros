@@ -1,6 +1,8 @@
 <!-- Never do this for players. They DGAF -->
 [h, if (!isGM()): return (0); ""]
 
+<!-- Assert the Campaign Preferences library exists, or create it -->
+[h, macro ("dnd5e_Preferences_createCampaignPrefToken@this"): ""]
 [h: libTokenName = arg (0)]
 [h: libKey = encode (libTokenName)]
 [h: versionPrefObject = getLibProperty ("dev.versionMap", "Lib:CampaignPreferences")]
