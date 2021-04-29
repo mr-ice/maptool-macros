@@ -9,10 +9,9 @@
 [h: totals = "[]"]
 [h: outputs = "[]"]
 [h: allTotal = 0]
+[h: initialRollExpression = rollExpression]
 
 [h, for (i, 0, totalRolls), code: {
-	<!-- clear the output, we capture multiple outputs in an array -->
-	[h: rollExpression = json.set (rollExpression, "output", "")]
 
 	<!-- Build a stack (array) of rollers -->
 	<!-- The array has been ordered based on roller priority (defined by the Types) -->
@@ -39,6 +38,9 @@
 	[h: rollExpression = dnd5e_RollExpression_buildOutput (rollExpression)]
 	[h: output = dnd5e_RollExpression_getOutput (rollExpression)]
 	[h: outputs = json.append (outputs, output)]
+	<!-- If we are going to roll again, clear the rolledRollers -->
+	[h, if (i < totalRolls - 1): rollExpression = json.set (rollExpression, "rolledRollers", "[]")]
+	[log.debug (getMacroName() + "## rollExpression before next roll: " + rollExpression)]
 }]
 
 [h: rollExpression = json.set (rollExpression, "outputs", outputs)]
