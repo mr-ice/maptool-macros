@@ -12,6 +12,8 @@
 [h, if (json.length (subType) == 0): subType = ""]
 
 [h: attackType = json.get (weapon, "attackType")]
+[h: type = json.get (weapon, "type")]
+[h: log.debug (getMacroName() + "## subType = " + subType + "; attackType = " + attackType + "; type = " + type)]
 
 <!-- subType must have "weapon-attack" or weapon-ish attack -->
 [h: weaponAttacks = lastIndexOf (subType, "weapon-attack")]
@@ -30,6 +32,13 @@
 [h: oneHandedRestriction = lastIndexOf (subType, "one-handed")]
 [h, if (oneHandedRestriction > -1 && json.length (twoHandedProperty) > 0): qualified = 0]
 
-
+<!-- "unarmed-attack" -->
+[h, if (subType == "unarmed-attacks"), code: {
+	[switch (type):
+		case "Natural Weapon": qualified = qualified + 1;
+		case "Unarmed": qualified = qualified + 1;
+		default: "";
+	]
+}]
 
 [h: macro.return = qualified]
