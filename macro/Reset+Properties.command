@@ -80,7 +80,7 @@
 	[setProperty ("armor.ac", "overridden by DNDBeyond")]
 	[setProperty ("AC", "{" + overrideValue + " + shield.ac + bonus.ac}")]
 	<!-- and override the current acBonus, that value no longer applies -->
-	[asBonus = 0]
+	[acBonus = 0]
 }]
 
 [h: magicBonus = json.get (bonuses, "MagicBonus")]
