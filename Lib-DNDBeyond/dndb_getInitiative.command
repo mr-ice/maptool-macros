@@ -1,5 +1,5 @@
 [h: toon = arg (0)]
-
+[h: dndb_Constants(getMacroName())]
 <!-- slim down -->
 [h: data = json.get (toon, "data")]
 [h: dataRetains = json.append ("", "race", "modifiers", "inventory", "classes", "stats", "bonusStats", "overrideStats", "characterValues")]
@@ -11,10 +11,13 @@
 							"subType", "initiative")]
 
 [h: initMods = dndb_searchGrantedModifiers (modSearchArgs)]
+[h: log.debug ("initMods = " + initMods)]
 [h: bonus = 0]
 [h: proficiency = 0]
 [h, foreach (initMod, initMods), code: {
 	[h: type = json.get (initMod, "type")]
+	[h: initModId = json.get (initMod, "id")]
+	[h, if (initModId == ID_QUICKDRAW): type = "proficiency"]
 	[h: modBonus = 0]
 	[h: profBonus = 0]
 	[h, switch (type):

@@ -11,6 +11,8 @@
 [h, foreach (macroName, macros), code: {
 	[h, if (lastIndexOf (macroName, "dndb_") > -1), code: {
 		[h: log.debug ("Registering " + macroName)]
-		[h: defineFunction (macroName, macroName + "@this")]
+		[h, if (macroName == "dndb_Constants"):
+			defineFunction (macroName, macroName + "@this", 0, 0);
+			defineFunction (macroName, macroName + "@this")]
 	}]
 }]

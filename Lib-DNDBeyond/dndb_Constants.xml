@@ -1,0 +1,26 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>56851aa4-0b51-4f93-95bf-d8e542942444</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dndb_Constants</label>
+  <group>Util - Constants</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip/>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
