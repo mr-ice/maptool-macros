@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>N2pXtfv9S8iz2THgJsuHxw==</baGUID>
+    <baGUID>AecOsBaiTQSEE/P2biPtrg==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,14 +14,146 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>950</x>
-  <y>400</y>
-  <z>3</z>
+  <x>500</x>
+  <y>350</y>
+  <z>2258</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>700</lastX>
+  <lastY>400</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>14</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>13</x>
+        <y>8</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>14</x>
+          <y>8</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves/>
+        </parent>
+        <h>3.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>12</x>
+        <y>7</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>13</x>
+          <y>8</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/parent"/>
+          <h>3.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>2.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>11</x>
+        <y>7</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>12</x>
+          <y>7</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>2.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>1.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>10</x>
+        <y>7</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>11</x>
+          <y>7</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>1.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>14</x>
+        <y>8</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>10</x>
+        <y>7</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>256</width>
   <height>256</height>
@@ -651,187 +783,5 @@
       <boolean>false</boolean>
     </entry>
   </state>
-  <macroPropertiesMap>
-    <entry>
-      <int>1</int>
-      <macro name="onCampaignLoad"/>
-    </entry>
-    <entry>
-      <int>2</int>
-      <macro name="Override+Run+Tests"/>
-    </entry>
-    <entry>
-      <int>3</int>
-      <macro name="Run+Tests"/>
-    </entry>
-    <entry>
-      <int>131</int>
-      <macro name="o5et_Test_testWeaponActions"/>
-    </entry>
-    <entry>
-      <int>4</int>
-      <macro name="Constants"/>
-    </entry>
-    <entry>
-      <int>132</int>
-      <macro name="o5et_Data_elvish-veteran-archer"/>
-    </entry>
-    <entry>
-      <int>133</int>
-      <macro name="o5et_Data_deathsworn-elf"/>
-    </entry>
-    <entry>
-      <int>6</int>
-      <macro name="o5e_Util_createTestToken"/>
-    </entry>
-    <entry>
-      <int>134</int>
-      <macro name="o5et_Data_ancient-mithral-dragon"/>
-    </entry>
-    <entry>
-      <int>135</int>
-      <macro name="o5et_Data_pact-lich"/>
-    </entry>
-    <entry>
-      <int>136</int>
-      <macro name="o5et_Data_giant-centipede"/>
-    </entry>
-    <entry>
-      <int>9</int>
-      <macro name="Create+Static+Toons"/>
-    </entry>
-    <entry>
-      <int>137</int>
-      <macro name="o5et_Data_phase-spider"/>
-    </entry>
-    <entry>
-      <int>138</int>
-      <macro name="o5et_Data_stone-giant"/>
-    </entry>
-    <entry>
-      <int>139</int>
-      <macro name="o5et_Data_stryx"/>
-    </entry>
-    <entry>
-      <int>140</int>
-      <macro name="o5et_Data_adult-rime-worm"/>
-    </entry>
-    <entry>
-      <int>141</int>
-      <macro name="o5et_Data_fire-elemental"/>
-    </entry>
-    <entry>
-      <int>142</int>
-      <macro name="o5et_Data_green-abyss-orc"/>
-    </entry>
-    <entry>
-      <int>143</int>
-      <macro name="o5et_Data_flame-scourged-scion"/>
-    </entry>
-    <entry>
-      <int>144</int>
-      <macro name="o5et_Data_ghoul-imperial"/>
-    </entry>
-    <entry>
-      <int>145</int>
-      <macro name="o5et_Data_roper"/>
-    </entry>
-    <entry>
-      <int>146</int>
-      <macro name="o5et_Data_dragonleaf-tree"/>
-    </entry>
-    <entry>
-      <int>19</int>
-      <macro name="o5et_Test_testStaticToons"/>
-    </entry>
-    <entry>
-      <int>147</int>
-      <macro name="o5et_Data_Properties_elvish-veteran-archer"/>
-    </entry>
-    <entry>
-      <int>148</int>
-      <macro name="o5et_Data_Properties_deathsworn-elf"/>
-    </entry>
-    <entry>
-      <int>149</int>
-      <macro name="o5et_Data_Properties_ancient-mithral-dragon"/>
-    </entry>
-    <entry>
-      <int>150</int>
-      <macro name="o5et_Data_Properties_pact-lich"/>
-    </entry>
-    <entry>
-      <int>151</int>
-      <macro name="o5et_Data_Properties_giant-centipede"/>
-    </entry>
-    <entry>
-      <int>152</int>
-      <macro name="o5et_Data_Properties_phase-spider"/>
-    </entry>
-    <entry>
-      <int>153</int>
-      <macro name="o5et_Data_Properties_stone-giant"/>
-    </entry>
-    <entry>
-      <int>154</int>
-      <macro name="o5et_Data_Properties_stryx"/>
-    </entry>
-    <entry>
-      <int>155</int>
-      <macro name="o5et_Data_Properties_adult-rime-worm"/>
-    </entry>
-    <entry>
-      <int>156</int>
-      <macro name="o5et_Data_Properties_fire-elemental"/>
-    </entry>
-    <entry>
-      <int>29</int>
-      <macro name="Create+Base+Properties"/>
-    </entry>
-    <entry>
-      <int>157</int>
-      <macro name="o5et_Data_Properties_green-abyss-orc"/>
-    </entry>
-    <entry>
-      <int>30</int>
-      <macro name="o5et_Util_createTestToken"/>
-    </entry>
-    <entry>
-      <int>158</int>
-      <macro name="o5et_Data_Properties_flame-scourged-scion"/>
-    </entry>
-    <entry>
-      <int>31</int>
-      <macro name="o5et_Util_cleanTokenProperties"/>
-    </entry>
-    <entry>
-      <int>159</int>
-      <macro name="o5et_Data_Properties_ghoul-imperial"/>
-    </entry>
-    <entry>
-      <int>96</int>
-      <macro name="o5et_Test_testSpellActions"/>
-    </entry>
-    <entry>
-      <int>160</int>
-      <macro name="o5et_Data_Properties_roper"/>
-    </entry>
-    <entry>
-      <int>97</int>
-      <macro name="o5et_Util_setupSlug"/>
-    </entry>
-    <entry>
-      <int>161</int>
-      <macro name="o5et_Data_Properties_dragonleaf-tree"/>
-    </entry>
-    <entry>
-      <int>54</int>
-      <macro name="o5et_Test_testApplyProperties"/>
-    </entry>
-    <entry>
-      <int>55</int>
-      <macro name="o5et_Util_assertEqual"/>
-    </entry>
-  </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>

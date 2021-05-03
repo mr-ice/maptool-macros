@@ -1,0 +1,26 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>1fdbb7db-d7bc-45b6-944d-157c29746472</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>dndbt_Test_CampaignProperyClashes</label>
+  <group>Tests - Code</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Analyzes the macros for Lib:DNDBeyond and determines if any declare a variable that matches a campaign property.</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>

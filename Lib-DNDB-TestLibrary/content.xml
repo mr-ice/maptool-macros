@@ -1,6 +1,6 @@
 <net.rptools.maptool.model.Token>
   <id>
-    <baGUID>3NkJwqeNSKqmG4iRWQpp8A==</baGUID>
+    <baGUID>01A3hOlXQdGVEsmmOer/vQ==</baGUID>
   </id>
   <beingImpersonated>false</beingImpersonated>
   <exposedAreaGUID>
@@ -14,14 +14,146 @@
       </net.rptools.lib.MD5Key>
     </entry>
   </imageAssetMap>
-  <x>850</x>
-  <y>350</y>
-  <z>8</z>
+  <x>500</x>
+  <y>450</y>
+  <z>2256</z>
   <anchorX>0</anchorX>
   <anchorY>0</anchorY>
   <sizeScale>1.0</sizeScale>
-  <lastX>0</lastX>
-  <lastY>0</lastY>
+  <lastX>700</lastX>
+  <lastY>500</lastY>
+  <lastPath>
+    <cellList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>14</x>
+        <y>10</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>13</x>
+        <y>10</y>
+        <g>1.0</g>
+        <distanceTraveled>1.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>14</x>
+          <y>10</y>
+          <g>0.0</g>
+          <distanceTraveled>0.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+          <h>0.0</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves/>
+        </parent>
+        <h>3.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>12</x>
+        <y>9</y>
+        <g>2.0</g>
+        <distanceTraveled>2.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>13</x>
+          <y>10</y>
+          <g>1.0</g>
+          <distanceTraveled>1.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>1.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/parent"/>
+          <h>3.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint/validMoves"/>
+        </parent>
+        <h>2.002</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>11</x>
+        <y>9</y>
+        <g>3.0</g>
+        <distanceTraveled>3.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>12</x>
+          <y>9</y>
+          <g>2.0</g>
+          <distanceTraveled>2.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>2.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/parent"/>
+          <h>2.002</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[2]/validMoves"/>
+        </parent>
+        <h>1.001</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>10</x>
+        <y>9</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent>
+          <x>11</x>
+          <y>9</y>
+          <g>3.0</g>
+          <distanceTraveled>3.0</distanceTraveled>
+          <distanceTraveledWithoutTerrain>3.0</distanceTraveledWithoutTerrain>
+          <parent reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/parent"/>
+          <h>1.001</h>
+          <f>0.0</f>
+          <terrainModifier>0.0</terrainModifier>
+          <isAStarCanceled>false</isAStarCanceled>
+          <validMoves reference="../../../net.rptools.maptool.client.walker.astar.AStarCellPoint[3]/validMoves"/>
+        </parent>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </cellList>
+    <waypointList class="linked-list">
+      <net.rptools.maptool.model.CellPoint>
+        <x>14</x>
+        <y>10</y>
+        <g>0.0</g>
+        <distanceTraveled>0.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>0.0</distanceTraveledWithoutTerrain>
+      </net.rptools.maptool.model.CellPoint>
+      <net.rptools.maptool.client.walker.astar.AStarCellPoint>
+        <x>10</x>
+        <y>9</y>
+        <g>4.0</g>
+        <distanceTraveled>4.0</distanceTraveled>
+        <distanceTraveledWithoutTerrain>4.0</distanceTraveledWithoutTerrain>
+        <parent reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/parent"/>
+        <h>0.0</h>
+        <f>0.0</f>
+        <terrainModifier>0.0</terrainModifier>
+        <isAStarCanceled>false</isAStarCanceled>
+        <validMoves reference="../../../cellList/net.rptools.maptool.client.walker.astar.AStarCellPoint[4]/validMoves"/>
+      </net.rptools.maptool.client.walker.astar.AStarCellPoint>
+    </waypointList>
+  </lastPath>
   <snapToScale>true</snapToScale>
   <width>32</width>
   <height>32</height>
@@ -342,215 +474,5 @@
       <boolean>false</boolean>
     </entry>
   </state>
-  <macroPropertiesMap>
-    <entry>
-      <int>128</int>
-      <macro name="Set+Logging+Level"/>
-    </entry>
-    <entry>
-      <int>1</int>
-      <macro name="onCampaignLoad"/>
-    </entry>
-    <entry>
-      <int>129</int>
-      <macro name="dndbt_Horgotin"/>
-    </entry>
-    <entry>
-      <int>130</int>
-      <macro name="dndbt_atumash_raging"/>
-    </entry>
-    <entry>
-      <int>131</int>
-      <macro name="dndbt_atumash"/>
-    </entry>
-    <entry>
-      <int>132</int>
-      <macro name="dndbt_Yaichi"/>
-    </entry>
-    <entry>
-      <int>134</int>
-      <macro name="data_BasicToon_30957877"/>
-    </entry>
-    <entry>
-      <int>135</int>
-      <macro name="data_BasicToon_30957978"/>
-    </entry>
-    <entry>
-      <int>136</int>
-      <macro name="data_BasicToon_30959709"/>
-    </entry>
-    <entry>
-      <int>137</int>
-      <macro name="data_BasicToon_30960137"/>
-    </entry>
-    <entry>
-      <int>138</int>
-      <macro name="data_BasicToon_atumash_raging"/>
-    </entry>
-    <entry>
-      <int>139</int>
-      <macro name="data_BasicToon_BhelduhrBallrotterThrahak"/>
-    </entry>
-    <entry>
-      <int>140</int>
-      <macro name="data_BasicToon_Blurrier"/>
-    </entry>
-    <entry>
-      <int>141</int>
-      <macro name="data_BasicToon_Bob"/>
-    </entry>
-    <entry>
-      <int>142</int>
-      <macro name="data_BasicToon_BodeMikbodephace"/>
-    </entry>
-    <entry>
-      <int>143</int>
-      <macro name="data_BasicToon_GeeWiz"/>
-    </entry>
-    <entry>
-      <int>144</int>
-      <macro name="data_BasicToon_KazRedrum"/>
-    </entry>
-    <entry>
-      <int>145</int>
-      <macro name="data_BasicToon_KetdelleDankil"/>
-    </entry>
-    <entry>
-      <int>146</int>
-      <macro name="data_BasicToon_Nibbles"/>
-    </entry>
-    <entry>
-      <int>147</int>
-      <macro name="data_BasicToon_RexRedrum"/>
-    </entry>
-    <entry>
-      <int>148</int>
-      <macro name="data_BasicToon_Zairali"/>
-    </entry>
-    <entry>
-      <int>149</int>
-      <macro name="data_BasicToon_Yaichi"/>
-    </entry>
-    <entry>
-      <int>22</int>
-      <macro name="Run+Tests"/>
-    </entry>
-    <entry>
-      <int>25</int>
-      <macro name="dndbt_Test_KnownToons"/>
-    </entry>
-    <entry>
-      <int>27</int>
-      <macro name="Rebuild+Known+Static+States"/>
-    </entry>
-    <entry>
-      <int>28</int>
-      <macro name="Build+Test+Toon"/>
-    </entry>
-    <entry>
-      <int>29</int>
-      <macro name="Clean+Token"/>
-    </entry>
-    <entry>
-      <int>40</int>
-      <macro name="Rebuild+Known+Live+States"/>
-    </entry>
-    <entry>
-      <int>42</int>
-      <macro name="dndbt_Test_KnownLiveToons"/>
-    </entry>
-    <entry>
-      <int>49</int>
-      <macro name="dndbt_CreateDataMacro"/>
-    </entry>
-    <entry>
-      <int>51</int>
-      <macro name="dndbt_Test_ApplyTokenProperties"/>
-    </entry>
-    <entry>
-      <int>52</int>
-      <macro name="dndbt_Util_compareTokens"/>
-    </entry>
-    <entry>
-      <int>58</int>
-      <macro name="data_AttackEditor_processorParams_1"/>
-    </entry>
-    <entry>
-      <int>59</int>
-      <macro name="dndbt_Test_AttackEditorProcessor_testRollBuild_1"/>
-    </entry>
-    <entry>
-      <int>60</int>
-      <macro name="data_AttackEditor_processorExpression_1"/>
-    </entry>
-    <entry>
-      <int>63</int>
-      <macro name="dndbt_Test_AttackEditorProcessor_testRollBuild_2"/>
-    </entry>
-    <entry>
-      <int>65</int>
-      <macro name="data_AttackEditor_processorParams_2"/>
-    </entry>
-    <entry>
-      <int>66</int>
-      <macro name="data_AttackEditor_processorExpression_2"/>
-    </entry>
-    <entry>
-      <int>80</int>
-      <macro name="Override+Run+Tests"/>
-    </entry>
-    <entry>
-      <int>81</int>
-      <macro name="dndbt_Test_AttackEditor_launchEditor"/>
-    </entry>
-    <entry>
-      <int>82</int>
-      <macro name="dndbt_Test_RollExpression_diceRoller"/>
-    </entry>
-    <entry>
-      <int>83</int>
-      <macro name="dndbt_breakpoint"/>
-    </entry>
-    <entry>
-      <int>92</int>
-      <macro name="dndbt_BhelduhrBallrotterThrahak"/>
-    </entry>
-    <entry>
-      <int>93</int>
-      <macro name="dndbt_Blurrier"/>
-    </entry>
-    <entry>
-      <int>94</int>
-      <macro name="dndbt_Bob"/>
-    </entry>
-    <entry>
-      <int>95</int>
-      <macro name="dndbt_BodeMikbodephace"/>
-    </entry>
-    <entry>
-      <int>96</int>
-      <macro name="dndbt_GeeWiz"/>
-    </entry>
-    <entry>
-      <int>97</int>
-      <macro name="dndbt_KazRedrum"/>
-    </entry>
-    <entry>
-      <int>98</int>
-      <macro name="dndbt_KetdelleDankil"/>
-    </entry>
-    <entry>
-      <int>99</int>
-      <macro name="dndbt_Nibbles"/>
-    </entry>
-    <entry>
-      <int>100</int>
-      <macro name="dndbt_RexRedrum"/>
-    </entry>
-    <entry>
-      <int>102</int>
-      <macro name="dndbt_Zairali"/>
-    </entry>
-  </macroPropertiesMap>
   <speechMap/>
 </net.rptools.maptool.model.Token>
