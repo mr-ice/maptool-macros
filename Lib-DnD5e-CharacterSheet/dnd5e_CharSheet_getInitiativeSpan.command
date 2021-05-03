@@ -16,7 +16,7 @@
 [h: title = dnd5e_CharSheet_formatBonus (abilityBonus) + " (" + 
 	substring (initAbility, 0, 3) + ")"]
 
-[h, if (initBonus > 0): title = concat (title, " + " + initBonus + " (Bonus)")]
+[h, if (initBonus != 0): title = concat (title, " + " + initBonus + " (Bonus)")]
 
 [h, if (initProficiency > 0): title = concat (title, " + " + initProficiencyValue + 
 	" (Proficiency)")]
