@@ -1,7 +1,9 @@
 [h: name = arg(0)]
-[h: searchName = "<html><b>" + name + " @ "]
 [h: die = arg(1)]
 [h: id = arg(2)]
+[h, if (argCount() > 3): doCampaignWrappers = arg(3); doCampaignWrappers = 0]
+
+[h: searchName = "<html><b>" + name + " @ "]
 [h: macros = getMacroGroup("Darker Dungeons - Useables", "json", id)]
 [h: editIndex = -1]
 [h, foreach(i, macros), code: {
@@ -26,4 +28,8 @@
 	[h: dieText = if (die == 0, " <span color=red>Empty</span>", " d" + die)]
 	[h: macroProps = json.set(macroProps, "label", searchName + dieText + "</b></html>")]
 	[h: setMacroProps(editIndex, macroProps, "json", id)]
+}]
+
+[h, if (doCampaignWrappers), code: {
+	[ggddH_Macro_createWrappers()]
 }]

@@ -1,8 +1,7 @@
 <!-- Get all of the useables defined, create a named list -->
-[h: useables = getProperty("ggdd_useables")]
+[h: useables = ggddH_Usage_getUsables()]
 [h, if (json.isEmpty(useables)), code: {
 	[h: existingList = "None Available"]
-	[h: useables = "{}"]
 };{
 	[h: existingList = json.toList(json.merge(json.append("[]", "Create New"), json.fields(useables, "json")))]
 }]
@@ -27,4 +26,4 @@
 [h: size = json.get(dieSides, dieSize)]
 [h: useables = json.set(useables, name, size)]
 [h: setProperty("ggdd_useables", useables)]
-[h: ggddH_Usage_updateMacros(name, size, currentToken())]
+[h: ggddH_Usage_updateMacros(name, size, currentToken(), 1)]
