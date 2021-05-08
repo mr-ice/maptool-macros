@@ -7,7 +7,6 @@
 [h: SKIP_PROMPT = dnd5e_Preferences_getPreference ("suppressInitPrompt")]
 [h, if (SKIP_PROMPT == ""): SKIP_PROMPT = 0; ""]
 [h: basicToon = dndb_getBasicToon ()]
-[h: dndb_BasicToon_validateVersion (basicToon)]
 
 [h, if (json.length (macro.args) > 0): noConfirm = arg(0); noConfirm = 0]
 [h: confirm = 1]

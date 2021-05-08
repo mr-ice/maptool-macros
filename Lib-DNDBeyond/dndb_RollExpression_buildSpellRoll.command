@@ -12,6 +12,7 @@
 [h: spellName = json.get (spell, "name")]
 [h: spellLevel = json.get (spell, "level")]
 [h: spellDescription = json.get (spell, "description")]
+[h: spellAbility = json.get (spell, "spellCastingAbilityId")]
 [h, if (requiresAttack == "true"), code: {
 	[if (json.get (advDisadvObj, "advantage") == "true" || json.get (advDisadvObj, "both") == "true"): hasAdvantage = 1; hasAdvantage = 0]
 	[if (json.get (advDisadvObj, "disadvantage") == "true" || json.get (advDisadvObj, "both") == "true"): hasDisadvantage = 1; hasDisadvantage = 0]
@@ -20,7 +21,9 @@
 		[hasDisadvantage = 1]
 	}; {}]
 	[h: attackBonus = json.get (spell, "attackBonus")]
-	[attackExpression = dnd5e_RollExpression_Attack (spellName, attackBonus)]
+	[attackExpression = dnd5e_RollExpression_SpellAttack (spellName, spellAbility)]
+	[attackExpression = dnd5e_RollExpression_setProficiency (attackExpression, 1)]
+	[attackExpresison = dnd5e_RollExpression_setBonus (attackExpression, attackBonus)]
 	[attackExpression = dnd5e_RollExpression_setAdvantage (attackExpression, hasAdvantage)]
 	[attackExpression = dnd5e_RollExpression_setDisadvantage (attackExpression, hasDisadvantage)]
 }; {""}]
@@ -87,13 +90,12 @@
 	[h, if (!isNumber (diceCount)): diceCount = 0; ""]
 	[h, if (diceCount > 0), code: {
 		<!-- if the spell has a save, add it to the dice object expression description -->
-		[h: rollExpression = json.set ("", "name", spellName,
-											"diceSize", diceValue,
-											"diceRolled", diceCount,
-											"expressionTypes", type,
-											"bonus", abilityBonus + fixedValue,
-											"damageTypes", subType)]
-		[h: rollExpression = dnd5e_RollExpression_addType (rollExpression, dnd5e_Type_Basic())]
+		[h: rollExpression = dnd5e_RollExpression_Damage (spellName, diceCount + "d" + diceValue)]
+		[h, if (requiresAttack == "true"): rollExpression = dnd5e_RollExpression_addType(rollExpression, 
+									dnd5e_Type_Critable())]
+		[h: rollExpression = dnd5e_RollExpression_addDamageType (rollExpression, subType)]
+		[h: rollExpression = dnd5e_RollExpression_setBonus(rollExpression, abilityBonus + fixedValue)]
+
 		[h: rollExpressions = json.append (rollExpressions, rollExpression)]
 	}; {""}]
 }]

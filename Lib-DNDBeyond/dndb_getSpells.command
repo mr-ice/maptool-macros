@@ -80,7 +80,7 @@
 							"subType", "spell-attacks")]
 [h: spellAttackModifiers = dndb_searchGrantedModifiers (searchArg)]
 [h: log.debug (getMacroName() + ": spellAttackModifiers = " + spellAttackModifiers)]
-[h: proficiency = dndb_getProficiencyBonus (toon)]
+[h: profBonus = dndb_getProficiencyBonus (toon)]
 [h, foreach (classObj, mergedClasses), code: {
 	<!-- find the classSpells object for the classObj -->
 	[h: classSpellsSearchArg = json.set ("", "object", classSpellsArry,
@@ -109,10 +109,10 @@
 			case 5: abilityName = "cha"]
 			
 		[h: abilityBonus = json.get (abilities, abilityName + "Bonus")]
-		[h: atkBonus = abilityBonus + proficiency]
 		[h: spellRequiresAttackRoll = json.get (basicSpell, "requiresAttackRoll")]
-		[h, if (spellRequiresAttackRoll == "true"): atkBonus = atkBonus + dndb_getAttackModiferBonusForSpell (toon, spell, spellAttackModifiers)]
-		[h: saveDC = 8 + abilityBonus + proficiency]
+		[h: atkBonus = 0]
+		[h, if (spellRequiresAttackRoll == "true"): atkBonus = dndb_getAttackModiferBonusForSpell (toon, spell, spellAttackModifiers)]
+		[h: saveDC = 8 + abilityBonus + profBonus]
 		[h: isRitual = json.get (basicSpell, "ritualSpell")]
 		[h: spellPrepared = json.get (basicSpell, "prepared")]
 		<!-- set spellIsRitual to true when:

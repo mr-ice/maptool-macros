@@ -1,5 +1,5 @@
 [h: REQUIRED_DND_LIB_VERSION = 0.15]
-[h: BASIC_TOON_VERSION = 0.15]
+[h: BASIC_TOON_VERSION = 0.16]
 <!-- No calling lib functions during onCampaignLoad -->
 [h, macro ("dnd5e_Util_assertLibVersion@Lib:DnD5e"): json.append ("", REQUIRED_DND_LIB_VERSION, REQUIRED_DND_LIB_VERSION)]
 [h, macro ("dnd5e_Util_displayReleaseNotes@Lib:DnD5e"): json.append ("", token.name)]
