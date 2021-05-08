@@ -5,8 +5,12 @@
 [h: macroNames = getMacros("json", tokenId)]
 [h: log.trace (CATEGORY + "## macroNames = " + macroNames)]
 [h: VAR_DECLARE_PATTERN = ".*[:;\\[]\\s*([A-Za-z0-9._]+)\\s*=[\\s\\w]"]
-[h: allProps = getAllPropertyNames("", "json")]
-[h: log.trace (CATEGORY + "## allProps = " + allProps)]
+[h: allProps = "[]"]
+[h, foreach (propName, getAllPropertyNames("", "json")), code: {
+	[log.debug (CATEGORY + "## adding property: " + propName)]
+	[allProps = json.append (allProps, upper(propName))]
+}]
+[h: log.debug (CATEGORY + "## allProps = " + allProps)]
 [h: reportResult = "{}"]
 [h, foreach (macroName, macroNames), code: {
 	[log.debug (CATEGORY + "## testing " + macroName)]
@@ -21,7 +25,7 @@
 	[findCount = getFindCount (macroMatches)]
 	[log.debug (CATEGORY + "##" + macroName + ": " + findCount)]
 	[for (i, 0, findCount), code: {
-		[varDeclaration = getGroup(macroMatches, i + 1, 1)]
+		[varDeclaration = upper(getGroup(macroMatches, i + 1, 1))]
 		[log.trace (CATEGORY + "## varDeclaration = " + varDeclaration)]
 		[if (json.contains (allProps, varDeclaration)):
 			reportResult = json.set (reportResult, libToken + ":" + macroName + ":" + 

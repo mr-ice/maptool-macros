@@ -1,0 +1,26 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>e4f139c3-8032-4354-8b1a-123083d40c8c</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>manual_Test_CampaignProperyClashes</label>
+  <group>Tests - Code</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Manual test for add-on libraries (until they get their own test libraries)</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
