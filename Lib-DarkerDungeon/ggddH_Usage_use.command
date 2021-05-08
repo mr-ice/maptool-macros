@@ -6,7 +6,7 @@
 [h: assert(json.contains(useableData, name), "No useable named '" + name + "'")]
 [h: die = json.get(useableData, name)]
 [h: assert(isNumber(die), "Die size for " + name + " is invalid")]
-[h: assert(die, name + " is Empty")]
+[h: assert(die, name + " is Empty", 0)]
 
 <!-- Check the uses -->
 [h: useRoll = roll(1, die)]
