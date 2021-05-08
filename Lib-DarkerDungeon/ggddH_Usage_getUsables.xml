@@ -1,0 +1,26 @@
+<net.rptools.maptool.model.MacroButtonProperties>
+  <macroUUID>652bb68b-f994-43c6-aacc-dbf707c57a98</macroUUID>
+  <saveLocation>Token</saveLocation>
+  <colorKey>default</colorKey>
+  <hotKey>None</hotKey>
+  <label>ggddH_Usage_getUsables</label>
+  <group>Usage</group>
+  <sortby/>
+  <autoExecute>true</autoExecute>
+  <includeLabel>false</includeLabel>
+  <applyToTokens>false</applyToTokens>
+  <fontColorKey>black</fontColorKey>
+  <fontSize>1.00em</fontSize>
+  <minWidth/>
+  <maxWidth/>
+  <allowPlayerEdits>false</allowPlayerEdits>
+  <toolTip>Returns the Usables object</toolTip>
+  <displayHotKey>true</displayHotKey>
+  <commonMacro>false</commonMacro>
+  <compareGroup>true</compareGroup>
+  <compareSortPrefix>true</compareSortPrefix>
+  <compareCommand>true</compareCommand>
+  <compareIncludeLabel>true</compareIncludeLabel>
+  <compareAutoExecute>true</compareAutoExecute>
+  <compareApplyToSelectedTokens>true</compareApplyToSelectedTokens>
+</net.rptools.maptool.model.MacroButtonProperties>
