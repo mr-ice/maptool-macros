@@ -1,4 +1,5 @@
 [h: basicToon = getProperty ("dndb_BasicToon")]
+[h: dndb_BasicToon_validateVersion (basicToon)]
 [h, if (encode (basicToon) == ""), code: {
 	[h: error = "You must initialize with DNDBeyond first"]
 	[h: abort (input ( " junk | | " + error + " | LABEL | TEXT=false"))]

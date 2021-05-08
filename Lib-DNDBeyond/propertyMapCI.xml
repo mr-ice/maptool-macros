@@ -20,7 +20,7 @@
       <string>libversion</string>
       <net.rptools.CaseInsensitiveHashMap_-KeyValue>
         <key>libversion</key>
-        <value class="string">0.15</value>
+        <value class="string">0.16</value>
         <outer-class reference="../../../.."/>
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
@@ -220,7 +220,7 @@
       <string>dndb.basictoonversion</string>
       <net.rptools.CaseInsensitiveHashMap_-KeyValue>
         <key>dndb.basicToonVersion</key>
-        <value class="string">0.15</value>
+        <value class="string">0.16</value>
         <outer-class reference="../../../.."/>
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
@@ -229,6 +229,13 @@
       <net.rptools.CaseInsensitiveHashMap_-KeyValue>
         <key>Animal Handling</key>
         <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>savedattackrolledexpressionkey</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>savedAttackRolledExpressionKey</key>
         <outer-class reference="../../../.."/>
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
@@ -335,10 +342,24 @@
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
     <entry>
+      <string>dndb_basictoon</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>dndb_BasicToon</key>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
       <string>dmgbonus</string>
       <net.rptools.CaseInsensitiveHashMap_-KeyValue>
         <key>dmgBonus</key>
         <value class="string">8</value>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>savedattackrolledexpressions</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>savedAttackRolledExpressions</key>
         <outer-class reference="../../../.."/>
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
@@ -425,7 +446,10 @@
       <string>lib.releasenotesobj</string>
       <net.rptools.CaseInsensitiveHashMap_-KeyValue>
         <key>lib.releaseNotesObj</key>
-        <value class="string">{"0.15": "Library+has+been+officially+versioned.%3Cbr%3E+RollExpressions+were+refactored+to+better+define+their+Types%26semi%3B%3Cbr%3E++%3Cfont+color%3D%27Red%27%3E%3Cb%3EAll+DnDBeyond+Tokens+will+beed+to+be+fully+re-initialized%3C%2Fb%3E%3C%2Ffont%3E%3Cbr%3E+"}</value>
+        <value class="string">{
+  "0.15": "Library+has+been+officially+versioned.%3Cbr%3E+RollExpressions+were+refactored+to+better+define+their+Types%26semi%3B%3Cbr%3E++%3Cfont+color%3D%27Red%27%3E%3Cb%3EAll+DnDBeyond+Tokens+will+beed+to+be+fully+re-initialized%3C%2Fb%3E%3C%2Ffont%3E%3Cbr%3E+",
+  "0.16": "Roll+Expressions+from+spells+may+now+roll+critical+damage.+%3Cfont+color%3D%27red%27%3E%3Cb%3EAll+DnDBeyond+Tokens+will+need+to+be+re-initialized%3C%2Fb%3E%3C%2Ffont%3E"
+}</value>
         <outer-class reference="../../../.."/>
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
@@ -473,6 +497,13 @@
       <net.rptools.CaseInsensitiveHashMap_-KeyValue>
         <key>Elevation</key>
         <value class="string"/>
+        <outer-class reference="../../../.."/>
+      </net.rptools.CaseInsensitiveHashMap_-KeyValue>
+    </entry>
+    <entry>
+      <string>ggdd_useables</string>
+      <net.rptools.CaseInsensitiveHashMap_-KeyValue>
+        <key>ggdd_useables</key>
         <outer-class reference="../../../.."/>
       </net.rptools.CaseInsensitiveHashMap_-KeyValue>
     </entry>
