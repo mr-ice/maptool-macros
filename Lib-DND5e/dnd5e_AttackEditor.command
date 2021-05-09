@@ -10,7 +10,7 @@
 
 <!-- This editor knows nothing of the attackJSON property. It relies on a caller to manage the results -->
 [h: callbackLink = arg (0)]
-[h: processorLink = macroLinkText ("dnd5e_AttackEditor_processor@this", "all", "", currentToken())]
+[h: processorLink = macroLinkText ("dnd5e_AttackEditor_processor@this", "none", "", currentToken())]
 [h: attackFields = json.fromList (json.fields (attackObj))]
 [h: log.debug ("attackFields: " + attackFields)]
 [h, if (json.length (macro.args) > 2): firstSelected = arg (2); firstSelected = ""]
