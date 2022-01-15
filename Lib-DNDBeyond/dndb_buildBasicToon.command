@@ -16,8 +16,8 @@
 
 
 [h: log.info ("dndb_getBasic: Initiative")]
-[h: initiative = dndb_getInitiative (toon)]
-[h: basicToon = json.set (basicToon, "init", initiative)]
+[h: initiativeVar = dndb_getInitiative (toon)]
+[h: basicToon = json.set (basicToon, "init", initiativeVar)]
 
 [h: log.info ("dndb_getBasic: Language")]
 [h: languageArray = dndb_getLanguage (toon)]

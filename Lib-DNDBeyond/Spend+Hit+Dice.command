@@ -1,7 +1,7 @@
 [h: basicToon = dndb_getBasicToon ()]
 
 [h: CLASS_VAR_SUFFIX = "_spendHitDice"]
-[h: classes = json.get (basicToon, "classes")]
+[h: classesVar = json.get (basicToon, "classes")]
 
 <!-- example input string -->
 <!-- Barbarian-spendHitDice | 0,1,2,3,4 | Spend Barbarian Hit Dice | List -->
@@ -13,11 +13,11 @@
 <!-- Build the input string, using ## as a line delimiter -->
 [h: inputStr = ""]
 [h: classVars = ""]
-[h, foreach (class, classes), code: {
+[h, foreach (class, classesVar), code: {
 	[h: className = json.get (class, "className")]
 	[h: level = json.get (class, "level")]
 	[h: hitDiceUsed = json.get (class, "hitDiceUsed")]
-	[h: hitDice = json.get (class, "hitDice")]
+	[h: hitDiceVar = json.get (class, "hitDice")]
 	[h: totalAvailable = level - hitDiceUsed + 1]
 	[h: hitDiceChoices = ""]
 	[h, for (i, 0, totalAvailable): hitDiceChoices = hitDiceChoices + "," + string (i)]
@@ -26,7 +26,7 @@
 	[h: inputStr = inputStr + "## " + classVar + " | " + hitDiceChoices + 
 			" | Spend " + className + " Hit Dice | List | "]
 	[h: classVars = json.append (classVars, json.set ("", "classVar", classVar, 
-												"hitDice", hitDice,
+												"hitDice", hitDiceVar,
 												"className", className))]
 }]
 <!-- prune the leading ## -->

@@ -14,8 +14,8 @@
 	[h: totalLevel = totalLevel + level]
 	[h: className = json.path.read (class, "definition.name")]
 	[h: classObj = json.set ("", "className", className, "level", level)]
-	[h: hitDice = json.path.read (class, "definition.hitDice")]
-	[h: classObj = json.set (classObj, "hitDice", hitDice)]
+	[h: hitDiceVar = json.path.read (class, "definition.hitDice")]
+	[h: classObj = json.set (classObj, "hitDice", hitDiceVar)]
 
 	<!-- Search in modifiers for one that matches a class feature, add the bonus to class obj -->
 	[h: classBonus = 0]
@@ -43,12 +43,12 @@
 
 <!-- add the class bonuses -->
 [h: totalBonus = raceBonus + totalClassLevelBonus]
-[h: maxHp = baseHp + totalBonus + (json.get (abilities, "conBonus") * totalLevel)]
+[h: maxHpVar = baseHp + totalBonus + (json.get (abilities, "conBonus") * totalLevel)]
 [h: log.info ("dndb_getHitPoints: classArry = " + classArry + "
 		baseHp = " + baseHp + "
 		raceBonus = " + raceBonus + "
 		totalBonus = " + totalBonus + "
-		maxHp = " + maxHp)]
+		maxHpVar = " + maxHpVar)]
 <!-- include race and class bonuses -->
 
 [h: damageTaken = json.path.read (toon, "data.removedHitPoints")]
@@ -59,8 +59,8 @@
 		temporaryHitPoints = " + temporaryHitPoints + "
 		maxHpModifier = " + maxHpModifier + "
 		overrideMaxHp = " + overrideMaxHp)]
-[h, if (maxHpModifier != "" && isNumber (maxHpModifier)): maxHp = maxHp + number (maxHpModifier)]
-[h, if (overrideMaxHp != "" && isNumber (overrideMaxHp)): maxHp = number (overrideMaxHp)]
+[h, if (maxHpModifier != "" && isNumber (maxHpModifier)): maxHpVar = maxHpVar + number (maxHpModifier)]
+[h, if (overrideMaxHp != "" && isNumber (overrideMaxHp)): maxHpVar = number (overrideMaxHp)]
 
 [h: deathSaves = json.path.read (toon, "data.deathSaves")]
 [h: dsPass = json.get (deathSaves, "successCount")]
@@ -70,8 +70,8 @@
 
 
 [h: hitPoints =  json.set ("",
-							"maxHp", maxHp,
-							"currentHp", maxHp - damageTaken,
+							"maxHp", maxHpVar,
+							"currentHp", maxHpVar - damageTaken,
 							"tempHp", temporaryHitPoints,
 							"dsPass", dsPass,
 							"dsFail", dsFail)]

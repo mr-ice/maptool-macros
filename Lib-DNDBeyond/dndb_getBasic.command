@@ -45,9 +45,9 @@
 	[h: totalLevel = totalLevel + level]
 	[h: className = json.path.read (classEl, "definition.name")]
 	[h: classObj = json.set ("", "className", className, "level", level)]
-	[h: hitDice = json.path.read (classEl, "definition.hitDice")]
+	[h: hitDiceVar = json.path.read (classEl, "definition.hitDice")]
 	[h: hitDiceUsed = json.get (classEl, "hitDiceUsed")]
-	[h: classObj = json.set (classObj, "hitDice", hitDice, "hitDiceUsed", hitDiceUsed)]
+	[h: classObj = json.set (classObj, "hitDice", hitDiceVar, "hitDiceUsed", hitDiceUsed)]
 	[h: classArry = json.append (classArry, classObj)]
 }]
 
@@ -59,10 +59,10 @@
 [h: basicToon = json.set (basicToon, "proficiencyBonus", proficiencyBonus)]
 
 <!-- Resistances / Immunities -->
-[h: resistances = dndb_getResistances (toon)]
-[h: basicToon = json.set (basicToon, "resistances", resistances)]
-[h: immunities = dndb_getImmunities (toon)]
-[h: basicToon = json.set (basicToon, "immunities", immunities)]
+[h: resistancesVar = dndb_getResistances (toon)]
+[h: basicToon = json.set (basicToon, "resistances", resistancesVar)]
+[h: immunitiesVar = dndb_getImmunities (toon)]
+[h: basicToon = json.set (basicToon, "immunities", immunitiesVar)]
 
 <!-- Senses -->
 [h: log.info ("dndb_getBasic: Senses")]
