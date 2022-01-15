@@ -28,7 +28,7 @@
 		[varDeclaration = upper(getGroup(macroMatches, i + 1, 1))]
 		[log.trace (CATEGORY + "## varDeclaration = " + varDeclaration)]
 		[if (json.contains (allProps, varDeclaration)):
-			reportResult = json.set (reportResult, libToken + ":" + macroName + ":" + 
+			reportResult = json.set (reportResult, getMacroName() + "##" + libToken + ":" + macroName + ":" + 
 				varDeclaration, "FAILED! Matches campaign property")]
 	}]
 }]
