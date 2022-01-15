@@ -13,7 +13,7 @@
 [h: initMods = dndb_searchGrantedModifiers (modSearchArgs)]
 [h: log.debug ("initMods = " + initMods)]
 [h: bonus = 0]
-[h: proficiency = 0]
+[h: proficiencyVar = 0]
 [h, foreach (initMod, initMods), code: {
 	[h: type = json.get (initMod, "type")]
 	[h: initModId = json.get (initMod, "id")]
@@ -26,8 +26,8 @@
 		case "proficiency": profBonus = 1;
 		case "expertise": profBonus = 2; 
 		default: "Don't care right now"]
-	[h: proficiency = max (proficiency, profBonus)]
+	[h: proficiencyVar = max (proficiencyVar, profBonus)]
 	[h: bonus = bonus + modBonus]
 }]
-[h: initBonusObj = json.set ("", "bonus", bonus, "proficiency", proficiency)]
+[h: initBonusObj = json.set ("", "bonus", bonus, "proficiency", proficiencyVar)]
 [h: macro.return = initBonusObj]

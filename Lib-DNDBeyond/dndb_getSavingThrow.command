@@ -13,7 +13,7 @@
 ]
 
 [h: SAVE_ENTITY_TYPE_ID = "1472902489"]
-[h: deathSave = json.set ("", "property", "deathSave", "name", "Death", "valueId", "-1", "bonuses", "{}", "bonus", 0, "proficient", 0)]
+[h: deathSaveVar = json.set ("", "property", "deathSave", "name", "Death", "valueId", "-1", "bonuses", "{}", "bonus", 0, "proficient", 0)]
 [h: allSave = json.set ("", "property", "allSave", "name", "AllSave", "valueId", "-1", "bonuses", "{}", "bonus", 0, "proficient", 0)]
 
 <!-- Saving throws are about as stupid as skills, but here we go -->
@@ -116,7 +116,7 @@
 	[h: finalSaves = json.append (finalSaves, savingThrow)]							
 }]
 <!-- add our two special saves -->
-[h: finalSaves = json.append (finalSaves, allSave, deathSave)]
+[h: finalSaves = json.append (finalSaves, allSave, deathSaveVar)]
 [h: macro.return = finalSaves]
 
 

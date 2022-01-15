@@ -10,6 +10,6 @@
 }]
 [h: profBase = round(math.floor(totalClassLevel / 4))]
 <!-- add one, viola -->
-[h: proficiency = profBase + 2]
-[r: proficiency]
-[h: macro.return = proficiency]
+[h: proficiencyVar = profBase + 2]
+[r: proficiencyVar]
+[h: macro.return = proficiencyVar]

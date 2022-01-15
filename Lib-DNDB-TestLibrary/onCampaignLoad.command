@@ -1,4 +1,4 @@
-[h: REQUIRED_DNDBEYOND_LIB_VERSION = 0.15]
+[h: REQUIRED_DNDBEYOND_LIB_VERSION = 0.16]
 <!-- No calling lib functions during onCampaignLoad -->
 [h, macro ("dnd5e_Util_assertLibVersion@Lib:DnD5e"): json.append ("", 
 		REQUIRED_DNDBEYOND_LIB_VERSION, REQUIRED_DNDBEYOND_LIB_VERSION, "Lib:DnDBeyond")]

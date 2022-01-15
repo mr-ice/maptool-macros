@@ -17,11 +17,11 @@
 <!-- Determine if we hit for all later damage rolls -->
 [h: type = dnd5e_RollExpression_getExpressionType(exp)]
 [h, if(type == ATTACK_STEP_TYPE && check), code: {
-	[h: ac = getProperty("AC", id)]
-	[h: ac = if(isNumber(ac), number(ac), 0)]
+	[h: acVar = getProperty("AC", id)]
+	[h: acVar = if(isNumber(acVar), number(acVar), 0)]
 	[h, if (optValue == "half"): cover = 2; cover = 0]
 	[h, if (optValue == "threeQuarters"): cover = 5]
-	[h: hit = if(ac + cover > dnd5e_RollExpression_getTotal(exp), 0, 1)]
+	[h: hit = if(acVar + cover > dnd5e_RollExpression_getTotal(exp), 0, 1)]
 	[h: hitText = if(hit, "HIT", "MISS")]
 	[h, if (dnd5e_RollExpression_getRoll(exp) == 20), code: {
 		[h: hit = 1]
@@ -33,7 +33,7 @@
 	}]
 	[h: tt = dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_ROLL_TD) + " = " 
 			+ dnd5e_RollExpression_getTypedDescriptor(exp, TOOLTIP_DETAIL_TD) + " = " + dnd5e_RollExpression_getTotal(exp)]
-	[h: tt = tt + if(hit, " >=", " <") + " AC(" + ac + ")" + if(cover > 0, " + Cover(" + cover + ")", "") + " = " + if (hit, "HIT", "MISS")]
+	[h: tt = tt + if(hit, " >=", " <") + " AC(" + acVar + ")" + if(cover > 0, " + Cover(" + cover + ")", "") + " = " + if (hit, "HIT", "MISS")]
 	[h: output = json.get(state, "output") + " <span title='" + tt + "'>Attack " + hitText + ";</span>"]
 	[h: player = json.append(json.get(state, "player"), strformat(playerTextColumn, "Attack " + hitText))]
 	[h: state = json.set(state, "hit", hit, "output", output, "player", player)]
