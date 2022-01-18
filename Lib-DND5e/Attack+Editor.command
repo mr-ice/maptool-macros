@@ -10,7 +10,7 @@
 	[h: selectedAttack = json.get (retObj, "selectedAttack")]
 	[h: advDisadvantage = json.get (retObj, "advantageDisadvantage")]
 	[h: saveAttackAsMacro = json.get (retObj, "saveAttackAsMacro")]
-	[h: dnd5e_AttackEditor_setAttackExpression (attackObj)]
+	[h: dnd5e_AttackEditor_setAttackExpression (attackObj, 1)]
 	[h: inputObj = json.set ("", "selectedAttack", selectedAttack, 
 							"advantageDisadvantage", advDisadvantage)]	
 	[h: "<!-- dont create duplicates -->"]

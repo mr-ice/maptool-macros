@@ -172,6 +172,10 @@ div {
   font-size: 20px; 
 }
 
+.warning-label {
+	font-style: italic;
+	color: red;
+}
 .debug {
 	border: solid green 3px
 }

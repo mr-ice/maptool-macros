@@ -1,7 +1,6 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>d48ffde7-bf9a-4171-b3b9-be58f1480254</macroUUID>
+  <macroUUID>d7ae164d-4b2d-41d8-a72e-d6b39cd66626</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>141</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_AttackEditor_setAttackExpression</label>
@@ -18,6 +17,7 @@
   <toolTip>Persists the attack expression associted to the token. Key names are stored encoded and this macro encodes them for convenience. Returns the object with encoded keys.
 
 arg (0) =  attackObj with decoded keys
+arg (1) (optional) = boolean: merge generated descriptors from original attack json; Default is false.
 returns attackObj with encoded keys</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
