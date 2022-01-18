@@ -1,5 +1,9 @@
 [h: attackObj = arg (0)]
+[h: mergeDescriptors = 0]
+[h, if (argCount() > 1): mergeDescriptors = arg (1)]
 [h: dnd5e_AE2_getConstants()]
+[h: dnd5e_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "##mergeDescriptors = " + mergeDescriptors)]
 [h, if (json.type (attackObj) != "OBJECT"), code: {
 	[log.error (getMacroName() + ": invalid attack expression provided; aborting")]
 	[log.error ("id: " + currentToken()]
@@ -8,9 +12,34 @@
 	[return (0)]
 }]
 [h: encodedAttackObj = "{}"]
+[h: originalAttackObj = getProperty ("attackExpressionJSON")]
+[h: log.debug (CATEGORY + "##originalAttackObj = " + originalAttackObj)]
+[h, if (json.type (originalAttackObj) != "OBJECT"): originalAttackObj = "{}"]
 [h, foreach (field, json.fields (attackObj)), code: {
 	[value = json.get (attackObj, field)]
-	[encodedAttackObj = json.set (encodedAttackObj, encode (field), value)]
+	[encodedField = encode (field)]
+	[log.debug (CATEGORY + "##field = " + field + "; encodedField = " + encodedField)]
+	[origValue = json.get (originalAttackObj, encodedField)]
+	[log.debug (CATEGORY + "##origValue = " + origValue)]
+	<!-- value and origValue are JSON Arrays of RollExpressions. I need to find the Attack expression from the original and see if it has
+	     the generated typedDescriptors. If so, they are transferred to the new Attack RE -->
+	[origAttackExpression = dnd5e_RollExpression_findExpressionByType (origValue, "Attack")]
+	[log.debug (CATEGORY + "##origAttackExpression = " + origAttackExpression)]
+	[origGenerated = 0]
+	[origGeneratedSrc = "Unknown"]
+	[if (json.type (origAttackExpression) == "OBJECT"), code: {
+		[origGenerated = dnd5e_RollExpression_getTypedDescriptor (origAttackExpression, TYPED_DESCRIPTORS.GENERATED)]
+		[origGeneratedSrc = dnd5e_RollExpression_getTypedDescriptor (origAttackExpression, TYPED_DESCRIPTORS.GENERATED_SOURCE)]
+	}]
+	[newValArry = "[]"]
+	[foreach (rollExpression, value), code: {
+		<!-- nothing wrong with adding the generated descriptor to all of them -->
+		[if (mergeDescriptors): rollExpression = dnd5e_RollExpression_addTypedDescriptor (rollExpression, TYPED_DESCRIPTORS.GENERATED, origGenerated)]
+		[if (mergeDescriptors): rollExpression = dnd5e_RollExpression_addTypedDescriptor (rollExpression, TYPED_DESCRIPTORS.GENERATED_SOURCE, origGeneratedSrc)]
+		[log.debug (CATEGORY + "##new rollExpression: " + rollExpression)]
+		[newValArry = json.append (newValArry, rollExpression)]
+	}]
+	[encodedAttackObj = json.set (encodedAttackObj, encodedField, newValArry)]
 }]
 [h: setProperty ("attackExpressionJSON", encodedAttackObj)]
 [h: setProperty (AE_VERSION_PROPERTY, AE_CURRENT_VERSION)]

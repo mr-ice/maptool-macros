@@ -1,7 +1,7 @@
 <!-- Callers must pass in the character json themselves. No getter methods should shoulder the -->
 <!-- responsibility of calling dndb_getCharJSON -->
 [h: toon = arg(0)]
-
+[h: dndb_Constants(getMacroName())]
 <!-- attackObj constants -->
 [h: ATTACK_JSON = "attackObj"]
 [h: JSON_NAME = "name"]
@@ -42,6 +42,9 @@
 	<!-- commas are scary -->
 	[h: name = replace (name, ",", " ")]
 	[h: attackExpression = dnd5e_RollExpression_WeaponAttack (name)]
+	[h: attackExpression = dnd5e_RollExpression_addTypedDescriptor (attackExpression, TYPED_DESCRIPTORS.GENERATED, 1)]
+	[h: attackExpression = dnd5e_RollExpression_addTypedDescriptor (attackExpression, TYPED_DESCRIPTORS.GENERATED_SOURCE,
+			ATTACK_JSON_GENERATED_SOURCE)]
 
 	[h: atkBonus = "" + json.get (weaponAtkBonusObj, "bonus")]
 	[h: attackExpression = dnd5e_RollExpression_setBonus (attackExpression, atkBonus)]

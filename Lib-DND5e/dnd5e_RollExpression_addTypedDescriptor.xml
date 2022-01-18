@@ -1,7 +1,6 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>260eabc0-5d17-4c60-9ab5-3f29ccc2504b</macroUUID>
+  <macroUUID>bca5e726-022b-4d7f-b1fe-9bab14499584</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>155</index>
   <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dnd5e_RollExpression_addTypedDescriptor</label>
@@ -20,7 +19,7 @@
 &lt;br&gt;
 &lt;br&gt;arg(0) = roll expression 
 &lt;br&gt;arg(1) = descriptor type; The valid types are: 
-&lt;dl style=&apos;margin-left: 20;&apos;&gt; 
+&lt;dl style='margin-left: 20;'&gt; 
   &lt;dt&gt;&lt;b&gt;condition&lt;/b&gt;&lt;/dt&gt; 
   &lt;dd&gt;Text was added by checking for a condition when rolling an attack&lt;/dd&gt; 
   &lt;dt&gt;&lt;b&gt;tooltipRoll&lt;/b&gt;&lt;/dt&gt; 
@@ -44,12 +43,16 @@
   &lt;dt&gt;&lt;b&gt;rowId&lt;/b&gt;&lt;/dt&gt; 
   &lt;dd&gt;The identifier used to match a roll expression with its associated form fields&lt;/dd&gt; 
   &lt;dt&gt;&lt;b&gt;extendedValues&lt;/b&gt;&lt;/dt&gt; 
-  &lt;dd&gt;Should extended values be shown for the step? The values are &apos;+&apos; if no extended values are shown, &apos;-&apos; means they are being shown. 
-      The value &quot;&quot; means the extended values are not set.&lt;/dd&gt; 
+  &lt;dd&gt;Should extended values be shown for the step? The values are '+' if no extended values are shown, '-' means they are being shown. 
+      The value "" means the extended values are not set.&lt;/dd&gt; 
   &lt;dt&gt;&lt;b&gt;save-effect-damage&lt;/b&gt;&lt;/dt&gt; 
   &lt;dd&gt;The damage done on a Save Damage expression after the save effect has been applied&lt;/dd&gt; 
   &lt;dt&gt;&lt;b&gt;action-execution-key&lt;/b&gt;&lt;/dt&gt; 
-  &lt;dd&gt;Key placed in the first object of a roll expression to attack a link from chat to a rolled expression&lt;/dd&gt; 
+  &lt;dd&gt;Key placed in the first object of a roll expression to attack a link from chat to a rolled expression&lt;/dd&gt;
+  &lt;dt&gt;&lt;b&gt;generated&lt;/b&gt;&lt;/dt&gt;
+  &lt;dd&gt;Boolean to indicate the roll expression is generated. Such expressions are warned against user modification.&lt;/dd&gt; 
+  &lt;dd&gt;&lt;b&gt;generatedSource&lt;/b&gt;&lt;/dt&gt;
+  &lt;dd&gt;Source that generated the RollExpression.&lt;/dd&gt; 
 &lt;/dl&gt; 
 arg(2) = descriptor text&lt;br&gt;
 arg(3) = (Optional) 0 = append to current value or 1 (default) = Overwrite current value
