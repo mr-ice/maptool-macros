@@ -2,6 +2,7 @@
 <!-- Present the user with the cast spell dialogue -->
 
 [h: inputObj = arg (0)]
+[h: dndb_Constants (getMacroName())]
 [h: encodedSpellName = json.get (inputObj, "spellName")]
 [h: maxSpellSlot = json.get (inputObj, "maxSpellSlot")]
 [h, if (maxSpellSlot == ""): maxSpellSlot = 0; ""]
@@ -37,7 +38,7 @@
 [h, if (encode (spellSlotHtml) == ""): hasSpellSlotHtml = 0; hasSpellSlotHtml = 1]
 [h, if (spellSlotHtml || modHtml || attackHtml): showHtml = 1; showHtml = 0]
 [h: contentHtml = spellSlotHtml + attackHtml + modHtml]
-[h: log.warn (contentHtml)]
+[h: log.debug (CATEGORY + "##" + contentHtml)]
 [h: title = "Cast Spell: " + spellName]
 [h: processorLink = macroLinkText ("dndb_CastSpell_processor@Lib:DnDBeyond", "all", "", currentToken())]
 <!-- override showHtml to true to always force it for now. -->

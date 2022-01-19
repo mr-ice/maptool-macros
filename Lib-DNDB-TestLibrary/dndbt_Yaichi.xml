@@ -1,8 +1,7 @@
 <net.rptools.maptool.model.MacroButtonProperties>
-  <macroUUID>22f3fe7e-1074-4429-af7b-717fae16835f</macroUUID>
+  <macroUUID>a8c7e21e-3c6a-42c6-ae7a-984b7e47ed13</macroUUID>
   <saveLocation>Token</saveLocation>
-  <index>132</index>
-  <colorKey/>
+  <colorKey>default</colorKey>
   <hotKey>None</hotKey>
   <label>dndbt_Yaichi</label>
   <group>Toon</group>
@@ -15,7 +14,7 @@
   <minWidth/>
   <maxWidth/>
   <allowPlayerEdits>false</allowPlayerEdits>
-  <toolTip>dndbt_Yaichi</toolTip>
+  <toolTip>27752286</toolTip>
   <displayHotKey>true</displayHotKey>
   <commonMacro>false</commonMacro>
   <compareGroup>true</compareGroup>
