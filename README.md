@@ -19,6 +19,7 @@ Command | Result
 
 
 ----
+[click here](https://myco.com/mylink)
 
 ## Sample Macro List (note, this list is not maintained)
 * RollSave - Simple roll an attribute save
