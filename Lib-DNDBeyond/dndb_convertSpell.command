@@ -1,6 +1,7 @@
 [h: atoon = arg (0)]
 [h: spell = arg (1)]
-
+[h: dndb_Constants (getMacroName())]
+[h: log.debug (CATEGORY + "##spell = " + spell)]
 <!-- to avoid wrastling with json.path.read, get the definition and use json.get -->
 [h: definition = json.get (spell, "definition")]
 [h: spellName = json.get (definition, "name")]
@@ -26,6 +27,7 @@
 [h: spellCanCastAtHigherLevel = json.get (definition, "canCastAtHigherLevel")]
 [h: spellCastWithWeaponAttack = json.get (definition, "asPartOfWeaponAttack")]
 [h: spellIsOnlyRitual = json.get (spell, "castOnlyAsRitual")]
+[h: spellScaleType = json.get (definition, "scaleType")]
 [h: isRitual = json.get (definition, "ritual")]
 [h: toonSpell = json.set ("", "name", spellName,
 								"level", spellLevel,
@@ -43,5 +45,6 @@
 								"prepared", spellPrepared,
 								"usesSpellSlot", spellUsesSpellSlot,
 								"ritualSpell", isRitual,
+								"scaleType", spellScaleType,
 								"abilityId", spellCastingAbilityId)]
 [h: macro.return = toonSpell]

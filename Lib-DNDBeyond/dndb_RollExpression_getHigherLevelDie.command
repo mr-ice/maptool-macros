@@ -8,7 +8,7 @@
 [h, if (json.type (atHigherLevel) == "ARRAY"): atHigherLevel = json.get (atHigherLevel, 0); ""]
 [h, if (json.isEmpty (atHigherLevel)): return (0, "{}"); ""]
 [h: higherLevelDefinitions = json.get (atHigherLevel, "higherLevelDefinitions")]
-[h: scaleType = json.get (atHigherLevel, "scaleType")]
+[h: scaleType = json.get (spell, "scaleType")]
 [h: dice = ""]
 [h, if (scaleType == "characterlevel"), code: {
 	<!-- spell effect is based on the characer level -->

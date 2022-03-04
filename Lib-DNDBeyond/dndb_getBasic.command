@@ -15,7 +15,8 @@
 						"weight", replace (json.path.read (toon, "data.weight"),"null", ""),
 						"xp", replace (json.path.read (toon, "data.currentXp"),"null", ""),
 						"gender", replace (json.path.read (toon, "data.gender"),"null", ""),
-						"avatarUrl", replace (json.path.read (toon, "data.avatarUrl"),"null", ""),
+						"avatarUrl", replace (json.path.read (toon, "data.decorations.avatarUrl",
+								"SUPPRESS_EXCEPTIONS"), "null", ""),
 						"race", replace (json.path.read (toon, "data.race.fullName"),"null", ""),
 						"url", replace (json.path.read (toon, "data.readonlyUrl"),"null", ""),
 						"abilities", abilities)]

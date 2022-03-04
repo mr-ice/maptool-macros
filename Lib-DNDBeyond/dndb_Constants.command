@@ -2,3 +2,4 @@
 [h: CATEGORY = "Lib:DnDBeyond." + arg(0)]
 [h: ID_QUICKDRAW = 2722177]
 [h: ATTACK_JSON_GENERATED_SOURCE = "Lib:DnDBeyond"]
+[h: CHARACTER_SERVICE_BASE_URL = "https://character-service.dndbeyond.com/character/v5/character/"]
